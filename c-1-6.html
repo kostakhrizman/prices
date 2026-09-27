@@ -1,0 +1,2122 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1A2238">
+<script>
+// the look this phone chose (settings.html "מראה"), before anything is drawn: html.light / html.dark
+// (none = follow the phone) and html[data-color] (none = green); the browser bar takes the colour too
+(function () {
+  let t = {};
+  try { t = JSON.parse(localStorage.getItem("theme")) || {}; } catch (e) { /* none yet */ }
+  // the new look (the user, 2026-11-27: "לילה") once on every phone; settings "מראה" can change it back
+  if (t.v !== 2) {
+    t = Object.assign({}, t, { mode: "dark", color: "night", bar: "#1A2238", v: 2 });
+    try { localStorage.setItem("theme", JSON.stringify(t)); } catch (e) { /* private mode */ }
+  }
+  const root = document.documentElement;
+  if (t.mode === "light" || t.mode === "dark") root.classList.add(t.mode);
+  if (t.color) root.dataset.color = t.color;
+  if (t.style) root.dataset.style = t.style;
+  if (t.size) root.dataset.size = t.size;
+  if (t.bar) document.querySelector('meta[name="theme-color"]').content = t.bar;
+})();
+</script>
+<title>שניצלים ומוצרי עוף מעובדים</title>
+<link rel="manifest" href="static/manifest.webmanifest">
+<link rel="icon" href="static/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="static/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="static/style.css?v=20261128165945">
+<style>.st-0 { --store: #e07000; }.st-1 { --store: #d32f2f; }.st-2 { --store: #1565c0; }.st-3 { --store: #1565c0; }.st-4 { --store: #c99a00; }</style>
+<script>window.DATA_V = {"data/c-index.json": "1ef35b8b7f", "data/changes.json": "eb14c62a68", "data/deals.json": "e8f3c4d1e0", "data/p-netto-052.json": "79069bd1c0", "data/p-osherad-003.json": "86a9473a36", "data/p-osherad-026.json": "90655a088c", "data/p-ramilevy-007.json": "6647eee19b", "data/p-victory-038.json": "f7bdede387", "data/products.json": "1dd9992357"}; window.BUILD = "20261128165945";</script>
+<script src="static/stores.js?v=20261128165945" data-stores="[{&#34;card_cap&#34;: 750, &#34;card_rate&#34;: 0.07, &#34;default&#34;: true, &#34;key&#34;: &#34;victory-038&#34;, &#34;name&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;ramilevy-007&#34;, &#34;name&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-026&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05ea\u05dc\u05e4\u05d9\u05d5\u05ea&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-003&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05d2\u05d1\u05e2\u05ea \u05e9\u05d0\u05d5\u05dc&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;netto-052&#34;, &#34;name&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df \u05e7\u05e8\u05d9\u05d9\u05ea \u05d9\u05e2\u05e8\u05d9\u05dd&#34;, &#34;short&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df&#34;}]"></script>
+<script src="static/avoid.js?v=20261128165945" data-kinds="[&#34;\u05e2\u05d5\u05e3 \u05de\u05e2\u05d5\u05d1\u05d3&#34;, &#34;\u05d1\u05e9\u05e8 \u05de\u05e2\u05d5\u05d1\u05d3&#34;]"></script>
+<script>
+// No long-press menu on links, pictures or text (the user: the home page's tiles opened Chrome's "open in new tab /
+// copy link" menu; CSS can't stop that on Android). Typing fields and the ⓘ sheet's barcode keep theirs.
+document.addEventListener("contextmenu", (e) => {
+  if (!e.target.closest("input, textarea, [contenteditable], .photo-barcode")) e.preventDefault();
+});
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <a class="back" href="t-1.html" aria-label="חזרה">→</a>
+    <h1>שניצלים ומוצרי עוף מעובדים</h1>
+    <a class="settings-link" href="settings.html" aria-label="הגדרות" title="הגדרות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></a>
+  </div>
+  
+  <form class="search" action="search.html" method="get" role="search">
+    <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+    <input type="search" name="q" placeholder="חיפוש מוצר" enterkeyhint="search" aria-label="חיפוש מוצר">
+  </form>
+  
+</header>
+<main>
+
+<p class="sub"><span class="sub-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 12c2.2-3.6 5.3-5.5 8.6-5.5 2.8 0 4.9 1.9 6.4 5.5-1.5 3.6-3.6 5.5-6.4 5.5-3.3 0-6.4-1.9-8.6-5.5z"/><path d="M6.5 12 3 8.5v7z"/><circle cx="17" cy="11" r=".7" fill="currentColor" stroke="none"/></svg></span>בשר, עוף ודגים · <span id="cat-count">69</span> מוצרים, מהזול ליקר</p>
+
+<p class="proc-legend"><span class="proc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span> מוצר מעובד: מתובל, מצופה, מעושן, כבוש, נקניקים, קציצות, שימורים</p>
+<div class="cat-filter">
+  <input type="search" id="cat-filter" placeholder="סינון לפי שם או יצרן · ‎-מילה מסתירה" enterkeyhint="done" autocomplete="off" aria-label="סינון המוצרים בקטגוריה">
+  <button type="button" id="facet-btn" class="facet-btn" aria-expanded="false" aria-controls="facet-list">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h18l-7 8v6l-4-2v-4z"/></svg>
+    <span>סינון</span><b id="facet-n" hidden></b></button>
+</div>
+<div id="facet-list" class="facet-list" hidden>
+  <div class="facet-items" id="facet-kinds"><label class="facet"><input type="checkbox" value="שניצל"> <span>שניצל</span> <small></small></label><label class="facet"><input type="checkbox" value="שניצלונים"> <span>שניצלונים</span> <small></small></label><label class="facet"><input type="checkbox" value="אצבעות"> <span>אצבעות</span> <small></small></label><label class="facet"><input type="checkbox" value="כבד"> <span>כבד</span> <small></small></label><label class="facet"><input type="checkbox" value="צונגו"> <span>צונגו</span> <small></small></label><label class="facet"><input type="checkbox" value="רבעי פרגיות"> <span>רבעי פרגיות</span> <small></small></label><label class="facet"><input type="checkbox" value="שוארמה אמיתית"> <span>שוארמה אמיתית</span> <small></small></label></div>
+  <div class="facet-stores" id="facet-stores" hidden><div class="facet-title">חנויות</div><div class="facet-items"></div></div>
+  <div class="facet-actions"><button type="button" class="link" id="facet-clear">ניקוי</button>
+    <button type="button" id="facet-done">הצגה</button></div>
+</div>
+<div id="cat-list" data-href="c-1-6.html">
+
+
+<ol class="products">
+  
+  
+    
+    
+    
+    <li class="product st-1 best" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>טופ שף שניצל אמרקאי 700 גר<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290004061449" data-key="7290004061449" data-name="טופ שף שניצל אמרקאי 700 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪18.14 <small>לק״ג</small></div>
+          <div class="shelf">₪12.70 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004061449" data-name="טופ שף שניצל אמרקאי 700 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>נגיסי עוף 700 גר טופ שף קפואזן<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290004061494" data-key="7290004061494" data-name="נגיסי עוף 700 גר טופ שף קפואזן" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טופ שף בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪18.43 <small>לק״ג</small></div>
+          <div class="shelf">₪12.90 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004061494" data-name="נגיסי עוף 700 גר טופ שף קפואזן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>טבעות עוף 700 שף העוף<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290004061487" data-key="7290004061487" data-name="טבעות עוף 700 שף העוף" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טופ שף בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪18.71 <small>לק״ג</small></div>
+          <div class="shelf">₪13.10 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004061487" data-name="טבעות עוף 700 שף העוף" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>אצבעות שניצל שומשום עוף טוב<button type="button" class="unsold" data-sold="20261123" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290014747715" data-key="7290014747715" data-name="אצבעות שניצל שומשום עוף טוב" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 12.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪24.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪39.90</s> ₪24.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014747715" data-name="אצבעות שניצל שומשום עוף טוב" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>שניצלונים 600 גר עוף טוב<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290019205807" data-key="7290019205807" data-name="שניצלונים 600 גר עוף טוב" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מוצרי עוף טוב (2001) בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 12.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-0">ויקטורי ₪19.90</span><span class="other st-1">רמי לוי ₪19.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪25.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪17.90</s> ₪15.00 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019205807" data-name="שניצלונים 600 גר עוף טוב" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>שניצלונים שומשום 600 גר עוף טוב<button type="button" class="unsold" data-sold="20261117" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290019205906" data-key="7290019205906" data-name="שניצלונים שומשום 600 גר עוף טוב" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מוצרי עוף טוב (2001) בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 12.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-0">ויקטורי ₪19.90</span><span class="other st-1">רמי לוי ₪19.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪25.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪17.90</s> ₪15.00 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019205906" data-name="שניצלונים שומשום 600 גר עוף טוב" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>שניצל תירס רמי לוי 2ק&#34;ג<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290016733693" data-key="7290016733693" data-name="שניצל תירס רמי לוי 2ק&#34;ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רמי לוי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪25.25 <small>לק״ג</small></div>
+          <div class="shelf">₪50.50 · 2 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016733693" data-name="שניצל תירס רמי לוי 2ק&#34;ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>מיני שניצלונים בציפוי שומשום מאמא עוף 500 גרם<button type="button" class="unsold" data-sold="20261124" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290008409049" data-key="7290008409049" data-name="מיני שניצלונים בציפוי שומשום מאמא עוף 500 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה גליל שותפות מוגבלת</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪30.90</span><span class="other st-0">ויקטורי ₪33.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪34.40 <small>לק״ג</small></div>
+          <div class="shelf">₪28.90 · 840 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008409049" data-name="מיני שניצלונים בציפוי שומשום מאמא עוף 500 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>שניצלונים בציפוי שומשום רמי לוי 600 גרם<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290015681100" data-key="7290015681100" data-name="שניצלונים בציפוי שומשום רמי לוי 600 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רמי לוי</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪42</span> בקניית 2 · עד 5.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪35.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪24.20</s> ₪21.00 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015681100" data-name="שניצלונים בציפוי שומשום רמי לוי 600 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>אצבעות שניצל בציפוי שומשום מאמא עוף 700 גרם<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290008409100" data-key="7290008409100" data-name="אצבעות שניצל בציפוי שומשום מאמא עוף 700 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה גליל שותפות מוגבלת</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 2 יח׳ · עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪30.00 (2 ב־₪60)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪35.57 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪44.90</s> ₪24.90 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008409100" data-name="אצבעות שניצל בציפוי שומשום מאמא עוף 700 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>שניצל גונג&#39;ל מאמא עוף 700 גרם<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290008409124" data-key="7290008409124" data-name="שניצל גונג&#39;ל מאמא עוף 700 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה גליל שותפות מוגבלת</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 2 יח׳ · עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪30.00 (2 ב־₪60)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪35.57 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪44.90</s> ₪24.90 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008409124" data-name="שניצל גונג&#39;ל מאמא עוף 700 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>כוכבי עוף בציפוי מעודן מאמא עוף 700 גרם<button type="button" class="unsold" data-sold="20261125" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290008409605" data-key="7290008409605" data-name="כוכבי עוף בציפוי מעודן מאמא עוף 700 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה גליל שותפות מוגבלת</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 2 יח׳ · עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪30.00 (2 ב־₪60)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪35.57 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪41.90</s> ₪24.90 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008409605" data-name="כוכבי עוף בציפוי מעודן מאמא עוף 700 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>שניצל כלי תחבורה 700 גר מאמא עוף<button type="button" class="unsold" data-sold="20261124" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290013675545" data-key="7290013675545" data-name="שניצל כלי תחבורה 700 גר מאמא עוף" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה גליל שותפות מוגבלת</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 2 יח׳ · עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪30.00 (2 ב־₪60)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪35.57 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪43.90</s> ₪24.90 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013675545" data-name="שניצל כלי תחבורה 700 גר מאמא עוף" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>שניצל דק בציפוי שומשום 700 ג<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290016865080" data-key="7290016865080" data-name="שניצל דק בציפוי שומשום 700 ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טופ שף</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪50</span> בקניית 2 · עד 5.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪35.71 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪27.20</s> ₪25.00 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016865080" data-name="שניצל דק בציפוי שומשום 700 ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>חטיפי תירס 1 קג<button type="button" class="unsold" data-sold="20261115" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290109580487" data-key="7290109580487" data-name="חטיפי תירס 1 קג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זוגלובק</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪38.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪38.90 <small>לק״ג</small></div>
+          <div class="shelf">₪38.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290109580487" data-name="חטיפי תירס 1 קג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>קישקע קהילות 500גרם<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290004220815" data-key="7290004220815" data-name="קישקע קהילות 500גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קהילות קפוא</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.80 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004220815" data-name="קישקע קהילות 500גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>שניצל עוף ותירס מאמא עוף 750 גרם<button type="button" class="unsold" data-sold="20261124" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290011876494" data-key="7290011876494" data-name="שניצל עוף ותירס מאמא עוף 750 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאמא עוף</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪60</span> בקניית 2 · עד 5.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪40.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪39.90</s> ₪30.00 · 750 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011876494" data-name="שניצל עוף ותירס מאמא עוף 750 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>חטיפי עוף רמי לוי 600 גרם<button type="button" class="unsold" data-sold="20261124" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290015681117" data-key="7290015681117" data-name="חטיפי עוף רמי לוי 600 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רמי לוי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪40.33 <small>לק״ג</small></div>
+          <div class="shelf">₪24.20 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015681117" data-name="חטיפי עוף רמי לוי 600 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>שניצלוני גן חיות רמי לוי 600 גרם<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290015681131" data-key="7290015681131" data-name="שניצלוני גן חיות רמי לוי 600 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רמי לוי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪40.33 <small>לק״ג</small></div>
+          <div class="shelf">₪24.20 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015681131" data-name="שניצלוני גן חיות רמי לוי 600 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>שניצל עוף דק ענק קריספי 720 גרם עוף טוב<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290014749887" data-key="7290014749887" data-name="שניצל עוף דק ענק קריספי 720 גרם עוף טוב" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מוצרי עוף טוב (2001) בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 5.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪37.90 (מבצע)</span><span class="other st-0">ויקטורי ₪42.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪41.53 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪44.90</s> ₪29.90 · 720 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014749887" data-name="שניצל עוף דק ענק קריספי 720 גרם עוף טוב" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>שניצל דק ענק קריספי שומשום 720 גרם עוף טוב<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290014749849" data-key="7290014749849" data-name="שניצל דק ענק קריספי שומשום 720 גרם עוף טוב" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>עוף טוב</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 5.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪41.53 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪44.90</s> ₪29.90 · 720 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014749849" data-name="שניצל דק ענק קריספי שומשום 720 גרם עוף טוב" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>שניצל צ&#39;ונגו שמשום 600 גרם עוף טוב<button type="button" class="unsold" data-sold="20261122" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290014749245" data-key="7290014749245" data-name="שניצל צ&#39;ונגו שמשום 600 גרם עוף טוב" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מוצרי עוף טוב (2001) בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪50</span> בקניית 2 · עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪34.90</span><span class="other st-4">נטו חיסכון ₪39.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪41.67 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪43.90</s> ₪25.00 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014749245" data-name="שניצל צ&#39;ונגו שמשום 600 גרם עוף טוב" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>צונגו רצועות שניצל סופר קראנץ - חדש<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290019204800" data-key="7290019204800" data-name="צונגו רצועות שניצל סופר קראנץ - חדש" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מוצרי עוף טוב (2001) בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪50</span> בקניית 2 · עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪29.90 (מבצע)</span><span class="other st-0">ויקטורי ₪34.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪41.67 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪43.90</s> ₪25.00 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019204800" data-name="צונגו רצועות שניצל סופר קראנץ - חדש" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>שניצל עוף אמיתי עם שומשום רמי לוי 700 גרם<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290015681186" data-key="7290015681186" data-name="שניצל עוף אמיתי עם שומשום רמי לוי 700 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רמי לוי</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪60</span> בקניית 2 · עד 5.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪42.86 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪34.30</s> ₪30.00 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015681186" data-name="שניצל עוף אמיתי עם שומשום רמי לוי 700 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>קציצות עוף אמיתיות מאמא עוף 700 גרם<button type="button" class="unsold" data-sold="20261103" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290008409773" data-key="7290008409773" data-name="קציצות עוף אמיתיות מאמא עוף 700 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאמא עוף</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪62</span> בקניית 2 · עד 5.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪44.29 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪34.90</s> ₪31.00 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008409773" data-name="קציצות עוף אמיתיות מאמא עוף 700 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>שניצל עוף קפוא חתם סופר<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="" data-key="7290058156016:610236" data-name="שניצל עוף קפוא חתם סופר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪44.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:610236" data-name="שניצל עוף קפוא חתם סופר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>אצבעות שניצל רמי לוי 1 קג<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290010903344" data-key="7290010903344" data-name="אצבעות שניצל רמי לוי 1 קג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טופ שף</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪45.40 <small>לק״ג</small></div>
+          <div class="shelf">₪45.40 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010903344" data-name="אצבעות שניצל רמי לוי 1 קג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>אצבעות שניצל 600 גר עוף טוב<button type="button" class="unsold" data-sold="20261124" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290019204381" data-key="7290019204381" data-name="אצבעות שניצל 600 גר עוף טוב" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>עוף טוב</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪55</span> בקניית 2 · עד 12.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-0">ויקטורי ₪34.90</span><span class="other st-1">רמי לוי ₪34.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪45.83 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪39.90</s> ₪27.50 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019204381" data-name="אצבעות שניצל 600 גר עוף טוב" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>שניצל עוף מיני דובונים 600גר<button type="button" class="unsold" data-sold="20261120" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290019205609" data-key="7290019205609" data-name="שניצל עוף מיני דובונים 600גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מוצרי עוף טוב (2001) בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪55</span> בקניית 2 · עד 12.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-0">ויקטורי ₪34.90</span><span class="other st-1">רמי לוי ₪34.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪45.83 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪39.90</s> ₪27.50 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019205609" data-name="שניצל עוף מיני דובונים 600גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>שניצל עוף מיני דינוזאור 600 גרם עוף טוב<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290019205708" data-key="7290019205708" data-name="שניצל עוף מיני דינוזאור 600 גרם עוף טוב" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מוצרי עוף טוב (2001) בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪55</span> בקניית 2 · עד 12.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-0">ויקטורי ₪34.90</span><span class="other st-1">רמי לוי ₪34.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪45.83 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪39.90</s> ₪27.50 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019205708" data-name="שניצל עוף מיני דינוזאור 600 גרם עוף טוב" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>שווארמה אמיתית פרגיות טיבון ויל 500 גרם<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290001123775" data-key="7290001123775" data-name="שווארמה אמיתית פרגיות טיבון ויל 500 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טיבול ויל אחזקות בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪29.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪49.80 <small>לק״ג</small></div>
+          <div class="shelf">₪24.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001123775" data-name="שווארמה אמיתית פרגיות טיבון ויל 500 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>שווארמה אמיתית הודו טיבון ויל 500 גרם<button type="button" class="unsold" data-sold="20261125" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290001123782" data-key="7290001123782" data-name="שווארמה אמיתית הודו טיבון ויל 500 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טיבון ויל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪29.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪49.80 <small>לק״ג</small></div>
+          <div class="shelf">₪24.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001123782" data-name="שווארמה אמיתית הודו טיבון ויל 500 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>שניצל ג&#39;ונגל מאמא עוף קהילות 800 גר&#39;<button type="button" class="unsold" data-sold="20261125" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290011876760" data-key="7290011876760" data-name="שניצל ג&#39;ונגל מאמא עוף קהילות 800 גר&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪49.87 <small>לק״ג</small></div>
+          <div class="shelf">₪39.90 · 800 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011876760" data-name="שניצל ג&#39;ונגל מאמא עוף קהילות 800 גר&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>שניצל עגל קפוא<button type="button" class="unsold" data-sold="20261110" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290002927655" data-key="7290002927655" data-name="שניצל עגל קפוא" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זהר בשר</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪49.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290002927655" data-name="שניצל עגל קפוא" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>שניצל עוף טרי ארוז מהודר<button type="button" class="unsold" data-sold="20261122" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="" data-key="7290058156016:379492" data-name="שניצל עוף טרי ארוז מהודר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪49.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:379492" data-name="שניצל עוף טרי ארוז מהודר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>שניצל עוף קהילות<button type="button" class="unsold" data-sold="20261116" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="" data-key="7290058156016:505068" data-name="שניצל עוף קהילות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קהילות קפוא</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪49.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:505068" data-name="שניצל עוף קהילות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>שניצל אמריקאי גלאט עוף, 2 ק&#34;ג<button type="button" class="unsold" data-sold="20261123" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290010193851" data-key="7290010193851" data-name="שניצל אמריקאי גלאט עוף, 2 ק&#34;ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מ ב גלאט עוף למהדרין</span>
+          <span class="warn">גודל לא ודאי</span>
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪52.23 <small>לק״ג</small></div>
+          <div class="shelf">₪67.90 · 1.3 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010193851" data-name="שניצל אמריקאי גלאט עוף, 2 ק&#34;ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>רצועות הודו רמי לוי 650 גרם<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290015681209" data-key="7290015681209" data-name="רצועות הודו רמי לוי 650 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רמי לוי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪52.77 <small>לק״ג</small></div>
+          <div class="shelf">₪34.30 · 650 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015681209" data-name="רצועות הודו רמי לוי 650 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>שניצלונים בשומשום גלאט, 1.3 ק&#34;ג<button type="button" class="unsold" data-sold="20261123" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290010193929" data-key="7290010193929" data-name="שניצלונים בשומשום גלאט, 1.3 ק&#34;ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מ ב גלאט עוף למהדרין</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪53.77 <small>לק״ג</small></div>
+          <div class="shelf">₪69.90 · 1.3 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010193929" data-name="שניצלונים בשומשום גלאט, 1.3 ק&#34;ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>פרימיום שניצל עוף טרי דק דק<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="" data-key="7290696200003:1001677" data-name="פרימיום שניצל עוף טרי דק דק" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪55.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:1001677" data-name="פרימיום שניצל עוף טרי דק דק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>רבעי פרגיות ממולאות<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290002410874" data-key="7290002410874" data-name="רבעי פרגיות ממולאות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪56.40 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290002410874" data-name="רבעי פרגיות ממולאות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>רבעי פרגיות ממולאות<button type="button" class="unsold" data-sold="20261123" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290002478157" data-key="7290002478157" data-name="רבעי פרגיות ממולאות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪56.40 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290002478157" data-name="רבעי פרגיות ממולאות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>צונגו רצועות סופר קראנץ חריף 600 גר עוף<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290019204701" data-key="7290019204701" data-name="צונגו רצועות סופר קראנץ חריף 600 גר עוף" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מוצרי עוף טוב (2001) בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪58.17 <small>לק״ג</small></div>
+          <div class="shelf">₪34.90 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019204701" data-name="צונגו רצועות סופר קראנץ חריף 600 גר עוף" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>שניצל צ&#39;ונגו סופר קראנצ&#39; 600 גרם<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290019205036" data-key="7290019205036" data-name="שניצל צ&#39;ונגו סופר קראנצ&#39; 600 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>עוף טוב</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪34.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪58.17 <small>לק״ג</small></div>
+          <div class="shelf">₪34.90 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019205036" data-name="שניצל צ&#39;ונגו סופר קראנצ&#39; 600 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>רבעי פרגיות ממולא<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="" data-key="7290696200003:2410874" data-name="רבעי פרגיות ממולא" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2410874" data-name="רבעי פרגיות ממולא" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>רבעי פרגיות ממולא מתוק<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="" data-key="7290696200003:2478157" data-name="רבעי פרגיות ממולא מתוק" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2478157" data-name="רבעי פרגיות ממולא מתוק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>שניצל עוף פרוס ארוז שארית<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="" data-key="7290058156016:29342" data-name="שניצל עוף פרוס ארוז שארית" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:29342" data-name="שניצל עוף פרוס ארוז שארית" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>שניצל עוף פרוס טרי ארוז שארית ישראל<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="" data-key="7290058156016:29632" data-name="שניצל עוף פרוס טרי ארוז שארית ישראל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:29632" data-name="שניצל עוף פרוס טרי ארוז שארית ישראל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>שניצל דק דק פריך מאמא עוף 700 גרם<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290008409216" data-key="7290008409216" data-name="שניצל דק דק פריך מאמא עוף 700 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה גליל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪45.90</span><span class="other st-0">ויקטורי ₪49.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪61.29 <small>לק״ג</small></div>
+          <div class="shelf">₪42.90 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008409216" data-name="שניצל דק דק פריך מאמא עוף 700 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>מיני שניצלונים בציפוי פריך מאמא עוף 500 גרם<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290008409315" data-key="7290008409315" data-name="מיני שניצלונים בציפוי פריך מאמא עוף 500 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאמא עוף</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪61.80 <small>לק״ג</small></div>
+          <div class="shelf">₪30.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008409315" data-name="מיני שניצלונים בציפוי פריך מאמא עוף 500 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>שניצל עוף בציפוי מעודן מאמא עוף 700 גרם<button type="button" class="unsold" data-sold="20261023" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290008409551" data-key="7290008409551" data-name="שניצל עוף בציפוי מעודן מאמא עוף 700 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה גליל שותפות מוגבלת</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪46.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪65.57 <small>לק״ג</small></div>
+          <div class="shelf">₪45.90 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008409551" data-name="שניצל עוף בציפוי מעודן מאמא עוף 700 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>שניצל עוף אמיתי בציפוי ביתי מאמא עוף 700 גרם<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290008409582" data-key="7290008409582" data-name="שניצל עוף אמיתי בציפוי ביתי מאמא עוף 700 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה גליל שותפות מוגבלת</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪49.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪65.57 <small>לק״ג</small></div>
+          <div class="shelf">₪45.90 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008409582" data-name="שניצל עוף אמיתי בציפוי ביתי מאמא עוף 700 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>נאגטס עוף טוב 600 גרם<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290019205999" data-key="7290019205999" data-name="נאגטס עוף טוב 600 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מיוצר ע&#34;י מוצרי עוף טוב (2001) בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪44.90</span><span class="other st-4">נטו חיסכון ₪44.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪66.50 <small>לק״ג</small></div>
+          <div class="shelf">₪39.90 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019205999" data-name="נאגטס עוף טוב 600 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>קראנצ&#39;ים פיקנטי מאמא עוף<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290011876708" data-key="7290011876708" data-name="קראנצ&#39;ים פיקנטי מאמא עוף" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪66.50 <small>לק״ג</small></div>
+          <div class="shelf">₪39.90 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011876708" data-name="קראנצ&#39;ים פיקנטי מאמא עוף" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>קראנצ&#39;ים שומשום מאמא<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290011876715" data-key="7290011876715" data-name="קראנצ&#39;ים שומשום מאמא" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪66.50 <small>לק״ג</small></div>
+          <div class="shelf">₪39.90 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011876715" data-name="קראנצ&#39;ים שומשום מאמא" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>אצבעות שניצל שומשום מאמא עוף קהילות 600 גר&#39;<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290011876753" data-key="7290011876753" data-name="אצבעות שניצל שומשום מאמא עוף קהילות 600 גר&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪66.50 <small>לק״ג</small></div>
+          <div class="shelf">₪39.90 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011876753" data-name="אצבעות שניצל שומשום מאמא עוף קהילות 600 גר&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>שניצל עוף פרוס קפוא גלאט עוף<button type="button" class="unsold" data-sold="20261124" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="" data-key="7290058156016:751600" data-name="שניצל עוף פרוס קפוא גלאט עוף" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪68.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:751600" data-name="שניצל עוף פרוס קפוא גלאט עוף" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>צ&#39;ונגו סופר קראנץ רצועות שניצל עוף טוב, 600 גרם<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290019206651" data-key="7290019206651" data-name="צ&#39;ונגו סופר קראנץ רצועות שניצל עוף טוב, 600 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>עוף טוב</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪71.50 <small>לק״ג</small></div>
+          <div class="shelf">₪42.90 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019206651" data-name="צ&#39;ונגו סופר קראנץ רצועות שניצל עוף טוב, 600 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>שניצל עוף טוב צ&#39;ונגו שומשום, 600 גרם<button type="button" class="unsold" data-sold="20261120" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290019206750" data-key="7290019206750" data-name="שניצל עוף טוב צ&#39;ונגו שומשום, 600 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>עוף טוב</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪71.50 <small>לק״ג</small></div>
+          <div class="shelf">₪42.90 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019206750" data-name="שניצל עוף טוב צ&#39;ונגו שומשום, 600 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>שניצל דק פריך מאמא עוף 600 גר&#39; קהילות<button type="button" class="unsold" data-sold="20261116" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290011876746" data-key="7290011876746" data-name="שניצל דק פריך מאמא עוף 600 גר&#39; קהילות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪74.83 <small>לק״ג</small></div>
+          <div class="shelf">₪44.90 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011876746" data-name="שניצל דק פריך מאמא עוף 600 גר&#39; קהילות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>מעדן שווארמה גלאט, 200 גרם<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290010193479" data-key="7290010193479" data-name="מעדן שווארמה גלאט, 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מ ב גלאט עוף למהדרין</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪79.50 <small>לק״ג</small></div>
+          <div class="shelf">₪15.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010193479" data-name="מעדן שווארמה גלאט, 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>שניצל עוף אמיתי 700 גרם<button type="button" class="unsold" data-sold="20261118" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290010193097" data-key="7290010193097" data-name="שניצל עוף אמיתי 700 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪79.86 <small>לק״ג</small></div>
+          <div class="shelf">₪55.90 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010193097" data-name="שניצל עוף אמיתי 700 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>שניצל ללא גלוטן מאמא עוף<button type="button" class="unsold" data-sold="20261028" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290011876722" data-key="7290011876722" data-name="שניצל ללא גלוטן מאמא עוף" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה גליל שותפות מוגבלת מאמא עוף</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪83.17 <small>לק״ג</small></div>
+          <div class="shelf">₪49.90 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011876722" data-name="שניצל ללא גלוטן מאמא עוף" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>שניצל קריספי 600גר רמילוי wb<button type="button" class="unsold" data-sold="20261125" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290019936312" data-key="7290019936312" data-name="שניצל קריספי 600גר רמילוי wb" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טופ שף</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪83.17 <small>לק״ג</small></div>
+          <div class="shelf">₪49.90 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019936312" data-name="שניצל קריספי 600גר רמילוי wb" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>נשנושי שניצל קריספי פרימיום רמילוי wb<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290019936367" data-key="7290019936367" data-name="נשנושי שניצל קריספי פרימיום רמילוי wb" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טופ שף</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪83.17 <small>לק״ג</small></div>
+          <div class="shelf">₪49.90 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019936367" data-name="נשנושי שניצל קריספי פרימיום רמילוי wb" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>שווארמה אמיתית במגש, 600 גרם<button type="button" class="unsold" data-sold="20261119" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290010193301" data-key="7290010193301" data-name="שווארמה אמיתית במגש, 600 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מ ב גלאט עוף למהדרין</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪91.50 <small>לק״ג</small></div>
+          <div class="shelf">₪54.90 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010193301" data-name="שווארמה אמיתית במגש, 600 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>כבד צלוי 250 ג לנדא<button type="button" class="unsold" data-sold="20261118" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290002292593" data-key="7290002292593" data-name="כבד צלוי 250 ג לנדא" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪159.60 <small>לק״ג</small></div>
+          <div class="shelf">₪39.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002292593" data-name="כבד צלוי 250 ג לנדא" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>כבד עוף צלוי גלאט, 200 גרם<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290014355873" data-key="7290014355873" data-name="כבד עוף צלוי גלאט, 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>גלאט עוף</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪199.50 <small>לק״ג</small></div>
+          <div class="shelf">₪39.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014355873" data-name="כבד עוף צלוי גלאט, 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>טבעול שניצל תירס עדה חרדית 1.3 קג<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290112968708" data-key="7290112968708" data-name="טבעול שניצל תירס עדה חרדית 1.3 קג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טבעול תעשיות מזון בע&#34;מ (מקבוצת אסם השקעות בע&#34;מ)</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪45.90</span><span class="other st-0">ויקטורי ₪47.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪30.69 <small>ליח׳</small></div>
+          <div class="shelf">₪39.90 · 1.3 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112968708" data-name="טבעול שניצל תירס עדה חרדית 1.3 קג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+</ol>
+</div>
+
+</main>
+<footer>עודכן 28.11 16:59 · ויקטורי 27.11 20:12 · רמי לוי 27.11 21:00 · אושר עד 27.11 14:05 · אושר עד 27.11 14:05 · נטו חיסכון 27.11 20:52 · גרסת האפליקציה 28.11 12:05</footer>
+
+
+<nav class="bottom-nav" aria-label="ניווט">
+  <a href="index.html" class="on"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg><span>מחלקות</span></a>
+  <a href="notes.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"/><path d="m3.5 6 1 1 2-2M3.5 12l1 1 2-2M3.5 18l1 1 2-2"/></svg><span>רשימת קניות</span></a>
+  <a href="spending.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-2-1.4-2 1.4-2-1.4-2 1.4-2-1.4L6 21z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><span>הוצאות</span></a>
+</nav>
+
+<div class="fabs">
+  <a href="scan.html" class="fab fab-scan" aria-label="סריקה"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8V4h4M16 4h4v4M20 16v4h-4M8 20H4v-4M8 8v8M12 8v8M16 8v8"/></svg></a>
+  <a href="basket.html" class="fab fab-cart" aria-label="עגלת קניות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.5 11h11L21 8H7"/><circle cx="9" cy="19" r="1.5"/><circle cx="17" cy="19" r="1.5"/></svg><span id="cart-count"></span></a>
+</div>
+
+<script src="static/basket.js?v=20261128165945"></script>
+<script src="static/catpick.js?v=20261128165945"></script>
+<script src="static/photo.js?v=20261128165945"></script>
+
+<script src="static/render.js?v=20261128165945"></script>
+<script src="static/category.js?v=20261128165945" data-build="20261128165945"></script>
+
+<script>
+// The three tabs side by side, the shopping list in the middle (the user, 2026-11-27): a swipe on a tab page moves to
+// the next tab. RTL like the bar: a finger moving right goes to the tab on the left (הוצאות from the list), moving
+// left to the tab on the right (מחלקות). Not from a typing field or from a box that scrolls sideways.
+// Fast (the user, 2026-11-27: "it lags"): the page follows the finger while it moves, and the neighbouring tabs are
+// prerendered in the background (Chrome's speculation rules), so the swipe shows a page that is already loaded
+// instead of downloading and drawing it then.
+(function () {
+  const TABS = ["index.html", "notes.html", "spending.html"];  // the bar, right to left
+  const page = location.pathname.split("/").pop() || "index.html";
+  const at = TABS.indexOf(page);
+  if (at < 0) return;
+  const next = [TABS[at - 1], TABS[at + 1]].filter(Boolean);
+  if (HTMLScriptElement.supports && HTMLScriptElement.supports("speculationrules")) {
+    const s = document.createElement("script");
+    s.type = "speculationrules";
+    s.textContent = JSON.stringify({ prerender: [{ source: "list", urls: next, eagerness: "immediate" }] });
+    document.head.appendChild(s);
+  } else {
+    for (const u of next) { const l = document.createElement("link"); l.rel = "prefetch"; l.href = u; document.head.appendChild(l); }
+  }
+  const main = document.querySelector("main");
+  let x0 = null, y0 = 0, t0 = 0, skip = false, lock = null;  // lock: "x" = a sideways drag, "y" = scrolling
+  const sideScroll = (el) => {
+    for (; el && el !== document.body; el = el.parentElement) {
+      if (el.scrollWidth > el.clientWidth + 2 && /auto|scroll/.test(getComputedStyle(el).overflowX)) return true;
+    }
+    return false;
+  };
+  const target = (dx) => { const to = at + (dx > 0 ? 1 : -1); return to >= 0 && to < TABS.length ? to : -1; };
+  const place = (dx, animate) => {
+    if (!main) return;
+    main.style.transition = animate ? "transform .18s ease-out, opacity .18s" : "none";
+    main.style.transform = dx ? `translateX(${dx}px)` : "";
+    main.style.opacity = dx ? String(Math.max(0.35, 1 - Math.abs(dx) / (innerWidth * 1.2))) : "";
+  };
+  document.addEventListener("touchstart", (e) => {
+    if (e.touches.length !== 1) { x0 = null; return; }
+    const t = e.touches[0];
+    x0 = t.clientX; y0 = t.clientY; t0 = Date.now(); lock = null;
+    skip = !!e.target.closest("input, textarea, select, [contenteditable], dialog, .photo-box, .catpick-box, [data-noswipe]") || sideScroll(e.target);
+  }, { passive: true });
+  document.addEventListener("touchmove", (e) => {
+    if (x0 === null || skip || lock === "y") return;
+    const t = e.touches[0], dx = t.clientX - x0, dy = t.clientY - y0;
+    if (!lock) {
+      if (Math.abs(dx) < 10 && Math.abs(dy) < 10) return;
+      lock = Math.abs(dx) > Math.abs(dy) * 1.3 ? "x" : "y";
+      if (lock === "y") return;
+    }
+    place(target(dx) < 0 ? dx * 0.2 : dx, false);  // at the last tab: a little give, no page
+  }, { passive: true });
+  const release = (e) => {
+    if (x0 === null || skip) { x0 = null; return; }
+    const t = e.changedTouches[0], dx = t.clientX - x0, ms = Date.now() - t0;
+    const wasX = lock === "x";
+    x0 = null; lock = null;
+    if (!wasX) return;
+    const to = target(dx);
+    const far = Math.abs(dx) > innerWidth * 0.28 || (Math.abs(dx) > 40 && ms < 300);  // far enough, or a flick
+    if (to < 0 || !far || (document.getSelection && String(document.getSelection()))) { place(0, true); return; }
+    place(dx > 0 ? innerWidth * 0.5 : -innerWidth * 0.5, true);
+    location.href = TABS[to];
+  };
+  document.addEventListener("touchend", release, { passive: true });
+  document.addEventListener("touchcancel", () => { if (x0 !== null) { x0 = null; lock = null; place(0, true); } }, { passive: true });
+  window.addEventListener("pageshow", () => place(0, false));
+})();
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+</script>
+</body>
+</html>

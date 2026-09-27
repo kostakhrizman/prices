@@ -1,0 +1,2225 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1A2238">
+<script>
+// the look this phone chose (settings.html "מראה"), before anything is drawn: html.light / html.dark
+// (none = follow the phone) and html[data-color] (none = green); the browser bar takes the colour too
+(function () {
+  let t = {};
+  try { t = JSON.parse(localStorage.getItem("theme")) || {}; } catch (e) { /* none yet */ }
+  // the new look (the user, 2026-11-27: "לילה") once on every phone; settings "מראה" can change it back
+  if (t.v !== 2) {
+    t = Object.assign({}, t, { mode: "dark", color: "night", bar: "#1A2238", v: 2 });
+    try { localStorage.setItem("theme", JSON.stringify(t)); } catch (e) { /* private mode */ }
+  }
+  const root = document.documentElement;
+  if (t.mode === "light" || t.mode === "dark") root.classList.add(t.mode);
+  if (t.color) root.dataset.color = t.color;
+  if (t.style) root.dataset.style = t.style;
+  if (t.size) root.dataset.size = t.size;
+  if (t.bar) document.querySelector('meta[name="theme-color"]').content = t.bar;
+})();
+</script>
+<title>סודה ומים מוגזים</title>
+<link rel="manifest" href="static/manifest.webmanifest">
+<link rel="icon" href="static/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="static/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="static/style.css?v=20261128165945">
+<style>.st-0 { --store: #e07000; }.st-1 { --store: #d32f2f; }.st-2 { --store: #1565c0; }.st-3 { --store: #1565c0; }.st-4 { --store: #c99a00; }</style>
+<script>window.DATA_V = {"data/c-index.json": "1ef35b8b7f", "data/changes.json": "eb14c62a68", "data/deals.json": "e8f3c4d1e0", "data/p-netto-052.json": "79069bd1c0", "data/p-osherad-003.json": "86a9473a36", "data/p-osherad-026.json": "90655a088c", "data/p-ramilevy-007.json": "6647eee19b", "data/p-victory-038.json": "f7bdede387", "data/products.json": "1dd9992357"}; window.BUILD = "20261128165945";</script>
+<script src="static/stores.js?v=20261128165945" data-stores="[{&#34;card_cap&#34;: 750, &#34;card_rate&#34;: 0.07, &#34;default&#34;: true, &#34;key&#34;: &#34;victory-038&#34;, &#34;name&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;ramilevy-007&#34;, &#34;name&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-026&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05ea\u05dc\u05e4\u05d9\u05d5\u05ea&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-003&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05d2\u05d1\u05e2\u05ea \u05e9\u05d0\u05d5\u05dc&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;netto-052&#34;, &#34;name&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df \u05e7\u05e8\u05d9\u05d9\u05ea \u05d9\u05e2\u05e8\u05d9\u05dd&#34;, &#34;short&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df&#34;}]"></script>
+<script src="static/avoid.js?v=20261128165945" data-kinds="[&#34;\u05e2\u05d5\u05e3 \u05de\u05e2\u05d5\u05d1\u05d3&#34;, &#34;\u05d1\u05e9\u05e8 \u05de\u05e2\u05d5\u05d1\u05d3&#34;]"></script>
+<script>
+// No long-press menu on links, pictures or text (the user: the home page's tiles opened Chrome's "open in new tab /
+// copy link" menu; CSS can't stop that on Android). Typing fields and the ⓘ sheet's barcode keep theirs.
+document.addEventListener("contextmenu", (e) => {
+  if (!e.target.closest("input, textarea, [contenteditable], .photo-barcode")) e.preventDefault();
+});
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <a class="back" href="t-8.html" aria-label="חזרה">→</a>
+    <h1>סודה ומים מוגזים</h1>
+    <a class="settings-link" href="settings.html" aria-label="הגדרות" title="הגדרות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></a>
+  </div>
+  
+  <form class="search" action="search.html" method="get" role="search">
+    <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+    <input type="search" name="q" placeholder="חיפוש מוצר" enterkeyhint="search" aria-label="חיפוש מוצר">
+  </form>
+  
+</header>
+<main>
+
+<p class="sub"><span class="sub-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2h4v3l1.5 2.6V20a2 2 0 0 1-2 2h-3a2 2 0 0 1-2-2V7.6L10 5z"/><path d="M8.5 11h7v5h-7z"/></svg></span>משקאות · <span id="cat-count">73</span> מוצרים, מהזול ליקר</p>
+
+
+<div class="cat-filter">
+  <input type="search" id="cat-filter" placeholder="סינון לפי שם או יצרן · ‎-מילה מסתירה" enterkeyhint="done" autocomplete="off" aria-label="סינון המוצרים בקטגוריה">
+  <button type="button" id="facet-btn" class="facet-btn" aria-expanded="false" aria-controls="facet-list">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h18l-7 8v6l-4-2v-4z"/></svg>
+    <span>סינון</span><b id="facet-n" hidden></b></button>
+</div>
+<div id="facet-list" class="facet-list" hidden>
+  <div class="facet-items" id="facet-kinds"><label class="facet"><input type="checkbox" value="סודה"> <span>סודה</span> <small></small></label><label class="facet"><input type="checkbox" value="שופס"> <span>שופס</span> <small></small></label><label class="facet"><input type="checkbox" value="מי"> <span>מי</span> <small></small></label><label class="facet"><input type="checkbox" value="מים"> <span>מים</span> <small></small></label></div>
+  <div class="facet-stores" id="facet-stores" hidden><div class="facet-title">חנויות</div><div class="facet-items"></div></div>
+  <div class="facet-actions"><button type="button" class="link" id="facet-clear">ניקוי</button>
+    <button type="button" id="facet-done">הצגה</button></div>
+</div>
+<div id="cat-list" data-href="c-8-1.html">
+
+
+<ol class="products">
+  
+  
+    
+    
+    
+    <li class="product st-1 best">
+      <div class="info">
+        <div class="name">סודה בטעם לימון ליים 1.5 רביעייה<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290000136806" data-key="7290000136806" data-name="סודה בטעם לימון ליים 1.5 רביעייה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טמפו משקאות בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 5.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪11.90</span><span class="other st-0">ויקטורי ₪12.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪1.65 <small>לליטר</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪9.90 · 6 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000136806" data-name="סודה בטעם לימון ליים 1.5 רביעייה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סודה בטעם אננס 1.5לי רביעייה<button type="button" class="unsold" data-sold="20261125" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290000136813" data-key="7290000136813" data-name="סודה בטעם אננס 1.5לי רביעייה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טמפו משקאות בע&#39;&#39;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 5.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪11.90</span><span class="other st-0">ויקטורי ₪12.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪1.65 <small>לליטר</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪9.90 · 6 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000136813" data-name="סודה בטעם אננס 1.5לי רביעייה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מי סודה בגיזוז חזק הסודה של טמפו 6 * 1.5 ליטר<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290000136790" data-key="7290000136790" data-name="מי סודה בגיזוז חזק הסודה של טמפו 6 * 1.5 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טמפו משקאות בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪17.90</span><span class="other st-0">ויקטורי ₪18.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪1.88 <small>לליטר</small></div>
+          <div class="shelf">₪16.90 · 9 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000136790" data-name="מי סודה בגיזוז חזק הסודה של טמפו 6 * 1.5 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מי סודה 1.5 ליטר שוופס<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290019056119" data-key="7290019056119" data-name="מי סודה 1.5 ליטר שוופס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יפאורה תבורי בע&#34;\מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪3.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪1.93 <small>לליטר</small></div>
+          <div class="shelf">₪2.90 · 1.5 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019056119" data-name="מי סודה 1.5 ליטר שוופס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">טמפו סודה בנגיעות טעם פירות יער<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290000136820" data-key="7290000136820" data-name="טמפו סודה בנגיעות טעם פירות יער" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טמפו משקאות בע&#39;&#39;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-0">ויקטורי ₪12.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪1.98 <small>לליטר</small></div>
+          <div class="shelf">₪11.90 · 6 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000136820" data-name="טמפו סודה בנגיעות טעם פירות יער" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">רביעיית סודה בנגיעות אשכולית אדומה 1.5 ל&#39;<button type="button" class="unsold" data-sold="20261108" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290006764270" data-key="7290006764270" data-name="רביעיית סודה בנגיעות אשכולית אדומה 1.5 ל&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪1.98 <small>לליטר</small></div>
+          <div class="shelf">₪11.90 · 6 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290006764270" data-name="רביעיית סודה בנגיעות אשכולית אדומה 1.5 ל&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קינלי סודה שישייה 1.5 ליטר<button type="button" class="unsold" data-sold="20261124" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290110115401" data-key="7290110115401" data-name="קינלי סודה שישייה 1.5 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קוקה קולה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪17.90</span><span class="other st-0">ויקטורי ₪19.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪1.99 <small>לליטר</small></div>
+          <div class="shelf">₪17.90 · 9 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110115401" data-name="קינלי סודה שישייה 1.5 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סודה טמפו 1.5 ליטר<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290000136660" data-key="7290000136660" data-name="סודה טמפו 1.5 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪3.20</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪2.00 <small>לליטר</small></div>
+          <div class="shelf">₪3.00 · 1.5 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000136660" data-name="סודה טמפו 1.5 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סודה שוופס תפוח 1.5<button type="button" class="unsold" data-sold="20261028" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290019153306" data-key="7290019153306" data-name="סודה שוופס תפוח 1.5" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪2.00 <small>לליטר</small></div>
+          <div class="shelf">₪3.00 · 1.5 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019153306" data-name="סודה שוופס תפוח 1.5" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שוופס סודה אננס 1.5 ל&#39;<button type="button" class="unsold" data-sold="20261120" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290019153283" data-key="7290019153283" data-name="שוופס סודה אננס 1.5 ל&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪6.80</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪2.00 <small>לליטר</small></div>
+          <div class="shelf">₪3.00 · 1.5 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019153283" data-name="שוופס סודה אננס 1.5 ל&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סודה שוופס 4*1.5 ליטר<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290019056164" data-key="7290019056164" data-name="סודה שוופס 4*1.5 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יפאורה תבורי בע&#34;\מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪12.90</span><span class="other st-4">נטו חיסכון ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪2.07 <small>לליטר</small></div>
+          <div class="shelf">₪12.40 · 6 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019056164" data-name="סודה שוופס 4*1.5 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סודה לימון שוופס 4*1.5 ליטר<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290019056171" data-key="7290019056171" data-name="סודה לימון שוופס 4*1.5 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יפאורה תבורי בע&#34;\מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪12.90</span><span class="other st-4">נטו חיסכון ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪2.07 <small>לליטר</small></div>
+          <div class="shelf">₪12.40 · 6 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019056171" data-name="סודה לימון שוופס 4*1.5 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סודה בטעם נענע ליים שוופס 4*1.5 ליטר<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290019056188" data-key="7290019056188" data-name="סודה בטעם נענע ליים שוופס 4*1.5 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יפאורה תבורי בע&#34;\מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪12.90</span><span class="other st-4">נטו חיסכון ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪2.07 <small>לליטר</small></div>
+          <div class="shelf">₪12.40 · 6 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019056188" data-name="סודה בטעם נענע ליים שוופס 4*1.5 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סודה בטעם פירות יער שוופס 4*1.5 ליטר<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290019056201" data-key="7290019056201" data-name="סודה בטעם פירות יער שוופס 4*1.5 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יפאורה תבורי בע&#34;\מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪12.90</span><span class="other st-4">נטו חיסכון ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪2.07 <small>לליטר</small></div>
+          <div class="shelf">₪12.40 · 6 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019056201" data-name="סודה בטעם פירות יער שוופס 4*1.5 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סודה בטעם תפוח שוופס 4*1.5 ליטר<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290019153252" data-key="7290019153252" data-name="סודה בטעם תפוח שוופס 4*1.5 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יפאורה תבורי בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪12.90</span><span class="other st-4">נטו חיסכון ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪2.07 <small>לליטר</small></div>
+          <div class="shelf">₪12.40 · 6 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019153252" data-name="סודה בטעם תפוח שוופס 4*1.5 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סודה בטעם אננס שוופס 4*1.5 ליטר<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290019153269" data-key="7290019153269" data-name="סודה בטעם אננס שוופס 4*1.5 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יפאורה תבורי בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪12.90</span><span class="other st-4">נטו חיסכון ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪2.07 <small>לליטר</small></div>
+          <div class="shelf">₪12.40 · 6 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019153269" data-name="סודה בטעם אננס שוופס 4*1.5 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סודה שוופס בטעם ענבים 4*1.5 ליטר<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290119776993" data-key="7290119776993" data-name="סודה שוופס בטעם ענבים 4*1.5 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יפאורה תבורי בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪12.90</span><span class="other st-4">נטו חיסכון ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪2.07 <small>לליטר</small></div>
+          <div class="shelf">₪12.40 · 6 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119776993" data-name="סודה שוופס בטעם ענבים 4*1.5 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סודה מועשרת 1.5 ליטר(4)<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290119773794" data-key="7290119773794" data-name="סודה מועשרת 1.5 ליטר(4)" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יפאורה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪2.07 <small>לליטר</small></div>
+          <div class="shelf">₪12.40 · 6 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119773794" data-name="סודה מועשרת 1.5 ליטר(4)" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מים סן בנדטו מוגז 1.5 ליטר שישייה<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290000136875" data-key="7290000136875" data-name="מים סן בנדטו מוגז 1.5 ליטר שישייה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>איטליה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪20.90</span><span class="other st-0">ויקטורי ₪21.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪2.10 <small>לליטר</small></div>
+          <div class="shelf">₪18.90 · 9 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000136875" data-name="מים סן בנדטו מוגז 1.5 ליטר שישייה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">רביעייה שוופס סודה 1.5 ליטר<button type="button" class="unsold" data-sold="20261125" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290014791558" data-key="7290014791558" data-name="רביעייה שוופס סודה 1.5 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪2.15 <small>לליטר</small></div>
+          <div class="shelf">₪12.90 · 6 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014791558" data-name="רביעייה שוופס סודה 1.5 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סודה קינלי 1.5 ליטר<button type="button" class="unsold" data-sold="20261125" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290110115357" data-key="7290110115357" data-name="סודה קינלי 1.5 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪5.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪2.20 <small>לליטר</small></div>
+          <div class="shelf">₪3.30 · 1.5 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110115357" data-name="סודה קינלי 1.5 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סודה טמפו 1.5 ליטר<button type="button" class="unsold" data-sold="20261125" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290000136240" data-key="7290000136240" data-name="סודה טמפו 1.5 ליטר" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טמפו משקאות בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪2.33 <small>לליטר</small></div>
+          <div class="shelf">₪3.50 · 1.5 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000136240" data-name="סודה טמפו 1.5 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מי סודה ענבים שוופס 1.5 ליטר<button type="button" class="unsold" data-sold="20261025" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290119777242" data-key="7290119777242" data-name="מי סודה ענבים שוופס 1.5 ליטר" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יפאורה תבורי בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪2.67 <small>לליטר</small></div>
+          <div class="shelf">₪4.00 · 1.5 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119777242" data-name="מי סודה ענבים שוופס 1.5 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מים מינרליים מוגזים<button type="button" class="unsold" data-sold="20261030" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290005896620" data-key="7290005896620" data-name="מים מינרליים מוגזים" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אקווה מינרלה סאן בנדטו בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪2.80 <small>לליטר</small></div>
+          <div class="shelf">₪4.20 · 1.5 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290005896620" data-name="מים מינרליים מוגזים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">שוופס סודה 1.5 ל&#39;<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290019056881" data-key="7290019056881" data-name="שוופס סודה 1.5 ל&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪2.87 <small>לליטר</small></div>
+          <div class="shelf">₪4.30 · 1.5 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019056881" data-name="שוופס סודה 1.5 ל&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">קינלי סודה 1.5ליטר-<button type="button" class="unsold" data-sold="20261118" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290110115876" data-key="7290110115876" data-name="קינלי סודה 1.5ליטר-" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪3.00 <small>לליטר</small></div>
+          <div class="shelf">₪4.50 · 1.5 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110115876" data-name="קינלי סודה 1.5ליטר-" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">סודה לימון ליין 1.5 ל&#39;<button type="button" class="unsold" data-sold="20261124" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290000136899" data-key="7290000136899" data-name="סודה לימון ליין 1.5 ל&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪3.27 <small>לליטר</small></div>
+          <div class="shelf">₪4.90 · 1.5 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000136899" data-name="סודה לימון ליין 1.5 ל&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">נורדיק מוגז בטעם פירות יער למון גראס זירו 1 ליטר<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290110117832" data-key="7290110117832" data-name="נורדיק מוגז בטעם פירות יער למון גראס זירו 1 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קוקה קולה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">1+1</span> בקניית 2 · עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪4.00 (3 ב־₪12)</span><span class="other st-4">נטו חיסכון ₪5.00 (2 ב־₪10)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪3.45 <small>לליטר</small></div>
+          <div class="shelf"><s>₪6.90</s> ₪3.45 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110117832" data-name="נורדיק מוגז בטעם פירות יער למון גראס זירו 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סודה 1 ליטר שוופס<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290017888729" data-key="7290017888729" data-name="סודה 1 ליטר שוופס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יפאורה תבורי בע&#34;\מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪11</span> בקניית 3 · עד 2.1</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪3.97 (3 ב־₪11.90)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪3.67 <small>לליטר</small></div>
+          <div class="shelf"><s>₪3.90</s> ₪3.67 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017888729" data-name="סודה 1 ליטר שוופס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סודה 1 ליטר בטעם לימון<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290019153696" data-key="7290019153696" data-name="סודה 1 ליטר בטעם לימון" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יפאורה תבורי בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪11</span> בקניית 3 · עד 2.1</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪3.97 (3 ב־₪11.90)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪3.67 <small>לליטר</small></div>
+          <div class="shelf"><s>₪3.90</s> ₪3.67 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019153696" data-name="סודה 1 ליטר בטעם לימון" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מים סן בנדטו מוגז 500 מ&#34;ל שישייה<button type="button" class="unsold" data-sold="20261125" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="8001620011935" data-key="8001620011935" data-name="מים סן בנדטו מוגז 500 מ&#34;ל שישייה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אקווה מינרלה סאן בנדטו בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 5.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪14.90</span><span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪4.30 <small>לליטר</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪12.90 · 3 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8001620011935" data-name="מים סן בנדטו מוגז 500 מ&#34;ל שישייה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שוופס סודה לימון 500<button type="button" class="unsold" data-sold="20261125" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290018471036" data-key="7290018471036" data-name="שוופס סודה לימון 500" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪4.40 <small>לליטר</small></div>
+          <div class="shelf">₪2.20 · 500 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018471036" data-name="שוופס סודה לימון 500" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שוופס סודה שישייה 500 מ&#34;ל<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290016006346" data-key="7290016006346" data-name="שוופס סודה שישייה 500 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יפאורה תבורי בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪13.90</span><span class="other st-0">ויקטורי ₪14.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪4.57 <small>לליטר</small></div>
+          <div class="shelf">₪13.70 · 3 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016006346" data-name="שוופס סודה שישייה 500 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שוופס סודה בטעם לימון שישייה 500 מ&#34;ל<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290018471029" data-key="7290018471029" data-name="שוופס סודה בטעם לימון שישייה 500 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יפאורה תבורי בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪13.90</span><span class="other st-0">ויקטורי ₪14.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪4.57 <small>לליטר</small></div>
+          <div class="shelf">₪13.70 · 3 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018471029" data-name="שוופס סודה בטעם לימון שישייה 500 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סודה מועשרת 0.5 ל&#39;(6)<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290119773893" data-key="7290119773893" data-name="סודה מועשרת 0.5 ל&#39;(6)" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יפאורה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪4.57 <small>לליטר</small></div>
+          <div class="shelf">₪13.70 · 3 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119773893" data-name="סודה מועשרת 0.5 ל&#39;(6)" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מי עדן מוגז 0.5 (6)<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290019153511" data-key="7290019153511" data-name="מי עדן מוגז 0.5 (6)" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מופק ממקור בזלתי עדן 1, רמת הגולן, ממולא ע&#34;י מי עד</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪14.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪4.63 <small>לליטר</small></div>
+          <div class="shelf">₪13.90 · 3 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019153511" data-name="מי עדן מוגז 0.5 (6)" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טמפו סודה 500 מ&#34;ל תריסר<button type="button" class="unsold" data-sold="20261122" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290000135465" data-key="7290000135465" data-name="טמפו סודה 500 מ&#34;ל תריסר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טמפו</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪27.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪4.65 <small>לליטר</small></div>
+          <div class="shelf">₪27.90 · 6 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000135465" data-name="טמפו סודה 500 מ&#34;ל תריסר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סודה 500 מל שישייה<button type="button" class="unsold" data-sold="20261109" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290000135335" data-key="7290000135335" data-name="סודה 500 מל שישייה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טמפו משקאות בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪5.30 <small>לליטר</small></div>
+          <div class="shelf">₪15.90 · 3 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000135335" data-name="סודה 500 מל שישייה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שוופס סודה 500 מ&#34;ל<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290016006025" data-key="7290016006025" data-name="שוופס סודה 500 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יפאורה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪5.80 <small>לליטר</small></div>
+          <div class="shelf">₪2.90 · 500 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016006025" data-name="שוופס סודה 500 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טמפו סודה 500 מ&#34;ל<button type="button" class="unsold" data-sold="20261113" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290000135342" data-key="7290000135342" data-name="טמפו סודה 500 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪3.33 (3 ב־₪10)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪5.80 <small>לליטר</small></div>
+          <div class="shelf">₪2.90 · 500 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000135342" data-name="טמפו סודה 500 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שוופס סודה 500 מ&#34;ל<button type="button" class="unsold" data-sold="20261027" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="" data-key="7290058140886:16006025" data-name="שוופס סודה 500 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יפאורה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪5.80 <small>לליטר</small></div>
+          <div class="shelf">₪2.90 · 500 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058140886:16006025" data-name="שוופס סודה 500 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שוופס בטעם טוניק 1.5 ליטר<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290019056324" data-key="7290019056324" data-name="שוופס בטעם טוניק 1.5 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יפאורה תבורי בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪10.90</span><span class="other st-0">ויקטורי ₪11.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪5.93 <small>לליטר</small></div>
+          <div class="shelf">₪8.90 · 1.5 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019056324" data-name="שוופס בטעם טוניק 1.5 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טוניק ללא סוכר שוופס 1.5 ליטר<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290019056331" data-key="7290019056331" data-name="טוניק ללא סוכר שוופס 1.5 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יפאורה תבורי בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪10.90</span><span class="other st-0">ויקטורי ₪11.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪6.13 <small>לליטר</small></div>
+          <div class="shelf">₪9.20 · 1.5 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019056331" data-name="טוניק ללא סוכר שוופס 1.5 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מים מינרלים מבעבעים<button type="button" class="unsold" data-sold="20261125" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="4865602000027" data-key="4865602000027" data-name="מים מינרלים מבעבעים" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪12.90</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪6.45 <small>לליטר</small></div>
+          <div class="shelf"><s>₪7.00</s> ₪6.45 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4865602000027" data-name="מים מינרלים מבעבעים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">רביעייה סודה בטעם אפרסק 1.5לי<button type="button" class="unsold" data-sold="20261119" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290000136837" data-key="7290000136837" data-name="רביעייה סודה בטעם אפרסק 1.5לי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טמפו משקאות בע&#39;&#39;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 5.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪11.90</span><span class="other st-0">ויקטורי ₪12.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪6.60 <small>לליטר</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪9.90 · 1.5 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000136837" data-name="רביעייה סודה בטעם אפרסק 1.5לי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מי טוניק נורדיק 1 ליטר<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290110113537" data-key="7290110113537" data-name="מי טוניק נורדיק 1 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪6.90 <small>לליטר</small></div>
+          <div class="shelf">₪6.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110113537" data-name="מי טוניק נורדיק 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מי טוניק פירות יער ונענע נורדיק 1 ליטר<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290110113582" data-key="7290110113582" data-name="מי טוניק פירות יער ונענע נורדיק 1 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נורדיק מיסט</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪6.90 <small>לליטר</small></div>
+          <div class="shelf">₪6.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110113582" data-name="מי טוניק פירות יער ונענע נורדיק 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סן בנדטו מוגז 500 מל<button type="button" class="unsold" data-sold="20261111" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290011132507" data-key="7290011132507" data-name="סן בנדטו מוגז 500 מל" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אקווה מינרלה סאן בנדטו בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪7.00 <small>לליטר</small></div>
+          <div class="shelf">₪3.50 · 500 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011132507" data-name="סן בנדטו מוגז 500 מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מארז סודה לימון נורדיק פחית 4*250 מ&#34;ל<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290110117900" data-key="7290110117900" data-name="מארז סודה לימון נורדיק פחית 4*250 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪15</span> בקניית 2 · עד 5.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪9.90 (מבצע)</span><span class="other st-4">נטו חיסכון ₪11.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪7.50 <small>לליטר</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪7.50 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110117900" data-name="מארז סודה לימון נורדיק פחית 4*250 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מארז סודה תפוח נענע נורדיק פחית 4*250 מ&#34;ל<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290110117917" data-key="7290110117917" data-name="מארז סודה תפוח נענע נורדיק פחית 4*250 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪15</span> בקניית 2 · עד 5.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪9.90 (מבצע)</span><span class="other st-4">נטו חיסכון ₪11.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪7.50 <small>לליטר</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪7.50 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110117917" data-name="מארז סודה תפוח נענע נורדיק פחית 4*250 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סודה פחית רביעייה 250 מל<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290110118815" data-key="7290110118815" data-name="סודה פחית רביעייה 250 מל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪15</span> בקניית 2 · עד 5.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪9.90 (מבצע)</span><span class="other st-4">נטו חיסכון ₪11.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪7.50 <small>לליטר</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪7.50 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110118815" data-name="סודה פחית רביעייה 250 מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מי סודה סינגה 6 * 325 מ&#34;ל<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="8850999000084" data-key="8850999000084" data-name="מי סודה סינגה 6 * 325 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 5.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪7.64 <small>לליטר</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪14.90 · 1.95 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8850999000084" data-name="מי סודה סינגה 6 * 325 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סודה שוופס 250 מל<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290008757034" data-key="7290008757034" data-name="סודה שוופס 250 מל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יפאורה תבורי בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">1+1</span> בקניית 2 · עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-4">נטו חיסכון ₪4.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪7.80 <small>לליטר</small></div>
+          <div class="shelf"><s>₪3.90</s> ₪1.95 · 250 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008757034" data-name="סודה שוופס 250 מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שוופס סודה נע&#39;ל 250<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290014791626" data-key="7290014791626" data-name="שוופס סודה נע&#39;ל 250" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יפאורה תבורי בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">1+1</span> בקניית 2 · עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪7.80 <small>לליטר</small></div>
+          <div class="shelf"><s>₪3.90</s> ₪1.95 · 250 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014791626" data-name="שוופס סודה נע&#39;ל 250" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">משקה סודה<button type="button" class="unsold" data-sold="20261113" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290118481317" data-key="7290118481317" data-name="משקה סודה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>בלו משקאות ישראל בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪7.93 <small>לליטר</small></div>
+          <div class="shelf"><s>₪12.90</s> ₪11.90 · 1.5 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118481317" data-name="משקה סודה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">משקה סודה<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290118481324" data-key="7290118481324" data-name="משקה סודה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>בלו משקאות ישראל בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪7.93 <small>לליטר</small></div>
+          <div class="shelf"><s>₪12.90</s> ₪11.90 · 1.5 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118481324" data-name="משקה סודה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">משקה סודה<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290118481331" data-key="7290118481331" data-name="משקה סודה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>בלו משקאות ישראל בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪7.93 <small>לליטר</small></div>
+          <div class="shelf"><s>₪12.90</s> ₪11.90 · 1.5 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118481331" data-name="משקה סודה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שוופס ווטר בטעם תפוח 500מל<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290013702388" data-key="7290013702388" data-name="שוופס ווטר בטעם תפוח 500מל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יפאורה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12</span> בקניית 3 · עד 5.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪8.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪5.00</s> ₪4.00 · 500 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013702388" data-name="שוופס ווטר בטעם תפוח 500מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סודה 6*200 מ&#34;ל רמי לוי<button type="button" class="unsold" data-sold="20261123" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="8680530570390" data-key="8680530570390" data-name="סודה 6*200 מ&#34;ל רמי לוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪8.33 <small>לליטר</small></div>
+          <div class="shelf">₪10.00 · 1.2 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8680530570390" data-name="סודה 6*200 מ&#34;ל רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שוופס סודה רביעייה 250 מ&#34;ל<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290017023854" data-key="7290017023854" data-name="שוופס סודה רביעייה 250 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יפאורה תבורי בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪10.00 (2 ב־₪20)</span><span class="other st-0">ויקטורי ₪11.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90 <small>לליטר</small></div>
+          <div class="shelf">₪9.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017023854" data-name="שוופס סודה רביעייה 250 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שוופס סודה רביעייה 250 מ&#34;ל<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290017023861" data-key="7290017023861" data-name="שוופס סודה רביעייה 250 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יפאורה תבורי בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪10.00 (2 ב־₪20)</span><span class="other st-0">ויקטורי ₪11.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90 <small>לליטר</small></div>
+          <div class="shelf">₪9.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017023861" data-name="שוופס סודה רביעייה 250 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שוופס סודה רביעייה בטעם נענע ליים 250 מ&#34;ל<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290017023878" data-key="7290017023878" data-name="שוופס סודה רביעייה בטעם נענע ליים 250 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יפאורה תבורי בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪10.00 (2 ב־₪20)</span><span class="other st-0">ויקטורי ₪11.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90 <small>לליטר</small></div>
+          <div class="shelf">₪9.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017023878" data-name="שוופס סודה רביעייה בטעם נענע ליים 250 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">סודה מי עדן שישייה 1.5 לי<button type="button" class="unsold" data-sold="20261119" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290019153504" data-key="7290019153504" data-name="סודה מי עדן שישייה 1.5 לי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מופק ממקור בזלתי עדן 1, רמת הגולן, ממולא ע&#34;י מי עד</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 12.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪15.90 (מבצע)</span><span class="other st-0">ויקטורי ₪17.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.93 <small>לליטר</small></div>
+          <div class="shelf"><s>₪16.90</s> ₪14.90 · 1.5 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019153504" data-name="סודה מי עדן שישייה 1.5 לי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מי סודה 200מל בודד ר<button type="button" class="unsold" data-sold="20261102" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="8680530572752" data-key="8680530572752" data-name="מי סודה 200מל בודד ר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.00 <small>לליטר</small></div>
+          <div class="shelf">₪2.00 · 200 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8680530572752" data-name="מי סודה 200מל בודד ר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מי עדן סודה  330 מ&#34;ל בקבוק בודד<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290019153481" data-key="7290019153481" data-name="מי עדן סודה  330 מ&#34;ל בקבוק בודד" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מי עדן בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪11.82 <small>לליטר</small></div>
+          <div class="shelf">₪3.90 · 330 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019153481" data-name="מי עדן סודה  330 מ&#34;ל בקבוק בודד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מי סודה 275 מל<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290008464611" data-key="7290008464611" data-name="מי סודה 275 מל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪10</span> בקניית 3 · עד 12.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪12.11 <small>לליטר</small></div>
+          <div class="shelf"><s>₪3.90</s> ₪3.33 · 275 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008464611" data-name="מי סודה 275 מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מי סודה<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290110113599" data-key="7290110113599" data-name="מי סודה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪10</span> בקניית 3 · עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪13.32 <small>לליטר</small></div>
+          <div class="shelf"><s>₪3.90</s> ₪3.33 · 250 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110113599" data-name="מי סודה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סודה בטעם תפוח נענע<button type="button" class="unsold" data-sold="20261118" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290110114404" data-key="7290110114404" data-name="סודה בטעם תפוח נענע" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪10</span> בקניית 3 · עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪13.32 <small>לליטר</small></div>
+          <div class="shelf"><s>₪3.90</s> ₪3.33 · 250 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110114404" data-name="סודה בטעם תפוח נענע" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">פחית דובדבן ולימונית 355 מל POLAR<button type="button" class="unsold" data-sold="20261119" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="" data-key="7290058156016:71537001471" data-name="פחית דובדבן ולימונית 355 מל POLAR" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪16.62 <small>לליטר</small></div>
+          <div class="shelf">₪5.90 · 355 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:71537001471" data-name="פחית דובדבן ולימונית 355 מל POLAR" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">פחית סודה בטעם תפוז דם 355 מל POLAR<button type="button" class="unsold" data-sold="20261108" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="" data-key="7290058156016:71537001600" data-name="פחית סודה בטעם תפוז דם 355 מל POLAR" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪16.62 <small>לליטר</small></div>
+          <div class="shelf">₪5.90 · 355 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:71537001600" data-name="פחית סודה בטעם תפוז דם 355 מל POLAR" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">פחית סודה בטעם דובדבן ולימונית 355 מל POLAR<button type="button" class="unsold" data-sold="20261119" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="" data-key="7290058156016:71537001815" data-name="פחית סודה בטעם דובדבן ולימונית 355 מל POLAR" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪17.46 <small>לליטר</small></div>
+          <div class="shelf">₪6.20 · 355 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:71537001815" data-name="פחית סודה בטעם דובדבן ולימונית 355 מל POLAR" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+      
+      <li class="divider">ללא מחיר לק״ג (גודל לא ידוע)</li>
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שוופס סודה למ&#39; 250<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290011051358" data-key="7290011051358" data-name="שוופס סודה למ&#39; 250" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יפאורה תבורי בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">1+1</span> בקניית 2 · עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪1.95</div>
+          <div class="shelf"><s>₪3.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011051358" data-name="שוופס סודה למ&#39; 250" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">ארגז סודה שוופס 24 יח`<button type="button" class="unsold" data-sold="20261102" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="" data-key="7290696200003:5025" data-name="ארגז סודה שוופס 24 יח`" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪49.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:5025" data-name="ארגז סודה שוופס 24 יח`" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+</ol>
+</div>
+
+</main>
+<footer>עודכן 28.11 16:59 · ויקטורי 27.11 20:12 · רמי לוי 27.11 21:00 · אושר עד 27.11 14:05 · אושר עד 27.11 14:05 · נטו חיסכון 27.11 20:52 · גרסת האפליקציה 28.11 12:05</footer>
+
+
+<nav class="bottom-nav" aria-label="ניווט">
+  <a href="index.html" class="on"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg><span>מחלקות</span></a>
+  <a href="notes.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"/><path d="m3.5 6 1 1 2-2M3.5 12l1 1 2-2M3.5 18l1 1 2-2"/></svg><span>רשימת קניות</span></a>
+  <a href="spending.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-2-1.4-2 1.4-2-1.4-2 1.4-2-1.4L6 21z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><span>הוצאות</span></a>
+</nav>
+
+<div class="fabs">
+  <a href="scan.html" class="fab fab-scan" aria-label="סריקה"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8V4h4M16 4h4v4M20 16v4h-4M8 20H4v-4M8 8v8M12 8v8M16 8v8"/></svg></a>
+  <a href="basket.html" class="fab fab-cart" aria-label="עגלת קניות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.5 11h11L21 8H7"/><circle cx="9" cy="19" r="1.5"/><circle cx="17" cy="19" r="1.5"/></svg><span id="cart-count"></span></a>
+</div>
+
+<script src="static/basket.js?v=20261128165945"></script>
+<script src="static/catpick.js?v=20261128165945"></script>
+<script src="static/photo.js?v=20261128165945"></script>
+
+<script src="static/render.js?v=20261128165945"></script>
+<script src="static/category.js?v=20261128165945" data-build="20261128165945"></script>
+
+<script>
+// The three tabs side by side, the shopping list in the middle (the user, 2026-11-27): a swipe on a tab page moves to
+// the next tab. RTL like the bar: a finger moving right goes to the tab on the left (הוצאות from the list), moving
+// left to the tab on the right (מחלקות). Not from a typing field or from a box that scrolls sideways.
+// Fast (the user, 2026-11-27: "it lags"): the page follows the finger while it moves, and the neighbouring tabs are
+// prerendered in the background (Chrome's speculation rules), so the swipe shows a page that is already loaded
+// instead of downloading and drawing it then.
+(function () {
+  const TABS = ["index.html", "notes.html", "spending.html"];  // the bar, right to left
+  const page = location.pathname.split("/").pop() || "index.html";
+  const at = TABS.indexOf(page);
+  if (at < 0) return;
+  const next = [TABS[at - 1], TABS[at + 1]].filter(Boolean);
+  if (HTMLScriptElement.supports && HTMLScriptElement.supports("speculationrules")) {
+    const s = document.createElement("script");
+    s.type = "speculationrules";
+    s.textContent = JSON.stringify({ prerender: [{ source: "list", urls: next, eagerness: "immediate" }] });
+    document.head.appendChild(s);
+  } else {
+    for (const u of next) { const l = document.createElement("link"); l.rel = "prefetch"; l.href = u; document.head.appendChild(l); }
+  }
+  const main = document.querySelector("main");
+  let x0 = null, y0 = 0, t0 = 0, skip = false, lock = null;  // lock: "x" = a sideways drag, "y" = scrolling
+  const sideScroll = (el) => {
+    for (; el && el !== document.body; el = el.parentElement) {
+      if (el.scrollWidth > el.clientWidth + 2 && /auto|scroll/.test(getComputedStyle(el).overflowX)) return true;
+    }
+    return false;
+  };
+  const target = (dx) => { const to = at + (dx > 0 ? 1 : -1); return to >= 0 && to < TABS.length ? to : -1; };
+  const place = (dx, animate) => {
+    if (!main) return;
+    main.style.transition = animate ? "transform .18s ease-out, opacity .18s" : "none";
+    main.style.transform = dx ? `translateX(${dx}px)` : "";
+    main.style.opacity = dx ? String(Math.max(0.35, 1 - Math.abs(dx) / (innerWidth * 1.2))) : "";
+  };
+  document.addEventListener("touchstart", (e) => {
+    if (e.touches.length !== 1) { x0 = null; return; }
+    const t = e.touches[0];
+    x0 = t.clientX; y0 = t.clientY; t0 = Date.now(); lock = null;
+    skip = !!e.target.closest("input, textarea, select, [contenteditable], dialog, .photo-box, .catpick-box, [data-noswipe]") || sideScroll(e.target);
+  }, { passive: true });
+  document.addEventListener("touchmove", (e) => {
+    if (x0 === null || skip || lock === "y") return;
+    const t = e.touches[0], dx = t.clientX - x0, dy = t.clientY - y0;
+    if (!lock) {
+      if (Math.abs(dx) < 10 && Math.abs(dy) < 10) return;
+      lock = Math.abs(dx) > Math.abs(dy) * 1.3 ? "x" : "y";
+      if (lock === "y") return;
+    }
+    place(target(dx) < 0 ? dx * 0.2 : dx, false);  // at the last tab: a little give, no page
+  }, { passive: true });
+  const release = (e) => {
+    if (x0 === null || skip) { x0 = null; return; }
+    const t = e.changedTouches[0], dx = t.clientX - x0, ms = Date.now() - t0;
+    const wasX = lock === "x";
+    x0 = null; lock = null;
+    if (!wasX) return;
+    const to = target(dx);
+    const far = Math.abs(dx) > innerWidth * 0.28 || (Math.abs(dx) > 40 && ms < 300);  // far enough, or a flick
+    if (to < 0 || !far || (document.getSelection && String(document.getSelection()))) { place(0, true); return; }
+    place(dx > 0 ? innerWidth * 0.5 : -innerWidth * 0.5, true);
+    location.href = TABS[to];
+  };
+  document.addEventListener("touchend", release, { passive: true });
+  document.addEventListener("touchcancel", () => { if (x0 !== null) { x0 = null; lock = null; place(0, true); } }, { passive: true });
+  window.addEventListener("pageshow", () => place(0, false));
+})();
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+</script>
+</body>
+</html>

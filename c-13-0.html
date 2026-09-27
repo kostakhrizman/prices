@@ -1,0 +1,5137 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1A2238">
+<script>
+// the look this phone chose (settings.html "מראה"), before anything is drawn: html.light / html.dark
+// (none = follow the phone) and html[data-color] (none = green); the browser bar takes the colour too
+(function () {
+  let t = {};
+  try { t = JSON.parse(localStorage.getItem("theme")) || {}; } catch (e) { /* none yet */ }
+  // the new look (the user, 2026-11-27: "לילה") once on every phone; settings "מראה" can change it back
+  if (t.v !== 2) {
+    t = Object.assign({}, t, { mode: "dark", color: "night", bar: "#1A2238", v: 2 });
+    try { localStorage.setItem("theme", JSON.stringify(t)); } catch (e) { /* private mode */ }
+  }
+  const root = document.documentElement;
+  if (t.mode === "light" || t.mode === "dark") root.classList.add(t.mode);
+  if (t.color) root.dataset.color = t.color;
+  if (t.style) root.dataset.style = t.style;
+  if (t.size) root.dataset.size = t.size;
+  if (t.bar) document.querySelector('meta[name="theme-color"]').content = t.bar;
+})();
+</script>
+<title>מוצרי חשמל</title>
+<link rel="manifest" href="static/manifest.webmanifest">
+<link rel="icon" href="static/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="static/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="static/style.css?v=20261128165945">
+<style>.st-0 { --store: #e07000; }.st-1 { --store: #d32f2f; }.st-2 { --store: #1565c0; }.st-3 { --store: #1565c0; }.st-4 { --store: #c99a00; }</style>
+<script>window.DATA_V = {"data/c-index.json": "1ef35b8b7f", "data/changes.json": "eb14c62a68", "data/deals.json": "e8f3c4d1e0", "data/p-netto-052.json": "79069bd1c0", "data/p-osherad-003.json": "86a9473a36", "data/p-osherad-026.json": "90655a088c", "data/p-ramilevy-007.json": "6647eee19b", "data/p-victory-038.json": "f7bdede387", "data/products.json": "1dd9992357"}; window.BUILD = "20261128165945";</script>
+<script src="static/stores.js?v=20261128165945" data-stores="[{&#34;card_cap&#34;: 750, &#34;card_rate&#34;: 0.07, &#34;default&#34;: true, &#34;key&#34;: &#34;victory-038&#34;, &#34;name&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;ramilevy-007&#34;, &#34;name&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-026&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05ea\u05dc\u05e4\u05d9\u05d5\u05ea&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-003&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05d2\u05d1\u05e2\u05ea \u05e9\u05d0\u05d5\u05dc&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;netto-052&#34;, &#34;name&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df \u05e7\u05e8\u05d9\u05d9\u05ea \u05d9\u05e2\u05e8\u05d9\u05dd&#34;, &#34;short&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df&#34;}]"></script>
+<script src="static/avoid.js?v=20261128165945" data-kinds="[&#34;\u05e2\u05d5\u05e3 \u05de\u05e2\u05d5\u05d1\u05d3&#34;, &#34;\u05d1\u05e9\u05e8 \u05de\u05e2\u05d5\u05d1\u05d3&#34;]"></script>
+<script>
+// No long-press menu on links, pictures or text (the user: the home page's tiles opened Chrome's "open in new tab /
+// copy link" menu; CSS can't stop that on Android). Typing fields and the ⓘ sheet's barcode keep theirs.
+document.addEventListener("contextmenu", (e) => {
+  if (!e.target.closest("input, textarea, [contenteditable], .photo-barcode")) e.preventDefault();
+});
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <a class="back" href="t-13.html" aria-label="חזרה">→</a>
+    <h1>מוצרי חשמל</h1>
+    <a class="settings-link" href="settings.html" aria-label="הגדרות" title="הגדרות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></a>
+  </div>
+  
+  <form class="search" action="search.html" method="get" role="search">
+    <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+    <input type="search" name="q" placeholder="חיפוש מוצר" enterkeyhint="search" aria-label="חיפוש מוצר">
+  </form>
+  
+</header>
+<main>
+
+<p class="sub"><span class="sub-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12.5V4a1 1 0 0 1 1-1h8.5L21 11.5 12.5 20z"/><circle cx="7.5" cy="7.5" r="1.3"/></svg></span>שונות · <span id="cat-count">177</span> מוצרים, מהזול ליקר</p>
+
+
+<div class="cat-filter">
+  <input type="search" id="cat-filter" placeholder="סינון לפי שם או יצרן · ‎-מילה מסתירה" enterkeyhint="done" autocomplete="off" aria-label="סינון המוצרים בקטגוריה">
+  <button type="button" id="facet-btn" class="facet-btn" aria-expanded="false" aria-controls="facet-list">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h18l-7 8v6l-4-2v-4z"/></svg>
+    <span>סינון</span><b id="facet-n" hidden></b></button>
+</div>
+<div id="facet-list" class="facet-list" hidden>
+  <div class="facet-items" id="facet-kinds"><label class="facet"><input type="checkbox" value="סוללות"> <span>סוללות</span> <small></small></label><label class="facet"><input type="checkbox" value="כבל סנכרון"> <span>כבל סנכרון</span> <small></small></label><label class="facet"><input type="checkbox" value="מכונת"> <span>מכונת</span> <small></small></label><label class="facet"><input type="checkbox" value="שואב"> <span>שואב</span> <small></small></label><label class="facet"><input type="checkbox" value="מטען קיר"> <span>מטען קיר</span> <small></small></label><label class="facet"><input type="checkbox" value="בוס"> <span>בוס</span> <small></small></label><label class="facet"><input type="checkbox" value="מפצל"> <span>מפצל</span> <small></small></label><label class="facet"><input type="checkbox" value="נורות לד"> <span>נורות לד</span> <small></small></label><label class="facet"><input type="checkbox" value="קומקום חשמלי"> <span>קומקום חשמלי</span> <small></small></label><label class="facet"><input type="checkbox" value="שואב שוטף"> <span>שואב שוטף</span> <small></small></label><label class="facet"><input type="checkbox" value="מיחם"> <span>מיחם</span> <small></small></label><label class="facet"><input type="checkbox" value="מיקסר"> <span>מיקסר</span> <small></small></label><label class="facet"><input type="checkbox" value="מיקרוגל"> <span>מיקרוגל</span> <small></small></label><label class="facet"><input type="checkbox" value="מסחטת"> <span>מסחטת</span> <small></small></label><label class="facet"><input type="checkbox" value="טוסטר לחיצה"> <span>טוסטר לחיצה</span> <small></small></label><label class="facet"><input type="checkbox" value="פלטת שבת"> <span>פלטת שבת</span> <small></small></label><label class="facet"><input type="checkbox" value="בלנדר"> <span>בלנדר</span> <small></small></label><label class="facet"><input type="checkbox" value="מגהץ אדים"> <span>מגהץ אדים</span> <small></small></label><label class="facet"><input type="checkbox" value="מעבד מזון"> <span>מעבד מזון</span> <small></small></label><label class="facet"><input type="checkbox" value="מפצל חשמל"> <span>מפצל חשמל</span> <small></small></label><label class="facet"><input type="checkbox" value="מצנם"> <span>מצנם</span> <small></small></label><label class="facet"><input type="checkbox" value="שואב אבק"> <span>שואב אבק</span> <small></small></label><label class="facet"><input type="checkbox" value="אוזניה בלוטוס"> <span>אוזניה בלוטוס</span> <small></small></label><label class="facet"><input type="checkbox" value="איפון"> <span>איפון</span> <small></small></label></div>
+  <div class="facet-stores" id="facet-stores" hidden><div class="facet-title">חנויות</div><div class="facet-items"></div></div>
+  <div class="facet-actions"><button type="button" class="link" id="facet-clear">ניקוי</button>
+    <button type="button" id="facet-done">הצגה</button></div>
+</div>
+<div id="cat-list" data-href="c-13-0.html" data-electric="14">
+<p class="sub stale-note">67 מוצרים שלא נמכרו יותר מ־14 ימים מוסתרים. <a href="settings.html#packs">שינוי</a></p>
+
+<ol class="products">
+  
+  
+    
+    
+    
+    <li class="product st-1 best">
+      <div class="info">
+        <div class="name">טוסטר אובן 30 ליטר B<button type="button" class="unsold" data-sold="20261117" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="8858577135104" data-key="8858577135104" data-name="טוסטר אובן 30 ליטר B" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪5.33 <small>לליטר</small></div>
+          <div class="shelf">₪159.90 · 30 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8858577135104" data-name="טוסטר אובן 30 ליטר B" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מיקרוגל 20 ליטר מכאני צבע שחור 20MX64-L בושמייסטר<button type="button" class="unsold" data-sold="20261116" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290109848266" data-key="7290109848266" data-name="מיקרוגל 20 ליטר מכאני צבע שחור 20MX64-L בושמייסטר" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מותג פרטי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.00 <small>לליטר</small></div>
+          <div class="shelf">₪199.90 · 20 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290109848266" data-name="מיקרוגל 20 ליטר מכאני צבע שחור 20MX64-L בושמייסטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מיקרוגל 25 ליטר דיגי<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290020295163" data-key="7290020295163" data-name="מיקרוגל 25 ליטר דיגי" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.00 <small>לליטר</small></div>
+          <div class="shelf">₪249.90 · 25 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020295163" data-name="מיקרוגל 25 ליטר דיגי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מיקרוגל דיגיטלי 25 ליטר שחור BOSS<button type="button" class="unsold" data-sold="20261122" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7296049038668" data-key="7296049038668" data-name="מיקרוגל דיגיטלי 25 ליטר שחור BOSS" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪11.96 <small>לליטר</small></div>
+          <div class="shelf">₪299.00 · 25 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296049038668" data-name="מיקרוגל דיגיטלי 25 ליטר שחור BOSS" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מיחם 8 ליטר - נירוסטה מוברש כ 40 כוס ML-1580 GUIBAO<button type="button" class="unsold" data-sold="20261123" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290109848105" data-key="7290109848105" data-name="מיחם 8 ליטר - נירוסטה מוברש כ 40 כוס ML-1580 GUIBAO" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מותג פרטי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪12.49 <small>לליטר</small></div>
+          <div class="shelf">₪99.90 · 8 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290109848105" data-name="מיחם 8 ליטר - נירוסטה מוברש כ 40 כוס ML-1580 GUIBAO" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מיחם 8 ליטר - שחור כ 40 כוס ML-1588<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290109848099" data-key="7290109848099" data-name="מיחם 8 ליטר - שחור כ 40 כוס ML-1588" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מותג פרטי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.99 <small>לליטר</small></div>
+          <div class="shelf">₪119.90 · 8 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290109848099" data-name="מיחם 8 ליטר - שחור כ 40 כוס ML-1588" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קומקום חשמלי נירוסטה 1.8 ליטר K300<button type="button" class="unsold" data-sold="20261120" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290014928992" data-key="7290014928992" data-name="קומקום חשמלי נירוסטה 1.8 ליטר K300" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪39.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪16.67 <small>לליטר</small></div>
+          <div class="shelf">₪30.00 · 1.8 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014928992" data-name="קומקום חשמלי נירוסטה 1.8 ליטר K300" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בוס קומקום זכוכית 1.8 ליטר<button type="button" class="unsold" data-sold="20261125" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7296049037975" data-key="7296049037975" data-name="בוס קומקום זכוכית 1.8 ליטר" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪22.17 <small>לליטר</small></div>
+          <div class="shelf">₪39.90 · 1.8 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296049037975" data-name="בוס קומקום זכוכית 1.8 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קומקום חשמלי 1.7 ל&#39;<button type="button" class="unsold" data-sold="20261120" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290011882013" data-key="7290011882013" data-name="קומקום חשמלי 1.7 ל&#39;" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪35.24 <small>לליטר</small></div>
+          <div class="shelf">₪59.90 · 1.7 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011882013" data-name="קומקום חשמלי 1.7 ל&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מיקסר 5 ליטר סמוראי SAMURAI<button type="button" class="unsold" data-sold="20261112" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290110792978" data-key="7290110792978" data-name="מיקסר 5 ליטר סמוראי SAMURAI" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 1 יח׳ · עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪39.80 <small>לליטר</small></div>
+          <div class="shelf"><s>₪299.00</s> ₪199.00 · 5 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110792978" data-name="מיקסר 5 ליטר סמוראי SAMURAI" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מיקסר בוס 5 ליטר שחור BO-SC-659<button type="button" class="unsold" data-sold="20261112" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7296049038965" data-key="7296049038965" data-name="מיקסר בוס 5 ליטר שחור BO-SC-659" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.80 <small>לליטר</small></div>
+          <div class="shelf">₪199.00 · 5 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296049038965" data-name="מיקסר בוס 5 ליטר שחור BO-SC-659" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מיקסר מקצועי 7 ליטר<button type="button" class="unsold" data-sold="20261112" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290020295224" data-key="7290020295224" data-name="מיקסר מקצועי 7 ליטר" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪42.84 <small>לליטר</small></div>
+          <div class="shelf">₪299.90 · 7 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020295224" data-name="מיקסר מקצועי 7 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סוללות מקס אלקליין פ<button type="button" class="unsold" data-sold="20261118" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7638900438598" data-key="7638900438598" data-name="סוללות מקס אלקליין פ" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪2075.00 <small>לק״ג</small></div>
+          <div class="shelf">₪24.90 · 12 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7638900438598" data-name="סוללות מקס אלקליין פ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מארז 12 סוללות אלקליין 8+4 רמי לוי<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7291044077209" data-key="7291044077209" data-name="מארז 12 סוללות אלקליין 8+4 רמי לוי" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪1.24 <small>ליח׳</small></div>
+          <div class="shelf">₪14.90 · 12 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7291044077209" data-name="מארז 12 סוללות אלקליין 8+4 רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">רביעיית סוללות אלקליין רמי לוי AA<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7291044070989" data-key="7291044070989" data-name="רביעיית סוללות אלקליין רמי לוי AA" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪1.48 <small>ליח׳</small></div>
+          <div class="shelf">₪5.90 · 4 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7291044070989" data-name="רביעיית סוללות אלקליין רמי לוי AA" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">רביעיית סוללות אלקליין רמי לוי AAA<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7291044070996" data-key="7291044070996" data-name="רביעיית סוללות אלקליין רמי לוי AAA" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪1.48 <small>ליח׳</small></div>
+          <div class="shelf">₪5.90 · 4 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7291044070996" data-name="רביעיית סוללות אלקליין רמי לוי AAA" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">CR2032 3V 5 סוללות מארז  FUJICOM<button type="button" class="unsold" data-sold="20261122" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290016230888" data-key="7290016230888" data-name="CR2032 3V 5 סוללות מארז  FUJICOM" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪2.38 <small>ליח׳</small></div>
+          <div class="shelf">₪11.90 · 5 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016230888" data-name="CR2032 3V 5 סוללות מארז  FUJICOM" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">דורסל סימפלי שמיניות AA<button type="button" class="unsold" data-sold="20261125" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="5000394002272" data-key="5000394002272" data-name="דורסל סימפלי שמיניות AA" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪19.90</span><span class="other st-4">נטו חיסכון ₪19.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪2.49 <small>ליח׳</small></div>
+          <div class="shelf">₪19.90 · 8 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5000394002272" data-name="דורסל סימפלי שמיניות AA" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שמיניית סוללות AAA דורסל סימפלי<button type="button" class="unsold" data-sold="20261124" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="5000394002463" data-key="5000394002463" data-name="שמיניית סוללות AAA דורסל סימפלי" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪19.90</span><span class="other st-4">נטו חיסכון ₪19.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪2.49 <small>ליח׳</small></div>
+          <div class="shelf">₪19.90 · 8 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5000394002463" data-name="שמיניית סוללות AAA דורסל סימפלי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מסחטת מיץ<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290019633310" data-key="7290019633310" data-name="מסחטת מיץ" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪7.90 <small>ליח׳</small></div>
+          <div class="shelf">₪7.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019633310" data-name="מסחטת מיץ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מפצל חשמל 1 ל 2 SEMI<button type="button" class="unsold" data-sold="20261124" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7291044103571" data-key="7291044103571" data-name="מפצל חשמל 1 ל 2 SEMI" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪8.00 <small>ליח׳</small></div>
+          <div class="shelf">₪8.00 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7291044103571" data-name="מפצל חשמל 1 ל 2 SEMI" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מפצל חשמל 1 ל 3 בליס<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7291044103588" data-key="7291044103588" data-name="מפצל חשמל 1 ל 3 בליס" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90 <small>ליח׳</small></div>
+          <div class="shelf">₪9.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7291044103588" data-name="מפצל חשמל 1 ל 3 בליס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מפצל חשמל 1 ל SEMICO<button type="button" class="unsold" data-sold="20261123" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290118074014" data-key="7290118074014" data-name="מפצל חשמל 1 ל SEMICO" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90 <small>ליח׳</small></div>
+          <div class="shelf">₪9.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118074014" data-name="מפצל חשמל 1 ל SEMICO" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מקציף חלב<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="5566774573898" data-key="5566774573898" data-name="מקציף חלב" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90 <small>ליח׳</small></div>
+          <div class="shelf">₪9.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5566774573898" data-name="מקציף חלב" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">כבל ל-iPhone<button type="button" class="unsold" data-sold="20261122" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7777555515275" data-key="7777555515275" data-name="כבל ל-iPhone" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90 <small>ליח׳</small></div>
+          <div class="shelf">₪9.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7777555515275" data-name="כבל ל-iPhone" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סוללות AA מארז 20 סי<button type="button" class="unsold" data-sold="20261125" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="4895026733362" data-key="4895026733362" data-name="סוללות AA מארז 20 סי" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.90 <small>ליח׳</small></div>
+          <div class="shelf">₪10.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4895026733362" data-name="סוללות AA מארז 20 סי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סוללות AAA מארז 20 ס<button type="button" class="unsold" data-sold="20261125" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="4895026733379" data-key="4895026733379" data-name="סוללות AAA מארז 20 ס" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.90 <small>ליח׳</small></div>
+          <div class="shelf">₪10.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4895026733379" data-name="סוללות AAA מארז 20 ס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מנורות לד זוגי 15W-צ<button type="button" class="unsold" data-sold="20261125" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7291044094343" data-key="7291044094343" data-name="מנורות לד זוגי 15W-צ" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪17.90 <small>ליח׳</small></div>
+          <div class="shelf">₪17.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7291044094343" data-name="מנורות לד זוגי 15W-צ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">זוג נורות לד DL 12W<button type="button" class="unsold" data-sold="20261125" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290118075943" data-key="7290118075943" data-name="זוג נורות לד DL 12W" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪17.90 <small>ליח׳</small></div>
+          <div class="shelf">₪17.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118075943" data-name="זוג נורות לד DL 12W" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">זוג נורות לד WW 12W E27 A60 SAFETY<button type="button" class="unsold" data-sold="20261116" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290118075950" data-key="7290118075950" data-name="זוג נורות לד WW 12W E27 A60 SAFETY" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪17.90 <small>ליח׳</small></div>
+          <div class="shelf">₪17.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118075950" data-name="זוג נורות לד WW 12W E27 A60 SAFETY" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">זוג נורות לד DL 15W<button type="button" class="unsold" data-sold="20261125" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290118075967" data-key="7290118075967" data-name="זוג נורות לד DL 15W" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪17.90 <small>ליח׳</small></div>
+          <div class="shelf">₪17.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118075967" data-name="זוג נורות לד DL 15W" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מנורות לד זוגי 12W ל<button type="button" class="unsold" data-sold="20261124" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7291044081305" data-key="7291044081305" data-name="מנורות לד זוגי 12W ל" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪18.10 <small>ליח׳</small></div>
+          <div class="shelf">₪18.10 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7291044081305" data-name="מנורות לד זוגי 12W ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סוללות ENERGIZER 1X8 AA MAX<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="8888021200256" data-key="8888021200256" data-name="סוללות ENERGIZER 1X8 AA MAX" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אנרגייזר</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪22.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.90 <small>ליח׳</small></div>
+          <div class="shelf">₪19.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8888021200256" data-name="סוללות ENERGIZER 1X8 AA MAX" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סוללות ENERGIZER 1X8 *AAA* MAX<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="8888021200720" data-key="8888021200720" data-name="סוללות ENERGIZER 1X8 *AAA* MAX" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אנרגייזר</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪22.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.90 <small>ליח׳</small></div>
+          <div class="shelf">₪19.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8888021200720" data-name="סוללות ENERGIZER 1X8 *AAA* MAX" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מטען למצת הרכב PD20W<button type="button" class="unsold" data-sold="20261121" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290120129139" data-key="7290120129139" data-name="מטען למצת הרכב PD20W" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.90 <small>ליח׳</small></div>
+          <div class="shelf">₪19.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290120129139" data-name="מטען למצת הרכב PD20W" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מפצל פרפר 1 ל-4 SEMI<button type="button" class="unsold" data-sold="20261119" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7291044099850" data-key="7291044099850" data-name="מפצל פרפר 1 ל-4 SEMI" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.90 <small>ליח׳</small></div>
+          <div class="shelf">₪19.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7291044099850" data-name="מפצל פרפר 1 ל-4 SEMI" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">כבל סנכרון וטעינה 1<button type="button" class="unsold" data-sold="20261119" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290120126244" data-key="7290120126244" data-name="כבל סנכרון וטעינה 1" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.90 <small>ליח׳</small></div>
+          <div class="shelf">₪19.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290120126244" data-name="כבל סנכרון וטעינה 1" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">כבל סנכרון וטעינה 1<button type="button" class="unsold" data-sold="20261115" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290120126251" data-key="7290120126251" data-name="כבל סנכרון וטעינה 1" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.90 <small>ליח׳</small></div>
+          <div class="shelf">₪19.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290120126251" data-name="כבל סנכרון וטעינה 1" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מפצל פרפר 1 ל-4 SEMI<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290118074021" data-key="7290118074021" data-name="מפצל פרפר 1 ל-4 SEMI" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.90 <small>ליח׳</small></div>
+          <div class="shelf">₪19.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118074021" data-name="מפצל פרפר 1 ל-4 SEMI" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">כבל סנכרון טעינה 1 מ<button type="button" class="unsold" data-sold="20261118" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290120127661" data-key="7290120127661" data-name="כבל סנכרון טעינה 1 מ" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.90 <small>ליח׳</small></div>
+          <div class="shelf">₪19.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290120127661" data-name="כבל סנכרון טעינה 1 מ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">כבל סנכרון טעינה 1 מ<button type="button" class="unsold" data-sold="20261120" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290120127678" data-key="7290120127678" data-name="כבל סנכרון טעינה 1 מ" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.90 <small>ליח׳</small></div>
+          <div class="shelf">₪19.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290120127678" data-name="כבל סנכרון טעינה 1 מ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">כבל סנכרון טעינה 1 מ<button type="button" class="unsold" data-sold="20261125" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290120127685" data-key="7290120127685" data-name="כבל סנכרון טעינה 1 מ" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.90 <small>ליח׳</small></div>
+          <div class="shelf">₪19.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290120127685" data-name="כבל סנכרון טעינה 1 מ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">כבל סנכרון טעינה 1 מ<button type="button" class="unsold" data-sold="20261124" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290120127647" data-key="7290120127647" data-name="כבל סנכרון טעינה 1 מ" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪20.90 <small>ליח׳</small></div>
+          <div class="shelf">₪20.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290120127647" data-name="כבל סנכרון טעינה 1 מ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">כבל סנכרון טעינה 1 מ<button type="button" class="unsold" data-sold="20261125" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290120127654" data-key="7290120127654" data-name="כבל סנכרון טעינה 1 מ" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪22.90 <small>ליח׳</small></div>
+          <div class="shelf">₪22.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290120127654" data-name="כבל סנכרון טעינה 1 מ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מטען קיר USB כפול לב<button type="button" class="unsold" data-sold="20261119" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290120129177" data-key="7290120129177" data-name="מטען קיר USB כפול לב" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪24.90 <small>ליח׳</small></div>
+          <div class="shelf">₪24.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290120129177" data-name="מטען קיר USB כפול לב" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מטען קיר USB לבן - ר<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290120129184" data-key="7290120129184" data-name="מטען קיר USB לבן - ר" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪24.90 <small>ליח׳</small></div>
+          <div class="shelf">₪24.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290120129184" data-name="מטען קיר USB לבן - ר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מטען קיר USB שחור -<button type="button" class="unsold" data-sold="20261125" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290120129191" data-key="7290120129191" data-name="מטען קיר USB שחור -" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪24.90 <small>ליח׳</small></div>
+          <div class="shelf">₪24.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290120129191" data-name="מטען קיר USB שחור -" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">כבל סנכרון טעינה 1.2<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290120127739" data-key="7290120127739" data-name="כבל סנכרון טעינה 1.2" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪24.90 <small>ליח׳</small></div>
+          <div class="shelf">₪24.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290120127739" data-name="כבל סנכרון טעינה 1.2" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">כבל סנכרון וטעינה 1<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290120126220" data-key="7290120126220" data-name="כבל סנכרון וטעינה 1" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪24.90 <small>ליח׳</small></div>
+          <div class="shelf">₪24.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290120126220" data-name="כבל סנכרון וטעינה 1" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">כבל סנכרון וטעינה 2 מטר PD- למוצרי אפל בחיבור LIGHTNING שחור 20W אנסו<button type="button" class="unsold" data-sold="20261123" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290120126282" data-key="7290120126282" data-name="כבל סנכרון וטעינה 2 מטר PD- למוצרי אפל בחיבור LIGHTNING שחור 20W אנסו" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪24.90 <small>ליח׳</small></div>
+          <div class="shelf">₪24.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290120126282" data-name="כבל סנכרון וטעינה 2 מטר PD- למוצרי אפל בחיבור LIGHTNING שחור 20W אנסו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שלישיית נורות לד DL<button type="button" class="unsold" data-sold="20261125" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7291044089967" data-key="7291044089967" data-name="שלישיית נורות לד DL" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪24.90 <small>ליח׳</small></div>
+          <div class="shelf">₪24.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7291044089967" data-name="שלישיית נורות לד DL" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שלישייה נורות לד DL<button type="button" class="unsold" data-sold="20261123" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290118075981" data-key="7290118075981" data-name="שלישייה נורות לד DL" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪24.90 <small>ליח׳</small></div>
+          <div class="shelf">₪24.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118075981" data-name="שלישייה נורות לד DL" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">כבל סנכרון וטעינה 3<button type="button" class="unsold" data-sold="20261118" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290120127630" data-key="7290120127630" data-name="כבל סנכרון וטעינה 3" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪24.90 <small>ליח׳</small></div>
+          <div class="shelf">₪24.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290120127630" data-name="כבל סנכרון וטעינה 3" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">כבל סנכרון טעינה 2 מ<button type="button" class="unsold" data-sold="20261124" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290120127708" data-key="7290120127708" data-name="כבל סנכרון טעינה 2 מ" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪24.90 <small>ליח׳</small></div>
+          <div class="shelf">₪24.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290120127708" data-name="כבל סנכרון טעינה 2 מ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שעון שבת איכותי<button type="button" class="unsold" data-sold="20261125" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7291044106749" data-key="7291044106749" data-name="שעון שבת איכותי" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪25.20 <small>ליח׳</small></div>
+          <div class="shelf">₪25.20 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7291044106749" data-name="שעון שבת איכותי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מטען קיר USB שחור -<button type="button" class="unsold" data-sold="20261124" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290120126350" data-key="7290120126350" data-name="מטען קיר USB שחור -" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪25.90 <small>ליח׳</small></div>
+          <div class="shelf">₪25.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290120126350" data-name="מטען קיר USB שחור -" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">רב שקע 4 + מפסק + עד<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7291044066319" data-key="7291044066319" data-name="רב שקע 4 + מפסק + עד" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪29.90 <small>ליח׳</small></div>
+          <div class="shelf">₪29.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7291044066319" data-name="רב שקע 4 + מפסק + עד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קומקום חשמלי נירוסטה<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290121046114" data-key="7290121046114" data-name="קומקום חשמלי נירוסטה" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪29.90 <small>ליח׳</small></div>
+          <div class="shelf">₪29.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121046114" data-name="קומקום חשמלי נירוסטה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קומקום חשמלי נירוסטה<button type="button" class="unsold" data-sold="20261122" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290121046121" data-key="7290121046121" data-name="קומקום חשמלי נירוסטה" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪29.90 <small>ליח׳</small></div>
+          <div class="shelf">₪29.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121046121" data-name="קומקום חשמלי נירוסטה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קומקום חשמלי נירוסטה<button type="button" class="unsold" data-sold="20261119" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290121046138" data-key="7290121046138" data-name="קומקום חשמלי נירוסטה" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪29.90 <small>ליח׳</small></div>
+          <div class="shelf">₪29.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121046138" data-name="קומקום חשמלי נירוסטה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מטען קיר USB כפול עם<button type="button" class="unsold" data-sold="20261117" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290120129160" data-key="7290120129160" data-name="מטען קיר USB כפול עם" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪29.90 <small>ליח׳</small></div>
+          <div class="shelf">₪29.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290120129160" data-name="מטען קיר USB כפול עם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מטען קיר TYPWC לבן ר<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290120129221" data-key="7290120129221" data-name="מטען קיר TYPWC לבן ר" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪29.90 <small>ליח׳</small></div>
+          <div class="shelf">₪29.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290120129221" data-name="מטען קיר TYPWC לבן ר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מטען קיר TypeC לבן -<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290120126381" data-key="7290120126381" data-name="מטען קיר TypeC לבן -" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪29.90 <small>ליח׳</small></div>
+          <div class="shelf">₪29.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290120126381" data-name="מטען קיר TypeC לבן -" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">כבל מאריך 4 מטר 1.5*<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290118073864" data-key="7290118073864" data-name="כבל מאריך 4 מטר 1.5*" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪29.90 <small>ליח׳</small></div>
+          <div class="shelf">₪29.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118073864" data-name="כבל מאריך 4 מטר 1.5*" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">כבל מאריך 4 3X1.5 מט<button type="button" class="unsold" data-sold="20261124" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7291044048841" data-key="7291044048841" data-name="כבל מאריך 4 3X1.5 מט" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪30.30 <small>ליח׳</small></div>
+          <div class="shelf">₪30.30 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7291044048841" data-name="כבל מאריך 4 3X1.5 מט" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שלישיית נורות לד 15W<button type="button" class="unsold" data-sold="20261123" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7291044089981" data-key="7291044089981" data-name="שלישיית נורות לד 15W" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪30.30 <small>ליח׳</small></div>
+          <div class="shelf">₪30.30 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7291044089981" data-name="שלישיית נורות לד 15W" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שלישיית נורות לד 15W<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7291044089998" data-key="7291044089998" data-name="שלישיית נורות לד 15W" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪30.30 <small>ליח׳</small></div>
+          <div class="shelf">₪30.30 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7291044089998" data-name="שלישיית נורות לד 15W" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">כירה חשמלית בודדת שח<button type="button" class="unsold" data-sold="20261125" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290122885071" data-key="7290122885071" data-name="כירה חשמלית בודדת שח" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.90 <small>ליח׳</small></div>
+          <div class="shelf">₪39.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290122885071" data-name="כירה חשמלית בודדת שח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעמד מגנטי לרכב- שחו<button type="button" class="unsold" data-sold="20261119" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290120122017" data-key="7290120122017" data-name="מעמד מגנטי לרכב- שחו" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.90 <small>ליח׳</small></div>
+          <div class="shelf">₪39.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290120122017" data-name="מעמד מגנטי לרכב- שחו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">כבל מאריך 6 מטר 1.5*<button type="button" class="unsold" data-sold="20261112" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290118073963" data-key="7290118073963" data-name="כבל מאריך 6 מטר 1.5*" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.90 <small>ליח׳</small></div>
+          <div class="shelf">₪39.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118073963" data-name="כבל מאריך 6 מטר 1.5*" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טוסטר לחיצה פסים 2 פ<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290120126039" data-key="7290120126039" data-name="טוסטר לחיצה פסים 2 פ" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.90 <small>ליח׳</small></div>
+          <div class="shelf">₪39.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290120126039" data-name="טוסטר לחיצה פסים 2 פ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">כבל מאריך 6 3X1.5 מט<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7291044048858" data-key="7291044048858" data-name="כבל מאריך 6 3X1.5 מט" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪40.40 <small>ליח׳</small></div>
+          <div class="shelf">₪40.40 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7291044048858" data-name="כבל מאריך 6 3X1.5 מט" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">רב שקע 6+מפסק+כבל עד<button type="button" class="unsold" data-sold="20261125" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7291044066333" data-key="7291044066333" data-name="רב שקע 6+מפסק+כבל עד" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪40.40 <small>ליח׳</small></div>
+          <div class="shelf">₪40.40 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7291044066333" data-name="רב שקע 6+מפסק+כבל עד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טוסטר לחיצה פסים 2 פרוסות - לבן ENSO אנסו (SM-ENS-2)<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290120126046" data-key="7290120126046" data-name="טוסטר לחיצה פסים 2 פרוסות - לבן ENSO אנסו (SM-ENS-2)" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪44.90 <small>ליח׳</small></div>
+          <div class="shelf">₪44.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290120126046" data-name="טוסטר לחיצה פסים 2 פרוסות - לבן ENSO אנסו (SM-ENS-2)" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קומקום חשמלי זכוכית<button type="button" class="unsold" data-sold="20261124" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290121046343" data-key="7290121046343" data-name="קומקום חשמלי זכוכית" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪49.90 <small>ליח׳</small></div>
+          <div class="shelf">₪49.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121046343" data-name="קומקום חשמלי זכוכית" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קומקום חשמלי זכוכית<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290121046350" data-key="7290121046350" data-name="קומקום חשמלי זכוכית" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪49.90 <small>ליח׳</small></div>
+          <div class="shelf">₪49.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121046350" data-name="קומקום חשמלי זכוכית" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">תנור חימום אינפרא לא<button type="button" class="unsold" data-sold="20261125" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290001895498" data-key="7290001895498" data-name="תנור חימום אינפרא לא" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪49.90 <small>ליח׳</small></div>
+          <div class="shelf">₪49.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001895498" data-name="תנור חימום אינפרא לא" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מגהץ אדים קרמי 2200W שחור - אנסו ENSO<button type="button" class="unsold" data-sold="20261119" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290121044523" data-key="7290121044523" data-name="מגהץ אדים קרמי 2200W שחור - אנסו ENSO" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.90 <small>ליח׳</small></div>
+          <div class="shelf">₪59.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121044523" data-name="מגהץ אדים קרמי 2200W שחור - אנסו ENSO" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מצנם 2 פרוסות כסוף -<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290121042147" data-key="7290121042147" data-name="מצנם 2 פרוסות כסוף -" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.90 <small>ליח׳</small></div>
+          <div class="shelf">₪59.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121042147" data-name="מצנם 2 פרוסות כסוף -" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מצנם 2 פרוסות לבן -<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290121042154" data-key="7290121042154" data-name="מצנם 2 פרוסות לבן -" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.90 <small>ליח׳</small></div>
+          <div class="shelf">₪59.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121042154" data-name="מצנם 2 פרוסות לבן -" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מטען קיר 35W Type C + כבל Lightning לבן - ENSO אנסו<button type="button" class="unsold" data-sold="20261122" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290121040914" data-key="7290121040914" data-name="מטען קיר 35W Type C + כבל Lightning לבן - ENSO אנסו" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.90 <small>ליח׳</small></div>
+          <div class="shelf">₪59.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121040914" data-name="מטען קיר 35W Type C + כבל Lightning לבן - ENSO אנסו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טוסטר לחיצה 4 פרוסות<button type="button" class="unsold" data-sold="20261123" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290121048583" data-key="7290121048583" data-name="טוסטר לחיצה 4 פרוסות" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪69.90 <small>ליח׳</small></div>
+          <div class="shelf">₪69.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121048583" data-name="טוסטר לחיצה 4 פרוסות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טוסטר לחיצה 4 פרוסות כסוף ENSO אנסו<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290121048590" data-key="7290121048590" data-name="טוסטר לחיצה 4 פרוסות כסוף ENSO אנסו" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪69.90 <small>ליח׳</small></div>
+          <div class="shelf">₪69.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121048590" data-name="טוסטר לחיצה 4 פרוסות כסוף ENSO אנסו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">כירה חשמלית כפולה שח<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290122885088" data-key="7290122885088" data-name="כירה חשמלית כפולה שח" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪79.90 <small>ליח׳</small></div>
+          <div class="shelf">₪79.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290122885088" data-name="כירה חשמלית כפולה שח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מפזר חום סופר עוצמתי<button type="button" class="unsold" data-sold="20261112" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290019406358" data-key="7290019406358" data-name="מפזר חום סופר עוצמתי" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪89.90 <small>ליח׳</small></div>
+          <div class="shelf">₪89.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019406358" data-name="מפזר חום סופר עוצמתי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פלטת שבת 4 סירים ENS<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290122883381" data-key="7290122883381" data-name="פלטת שבת 4 סירים ENS" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>HK overseas</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 21.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪89.90 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪119.90</s> ₪89.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290122883381" data-name="פלטת שבת 4 סירים ENS" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קוצץ מזון חשמלי 200W זכוכית - ENSO אנסו<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290121049290" data-key="7290121049290" data-name="קוצץ מזון חשמלי 200W זכוכית - ENSO אנסו" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪99.90 <small>ליח׳</small></div>
+          <div class="shelf">₪99.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121049290" data-name="קוצץ מזון חשמלי 200W זכוכית - ENSO אנסו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מסחטה מקצועית רמי לו<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290116053219" data-key="7290116053219" data-name="מסחטה מקצועית רמי לו" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪99.90 <small>ליח׳</small></div>
+          <div class="shelf">₪99.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116053219" data-name="מסחטה מקצועית רמי לו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פלטת שבת 6 סירים ENS<button type="button" class="unsold" data-sold="20261112" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290122883398" data-key="7290122883398" data-name="פלטת שבת 6 סירים ENS" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>HK overseas</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 21.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪99.90 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪139.90</s> ₪99.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290122883398" data-name="פלטת שבת 6 סירים ENS" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מנגל חשמלי יונדאי 20<button type="button" class="unsold" data-sold="20261124" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7291044073102" data-key="7291044073102" data-name="מנגל חשמלי יונדאי 20" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪99.90 <small>ליח׳</small></div>
+          <div class="shelf">₪99.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7291044073102" data-name="מנגל חשמלי יונדאי 20" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מיחם נירוסטה 40 כוסו<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290001895917" data-key="7290001895917" data-name="מיחם נירוסטה 40 כוסו" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪109.90 <small>ליח׳</small></div>
+          <div class="shelf">₪109.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001895917" data-name="מיחם נירוסטה 40 כוסו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טוסטר לחיצה גריל 4 פרוסות כסוף - ENSO<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290121048606" data-key="7290121048606" data-name="טוסטר לחיצה גריל 4 פרוסות כסוף - ENSO" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪129.90 <small>ליח׳</small></div>
+          <div class="shelf">₪129.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121048606" data-name="טוסטר לחיצה גריל 4 פרוסות כסוף - ENSO" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קמין חשמלי ENOWA<button type="button" class="unsold" data-sold="20261112" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290114783224" data-key="7290114783224" data-name="קמין חשמלי ENOWA" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪129.90 <small>ליח׳</small></div>
+          <div class="shelf">₪129.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290114783224" data-name="קמין חשמלי ENOWA" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מקרן חום עמוד גבוה C<button type="button" class="unsold" data-sold="20261125" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290020295484" data-key="7290020295484" data-name="מקרן חום עמוד גבוה C" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪129.90 <small>ליח׳</small></div>
+          <div class="shelf">₪129.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020295484" data-name="מקרן חום עמוד גבוה C" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">רדיאטור 9 צלעות JUNI<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290020295446" data-key="7290020295446" data-name="רדיאטור 9 צלעות JUNI" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪139.90 <small>ליח׳</small></div>
+          <div class="shelf">₪139.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020295446" data-name="רדיאטור 9 צלעות JUNI" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">רדיאטור 11 צלעות JUN<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290020295453" data-key="7290020295453" data-name="רדיאטור 11 צלעות JUN" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪149.90 <small>ליח׳</small></div>
+          <div class="shelf">₪149.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020295453" data-name="רדיאטור 11 צלעות JUN" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מיחם נירוסטה 60 כוסו<button type="button" class="unsold" data-sold="20261123" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290010483266" data-key="7290010483266" data-name="מיחם נירוסטה 60 כוסו" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪149.90 <small>ליח׳</small></div>
+          <div class="shelf">₪149.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010483266" data-name="מיחם נירוסטה 60 כוסו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סיר טיגון חשמלי (צ&#39;י<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290121044516" data-key="7290121044516" data-name="סיר טיגון חשמלי (צ&#39;י" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪159.90 <small>ליח׳</small></div>
+          <div class="shelf">₪159.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121044516" data-name="סיר טיגון חשמלי (צ&#39;י" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מיחם שבת כ-50 כוסות<button type="button" class="unsold" data-sold="20261121" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290120126596" data-key="7290120126596" data-name="מיחם שבת כ-50 כוסות" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪169.90 <small>ליח׳</small></div>
+          <div class="shelf">₪169.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290120126596" data-name="מיחם שבת כ-50 כוסות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פלנצ&#39;ה גז 2 מבערים M<button type="button" class="unsold" data-sold="20261113" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290111709951" data-key="7290111709951" data-name="פלנצ&#39;ה גז 2 מבערים M" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪199.90 <small>ליח׳</small></div>
+          <div class="shelf">₪199.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111709951" data-name="פלנצ&#39;ה גז 2 מבערים M" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מקרן חום כולל חצובה<button type="button" class="unsold" data-sold="20261113" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290116594743" data-key="7290116594743" data-name="מקרן חום כולל חצובה" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪199.90 <small>ליח׳</small></div>
+          <div class="shelf">₪199.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116594743" data-name="מקרן חום כולל חצובה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מכונת אספרסו Nespresso Mini EN85E<button type="button" class="unsold" data-sold="20261117" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="8004399036048" data-key="8004399036048" data-name="מכונת אספרסו Nespresso Mini EN85E" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        <div class="club">מחיר מועדון רמי לוי: ₪269.90</div>
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪299.90 <small>ליח׳</small></div>
+          <div class="shelf">₪299.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8004399036048" data-name="מכונת אספרסו Nespresso Mini EN85E" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טאבון גז 12 אינץ<button type="button" class="unsold" data-sold="20261125" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290114785761" data-key="7290114785761" data-name="טאבון גז 12 אינץ" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪299.90 <small>ליח׳</small></div>
+          <div class="shelf">₪299.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290114785761" data-name="טאבון גז 12 אינץ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">הליכון חשמלי 1-8 קמ&#34;<button type="button" class="unsold" data-sold="20261118" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290114787024" data-key="7290114787024" data-name="הליכון חשמלי 1-8 קמ&#34;" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        <div class="club">מחיר מועדון רמי לוי: ₪299.90</div>
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪319.90 <small>ליח׳</small></div>
+          <div class="shelf">₪319.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290114787024" data-name="הליכון חשמלי 1-8 קמ&#34;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">בלנדר נינגה bn495<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="622356241236" data-key="622356241236" data-name="בלנדר נינגה bn495" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪349.90 <small>ליח׳</small></div>
+          <div class="shelf">₪349.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="622356241236" data-name="בלנדר נינגה bn495" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעבד מזון מקצועי רב<button type="button" class="unsold" data-sold="20261118" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290019026778" data-key="7290019026778" data-name="מעבד מזון מקצועי רב" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪389.90 <small>ליח׳</small></div>
+          <div class="shelf">₪389.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019026778" data-name="מעבד מזון מקצועי רב" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מיקסר kenwood khh1.000 homebake<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="5011423007861" data-key="5011423007861" data-name="מיקסר kenwood khh1.000 homebake" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪499.00 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪399.90 <small>ליח׳</small></div>
+          <div class="shelf">₪399.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5011423007861" data-name="מיקסר kenwood khh1.000 homebake" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שואב שוטף טינקו I5 S<button type="button" class="unsold" data-sold="20261123" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="6932485019304" data-key="6932485019304" data-name="שואב שוטף טינקו I5 S" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪699.90 <small>ליח׳</small></div>
+          <div class="shelf">₪699.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="6932485019304" data-name="שואב שוטף טינקו I5 S" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עמדת טעינה לרכב חשמל<button type="button" class="unsold" data-sold="20261125" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="" data-key="7290058140886:90220004" data-name="עמדת טעינה לרכב חשמל" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪699.90 <small>ליח׳</small></div>
+          <div class="shelf">₪699.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058140886:90220004" data-name="עמדת טעינה לרכב חשמל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מכונת ניקוי שואבת וש<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="" data-key="7290058140886:11120272130" data-name="מכונת ניקוי שואבת וש" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪799.90 <small>ליח׳</small></div>
+          <div class="shelf">₪799.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058140886:11120272130" data-name="מכונת ניקוי שואבת וש" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שואב שוטף TINECO S9<button type="button" class="unsold" data-sold="20261118" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="6932485013388" data-key="6932485013388" data-name="שואב שוטף TINECO S9" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪1780.00 <small>ליח׳</small></div>
+          <div class="shelf">₪1780.00 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="6932485013388" data-name="שואב שוטף TINECO S9" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+      
+      <li class="divider">ללא מחיר לק״ג (גודל לא ידוע)</li>
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סוללות אנרג`ייזר דאבל A<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7638900246599" data-key="7638900246599" data-name="סוללות אנרג`ייזר דאבל A" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7638900246599" data-name="סוללות אנרג`ייזר דאבל A" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סוללות אנרג`ייזר טריפל<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7638900247893" data-key="7638900247893" data-name="סוללות אנרג`ייזר טריפל" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7638900247893" data-name="סוללות אנרג`ייזר טריפל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מארז שלישיה נורות10W<button type="button" class="unsold" data-sold="20261113" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="6921850620368" data-key="6921850620368" data-name="מארז שלישיה נורות10W" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪12.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="6921850620368" data-name="מארז שלישיה נורות10W" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">שליישית נורות 15 W<button type="button" class="unsold" data-sold="20261113" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="6921850620504" data-key="6921850620504" data-name="שליישית נורות 15 W" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="6921850620504" data-name="שליישית נורות 15 W" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מפצל T4 מרובע<button type="button" class="unsold" data-sold="20261124" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="6921850653618" data-key="6921850653618" data-name="מפצל T4 מרובע" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="6921850653618" data-name="מפצל T4 מרובע" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">שעון שבת תקע 24 שעות<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="6925454151662" data-key="6925454151662" data-name="שעון שבת תקע 24 שעות" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="6925454151662" data-name="שעון שבת תקע 24 שעות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">זוג סוללות ליתיום 2032 דורסל<button type="button" class="unsold" data-sold="20261112" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="5000394203921" data-key="5000394203921" data-name="זוג סוללות ליתיום 2032 דורסל" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מיוצר עבור דורסל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪22.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="5000394203921" data-name="זוג סוללות ליתיום 2032 דורסל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סוללות אנרג&#39;ייזר  C MAX<button type="button" class="unsold" data-sold="20261119" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7638900426809" data-key="7638900426809" data-name="סוללות אנרג&#39;ייזר  C MAX" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪26.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7638900426809" data-name="סוללות אנרג&#39;ייזר  C MAX" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">A65 לד 17W אור יום מארז שלישיה OMEGA<button type="button" class="unsold" data-sold="20261112" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="6921850657951" data-key="6921850657951" data-name="A65 לד 17W אור יום מארז שלישיה OMEGA" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪29.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="6921850657951" data-name="A65 לד 17W אור יום מארז שלישיה OMEGA" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מסחטת הדרים עם פיית מזיגה D-8016A<button type="button" class="unsold" data-sold="20261122" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290118373339" data-key="7290118373339" data-name="מסחטת הדרים עם פיית מזיגה D-8016A" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪30.00</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118373339" data-name="מסחטת הדרים עם פיית מזיגה D-8016A" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בוס מפזר חום עומד 2000W שחור BOSS FH-801<button type="button" class="unsold" data-sold="20261122" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7296049027006" data-key="7296049027006" data-name="בוס מפזר חום עומד 2000W שחור BOSS FH-801" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪100</span> בקניית 3 · עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪33.33</div>
+          <div class="shelf"><s>₪39.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296049027006" data-name="בוס מפזר חום עומד 2000W שחור BOSS FH-801" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בוס תנור חימום 800W שחור BOSS OZ800<button type="button" class="unsold" data-sold="20261120" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7296049027013" data-key="7296049027013" data-name="בוס תנור חימום 800W שחור BOSS OZ800" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪100</span> בקניית 3 · עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪33.33</div>
+          <div class="shelf"><s>₪39.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296049027013" data-name="בוס תנור חימום 800W שחור BOSS OZ800" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בוס בלנדר מקל BOSS 250W<button type="button" class="unsold" data-sold="20261113" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7296049211597" data-key="7296049211597" data-name="בוס בלנדר מקל BOSS 250W" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪100</span> בקניית 3 · עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪33.33</div>
+          <div class="shelf"><s>₪39.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296049211597" data-name="בוס בלנדר מקל BOSS 250W" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מפצל USB+TYPE C<button type="button" class="unsold" data-sold="20261115" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290022004596" data-key="7290022004596" data-name="מפצל USB+TYPE C" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪34.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290022004596" data-name="מפצל USB+TYPE C" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">קומקום זכוכית חשמלי שחור WST-842(ML-22500) - יש כשרות, אין צורך בטבילה - מולר<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290109848136" data-key="7290109848136" data-name="קומקום זכוכית חשמלי שחור WST-842(ML-22500) - יש כשרות, אין צורך בטבילה - מולר" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מותג פרטי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290109848136" data-name="קומקום זכוכית חשמלי שחור WST-842(ML-22500) - יש כשרות, אין צורך בטבילה - מולר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קומקום חשמלי נירוסטה לבן 1.8 ל`<button type="button" class="unsold" data-sold="20261117" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7296049037890" data-key="7296049037890" data-name="קומקום חשמלי נירוסטה לבן 1.8 ל`" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪49.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296049037890" data-name="קומקום חשמלי נירוסטה לבן 1.8 ל`" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">פלטה שבת 4 סירים אמאיל EUR-400 בושמייסטר<button type="button" class="unsold" data-sold="20261119" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290109848167" data-key="7290109848167" data-name="פלטה שבת 4 סירים אמאיל EUR-400 בושמייסטר" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מותג פרטי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290109848167" data-name="פלטה שבת 4 סירים אמאיל EUR-400 בושמייסטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מפזר חום עומד/שוכב  ##MR102-NOV 2000W נו<button type="button" class="unsold" data-sold="20261112" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290014452718" data-key="7290014452718" data-name="מפזר חום עומד/שוכב  ##MR102-NOV 2000W נו" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪64.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014452718" data-name="מפזר חום עומד/שוכב  ##MR102-NOV 2000W נו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מנורת שבת<button type="button" class="unsold" data-sold="20261116" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290022010306" data-key="7290022010306" data-name="מנורת שבת" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪69.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290022010306" data-name="מנורת שבת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">פלטה שבת 6 סירים<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290109848150" data-key="7290109848150" data-name="פלטה שבת 6 סירים" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מותג פרטי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪69.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290109848150" data-name="פלטה שבת 6 סירים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קיטורית לניקוי 9 חלקים BOSS VSC38-15A<button type="button" class="unsold" data-sold="20261111" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7296049038903" data-key="7296049038903" data-name="קיטורית לניקוי 9 חלקים BOSS VSC38-15A" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪79.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296049038903" data-name="קיטורית לניקוי 9 חלקים BOSS VSC38-15A" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מצנם מולינקס MOULINEX LT5S1AEO<button type="button" class="unsold" data-sold="20261124" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="3045387295233" data-key="3045387295233" data-name="מצנם מולינקס MOULINEX LT5S1AEO" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪99.00</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="3045387295233" data-name="מצנם מולינקס MOULINEX LT5S1AEO" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מגהץ אדים אנכי נייד דיגיטלי W1500 QH09<button type="button" class="unsold" data-sold="20261125" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290118372103" data-key="7290118372103" data-name="מגהץ אדים אנכי נייד דיגיטלי W1500 QH09" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪99.00</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118372103" data-name="מגהץ אדים אנכי נייד דיגיטלי W1500 QH09" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בוס פלטת שבת ענקית שחור 42/76 סמ BOSS E<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7296049211702" data-key="7296049211702" data-name="בוס פלטת שבת ענקית שחור 42/76 סמ BOSS E" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪99.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296049211702" data-name="בוס פלטת שבת ענקית שחור 42/76 סמ BOSS E" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">בלנדר ידני נטען *לבן* 100W דגם: PC552 מולר<button type="button" class="unsold" data-sold="20261123" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290109848426" data-key="7290109848426" data-name="בלנדר ידני נטען *לבן* 100W דגם: PC552 מולר" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪99.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290109848426" data-name="בלנדר ידני נטען *לבן* 100W דגם: PC552 מולר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מפזר חום לאמבטיה ML-188FH<button type="button" class="unsold" data-sold="20261122" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290109843797" data-key="7290109843797" data-name="מפזר חום לאמבטיה ML-188FH" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪124.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290109843797" data-name="מפזר חום לאמבטיה ML-188FH" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מגהץ אדים טפאל 2400W FV2839<button type="button" class="unsold" data-sold="20261125" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="3121040081945" data-key="3121040081945" data-name="מגהץ אדים טפאל 2400W FV2839" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪129.00</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="3121040081945" data-name="מגהץ אדים טפאל 2400W FV2839" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מסחטת מיצים קשים מולינקס<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="3016661154928" data-key="3016661154928" data-name="מסחטת מיצים קשים מולינקס" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪149.00</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="3016661154928" data-name="מסחטת מיצים קשים מולינקס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שייקר אלחוטי Ninja Blast BC151<button type="button" class="unsold" data-sold="20261118" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="622356274937" data-key="7290696200003:622356274937" data-name="שייקר אלחוטי Ninja Blast BC151" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪300</span> בקניית 2 · עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪150.00</div>
+          <div class="shelf"><s>₪199.00</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:622356274937" data-name="שייקר אלחוטי Ninja Blast BC151" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מכונת קרח ביתית דגם HZB-12 Q<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290109848365" data-key="7290109848365" data-name="מכונת קרח ביתית דגם HZB-12 Q" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪199.00</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290109848365" data-name="מכונת קרח ביתית דגם HZB-12 Q" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מקרן וידאו עם מערכת אנדרואיד VISION LE<button type="button" class="unsold" data-sold="20261123" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290118458500" data-key="7290118458500" data-name="מקרן וידאו עם מערכת אנדרואיד VISION LE" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪199.00</div>
+          <div class="shelf"><s>₪250.00</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118458500" data-name="מקרן וידאו עם מערכת אנדרואיד VISION LE" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מכשיר שווארמה TB2022A BOSS<button type="button" class="unsold" data-sold="20261123" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7296049037340" data-key="7296049037340" data-name="מכשיר שווארמה TB2022A BOSS" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪199.00</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296049037340" data-name="מכשיר שווארמה TB2022A BOSS" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בלנדר מוט BRAUN MQ5235<button type="button" class="unsold" data-sold="20261123" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="8021098005557" data-key="8021098005557" data-name="בלנדר מוט BRAUN MQ5235" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪199.00</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="8021098005557" data-name="בלנדר מוט BRAUN MQ5235" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מעבד מזון בראון FP3131WH<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="8021098771100" data-key="8021098771100" data-name="מעבד מזון בראון FP3131WH" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪199.00</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="8021098771100" data-name="מעבד מזון בראון FP3131WH" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בוס טוסטר לחיצה נירוסטה<button type="button" class="unsold" data-sold="20261123" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7296049022650" data-key="7296049022650" data-name="בוס טוסטר לחיצה נירוסטה" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪199.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296049022650" data-name="בוס טוסטר לחיצה נירוסטה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שואב נטען איכותי AXO<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290117788868" data-key="7290117788868" data-name="שואב נטען איכותי AXO" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        <div class="club">מחיר מועדון רמי לוי: ₪199.90</div>
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪229.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290117788868" data-name="שואב נטען איכותי AXO" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מסך מחשב 24 אינץ JVC LT-MN24246 QLED<button type="button" class="unsold" data-sold="20261123" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="4975769479786" data-key="4975769479786" data-name="מסך מחשב 24 אינץ JVC LT-MN24246 QLED" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪249.00</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="4975769479786" data-name="מסך מחשב 24 אינץ JVC LT-MN24246 QLED" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סיר בישול AIR FRY TEFAL EY505827<button type="button" class="unsold" data-sold="20261124" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="3045380020870" data-key="3045380020870" data-name="סיר בישול AIR FRY TEFAL EY505827" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪299.00</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="3045380020870" data-name="סיר בישול AIR FRY TEFAL EY505827" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שואב אבק אלחוטי שיאומי דגם vacuum cleane<button type="button" class="unsold" data-sold="20261124" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="6932554463496" data-key="6932554463496" data-name="שואב אבק אלחוטי שיאומי דגם vacuum cleane" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪299.00</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="6932554463496" data-name="שואב אבק אלחוטי שיאומי דגם vacuum cleane" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">תנור פיצה אובן GTPZ-15<button type="button" class="unsold" data-sold="20261119" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290109847351" data-key="7290109847351" data-name="תנור פיצה אובן GTPZ-15" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪299.00</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290109847351" data-name="תנור פיצה אובן GTPZ-15" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מכונת אספרסו Nespresso EN80b<button type="button" class="unsold" data-sold="20261123" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="8004399327924" data-key="8004399327924" data-name="מכונת אספרסו Nespresso EN80b" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪299.00</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="8004399327924" data-name="מכונת אספרסו Nespresso EN80b" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בלנדר נוטרי נינג`ה Auto IQ Ninja BN495<button type="button" class="unsold" data-sold="20261113" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="622356241236" data-key="7290696200003:622356241236" data-name="בלנדר נוטרי נינג`ה Auto IQ Ninja BN495" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪349.00</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:622356241236" data-name="בלנדר נוטרי נינג`ה Auto IQ Ninja BN495" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">נינג`ה מכשיר טיגון ללא שמן איירפרייר<button type="button" class="unsold" data-sold="20261123" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="622356282956" data-key="7290696200003:622356282956" data-name="נינג`ה מכשיר טיגון ללא שמן איירפרייר" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪375.00</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:622356282956" data-name="נינג`ה מכשיר טיגון ללא שמן איירפרייר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מטחנת בשר מולינקס 2000W<button type="button" class="unsold" data-sold="20261123" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="3045388186776" data-key="3045388186776" data-name="מטחנת בשר מולינקס 2000W" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪389.00</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="3045388186776" data-name="מטחנת בשר מולינקס 2000W" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סיר טיגון אוויר זכוכית fn101 Ninja Crisp<button type="button" class="unsold" data-sold="20261123" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="622356307741" data-key="7290696200003:622356307741" data-name="סיר טיגון אוויר זכוכית fn101 Ninja Crisp" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪449.00</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:622356307741" data-name="סיר טיגון אוויר זכוכית fn101 Ninja Crisp" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">טלוויזיה מולר 43 ANDROID 14 LED<button type="button" class="unsold" data-sold="20261111" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290109847238" data-key="7290109847238" data-name="טלוויזיה מולר 43 ANDROID 14 LED" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪555.00</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290109847238" data-name="טלוויזיה מולר 43 ANDROID 14 LED" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">טלוויזיה מולר 43 ANDROID 15 QLED<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290109848600" data-key="7290109848600" data-name="טלוויזיה מולר 43 ANDROID 15 QLED" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪555.00</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290109848600" data-name="טלוויזיה מולר 43 ANDROID 15 QLED" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מעבד מזון 3ב1 Ninja<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="622356235037" data-key="7290696200003:622356235037" data-name="מעבד מזון 3ב1 Ninja" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪599.00</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:622356235037" data-name="מעבד מזון 3ב1 Ninja" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">רמקול PBENCOREESS JBL<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="1200130022517" data-key="1200130022517" data-name="רמקול PBENCOREESS JBL" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪599.00</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="1200130022517" data-name="רמקול PBENCOREESS JBL" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שואב אבק שוטף roborock F25RT<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="6974653814847" data-key="6974653814847" data-name="שואב אבק שוטף roborock F25RT" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 1 יח׳ · עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪599.00</div>
+          <div class="shelf"><s>₪799.00</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="6974653814847" data-name="שואב אבק שוטף roborock F25RT" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">נינג`ה גריל 5ב1 EG351EU foodi<button type="button" class="unsold" data-sold="20261118" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7296073564386" data-key="7296073564386" data-name="נינג`ה גריל 5ב1 EG351EU foodi" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪599.00</div>
+          <div class="shelf"><s>₪666.00</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296073564386" data-name="נינג`ה גריל 5ב1 EG351EU foodi" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גריל חשמלי NINJA DG551<button type="button" class="unsold" data-sold="20261122" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="622356293457" data-key="7290696200003:622356293457" data-name="גריל חשמלי NINJA DG551" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪699.00</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:622356293457" data-name="גריל חשמלי NINJA DG551" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שואב שוטף טינקו Tineco S5-plus<button type="button" class="unsold" data-sold="20261112" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="6974950105389" data-key="6974950105389" data-name="שואב שוטף טינקו Tineco S5-plus" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪749.00</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="6974950105389" data-name="שואב שוטף טינקו Tineco S5-plus" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מכונת ניקוי שואבת שוטפת קיטור bis3700n<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="" data-key="7290696200003:11120272130" data-name="מכונת ניקוי שואבת שוטפת קיטור bis3700n" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 1 יח׳ · עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪799.00</div>
+          <div class="shelf"><s>₪1099.00</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:11120272130" data-name="מכונת ניקוי שואבת שוטפת קיטור bis3700n" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שואב שוטף dreame H14<button type="button" class="unsold" data-sold="20261123" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="6979932403859" data-key="6979932403859" data-name="שואב שוטף dreame H14" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 1 יח׳ · עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪799.00</div>
+          <div class="shelf"><s>₪899.00</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="6979932403859" data-name="שואב שוטף dreame H14" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">טלוויזיה מולר 55 ANDROID 14 QLED<button type="button" class="unsold" data-sold="20261122" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290109848006" data-key="7290109848006" data-name="טלוויזיה מולר 55 ANDROID 14 QLED" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪899.00</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290109848006" data-name="טלוויזיה מולר 55 ANDROID 14 QLED" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מעצב שיער 7ב1 DREME<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="6977328063168" data-key="6977328063168" data-name="מעצב שיער 7ב1 DREME" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪999.00</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="6977328063168" data-name="מעצב שיער 7ב1 DREME" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שואב אבק מוט+שטיפה ROBOROK F25 ACE PRO<button type="button" class="unsold" data-sold="20261125" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="6974653814304" data-key="6974653814304" data-name="שואב אבק מוט+שטיפה ROBOROK F25 ACE PRO" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪1099.00</div>
+          <div class="shelf"><s>₪1499.00</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="6974653814304" data-name="שואב אבק מוט+שטיפה ROBOROK F25 ACE PRO" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שואב שוטף dreame H15pro<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="6977328063854" data-key="6977328063854" data-name="שואב שוטף dreame H15pro" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 1 יח׳ · עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪1099.00</div>
+          <div class="shelf"><s>₪1299.00</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="6977328063854" data-name="שואב שוטף dreame H15pro" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">טלווזיה 55 אינץ SAMSUNG דגם UA55U80008<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="8806092055629" data-key="8806092055629" data-name="טלווזיה 55 אינץ SAMSUNG דגם UA55U80008" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪1199.00</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="8806092055629" data-name="טלווזיה 55 אינץ SAMSUNG דגם UA55U80008" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">JBL רמקול PARTY-BOX-320EU<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="1200130008764" data-key="1200130008764" data-name="JBL רמקול PARTY-BOX-320EU" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪1299.00</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="1200130008764" data-name="JBL רמקול PARTY-BOX-320EU" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שואב אבק רובוטי לבן ROBOROK Q REVO 5AE<button type="button" class="unsold" data-sold="20261124" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="6936905900999" data-key="6936905900999" data-name="שואב אבק רובוטי לבן ROBOROK Q REVO 5AE" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 1 יח׳ · עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪1299.00</div>
+          <div class="shelf"><s>₪1599.00</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="6936905900999" data-name="שואב אבק רובוטי לבן ROBOROK Q REVO 5AE" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מכונת קפה NINJA דגם 701<button type="button" class="unsold" data-sold="20261122" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="622356289825" data-key="7290696200003:622356289825" data-name="מכונת קפה NINJA דגם 701" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪1799.00</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:622356289825" data-name="מכונת קפה NINJA דגם 701" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">טלווזיה 75אינץ SAMSUNG דגם UA55U8000FK<button type="button" class="unsold" data-sold="20261125" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="8806097026938" data-key="8806097026938" data-name="טלווזיה 75אינץ SAMSUNG דגם UA55U8000FK" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪2299.00</div>
+          <div class="shelf"><s>₪2499.00</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="8806097026938" data-name="טלווזיה 75אינץ SAMSUNG דגם UA55U8000FK" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אייפון 18 פרומקס בורדו  SIM 256-E<button type="button" class="unsold" data-sold="20261115" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="195951409085" data-key="7290696200003:195951409085" data-name="אייפון 18 פרומקס בורדו  SIM 256-E" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 1 יח׳ · עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪4999.00</div>
+          <div class="shelf"><s>₪5750.00</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:195951409085" data-name="אייפון 18 פרומקס בורדו  SIM 256-E" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אייפון 18 פרומקס לבן מגירת SIM 256 GB<button type="button" class="unsold" data-sold="20261125" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="195951412115" data-key="7290696200003:195951412115" data-name="אייפון 18 פרומקס לבן מגירת SIM 256 GB" data-first="v" data-elec="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 1 יח׳ · עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪4999.00</div>
+          <div class="shelf"><s>₪5750.00</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:195951412115" data-name="אייפון 18 פרומקס לבן מגירת SIM 256 GB" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+</ol>
+</div>
+
+</main>
+<footer>עודכן 28.11 16:59 · ויקטורי 27.11 20:12 · רמי לוי 27.11 21:00 · אושר עד 27.11 14:05 · אושר עד 27.11 14:05 · נטו חיסכון 27.11 20:52 · גרסת האפליקציה 28.11 12:05</footer>
+
+
+<nav class="bottom-nav" aria-label="ניווט">
+  <a href="index.html" class="on"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg><span>מחלקות</span></a>
+  <a href="notes.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"/><path d="m3.5 6 1 1 2-2M3.5 12l1 1 2-2M3.5 18l1 1 2-2"/></svg><span>רשימת קניות</span></a>
+  <a href="spending.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-2-1.4-2 1.4-2-1.4-2 1.4-2-1.4L6 21z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><span>הוצאות</span></a>
+</nav>
+
+<div class="fabs">
+  <a href="scan.html" class="fab fab-scan" aria-label="סריקה"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8V4h4M16 4h4v4M20 16v4h-4M8 20H4v-4M8 8v8M12 8v8M16 8v8"/></svg></a>
+  <a href="basket.html" class="fab fab-cart" aria-label="עגלת קניות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.5 11h11L21 8H7"/><circle cx="9" cy="19" r="1.5"/><circle cx="17" cy="19" r="1.5"/></svg><span id="cart-count"></span></a>
+</div>
+
+<script src="static/basket.js?v=20261128165945"></script>
+<script src="static/catpick.js?v=20261128165945"></script>
+<script src="static/photo.js?v=20261128165945"></script>
+
+<script src="static/render.js?v=20261128165945"></script>
+<script src="static/category.js?v=20261128165945" data-build="20261128165945"></script>
+
+<script>
+// The three tabs side by side, the shopping list in the middle (the user, 2026-11-27): a swipe on a tab page moves to
+// the next tab. RTL like the bar: a finger moving right goes to the tab on the left (הוצאות from the list), moving
+// left to the tab on the right (מחלקות). Not from a typing field or from a box that scrolls sideways.
+// Fast (the user, 2026-11-27: "it lags"): the page follows the finger while it moves, and the neighbouring tabs are
+// prerendered in the background (Chrome's speculation rules), so the swipe shows a page that is already loaded
+// instead of downloading and drawing it then.
+(function () {
+  const TABS = ["index.html", "notes.html", "spending.html"];  // the bar, right to left
+  const page = location.pathname.split("/").pop() || "index.html";
+  const at = TABS.indexOf(page);
+  if (at < 0) return;
+  const next = [TABS[at - 1], TABS[at + 1]].filter(Boolean);
+  if (HTMLScriptElement.supports && HTMLScriptElement.supports("speculationrules")) {
+    const s = document.createElement("script");
+    s.type = "speculationrules";
+    s.textContent = JSON.stringify({ prerender: [{ source: "list", urls: next, eagerness: "immediate" }] });
+    document.head.appendChild(s);
+  } else {
+    for (const u of next) { const l = document.createElement("link"); l.rel = "prefetch"; l.href = u; document.head.appendChild(l); }
+  }
+  const main = document.querySelector("main");
+  let x0 = null, y0 = 0, t0 = 0, skip = false, lock = null;  // lock: "x" = a sideways drag, "y" = scrolling
+  const sideScroll = (el) => {
+    for (; el && el !== document.body; el = el.parentElement) {
+      if (el.scrollWidth > el.clientWidth + 2 && /auto|scroll/.test(getComputedStyle(el).overflowX)) return true;
+    }
+    return false;
+  };
+  const target = (dx) => { const to = at + (dx > 0 ? 1 : -1); return to >= 0 && to < TABS.length ? to : -1; };
+  const place = (dx, animate) => {
+    if (!main) return;
+    main.style.transition = animate ? "transform .18s ease-out, opacity .18s" : "none";
+    main.style.transform = dx ? `translateX(${dx}px)` : "";
+    main.style.opacity = dx ? String(Math.max(0.35, 1 - Math.abs(dx) / (innerWidth * 1.2))) : "";
+  };
+  document.addEventListener("touchstart", (e) => {
+    if (e.touches.length !== 1) { x0 = null; return; }
+    const t = e.touches[0];
+    x0 = t.clientX; y0 = t.clientY; t0 = Date.now(); lock = null;
+    skip = !!e.target.closest("input, textarea, select, [contenteditable], dialog, .photo-box, .catpick-box, [data-noswipe]") || sideScroll(e.target);
+  }, { passive: true });
+  document.addEventListener("touchmove", (e) => {
+    if (x0 === null || skip || lock === "y") return;
+    const t = e.touches[0], dx = t.clientX - x0, dy = t.clientY - y0;
+    if (!lock) {
+      if (Math.abs(dx) < 10 && Math.abs(dy) < 10) return;
+      lock = Math.abs(dx) > Math.abs(dy) * 1.3 ? "x" : "y";
+      if (lock === "y") return;
+    }
+    place(target(dx) < 0 ? dx * 0.2 : dx, false);  // at the last tab: a little give, no page
+  }, { passive: true });
+  const release = (e) => {
+    if (x0 === null || skip) { x0 = null; return; }
+    const t = e.changedTouches[0], dx = t.clientX - x0, ms = Date.now() - t0;
+    const wasX = lock === "x";
+    x0 = null; lock = null;
+    if (!wasX) return;
+    const to = target(dx);
+    const far = Math.abs(dx) > innerWidth * 0.28 || (Math.abs(dx) > 40 && ms < 300);  // far enough, or a flick
+    if (to < 0 || !far || (document.getSelection && String(document.getSelection()))) { place(0, true); return; }
+    place(dx > 0 ? innerWidth * 0.5 : -innerWidth * 0.5, true);
+    location.href = TABS[to];
+  };
+  document.addEventListener("touchend", release, { passive: true });
+  document.addEventListener("touchcancel", () => { if (x0 !== null) { x0 = null; lock = null; place(0, true); } }, { passive: true });
+  window.addEventListener("pageshow", () => place(0, false));
+})();
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+</script>
+</body>
+</html>

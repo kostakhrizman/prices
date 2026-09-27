@@ -1,0 +1,2170 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1A2238">
+<script>
+// the look this phone chose (settings.html "מראה"), before anything is drawn: html.light / html.dark
+// (none = follow the phone) and html[data-color] (none = green); the browser bar takes the colour too
+(function () {
+  let t = {};
+  try { t = JSON.parse(localStorage.getItem("theme")) || {}; } catch (e) { /* none yet */ }
+  // the new look (the user, 2026-11-27: "לילה") once on every phone; settings "מראה" can change it back
+  if (t.v !== 2) {
+    t = Object.assign({}, t, { mode: "dark", color: "night", bar: "#1A2238", v: 2 });
+    try { localStorage.setItem("theme", JSON.stringify(t)); } catch (e) { /* private mode */ }
+  }
+  const root = document.documentElement;
+  if (t.mode === "light" || t.mode === "dark") root.classList.add(t.mode);
+  if (t.color) root.dataset.color = t.color;
+  if (t.style) root.dataset.style = t.style;
+  if (t.size) root.dataset.size = t.size;
+  if (t.bar) document.querySelector('meta[name="theme-color"]').content = t.bar;
+})();
+</script>
+<title>המבורגרים וקבבים</title>
+<link rel="manifest" href="static/manifest.webmanifest">
+<link rel="icon" href="static/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="static/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="static/style.css?v=20261128165945">
+<style>.st-0 { --store: #e07000; }.st-1 { --store: #d32f2f; }.st-2 { --store: #1565c0; }.st-3 { --store: #1565c0; }.st-4 { --store: #c99a00; }</style>
+<script>window.DATA_V = {"data/c-index.json": "1ef35b8b7f", "data/changes.json": "eb14c62a68", "data/deals.json": "e8f3c4d1e0", "data/p-netto-052.json": "79069bd1c0", "data/p-osherad-003.json": "86a9473a36", "data/p-osherad-026.json": "90655a088c", "data/p-ramilevy-007.json": "6647eee19b", "data/p-victory-038.json": "f7bdede387", "data/products.json": "1dd9992357"}; window.BUILD = "20261128165945";</script>
+<script src="static/stores.js?v=20261128165945" data-stores="[{&#34;card_cap&#34;: 750, &#34;card_rate&#34;: 0.07, &#34;default&#34;: true, &#34;key&#34;: &#34;victory-038&#34;, &#34;name&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;ramilevy-007&#34;, &#34;name&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-026&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05ea\u05dc\u05e4\u05d9\u05d5\u05ea&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-003&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05d2\u05d1\u05e2\u05ea \u05e9\u05d0\u05d5\u05dc&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;netto-052&#34;, &#34;name&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df \u05e7\u05e8\u05d9\u05d9\u05ea \u05d9\u05e2\u05e8\u05d9\u05dd&#34;, &#34;short&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df&#34;}]"></script>
+<script src="static/avoid.js?v=20261128165945" data-kinds="[&#34;\u05e2\u05d5\u05e3 \u05de\u05e2\u05d5\u05d1\u05d3&#34;, &#34;\u05d1\u05e9\u05e8 \u05de\u05e2\u05d5\u05d1\u05d3&#34;]"></script>
+<script>
+// No long-press menu on links, pictures or text (the user: the home page's tiles opened Chrome's "open in new tab /
+// copy link" menu; CSS can't stop that on Android). Typing fields and the ⓘ sheet's barcode keep theirs.
+document.addEventListener("contextmenu", (e) => {
+  if (!e.target.closest("input, textarea, [contenteditable], .photo-barcode")) e.preventDefault();
+});
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <a class="back" href="t-1.html" aria-label="חזרה">→</a>
+    <h1>המבורגרים וקבבים</h1>
+    <a class="settings-link" href="settings.html" aria-label="הגדרות" title="הגדרות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></a>
+  </div>
+  
+  <form class="search" action="search.html" method="get" role="search">
+    <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+    <input type="search" name="q" placeholder="חיפוש מוצר" enterkeyhint="search" aria-label="חיפוש מוצר">
+  </form>
+  
+</header>
+<main>
+
+<p class="sub"><span class="sub-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 12c2.2-3.6 5.3-5.5 8.6-5.5 2.8 0 4.9 1.9 6.4 5.5-1.5 3.6-3.6 5.5-6.4 5.5-3.3 0-6.4-1.9-8.6-5.5z"/><path d="M6.5 12 3 8.5v7z"/><circle cx="17" cy="11" r=".7" fill="currentColor" stroke="none"/></svg></span>בשר, עוף ודגים · <span id="cat-count">71</span> מוצרים, מהזול ליקר</p>
+
+<p class="proc-legend"><span class="proc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span> מוצר מעובד: מתובל, מצופה, מעושן, כבוש, נקניקים, קציצות, שימורים</p>
+<div class="cat-filter">
+  <input type="search" id="cat-filter" placeholder="סינון לפי שם או יצרן · ‎-מילה מסתירה" enterkeyhint="done" autocomplete="off" aria-label="סינון המוצרים בקטגוריה">
+  <button type="button" id="facet-btn" class="facet-btn" aria-expanded="false" aria-controls="facet-list">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h18l-7 8v6l-4-2v-4z"/></svg>
+    <span>סינון</span><b id="facet-n" hidden></b></button>
+</div>
+<div id="facet-list" class="facet-list" hidden>
+  <div class="facet-items" id="facet-kinds"><label class="facet"><input type="checkbox" value="קבב"> <span>קבב</span> <small></small></label><label class="facet"><input type="checkbox" value="המבורגר"> <span>המבורגר</span> <small></small></label><label class="facet"><input type="checkbox" value="קציצות"> <span>קציצות</span> <small></small></label></div>
+  <div class="facet-stores" id="facet-stores" hidden><div class="facet-title">חנויות</div><div class="facet-items"></div></div>
+  <div class="facet-actions"><button type="button" class="link" id="facet-clear">ניקוי</button>
+    <button type="button" id="facet-done">הצגה</button></div>
+</div>
+<div id="cat-list" data-href="c-1-5.html">
+
+
+<ol class="products">
+  
+  
+    
+    
+    
+    <li class="product st-0 best" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>המבורגר 400  גר`חוות המרעה<button type="button" class="unsold" data-sold="20261102" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290113393509" data-key="7290113393509" data-name="המבורגר 400  גר`חוות המרעה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          <span class="warn">גודל לא ודאי</span>
+        </div>
+        <div class="deal"><span class="badge">1+1</span> בקניית 2 · עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪21.58 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪25.90</s> ₪12.95 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290113393509" data-name="המבורגר 400  גר`חוות המרעה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>קציצות עוף ישרל&#39;ה סיר 600 גרם עוף טוב<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290019204282" data-key="7290019204282" data-name="קציצות עוף ישרל&#39;ה סיר 600 גרם עוף טוב" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>עוף טוב</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 5.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪14.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪24.83 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪29.90</s> ₪14.90 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019204282" data-name="קציצות עוף ישרל&#39;ה סיר 600 גרם עוף טוב" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>קבב ביתי 600  גר`חוות המרעה<button type="button" class="unsold" data-sold="20261027" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290113392250" data-key="7290113392250" data-name="קבב ביתי 600  גר`חוות המרעה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">1+1</span> בקניית 2 · עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪29.08 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪34.90</s> ₪17.45 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290113392250" data-name="קבב ביתי 600  גר`חוות המרעה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>קבב רומני 600  גר`חוות המרעה<button type="button" class="unsold" data-sold="20261027" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290113392267" data-key="7290113392267" data-name="קבב רומני 600  גר`חוות המרעה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">1+1</span> בקניית 2 · עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪29.08 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪34.90</s> ₪17.45 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290113392267" data-name="קבב רומני 600  גר`חוות המרעה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>קבב מזרחי 600  גר`חוות המרעה<button type="button" class="unsold" data-sold="20261105" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290113392274" data-key="7290113392274" data-name="קבב מזרחי 600  גר`חוות המרעה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">1+1</span> בקניית 2 · עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪29.08 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪34.90</s> ₪17.45 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290113392274" data-name="קבב מזרחי 600  גר`חוות המרעה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>המבורגר אנטריקוט 500 גרם - 2 יח&#39;<button type="button" class="unsold" data-sold="20261104" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290010922925" data-key="7290010922925" data-name="המבורגר אנטריקוט 500 גרם - 2 יח&#39;" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪60</span> בקניית 2 · עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪30.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪34.90</s> ₪30.00 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010922925" data-name="המבורגר אנטריקוט 500 גרם - 2 יח&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>קבב מזרחי 400 גרם נטו<button type="button" class="unsold" data-sold="20261027" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290002757665" data-key="7290002757665" data-name="קבב מזרחי 400 גרם נטו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טיבון ויל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪32.50 <small>לק״ג</small></div>
+          <div class="shelf">₪13.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002757665" data-name="קבב מזרחי 400 גרם נטו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>המבורגר בקר 500 גר מחפוד<button type="button" class="unsold" data-sold="20261106" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290002105503" data-key="7290002105503" data-name="המבורגר בקר 500 גר מחפוד" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>עוף ירושלים</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪21.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪41.80 <small>לק״ג</small></div>
+          <div class="shelf">₪20.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002105503" data-name="המבורגר בקר 500 גר מחפוד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>קבב רומני טיבון ויל 500 גרם<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290003185719" data-key="7290003185719" data-name="קבב רומני טיבון ויל 500 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טיבון ויל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪43.80 <small>לק״ג</small></div>
+          <div class="shelf">₪21.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003185719" data-name="קבב רומני טיבון ויל 500 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>קבב מזרחי טיבון ויל 500 גרם<button type="button" class="unsold" data-sold="20261123" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290003185726" data-key="7290003185726" data-name="קבב מזרחי טיבון ויל 500 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טיבון ויל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪43.80 <small>לק״ג</small></div>
+          <div class="shelf">₪21.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003185726" data-name="קבב מזרחי טיבון ויל 500 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>קבב כבש טיבון ויל 500 גרם<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290004324858" data-key="7290004324858" data-name="קבב כבש טיבון ויל 500 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טיבון ויל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪43.80 <small>לק״ג</small></div>
+          <div class="shelf">₪21.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004324858" data-name="קבב כבש טיבון ויל 500 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>קבב מזרחי 500-מחפוד עוף ירושלים<button type="button" class="unsold" data-sold="20261125" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290002105510" data-key="7290002105510" data-name="קבב מזרחי 500-מחפוד עוף ירושלים" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קפואים מחפוד</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪43.80 <small>לק״ג</small></div>
+          <div class="shelf">₪21.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002105510" data-name="קבב מזרחי 500-מחפוד עוף ירושלים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>קבב אסלי 1 ק&#34;ג<button type="button" class="unsold" data-sold="20261113" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290002453802" data-key="7290002453802" data-name="קבב אסלי 1 ק&#34;ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זהר בשר</span>
+          <span class="warn">גודל לא ודאי</span>
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪44.92 <small>לק״ג</small></div>
+          <div class="shelf">₪53.90 · 1.2 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002453802" data-name="קבב אסלי 1 ק&#34;ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>קבב בקר אנגוס עגול<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290001591703" data-key="7290001591703" data-name="קבב בקר אנגוס עגול" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טיבון ויל אחזקות בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪23.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪45.80 <small>לק״ג</small></div>
+          <div class="shelf">₪22.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001591703" data-name="קבב בקר אנגוס עגול" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>המבורגר אנגוס<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290003353330" data-key="7290003353330" data-name="המבורגר אנגוס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טיבון ויל אחזקות בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪23.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪46.20 <small>לק״ג</small></div>
+          <div class="shelf">₪23.10 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003353330" data-name="המבורגר אנגוס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>קבב יווני טיבון ויל 400 גרם<button type="button" class="unsold" data-sold="20261119" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290002715375" data-key="7290002715375" data-name="קבב יווני טיבון ויל 400 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טיבון ויל אחזקות בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪21.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪47.25 <small>לק״ג</small></div>
+          <div class="shelf">₪18.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002715375" data-name="קבב יווני טיבון ויל 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>קבב 100% אמיתי טיבון ויל 440 גרם<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290002109488" data-key="7290002109488" data-name="קבב 100% אמיתי טיבון ויל 440 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טיבון ויל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪49.77 <small>לק״ג</small></div>
+          <div class="shelf">₪21.90 · 440 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002109488" data-name="קבב 100% אמיתי טיבון ויל 440 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>קציצות עוף ובקר מאמא עוף 600 גרם<button type="button" class="unsold" data-sold="20261113" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290011876388" data-key="7290011876388" data-name="קציצות עוף ובקר מאמא עוף 600 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה גליל שותפות מוגבלת</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪62</span> בקניית 2 · עד 5.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪42.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪51.67 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪34.90</s> ₪31.00 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011876388" data-name="קציצות עוף ובקר מאמא עוף 600 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>סטייקבורגר בקר טיבון ויל 400 גרם<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290000552569" data-key="7290000552569" data-name="סטייקבורגר בקר טיבון ויל 400 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טיבון ויל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪54.75 <small>לק״ג</small></div>
+          <div class="shelf">₪21.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000552569" data-name="סטייקבורגר בקר טיבון ויל 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>המבורגר מזרחי טיבון ויל 400 גרם<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290008344258" data-key="7290008344258" data-name="המבורגר מזרחי טיבון ויל 400 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טיבון ויל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪54.75 <small>לק״ג</small></div>
+          <div class="shelf">₪21.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008344258" data-name="המבורגר מזרחי טיבון ויל 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>המבורגר 100% טיבון ויל 400 גרם<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290008344272" data-key="7290008344272" data-name="המבורגר 100% טיבון ויל 400 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טיבון ויל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪54.75 <small>לק״ג</small></div>
+          <div class="shelf">₪21.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008344272" data-name="המבורגר 100% טיבון ויל 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>מארז המבורגר פרימיום 1.5 ק&#34;ג עטרה<button type="button" class="unsold" data-sold="20261122" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290006550194" data-key="7290006550194" data-name="מארז המבורגר פרימיום 1.5 ק&#34;ג עטרה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 5.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪55.27 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪94.90</s> ₪82.90 · 1.5 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290006550194" data-name="מארז המבורגר פרימיום 1.5 ק&#34;ג עטרה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>קבב ביתי - בלדי<button type="button" class="unsold" data-sold="20261110" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290003287284" data-key="7290003287284" data-name="קבב ביתי - בלדי" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>בלדי בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪56.50 <small>לק״ג</small></div>
+          <div class="shelf">₪33.90 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003287284" data-name="קבב ביתי - בלדי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>קבב טעם מזרחי 500 גר<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290003353880" data-key="7290003353880" data-name="קבב טעם מזרחי 500 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪57.80 <small>לק״ג</small></div>
+          <div class="shelf">₪28.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003353880" data-name="קבב טעם מזרחי 500 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>קבב טלה 500 גר תומר תומס<button type="button" class="unsold" data-sold="20261110" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290003353897" data-key="7290003353897" data-name="קבב טלה 500 גר תומר תומס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪57.80 <small>לק״ג</small></div>
+          <div class="shelf">₪28.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003353897" data-name="קבב טלה 500 גר תומר תומס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>קציצה טעם מרוקאי 500 גר תומר תומס<button type="button" class="unsold" data-sold="20261124" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290003353910" data-key="7290003353910" data-name="קציצה טעם מרוקאי 500 גר תומר תומס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪57.80 <small>לק״ג</small></div>
+          <div class="shelf">₪28.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003353910" data-name="קציצה טעם מרוקאי 500 גר תומר תומס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>מרגז בטעם כבש 500 גר<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290020002037" data-key="7290020002037" data-name="מרגז בטעם כבש 500 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪57.80 <small>לק״ג</small></div>
+          <div class="shelf">₪28.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020002037" data-name="מרגז בטעם כבש 500 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>המבורגר בקר 500 גר תומר תומס<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290003353927" data-key="7290003353927" data-name="המבורגר בקר 500 גר תומר תומס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪57.80 <small>לק״ג</small></div>
+          <div class="shelf">₪28.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003353927" data-name="המבורגר בקר 500 גר תומר תומס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>קבב בטעם רומני תומר תומס 500 גרם<button type="button" class="unsold" data-sold="20261112" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290003353903" data-key="7290003353903" data-name="קבב בטעם רומני תומר תומס 500 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪57.80 <small>לק״ג</small></div>
+          <div class="shelf">₪28.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003353903" data-name="קבב בטעם רומני תומר תומס 500 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>קציצות כבש פרמיום מיט ארוז מחפוד<button type="button" class="unsold" data-sold="20261117" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="" data-key="7290058156016:75620" data-name="קציצות כבש פרמיום מיט ארוז מחפוד" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪58.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:75620" data-name="קציצות כבש פרמיום מיט ארוז מחפוד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>קבב טלה רון יוחננוב 500גר רמילוי<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290003359752" data-key="7290003359752" data-name="קבב טלה רון יוחננוב 500גר רמילוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טיבון ויל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.80 <small>לק״ג</small></div>
+          <div class="shelf">₪29.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003359752" data-name="קבב טלה רון יוחננוב 500גר רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>קבב טעם רומני 500גר רמילוי<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290003359769" data-key="7290003359769" data-name="קבב טעם רומני 500גר רמילוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טיבון ויל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.80 <small>לק״ג</small></div>
+          <div class="shelf">₪29.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003359769" data-name="קבב טעם רומני 500גר רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>קבב טעם עיראקי 500 גר<button type="button" class="unsold" data-sold="20261123" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290003353934" data-key="7290003353934" data-name="קבב טעם עיראקי 500 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.80 <small>לק״ג</small></div>
+          <div class="shelf">₪29.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003353934" data-name="קבב טעם עיראקי 500 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>קבב טעם עיראקי 500גר רמילוי<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290003359776" data-key="7290003359776" data-name="קבב טעם עיראקי 500גר רמילוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טיבון ויל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.80 <small>לק״ג</small></div>
+          <div class="shelf">₪29.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003359776" data-name="קבב טעם עיראקי 500גר רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>קציצה טעם מרוקאי 500גר רמילוי<button type="button" class="unsold" data-sold="20261125" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290003359783" data-key="7290003359783" data-name="קציצה טעם מרוקאי 500גר רמילוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טיבון ויל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.80 <small>לק״ג</small></div>
+          <div class="shelf">₪29.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003359783" data-name="קציצה טעם מרוקאי 500גר רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>קבב בטעם מזרחי רון יוחננוב 500גר רמילוי<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290003359790" data-key="7290003359790" data-name="קבב בטעם מזרחי רון יוחננוב 500גר רמילוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טיבון ויל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.80 <small>לק״ג</small></div>
+          <div class="shelf">₪29.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003359790" data-name="קבב בטעם מזרחי רון יוחננוב 500גר רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>המבורגר בקר רון יוחננוב 500 גר רמילוי<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290003359837" data-key="7290003359837" data-name="המבורגר בקר רון יוחננוב 500 גר רמילוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טיבון ויל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.80 <small>לק״ג</small></div>
+          <div class="shelf">₪29.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003359837" data-name="המבורגר בקר רון יוחננוב 500 גר רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>המבורגר מסעדות 500 גר מעדני הטלה<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290002800361" data-key="7290002800361" data-name="המבורגר מסעדות 500 גר מעדני הטלה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.80 <small>לק״ג</small></div>
+          <div class="shelf">₪29.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002800361" data-name="המבורגר מסעדות 500 גר מעדני הטלה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>קבב ביתי 1 ק&#34;ג מעדני<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290005041198" data-key="7290005041198" data-name="קבב ביתי 1 ק&#34;ג מעדני" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.90 <small>לק״ג</small></div>
+          <div class="shelf">₪59.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290005041198" data-name="קבב ביתי 1 ק&#34;ג מעדני" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>המבורגר ריב אנטריקוט אל גאוצ&#39;ו 360 גרם<button type="button" class="unsold" data-sold="20261125" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290004011819" data-key="7290004011819" data-name="המבורגר ריב אנטריקוט אל גאוצ&#39;ו 360 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טיבון ויל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪60.83 <small>לק״ג</small></div>
+          <div class="shelf">₪21.90 · 360 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004011819" data-name="המבורגר ריב אנטריקוט אל גאוצ&#39;ו 360 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>המבורגר אנטריקוט - 8/400אור החיים<button type="button" class="unsold" data-sold="20261123" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290001715710" data-key="7290001715710" data-name="המבורגר אנטריקוט - 8/400אור החיים" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>א.ג.ש מלכה מרכז הבשר</span>
+          
+        </div>
+        <div class="deal"><span class="badge">4 ב־₪99.90</span> בקניית 4 · עד 30.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-0">ויקטורי ₪25.00 (2 ב־₪50)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪62.45 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪29.90</s> ₪24.98 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001715710" data-name="המבורגר אנטריקוט - 8/400אור החיים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>קבב בקר - 8/400אור החיים<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290001715765" data-key="7290001715765" data-name="קבב בקר - 8/400אור החיים" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>א.ג.ש מלכה מרכז הבשר</span>
+          
+        </div>
+        <div class="deal"><span class="badge">4 ב־₪99.90</span> בקניית 4 · עד 30.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-0">ויקטורי ₪25.00 (2 ב־₪50)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪62.45 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪29.90</s> ₪24.98 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001715765" data-name="קבב בקר - 8/400אור החיים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>קבב עירקי - 8/400אור החיים<button type="button" class="unsold" data-sold="20261118" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290001715789" data-key="7290001715789" data-name="קבב עירקי - 8/400אור החיים" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>א.ג.ש מלכה מרכז הבשר</span>
+          
+        </div>
+        <div class="deal"><span class="badge">4 ב־₪99.90</span> בקניית 4 · עד 30.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-0">ויקטורי ₪25.00 (2 ב־₪50)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪62.45 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪29.90</s> ₪24.98 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001715789" data-name="קבב עירקי - 8/400אור החיים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>קבב הבית - 8/400אור החיים<button type="button" class="unsold" data-sold="20261115" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290001715772" data-key="7290001715772" data-name="קבב הבית - 8/400אור החיים" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נתח אדום קפואזן</span>
+          
+        </div>
+        <div class="deal"><span class="badge">4 ב־₪99.90</span> בקניית 4 · עד 30.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪62.45 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪29.90</s> ₪24.98 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001715772" data-name="קבב הבית - 8/400אור החיים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>618המבורגר מסעדות 400 גר200*2 black בלדי<button type="button" class="unsold" data-sold="20261104" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290013579744" data-key="7290013579744" data-name="618המבורגר מסעדות 400 גר200*2 black בלדי" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>בלדי</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪50</span> בקניית 2 · עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪62.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪29.90</s> ₪25.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013579744" data-name="618המבורגר מסעדות 400 גר200*2 black בלדי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>קבב גמבו חמני 600 גר מעדני הטלה והעגל<button type="button" class="unsold" data-sold="20261124" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290006753946" data-key="7290006753946" data-name="קבב גמבו חמני 600 גר מעדני הטלה והעגל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪39.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪66.50 <small>לק״ג</small></div>
+          <div class="shelf">₪39.90 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290006753946" data-name="קבב גמבו חמני 600 גר מעדני הטלה והעגל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>הקבב של עזרא 600 גר מעדני הטלה והעגל<button type="button" class="unsold" data-sold="20261124" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290006753977" data-key="7290006753977" data-name="הקבב של עזרא 600 גר מעדני הטלה והעגל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מעדני הטלה והעגל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪39.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪66.50 <small>לק״ג</small></div>
+          <div class="shelf">₪39.90 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290006753977" data-name="הקבב של עזרא 600 גר מעדני הטלה והעגל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>קבב גמבו מזרחי 600גר<button type="button" class="unsold" data-sold="20261027" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290006753939" data-key="7290006753939" data-name="קבב גמבו מזרחי 600גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪66.50 <small>לק״ג</small></div>
+          <div class="shelf">₪39.90 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290006753939" data-name="קבב גמבו מזרחי 600גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>המבורגר מסעדות 300 גר150*2 black בלדי<button type="button" class="unsold" data-sold="20261104" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290013021618" data-key="7290013021618" data-name="המבורגר מסעדות 300 גר150*2 black בלדי" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>בלדי</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪40</span> בקניית 2 · עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪66.67 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪24.90</s> ₪20.00 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013021618" data-name="המבורגר מסעדות 300 גר150*2 black בלדי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>מיני מרגז בלדי - הקצביה<button type="button" class="unsold" data-sold="20261116" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290001436790" data-key="7290001436790" data-name="מיני מרגז בלדי - הקצביה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>בלדי בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪67.80 <small>לק״ג</small></div>
+          <div class="shelf">₪33.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001436790" data-name="מיני מרגז בלדי - הקצביה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>קבב בלדי - הקצביה<button type="button" class="unsold" data-sold="20261124" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290003570928" data-key="7290003570928" data-name="קבב בלדי - הקצביה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>בלדי בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪67.80 <small>לק״ג</small></div>
+          <div class="shelf">₪33.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003570928" data-name="קבב בלדי - הקצביה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>המבורגר אסאדו 500 גרם<button type="button" class="unsold" data-sold="20261108" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290117610961" data-key="7290117610961" data-name="המבורגר אסאדו 500 גרם" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪67.80 <small>לק״ג</small></div>
+          <div class="shelf">₪33.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290117610961" data-name="המבורגר אסאדו 500 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>מיני המבורגר ריב 320 ג<button type="button" class="unsold" data-sold="20261124" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290004011826" data-key="7290004011826" data-name="מיני המבורגר ריב 320 ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טיבון ויל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪68.44 <small>לק״ג</small></div>
+          <div class="shelf">₪21.90 · 320 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004011826" data-name="מיני המבורגר ריב 320 ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>אנטריקוט בורגר 400גר<button type="button" class="unsold" data-sold="20261120" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290002453529" data-key="7290002453529" data-name="אנטריקוט בורגר 400גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪72.25 <small>לק״ג</small></div>
+          <div class="shelf">₪28.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002453529" data-name="אנטריקוט בורגר 400גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>קבב אנטריקוט קצבים ע<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290002453697" data-key="7290002453697" data-name="קבב אנטריקוט קצבים ע" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪72.25 <small>לק״ג</small></div>
+          <div class="shelf">₪28.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002453697" data-name="קבב אנטריקוט קצבים ע" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>קבב מזרחי 400 גר לנדא<button type="button" class="unsold" data-sold="20261123" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290006550330" data-key="7290006550330" data-name="קבב מזרחי 400 גר לנדא" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>דנוור</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪74.75 <small>לק״ג</small></div>
+          <div class="shelf">₪29.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290006550330" data-name="קבב מזרחי 400 גר לנדא" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>קבב ביתי קפוא 600 גר מעדני הטלה והעגל<button type="button" class="unsold" data-sold="20261112" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290119950850" data-key="7290119950850" data-name="קבב ביתי קפוא 600 גר מעדני הטלה והעגל" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪74.83 <small>לק״ג</small></div>
+          <div class="shelf">₪44.90 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119950850" data-name="קבב ביתי קפוא 600 גר מעדני הטלה והעגל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>גלאט בורגר-400 גרם גלאט עוף<button type="button" class="unsold" data-sold="20261117" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290010193318" data-key="7290010193318" data-name="גלאט בורגר-400 גרם גלאט עוף" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪79.75 <small>לק״ג</small></div>
+          <div class="shelf">₪31.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010193318" data-name="גלאט בורגר-400 גרם גלאט עוף" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4" data-kind="1">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>גלאט קבב 400 גרם גלאט עוף<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290010193325" data-key="7290010193325" data-name="גלאט קבב 400 גרם גלאט עוף" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪79.75 <small>לק״ג</small></div>
+          <div class="shelf">₪31.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010193325" data-name="גלאט קבב 400 גרם גלאט עוף" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>המבורגר אנטריקוט 500 גר מעדני הטלה והעגל<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290006753953" data-key="7290006753953" data-name="המבורגר אנטריקוט 500 גר מעדני הטלה והעגל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מעדני הטלה והעגל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪39.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪79.80 <small>לק״ג</small></div>
+          <div class="shelf">₪39.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290006753953" data-name="המבורגר אנטריקוט 500 גר מעדני הטלה והעגל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>קבב 304 גרם wonders 2.0<button type="button" class="unsold" data-sold="20261105" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290109580074" data-key="7290109580074" data-name="קבב 304 גרם wonders 2.0" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זוגלובק 2000</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪50</span> בקניית 2 · עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪29.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪82.24 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪26.90</s> ₪25.00 · 304 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290109580074" data-name="קבב 304 גרם wonders 2.0" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>המבורגר בקר, 400 גרם<button type="button" class="unsold" data-sold="20261125" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290003354238" data-key="7290003354238" data-name="המבורגר בקר, 400 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>דנוור</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪82.25 <small>לק״ג</small></div>
+          <div class="shelf">₪32.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003354238" data-name="המבורגר בקר, 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>המבורגר בקר, 600 גרם<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290004939878" data-key="7290004939878" data-name="המבורגר בקר, 600 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ש.ב מטעם</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪83.17 <small>לק״ג</small></div>
+          <div class="shelf">₪49.90 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004939878" data-name="המבורגר בקר, 600 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>קבב עגל חפץ חיים<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290002391760" data-key="7290002391760" data-name="קבב עגל חפץ חיים" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪86.14 <small>לק״ג</small></div>
+          <div class="shelf">₪37.90 · 440 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002391760" data-name="קבב עגל חפץ חיים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>wonders 2.0 בורגר 280 גרם<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290109580319" data-key="7290109580319" data-name="wonders 2.0 בורגר 280 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪50</span> בקניית 2 · עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪29.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪89.29 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪26.90</s> ₪25.00 · 280 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290109580319" data-name="wonders 2.0 בורגר 280 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>המבורגר גלאט, 400 גרם<button type="button" class="unsold" data-sold="20261120" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290014355699" data-key="7290014355699" data-name="המבורגר גלאט, 400 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>גלאט עוף</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 30.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪99.75 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪44.90</s> ₪39.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014355699" data-name="המבורגר גלאט, 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>קבב קצביה ארוז 500 גר&#39; העדה החרדית<button type="button" class="unsold" data-sold="20261124" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290117610947" data-key="7290117610947" data-name="קבב קצביה ארוז 500 גר&#39; העדה החרדית" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מוצרי העדה החרדית</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 12.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪99.80 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪54.90</s> ₪49.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290117610947" data-name="קבב קצביה ארוז 500 גר&#39; העדה החרדית" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>קבבונים אל גאוצ&#39;ו 400 גרם<button type="button" class="unsold" data-sold="20261119" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290004011796" data-key="7290004011796" data-name="קבבונים אל גאוצ&#39;ו 400 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טיבון ויל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪515.56 <small>לק״ג</small></div>
+          <div class="shelf">₪23.20 · 45 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004011796" data-name="קבבונים אל גאוצ&#39;ו 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+      
+      <li class="divider">ללא מחיר לק״ג (גודל לא ידוע)</li>
+    
+    
+    <li class="product st-4" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>12 קציצות הונגרי היימיש צנצנת<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290001901601" data-key="7290001901601" data-name="12 קציצות הונגרי היימיש צנצנת" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪21.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001901601" data-name="12 קציצות הונגרי היימיש צנצנת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>12 קציצות ירושלמי היימיש צנצנת<button type="button" class="unsold sold-ok" data-sold="20261126" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290001901618" data-key="7290001901618" data-name="12 קציצות ירושלמי היימיש צנצנת" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪21.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001901618" data-name="12 קציצות ירושלמי היימיש צנצנת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>קבב בטעם ביתי<button type="button" class="unsold sold-ok" data-sold="20261127" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="" data-key="7290696200003:5041198" data-name="קבב בטעם ביתי" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מעדני הטלה והעגל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:5041198" data-name="קבב בטעם ביתי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+</ol>
+</div>
+
+</main>
+<footer>עודכן 28.11 16:59 · ויקטורי 27.11 20:12 · רמי לוי 27.11 21:00 · אושר עד 27.11 14:05 · אושר עד 27.11 14:05 · נטו חיסכון 27.11 20:52 · גרסת האפליקציה 28.11 12:05</footer>
+
+
+<nav class="bottom-nav" aria-label="ניווט">
+  <a href="index.html" class="on"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg><span>מחלקות</span></a>
+  <a href="notes.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"/><path d="m3.5 6 1 1 2-2M3.5 12l1 1 2-2M3.5 18l1 1 2-2"/></svg><span>רשימת קניות</span></a>
+  <a href="spending.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-2-1.4-2 1.4-2-1.4-2 1.4-2-1.4L6 21z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><span>הוצאות</span></a>
+</nav>
+
+<div class="fabs">
+  <a href="scan.html" class="fab fab-scan" aria-label="סריקה"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8V4h4M16 4h4v4M20 16v4h-4M8 20H4v-4M8 8v8M12 8v8M16 8v8"/></svg></a>
+  <a href="basket.html" class="fab fab-cart" aria-label="עגלת קניות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.5 11h11L21 8H7"/><circle cx="9" cy="19" r="1.5"/><circle cx="17" cy="19" r="1.5"/></svg><span id="cart-count"></span></a>
+</div>
+
+<script src="static/basket.js?v=20261128165945"></script>
+<script src="static/catpick.js?v=20261128165945"></script>
+<script src="static/photo.js?v=20261128165945"></script>
+
+<script src="static/render.js?v=20261128165945"></script>
+<script src="static/category.js?v=20261128165945" data-build="20261128165945"></script>
+
+<script>
+// The three tabs side by side, the shopping list in the middle (the user, 2026-11-27): a swipe on a tab page moves to
+// the next tab. RTL like the bar: a finger moving right goes to the tab on the left (הוצאות from the list), moving
+// left to the tab on the right (מחלקות). Not from a typing field or from a box that scrolls sideways.
+// Fast (the user, 2026-11-27: "it lags"): the page follows the finger while it moves, and the neighbouring tabs are
+// prerendered in the background (Chrome's speculation rules), so the swipe shows a page that is already loaded
+// instead of downloading and drawing it then.
+(function () {
+  const TABS = ["index.html", "notes.html", "spending.html"];  // the bar, right to left
+  const page = location.pathname.split("/").pop() || "index.html";
+  const at = TABS.indexOf(page);
+  if (at < 0) return;
+  const next = [TABS[at - 1], TABS[at + 1]].filter(Boolean);
+  if (HTMLScriptElement.supports && HTMLScriptElement.supports("speculationrules")) {
+    const s = document.createElement("script");
+    s.type = "speculationrules";
+    s.textContent = JSON.stringify({ prerender: [{ source: "list", urls: next, eagerness: "immediate" }] });
+    document.head.appendChild(s);
+  } else {
+    for (const u of next) { const l = document.createElement("link"); l.rel = "prefetch"; l.href = u; document.head.appendChild(l); }
+  }
+  const main = document.querySelector("main");
+  let x0 = null, y0 = 0, t0 = 0, skip = false, lock = null;  // lock: "x" = a sideways drag, "y" = scrolling
+  const sideScroll = (el) => {
+    for (; el && el !== document.body; el = el.parentElement) {
+      if (el.scrollWidth > el.clientWidth + 2 && /auto|scroll/.test(getComputedStyle(el).overflowX)) return true;
+    }
+    return false;
+  };
+  const target = (dx) => { const to = at + (dx > 0 ? 1 : -1); return to >= 0 && to < TABS.length ? to : -1; };
+  const place = (dx, animate) => {
+    if (!main) return;
+    main.style.transition = animate ? "transform .18s ease-out, opacity .18s" : "none";
+    main.style.transform = dx ? `translateX(${dx}px)` : "";
+    main.style.opacity = dx ? String(Math.max(0.35, 1 - Math.abs(dx) / (innerWidth * 1.2))) : "";
+  };
+  document.addEventListener("touchstart", (e) => {
+    if (e.touches.length !== 1) { x0 = null; return; }
+    const t = e.touches[0];
+    x0 = t.clientX; y0 = t.clientY; t0 = Date.now(); lock = null;
+    skip = !!e.target.closest("input, textarea, select, [contenteditable], dialog, .photo-box, .catpick-box, [data-noswipe]") || sideScroll(e.target);
+  }, { passive: true });
+  document.addEventListener("touchmove", (e) => {
+    if (x0 === null || skip || lock === "y") return;
+    const t = e.touches[0], dx = t.clientX - x0, dy = t.clientY - y0;
+    if (!lock) {
+      if (Math.abs(dx) < 10 && Math.abs(dy) < 10) return;
+      lock = Math.abs(dx) > Math.abs(dy) * 1.3 ? "x" : "y";
+      if (lock === "y") return;
+    }
+    place(target(dx) < 0 ? dx * 0.2 : dx, false);  // at the last tab: a little give, no page
+  }, { passive: true });
+  const release = (e) => {
+    if (x0 === null || skip) { x0 = null; return; }
+    const t = e.changedTouches[0], dx = t.clientX - x0, ms = Date.now() - t0;
+    const wasX = lock === "x";
+    x0 = null; lock = null;
+    if (!wasX) return;
+    const to = target(dx);
+    const far = Math.abs(dx) > innerWidth * 0.28 || (Math.abs(dx) > 40 && ms < 300);  // far enough, or a flick
+    if (to < 0 || !far || (document.getSelection && String(document.getSelection()))) { place(0, true); return; }
+    place(dx > 0 ? innerWidth * 0.5 : -innerWidth * 0.5, true);
+    location.href = TABS[to];
+  };
+  document.addEventListener("touchend", release, { passive: true });
+  document.addEventListener("touchcancel", () => { if (x0 !== null) { x0 = null; lock = null; place(0, true); } }, { passive: true });
+  window.addEventListener("pageshow", () => place(0, false));
+})();
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+</script>
+</body>
+</html>
