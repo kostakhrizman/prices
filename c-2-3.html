@@ -1,0 +1,4124 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f7a4d">
+<script>
+// the look this phone chose (settings.html "מראה"), before anything is drawn: html.light / html.dark
+// (none = follow the phone) and html[data-color] (none = green); the browser bar takes the colour too
+(function () {
+  let t = {};
+  try { t = JSON.parse(localStorage.getItem("theme")) || {}; } catch (e) { /* none yet */ }
+  const root = document.documentElement;
+  if (t.mode === "light" || t.mode === "dark") root.classList.add(t.mode);
+  if (t.color) root.dataset.color = t.color;
+  if (t.bar) document.querySelector('meta[name="theme-color"]').content = t.bar;
+})();
+</script>
+<title>מעדנים ופודינגים</title>
+<link rel="manifest" href="static/manifest.webmanifest">
+<link rel="icon" href="static/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="static/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="static/style.css?v=20261007061534">
+<style>.st-0 { --store: #e07000; }.st-1 { --store: #d32f2f; }.st-2 { --store: #1565c0; }.st-3 { --store: #1565c0; }.st-4 { --store: #c99a00; }</style>
+<script src="static/stores.js?v=20261007061534" data-stores="[{&#34;card_cap&#34;: 750, &#34;card_rate&#34;: 0.07, &#34;default&#34;: true, &#34;key&#34;: &#34;victory-038&#34;, &#34;name&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;ramilevy-007&#34;, &#34;name&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-026&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05ea\u05dc\u05e4\u05d9\u05d5\u05ea&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-003&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05d2\u05d1\u05e2\u05ea \u05e9\u05d0\u05d5\u05dc&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;netto-052&#34;, &#34;name&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df \u05e7\u05e8\u05d9\u05d9\u05ea \u05d9\u05e2\u05e8\u05d9\u05dd&#34;, &#34;short&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df&#34;}]"></script>
+<script src="static/avoid.js?v=20261007061534" data-kinds="[&#34;\u05e2\u05d5\u05e3 \u05de\u05e2\u05d5\u05d1\u05d3&#34;, &#34;\u05d1\u05e9\u05e8 \u05de\u05e2\u05d5\u05d1\u05d3&#34;]"></script>
+<script>
+// No long-press menu on links, pictures or text (the user: the home page's tiles opened Chrome's "open in new tab /
+// copy link" menu; CSS can't stop that on Android). Typing fields and the ⓘ sheet's barcode keep theirs.
+document.addEventListener("contextmenu", (e) => {
+  if (!e.target.closest("input, textarea, [contenteditable], .photo-barcode")) e.preventDefault();
+});
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <a class="back" href="t-2.html" aria-label="חזרה">→</a>
+    <h1>מעדנים ופודינגים</h1>
+    <a class="notes-link" href="notes.html" aria-label="רשימת קניות" title="רשימת קניות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="m8.5 10 1.2 1.2 2.3-2.4M8.5 15.5l1.2 1.2 2.3-2.4M14 10.5h2.5M14 16h2.5"/></svg><span>רשימת קניות</span></a>
+    <a class="settings-link" href="settings.html" aria-label="הגדרות" title="הגדרות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></a>
+  </div>
+  
+  <form class="search" action="search.html" method="get" role="search">
+    <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+    <input type="search" name="q" placeholder="חיפוש מוצר" enterkeyhint="search" aria-label="חיפוש מוצר">
+  </form>
+  
+</header>
+<main>
+
+<p class="sub"><span class="sub-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8v3l2 3v11a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V9l2-3z"/><path d="M8 6h8"/><path d="M6 9h12"/><path d="M10 13.5a2 2 0 0 0 4 0c0-1.2-2-3.5-2-3.5s-2 2.3-2 3.5z"/></svg></span>חלב וביצים · <span id="cat-count">144</span> מוצרים, מהזול ליקר</p>
+
+
+<div class="cat-filter">
+  <input type="search" id="cat-filter" placeholder="סינון לפי שם או יצרן · ‎-מילה מסתירה" enterkeyhint="done" autocomplete="off" aria-label="סינון המוצרים בקטגוריה">
+</div>
+<div id="cat-list" data-href="c-2-3.html">
+
+<ol class="products">
+  
+  
+    
+    
+    
+    <li class="product st-1 best">
+      <div class="info">
+        <div class="name">גיל בטעם וניל 3% שומן <button type="button" class="photo-btn" data-photo="7290014761018" data-key="7290014761018" data-name="גיל בטעם וניל 3% שומן" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה, מחלבת אלון תבור</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪1.60</span><span class="other st-0">ויקטורי ₪1.80</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪12.80 <small>לק״ג</small></div>
+          <div class="shelf">₪1.60 · 125 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014761018" data-name="גיל בטעם וניל 3% שומן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לימבו בטעם פטל 0% שומן <button type="button" class="photo-btn" data-photo="7290110565435" data-key="7290110565435" data-name="לימבו בטעם פטל 0% שומן" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס בריאות בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪2.00</span><span class="other st-0">ויקטורי ₪2.10</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪15.20 <small>לליטר</small></div>
+          <div class="shelf">₪1.90 · 125 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110565435" data-name="לימבו בטעם פטל 0% שומן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מיני שוקולד מילקי</div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ.</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪16.92 <small>לליטר</small></div>
+          <div class="shelf">₪2.20 · 130 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:72941041" data-name="מיני שוקולד מילקי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פודינג וניל 800 גר <button type="button" class="photo-btn" data-photo="7290014325043" data-key="7290014325043" data-name="פודינג וניל 800 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מיה תעשיות מזון מ.ת.מ. בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪14.90</span><span class="other st-4">נטו חיסכון ₪14.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪17.38 <small>לק״ג</small></div>
+          <div class="shelf">₪13.90 · 800 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014325043" data-name="פודינג וניל 800 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שמיניה דני <button type="button" class="photo-btn" data-photo="7290010472390" data-key="7290010472390" data-name="שמיניה דני" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס בריאות בע&#34;\מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪18.40 <small>לליטר</small></div>
+          <div class="shelf">₪18.40 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010472390" data-name="שמיניה דני" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מאגדת שמינייה מעדן שוקלד 8*100 גרם <button type="button" class="photo-btn" data-photo="7290102396399" data-key="7290102396399" data-name="מאגדת שמינייה מעדן שוקלד 8*100 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טרה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪15.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪18.62 <small>לליטר</small></div>
+          <div class="shelf">₪14.90 · 800 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290102396399" data-name="מאגדת שמינייה מעדן שוקלד 8*100 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מאגדת שמינייה מעדן וניל 8*100 גרם <button type="button" class="photo-btn" data-photo="7290102396405" data-key="7290102396405" data-name="מאגדת שמינייה מעדן וניל 8*100 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טרה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪15.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪18.62 <small>לליטר</small></div>
+          <div class="shelf">₪14.90 · 800 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290102396405" data-name="מאגדת שמינייה מעדן וניל 8*100 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מילקי וניל וקצפת 133ג&#39;</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪18.82 <small>לליטר</small></div>
+          <div class="shelf">₪3.20 · 170 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:72940754" data-name="מילקי וניל וקצפת 133ג&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מילקי שוקולד וקצפת 170 מל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪18.82 <small>לליטר</small></div>
+          <div class="shelf">₪3.20 · 170 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:72940761" data-name="מילקי שוקולד וקצפת 170 מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מאגדת קרלו מיני בטעם שוקולד 8 * 100גר בדצ <button type="button" class="photo-btn" data-photo="7290004135072" data-key="7290004135072" data-name="מאגדת קרלו מיני בטעם שוקולד 8 * 100גר בדצ" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מחלבת אלון תבור</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪15.90</span><span class="other st-0">ויקטורי ₪17.60</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.38 <small>לליטר</small></div>
+          <div class="shelf">₪15.50 · 800 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004135072" data-name="מאגדת קרלו מיני בטעם שוקולד 8 * 100גר בדצ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קרלו מיני וניל מאגדת 100X8מל בדצ <button type="button" class="photo-btn" data-photo="7290004135119" data-key="7290004135119" data-name="קרלו מיני וניל מאגדת 100X8מל בדצ" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מחלבת אלון תבור</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪15.90</span><span class="other st-0">ויקטורי ₪17.60</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.62 <small>לליטר</small></div>
+          <div class="shelf">₪15.70 · 800 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004135119" data-name="קרלו מיני וניל מאגדת 100X8מל בדצ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מאגדת קרלו מיני בטעם וניל 8*100גרם מהדרין <button type="button" class="photo-btn" data-photo="7290004132606" data-key="7290004132606" data-name="מאגדת קרלו מיני בטעם וניל 8*100גרם מהדרין" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מחלבת אלון תבור</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪17.60</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.88 <small>לליטר</small></div>
+          <div class="shelf">₪15.90 · 800 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004132606" data-name="מאגדת קרלו מיני בטעם וניל 8*100גרם מהדרין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מארז קרלו מיני בטעם  שוקולד <button type="button" class="photo-btn" data-photo="7290004135058" data-key="7290004135058" data-name="מארז קרלו מיני בטעם  שוקולד" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מחלבת אלון תבור</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪17.60</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.88 <small>לליטר</small></div>
+          <div class="shelf">₪15.90 · 800 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004135058" data-name="מארז קרלו מיני בטעם  שוקולד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מאגדת קרלו מיני 8  יח`100  גר`בטעם שוניל <button type="button" class="photo-btn" data-photo="7290110325084" data-key="7290110325084" data-name="מאגדת קרלו מיני 8  יח`100  גר`בטעם שוניל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪15.90</span><span class="other st-0">ויקטורי ₪17.60</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.88 <small>לליטר</small></div>
+          <div class="shelf">₪15.90 · 800 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110325084" data-name="מאגדת קרלו מיני 8  יח`100  גר`בטעם שוניל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מארז מילקי שוקולד שמינייה <button type="button" class="photo-btn" data-photo="7290104726712" data-key="7290104726712" data-name="מארז מילקי שוקולד שמינייה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ.</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪21.80</span><span class="other st-4">נטו חיסכון ₪22.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.92 <small>לק״ג</small></div>
+          <div class="shelf">₪21.20 · 1.064 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290104726712" data-name="מארז מילקי שוקולד שמינייה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מעדני המלך פתי בר וניל 110 גר <button type="button" class="photo-btn" data-photo="7290003220434" data-key="7290003220434" data-name="מעדני המלך פתי בר וניל 110 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">5 ב־₪11</span> בקניית 5 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪20.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪2.90</s> ₪2.20 · 110 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003220434" data-name="מעדני המלך פתי בר וניל 110 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ג`לי פטל 125 גרם תנובה <button type="button" class="photo-btn" data-photo="7290004136857" data-key="7290004136857" data-name="ג`לי פטל 125 גרם תנובה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוי מג&#39;יק</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪2.60</span><span class="other st-0">ויקטורי ₪3.00</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪20.00 <small>לליטר</small></div>
+          <div class="shelf">₪2.50 · 125 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004136857" data-name="ג`לי פטל 125 גרם תנובה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ג`לי בטעם ענבים 125  גר`תנובה <button type="button" class="photo-btn" data-photo="7290014762220" data-key="7290014762220" data-name="ג`לי בטעם ענבים 125  גר`תנובה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪2.60</span><span class="other st-0">ויקטורי ₪3.00</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪20.00 <small>לק״ג</small></div>
+          <div class="shelf">₪2.50 · 125 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014762220" data-name="ג`לי בטעם ענבים 125  גר`תנובה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ג`לי אעם אננס 125 גרם תנובה <button type="button" class="photo-btn" data-photo="7290116934242" data-key="7290116934242" data-name="ג`לי אעם אננס 125 גרם תנובה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪2.60</span><span class="other st-0">ויקטורי ₪3.00</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪20.00 <small>לליטר</small></div>
+          <div class="shelf">₪2.50 · 125 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116934242" data-name="ג`לי אעם אננס 125 גרם תנובה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ג&#39;לי תנובה בטעם אפרסק 125 גרם <button type="button" class="photo-btn" data-photo="7290116934556" data-key="7290116934556" data-name="ג&#39;לי תנובה בטעם אפרסק 125 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪2.60</span><span class="other st-0">ויקטורי ₪3.00</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪20.00 <small>לליטר</small></div>
+          <div class="shelf">₪2.50 · 125 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116934556" data-name="ג&#39;לי תנובה בטעם אפרסק 125 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מילקי טריו בטעם דאבל שוקולד <button type="button" class="photo-btn" data-photo="7290110557423" data-key="7290110557423" data-name="מילקי טריו בטעם דאבל שוקולד" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪4.00</span><span class="other st-4">נטו חיסכון ₪4.00</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪20.59 <small>לליטר</small></div>
+          <div class="shelf">₪3.50 · 170 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110557423" data-name="מילקי טריו בטעם דאבל שוקולד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">ג&#39;לי בטעם לימון 125 גרם <button type="button" class="photo-btn" data-photo="7290116936154" data-key="7290116936154" data-name="ג&#39;לי בטעם לימון 125 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-0">ויקטורי ₪3.00</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪20.80 <small>לק״ג</small></div>
+          <div class="shelf">₪2.60 · 125 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116936154" data-name="ג&#39;לי בטעם לימון 125 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מילקי קרם אגוזים 133 גרם שטראוס <button type="button" class="photo-btn" data-photo="7290112344694" data-key="7290112344694" data-name="מילקי קרם אגוזים 133 גרם שטראוס" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪21.05 <small>לליטר</small></div>
+          <div class="shelf">₪2.80 · 133 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112344694" data-name="מילקי קרם אגוזים 133 גרם שטראוס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מילקי 26% פחות סוכר 135 מ&#34;ל <button type="button" class="photo-btn" data-photo="7290112344755" data-key="7290112344755" data-name="מילקי 26% פחות סוכר 135 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ.</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪3.20</span><span class="other st-0">ויקטורי ₪3.30</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪21.48 <small>לליטר</small></div>
+          <div class="shelf">₪2.90 · 135 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112344755" data-name="מילקי 26% פחות סוכר 135 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">1.5% דני בטעם וניל 125 גרם <button type="button" class="photo-btn" data-photo="7290004585907" data-key="7290004585907" data-name="1.5% דני בטעם וניל 125 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס בריאות בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪2.90</span><span class="other st-0">ויקטורי ₪3.00</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪21.60 <small>לליטר</small></div>
+          <div class="shelf">₪2.70 · 125 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004585907" data-name="1.5% דני בטעם וניל 125 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">דני בטעם שוקולד 1.5%</div>
+        <div class="meta">
+          <span>שטראוס</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪21.60 <small>לליטר</small></div>
+          <div class="shelf">₪2.70 · 125 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058140886:72993637" data-name="דני בטעם שוקולד 1.5%" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מילקי אקסטרה קצפת 170 מל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪21.76 <small>לליטר</small></div>
+          <div class="shelf">₪3.70 · 170 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:72940952" data-name="מילקי אקסטרה קצפת 170 מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מילקי תות שטראוס 133 מ&#34;ל <button type="button" class="photo-btn" data-photo="7290105368331" data-key="7290105368331" data-name="מילקי תות שטראוס 133 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מחלבת אחיהוד</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪3.20</span><span class="other st-0">ויקטורי ₪3.30</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪21.80 <small>לליטר</small></div>
+          <div class="shelf">₪2.90 · 133 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290105368331" data-name="מילקי תות שטראוס 133 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מילקי מעדן שוקולד עם</div>
+        <div class="meta">
+          <span>שטראוס</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪21.80 <small>לליטר</small></div>
+          <div class="shelf">₪2.90 · 133 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058140886:72940761" data-name="מילקי מעדן שוקולד עם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעדן סויה ביו עם אפרסק אלטרנטיב 150 גרם <button type="button" class="photo-btn" data-photo="7290110329792" data-key="7290110329792" data-name="מעדן סויה ביו עם אפרסק אלטרנטיב 150 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪10</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪4.90</span><span class="other st-0">ויקטורי ₪5.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.20 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪4.70</s> ₪3.33 · 150 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110329792" data-name="מעדן סויה ביו עם אפרסק אלטרנטיב 150 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעדן סויה ביו עם תות אלטרנטיב 150 גרם <button type="button" class="photo-btn" data-photo="7290110329808" data-key="7290110329808" data-name="מעדן סויה ביו עם תות אלטרנטיב 150 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪10</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪4.90</span><span class="other st-0">ויקטורי ₪5.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.20 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪4.70</s> ₪3.33 · 150 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110329808" data-name="מעדן סויה ביו עם תות אלטרנטיב 150 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעדן סויה ביו בטעם מעודן אלטרנטיב 150 ג&#39; <button type="button" class="photo-btn" data-photo="7290110329815" data-key="7290110329815" data-name="מעדן סויה ביו בטעם מעודן אלטרנטיב 150 ג&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪10</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪4.90</span><span class="other st-0">ויקטורי ₪5.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.20 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪4.70</s> ₪3.33 · 150 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110329815" data-name="מעדן סויה ביו בטעם מעודן אלטרנטיב 150 ג&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעדן סויה ביו בטעם טבעי אלטרנטיב 150 גרם <button type="button" class="photo-btn" data-photo="7290110329846" data-key="7290110329846" data-name="מעדן סויה ביו בטעם טבעי אלטרנטיב 150 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪10</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪4.90</span><span class="other st-0">ויקטורי ₪5.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.20 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪4.70</s> ₪3.33 · 150 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110329846" data-name="מעדן סויה ביו בטעם טבעי אלטרנטיב 150 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אלטרנטיב מעדן סויה בננה קרמל 150 גרם <button type="button" class="photo-btn" data-photo="7290116935942" data-key="7290116935942" data-name="אלטרנטיב מעדן סויה בננה קרמל 150 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪10</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪4.90</span><span class="other st-0">ויקטורי ₪5.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.20 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪4.70</s> ₪3.33 · 150 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116935942" data-name="אלטרנטיב מעדן סויה בננה קרמל 150 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מילקי טעם פסק זמן שטראוס 133 מ&#34;ל <button type="button" class="photo-btn" data-photo="7290110560836" data-key="7290110560836" data-name="מילקי טעם פסק זמן שטראוס 133 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ.</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪3.20</span><span class="other st-0">ויקטורי ₪3.30</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪22.56 <small>לליטר</small></div>
+          <div class="shelf">₪3.00 · 133 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110560836" data-name="מילקי טעם פסק זמן שטראוס 133 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מילקי מעדן וניל עם ק</div>
+        <div class="meta">
+          <span>שטראוס</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪22.56 <small>לליטר</small></div>
+          <div class="shelf">₪3.00 · 133 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058140886:72940754" data-name="מילקי מעדן וניל עם ק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעדן הגולן וניל 125 גר&#39; <button type="button" class="photo-btn" data-photo="7290110557133" data-key="7290110557133" data-name="מעדן הגולן וניל 125 גר&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס בריאות בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪3.30</span><span class="other st-4">נטו חיסכון ₪3.40</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪23.20 <small>לק״ג</small></div>
+          <div class="shelf">₪2.90 · 125 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110557133" data-name="מעדן הגולן וניל 125 גר&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעדן הגולן שוקולד 125 גר <button type="button" class="photo-btn" data-photo="7290115678376" data-key="7290115678376" data-name="מעדן הגולן שוקולד 125 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס בריאות בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪3.30</span><span class="other st-4">נטו חיסכון ₪3.40</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪23.20 <small>לק״ג</small></div>
+          <div class="shelf">₪2.90 · 125 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115678376" data-name="מעדן הגולן שוקולד 125 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שוקולד מריר 125 גר מעדן הגולן <button type="button" class="photo-btn" data-photo="7290115678383" data-key="7290115678383" data-name="שוקולד מריר 125 גר מעדן הגולן" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס בריאות בע&#34;\מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪3.30</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪23.20 <small>לק״ג</small></div>
+          <div class="shelf">₪2.90 · 125 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115678383" data-name="שוקולד מריר 125 גר מעדן הגולן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעדן גמדים תות בננה 8*100 מ&#34;ל <button type="button" class="photo-btn" data-photo="7290104062599" data-key="7290104062599" data-name="מעדן גמדים תות בננה 8*100 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס בריאות בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪19.40</span><span class="other st-0">ויקטורי ₪20.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪23.62 <small>לליטר</small></div>
+          <div class="shelf">₪18.90 · 800 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290104062599" data-name="מעדן גמדים תות בננה 8*100 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעדן גמדים תות בננה 8*100 מ&#34;ל <button type="button" class="photo-btn" data-photo="7290110561604" data-key="7290110561604" data-name="מעדן גמדים תות בננה 8*100 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס בריאות בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪19.40</span><span class="other st-0">ויקטורי ₪20.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪23.62 <small>לליטר</small></div>
+          <div class="shelf">₪18.90 · 800 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110561604" data-name="מעדן גמדים תות בננה 8*100 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">דני בטעם שוקולד 1.5%</div>
+        <div class="meta">
+          <span>שטראוס בריאות בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪24.00 <small>לליטר</small></div>
+          <div class="shelf">₪3.00 · 125 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:72993637" data-name="דני בטעם שוקולד 1.5%" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">וניל מילקי 135 גר`</div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪24.44 <small>לליטר</small></div>
+          <div class="shelf">₪3.30 · 135 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:72940754" data-name="וניל מילקי 135 גר`" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מילקי בטעם שוקולד</div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪24.44 <small>לק״ג</small></div>
+          <div class="shelf">₪3.30 · 135 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:72940761" data-name="מילקי בטעם שוקולד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מילקי טעם שוקולד בלנודי עם קצפת <button type="button" class="photo-btn" data-photo="7290112344724" data-key="7290112344724" data-name="מילקי טעם שוקולד בלנודי עם קצפת" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ.</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪3.70</span><span class="other st-4">נטו חיסכון ₪4.00</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪25.56 <small>לק״ג</small></div>
+          <div class="shelf">₪3.40 · 133 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112344724" data-name="מילקי טעם שוקולד בלנודי עם קצפת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קרלו מעדן בטעם שוקולד רביעיה גביע 125 1.5% <button type="button" class="photo-btn" data-photo="7290004119973" data-key="7290004119973" data-name="קרלו מעדן בטעם שוקולד רביעיה גביע 125 1.5%" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מחלבת אלון תבור</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪3.80</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪25.60 <small>לליטר</small></div>
+          <div class="shelf">₪3.20 · 125 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004119973" data-name="קרלו מעדן בטעם שוקולד רביעיה גביע 125 1.5%" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קרלו מעדן שוניל 2% 125ג&#39; <button type="button" class="photo-btn" data-photo="7290004120061" data-key="7290004120061" data-name="קרלו מעדן שוניל 2% 125ג&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מחלבת אלון תבור</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪3.50</span><span class="other st-0">ויקטורי ₪3.80</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪25.60 <small>לליטר</small></div>
+          <div class="shelf">₪3.20 · 125 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004120061" data-name="קרלו מעדן שוניל 2% 125ג&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעדן באדי וניל 1.5%</div>
+        <div class="meta">
+          <span>תנובה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪25.60 <small>לליטר</small></div>
+          <div class="shelf">₪3.20 · 125 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058140886:72986233" data-name="מעדן באדי וניל 1.5%" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעדן באדי שוקולד 1.5</div>
+        <div class="meta">
+          <span>תנובה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪25.60 <small>לליטר</small></div>
+          <div class="shelf">₪3.20 · 125 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058140886:72986240" data-name="מעדן באדי שוקולד 1.5" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">דיאט שוקולד מריר מעדן שטראוס <button type="button" class="photo-btn" data-photo="7290107950190" data-key="7290107950190" data-name="דיאט שוקולד מריר מעדן שטראוס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס בריאות בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪3.60</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪26.15 <small>לק״ג</small></div>
+          <div class="shelf">₪3.40 · 130 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290107950190" data-name="דיאט שוקולד מריר מעדן שטראוס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">דיאט שוקולד 0% מעדן שטראוס <button type="button" class="photo-btn" data-photo="7290107950206" data-key="7290107950206" data-name="דיאט שוקולד 0% מעדן שטראוס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס בריאות בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪3.50</span><span class="other st-0">ויקטורי ₪3.60</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪26.15 <small>לק״ג</small></div>
+          <div class="shelf">₪3.40 · 130 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290107950206" data-name="דיאט שוקולד 0% מעדן שטראוס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">באדי מעדן תות 125ג&#39;</div>
+        <div class="meta">
+          <span>באדי 125 גר&#39;</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪26.40 <small>לליטר</small></div>
+          <div class="shelf">₪3.30 · 125 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:72961544" data-name="באדי מעדן תות 125ג&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעדן סויה בטעם וניל 3% אלטרנטיב 125 גרם <button type="button" class="photo-btn" data-photo="7290014760134" data-key="7290014760134" data-name="מעדן סויה בטעם וניל 3% אלטרנטיב 125 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪10</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪3.50 (4 ב־₪14)</span><span class="other st-0">ויקטורי ₪3.75 (4 ב־₪15)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪26.64 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪3.90</s> ₪3.33 · 125 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014760134" data-name="מעדן סויה בטעם וניל 3% אלטרנטיב 125 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעדן סויה עם שוקולד 2% אלטרנטיב 125 ג&#39; <button type="button" class="photo-btn" data-photo="7290014762800" data-key="7290014762800" data-name="מעדן סויה עם שוקולד 2% אלטרנטיב 125 ג&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוי מג&#39;יק</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪10</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪3.50 (4 ב־₪14)</span><span class="other st-0">ויקטורי ₪3.75 (4 ב־₪15)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪26.64 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪3.90</s> ₪3.33 · 125 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014762800" data-name="מעדן סויה עם שוקולד 2% אלטרנטיב 125 ג&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעדן שקדים בטעם אגוזי לוז אלטרנטיב 125 ג <button type="button" class="photo-btn" data-photo="7290110324858" data-key="7290110324858" data-name="מעדן שקדים בטעם אגוזי לוז אלטרנטיב 125 ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪10</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪4.00 (4 ב־₪16)</span><span class="other st-4">נטו חיסכון ₪4.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪26.64 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪4.10</s> ₪3.33 · 125 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110324858" data-name="מעדן שקדים בטעם אגוזי לוז אלטרנטיב 125 ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מילקי טופ מגולגלת שטראוס 170 מ&#34;ל <button type="button" class="photo-btn" data-photo="7290005839313" data-key="7290005839313" data-name="מילקי טופ מגולגלת שטראוס 170 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪5.30</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪27.06 <small>לליטר</small></div>
+          <div class="shelf">₪4.60 · 170 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290005839313" data-name="מילקי טופ מגולגלת שטראוס 170 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מילקי טופ עדשים 170 <button type="button" class="photo-btn" data-photo="7290110573751" data-key="7290110573751" data-name="מילקי טופ עדשים 170" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪5.30</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪27.06 <small>לליטר</small></div>
+          <div class="shelf">₪4.60 · 170 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110573751" data-name="מילקי טופ עדשים 170" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מילקי מעדן מיני שוקו</div>
+        <div class="meta">
+          <span>שטראוס</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪27.14 <small>לליטר</small></div>
+          <div class="shelf">₪1.90 · 70 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058140886:72941041" data-name="מילקי מעדן מיני שוקו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גמדים תות בננה רביעייה <button type="button" class="photo-btn" data-photo="7290004584306" data-key="7290004584306" data-name="גמדים תות בננה רביעייה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס בריאות בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪12.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪28.75 <small>לליטר</small></div>
+          <div class="shelf">₪11.50 · 400 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004584306" data-name="גמדים תות בננה רביעייה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אלפרו מעדן סויה בטעם שוקולד מריר 4*125 מ&#34;ל <button type="button" class="photo-btn" data-photo="5411188094159" data-key="5411188094159" data-name="אלפרו מעדן סויה בטעם שוקולד מריר 4*125 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אלפרו C.V.A</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪29.80 <small>לליטר</small></div>
+          <div class="shelf"><s>₪15.90</s> ₪14.90 · 500 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5411188094159" data-name="אלפרו מעדן סויה בטעם שוקולד מריר 4*125 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעדן תנובה שוקולד %0 150מל <button type="button" class="photo-btn" data-photo="7290004135225" data-key="7290004135225" data-name="מעדן תנובה שוקולד %0 150מל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪4.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪30.00 <small>לליטר</small></div>
+          <div class="shelf">₪4.50 · 150 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004135225" data-name="מעדן תנובה שוקולד %0 150מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעדן סויה גו 20 גר&#39; חלבון במתיקות מעודנת <button type="button" class="photo-btn" data-photo="7290110325305" data-key="7290110325305" data-name="מעדן סויה גו 20 גר&#39; חלבון במתיקות מעודנת" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪6.30</span><span class="other st-0">ויקטורי ₪6.60</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪30.00 <small>לליטר</small></div>
+          <div class="shelf">₪6.00 · 200 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110325305" data-name="מעדן סויה גו 20 גר&#39; חלבון במתיקות מעודנת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעדן סויה גו 20% חלבון תות <button type="button" class="photo-btn" data-photo="7290110325312" data-key="7290110325312" data-name="מעדן סויה גו 20% חלבון תות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪6.30</span><span class="other st-0">ויקטורי ₪6.60</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪30.00 <small>לליטר</small></div>
+          <div class="shelf">₪6.00 · 200 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110325312" data-name="מעדן סויה גו 20% חלבון תות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">באדי מעדן בטעם וניל גביע 125גרם 2% בדצ</div>
+        <div class="meta">
+          <span>מחלבת אלון תבור</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪30.40 <small>לליטר</small></div>
+          <div class="shelf">₪3.80 · 125 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:72986233" data-name="באדי מעדן בטעם וניל גביע 125גרם 2% בדצ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">באדי מעדן בטעם שוקו גביע 125גרם 1.5% בדצ</div>
+        <div class="meta">
+          <span>מחלבת אלון תבור</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪30.40 <small>לליטר</small></div>
+          <div class="shelf">₪3.80 · 125 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:72986240" data-name="באדי מעדן בטעם שוקו גביע 125גרם 1.5% בדצ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קרלו מעדן בטעם וניל רביעיות גביע 125  1.5% <button type="button" class="photo-btn" data-photo="7290004119928" data-key="7290004119928" data-name="קרלו מעדן בטעם וניל רביעיות גביע 125  1.5%" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מחלבת אלון תבור</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪30.40 <small>לליטר</small></div>
+          <div class="shelf">₪3.80 · 125 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004119928" data-name="קרלו מעדן בטעם וניל רביעיות גביע 125  1.5%" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מילקי שכבות טעם טירמיסו <button type="button" class="photo-btn" data-photo="7290119386079" data-key="7290119386079" data-name="מילקי שכבות טעם טירמיסו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪3.90</span><span class="other st-4">נטו חיסכון ₪4.00</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪31.25 <small>לליטר</small></div>
+          <div class="shelf">₪3.50 · 112 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119386079" data-name="מילקי שכבות טעם טירמיסו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעדן חלב מלבי גד 160 גרם <button type="button" class="photo-btn" data-photo="7290000554402" data-key="7290000554402" data-name="מעדן חלב מלבי גד 160 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מיוצר ע&#34;י קוד יצרן EDNK</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪10</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪5.00 (3 ב־₪15)</span><span class="other st-0">ויקטורי ₪7.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪31.25 <small>לליטר</small></div>
+          <div class="shelf"><s>₪6.20</s> ₪5.00 · 160 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000554402" data-name="מעדן חלב מלבי גד 160 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מילקי טופ קורנפלקס 141 מ&#34;ל <button type="button" class="photo-btn" data-photo="7290112355812" data-key="7290112355812" data-name="מילקי טופ קורנפלקס 141 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪4.90</span><span class="other st-0">ויקטורי ₪5.30</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪31.91 <small>לק״ג</small></div>
+          <div class="shelf">₪4.50 · 141 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112355812" data-name="מילקי טופ קורנפלקס 141 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מילקי שכבות בטעם שוקולד לבןופיסטוק <button type="button" class="photo-btn" data-photo="7290110557454" data-key="7290110557454" data-name="מילקי שכבות בטעם שוקולד לבןופיסטוק" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪4.00</span><span class="other st-4">נטו חיסכון ₪4.00</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪32.41 <small>לק״ג</small></div>
+          <div class="shelf">₪3.50 · 108 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110557454" data-name="מילקי שכבות בטעם שוקולד לבןופיסטוק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מעדן סויה בטעם פאי לימון 150 גרם <button type="button" class="photo-btn" data-photo="7290116935959" data-key="7290116935959" data-name="מעדן סויה בטעם פאי לימון 150 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-0">ויקטורי ₪5.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪32.67 <small>לק״ג</small></div>
+          <div class="shelf">₪4.90 · 150 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116935959" data-name="מעדן סויה בטעם פאי לימון 150 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">יוגורט במתיק&#39; מעודנ&#39; ביאנקו 2% מולר 150ג&#39; <button type="button" class="photo-btn" data-photo="7290102392889" data-key="7290102392889" data-name="יוגורט במתיק&#39; מעודנ&#39; ביאנקו 2% מולר 150ג&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪32.67 <small>לליטר</small></div>
+          <div class="shelf">₪4.90 · 150 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290102392889" data-name="יוגורט במתיק&#39; מעודנ&#39; ביאנקו 2% מולר 150ג&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מילקי מעדן פי 2 קצפת</div>
+        <div class="meta">
+          <span>שטראוס</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪32.71 <small>לליטר</small></div>
+          <div class="shelf">₪3.50 · 107 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058140886:72940952" data-name="מילקי מעדן פי 2 קצפת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעדן קוקוס ושקדים עם שוקולד מריר 125 גרם <button type="button" class="photo-btn" data-photo="7290116932811" data-key="7290116932811" data-name="מעדן קוקוס ושקדים עם שוקולד מריר 125 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪8</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪4.45 (2 ב־₪8.90)</span><span class="other st-4">נטו חיסכון ₪4.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪32.79 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪4.90</s> ₪4.00 · 122 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116932811" data-name="מעדן קוקוס ושקדים עם שוקולד מריר 125 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ירח מתוק מעדן חלב עם אורז 3% גד 150 גרם <button type="button" class="photo-btn" data-photo="7290000554624" data-key="7290000554624" data-name="ירח מתוק מעדן חלב עם אורז 3% גד 150 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מיוצר ע&#34;\י קוד יצרן EDNK</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪10</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪5.00 (3 ב־₪15)</span><span class="other st-0">ויקטורי ₪7.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪33.33 <small>לליטר</small></div>
+          <div class="shelf"><s>₪6.20</s> ₪5.00 · 150 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000554624" data-name="ירח מתוק מעדן חלב עם אורז 3% גד 150 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעדן שיבולת שועל 150 גרם <button type="button" class="photo-btn" data-photo="7290014455467" data-key="7290014455467" data-name="מעדן שיבולת שועל 150 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מחלבות גד</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪10</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪5.00 (3 ב־₪15)</span><span class="other st-0">ויקטורי ₪7.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪33.33 <small>לליטר</small></div>
+          <div class="shelf"><s>₪6.20</s> ₪5.00 · 150 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014455467" data-name="מעדן שיבולת שועל 150 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בסגנון יוגורט יווני <button type="button" class="photo-btn" data-photo="7290019635925" data-key="7290019635925" data-name="בסגנון יוגורט יווני" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>עדן קינוחים</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪4.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪33.57 <small>לק״ג</small></div>
+          <div class="shelf">₪4.70 · 140 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019635925" data-name="בסגנון יוגורט יווני" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פרו עם שכבה בטעם פירות יער <button type="button" class="photo-btn" data-photo="7290119380794" data-key="7290119380794" data-name="פרו עם שכבה בטעם פירות יער" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס בריאות בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪7.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪34.50 <small>לליטר</small></div>
+          <div class="shelf">₪6.90 · 200 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119380794" data-name="פרו עם שכבה בטעם פירות יער" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעדן בחלבון שוקולד <button type="button" class="photo-btn" data-photo="7290110557102" data-key="7290110557102" data-name="מעדן בחלבון שוקולד" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס בריאות בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪5.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪34.67 <small>לק״ג</small></div>
+          <div class="shelf">₪5.20 · 150 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110557102" data-name="מעדן בחלבון שוקולד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעדן חלבון לל&#34;ס שוקולד <button type="button" class="photo-btn" data-photo="7290110558703" data-key="7290110558703" data-name="מעדן חלבון לל&#34;ס שוקולד" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס בריאות בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪5.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪34.67 <small>לק״ג</small></div>
+          <div class="shelf">₪5.20 · 150 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110558703" data-name="מעדן חלבון לל&#34;ס שוקולד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעדן פרו בטעם וניל <button type="button" class="photo-btn" data-photo="7290110571382" data-key="7290110571382" data-name="מעדן פרו בטעם וניל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס בריאות בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪5.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪34.67 <small>לק״ג</small></div>
+          <div class="shelf">₪5.20 · 150 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110571382" data-name="מעדן פרו בטעם וניל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעדן חלב מועשר חלבון <button type="button" class="photo-btn" data-photo="7290119384426" data-key="7290119384426" data-name="מעדן חלב מועשר חלבון" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪34.67 <small>לק״ג</small></div>
+          <div class="shelf">₪5.20 · 150 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119384426" data-name="מעדן חלב מועשר חלבון" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעדן פרי 4 פירות שקד <button type="button" class="photo-btn" data-photo="7290016276756" data-key="7290016276756" data-name="מעדן פרי 4 פירות שקד" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שקדיה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪34.86 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 284 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016276756" data-name="מעדן פרי 4 פירות שקד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעדן פרי משמש שקדיה <button type="button" class="photo-btn" data-photo="7290019297383" data-key="7290019297383" data-name="מעדן פרי משמש שקדיה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>לייני דאשאן</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪34.86 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 284 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019297383" data-name="מעדן פרי משמש שקדיה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעדן פרי דובדבן שקדי <button type="button" class="photo-btn" data-photo="7290019297406" data-key="7290019297406" data-name="מעדן פרי דובדבן שקדי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>לייני דאשאן</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪34.86 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 284 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019297406" data-name="מעדן פרי דובדבן שקדי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעדן פרי תות שדה שקד <button type="button" class="photo-btn" data-photo="7290019297420" data-key="7290019297420" data-name="מעדן פרי תות שדה שקד" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שקדיה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪34.86 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 284 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019297420" data-name="מעדן פרי תות שדה שקד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעדן הגולן צמחי טעם שוקולד 125 גר <button type="button" class="photo-btn" data-photo="7290119383528" data-key="7290119383528" data-name="מעדן הגולן צמחי טעם שוקולד 125 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס בריאות בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪4.60</span><span class="other st-0">ויקטורי ₪4.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪35.20 <small>לק״ג</small></div>
+          <div class="shelf">₪4.40 · 125 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119383528" data-name="מעדן הגולן צמחי טעם שוקולד 125 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">יוגטה מרשמלו 180 גרם <button type="button" class="photo-btn" data-photo="7290003141159" data-key="7290003141159" data-name="יוגטה מרשמלו 180 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יוגוטה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪38.33 <small>לק״ג</small></div>
+          <div class="shelf">₪6.90 · 180 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003141159" data-name="יוגטה מרשמלו 180 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">פודינג וניל 85 גרם - חדש- <button type="button" class="photo-btn" data-photo="7290019603306" data-key="7290019603306" data-name="פודינג וניל 85 גרם - חדש-" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪10</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-4">נטו חיסכון ₪4.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪39.18 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.00</s> ₪3.33 · 85 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019603306" data-name="פודינג וניל 85 גרם - חדש-" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">פודינג שוקולד 85 גרם -חדש- <button type="button" class="photo-btn" data-photo="7290019603313" data-key="7290019603313" data-name="פודינג שוקולד 85 גרם -חדש-" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪10</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-4">נטו חיסכון ₪4.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪39.18 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.00</s> ₪3.33 · 85 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019603313" data-name="פודינג שוקולד 85 גרם -חדש-" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מעדן ביו סויה סידן וויטמינים 150 גרם <button type="button" class="photo-btn" data-photo="7290119371822" data-key="7290119371822" data-name="מעדן ביו סויה סידן וויטמינים 150 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס בריאות בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪5.90</span><span class="other st-4">נטו חיסכון ₪5.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.33 <small>לק״ג</small></div>
+          <div class="shelf">₪5.90 · 150 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119371822" data-name="מעדן ביו סויה סידן וויטמינים 150 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מעדן ביו סויה עם תות 150גר <button type="button" class="photo-btn" data-photo="7290119371846" data-key="7290119371846" data-name="מעדן ביו סויה עם תות 150גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס בריאות בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪5.90</span><span class="other st-4">נטו חיסכון ₪5.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.33 <small>לק״ג</small></div>
+          <div class="shelf">₪5.90 · 150 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119371846" data-name="מעדן ביו סויה עם תות 150גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מעדן ביו סויה עם פירות יער 150גר <button type="button" class="photo-btn" data-photo="7290119371853" data-key="7290119371853" data-name="מעדן ביו סויה עם פירות יער 150גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס בריאות בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪5.90</span><span class="other st-4">נטו חיסכון ₪5.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.33 <small>לק״ג</small></div>
+          <div class="shelf">₪5.90 · 150 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119371853" data-name="מעדן ביו סויה עם פירות יער 150גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מעדן ביו סויה עם אפרסק 150גר <button type="button" class="photo-btn" data-photo="7290119371860" data-key="7290119371860" data-name="מעדן ביו סויה עם אפרסק 150גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס בריאות בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪5.90</span><span class="other st-4">נטו חיסכון ₪5.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.33 <small>לק״ג</small></div>
+          <div class="shelf">₪5.90 · 150 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119371860" data-name="מעדן ביו סויה עם אפרסק 150גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעדן יולו שוקולד חלב מעולה 7.8% 123 ג&#39; <button type="button" class="photo-btn" data-photo="7290014761056" data-key="7290014761056" data-name="מעדן יולו שוקולד חלב מעולה 7.8% 123 ג&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מחלבת אלון תבור</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪5.30</span><span class="other st-0">ויקטורי ₪6.30</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪42.62 <small>לק״ג</small></div>
+          <div class="shelf">₪5.20 · 122 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014761056" data-name="מעדן יולו שוקולד חלב מעולה 7.8% 123 ג&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעדן יולו שוקולד מריר מעולה 7.8% 123 גרם <button type="button" class="photo-btn" data-photo="7290014761063" data-key="7290014761063" data-name="מעדן יולו שוקולד מריר מעולה 7.8% 123 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מחלבת אלון תבור</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪5.30</span><span class="other st-0">ויקטורי ₪6.30</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪42.62 <small>לק״ג</small></div>
+          <div class="shelf">₪5.20 · 122 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014761063" data-name="מעדן יולו שוקולד מריר מעולה 7.8% 123 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעדן יולו שוקולד לבן מעולה 7.8% 123 גרם <button type="button" class="photo-btn" data-photo="7290014761070" data-key="7290014761070" data-name="מעדן יולו שוקולד לבן מעולה 7.8% 123 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מחלבת אלון תבור</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪5.30</span><span class="other st-0">ויקטורי ₪6.30</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪42.62 <small>לק״ג</small></div>
+          <div class="shelf">₪5.20 · 122 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014761070" data-name="מעדן יולו שוקולד לבן מעולה 7.8% 123 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">YOLO מעדן שכבות שוקולד חלב ולבן <button type="button" class="photo-btn" data-photo="7290014761414" data-key="7290014761414" data-name="YOLO מעדן שכבות שוקולד חלב ולבן" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מחלבת אלון תבור</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪5.30</span><span class="other st-0">ויקטורי ₪6.30</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪42.62 <small>לק״ג</small></div>
+          <div class="shelf">₪5.20 · 122 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014761414" data-name="YOLO מעדן שכבות שוקולד חלב ולבן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">YOLO שכבות שוקולד מריר ולבן <button type="button" class="photo-btn" data-photo="7290014761612" data-key="7290014761612" data-name="YOLO שכבות שוקולד מריר ולבן" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מחלבת אלון תבור</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪5.30</span><span class="other st-0">ויקטורי ₪6.30</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪42.62 <small>לק״ג</small></div>
+          <div class="shelf">₪5.20 · 122 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014761612" data-name="YOLO שכבות שוקולד מריר ולבן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעדן יולו שכבות עם קפה ושוקולד לבן <button type="button" class="photo-btn" data-photo="7290116936093" data-key="7290116936093" data-name="מעדן יולו שכבות עם קפה ושוקולד לבן" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪5.30</span><span class="other st-0">ויקטורי ₪6.30</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪42.62 <small>לק״ג</small></div>
+          <div class="shelf">₪5.20 · 122 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116936093" data-name="מעדן יולו שכבות עם קפה ושוקולד לבן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעדן חלב GO שוקולד <button type="button" class="photo-btn" data-photo="7290110329136" data-key="7290110329136" data-name="מעדן חלב GO שוקולד" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪5.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪43.33 <small>לק״ג</small></div>
+          <div class="shelf">₪5.20 · 120 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110329136" data-name="מעדן חלב GO שוקולד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעדן חלב GO וניל <button type="button" class="photo-btn" data-photo="7290110329143" data-key="7290110329143" data-name="מעדן חלב GO וניל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪5.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪43.33 <small>לק״ג</small></div>
+          <div class="shelf">₪5.20 · 120 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110329143" data-name="מעדן חלב GO וניל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">דניאלה בטעם וניל 88 מ&#34;ל <button type="button" class="photo-btn" data-photo="7290005838002" data-key="7290005838002" data-name="דניאלה בטעם וניל 88 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס בריאות בע&#34;\מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪4.00</span><span class="other st-0">ויקטורי ₪4.10</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪44.32 <small>לליטר</small></div>
+          <div class="shelf">₪3.90 · 88 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290005838002" data-name="דניאלה בטעם וניל 88 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">דניאלה בטעם תות 88 מ&#34;ל <button type="button" class="photo-btn" data-photo="7290008693134" data-key="7290008693134" data-name="דניאלה בטעם תות 88 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס בריאות בע&#34;\מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪4.00</span><span class="other st-0">ויקטורי ₪4.10</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪44.32 <small>לליטר</small></div>
+          <div class="shelf">₪3.90 · 88 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008693134" data-name="דניאלה בטעם תות 88 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">דניאלה בטעם בננה 88גרם <button type="button" class="photo-btn" data-photo="7290011194215" data-key="7290011194215" data-name="דניאלה בטעם בננה 88גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס בריאות בע&#34;\מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪4.00</span><span class="other st-0">ויקטורי ₪4.10</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪44.32 <small>לק״ג</small></div>
+          <div class="shelf">₪3.90 · 88 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011194215" data-name="דניאלה בטעם בננה 88גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעדן בטעם תות בננה שטראוס 88 גר דניאלה <button type="button" class="photo-btn" data-photo="7290112349606" data-key="7290112349606" data-name="מעדן בטעם תות בננה שטראוס 88 גר דניאלה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס בריאות בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪4.00</span><span class="other st-0">ויקטורי ₪4.10</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪44.32 <small>לק״ג</small></div>
+          <div class="shelf">₪3.90 · 88 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112349606" data-name="מעדן בטעם תות בננה שטראוס 88 גר דניאלה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מלבי חלבי 165 גר&#39; <button type="button" class="photo-btn" data-photo="7290005431883" data-key="7290005431883" data-name="מלבי חלבי 165 גר&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>עדן קינוחים</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪7.90</span><span class="other st-0">ויקטורי ₪9.00</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪45.45 <small>לק״ג</small></div>
+          <div class="shelf">₪7.50 · 165 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290005431883" data-name="מלבי חלבי 165 גר&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעדן פרי תות שדה 284 גר פרימוורה <button type="button" class="photo-btn" data-photo="7290008349949" data-key="7290008349949" data-name="מעדן פרי תות שדה 284 גר פרימוורה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>בית אל מזון בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪14.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪48.94 <small>לק״ג</small></div>
+          <div class="shelf">₪13.90 · 284 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008349949" data-name="מעדן פרי תות שדה 284 גר פרימוורה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעדן פרי אוכמניות כחולות <button type="button" class="photo-btn" data-photo="7290008349956" data-key="7290008349956" data-name="מעדן פרי אוכמניות כחולות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>בית אל מזון בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪14.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪48.94 <small>לק״ג</small></div>
+          <div class="shelf">₪13.90 · 284 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008349956" data-name="מעדן פרי אוכמניות כחולות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעדן פירות יער 284 גר פרימוורה <button type="button" class="photo-btn" data-photo="7290008349994" data-key="7290008349994" data-name="מעדן פירות יער 284 גר פרימוורה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>בית אל מזון בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪14.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪48.94 <small>לק״ג</small></div>
+          <div class="shelf">₪13.90 · 284 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008349994" data-name="מעדן פירות יער 284 גר פרימוורה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פודינג בטעם וניל לבן במיוחד <button type="button" class="photo-btn" data-photo="7290013145826" data-key="7290013145826" data-name="פודינג בטעם וניל לבן במיוחד" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מימונס</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪4.00 (3 ב־₪12)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪50.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪4.80</s> ₪4.00 · 80 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013145826" data-name="פודינג בטעם וניל לבן במיוחד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פודינג ורוד טעם וניל <button type="button" class="photo-btn" data-photo="7290119421213" data-key="7290119421213" data-name="פודינג ורוד טעם וניל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>א.ל ייצור ושיווק תבל</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪50.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪4.80</s> ₪4.00 · 80 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119421213" data-name="פודינג ורוד טעם וניל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פילגד סטיקי רייס מנגו <button type="button" class="photo-btn" data-photo="7290019635970" data-key="7290019635970" data-name="פילגד סטיקי רייס מנגו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>עדן קינוחים</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪6.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪50.00 <small>לק״ג</small></div>
+          <div class="shelf">₪6.50 · 130 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019635970" data-name="פילגד סטיקי רייס מנגו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פילגד מלבי שקדים <button type="button" class="photo-btn" data-photo="7290019635987" data-key="7290019635987" data-name="פילגד מלבי שקדים" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>עדן קינוחים</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪6.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪50.00 <small>לק״ג</small></div>
+          <div class="shelf">₪6.50 · 130 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019635987" data-name="פילגד מלבי שקדים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מעדן תות שדה מנז אנד גאסר <button type="button" class="photo-btn" data-photo="8008660210038" data-key="8008660210038" data-name="מעדן תות שדה מנז אנד גאסר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מנז&#39; אנד גאסר ס.פ.א</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪33</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪16.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪51.56 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪17.90</s> ₪16.50 · 320 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8008660210038" data-name="מעדן תות שדה מנז אנד גאסר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מעדן פרי משמש 284 גר פרימוורה <button type="button" class="photo-btn" data-photo="7290008349963" data-key="7290008349963" data-name="מעדן פרי משמש 284 גר פרימוורה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>בית אל מזון בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪52.46 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪14.90 · 284 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008349963" data-name="מעדן פרי משמש 284 גר פרימוורה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מעדן פרי תפוז מנדרינה <button type="button" class="photo-btn" data-photo="7290008349987" data-key="7290008349987" data-name="מעדן פרי תפוז מנדרינה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>בית אל מזון בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪52.46 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪14.90 · 284 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008349987" data-name="מעדן פרי תפוז מנדרינה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מארז הפסקת אוכל תנובה קורנפלקס וחלב וניל <button type="button" class="photo-btn" data-photo="7290004136598" data-key="7290004136598" data-name="מארז הפסקת אוכל תנובה קורנפלקס וחלב וניל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪8.00 (2 ב־₪16)</span><span class="other st-0">ויקטורי ₪9.00 (2 ב־₪18)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪52.67 <small>לליטר</small></div>
+          <div class="shelf"><s>₪10.70</s> ₪7.90 · 150 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004136598" data-name="מארז הפסקת אוכל תנובה קורנפלקס וחלב וניל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מלבי שמנת <button type="button" class="photo-btn" data-photo="7290005431968" data-key="7290005431968" data-name="מלבי שמנת" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>עדן קינוחים</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪8.00</span><span class="other st-0">ויקטורי ₪9.60</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪52.67 <small>לק״ג</small></div>
+          <div class="shelf">₪7.90 · 150 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290005431968" data-name="מלבי שמנת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעדן פרי תפוז 320 גר <button type="button" class="photo-btn" data-photo="8008660210052" data-key="8008660210052" data-name="מעדן פרי תפוז 320 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪52.81 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪17.90</s> ₪16.90 · 320 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8008660210052" data-name="מעדן פרי תפוז 320 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מעדן תות שדה מיה 280 גר <button type="button" class="photo-btn" data-photo="7290015347280" data-key="7290015347280" data-name="מעדן תות שדה מיה 280 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪53.21 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 280 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015347280" data-name="מעדן תות שדה מיה 280 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מעדן דובדבנים 280גר <button type="button" class="photo-btn" data-photo="7290015347297" data-key="7290015347297" data-name="מעדן דובדבנים 280גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪53.21 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 280 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015347297" data-name="מעדן דובדבנים 280גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מעדן משמש מיה 280 גר <button type="button" class="photo-btn" data-photo="7290015347310" data-key="7290015347310" data-name="מעדן משמש מיה 280 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪53.21 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 280 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015347310" data-name="מעדן משמש מיה 280 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אסם פודינג טעם פרלין שוקולד אספרסו 80 גרם <button type="button" class="photo-btn" data-photo="7290122782431" data-key="7290122782431" data-name="אסם פודינג טעם פרלין שוקולד אספרסו 80 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסם</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪4.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪53.33 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪4.90</s> ₪4.00 · 75 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290122782431" data-name="אסם פודינג טעם פרלין שוקולד אספרסו 80 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעדן משמש 300 גר <button type="button" class="photo-btn" data-photo="8008660210014" data-key="8008660210014" data-name="מעדן משמש 300 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מנז&#39; אנד גאסר</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪56.33 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪17.90</s> ₪16.90 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8008660210014" data-name="מעדן משמש 300 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעדן דובדבן 300 גר <button type="button" class="photo-btn" data-photo="8008660210021" data-key="8008660210021" data-name="מעדן דובדבן 300 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מנז&#39; אנד גאסר</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪56.33 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪17.90</s> ₪16.90 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8008660210021" data-name="מעדן דובדבן 300 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעדן פירות יער 300 ג <button type="button" class="photo-btn" data-photo="8008660210045" data-key="8008660210045" data-name="מעדן פירות יער 300 ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מנז&#39; אנד גאסר</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪56.33 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪17.90</s> ₪16.90 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8008660210045" data-name="מעדן פירות יער 300 ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">נפוליאון 450גר גביע <button type="button" class="photo-btn" data-photo="7290116935584" data-key="7290116935584" data-name="נפוליאון 450גר גביע" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪57.56 <small>לק״ג</small></div>
+          <div class="shelf">₪25.90 · 450 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116935584" data-name="נפוליאון 450גר גביע" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אצבעות שוקולד צימוקי <button type="button" class="photo-btn" data-photo="7290002511434" data-key="7290002511434" data-name="אצבעות שוקולד צימוקי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מחלבת המושבה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290002511434" data-name="אצבעות שוקולד צימוקי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מעדן שקדים וקשיו <button type="button" class="photo-btn" data-photo="7290018593202" data-key="7290018593202" data-name="מעדן שקדים וקשיו" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪61.88 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 160 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018593202" data-name="מעדן שקדים וקשיו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">כיף כף מגדים 45 גרם <button type="button" class="photo-btn" data-photo="7290105362377" data-key="7290105362377" data-name="כיף כף מגדים 45 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">4 ב־₪12</span> בקניית 4 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪4.00 (4 ב־₪16)</span><span class="other st-0">ויקטורי ₪4.80</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪66.67 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪4.50</s> ₪3.00 · 45 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290105362377" data-name="כיף כף מגדים 45 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ניצן אבו גוש מעדן לא <button type="button" class="photo-btn" data-photo="7290011064075" data-key="7290011064075" data-name="ניצן אבו גוש מעדן לא" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>עמיר ניצן</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪68.50 <small>לק״ג</small></div>
+          <div class="shelf">₪13.70 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011064075" data-name="ניצן אבו גוש מעדן לא" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אצבעות שוקולד וניל <button type="button" class="photo-btn" data-photo="7290002511427" data-key="7290002511427" data-name="אצבעות שוקולד וניל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מחלבת המושבה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪68.70 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290002511427" data-name="אצבעות שוקולד וניל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מלבי <button type="button" class="photo-btn" data-photo="7290013144263" data-key="7290013144263" data-name="מלבי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מימונס</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪15</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪11.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪75.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪7.50 · 100 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013144263" data-name="מלבי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בוואריה <button type="button" class="photo-btn" data-photo="7290005431890" data-key="7290005431890" data-name="בוואריה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>עדן קינוחים</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪9.00</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪78.95 <small>לק״ג</small></div>
+          <div class="shelf">₪7.50 · 95 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290005431890" data-name="בוואריה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קינוחי עדן עוגת גבינה פירורים 92 ג&#39; <button type="button" class="photo-btn" data-photo="7290005431913" data-key="7290005431913" data-name="קינוחי עדן עוגת גבינה פירורים 92 ג&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>עדן קינוחים</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪7.90</span><span class="other st-0">ויקטורי ₪9.00</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪81.52 <small>לק״ג</small></div>
+          <div class="shelf">₪7.50 · 92 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290005431913" data-name="קינוחי עדן עוגת גבינה פירורים 92 ג&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קינוחי עדן עוגת גבינה פירורים לייט 78 ג&#39; <button type="button" class="photo-btn" data-photo="7290005431920" data-key="7290005431920" data-name="קינוחי עדן עוגת גבינה פירורים לייט 78 ג&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>עדן קינוחים</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪7.90</span><span class="other st-0">ויקטורי ₪9.00</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪96.15 <small>לק״ג</small></div>
+          <div class="shelf">₪7.50 · 78 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290005431920" data-name="קינוחי עדן עוגת גבינה פירורים לייט 78 ג&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בוואריה פרווה <button type="button" class="photo-btn" data-photo="7290019167136" data-key="7290019167136" data-name="בוואריה פרווה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>עדן קינוחים</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪98.89 <small>לק״ג</small></div>
+          <div class="shelf">₪8.90 · 90 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019167136" data-name="בוואריה פרווה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מוס שוקולד <button type="button" class="photo-btn" data-photo="7290005431951" data-key="7290005431951" data-name="מוס שוקולד" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>עדן קינוחים</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪7.90</span><span class="other st-0">ויקטורי ₪9.00</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪100.00 <small>לק״ג</small></div>
+          <div class="shelf">₪7.50 · 75 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290005431951" data-name="מוס שוקולד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קדאיף פרווה <button type="button" class="photo-btn" data-photo="7290019167112" data-key="7290019167112" data-name="קדאיף פרווה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>עדן קינוחים</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪118.67 <small>לק״ג</small></div>
+          <div class="shelf">₪8.90 · 75 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019167112" data-name="קדאיף פרווה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">טירמיסו פרווה <button type="button" class="photo-btn" data-photo="7290019167129" data-key="7290019167129" data-name="טירמיסו פרווה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪118.67 <small>לק״ג</small></div>
+          <div class="shelf">₪8.90 · 75 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019167129" data-name="טירמיסו פרווה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פודינג שוקולד סוויטנגו <button type="button" class="photo-btn" data-photo="7290018249550" data-key="7290018249550" data-name="פודינג שוקולד סוויטנגו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נטורל קייקס</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪11.90</span><span class="other st-0">ויקטורי ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪198.33 <small>לק״ג</small></div>
+          <div class="shelf">₪11.90 · 60 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018249550" data-name="פודינג שוקולד סוויטנגו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מארז מיני מעדן הגולן שוקולד 12 יח <button type="button" class="photo-btn" data-photo="7290119387526" data-key="7290119387526" data-name="מארז מיני מעדן הגולן שוקולד 12 יח" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס בריאות בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪24.90</span><span class="other st-0">ויקטורי ₪25.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪221.11 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪23.90</s> ₪19.90 · 90 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119387526" data-name="מארז מיני מעדן הגולן שוקולד 12 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">סוויטאנגו אינסטנט פודינג וניל  50 גרם <button type="button" class="photo-btn" data-photo="7290018249123" data-key="7290018249123" data-name="סוויטאנגו אינסטנט פודינג וניל  50 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נטורל קייקס</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-0">ויקטורי ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪238.00 <small>לק״ג</small></div>
+          <div class="shelf">₪11.90 · 50 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018249123" data-name="סוויטאנגו אינסטנט פודינג וניל  50 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+</ol>
+</div>
+
+</main>
+<footer>עודכן 7.10 06:15 · ויקטורי 6.10 21:13 · רמי לוי 00:11 · אושר עד 6.10 21:00 · אושר עד 6.10 21:00 · נטו חיסכון 04:03</footer>
+
+
+<nav class="bottom-nav" aria-label="ניווט">
+  <a href="index.html" class="on"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg><span>בית</span></a>
+  <a href="search.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><span>חיפוש</span></a>
+  <a href="scan.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V5a1 1 0 0 1 1-1h2M17 4h2a1 1 0 0 1 1 1v2M20 17v2a1 1 0 0 1-1 1h-2M7 20H5a1 1 0 0 1-1-1v-2"/><path d="M8 8v8M11 8v8M14 8v8M16.5 8v8"/></svg><span>סריקה</span></a>
+  <a href="basket.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h11l2-8H6.2"/><circle cx="9.5" cy="19" r="1.4"/><circle cx="17" cy="19" r="1.4"/></svg><span id="cart-count"></span><span>עגלת קניות</span></a>
+  <a href="spending.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-2-1.4-2 1.4-2-1.4-2 1.4-2-1.4L6 21z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><span>הוצאות</span></a>
+</nav>
+
+<script src="static/basket.js?v=20261007061534"></script>
+<script src="static/photo.js?v=20261007061534"></script>
+
+<script src="static/render.js?v=20261007061534"></script>
+<script src="static/category.js?v=20261007061534" data-build="20261007061534"></script>
+
+<script>
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+</script>
+</body>
+</html>

@@ -1,0 +1,3706 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f7a4d">
+<script>
+// the look this phone chose (settings.html "מראה"), before anything is drawn: html.light / html.dark
+// (none = follow the phone) and html[data-color] (none = green); the browser bar takes the colour too
+(function () {
+  let t = {};
+  try { t = JSON.parse(localStorage.getItem("theme")) || {}; } catch (e) { /* none yet */ }
+  const root = document.documentElement;
+  if (t.mode === "light" || t.mode === "dark") root.classList.add(t.mode);
+  if (t.color) root.dataset.color = t.color;
+  if (t.bar) document.querySelector('meta[name="theme-color"]').content = t.bar;
+})();
+</script>
+<title>סלטים מוכנים</title>
+<link rel="manifest" href="static/manifest.webmanifest">
+<link rel="icon" href="static/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="static/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="static/style.css?v=20261007061534">
+<style>.st-0 { --store: #e07000; }.st-1 { --store: #d32f2f; }.st-2 { --store: #1565c0; }.st-3 { --store: #1565c0; }.st-4 { --store: #c99a00; }</style>
+<script src="static/stores.js?v=20261007061534" data-stores="[{&#34;card_cap&#34;: 750, &#34;card_rate&#34;: 0.07, &#34;default&#34;: true, &#34;key&#34;: &#34;victory-038&#34;, &#34;name&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;ramilevy-007&#34;, &#34;name&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-026&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05ea\u05dc\u05e4\u05d9\u05d5\u05ea&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-003&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05d2\u05d1\u05e2\u05ea \u05e9\u05d0\u05d5\u05dc&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;netto-052&#34;, &#34;name&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df \u05e7\u05e8\u05d9\u05d9\u05ea \u05d9\u05e2\u05e8\u05d9\u05dd&#34;, &#34;short&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df&#34;}]"></script>
+<script src="static/avoid.js?v=20261007061534" data-kinds="[&#34;\u05e2\u05d5\u05e3 \u05de\u05e2\u05d5\u05d1\u05d3&#34;, &#34;\u05d1\u05e9\u05e8 \u05de\u05e2\u05d5\u05d1\u05d3&#34;]"></script>
+<script>
+// No long-press menu on links, pictures or text (the user: the home page's tiles opened Chrome's "open in new tab /
+// copy link" menu; CSS can't stop that on Android). Typing fields and the ⓘ sheet's barcode keep theirs.
+document.addEventListener("contextmenu", (e) => {
+  if (!e.target.closest("input, textarea, [contenteditable], .photo-barcode")) e.preventDefault();
+});
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <a class="back" href="t-5.html" aria-label="חזרה">→</a>
+    <h1>סלטים מוכנים</h1>
+    <a class="notes-link" href="notes.html" aria-label="רשימת קניות" title="רשימת קניות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="m8.5 10 1.2 1.2 2.3-2.4M8.5 15.5l1.2 1.2 2.3-2.4M14 10.5h2.5M14 16h2.5"/></svg><span>רשימת קניות</span></a>
+    <a class="settings-link" href="settings.html" aria-label="הגדרות" title="הגדרות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></a>
+  </div>
+  
+  <form class="search" action="search.html" method="get" role="search">
+    <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+    <input type="search" name="q" placeholder="חיפוש מוצר" enterkeyhint="search" aria-label="חיפוש מוצר">
+  </form>
+  
+</header>
+<main>
+
+<p class="sub"><span class="sub-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18a9 9 0 0 1-18 0z"/><path d="M9 21h6"/><path d="M12 12c0-3.3 2.2-5.5 5.5-5.5 0 3.3-2.2 5.5-5.5 5.5z"/><path d="M8.5 12c-.2-2 .8-3.6 2.6-4.2"/></svg></span>סלטים ומוכן · <span id="cat-count">129</span> מוצרים, מהזול ליקר</p>
+
+
+<div class="cat-filter">
+  <input type="search" id="cat-filter" placeholder="סינון לפי שם או יצרן · ‎-מילה מסתירה" enterkeyhint="done" autocomplete="off" aria-label="סינון המוצרים בקטגוריה">
+</div>
+<div id="cat-list" data-href="c-5-1.html">
+
+<ol class="products">
+  
+  
+    
+    
+    
+    <li class="product st-0 best">
+      <div class="info">
+        <div class="name">חציל קלוי על האש <button type="button" class="photo-btn" data-photo="7290019926641" data-key="7290019926641" data-name="חציל קלוי על האש" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪15.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪12.90</s> ₪9.90 · 660 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019926641" data-name="חציל קלוי על האש" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חציל קלוי שקדיה 590 <button type="button" class="photo-btn" data-photo="7290016882407" data-key="7290016882407" data-name="חציל קלוי שקדיה 590" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אונטד גידה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪16.78 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 590 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016882407" data-name="חציל קלוי שקדיה 590" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סלט חציל בטעם כבד 250גר אחלה <button type="button" class="photo-btn" data-photo="7290119373673" data-key="7290119373673" data-name="סלט חציל בטעם כבד 250גר אחלה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪9.50 (2 ב־₪19)</span><span class="other st-4">נטו חיסכון ₪9.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪18.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪9.00 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119373673" data-name="סלט חציל בטעם כבד 250גר אחלה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סלט מטבוחה חריפה אש 250גר אחלה <button type="button" class="photo-btn" data-photo="7290119373925" data-key="7290119373925" data-name="סלט מטבוחה חריפה אש 250גר אחלה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪9.50 (2 ב־₪19)</span><span class="other st-4">נטו חיסכון ₪9.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪18.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪9.00 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119373925" data-name="סלט מטבוחה חריפה אש 250גר אחלה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סרה חציל קלוי על האש סרה 650 גרם <button type="button" class="photo-btn" data-photo="8690777206051" data-key="8690777206051" data-name="סרה חציל קלוי על האש סרה 650 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>וילי פוד</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪25</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪13.90</span><span class="other st-4">נטו חיסכון ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪19.23 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪13.80</s> ₪12.50 · 650 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8690777206051" data-name="סרה חציל קלוי על האש סרה 650 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">כרוב אדום 400 ג רמיל <button type="button" class="photo-btn" data-photo="7290115410877" data-key="7290115410877" data-name="כרוב אדום 400 ג רמיל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪22.50 <small>לק״ג</small></div>
+          <div class="shelf">₪9.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115410877" data-name="כרוב אדום 400 ג רמיל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חציל על האש 400ג רמי <button type="button" class="photo-btn" data-photo="7290115410884" data-key="7290115410884" data-name="חציל על האש 400ג רמי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪22.50 <small>לק״ג</small></div>
+          <div class="shelf">₪9.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115410884" data-name="חציל על האש 400ג רמי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מטבוחה 400ג רמילוי <button type="button" class="photo-btn" data-photo="7290115410907" data-key="7290115410907" data-name="מטבוחה 400ג רמילוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪22.50 <small>לק״ג</small></div>
+          <div class="shelf">₪9.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115410907" data-name="מטבוחה 400ג רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חציל במיונז 400ג רמי <button type="button" class="photo-btn" data-photo="7290115410952" data-key="7290115410952" data-name="חציל במיונז 400ג רמי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪22.50 <small>לק״ג</small></div>
+          <div class="shelf">₪9.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115410952" data-name="חציל במיונז 400ג רמי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חציל אש 400 גרם רמי <button type="button" class="photo-btn" data-photo="7290121137515" data-key="7290121137515" data-name="חציל אש 400 גרם רמי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪24.75 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121137515" data-name="חציל אש 400 גרם רמי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חציל במיונז אסלי של <button type="button" class="photo-btn" data-photo="7290121137805" data-key="7290121137805" data-name="חציל במיונז אסלי של" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪24.75 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121137805" data-name="חציל במיונז אסלי של" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">כרוב במיונז הכוכב של <button type="button" class="photo-btn" data-photo="7290121137850" data-key="7290121137850" data-name="כרוב במיונז הכוכב של" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪24.75 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121137850" data-name="כרוב במיונז הכוכב של" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מטבוחה חגיגה של ירקו <button type="button" class="photo-btn" data-photo="7290121137959" data-key="7290121137959" data-name="מטבוחה חגיגה של ירקו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪24.75 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121137959" data-name="מטבוחה חגיגה של ירקו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חציל ופלפל מיקס מהחל <button type="button" class="photo-btn" data-photo="7290121138000" data-key="7290121138000" data-name="חציל ופלפל מיקס מהחל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪24.75 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121138000" data-name="חציל ופלפל מיקס מהחל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חציל במיונז 400גר <button type="button" class="photo-btn" data-photo="7290004944056" data-key="7290004944056" data-name="חציל במיונז 400גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי שמיר 2006 בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪10.00 (2 ב־₪20)</span><span class="other st-0">ויקטורי ₪11.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪25.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪10.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004944056" data-name="חציל במיונז 400גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">סלט טורקי אסלי 400 גרם <button type="button" class="photo-btn" data-photo="7290004944063" data-key="7290004944063" data-name="סלט טורקי אסלי 400 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי שמיר 2006 בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-0">ויקטורי ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪25.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪10.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004944063" data-name="סלט טורקי אסלי 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סלט כרוב אדום אסלי 400 גר&#39; שמיר <button type="button" class="photo-btn" data-photo="7290004944070" data-key="7290004944070" data-name="סלט כרוב אדום אסלי 400 גר&#39; שמיר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי שמיר 2006 בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪10.00 (2 ב־₪20)</span><span class="other st-0">ויקטורי ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪25.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪10.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004944070" data-name="סלט כרוב אדום אסלי 400 גר&#39; שמיר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שמיר סלק אסלי 400 גרם <button type="button" class="photo-btn" data-photo="7290012025822" data-key="7290012025822" data-name="שמיר סלק אסלי 400 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי שמיר 2006 בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪10.00 (2 ב־₪20)</span><span class="other st-0">ויקטורי ₪11.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪25.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪10.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290012025822" data-name="שמיר סלק אסלי 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סלט מטבוחה 400 גר&#39; שמיר <button type="button" class="photo-btn" data-photo="7290012025839" data-key="7290012025839" data-name="סלט מטבוחה 400 גר&#39; שמיר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי שמיר 2006 בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪10.00 (2 ב־₪20)</span><span class="other st-0">ויקטורי ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪25.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪10.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290012025839" data-name="סלט מטבוחה 400 גר&#39; שמיר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">סלט גזר ברוטב פיקנטי 400 גר אסלי סלטי שמ <button type="button" class="photo-btn" data-photo="7290017094830" data-key="7290017094830" data-name="סלט גזר ברוטב פיקנטי 400 גר אסלי סלטי שמ" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי שמיר 2006 בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-0">ויקטורי ₪14.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪25.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪10.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017094830" data-name="סלט גזר ברוטב פיקנטי 400 גר אסלי סלטי שמ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סלט תפוחי אדמה אסלי 400 גרם <button type="button" class="photo-btn" data-photo="7290017094847" data-key="7290017094847" data-name="סלט תפוחי אדמה אסלי 400 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי שמיר 2006 בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪10.00 (2 ב־₪20)</span><span class="other st-0">ויקטורי ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪25.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪10.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017094847" data-name="סלט תפוחי אדמה אסלי 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">עלי גפן ממולאים <button type="button" class="photo-btn" data-photo="7290019587279" data-key="7290019587279" data-name="עלי גפן ממולאים" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪25.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪13.90</s> ₪10.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019587279" data-name="עלי גפן ממולאים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סלט חציל על האש בטחינה צבר 400 גרם <button type="button" class="photo-btn" data-photo="7290106577480" data-key="7290106577480" data-name="סלט חציל על האש בטחינה צבר 400 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי צבר</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪13.90</span><span class="other st-4">נטו חיסכון ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪25.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪10.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290106577480" data-name="סלט חציל על האש בטחינה צבר 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חציל במינז מרובע 400גרם צבר <button type="button" class="photo-btn" data-photo="7290106577503" data-key="7290106577503" data-name="חציל במינז מרובע 400גרם צבר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי צבר</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪13.90</span><span class="other st-4">נטו חיסכון ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪25.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪10.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290106577503" data-name="חציל במינז מרובע 400גרם צבר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סלט קולסלאו 400גרם צבר <button type="button" class="photo-btn" data-photo="7290106577527" data-key="7290106577527" data-name="סלט קולסלאו 400גרם צבר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי צבר</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪13.90</span><span class="other st-4">נטו חיסכון ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪25.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪10.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290106577527" data-name="סלט קולסלאו 400גרם צבר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">כרוב אדום מרובע 400 גר צבר <button type="button" class="photo-btn" data-photo="7290106577541" data-key="7290106577541" data-name="כרוב אדום מרובע 400 גר צבר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי צבר</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪13.90</span><span class="other st-4">נטו חיסכון ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪25.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪10.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290106577541" data-name="כרוב אדום מרובע 400 גר צבר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סלט מטבוחה צבר 400 גר <button type="button" class="photo-btn" data-photo="7290106577572" data-key="7290106577572" data-name="סלט מטבוחה צבר 400 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי צבר</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪13.90</span><span class="other st-4">נטו חיסכון ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪25.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪10.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290106577572" data-name="סלט מטבוחה צבר 400 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">צבר סלט מטבוחה חריפה מרובע 400 גר <button type="button" class="photo-btn" data-photo="7290111563492" data-key="7290111563492" data-name="צבר סלט מטבוחה חריפה מרובע 400 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי צבר</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪13.90</span><span class="other st-4">נטו חיסכון ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪25.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪10.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111563492" data-name="צבר סלט מטבוחה חריפה מרובע 400 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">צבר חציל על האש 400גרם <button type="button" class="photo-btn" data-photo="7290115207484" data-key="7290115207484" data-name="צבר חציל על האש 400גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי צבר</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪15.90</span><span class="other st-0">ויקטורי ₪17.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪25.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪10.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115207484" data-name="צבר חציל על האש 400גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סלט כרוב אדום אחלה 500 גרם <button type="button" class="photo-btn" data-photo="7290002825722" data-key="7290002825722" data-name="סלט כרוב אדום אחלה 500 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪26</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪16.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪26.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪13.00 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002825722" data-name="סלט כרוב אדום אחלה 500 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סלט חצילים פיקנטי אחלה 500 גרם <button type="button" class="photo-btn" data-photo="7290003989096" data-key="7290003989096" data-name="סלט חצילים פיקנטי אחלה 500 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪26</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪17.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪26.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪13.00 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003989096" data-name="סלט חצילים פיקנטי אחלה 500 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סלט חצילים במיונז אחלה 500 גרם <button type="button" class="photo-btn" data-photo="7290005174513" data-key="7290005174513" data-name="סלט חצילים במיונז אחלה 500 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪26</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪17.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪26.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪13.00 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290005174513" data-name="סלט חצילים במיונז אחלה 500 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סלט מטבוחה אחלה 500 גרם <button type="button" class="photo-btn" data-photo="7290010931330" data-key="7290010931330" data-name="סלט מטבוחה אחלה 500 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪26</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪16.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪26.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪13.00 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010931330" data-name="סלט מטבוחה אחלה 500 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סלט קולסלאו 500 גרם <button type="button" class="photo-btn" data-photo="7290105968098" data-key="7290105968098" data-name="סלט קולסלאו 500 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪26</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪17.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪26.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪13.00 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290105968098" data-name="סלט קולסלאו 500 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">חציל פיקנטי מהדרין 400 ג&#39; <button type="button" class="photo-btn" data-photo="7290106721807" data-key="7290106721807" data-name="חציל פיקנטי מהדרין 400 ג&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪27.25 <small>לק״ג</small></div>
+          <div class="shelf">₪10.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290106721807" data-name="חציל פיקנטי מהדרין 400 ג&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">חציל במיונז <button type="button" class="photo-btn" data-photo="7290004150877" data-key="7290004150877" data-name="חציל במיונז" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪29.83 <small>לק״ג</small></div>
+          <div class="shelf">₪17.90 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004150877" data-name="חציל במיונז" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">עלי גפן ממולאים אורז ועשבי תיבול 400 גר <button type="button" class="photo-btn" data-photo="739608253173" data-key="7290696200003:739608253173" data-name="עלי גפן ממולאים אורז ועשבי תיבול 400 גר" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪25</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪31.25 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪12.50 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:739608253173" data-name="עלי גפן ממולאים אורז ועשבי תיבול 400 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">עלי גפן ממולאים באורז <button type="button" class="photo-btn" data-photo="7290020452115" data-key="7290020452115" data-name="עלי גפן ממולאים באורז" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪25</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪31.25 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪12.50 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020452115" data-name="עלי גפן ממולאים באורז" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סלט כרוב אדום אחלה 2</div>
+        <div class="meta">
+          <span>אחלה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪31.60 <small>לק״ג</small></div>
+          <div class="shelf">₪7.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058140886:72940976" data-name="סלט כרוב אדום אחלה 2" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">רצועות פלפלים קלויים <button type="button" class="photo-btn" data-photo="7290104721533" data-key="7290104721533" data-name="רצועות פלפלים קלויים" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪26</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪15.90</span><span class="other st-0">ויקטורי ₪18.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪32.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪13.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290104721533" data-name="רצועות פלפלים קלויים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סלט חצילים בטעם כבד אחלה 400 גרם <button type="button" class="photo-btn" data-photo="7290105366023" data-key="7290105366023" data-name="סלט חצילים בטעם כבד אחלה 400 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪26</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪15.90</span><span class="other st-0">ויקטורי ₪17.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪32.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪13.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290105366023" data-name="סלט חצילים בטעם כבד אחלה 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סלט טורקי 400 גרם <button type="button" class="photo-btn" data-photo="7290106520905" data-key="7290106520905" data-name="סלט טורקי 400 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪26</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪18.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪32.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪13.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290106520905" data-name="סלט טורקי 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קוביות סלק אחלה 400 <button type="button" class="photo-btn" data-photo="7290106521049" data-key="7290106521049" data-name="קוביות סלק אחלה 400" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪26</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪17.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪32.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪13.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290106521049" data-name="קוביות סלק אחלה 400" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מטבוחה מרוקאית חריפה 400 גר <button type="button" class="photo-btn" data-photo="7290107958639" data-key="7290107958639" data-name="מטבוחה מרוקאית חריפה 400 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪26</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪15.90</span><span class="other st-0">ויקטורי ₪18.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪32.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪13.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290107958639" data-name="מטבוחה מרוקאית חריפה 400 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">סלט המושבה לקט קלאסי, 400 גרם <button type="button" class="photo-btn" data-photo="7290005576331" data-key="7290005576331" data-name="סלט המושבה לקט קלאסי, 400 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רביבים</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪34.75 <small>לק״ג</small></div>
+          <div class="shelf">₪13.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290005576331" data-name="סלט המושבה לקט קלאסי, 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">לקט קלאסי גלאט עלים <button type="button" class="photo-btn" data-photo="7290005576249" data-key="7290005576249" data-name="לקט קלאסי גלאט עלים" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רביבים</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪34.86 <small>לק״ג</small></div>
+          <div class="shelf">₪12.90 · 370 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290005576249" data-name="לקט קלאסי גלאט עלים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סלט חציל על האש בטחינה צבר <button type="button" class="photo-btn" data-photo="7290122780352" data-key="7290122780352" data-name="סלט חציל על האש בטחינה צבר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי צבר</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪8.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪35.11 <small>לק״ג</small></div>
+          <div class="shelf">₪7.90 · 225 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290122780352" data-name="סלט חציל על האש בטחינה צבר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סלט קולסלאו צבר <button type="button" class="photo-btn" data-photo="7290122780376" data-key="7290122780376" data-name="סלט קולסלאו צבר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי צבר</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪8.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪35.11 <small>לק״ג</small></div>
+          <div class="shelf">₪7.90 · 225 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290122780376" data-name="סלט קולסלאו צבר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ספייסי חציל בצ&#39;ילי ח <button type="button" class="photo-btn" data-photo="7290121137201" data-key="7290121137201" data-name="ספייסי חציל בצ&#39;ילי ח" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪35.60 <small>לק״ג</small></div>
+          <div class="shelf">₪8.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121137201" data-name="ספייסי חציל בצ&#39;ילי ח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חציל במיונז אסלי של <button type="button" class="photo-btn" data-photo="7290121137256" data-key="7290121137256" data-name="חציל במיונז אסלי של" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪35.60 <small>לק״ג</small></div>
+          <div class="shelf">₪8.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121137256" data-name="חציל במיונז אסלי של" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גזר חתונה טבעות פיקנ <button type="button" class="photo-btn" data-photo="7290121137300" data-key="7290121137300" data-name="גזר חתונה טבעות פיקנ" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪35.60 <small>לק״ג</small></div>
+          <div class="shelf">₪8.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121137300" data-name="גזר חתונה טבעות פיקנ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סלק רצועות חמיצות מת <button type="button" class="photo-btn" data-photo="7290121137355" data-key="7290121137355" data-name="סלק רצועות חמיצות מת" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪35.60 <small>לק״ג</small></div>
+          <div class="shelf">₪8.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121137355" data-name="סלק רצועות חמיצות מת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אחלה סלט קולסלאו 250 גרם <button type="button" class="photo-btn" data-photo="7290119373680" data-key="7290119373680" data-name="אחלה סלט קולסלאו 250 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪9.50 (2 ב־₪19)</span><span class="other st-4">נטו חיסכון ₪9.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪36.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪9.00 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119373680" data-name="אחלה סלט קולסלאו 250 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חציל במיונז 250גר רמ <button type="button" class="photo-btn" data-photo="7290115411577" data-key="7290115411577" data-name="חציל במיונז 250גר רמ" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪36.00 <small>לק״ג</small></div>
+          <div class="shelf">₪9.00 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115411577" data-name="חציל במיונז 250גר רמ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קוביות חציל בטחינה 2 <button type="button" class="photo-btn" data-photo="7290115411638" data-key="7290115411638" data-name="קוביות חציל בטחינה 2" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪36.00 <small>לק״ג</small></div>
+          <div class="shelf">₪9.00 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115411638" data-name="קוביות חציל בטחינה 2" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סלט חציל יום יום 125 ג&#39; אחלה <button type="button" class="photo-btn" data-photo="7290005174568" data-key="7290005174568" data-name="סלט חציל יום יום 125 ג&#39; אחלה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אחלה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪4.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪36.80 <small>לק״ג</small></div>
+          <div class="shelf">₪4.60 · 125 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290005174568" data-name="סלט חציל יום יום 125 ג&#39; אחלה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סלט מטבוחה יום יום 125 ג&#39; אחלה <button type="button" class="photo-btn" data-photo="7290008644112" data-key="7290008644112" data-name="סלט מטבוחה יום יום 125 ג&#39; אחלה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אחלה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪4.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪36.80 <small>לק״ג</small></div>
+          <div class="shelf">₪4.60 · 125 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008644112" data-name="סלט מטבוחה יום יום 125 ג&#39; אחלה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">עלי גפן ממולאים באורז פיקנטי <button type="button" class="photo-btn" data-photo="7290108504347" data-key="7290108504347" data-name="עלי גפן ממולאים באורז פיקנטי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>הזה פלאקספו פוד קו בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪37.25 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108504347" data-name="עלי גפן ממולאים באורז פיקנטי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סלט כרוב אדום במיונז 250 ג</div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.60 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:72940976" data-name="סלט כרוב אדום במיונז 250 ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">סלט כרוב אדום אחלה 250ג&#39;</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.60 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:72940976" data-name="סלט כרוב אדום אחלה 250ג&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">חציל פיקנטי 250 גר לימונס <button type="button" class="photo-btn" data-photo="7290111650826" data-key="7290111650826" data-name="חציל פיקנטי 250 גר לימונס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.60 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111650826" data-name="חציל פיקנטי 250 גר לימונס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סלט כרוב אדום 120 ג&#39; אחלה <button type="button" class="photo-btn" data-photo="7290103404758" data-key="7290103404758" data-name="סלט כרוב אדום 120 ג&#39; אחלה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪4.90</span><span class="other st-0">ויקטורי ₪5.10</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪40.00 <small>לק״ג</small></div>
+          <div class="shelf">₪4.80 · 120 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290103404758" data-name="סלט כרוב אדום 120 ג&#39; אחלה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">המעדנייה חציל במיונז <button type="button" class="photo-btn" data-photo="7290115410600" data-key="7290115410600" data-name="המעדנייה חציל במיונז" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪43.60 <small>לק״ג</small></div>
+          <div class="shelf">₪10.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115410600" data-name="המעדנייה חציל במיונז" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מטבוחה 250 גר המעדני <button type="button" class="photo-btn" data-photo="7290115410655" data-key="7290115410655" data-name="מטבוחה 250 גר המעדני" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪43.60 <small>לק״ג</small></div>
+          <div class="shelf">₪10.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115410655" data-name="מטבוחה 250 גר המעדני" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סלט סלק 250 גר המעדנ <button type="button" class="photo-btn" data-photo="7290115415452" data-key="7290115415452" data-name="סלט סלק 250 גר המעדנ" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪43.60 <small>לק״ג</small></div>
+          <div class="shelf">₪10.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115415452" data-name="סלט סלק 250 גר המעדנ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">דיף עגבניות 250 גרם <button type="button" class="photo-btn" data-photo="7290111650192" data-key="7290111650192" data-name="דיף עגבניות 250 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪43.60 <small>לק״ג</small></div>
+          <div class="shelf">₪10.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111650192" data-name="דיף עגבניות 250 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">כרוב לבן וגזר במיונז 250 גר לימונס <button type="button" class="photo-btn" data-photo="7290111650840" data-key="7290111650840" data-name="כרוב לבן וגזר במיונז 250 גר לימונס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪43.60 <small>לק״ג</small></div>
+          <div class="shelf">₪10.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111650840" data-name="כרוב לבן וגזר במיונז 250 גר לימונס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">כרוב אדום במיונז לימונס <button type="button" class="photo-btn" data-photo="7290111650857" data-key="7290111650857" data-name="כרוב אדום במיונז לימונס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪43.60 <small>לק״ג</small></div>
+          <div class="shelf">₪10.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111650857" data-name="כרוב אדום במיונז לימונס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">חציל במיונז 250 גר לימונס <button type="button" class="photo-btn" data-photo="7290111650871" data-key="7290111650871" data-name="חציל במיונז 250 גר לימונס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪43.60 <small>לק״ג</small></div>
+          <div class="shelf">₪10.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111650871" data-name="חציל במיונז 250 גר לימונס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מטבוחה חריפה אש 250 גר לימונס <button type="button" class="photo-btn" data-photo="7290111650901" data-key="7290111650901" data-name="מטבוחה חריפה אש 250 גר לימונס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪43.60 <small>לק״ג</small></div>
+          <div class="shelf">₪10.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111650901" data-name="מטבוחה חריפה אש 250 גר לימונס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מטבוחה 250 גר לימונס <button type="button" class="photo-btn" data-photo="7290111650918" data-key="7290111650918" data-name="מטבוחה 250 גר לימונס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪43.60 <small>לק״ג</small></div>
+          <div class="shelf">₪10.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111650918" data-name="מטבוחה 250 גר לימונס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">חציל במרינדה וירקות 250 גר לימונס <button type="button" class="photo-btn" data-photo="7290111650949" data-key="7290111650949" data-name="חציל במרינדה וירקות 250 גר לימונס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪43.60 <small>לק״ג</small></div>
+          <div class="shelf">₪10.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111650949" data-name="חציל במרינדה וירקות 250 גר לימונס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">סלט טורקי 250 גר לימונס <button type="button" class="photo-btn" data-photo="7290111650963" data-key="7290111650963" data-name="סלט טורקי 250 גר לימונס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪43.60 <small>לק״ג</small></div>
+          <div class="shelf">₪10.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111650963" data-name="סלט טורקי 250 גר לימונס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">פלפל קלוי 250 גר לימונס <button type="button" class="photo-btn" data-photo="7290111651311" data-key="7290111651311" data-name="פלפל קלוי 250 גר לימונס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪43.60 <small>לק״ג</small></div>
+          <div class="shelf">₪10.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111651311" data-name="פלפל קלוי 250 גר לימונס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">גזר פיקנטי 250 גר לימונס <button type="button" class="photo-btn" data-photo="7290111651854" data-key="7290111651854" data-name="גזר פיקנטי 250 גר לימונס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪43.60 <small>לק״ג</small></div>
+          <div class="shelf">₪10.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111651854" data-name="גזר פיקנטי 250 גר לימונס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">חציל בצ&#39;ילי לימונס <button type="button" class="photo-btn" data-photo="7290111651861" data-key="7290111651861" data-name="חציל בצ&#39;ילי לימונס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪43.60 <small>לק״ג</small></div>
+          <div class="shelf">₪10.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111651861" data-name="חציל בצ&#39;ילי לימונס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">פלפל קלוי שום וחריף לימונס <button type="button" class="photo-btn" data-photo="7290111653261" data-key="7290111653261" data-name="פלפל קלוי שום וחריף לימונס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪43.60 <small>לק״ג</small></div>
+          <div class="shelf">₪10.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111653261" data-name="פלפל קלוי שום וחריף לימונס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סלט טורקי 225 גר <button type="button" class="photo-btn" data-photo="7290122780253" data-key="7290122780253" data-name="סלט טורקי 225 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי צבר</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪9.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪44.00 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 225 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290122780253" data-name="סלט טורקי 225 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">חציל פיקנטי 225 גר <button type="button" class="photo-btn" data-photo="7290122780277" data-key="7290122780277" data-name="חציל פיקנטי 225 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי צבר</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪9.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪44.00 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 225 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290122780277" data-name="חציל פיקנטי 225 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מטבוחה מרוקאית 225 גר <button type="button" class="photo-btn" data-photo="7290122780291" data-key="7290122780291" data-name="מטבוחה מרוקאית 225 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי צבר</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪9.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪44.00 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 225 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290122780291" data-name="מטבוחה מרוקאית 225 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סלט פלפלים קלויים 250 גרם <button type="button" class="photo-btn" data-photo="7290119387441" data-key="7290119387441" data-name="סלט פלפלים קלויים 250 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪22</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪11.50 (2 ב־₪23)</span><span class="other st-4">נטו חיסכון ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪44.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪12.90</s> ₪11.00 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119387441" data-name="סלט פלפלים קלויים 250 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חציל במיונז קרמי 250 גרם <button type="button" class="photo-btn" data-photo="7290119387458" data-key="7290119387458" data-name="חציל במיונז קרמי 250 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪22</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪11.50 (2 ב־₪23)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪44.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪12.90</s> ₪11.00 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119387458" data-name="חציל במיונז קרמי 250 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סלט חציל עם שמן זית 400 גרם <button type="button" class="photo-btn" data-photo="7290119370535" data-key="7290119370535" data-name="סלט חציל עם שמן זית 400 גרם" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪47.25 <small>לק״ג</small></div>
+          <div class="shelf">₪18.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119370535" data-name="סלט חציל עם שמן זית 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מטבל סלסה חריפה</div>
+        <div class="meta">
+          <span>הורמל פודס קורפוריישן</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪49.89 <small>לק״ג</small></div>
+          <div class="shelf">₪21.90 · 439 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:37600297943" data-name="מטבל סלסה חריפה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מטבל סלסה בחריפות עדינה</div>
+        <div class="meta">
+          <span>הורמל פודס קורפוריישן</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪49.89 <small>לק״ג</small></div>
+          <div class="shelf">₪21.90 · 439 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:37600297967" data-name="מטבל סלסה בחריפות עדינה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פלפלים חריפים ברוטב גורמה 200 גרם <button type="button" class="photo-btn" data-photo="7290003959068" data-key="7290003959068" data-name="פלפלים חריפים ברוטב גורמה 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי שמיר 2006 בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪10.00 (2 ב־₪20)</span><span class="other st-0">ויקטורי ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪50.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪10.00 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003959068" data-name="פלפלים חריפים ברוטב גורמה 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סלט ביצים 200גר <button type="button" class="photo-btn" data-photo="7290015282611" data-key="7290015282611" data-name="סלט ביצים 200גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי שמיר 2006 בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪19.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪50.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪10.00 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015282611" data-name="סלט ביצים 200גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חציל בטעם כבד 200 גר&#39; <button type="button" class="photo-btn" data-photo="7290015282628" data-key="7290015282628" data-name="חציל בטעם כבד 200 גר&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי שמיר 2006 בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪10.00 (2 ב־₪20)</span><span class="other st-0">ויקטורי ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪50.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪10.00 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015282628" data-name="חציל בטעם כבד 200 גר&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חציל במיונז ביתי 200 גר&#39; <button type="button" class="photo-btn" data-photo="7290015282673" data-key="7290015282673" data-name="חציל במיונז ביתי 200 גר&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי שמיר 2006 בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪10.00 (2 ב־₪20)</span><span class="other st-0">ויקטורי ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪50.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪10.00 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015282673" data-name="חציל במיונז ביתי 200 גר&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קישוא בטעם כבד 200 גר&#39; <button type="button" class="photo-btn" data-photo="7290015282680" data-key="7290015282680" data-name="קישוא בטעם כבד 200 גר&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי שמיר 2006 בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪10.00 (2 ב־₪20)</span><span class="other st-0">ויקטורי ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪50.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪10.00 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015282680" data-name="קישוא בטעם כבד 200 גר&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">כרוב אדום 200 גר&#39; <button type="button" class="photo-btn" data-photo="7290015282697" data-key="7290015282697" data-name="כרוב אדום 200 גר&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי שמיר 2006 בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪10.00 (2 ב־₪20)</span><span class="other st-0">ויקטורי ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪50.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪10.00 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015282697" data-name="כרוב אדום 200 גר&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גזר מרוקאי ברוטב פיקנטי 200 גר&#39; <button type="button" class="photo-btn" data-photo="7290015282727" data-key="7290015282727" data-name="גזר מרוקאי ברוטב פיקנטי 200 גר&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי שמיר 2006 בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪10.00 (2 ב־₪20)</span><span class="other st-0">ויקטורי ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪50.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪10.00 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015282727" data-name="גזר מרוקאי ברוטב פיקנטי 200 גר&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חציל תאילנדי 200 גר&#39; <button type="button" class="photo-btn" data-photo="7290015282741" data-key="7290015282741" data-name="חציל תאילנדי 200 גר&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי שמיר 2006 בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪10.00 (2 ב־₪20)</span><span class="other st-0">ויקטורי ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪50.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪10.00 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015282741" data-name="חציל תאילנדי 200 גר&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">רצועות פלפל קלוי 200 גר&#39; <button type="button" class="photo-btn" data-photo="7290015282772" data-key="7290015282772" data-name="רצועות פלפל קלוי 200 גר&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי שמיר 2006 בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪10.00 (2 ב־₪20)</span><span class="other st-0">ויקטורי ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪50.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪10.00 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015282772" data-name="רצועות פלפל קלוי 200 גר&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סלט תפוחי אדמה 200 גר&#39; <button type="button" class="photo-btn" data-photo="7290015282796" data-key="7290015282796" data-name="סלט תפוחי אדמה 200 גר&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי שמיר 2006 בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪10.00 (2 ב־₪20)</span><span class="other st-0">ויקטורי ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪50.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪10.00 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015282796" data-name="סלט תפוחי אדמה 200 גר&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סלט חציל מרוקאי 200 גר&#39; <button type="button" class="photo-btn" data-photo="7290016217759" data-key="7290016217759" data-name="סלט חציל מרוקאי 200 גר&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי שמיר 2006 בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪10.00 (2 ב־₪20)</span><span class="other st-0">ויקטורי ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪50.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪10.00 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016217759" data-name="סלט חציל מרוקאי 200 גר&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעדן חצילים הגורמה <button type="button" class="photo-btn" data-photo="7290017094199" data-key="7290017094199" data-name="מעדן חצילים הגורמה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי שמיר 2006 בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪10.00 (2 ב־₪20)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪50.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪10.00 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017094199" data-name="מעדן חצילים הגורמה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סלט תורכי 200 גר&#39; <button type="button" class="photo-btn" data-photo="7290015282390" data-key="7290015282390" data-name="סלט תורכי 200 גר&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪10.00 (2 ב־₪20)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪50.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪10.00 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015282390" data-name="סלט תורכי 200 גר&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סלט טונה בריאות 200ג <button type="button" class="photo-btn" data-photo="7290015282666" data-key="7290015282666" data-name="סלט טונה בריאות 200ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪50.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪17.10</s> ₪10.00 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015282666" data-name="סלט טונה בריאות 200ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סלט חזרת ביתית 200גר שמיר <button type="button" class="photo-btn" data-photo="7290003067305" data-key="7290003067305" data-name="סלט חזרת ביתית 200גר שמיר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי שמיר</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪10.00 (2 ב־₪20)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪50.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪10.00 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003067305" data-name="סלט חזרת ביתית 200גר שמיר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קוביות סלק 200 גר&#39; <button type="button" class="photo-btn" data-photo="7290015282710" data-key="7290015282710" data-name="קוביות סלק 200 גר&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪10.00 (2 ב־₪20)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪50.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪10.00 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015282710" data-name="קוביות סלק 200 גר&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מטבוחה ביתית 200 גר&#39; <button type="button" class="photo-btn" data-photo="7290015282734" data-key="7290015282734" data-name="מטבוחה ביתית 200 גר&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי שמיר 2006 בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪10.00 (2 ב־₪20)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪50.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪10.00 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015282734" data-name="מטבוחה ביתית 200 גר&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">חציל על האש שמיר, 200 גרם <button type="button" class="photo-btn" data-photo="7290016217735" data-key="7290016217735" data-name="חציל על האש שמיר, 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי שמיר 2006 בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪50.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪10.00 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016217735" data-name="חציל על האש שמיר, 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">סלט חציל בטחינה, 200 גרם <button type="button" class="photo-btn" data-photo="7290016217742" data-key="7290016217742" data-name="סלט חציל בטחינה, 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי שמיר 2006 בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪50.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪10.00 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016217742" data-name="סלט חציל בטחינה, 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פטריות ממולאות בלקני <button type="button" class="photo-btn" data-photo="7290020174321" data-key="7290020174321" data-name="פטריות ממולאות בלקני" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מרינה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪50</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪52.63 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪34.90</s> ₪25.00 · 475 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020174321" data-name="פטריות ממולאות בלקני" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בצל מקורמל 145גר יכין <button type="button" class="photo-btn" data-photo="7290018989821" data-key="7290018989821" data-name="בצל מקורמל 145גר יכין" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪54.48 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪7.90 · 145 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018989821" data-name="בצל מקורמל 145גר יכין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אריסה מרוקאית סלטי ש <button type="button" class="photo-btn" data-photo="7290013525789" data-key="7290013525789" data-name="אריסה מרוקאית סלטי ש" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי שמיר</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪58.67 <small>לק״ג</small></div>
+          <div class="shelf">₪8.80 · 150 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013525789" data-name="אריסה מרוקאית סלטי ש" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סחוג תימני 150 גר <button type="button" class="photo-btn" data-photo="7290013525796" data-key="7290013525796" data-name="סחוג תימני 150 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪58.67 <small>לק״ג</small></div>
+          <div class="shelf">₪8.80 · 150 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013525796" data-name="סחוג תימני 150 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סחוג אדום 150 גר <button type="button" class="photo-btn" data-photo="7290013525802" data-key="7290013525802" data-name="סחוג אדום 150 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי שמיר</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪58.67 <small>לק״ג</small></div>
+          <div class="shelf">₪8.80 · 150 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013525802" data-name="סחוג אדום 150 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סלט איקרה ביתית לבנה דלידג 300 גרם <button type="button" class="photo-btn" data-photo="7290008345576" data-key="7290008345576" data-name="סלט איקרה ביתית לבנה דלידג 300 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>דלידג - נטו</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪20.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.67 <small>לק״ג</small></div>
+          <div class="shelf">₪17.90 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008345576" data-name="סלט איקרה ביתית לבנה דלידג 300 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סלט איקרה ביתית ורודה דלידג 300 גרם <button type="button" class="photo-btn" data-photo="7290008345583" data-key="7290008345583" data-name="סלט איקרה ביתית ורודה דלידג 300 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>דלידג - נטו</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪20.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.67 <small>לק״ג</small></div>
+          <div class="shelf">₪17.90 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008345583" data-name="סלט איקרה ביתית ורודה דלידג 300 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סלט חזרת ביתית 250 גר תבליני ביטון יוחאי <button type="button" class="photo-btn" data-photo="7290010154241" data-key="7290010154241" data-name="סלט חזרת ביתית 250 גר תבליני ביטון יוחאי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נטו</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.90</span><span class="other st-4">נטו חיסכון ₪16.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪62.80 <small>לק״ג</small></div>
+          <div class="shelf">₪15.70 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010154241" data-name="סלט חזרת ביתית 250 גר תבליני ביטון יוחאי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">איקרה אדומה 200גר סלטי שמיר <button type="button" class="photo-btn" data-photo="7290015282000" data-key="7290015282000" data-name="איקרה אדומה 200גר סלטי שמיר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪65.50 <small>לק״ג</small></div>
+          <div class="shelf">₪13.10 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015282000" data-name="איקרה אדומה 200גר סלטי שמיר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">איקרה לבנה 200גר <button type="button" class="photo-btn" data-photo="7290015282024" data-key="7290015282024" data-name="איקרה לבנה 200גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי שמיר 2006 בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪65.50 <small>לק״ג</small></div>
+          <div class="shelf">₪13.10 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015282024" data-name="איקרה לבנה 200גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אוליביה ממ.עגבניות מיובשות 190ג&#39; <button type="button" class="photo-btn" data-photo="7290003438020" data-key="7290003438020" data-name="אוליביה ממ.עגבניות מיובשות 190ג&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אוליביה גורמה (1996) בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪13.90 (מבצע)</span><span class="other st-4">נטו חיסכון ₪14.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪67.89 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪14.50</s> ₪12.90 · 190 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003438020" data-name="אוליביה ממ.עגבניות מיובשות 190ג&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">חציל בטעם כבד 340 גר לימונס <button type="button" class="photo-btn" data-photo="7290111651304" data-key="7290111651304" data-name="חציל בטעם כבד 340 גר לימונס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪70.29 <small>לק״ג</small></div>
+          <div class="shelf">₪23.90 · 340 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111651304" data-name="חציל בטעם כבד 340 גר לימונס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">קונפי שום 150  גר <button type="button" class="photo-btn" data-photo="7290111650147" data-key="7290111650147" data-name="קונפי שום 150  גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪72.67 <small>לק״ג</small></div>
+          <div class="shelf">₪10.90 · 150 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111650147" data-name="קונפי שום 150  גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">סלט איקרה לבנה 180 גר&#39; <button type="button" class="photo-btn" data-photo="4810168064204" data-key="4810168064204" data-name="סלט איקרה לבנה 180 גר&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנטה ברמור</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪82.78 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 180 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4810168064204" data-name="סלט איקרה לבנה 180 גר&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">סלט איקרה ורודה 180 גר&#39; <button type="button" class="photo-btn" data-photo="4810168064228" data-key="4810168064228" data-name="סלט איקרה ורודה 180 גר&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנטה ברמור</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪82.78 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 180 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4810168064228" data-name="סלט איקרה ורודה 180 גר&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סלט איקרה עם פורל וסלמון מעושנים <button type="button" class="photo-btn" data-photo="4810168064211" data-key="4810168064211" data-name="סלט איקרה עם פורל וסלמון מעושנים" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנטה ברמור</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪32</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-4">נטו חיסכון ₪17.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪88.89 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪16.00 · 180 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4810168064211" data-name="סלט איקרה עם פורל וסלמון מעושנים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סלט הרינג עם מיונז 180ג&#39; <button type="button" class="photo-btn" data-photo="7290014435872" data-key="7290014435872" data-name="סלט הרינג עם מיונז 180ג&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי שמיר 2006 בעמ במפעל פל דגים</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪18.90</span><span class="other st-0">ויקטורי ₪21.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪93.89 <small>לק״ג</small></div>
+          <div class="shelf">₪16.90 · 180 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014435872" data-name="סלט הרינג עם מיונז 180ג&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סלט מטיאס עם מיונז <button type="button" class="photo-btn" data-photo="7290014435889" data-key="7290014435889" data-name="סלט מטיאס עם מיונז" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי שמיר 2006 בעמ במפעל פל דגים</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪18.90</span><span class="other st-0">ויקטורי ₪21.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪93.89 <small>לק״ג</small></div>
+          <div class="shelf">₪16.90 · 180 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014435889" data-name="סלט מטיאס עם מיונז" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סלט דג  סלומון מעושן עם מיונז <button type="button" class="photo-btn" data-photo="7290014435896" data-key="7290014435896" data-name="סלט דג  סלומון מעושן עם מיונז" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי שמיר 2006 בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪19.90</span><span class="other st-0">ויקטורי ₪21.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪93.89 <small>לק״ג</small></div>
+          <div class="shelf">₪16.90 · 180 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014435896" data-name="סלט דג  סלומון מעושן עם מיונז" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ממלואים גורמת מעדניי <button type="button" class="photo-btn" data-photo="7290003006120" data-key="7290003006120" data-name="ממלואים גורמת מעדניי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪159.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290003006120" data-name="ממלואים גורמת מעדניי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טאפס פלפלים ממולאים <button type="button" class="photo-btn" data-photo="7290011064099" data-key="7290011064099" data-name="טאפס פלפלים ממולאים" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נטורל קייקס</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪159.20 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 125 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011064099" data-name="טאפס פלפלים ממולאים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+      
+      <li class="divider">ללא מחיר לק״ג (גודל לא ידוע)</li>
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">סלק אדום בוואקום חסלט <button type="button" class="photo-btn" data-photo="7290018863404" data-key="7290018863404" data-name="סלק אדום בוואקום חסלט" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪6.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018863404" data-name="סלק אדום בוואקום חסלט" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">חצילים במיונז <button type="button" class="photo-btn" data-photo="7290105962997" data-key="7290105962997" data-name="חצילים במיונז" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290105962997" data-name="חצילים במיונז" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מטבוחה <button type="button" class="photo-btn" data-photo="7290105963000" data-key="7290105963000" data-name="מטבוחה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290105963000" data-name="מטבוחה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אוליביה ממרח חרוסת <button type="button" class="photo-btn" data-photo="7290003438075" data-key="7290003438075" data-name="אוליביה ממרח חרוסת" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אוליביה בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪12.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003438075" data-name="אוליביה ממרח חרוסת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+</ol>
+</div>
+
+</main>
+<footer>עודכן 7.10 06:15 · ויקטורי 6.10 21:13 · רמי לוי 00:11 · אושר עד 6.10 21:00 · אושר עד 6.10 21:00 · נטו חיסכון 04:03</footer>
+
+
+<nav class="bottom-nav" aria-label="ניווט">
+  <a href="index.html" class="on"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg><span>בית</span></a>
+  <a href="search.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><span>חיפוש</span></a>
+  <a href="scan.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V5a1 1 0 0 1 1-1h2M17 4h2a1 1 0 0 1 1 1v2M20 17v2a1 1 0 0 1-1 1h-2M7 20H5a1 1 0 0 1-1-1v-2"/><path d="M8 8v8M11 8v8M14 8v8M16.5 8v8"/></svg><span>סריקה</span></a>
+  <a href="basket.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h11l2-8H6.2"/><circle cx="9.5" cy="19" r="1.4"/><circle cx="17" cy="19" r="1.4"/></svg><span id="cart-count"></span><span>עגלת קניות</span></a>
+  <a href="spending.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-2-1.4-2 1.4-2-1.4-2 1.4-2-1.4L6 21z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><span>הוצאות</span></a>
+</nav>
+
+<script src="static/basket.js?v=20261007061534"></script>
+<script src="static/photo.js?v=20261007061534"></script>
+
+<script src="static/render.js?v=20261007061534"></script>
+<script src="static/category.js?v=20261007061534" data-build="20261007061534"></script>
+
+<script>
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+</script>
+</body>
+</html>

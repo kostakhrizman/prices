@@ -1,0 +1,1070 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f7a4d">
+<script>
+// the look this phone chose (settings.html "מראה"), before anything is drawn: html.light / html.dark
+// (none = follow the phone) and html[data-color] (none = green); the browser bar takes the colour too
+(function () {
+  let t = {};
+  try { t = JSON.parse(localStorage.getItem("theme")) || {}; } catch (e) { /* none yet */ }
+  const root = document.documentElement;
+  if (t.mode === "light" || t.mode === "dark") root.classList.add(t.mode);
+  if (t.color) root.dataset.color = t.color;
+  if (t.bar) document.querySelector('meta[name="theme-color"]').content = t.bar;
+})();
+</script>
+<title>אקונומיקה</title>
+<link rel="manifest" href="static/manifest.webmanifest">
+<link rel="icon" href="static/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="static/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="static/style.css?v=20261007061534">
+<style>.st-0 { --store: #e07000; }.st-1 { --store: #d32f2f; }.st-2 { --store: #1565c0; }.st-3 { --store: #1565c0; }.st-4 { --store: #c99a00; }</style>
+<script src="static/stores.js?v=20261007061534" data-stores="[{&#34;card_cap&#34;: 750, &#34;card_rate&#34;: 0.07, &#34;default&#34;: true, &#34;key&#34;: &#34;victory-038&#34;, &#34;name&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;ramilevy-007&#34;, &#34;name&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-026&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05ea\u05dc\u05e4\u05d9\u05d5\u05ea&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-003&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05d2\u05d1\u05e2\u05ea \u05e9\u05d0\u05d5\u05dc&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;netto-052&#34;, &#34;name&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df \u05e7\u05e8\u05d9\u05d9\u05ea \u05d9\u05e2\u05e8\u05d9\u05dd&#34;, &#34;short&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df&#34;}]"></script>
+<script src="static/avoid.js?v=20261007061534" data-kinds="[&#34;\u05e2\u05d5\u05e3 \u05de\u05e2\u05d5\u05d1\u05d3&#34;, &#34;\u05d1\u05e9\u05e8 \u05de\u05e2\u05d5\u05d1\u05d3&#34;]"></script>
+<script>
+// No long-press menu on links, pictures or text (the user: the home page's tiles opened Chrome's "open in new tab /
+// copy link" menu; CSS can't stop that on Android). Typing fields and the ⓘ sheet's barcode keep theirs.
+document.addEventListener("contextmenu", (e) => {
+  if (!e.target.closest("input, textarea, [contenteditable], .photo-barcode")) e.preventDefault();
+});
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <a class="back" href="t-11.html" aria-label="חזרה">→</a>
+    <h1>אקונומיקה</h1>
+    <a class="notes-link" href="notes.html" aria-label="רשימת קניות" title="רשימת קניות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="m8.5 10 1.2 1.2 2.3-2.4M8.5 15.5l1.2 1.2 2.3-2.4M14 10.5h2.5M14 16h2.5"/></svg><span>רשימת קניות</span></a>
+    <a class="settings-link" href="settings.html" aria-label="הגדרות" title="הגדרות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></a>
+  </div>
+  
+  <form class="search" action="search.html" method="get" role="search">
+    <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+    <input type="search" name="q" placeholder="חיפוש מוצר" enterkeyhint="search" aria-label="חיפוש מוצר">
+  </form>
+  
+</header>
+<main>
+
+<p class="sub"><span class="sub-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7h5v3H9z"/><path d="M14 8h3.5l1.5-2"/><path d="M10 7V4h3.5"/><path d="M8.5 10h6l1.5 3.5V20a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1v-6.5z"/><path d="M20.5 3.5v.01M21.5 7v.01M19 2v.01"/></svg></span>ניקיון ובית · <span id="cat-count">35</span> מוצרים, מהזול ליקר</p>
+
+
+<div class="cat-filter">
+  <input type="search" id="cat-filter" placeholder="סינון לפי שם או יצרן · ‎-מילה מסתירה" enterkeyhint="done" autocomplete="off" aria-label="סינון המוצרים בקטגוריה">
+</div>
+<div id="cat-list" data-href="c-11-4.html">
+
+<ol class="products">
+  
+  
+    
+    
+    
+    <li class="product st-1 best">
+      <div class="info">
+        <div class="name">אקונומיקה ללא בישום <button type="button" class="photo-btn" data-photo="7290015899215" data-key="7290015899215" data-name="אקונומיקה ללא בישום" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רמי לוי</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪1.98 <small>לליטר</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪7.90 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015899215" data-name="אקונומיקה ללא בישום" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אקונומיקה מבושמת סמי <button type="button" class="photo-btn" data-photo="7290015899222" data-key="7290015899222" data-name="אקונומיקה מבושמת סמי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רמי לוי</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪1.98 <small>לליטר</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪7.90 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015899222" data-name="אקונומיקה מבושמת סמי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אקונומיקה מבושמת רמי <button type="button" class="photo-btn" data-photo="7290015899239" data-key="7290015899239" data-name="אקונומיקה מבושמת רמי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רמי לוי</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪1.98 <small>לליטר</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪7.90 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015899239" data-name="אקונומיקה מבושמת רמי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">אקונומיקה 4 ליטר <button type="button" class="photo-btn" data-photo="7290001497760" data-key="7290001497760" data-name="אקונומיקה 4 ליטר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪1.98 <small>לליטר</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪7.90 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001497760" data-name="אקונומיקה 4 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">אקונומיקה מבושמת 4 ל סנט מוריץ <button type="button" class="photo-btn" data-photo="7290001713921" data-key="7290001713921" data-name="אקונומיקה מבושמת 4 ל סנט מוריץ" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪1.98 <small>לליטר</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪7.90 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001713921" data-name="אקונומיקה מבושמת 4 ל סנט מוריץ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">אקונומיקה ריחנית פסגה 4 ליטר <button type="button" class="photo-btn" data-photo="7290001791349" data-key="7290001791349" data-name="אקונומיקה ריחנית פסגה 4 ליטר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-0">ויקטורי ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪2.23 <small>לליטר</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪8.90 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001791349" data-name="אקונומיקה ריחנית פסגה 4 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אקונומיקה מבושמת 4 ליטר טאצ` <button type="button" class="photo-btn" data-photo="7290001245705" data-key="7290001245705" data-name="אקונומיקה מבושמת 4 ליטר טאצ`" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪2.73 <small>לליטר</small></div>
+          <div class="shelf">₪10.90 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001245705" data-name="אקונומיקה מבושמת 4 ליטר טאצ`" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אקונומיקה סמיכה לבנדר 4 ליטר עם פקק ביטח <button type="button" class="photo-btn" data-photo="7290003976607" data-key="7290003976607" data-name="אקונומיקה סמיכה לבנדר 4 ליטר עם פקק ביטח" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪2.73 <small>לליטר</small></div>
+          <div class="shelf"><s>₪12.90</s> ₪10.90 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003976607" data-name="אקונומיקה סמיכה לבנדר 4 ליטר עם פקק ביטח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סנו אקונומיקה כחולה <button type="button" class="photo-btn" data-photo="7290000288031" data-key="7290000288031" data-name="סנו אקונומיקה כחולה" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪2.98 <small>לליטר</small></div>
+          <div class="shelf">₪11.90 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000288031" data-name="סנו אקונומיקה כחולה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אקונומיקה סמיכה 4 ליטר טאצ` <button type="button" class="photo-btn" data-photo="7290001245699" data-key="7290001245699" data-name="אקונומיקה סמיכה 4 ליטר טאצ`" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪3.23 <small>לליטר</small></div>
+          <div class="shelf">₪12.90 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001245699" data-name="אקונומיקה סמיכה 4 ליטר טאצ`" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אקונומיקה סמיכה פרחים 4 ליטר עם פקק ביטח <button type="button" class="photo-btn" data-photo="7290003976614" data-key="7290003976614" data-name="אקונומיקה סמיכה פרחים 4 ליטר עם פקק ביטח" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪3.23 <small>לליטר</small></div>
+          <div class="shelf">₪12.90 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003976614" data-name="אקונומיקה סמיכה פרחים 4 ליטר עם פקק ביטח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">אקונומיקה ריחנית סמיכה 4 ליטר 3% <button type="button" class="photo-btn" data-photo="7290001497579" data-key="7290001497579" data-name="אקונומיקה ריחנית סמיכה 4 ליטר 3%" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪3.23 <small>לליטר</small></div>
+          <div class="shelf">₪12.90 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001497579" data-name="אקונומיקה ריחנית סמיכה 4 ליטר 3%" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אקונומיקה ללא בישום <button type="button" class="photo-btn" data-photo="7290000339528" data-key="7290000339528" data-name="אקונומיקה ללא בישום" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קלין</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪3.52 <small>לליטר</small></div>
+          <div class="shelf">₪14.10 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000339528" data-name="אקונומיקה ללא בישום" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אקונומיקה בניחוח לימ <button type="button" class="photo-btn" data-photo="7290000341224" data-key="7290000341224" data-name="אקונומיקה בניחוח לימ" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קלין</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪3.52 <small>לליטר</small></div>
+          <div class="shelf">₪14.10 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000341224" data-name="אקונומיקה בניחוח לימ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ג&#39;ל אקונומיקה בניחוח <button type="button" class="photo-btn" data-photo="7290013932174" data-key="7290013932174" data-name="ג&#39;ל אקונומיקה בניחוח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קלין</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪3.52 <small>לליטר</small></div>
+          <div class="shelf">₪14.10 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013932174" data-name="ג&#39;ל אקונומיקה בניחוח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אקונומיקה בריח לימון סנו ז&#39;אוול 4 ליטר <button type="button" class="photo-btn" data-photo="7290000288024" data-key="7290000288024" data-name="אקונומיקה בריח לימון סנו ז&#39;אוול 4 ליטר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪16.90</span><span class="other st-0">ויקטורי ₪17.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪4.22 <small>לליטר</small></div>
+          <div class="shelf">₪16.90 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000288024" data-name="אקונומיקה בריח לימון סנו ז&#39;אוול 4 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">סנו ז&#39;אוול אקונומיקה לבנדר 4ל&#39; <button type="button" class="photo-btn" data-photo="7290000294773" data-key="7290000294773" data-name="סנו ז&#39;אוול אקונומיקה לבנדר 4ל&#39;" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-0">ויקטורי ₪17.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪4.22 <small>לליטר</small></div>
+          <div class="shelf">₪16.90 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000294773" data-name="סנו ז&#39;אוול אקונומיקה לבנדר 4ל&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אקונומיקה סמיכה בריח לימון סנו ז&#39;אוול 4 ליטר <button type="button" class="photo-btn" data-photo="7290000294780" data-key="7290000294780" data-name="אקונומיקה סמיכה בריח לימון סנו ז&#39;אוול 4 ליטר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בע&#34;\מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪16.90</span><span class="other st-0">ויקטורי ₪17.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪4.22 <small>לליטר</small></div>
+          <div class="shelf">₪16.90 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000294780" data-name="אקונומיקה סמיכה בריח לימון סנו ז&#39;אוול 4 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">סנו ג&#39;אבל אקונומיקה פריחה לבנה 4 ליטר <button type="button" class="photo-btn" data-photo="7290108357288" data-key="7290108357288" data-name="סנו ג&#39;אבל אקונומיקה פריחה לבנה 4 ליטר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-0">ויקטורי ₪17.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪4.22 <small>לליטר</small></div>
+          <div class="shelf">₪16.90 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108357288" data-name="סנו ג&#39;אבל אקונומיקה פריחה לבנה 4 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סנו JAVEL לימון <button type="button" class="photo-btn" data-photo="7290000288079" data-key="7290000288079" data-name="סנו JAVEL לימון" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪6.45 <small>לליטר</small></div>
+          <div class="shelf">₪12.90 · 2 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000288079" data-name="סנו JAVEL לימון" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">תרסיס אקונומיקה בריח <button type="button" class="photo-btn" data-photo="7290006784988" data-key="7290006784988" data-name="תרסיס אקונומיקה בריח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 16.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪6.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪6.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290006784988" data-name="תרסיס אקונומיקה בריח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">תרסיס אקונומיקה בריח <button type="button" class="photo-btn" data-photo="7290006784995" data-key="7290006784995" data-name="תרסיס אקונומיקה בריח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 16.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪6.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪6.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290006784995" data-name="תרסיס אקונומיקה בריח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אקונומיקה בריח לימון סנו ז&#39;אוול 1 ליטר <button type="button" class="photo-btn" data-photo="7290000288017" data-key="7290000288017" data-name="אקונומיקה בריח לימון סנו ז&#39;אוול 1 ליטר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪8.90</span><span class="other st-0">ויקטורי ₪9.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪8.90 <small>לליטר</small></div>
+          <div class="shelf">₪8.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000288017" data-name="אקונומיקה בריח לימון סנו ז&#39;אוול 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אקונומיקה סמיכה בריח לימון סנו ז&#39;אוול 1 ליטר <button type="button" class="photo-btn" data-photo="7290000291963" data-key="7290000291963" data-name="אקונומיקה סמיכה בריח לימון סנו ז&#39;אוול 1 ליטר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מפעלי סנו ברונוס בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪9.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪8.90 <small>לליטר</small></div>
+          <div class="shelf">₪8.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000291963" data-name="אקונומיקה סמיכה בריח לימון סנו ז&#39;אוול 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אקונומיקה קצף ניקוי 1 ל <button type="button" class="photo-btn" data-photo="7290001713150" data-key="7290001713150" data-name="אקונומיקה קצף ניקוי 1 ל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קומפלקס כימיקלים בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪9.00 (2 ב־₪18)</span><span class="other st-0">ויקטורי ₪11.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪8.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪8.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001713150" data-name="אקונומיקה קצף ניקוי 1 ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קצף מרוכז בניחוח לימון משמיד 99.9% סנט מוריץ <button type="button" class="photo-btn" data-photo="7290002814290" data-key="7290002814290" data-name="קצף מרוכז בניחוח לימון משמיד 99.9% סנט מוריץ" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קומפלקס כימיקלים בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪9.00 (2 ב־₪18)</span><span class="other st-0">ויקטורי ₪11.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪8.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪8.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002814290" data-name="קצף מרוכז בניחוח לימון משמיד 99.9% סנט מוריץ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מלבין אקונומיקה 2 לי <button type="button" class="photo-btn" data-photo="7290001246948" data-key="7290001246948" data-name="מלבין אקונומיקה 2 לי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סאסאטק</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.05 <small>לליטר</small></div>
+          <div class="shelf">₪18.10 · 2 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001246948" data-name="מלבין אקונומיקה 2 לי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קוקהנומיקה בריח לבנדר 1.25 ליטר TNX <button type="button" class="photo-btn" data-photo="7290019274315" data-key="7290019274315" data-name="קוקהנומיקה בריח לבנדר 1.25 ליטר TNX" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>---</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.32 <small>לליטר</small></div>
+          <div class="shelf">₪12.90 · 1.25 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019274315" data-name="קוקהנומיקה בריח לבנדר 1.25 ליטר TNX" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">בדין אקסטרא לבן-960 מ&#39;&#39;ל <button type="button" class="photo-btn" data-photo="8690637555084" data-key="8690637555084" data-name="בדין אקסטרא לבן-960 מ&#39;&#39;ל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>בדין אקסטרא 960</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪25</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪13.02 <small>לליטר</small></div>
+          <div class="shelf"><s>₪16.90</s> ₪12.50 · 960 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8690637555084" data-name="בדין אקסטרא לבן-960 מ&#39;&#39;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">תרסיס אקונומיקה קלין <button type="button" class="photo-btn" data-photo="7290011920210" data-key="7290011920210" data-name="תרסיס אקונומיקה קלין" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קלין</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.80 <small>לליטר</small></div>
+          <div class="shelf">₪11.10 · 750 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011920210" data-name="תרסיס אקונומיקה קלין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אבקת ניקוי עם אקונומיקה בריח לימון סנו ז&#39;אוול 600 ג&#39; <button type="button" class="photo-btn" data-photo="7290000288086" data-key="7290000288086" data-name="אבקת ניקוי עם אקונומיקה בריח לימון סנו ז&#39;אוול 600 ג&#39;" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪9.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪16.50 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000288086" data-name="אבקת ניקוי עם אקונומיקה בריח לימון סנו ז&#39;אוול 600 ג&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סיף גל אקונומיקה מרו <button type="button" class="photo-btn" data-photo="8720181673603" data-key="8720181673603" data-name="סיף גל אקונומיקה מרו" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪17.20 <small>לליטר</small></div>
+          <div class="shelf">₪12.90 · 750 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8720181673603" data-name="סיף גל אקונומיקה מרו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">דאק נוזל אקונומיקה הדרים 750מ&#34;ל <button type="button" class="photo-btn" data-photo="5000204271119" data-key="5000204271119" data-name="דאק נוזל אקונומיקה הדרים 750מ&#34;ל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪18.40 <small>לליטר</small></div>
+          <div class="shelf">₪13.80 · 750 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5000204271119" data-name="דאק נוזל אקונומיקה הדרים 750מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">נוזל עם אקונומיקה 750 מל דאק <button type="button" class="photo-btn" data-photo="5000204271027" data-key="5000204271027" data-name="נוזל עם אקונומיקה 750 מל דאק" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪18.53 <small>לליטר</small></div>
+          <div class="shelf">₪13.90 · 750 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5000204271027" data-name="נוזל עם אקונומיקה 750 מל דאק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מרסס אקונומיקה מבושמת בריח לבנדר 750 מ&#34;ל TNX <button type="button" class="photo-btn" data-photo="7290019014782" data-key="7290019014782" data-name="מרסס אקונומיקה מבושמת בריח לבנדר 750 מ&#34;ל TNX" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סאסאטק אגש&#34;ח בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪14.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.87 <small>לליטר</small></div>
+          <div class="shelf">₪14.90 · 750 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019014782" data-name="מרסס אקונומיקה מבושמת בריח לבנדר 750 מ&#34;ל TNX" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+</ol>
+</div>
+
+</main>
+<footer>עודכן 7.10 06:15 · ויקטורי 6.10 21:13 · רמי לוי 00:11 · אושר עד 6.10 21:00 · אושר עד 6.10 21:00 · נטו חיסכון 04:03</footer>
+
+
+<nav class="bottom-nav" aria-label="ניווט">
+  <a href="index.html" class="on"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg><span>בית</span></a>
+  <a href="search.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><span>חיפוש</span></a>
+  <a href="scan.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V5a1 1 0 0 1 1-1h2M17 4h2a1 1 0 0 1 1 1v2M20 17v2a1 1 0 0 1-1 1h-2M7 20H5a1 1 0 0 1-1-1v-2"/><path d="M8 8v8M11 8v8M14 8v8M16.5 8v8"/></svg><span>סריקה</span></a>
+  <a href="basket.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h11l2-8H6.2"/><circle cx="9.5" cy="19" r="1.4"/><circle cx="17" cy="19" r="1.4"/></svg><span id="cart-count"></span><span>עגלת קניות</span></a>
+  <a href="spending.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-2-1.4-2 1.4-2-1.4-2 1.4-2-1.4L6 21z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><span>הוצאות</span></a>
+</nav>
+
+<script src="static/basket.js?v=20261007061534"></script>
+<script src="static/photo.js?v=20261007061534"></script>
+
+<script src="static/render.js?v=20261007061534"></script>
+<script src="static/category.js?v=20261007061534" data-build="20261007061534"></script>
+
+<script>
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+</script>
+</body>
+</html>

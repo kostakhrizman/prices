@@ -1,0 +1,2862 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f7a4d">
+<script>
+// the look this phone chose (settings.html "מראה"), before anything is drawn: html.light / html.dark
+// (none = follow the phone) and html[data-color] (none = green); the browser bar takes the colour too
+(function () {
+  let t = {};
+  try { t = JSON.parse(localStorage.getItem("theme")) || {}; } catch (e) { /* none yet */ }
+  const root = document.documentElement;
+  if (t.mode === "light" || t.mode === "dark") root.classList.add(t.mode);
+  if (t.color) root.dataset.color = t.color;
+  if (t.bar) document.querySelector('meta[name="theme-color"]').content = t.bar;
+})();
+</script>
+<title>משקאות צמחיים (סויה, שיבולת שועל, שקדים)</title>
+<link rel="manifest" href="static/manifest.webmanifest">
+<link rel="icon" href="static/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="static/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="static/style.css?v=20261007061534">
+<style>.st-0 { --store: #e07000; }.st-1 { --store: #d32f2f; }.st-2 { --store: #1565c0; }.st-3 { --store: #1565c0; }.st-4 { --store: #c99a00; }</style>
+<script src="static/stores.js?v=20261007061534" data-stores="[{&#34;card_cap&#34;: 750, &#34;card_rate&#34;: 0.07, &#34;default&#34;: true, &#34;key&#34;: &#34;victory-038&#34;, &#34;name&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;ramilevy-007&#34;, &#34;name&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-026&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05ea\u05dc\u05e4\u05d9\u05d5\u05ea&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-003&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05d2\u05d1\u05e2\u05ea \u05e9\u05d0\u05d5\u05dc&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;netto-052&#34;, &#34;name&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df \u05e7\u05e8\u05d9\u05d9\u05ea \u05d9\u05e2\u05e8\u05d9\u05dd&#34;, &#34;short&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df&#34;}]"></script>
+<script src="static/avoid.js?v=20261007061534" data-kinds="[&#34;\u05e2\u05d5\u05e3 \u05de\u05e2\u05d5\u05d1\u05d3&#34;, &#34;\u05d1\u05e9\u05e8 \u05de\u05e2\u05d5\u05d1\u05d3&#34;]"></script>
+<script>
+// No long-press menu on links, pictures or text (the user: the home page's tiles opened Chrome's "open in new tab /
+// copy link" menu; CSS can't stop that on Android). Typing fields and the ⓘ sheet's barcode keep theirs.
+document.addEventListener("contextmenu", (e) => {
+  if (!e.target.closest("input, textarea, [contenteditable], .photo-barcode")) e.preventDefault();
+});
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <a class="back" href="t-2.html" aria-label="חזרה">→</a>
+    <h1>משקאות צמחיים (סויה, שיבולת שועל, שקדים)</h1>
+    <a class="notes-link" href="notes.html" aria-label="רשימת קניות" title="רשימת קניות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="m8.5 10 1.2 1.2 2.3-2.4M8.5 15.5l1.2 1.2 2.3-2.4M14 10.5h2.5M14 16h2.5"/></svg><span>רשימת קניות</span></a>
+    <a class="settings-link" href="settings.html" aria-label="הגדרות" title="הגדרות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></a>
+  </div>
+  
+  <form class="search" action="search.html" method="get" role="search">
+    <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+    <input type="search" name="q" placeholder="חיפוש מוצר" enterkeyhint="search" aria-label="חיפוש מוצר">
+  </form>
+  
+</header>
+<main>
+
+<p class="sub"><span class="sub-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8v3l2 3v11a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V9l2-3z"/><path d="M8 6h8"/><path d="M6 9h12"/><path d="M10 13.5a2 2 0 0 0 4 0c0-1.2-2-3.5-2-3.5s-2 2.3-2 3.5z"/></svg></span>חלב וביצים · <span id="cat-count">99</span> מוצרים, מהזול ליקר</p>
+
+
+<div class="cat-filter">
+  <input type="search" id="cat-filter" placeholder="סינון לפי שם או יצרן · ‎-מילה מסתירה" enterkeyhint="done" autocomplete="off" aria-label="סינון המוצרים בקטגוריה">
+</div>
+<div id="cat-list" data-href="c-2-13.html">
+
+<ol class="products">
+  
+  
+    
+    
+    
+    <li class="product st-0 best">
+      <div class="info">
+        <div class="name">משקה סויה בריסטה 1 ליטר ויקטורי <button type="button" class="photo-btn" data-photo="5061116737087" data-key="5061116737087" data-name="משקה סויה בריסטה 1 ליטר ויקטורי" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪4.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪6.90</s> ₪4.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5061116737087" data-name="משקה סויה בריסטה 1 ליטר ויקטורי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">משקה שיבולת שועל בריסטה 1 ליטר ויקטורי <button type="button" class="photo-btn" data-photo="5061116737094" data-key="5061116737094" data-name="משקה שיבולת שועל בריסטה 1 ליטר ויקטורי" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪4.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪6.90</s> ₪4.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5061116737094" data-name="משקה שיבולת שועל בריסטה 1 ליטר ויקטורי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משקה cowfree יטבתה 1 ליטר <button type="button" class="photo-btn" data-photo="7290119374083" data-key="7290119374083" data-name="משקה cowfree יטבתה 1 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מחלבת יטבתה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪7.90 (מבצע)</span><span class="other st-4">נטו חיסכון ₪7.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪6.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪15.90</s> ₪6.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119374083" data-name="משקה cowfree יטבתה 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אלפרו משקה סויה בריסטה לל&#34;ס בקירור 1לי <button type="button" class="photo-btn" data-photo="7290119385553" data-key="7290119385553" data-name="אלפרו משקה סויה בריסטה לל&#34;ס בקירור 1לי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס בריאות בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪10.00 (2 ב־₪20)</span><span class="other st-0">ויקטורי ₪10.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪8.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪8.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119385553" data-name="אלפרו משקה סויה בריסטה לל&#34;ס בקירור 1לי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אלפרו משקה סויה וניל בקירור 1לי <button type="button" class="photo-btn" data-photo="7290119385577" data-key="7290119385577" data-name="אלפרו משקה סויה וניל בקירור 1לי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס בריאות בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪10.00 (2 ב־₪20)</span><span class="other st-0">ויקטורי ₪10.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪8.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪8.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119385577" data-name="אלפרו משקה סויה וניל בקירור 1לי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אלפרו משקה סויה בריסטה בקירור 1ל <button type="button" class="photo-btn" data-photo="7290119385607" data-key="7290119385607" data-name="אלפרו משקה סויה בריסטה בקירור 1ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס בריאות בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪10.00 (2 ב־₪20)</span><span class="other st-0">ויקטורי ₪10.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪8.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪8.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119385607" data-name="אלפרו משקה סויה בריסטה בקירור 1ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משקה שקדים טרי 1 ליטר <button type="button" class="photo-btn" data-photo="7290014760141" data-key="7290014760141" data-name="משקה שקדים טרי 1 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוי מג&#39;יק</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪11.00 (2 ב־₪22)</span><span class="other st-0">ויקטורי ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪12.20</s> ₪9.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014760141" data-name="משקה שקדים טרי 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משקה שיבולת שועל 1 ליטר אלטרנטיב תנובה <button type="button" class="photo-btn" data-photo="7290110325619" data-key="7290110325619" data-name="משקה שיבולת שועל 1 ליטר אלטרנטיב תנובה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪10.00 (2 ב־₪20)</span><span class="other st-4">נטו חיסכון ₪11.00 (2 ב־₪22)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪12.20</s> ₪9.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110325619" data-name="משקה שיבולת שועל 1 ליטר אלטרנטיב תנובה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משקה שקדים ללא תוספת סוכר <button type="button" class="photo-btn" data-photo="7290110325626" data-key="7290110325626" data-name="משקה שקדים ללא תוספת סוכר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪11.00 (2 ב־₪22)</span><span class="other st-0">ויקטורי ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪12.20</s> ₪9.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110325626" data-name="משקה שקדים ללא תוספת סוכר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משקה שיבולת שועל טעם אגוזי לוז 1 ליטר <button type="button" class="photo-btn" data-photo="7290110327514" data-key="7290110327514" data-name="משקה שיבולת שועל טעם אגוזי לוז 1 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה מרכז שיתופי לש</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪10.00 (2 ב־₪20)</span><span class="other st-4">נטו חיסכון ₪11.00 (2 ב־₪22)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪12.20</s> ₪9.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110327514" data-name="משקה שיבולת שועל טעם אגוזי לוז 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משקה שיבולת שועל בטעם וניל 1 ליטר אלטרנטיב <button type="button" class="photo-btn" data-photo="7290116932842" data-key="7290116932842" data-name="משקה שיבולת שועל בטעם וניל 1 ליטר אלטרנטיב" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪10.00 (2 ב־₪20)</span><span class="other st-4">נטו חיסכון ₪11.00 (2 ב־₪22)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪12.20</s> ₪9.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116932842" data-name="משקה שיבולת שועל בטעם וניל 1 ליטר אלטרנטיב" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אלטרנטיב שיבולת שועל וויט 1 ליטר <button type="button" class="photo-btn" data-photo="7290116933894" data-key="7290116933894" data-name="אלטרנטיב שיבולת שועל וויט 1 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪10.00 (2 ב־₪20)</span><span class="other st-4">נטו חיסכון ₪11.00 (2 ב־₪22)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪12.20</s> ₪9.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116933894" data-name="אלטרנטיב שיבולת שועל וויט 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משקה שיבולת שועל ללא תוספת סוכר <button type="button" class="photo-btn" data-photo="7290116934150" data-key="7290116934150" data-name="משקה שיבולת שועל ללא תוספת סוכר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪10.00 (2 ב־₪20)</span><span class="other st-4">נטו חיסכון ₪11.00 (2 ב־₪22)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪12.50</s> ₪9.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116934150" data-name="משקה שיבולת שועל ללא תוספת סוכר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משקה סויה מועשר בסידן 1 ליטר תנובה <button type="button" class="photo-btn" data-photo="7290004125578" data-key="7290004125578" data-name="משקה סויה מועשר בסידן 1 ליטר תנובה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוי מג&#39;יק</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪10.00 (2 ב־₪20)</span><span class="other st-0">ויקטורי ₪11.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90 <small>לליטר</small></div>
+          <div class="shelf">₪9.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004125578" data-name="משקה סויה מועשר בסידן 1 ליטר תנובה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משקה סויה וניל על הבוקר 1 ליטר <button type="button" class="photo-btn" data-photo="7290004125585" data-key="7290004125585" data-name="משקה סויה וניל על הבוקר 1 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוי מג&#39;יק</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪10.00 (2 ב־₪20)</span><span class="other st-0">ויקטורי ₪11.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90 <small>לליטר</small></div>
+          <div class="shelf">₪9.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004125585" data-name="משקה סויה וניל על הבוקר 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משקה סויה טבעי במתיקות מופחתת 1 ל <button type="button" class="photo-btn" data-photo="7290004130794" data-key="7290004130794" data-name="משקה סויה טבעי במתיקות מופחתת 1 ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוי מג&#39;יק</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪10.00 (2 ב־₪20)</span><span class="other st-0">ויקטורי ₪11.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90 <small>לליטר</small></div>
+          <div class="shelf">₪9.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004130794" data-name="משקה סויה טבעי במתיקות מופחתת 1 ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משקה סויה דיאט וניל טבעי 1 ליטר <button type="button" class="photo-btn" data-photo="7290004132552" data-key="7290004132552" data-name="משקה סויה דיאט וניל טבעי 1 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוי מג&#39;יק</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪10.00 (2 ב־₪20)</span><span class="other st-0">ויקטורי ₪11.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90 <small>לליטר</small></div>
+          <div class="shelf">₪9.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004132552" data-name="משקה סויה דיאט וניל טבעי 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משקה סויה ללא תוספת סוכר 1 ליטר אלטרנטיב <button type="button" class="photo-btn" data-photo="7290110324926" data-key="7290110324926" data-name="משקה סויה ללא תוספת סוכר 1 ליטר אלטרנטיב" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪10.00 (2 ב־₪20)</span><span class="other st-0">ויקטורי ₪11.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90 <small>לליטר</small></div>
+          <div class="shelf">₪9.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110324926" data-name="משקה סויה ללא תוספת סוכר 1 ליטר אלטרנטיב" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">SIMPLE משקה סויה ללא סוכרים 1 ליטר <button type="button" class="photo-btn" data-photo="7290116936116" data-key="7290116936116" data-name="SIMPLE משקה סויה ללא סוכרים 1 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪11.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90 <small>לליטר</small></div>
+          <div class="shelf">₪9.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116936116" data-name="SIMPLE משקה סויה ללא סוכרים 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משקה סויה מועשר סידן וויטמינים 1 ליטר <button type="button" class="photo-btn" data-photo="7290112198556" data-key="7290112198556" data-name="משקה סויה מועשר סידן וויטמינים 1 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90 <small>לליטר</small></div>
+          <div class="shelf">₪9.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112198556" data-name="משקה סויה מועשר סידן וויטמינים 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משקה אורז 1 ליטר <button type="button" class="photo-btn" data-photo="7290112198549" data-key="7290112198549" data-name="משקה אורז 1 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90 <small>לליטר</small></div>
+          <div class="shelf">₪9.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112198549" data-name="משקה אורז 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משקה שיבולת שועל 1 ליטר <button type="button" class="photo-btn" data-photo="7290112198563" data-key="7290112198563" data-name="משקה שיבולת שועל 1 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90 <small>לליטר</small></div>
+          <div class="shelf">₪9.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112198563" data-name="משקה שיבולת שועל 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אלפרו משקה שקדים 1 ליטר <button type="button" class="photo-btn" data-photo="5411188110835" data-key="5411188110835" data-name="אלפרו משקה שקדים 1 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוג&#39;ינל אס.איי.אס</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪10.45 (2 ב־₪20.90)</span><span class="other st-4">נטו חיסכון ₪11.00 (2 ב־₪22)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪14.70</s> ₪10.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5411188110835" data-name="אלפרו משקה שקדים 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משקה שקדים אלפרו ללת&#34;ס 1 ליטר <button type="button" class="photo-btn" data-photo="5411188112709" data-key="5411188112709" data-name="משקה שקדים אלפרו ללת&#34;ס 1 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוג&#39;ינל אס.איי.אס</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪10.45 (2 ב־₪20.90)</span><span class="other st-4">נטו חיסכון ₪11.00 (2 ב־₪22)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪14.70</s> ₪10.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5411188112709" data-name="משקה שקדים אלפרו ללת&#34;ס 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אלפרו בריסטה סויה 1 ליטר <button type="button" class="photo-btn" data-photo="5411188115434" data-key="5411188115434" data-name="אלפרו בריסטה סויה 1 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס בריאות בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪10.45 (2 ב־₪20.90)</span><span class="other st-4">נטו חיסכון ₪11.00 (2 ב־₪22)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪14.70</s> ₪10.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5411188115434" data-name="אלפרו בריסטה סויה 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אלפרו משקה סויה 1 ליטר <button type="button" class="photo-btn" data-photo="5411188115472" data-key="5411188115472" data-name="אלפרו משקה סויה 1 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אלפרו אן.וי/אס.איי</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪11.00 (2 ב־₪22)</span><span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪14.70</s> ₪10.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5411188115472" data-name="אלפרו משקה סויה 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אלפרו משקה שיבולת שועל 1ליטר ללא תוספת סוכר <button type="button" class="photo-btn" data-photo="5411188124689" data-key="5411188124689" data-name="אלפרו משקה שיבולת שועל 1ליטר ללא תוספת סוכר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס בריאות בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪10.45 (2 ב־₪20.90)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪14.70</s> ₪10.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5411188124689" data-name="אלפרו משקה שיבולת שועל 1ליטר ללא תוספת סוכר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אלפרו בריסטה שיבולת שועל <button type="button" class="photo-btn" data-photo="5411188127697" data-key="5411188127697" data-name="אלפרו בריסטה שיבולת שועל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס בריאות בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪10.45 (2 ב־₪20.90)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪14.70</s> ₪10.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5411188127697" data-name="אלפרו בריסטה שיבולת שועל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אלפרו חלב סויה ללא סוכר 1 לי <button type="button" class="photo-btn" data-photo="5411188543398" data-key="5411188543398" data-name="אלפרו חלב סויה ללא סוכר 1 לי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס בריאות בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪11.00 (2 ב־₪22)</span><span class="other st-0">ויקטורי ₪12.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪14.70</s> ₪10.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5411188543398" data-name="אלפרו חלב סויה ללא סוכר 1 לי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">משקהסויה GO מתיקות מופחת <button type="button" class="photo-btn" data-photo="7290110327033" data-key="7290110327033" data-name="משקהסויה GO מתיקות מופחת" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪13.90</s> ₪10.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110327033" data-name="משקהסויה GO מתיקות מופחת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אלפרו משקה שיבולת שועל 1 ליטר <button type="button" class="photo-btn" data-photo="7290110558420" data-key="7290110558420" data-name="אלפרו משקה שיבולת שועל 1 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס בריאות בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪12.00 (2 ב־₪24)</span><span class="other st-0">ויקטורי ₪12.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪12.90</s> ₪10.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110558420" data-name="אלפרו משקה שיבולת שועל 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אלפרו משקה שקדים לל&#34;ס 1ליטר <button type="button" class="photo-btn" data-photo="7290110570040" data-key="7290110570040" data-name="אלפרו משקה שקדים לל&#34;ס 1ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס בריאות בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪12.00 (2 ב־₪24)</span><span class="other st-0">ויקטורי ₪12.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪12.90</s> ₪10.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110570040" data-name="אלפרו משקה שקדים לל&#34;ס 1ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אלפרו משקה שיבולת שועל לל&#34;ס 1 ליטר <button type="button" class="photo-btn" data-photo="7290119371488" data-key="7290119371488" data-name="אלפרו משקה שיבולת שועל לל&#34;ס 1 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס בריאות בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪12.00 (2 ב־₪24)</span><span class="other st-0">ויקטורי ₪12.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪12.90</s> ₪10.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119371488" data-name="אלפרו משקה שיבולת שועל לל&#34;ס 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אלפרו משקה שיבולת שועל אגוזי לוז 1 ליטר <button type="button" class="photo-btn" data-photo="7290119386062" data-key="7290119386062" data-name="אלפרו משקה שיבולת שועל אגוזי לוז 1 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס בריאות בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪12.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪12.90</s> ₪10.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119386062" data-name="אלפרו משקה שיבולת שועל אגוזי לוז 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אלפרו משקה סויה וניל <button type="button" class="photo-btn" data-photo="5411188081852" data-key="5411188081852" data-name="אלפרו משקה סויה וניל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אלפרו</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪14.70</s> ₪10.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5411188081852" data-name="אלפרו משקה סויה וניל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אלפרו משקה סויה שוקו 1 ליטר <button type="button" class="photo-btn" data-photo="5411188300328" data-key="5411188300328" data-name="אלפרו משקה סויה שוקו 1 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אלפרו</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪14.70</s> ₪10.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5411188300328" data-name="אלפרו משקה סויה שוקו 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אלפרו בריסטה שקדים 1 ליטר <button type="button" class="photo-btn" data-photo="5411188129899" data-key="5411188129899" data-name="אלפרו בריסטה שקדים 1 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אלפרו</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪14.70</s> ₪10.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5411188129899" data-name="אלפרו בריסטה שקדים 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חלב סויה אורגני 1ליטר ISOLA <button type="button" class="photo-btn" data-photo="8023678161387" data-key="8023678161387" data-name="חלב סויה אורגני 1ליטר ISOLA" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.80 <small>לליטר</small></div>
+          <div class="shelf">₪10.80 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8023678161387" data-name="חלב סויה אורגני 1ליטר ISOLA" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">משקה שיבולת שועל 1 ליטר אלטרנטיב <button type="button" class="photo-btn" data-photo="7290116936765" data-key="7290116936765" data-name="משקה שיבולת שועל 1 ליטר אלטרנטיב" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪22</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-0">ויקטורי ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪11.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪12.90</s> ₪11.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116936765" data-name="משקה שיבולת שועל 1 ליטר אלטרנטיב" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משקה שיבולת טעם וניל <button type="button" class="photo-btn" data-photo="7290020711014" data-key="7290020711014" data-name="משקה שיבולת טעם וניל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪11.60 <small>לליטר</small></div>
+          <div class="shelf">₪11.60 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020711014" data-name="משקה שיבולת טעם וניל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משקה שיבולת קשיו בלי <button type="button" class="photo-btn" data-photo="7290020711021" data-key="7290020711021" data-name="משקה שיבולת קשיו בלי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪11.60 <small>לליטר</small></div>
+          <div class="shelf">₪11.60 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020711021" data-name="משקה שיבולת קשיו בלי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פילגד משקה שיבולת 1 <button type="button" class="photo-btn" data-photo="7290020711045" data-key="7290020711045" data-name="פילגד משקה שיבולת 1" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪11.60 <small>לליטר</small></div>
+          <div class="shelf">₪11.60 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020711045" data-name="פילגד משקה שיבולת 1" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משקה סויה בריסטה וולסויה 1לי <button type="button" class="photo-btn" data-photo="8006040380166" data-key="8006040380166" data-name="משקה סויה בריסטה וולסויה 1לי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪11.90 <small>לליטר</small></div>
+          <div class="shelf">₪11.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8006040380166" data-name="משקה סויה בריסטה וולסויה 1לי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">הרדוף משקה סויה ללא תוספת סוכר 1ליט <button type="button" class="photo-btn" data-photo="7290008263658" data-key="7290008263658" data-name="הרדוף משקה סויה ללא תוספת סוכר 1ליט" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>הרדוף</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪11.90 <small>לליטר</small></div>
+          <div class="shelf">₪11.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008263658" data-name="הרדוף משקה סויה ללא תוספת סוכר 1ליט" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משקה סויה 1 ליטר vit <button type="button" class="photo-btn" data-photo="8000215204653" data-key="8000215204653" data-name="משקה סויה 1 ליטר vit" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪11.90 <small>לליטר</small></div>
+          <div class="shelf">₪11.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8000215204653" data-name="משקה סויה 1 ליטר vit" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משקה סויה קלאסי וולסויה 1לי <button type="button" class="photo-btn" data-photo="8006040380173" data-key="8006040380173" data-name="משקה סויה קלאסי וולסויה 1לי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪11.90 <small>לליטר</small></div>
+          <div class="shelf">₪11.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8006040380173" data-name="משקה סויה קלאסי וולסויה 1לי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משקה שיבולת שועל ברי <button type="button" class="photo-btn" data-photo="6430078820271" data-key="6430078820271" data-name="משקה שיבולת שועל ברי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪24</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪12.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪12.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="6430078820271" data-name="משקה שיבולת שועל ברי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בריסטה שיבולת שועל1 ליטר <button type="button" class="photo-btn" data-photo="8006040380258" data-key="8006040380258" data-name="בריסטה שיבולת שועל1 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪12.70 <small>לליטר</small></div>
+          <div class="shelf">₪12.70 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8006040380258" data-name="בריסטה שיבולת שועל1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אוטלי משקה שיבולת שועל בריסטה עברית 1 ל <button type="button" class="photo-btn" data-photo="7394376621451" data-key="7394376621451" data-name="אוטלי משקה שיבולת שועל בריסטה עברית 1 ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>איי.אם.סי. פליסינגן בי.וי.</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪13.90</span><span class="other st-0">ויקטורי ₪16.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪12.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪13.90</s> ₪12.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7394376621451" data-name="אוטלי משקה שיבולת שועל בריסטה עברית 1 ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אוטלי ש.שועל בריסטה מופחת שומן <button type="button" class="photo-btn" data-photo="7394376621703" data-key="7394376621703" data-name="אוטלי ש.שועל בריסטה מופחת שומן" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>איי.אם.סי. פליסינגן בי.וי.</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪16.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪12.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪12.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7394376621703" data-name="אוטלי ש.שועל בריסטה מופחת שומן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אוטלי משקה שיבולת שועל בריסטה וניל 1 ליט <button type="button" class="photo-btn" data-photo="7394376623691" data-key="7394376623691" data-name="אוטלי משקה שיבולת שועל בריסטה וניל 1 ליט" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>איי.אם.סי. פליסינגן בי.וי.</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪16.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪12.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪13.90</s> ₪12.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7394376623691" data-name="אוטלי משקה שיבולת שועל בריסטה וניל 1 ליט" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משקה אורז אורגני <button type="button" class="photo-btn" data-photo="8000215204219" data-key="8000215204219" data-name="משקה אורז אורגני" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אלינור</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪12.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪13.90</s> ₪12.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8000215204219" data-name="משקה אורז אורגני" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משקה שקדים ואורז אורגני <button type="button" class="photo-btn" data-photo="8000215204240" data-key="8000215204240" data-name="משקה שקדים ואורז אורגני" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אלינור</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪12.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪13.90</s> ₪12.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8000215204240" data-name="משקה שקדים ואורז אורגני" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משקה ש.שועל אורגני בריסטה1 ליטר <button type="button" class="photo-btn" data-photo="8000215204677" data-key="8000215204677" data-name="משקה ש.שועל אורגני בריסטה1 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אלינור</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪12.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪13.90</s> ₪12.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8000215204677" data-name="משקה ש.שועל אורגני בריסטה1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">VITARIZ - משקה סויה אורגני <button type="button" class="photo-btn" data-photo="8000215204684" data-key="8000215204684" data-name="VITARIZ - משקה סויה אורגני" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אלינור</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪12.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪13.90</s> ₪12.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8000215204684" data-name="VITARIZ - משקה סויה אורגני" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">משקה אורז אורגני 1 ליטר אימפורט <button type="button" class="photo-btn" data-photo="8019428000013" data-key="8019428000013" data-name="משקה אורז אורגני 1 ליטר אימפורט" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪12.90 <small>לליטר</small></div>
+          <div class="shelf">₪12.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8019428000013" data-name="משקה אורז אורגני 1 ליטר אימפורט" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משקה שיבולת שועל טעם <button type="button" class="photo-btn" data-photo="8000215204745" data-key="8000215204745" data-name="משקה שיבולת שועל טעם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪12.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪13.90</s> ₪12.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8000215204745" data-name="משקה שיבולת שועל טעם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משקה שבולת שועל אורג <button type="button" class="photo-btn" data-photo="8000215204714" data-key="8000215204714" data-name="משקה שבולת שועל אורג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪12.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪13.90</s> ₪12.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8000215204714" data-name="משקה שבולת שועל אורג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משקה אורז קוקוס אורג <button type="button" class="photo-btn" data-photo="8000215204554" data-key="8000215204554" data-name="משקה אורז קוקוס אורג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪12.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪13.90</s> ₪12.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8000215204554" data-name="משקה אורז קוקוס אורג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משקה שקדים קלאסי וולסויה 1לי <button type="button" class="photo-btn" data-photo="8006040380180" data-key="8006040380180" data-name="משקה שקדים קלאסי וולסויה 1לי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪12.90 <small>לליטר</small></div>
+          <div class="shelf">₪12.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8006040380180" data-name="משקה שקדים קלאסי וולסויה 1לי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מאצ&#39;ה שיבולת שועל <button type="button" class="photo-btn" data-photo="7290116936628" data-key="7290116936628" data-name="מאצ&#39;ה שיבולת שועל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪13.00 <small>לליטר</small></div>
+          <div class="shelf">₪13.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116936628" data-name="מאצ&#39;ה שיבולת שועל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משקה אייס קפה ויגן יטבתה 1לי <button type="button" class="photo-btn" data-photo="7290119390540" data-key="7290119390540" data-name="משקה אייס קפה ויגן יטבתה 1לי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס בריאות בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪26</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪13.90 (מבצע)</span><span class="other st-4">נטו חיסכון ₪16.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪13.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪13.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119390540" data-name="משקה אייס קפה ויגן יטבתה 1לי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משקה אגוזי לוז ואורז <button type="button" class="photo-btn" data-photo="8000215204394" data-key="8000215204394" data-name="משקה אגוזי לוז ואורז" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪27</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪13.50 <small>לליטר</small></div>
+          <div class="shelf"><s>₪17.90</s> ₪13.50 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8000215204394" data-name="משקה אגוזי לוז ואורז" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אלפרו 3.5% שיבולת שועל 1לי <button type="button" class="photo-btn" data-photo="5411188134985" data-key="5411188134985" data-name="אלפרו 3.5% שיבולת שועל 1לי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אלפרו C.V.A</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪13.90</span><span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪13.90 <small>לליטר</small></div>
+          <div class="shelf">₪13.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5411188134985" data-name="אלפרו 3.5% שיבולת שועל 1לי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אלפרו 1.8% שיבולת שועל 1לי <button type="button" class="photo-btn" data-photo="5411188135005" data-key="5411188135005" data-name="אלפרו 1.8% שיבולת שועל 1לי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אלפרו C.V.A</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪13.90 <small>לליטר</small></div>
+          <div class="shelf">₪13.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5411188135005" data-name="אלפרו 1.8% שיבולת שועל 1לי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אלפרו בריסטה נוט מילק ש.שועל 1לי <button type="button" class="photo-btn" data-photo="5411188140146" data-key="5411188140146" data-name="אלפרו בריסטה נוט מילק ש.שועל 1לי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אלפרו C.V.A</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪13.90</span><span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪13.90 <small>לליטר</small></div>
+          <div class="shelf">₪13.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5411188140146" data-name="אלפרו בריסטה נוט מילק ש.שועל 1לי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אוטלי משקה שיבולת שועל בריסטה פופקורן 1ל <button type="button" class="photo-btn" data-photo="7394376623707" data-key="7394376623707" data-name="אוטלי משקה שיבולת שועל בריסטה פופקורן 1ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪13.90 <small>לליטר</small></div>
+          <div class="shelf">₪13.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7394376623707" data-name="אוטלי משקה שיבולת שועל בריסטה פופקורן 1ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ויטסי משקה קוקוס <button type="button" class="photo-btn" data-photo="8000215204363" data-key="8000215204363" data-name="ויטסי משקה קוקוס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪13.90 <small>לליטר</small></div>
+          <div class="shelf">₪13.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8000215204363" data-name="ויטסי משקה קוקוס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אוטלי שיבולת שועל אורגני מפוקח סקאל חדש <button type="button" class="photo-btn" data-photo="7394376123337" data-key="7394376123337" data-name="אוטלי שיבולת שועל אורגני מפוקח סקאל חדש" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.90 <small>לליטר</small></div>
+          <div class="shelf">₪14.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7394376123337" data-name="אוטלי שיבולת שועל אורגני מפוקח סקאל חדש" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אוטלי ללא סוכר 1 ליטר <button type="button" class="photo-btn" data-photo="7394376620904" data-key="7394376620904" data-name="אוטלי ללא סוכר 1 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>איי.אם.סי. פליסינגן בי.וי.</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.90 <small>לליטר</small></div>
+          <div class="shelf">₪14.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7394376620904" data-name="אוטלי ללא סוכר 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משקה קוקוס בקרטונית <button type="button" class="photo-btn" data-photo="8850367992157" data-key="8850367992157" data-name="משקה קוקוס בקרטונית" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪14.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪16.90</s> ₪14.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8850367992157" data-name="משקה קוקוס בקרטונית" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משקה שקדים אורגני 1לי <button type="button" class="photo-btn" data-photo="7290017325453" data-key="7290017325453" data-name="משקה שקדים אורגני 1לי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.90 <small>לליטר</small></div>
+          <div class="shelf">₪14.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017325453" data-name="משקה שקדים אורגני 1לי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משקה שקדים לל&#34;ס 1ליטר <button type="button" class="photo-btn" data-photo="8023678164517" data-key="8023678164517" data-name="משקה שקדים לל&#34;ס 1ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪15.90 <small>לליטר</small></div>
+          <div class="shelf">₪15.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8023678164517" data-name="משקה שקדים לל&#34;ס 1ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">גפן משקה שקדים 1 ליטר <button type="button" class="photo-btn" data-photo="710069101784" data-key="710069101784" data-name="גפן משקה שקדים 1 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>גפן</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪15.90 <small>לליטר</small></div>
+          <div class="shelf">₪15.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="710069101784" data-name="גפן משקה שקדים 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">גפן משקה שקדים ללא סוכר 1 ליטר <button type="button" class="photo-btn" data-photo="710069101791" data-key="710069101791" data-name="גפן משקה שקדים ללא סוכר 1 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪15.90 <small>לליטר</small></div>
+          <div class="shelf">₪15.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="710069101791" data-name="גפן משקה שקדים ללא סוכר 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אוטלי משקה מאצ&#39;ה שיבולת שועל 1 ליטר <button type="button" class="photo-btn" data-photo="7394376623769" data-key="7394376623769" data-name="אוטלי משקה מאצ&#39;ה שיבולת שועל 1 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>איי.אם.סי. פליסינגן בי.וי.</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-4">נטו חיסכון ₪21.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪16.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪16.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7394376623769" data-name="אוטלי משקה מאצ&#39;ה שיבולת שועל 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משקה שקדים אורגני 1 <button type="button" class="photo-btn" data-photo="8000215204561" data-key="8000215204561" data-name="משקה שקדים אורגני 1" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪16.90 <small>לליטר</small></div>
+          <div class="shelf">₪16.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8000215204561" data-name="משקה שקדים אורגני 1" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משקה קוקוס בקרטונית <button type="button" class="photo-btn" data-photo="8850367992140" data-key="8850367992140" data-name="משקה קוקוס בקרטונית" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪17.88 <small>לליטר</small></div>
+          <div class="shelf"><s>₪6.90</s> ₪5.90 · 330 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8850367992140" data-name="משקה קוקוס בקרטונית" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משקה סויה GO אגוזי לוז <button type="button" class="photo-btn" data-photo="7290116934471" data-key="7290116934471" data-name="משקה סויה GO אגוזי לוז" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪10.00 (2 ב־₪20)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪19.80 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪9.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116934471" data-name="משקה סויה GO אגוזי לוז" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משקה סויה גו קפה חלבון, 500 מ&#34;ל <button type="button" class="photo-btn" data-photo="7290116934488" data-key="7290116934488" data-name="משקה סויה גו קפה חלבון, 500 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪10.00 (2 ב־₪20)</span><span class="other st-4">נטו חיסכון ₪10.00 (2 ב־₪20)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪19.80 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪9.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116934488" data-name="משקה סויה גו קפה חלבון, 500 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אוטלי משקה שיבולת שועל בריסטה 500 מ&#34;ל <button type="button" class="photo-btn" data-photo="7394376619939" data-key="7394376619939" data-name="אוטלי משקה שיבולת שועל בריסטה 500 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>איי.אם.סי. פליסינגן בי.וי.</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪11.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪21.80 <small>לליטר</small></div>
+          <div class="shelf">₪10.90 · 500 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7394376619939" data-name="אוטלי משקה שיבולת שועל בריסטה 500 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">בלו דיאמנד משקה שקדים ללא סוכר 1 ל&#39;</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪21.90 <small>לליטר</small></div>
+          <div class="shelf">₪21.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:41570113066" data-name="בלו דיאמנד משקה שקדים ללא סוכר 1 ל&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">משקה שקדים ממותק כשלפ 946 מל ליברס</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪23.47 <small>לליטר</small></div>
+          <div class="shelf">₪22.20 · 946 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:43427005586" data-name="משקה שקדים ממותק כשלפ 946 מל ליברס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משקה ואורז אישי 200 <button type="button" class="photo-btn" data-photo="8000215204264" data-key="8000215204264" data-name="משקה ואורז אישי 200" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪24.00 <small>לליטר</small></div>
+          <div class="shelf">₪4.80 · 200 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8000215204264" data-name="משקה ואורז אישי 200" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משקה שקדים ואורז איש <button type="button" class="photo-btn" data-photo="8000215204271" data-key="8000215204271" data-name="משקה שקדים ואורז איש" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪24.00 <small>לליטר</small></div>
+          <div class="shelf">₪4.80 · 200 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8000215204271" data-name="משקה שקדים ואורז איש" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">נמס אייס שיבולת שועל 250מל <button type="button" class="photo-btn" data-photo="7290119373604" data-key="7290119373604" data-name="נמס אייס שיבולת שועל 250מל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מונסטרלנד לולף</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪12</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪6.67 (3 ב־₪20)</span><span class="other st-0">ויקטורי ₪6.80 (2 ב־₪13.60)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪24.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪7.90</s> ₪6.00 · 250 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119373604" data-name="נמס אייס שיבולת שועל 250מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חלב קוקוס 100% 1 ל <button type="button" class="photo-btn" data-photo="8851613101392" data-key="8851613101392" data-name="חלב קוקוס 100% 1 ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רנדי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪25.20 <small>לליטר</small></div>
+          <div class="shelf">₪25.20 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8851613101392" data-name="חלב קוקוס 100% 1 ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שוקו סויה 230 מל <button type="button" class="photo-btn" data-photo="7290116936833" data-key="7290116936833" data-name="שוקו סויה 230 מל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪6.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪25.65 <small>לליטר</small></div>
+          <div class="shelf">₪5.90 · 230 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116936833" data-name="שוקו סויה 230 מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אייס קפה שיבולת שועל <button type="button" class="photo-btn" data-photo="7290116936857" data-key="7290116936857" data-name="אייס קפה שיבולת שועל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪6.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪25.65 <small>לליטר</small></div>
+          <div class="shelf">₪5.90 · 230 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116936857" data-name="אייס קפה שיבולת שועל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משקה BIO עם תות ובננה <button type="button" class="photo-btn" data-photo="7290116932651" data-key="7290116932651" data-name="משקה BIO עם תות ובננה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪6.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪26.69 <small>לליטר</small></div>
+          <div class="shelf">₪6.30 · 236 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116932651" data-name="משקה BIO עם תות ובננה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעדן סויה בטעם וניל</div>
+        <div class="meta">
+          <span>אלפרו</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪29.80 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪15.90</s> ₪14.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058140886:54051140" data-name="מעדן סויה בטעם וניל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעדן סויה בטעם שוקו</div>
+        <div class="meta">
+          <span>אלפרו</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪29.80 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪15.90</s> ₪14.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058140886:54051157" data-name="מעדן סויה בטעם שוקו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">AROY-D נוזל אגוז קוקוס <button type="button" class="photo-btn" data-photo="8851613101378" data-key="8851613101378" data-name="AROY-D נוזל אגוז קוקוס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תאי אגרי פוד פובליק קו&#39;</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪15.90</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪8.33 (3 ב־₪25)</span><span class="other st-0">ויקטורי ₪10.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪31.80 <small>לליטר</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪7.95 · 250 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8851613101378" data-name="AROY-D נוזל אגוז קוקוס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אלפרו מעדן סויה וניל 4*125מל</div>
+        <div class="meta">
+          <span>אלפרו אן.וי/אס.איי</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪31.80 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪16.90</s> ₪15.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:54051140" data-name="אלפרו מעדן סויה וניל 4*125מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אלפרו מעדן סויה</div>
+        <div class="meta">
+          <span>אלפרו C.V.A</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪31.80 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪16.90</s> ₪15.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:54051157" data-name="אלפרו מעדן סויה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ממרח סויה 9% שומן בטעם טבעי <button type="button" class="photo-btn" data-photo="7290110324711" data-key="7290110324711" data-name="ממרח סויה 9% שומן בטעם טבעי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪9.50</span><span class="other st-0">ויקטורי ₪10.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪38.00 <small>לק״ג</small></div>
+          <div class="shelf">₪9.50 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110324711" data-name="ממרח סויה 9% שומן בטעם טבעי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סויה לבישול 14% 250 מל אלפרו <button type="button" class="photo-btn" data-photo="5411188513483" data-key="5411188513483" data-name="סויה לבישול 14% 250 מל אלפרו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אלפרו C.V.A</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪10.90</span><span class="other st-0">ויקטורי ₪11.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.60 <small>לליטר</small></div>
+          <div class="shelf">₪9.90 · 250 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5411188513483" data-name="סויה לבישול 14% 250 מל אלפרו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">שמנת צמחית לבישול 4.7% אלפרו 250מל <button type="button" class="photo-btn" data-photo="5411188096108" data-key="5411188096108" data-name="שמנת צמחית לבישול 4.7% אלפרו 250מל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אלפרו C.V.A</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-0">ויקטורי ₪11.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪43.60 <small>לליטר</small></div>
+          <div class="shelf">₪10.90 · 250 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5411188096108" data-name="שמנת צמחית לבישול 4.7% אלפרו 250מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ה.נ קופון אלפרו 1לי <button type="button" class="photo-btn" data-photo="7290119388110" data-key="7290119388110" data-name="ה.נ קופון אלפרו 1לי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.01 <small>ליח׳</small></div>
+          <div class="shelf">₪0.01 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119388110" data-name="ה.נ קופון אלפרו 1לי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+</ol>
+</div>
+
+</main>
+<footer>עודכן 7.10 06:15 · ויקטורי 6.10 21:13 · רמי לוי 00:11 · אושר עד 6.10 21:00 · אושר עד 6.10 21:00 · נטו חיסכון 04:03</footer>
+
+
+<nav class="bottom-nav" aria-label="ניווט">
+  <a href="index.html" class="on"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg><span>בית</span></a>
+  <a href="search.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><span>חיפוש</span></a>
+  <a href="scan.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V5a1 1 0 0 1 1-1h2M17 4h2a1 1 0 0 1 1 1v2M20 17v2a1 1 0 0 1-1 1h-2M7 20H5a1 1 0 0 1-1-1v-2"/><path d="M8 8v8M11 8v8M14 8v8M16.5 8v8"/></svg><span>סריקה</span></a>
+  <a href="basket.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h11l2-8H6.2"/><circle cx="9.5" cy="19" r="1.4"/><circle cx="17" cy="19" r="1.4"/></svg><span id="cart-count"></span><span>עגלת קניות</span></a>
+  <a href="spending.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-2-1.4-2 1.4-2-1.4-2 1.4-2-1.4L6 21z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><span>הוצאות</span></a>
+</nav>
+
+<script src="static/basket.js?v=20261007061534"></script>
+<script src="static/photo.js?v=20261007061534"></script>
+
+<script src="static/render.js?v=20261007061534"></script>
+<script src="static/category.js?v=20261007061534" data-build="20261007061534"></script>
+
+<script>
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+</script>
+</body>
+</html>

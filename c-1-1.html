@@ -1,0 +1,5218 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f7a4d">
+<script>
+// the look this phone chose (settings.html "מראה"), before anything is drawn: html.light / html.dark
+// (none = follow the phone) and html[data-color] (none = green); the browser bar takes the colour too
+(function () {
+  let t = {};
+  try { t = JSON.parse(localStorage.getItem("theme")) || {}; } catch (e) { /* none yet */ }
+  const root = document.documentElement;
+  if (t.mode === "light" || t.mode === "dark") root.classList.add(t.mode);
+  if (t.color) root.dataset.color = t.color;
+  if (t.bar) document.querySelector('meta[name="theme-color"]').content = t.bar;
+})();
+</script>
+<title>בשר בקר וטלה טרי</title>
+<link rel="manifest" href="static/manifest.webmanifest">
+<link rel="icon" href="static/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="static/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="static/style.css?v=20261007061534">
+<style>.st-0 { --store: #e07000; }.st-1 { --store: #d32f2f; }.st-2 { --store: #1565c0; }.st-3 { --store: #1565c0; }.st-4 { --store: #c99a00; }</style>
+<script src="static/stores.js?v=20261007061534" data-stores="[{&#34;card_cap&#34;: 750, &#34;card_rate&#34;: 0.07, &#34;default&#34;: true, &#34;key&#34;: &#34;victory-038&#34;, &#34;name&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;ramilevy-007&#34;, &#34;name&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-026&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05ea\u05dc\u05e4\u05d9\u05d5\u05ea&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-003&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05d2\u05d1\u05e2\u05ea \u05e9\u05d0\u05d5\u05dc&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;netto-052&#34;, &#34;name&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df \u05e7\u05e8\u05d9\u05d9\u05ea \u05d9\u05e2\u05e8\u05d9\u05dd&#34;, &#34;short&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df&#34;}]"></script>
+<script src="static/avoid.js?v=20261007061534" data-kinds="[&#34;\u05e2\u05d5\u05e3 \u05de\u05e2\u05d5\u05d1\u05d3&#34;, &#34;\u05d1\u05e9\u05e8 \u05de\u05e2\u05d5\u05d1\u05d3&#34;]"></script>
+<script>
+// No long-press menu on links, pictures or text (the user: the home page's tiles opened Chrome's "open in new tab /
+// copy link" menu; CSS can't stop that on Android). Typing fields and the ⓘ sheet's barcode keep theirs.
+document.addEventListener("contextmenu", (e) => {
+  if (!e.target.closest("input, textarea, [contenteditable], .photo-barcode")) e.preventDefault();
+});
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <a class="back" href="t-1.html" aria-label="חזרה">→</a>
+    <h1>בשר בקר וטלה טרי</h1>
+    <a class="notes-link" href="notes.html" aria-label="רשימת קניות" title="רשימת קניות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="m8.5 10 1.2 1.2 2.3-2.4M8.5 15.5l1.2 1.2 2.3-2.4M14 10.5h2.5M14 16h2.5"/></svg><span>רשימת קניות</span></a>
+    <a class="settings-link" href="settings.html" aria-label="הגדרות" title="הגדרות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></a>
+  </div>
+  
+  <form class="search" action="search.html" method="get" role="search">
+    <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+    <input type="search" name="q" placeholder="חיפוש מוצר" enterkeyhint="search" aria-label="חיפוש מוצר">
+  </form>
+  
+</header>
+<main>
+
+<p class="sub"><span class="sub-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 12c2.2-3.6 5.3-5.5 8.6-5.5 2.8 0 4.9 1.9 6.4 5.5-1.5 3.6-3.6 5.5-6.4 5.5-3.3 0-6.4-1.9-8.6-5.5z"/><path d="M6.5 12 3 8.5v7z"/><circle cx="17" cy="11" r=".7" fill="currentColor" stroke="none"/></svg></span>בשר, עוף ודגים · <span id="cat-count">177</span> מוצרים, מהזול ליקר</p>
+
+<p class="proc-legend"><span class="proc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span> מוצר מעובד: מתובל, מצופה, מעושן, כבוש, נקניקים, קציצות, שימורים</p>
+<div class="cat-filter">
+  <input type="search" id="cat-filter" placeholder="סינון לפי שם או יצרן · ‎-מילה מסתירה" enterkeyhint="done" autocomplete="off" aria-label="סינון המוצרים בקטגוריה">
+</div>
+<div id="cat-list" data-href="c-1-1.html">
+
+<ol class="products">
+  
+  
+    
+    
+    
+    <li class="product st-4 best">
+      <div class="info">
+        <div class="name">קרעה</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:2020" data-name="קרעה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עצמות עגל פרוס ארוז <button type="button" class="photo-btn" data-photo="7290006714824" data-key="7290006714824" data-name="עצמות עגל פרוס ארוז" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪24.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290006714824" data-name="עצמות עגל פרוס ארוז" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">ריאות עגל טרי מוכשר</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪25.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2447221" data-name="ריאות עגל טרי מוכשר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לב עגל טרי מוכשר מוב</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪25.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2447269" data-name="לב עגל טרי מוכשר מוב" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לב עגל טרי חלק</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪25.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2519768" data-name="לב עגל טרי חלק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עצמות בקר טרי <button type="button" class="photo-btn" data-photo="7290008202695" data-key="7290008202695" data-name="עצמות בקר טרי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪29.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290008202695" data-name="עצמות בקר טרי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">כבד עגל לצליה בלבד טרי</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪33.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2447412" data-name="כבד עגל לצליה בלבד טרי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שריר הזרוע מס 8 מוצפי בלדי מעובד</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪35.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:1322130" data-name="שריר הזרוע מס 8 מוצפי בלדי מעובד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">עצמות בקר טרי</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:1664384" data-name="עצמות בקר טרי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בשר מס 8 שריר זרוע</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:5387227" data-name="בשר מס 8 שריר זרוע" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בשר מס` 8 שריר</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:6464828" data-name="בשר מס` 8 שריר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לשון בקר חלק <button type="button" class="photo-btn" data-photo="7290005358753" data-key="7290005358753" data-name="לשון בקר חלק" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290005358753" data-name="לשון בקר חלק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">בשר שריר מס&#39; 8 מוצפי בלדי</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:287550" data-name="בשר שריר מס&#39; 8 מוצפי בלדי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בשר  מס`3 חזה</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪44.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:1319161" data-name="בשר  מס`3 חזה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">צוואר צלעות עע עגל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪49.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:42992" data-name="צוואר צלעות עע עגל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בשר  מס`2 צלעות</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪49.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:3001620" data-name="בשר  מס`2 צלעות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בשר  מס`4 כתף בקר .</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪49.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:3163847" data-name="בשר  מס`4 כתף בקר ." aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שריר הזרוע צרכני בקר <button type="button" class="photo-btn" data-photo="7290004934163" data-key="7290004934163" data-name="שריר הזרוע צרכני בקר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪49.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290004934163" data-name="שריר הזרוע צרכני בקר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טבעות עגל ארוז חלק ו <button type="button" class="photo-btn" data-photo="7290004846312" data-key="7290004846312" data-name="טבעות עגל ארוז חלק ו" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪49.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290004846312" data-name="טבעות עגל ארוז חלק ו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שריר הזרוע 8 צרכני <button type="button" class="photo-btn" data-photo="7290005358883" data-key="7290005358883" data-name="שריר הזרוע 8 צרכני" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪49.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290005358883" data-name="שריר הזרוע 8 צרכני" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">שריר הזרוע מס&#39; 8 חבד פרגוואי</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪49.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:53577" data-name="שריר הזרוע מס&#39; 8 חבד פרגוואי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">לשון בקר בעדני</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪49.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:322789" data-name="לשון בקר בעדני" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">כתף מרכזי צרכני חלק <button type="button" class="photo-btn" data-photo="7290005543746" data-key="7290005543746" data-name="כתף מרכזי צרכני חלק" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪51.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290005543746" data-name="כתף מרכזי צרכני חלק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גידים</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪52.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:8336772" data-name="גידים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שריר עגל טרי מוכשר</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪54.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:745237" data-name="שריר עגל טרי מוכשר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">חזה עגל טרי יבוא מוכשר צרפת / פולין / אי</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪54.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:5692024" data-name="חזה עגל טרי יבוא מוכשר צרפת / פולין / אי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בשר  מס`6 פילה מדומה</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪54.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:6464811" data-name="בשר  מס`6 פילה מדומה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אוסובקו ע&#34;ע מוכשר <button type="button" class="photo-btn" data-photo="7290002277699" data-key="7290002277699" data-name="אוסובקו ע&#34;ע מוכשר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪54.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290002277699" data-name="אוסובקו ע&#34;ע מוכשר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">צלי כתף מס&#39; 5 <button type="button" class="photo-btn" data-photo="7290002927044" data-key="7290002927044" data-name="צלי כתף מס&#39; 5" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זהר בשר</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪54.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290002927044" data-name="צלי כתף מס&#39; 5" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פילה מדומה מס&#39; 6 צרכ <button type="button" class="photo-btn" data-photo="7290002927051" data-key="7290002927051" data-name="פילה מדומה מס&#39; 6 צרכ" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זהר בשר</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪54.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290002927051" data-name="פילה מדומה מס&#39; 6 צרכ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גולש עגל ארוז מגש <button type="button" class="photo-btn" data-photo="7290002927464" data-key="7290002927464" data-name="גולש עגל ארוז מגש" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זהר בשר</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪54.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290002927464" data-name="גולש עגל ארוז מגש" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">צוואר מס&#39; 10 מחפוד עוף ירושלים</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪54.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:218917" data-name="צוואר מס&#39; 10 מחפוד עוף ירושלים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גולש עגל ארוז <button type="button" class="photo-btn" data-photo="7290001710159" data-key="7290001710159" data-name="גולש עגל ארוז" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪55.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290001710159" data-name="גולש עגל ארוז" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אוסובוקו עגל טרי מוכשר</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪56.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:9391" data-name="אוסובוקו עגל טרי מוכשר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">רגל עגל פרוס קפוא מע <button type="button" class="photo-btn" data-photo="7290006714428" data-key="7290006714428" data-name="רגל עגל פרוס קפוא מע" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪56.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290006714428" data-name="רגל עגל פרוס קפוא מע" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אוסבוקו בקר פרוס ארו <button type="button" class="photo-btn" data-photo="7290006464170" data-key="7290006464170" data-name="אוסבוקו בקר פרוס ארו" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.50 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290006464170" data-name="אוסבוקו בקר פרוס ארו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">צלי כתף מס&#39; 5 חלק אר <button type="button" class="photo-btn" data-photo="7290004846237" data-key="7290004846237" data-name="צלי כתף מס&#39; 5 חלק אר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.80 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290004846237" data-name="צלי כתף מס&#39; 5 חלק אר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">חזה עגל כשר</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:38995" data-name="חזה עגל כשר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לשון עגל טרי מוכשר</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:46129" data-name="לשון עגל טרי מוכשר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אסאדו טרי מוכשר</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:47997" data-name="אסאדו טרי מוכשר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אוסובוקו עגל טרי חלק</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:81816" data-name="אוסובוקו עגל טרי חלק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אסאדו עע בקר טרי מוכשר יבוא</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:1484869" data-name="אסאדו עע בקר טרי מוכשר יבוא" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">צלעות טרי יבוא מוכשר צרפתי / פ</div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> בקנייה מעל ₪100 · עד 3 יח׳ · עד 18.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪59.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪69.90</s> במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2129776" data-name="צלעות טרי יבוא מוכשר צרפתי / פ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">כתף טרי יבוא מוכשר צ</div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> בקנייה מעל ₪100 · עד 3 יח׳ · עד 18.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪59.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪69.00</s> במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2129790" data-name="כתף טרי יבוא מוכשר צ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">צלעות טרי יבוא חלק</div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> בקנייה מעל ₪100 · עד 3 יח׳ · עד 18.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪59.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪69.90</s> במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2129905" data-name="צלעות טרי יבוא חלק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">חזה עגל טרי יבוא מוכשר ארגנטיני</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2281702" data-name="חזה עגל טרי יבוא מוכשר ארגנטיני" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">חזה עגל טרי יבוא חלק</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2336594" data-name="חזה עגל טרי יבוא חלק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">צוואר ללא עצם מוכשר טרי מ</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2447405" data-name="צוואר ללא עצם מוכשר טרי מ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">חזה עגל טרי יבוא חלק ארגנטיני</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:4226930" data-name="חזה עגל טרי יבוא חלק ארגנטיני" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">רגל עגל פרוס מוכשר מוביל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:6714428" data-name="רגל עגל פרוס מוכשר מוביל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טחול טרי ארוז <button type="button" class="photo-btn" data-photo="7290002680505" data-key="7290002680505" data-name="טחול טרי ארוז" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290002680505" data-name="טחול טרי ארוז" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">שריר מס 8 מחפוד</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:218870" data-name="שריר מס 8 מחפוד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">גידים בעדני</div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪59.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪69.90</s> במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:322451" data-name="גידים בעדני" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">זנב עגל טרי מוכשר</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪61.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2447511" data-name="זנב עגל טרי מוכשר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שריר טרי יבוא מוכשר צ</div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> בקנייה מעל ₪100 · עד 3 יח׳ · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪64.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪69.90</s> במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2129837" data-name="שריר טרי יבוא מוכשר צ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קשתית טרי יבוא מוכשר פולנ</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪64.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2129844" data-name="קשתית טרי יבוא מוכשר פולנ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שריר טרי יבוא חלק</div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> בקנייה מעל ₪100 · עד 3 יח׳ · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪64.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪69.90</s> במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2129967" data-name="שריר טרי יבוא חלק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אוסובוקו בשר עם עצם בקר טרי יבוא צרפתי</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪64.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2507475" data-name="אוסובוקו בשר עם עצם בקר טרי יבוא צרפתי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אסאדו ללא עצם בקר טרי יבוא צרפתי / פולי</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪64.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:4229825" data-name="אסאדו ללא עצם בקר טרי יבוא צרפתי / פולי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">צלעות ללא עצם מוכשר טרי מ</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪64.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:6728265" data-name="צלעות ללא עצם מוכשר טרי מ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">רוסטביף עגל <button type="button" class="photo-btn" data-photo="7290002410348" data-key="7290002410348" data-name="רוסטביף עגל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪64.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290002410348" data-name="רוסטביף עגל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מהדורת קצבים <button type="button" class="photo-btn" data-photo="7290119760268" data-key="7290119760268" data-name="מהדורת קצבים" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪65.41 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪72.90</s> ₪39.90 · 610 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119760268" data-name="מהדורת קצבים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">כתף מיושן מחפוד ע.ירושלים</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪66.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:105398" data-name="כתף מיושן מחפוד ע.ירושלים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אשכים עגל טרי <button type="button" class="photo-btn" data-photo="7290002519270" data-key="7290002519270" data-name="אשכים עגל טרי" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪69.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290002519270" data-name="אשכים עגל טרי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בשר ראש טרי מוכשר</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪69.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:45979" data-name="בשר ראש טרי מוכשר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">רוסטביף עגל לתנור</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪69.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:335710" data-name="רוסטביף עגל לתנור" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">צלעות מס 2 טרי יבוא חלק  ארגנטיני/ חסינ</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪69.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2129202" data-name="צלעות מס 2 טרי יבוא חלק  ארגנטיני/ חסינ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">כתף מרכזי טרי יבוא חלק  ארגנטיני/ חסינטו</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪69.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2129219" data-name="כתף מרכזי טרי יבוא חלק  ארגנטיני/ חסינטו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">פילה מדומה טרי יבוא חלק  ארגנטיני/ חסינט</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪69.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2129233" data-name="פילה מדומה טרי יבוא חלק  ארגנטיני/ חסינט" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">פילה מדומה טרי מוכשר צרפת</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪69.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2129813" data-name="פילה מדומה טרי מוכשר צרפת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">כתף מרכזי טרי יבוא מוכשר ארגנטיני / חסינ</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪69.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2439714" data-name="כתף מרכזי טרי יבוא מוכשר ארגנטיני / חסינ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שריר טרי יבוא מוכשר אר</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪69.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2439943" data-name="שריר טרי יבוא מוכשר אר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">צלעות מס 2 טרי יבוא מוכשר  ארגנטיני/ חסי</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪69.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2439950" data-name="צלעות מס 2 טרי יבוא מוכשר  ארגנטיני/ חסי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">פילה מדומה טרי יבוא מוכשר  ארגנטיני/ חס</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪69.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2439967" data-name="פילה מדומה טרי יבוא מוכשר  ארגנטיני/ חס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לשון עגל טרי חלק</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪69.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2519508" data-name="לשון עגל טרי חלק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בשר ראש טרי חלק מ</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪69.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2519539" data-name="בשר ראש טרי חלק מ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">צלעות ללא עצם חלק טרי מוב</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪69.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2519980" data-name="צלעות ללא עצם חלק טרי מוב" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אוסבוקו טרי <button type="button" class="photo-btn" data-photo="7290001004388" data-key="7290001004388" data-name="אוסבוקו טרי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪69.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290001004388" data-name="אוסבוקו טרי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אסאדו ע&#34;ע חלק טרי <button type="button" class="photo-btn" data-photo="7290002336686" data-key="7290002336686" data-name="אסאדו ע&#34;ע חלק טרי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪69.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290002336686" data-name="אסאדו ע&#34;ע חלק טרי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חזה בקר טרי <button type="button" class="photo-btn" data-photo="7290008202039" data-key="7290008202039" data-name="חזה בקר טרי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪69.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290008202039" data-name="חזה בקר טרי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">צוואר בקר טרי <button type="button" class="photo-btn" data-photo="7290008202091" data-key="7290008202091" data-name="צוואר בקר טרי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪69.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290008202091" data-name="צוואר בקר טרי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">בשר לחמין ע&#34;ע מגש קהילות</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪69.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:206583" data-name="בשר לחמין ע&#34;ע מגש קהילות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">בשר שריר מס&#39; 8 מחפוד</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪69.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:218610" data-name="בשר שריר מס&#39; 8 מחפוד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">בשר צלעות מס 2 מחפוד עוף ירושלים</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪69.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:218788" data-name="בשר צלעות מס 2 מחפוד עוף ירושלים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">בשר שריר מס&#39; 8 צרכני מחפוד</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪69.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:218887" data-name="בשר שריר מס&#39; 8 צרכני מחפוד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">בשר בקר 22 צרכני בד&#34;צ &#34;תפארת אנ&#34;ש&#34; נלסון ארגנטינה</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪69.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:261063" data-name="בשר בקר 22 צרכני בד&#34;צ &#34;תפארת אנ&#34;ש&#34; נלסון ארגנטינה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">גולש לא מעובד &#34;ארוז&#34; תפארת אנ&#34;ש <button type="button" class="photo-btn" data-photo="7290019240709" data-key="7290019240709" data-name="גולש לא מעובד &#34;ארוז&#34; תפארת אנ&#34;ש" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪69.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290019240709" data-name="גולש לא מעובד &#34;ארוז&#34; תפארת אנ&#34;ש" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סטייק בקר חלק 800 ג <button type="button" class="photo-btn" data-photo="7290020002082" data-key="7290020002082" data-name="סטייק בקר חלק 800 ג" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪74.88 <small>לק״ג</small></div>
+          <div class="shelf">₪59.90 · 800 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020002082" data-name="סטייק בקר חלק 800 ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גולש עגל חלק</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪74.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:823652" data-name="גולש עגל חלק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גולש עגל כשר</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪74.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:1014974" data-name="גולש עגל כשר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">פילה מדומה מצונן מחפוד</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪74.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:105411" data-name="פילה מדומה מצונן מחפוד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">בשר אדום לנדא</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪74.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:455039" data-name="בשר אדום לנדא" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0" data-kind="2">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>שניצל בקר מילנסה דק דק 250 גרם אל גאוצו <button type="button" class="photo-btn" data-photo="7290002345077" data-key="7290002345077" data-name="שניצל בקר מילנסה דק דק 250 גרם אל גאוצו" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טיבון ויל אחזקות בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪19.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪75.60 <small>לק״ג</small></div>
+          <div class="shelf">₪18.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002345077" data-name="שניצל בקר מילנסה דק דק 250 גרם אל גאוצו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">צלעות מיושן מחפוד</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪77.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:105374" data-name="צלעות מיושן מחפוד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אסאדו ללא עצם טרי יבוא</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪79.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2627883" data-name="אסאדו ללא עצם טרי יבוא" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סינטה חלק</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪79.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2923657" data-name="סינטה חלק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בשר  מס`5 צלי כתף</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪79.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:4649159" data-name="בשר  מס`5 צלי כתף" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בשר צלי כתף מס 5 מוכשר מוביל.</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪79.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:6714213" data-name="בשר צלי כתף מס 5 מוכשר מוביל." aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אסאדו מוכשר עם עצם נ <button type="button" class="photo-btn" data-photo="7290003361328" data-key="7290003361328" data-name="אסאדו מוכשר עם עצם נ" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪79.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290003361328" data-name="אסאדו מוכשר עם עצם נ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אסדו ע.ע טרי <button type="button" class="photo-btn" data-photo="7290001004333" data-key="7290001004333" data-name="אסדו ע.ע טרי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪79.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290001004333" data-name="אסדו ע.ע טרי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שריר בקר טרי <button type="button" class="photo-btn" data-photo="7290008202077" data-key="7290008202077" data-name="שריר בקר טרי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪79.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290008202077" data-name="שריר בקר טרי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">רבע כבש עטרה</div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 30.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪79.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪99.90</s> במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:193126" data-name="רבע כבש עטרה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">כתף טרי מוכשר ללא עצם</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪84.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:756325" data-name="כתף טרי מוכשר ללא עצם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סטייק אנטריקוט משובח <button type="button" class="photo-btn" data-photo="7290002596523" data-key="7290002596523" data-name="סטייק אנטריקוט משובח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪84.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290002596523" data-name="סטייק אנטריקוט משובח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">רצועות להקפצה טרי ארוז כשר</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪85.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:4281526" data-name="רצועות להקפצה טרי ארוז כשר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מחפוד סטייק אנגוס מיושן ברשת</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪89.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:402503" data-name="מחפוד סטייק אנגוס מיושן ברשת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אווזית עגל טרי מוכשר</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪89.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:7359" data-name="אווזית עגל טרי מוכשר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">פילה מדומה טרי מוכשר</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪89.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:369549" data-name="פילה מדומה טרי מוכשר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">כתף טרי חלק ללא עצם</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪89.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:684123" data-name="כתף טרי חלק ללא עצם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">פילה מדומה טרי ארוז מוכשר</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪89.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:1385142" data-name="פילה מדומה טרי ארוז מוכשר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בשר ראש גראס-פד - חלק</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪89.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2461005" data-name="בשר ראש גראס-פד - חלק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קוביות לגולש טרי ארוז כשר</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪89.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:4281557" data-name="קוביות לגולש טרי ארוז כשר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סטייק עין מוכשר ברזי <button type="button" class="photo-btn" data-photo="7290000551012" data-key="7290000551012" data-name="סטייק עין מוכשר ברזי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪89.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000551012" data-name="סטייק עין מוכשר ברזי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">צלעות בקר טרי <button type="button" class="photo-btn" data-photo="7290008202022" data-key="7290008202022" data-name="צלעות בקר טרי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪89.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290008202022" data-name="צלעות בקר טרי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">כתף בקר טרי <button type="button" class="photo-btn" data-photo="7290008202046" data-key="7290008202046" data-name="כתף בקר טרי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪89.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290008202046" data-name="כתף בקר טרי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קשתית אסאדו ללא עצם <button type="button" class="photo-btn" data-photo="7290008202084" data-key="7290008202084" data-name="קשתית אסאדו ללא עצם" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪89.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290008202084" data-name="קשתית אסאדו ללא עצם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">כתף טלה בעדני</div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 30.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪89.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪109.90</s> במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:220813" data-name="כתף טלה בעדני" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">כתף כבש שלם עטרה</div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 30.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪89.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪109.90</s> במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:550446" data-name="כתף כבש שלם עטרה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">סטייק אנטריקוט מחפוד <button type="button" class="photo-btn" data-photo="7290002420941" data-key="7290002420941" data-name="סטייק אנטריקוט מחפוד" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪89.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪119.90</s> במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290002420941" data-name="סטייק אנטריקוט מחפוד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">פילה מדומה טרי חלק</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪95.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:344478" data-name="פילה מדומה טרי חלק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">צלי כתף טרי מוכשר</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪99.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:485232" data-name="צלי כתף טרי מוכשר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">חזה אסאדו כבש טרי</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪99.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:876962" data-name="חזה אסאדו כבש טרי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">צוואר כבש טרי</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪99.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:914589" data-name="צוואר כבש טרי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">צלי כתף טרי יבוא חלק  ארגנטיני/ חסינטו</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪99.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2129226" data-name="צלי כתף טרי יבוא חלק  ארגנטיני/ חסינטו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">צלי כתף טרי יבוא מוכשר צרפתי / פולני /</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪99.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2129806" data-name="צלי כתף טרי יבוא מוכשר צרפתי / פולני /" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">צלי כתף טרי יבוא חלק צ</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪99.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2129936" data-name="צלי כתף טרי יבוא חלק צ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אנטריקוט דק דק סטייק <button type="button" class="photo-btn" data-photo="7290004257101" data-key="7290004257101" data-name="אנטריקוט דק דק סטייק" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>עטרה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪99.60 <small>לק״ג</small></div>
+          <div class="shelf">₪24.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004257101" data-name="אנטריקוט דק דק סטייק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">צלי כתף Azul ארגנטיני מוביל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪99.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2439721" data-name="צלי כתף Azul ארגנטיני מוביל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שייטל עגל טרי מוכשר</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪99.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2447573" data-name="שייטל עגל טרי מוכשר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פילה מדומה בקר טרי <button type="button" class="photo-btn" data-photo="7290008202060" data-key="7290008202060" data-name="פילה מדומה בקר טרי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪99.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290008202060" data-name="פילה מדומה בקר טרי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">סטייק אנטריקוט צרכני חבד</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪99.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:53683" data-name="סטייק אנטריקוט צרכני חבד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">בשר לחמין חפץ חיים</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪99.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:391227" data-name="בשר לחמין חפץ חיים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">פילה מדומה חפץ חיים</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪99.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:939588" data-name="פילה מדומה חפץ חיים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">דק דק אנטריקוט אל גאוצו <button type="button" class="photo-btn" data-photo="7290002345022" data-key="7290002345022" data-name="דק דק אנטריקוט אל גאוצו" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טיבון ויל אחזקות בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪103.60 <small>לק״ג</small></div>
+          <div class="shelf">₪25.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002345022" data-name="דק דק אנטריקוט אל גאוצו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">גולש לחמין חפץ חיים</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪105.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:391388" data-name="גולש לחמין חפץ חיים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">צלי כתף בקר טרי <button type="button" class="photo-btn" data-photo="7290008202053" data-key="7290008202053" data-name="צלי כתף בקר טרי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪109.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290008202053" data-name="צלי כתף בקר טרי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">נתח קצבים טרי מוכשר סרעפת מ</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪119.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:9100" data-name="נתח קצבים טרי מוכשר סרעפת מ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שייטל טרי יבוא מוכשר צרפתי / פולני</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪119.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2345305" data-name="שייטל טרי יבוא מוכשר צרפתי / פולני" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שייטל טרי יבוא</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪119.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2627111" data-name="שייטל טרי יבוא" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סטייק אנטריקוט מוכשר</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪119.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2757177" data-name="סטייק אנטריקוט מוכשר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סינטה טרי חלק יבוא ארג</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪119.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:3572557" data-name="סינטה טרי חלק יבוא ארג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שייטל טרי יבוא מוכשר</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪119.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:3610167" data-name="שייטל טרי יבוא מוכשר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">רבע כבש טרי כשר</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪119.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:3711741" data-name="רבע כבש טרי כשר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name"><span class="proc" title="מעובד" aria-label="מעובד"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V8l5 3v10z"/><path d="M18 11V4h2v8"/></svg></span>כבד צלוי טרי מחפוד <button type="button" class="photo-btn" data-photo="7290004194703" data-key="7290004194703" data-name="כבד צלוי טרי מחפוד" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪119.60 <small>לק״ג</small></div>
+          <div class="shelf">₪29.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004194703" data-name="כבד צלוי טרי מחפוד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">בשר צלי כתף מס&#39; 5 מחפוד</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪119.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:218832" data-name="בשר צלי כתף מס&#39; 5 מחפוד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">פילה מדומה מחפוד טרי</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪119.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:714669" data-name="פילה מדומה מחפוד טרי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">כתף כבש טרי</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪129.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:88891" data-name="כתף כבש טרי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סטייק עם עצם כשר</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪129.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:230047" data-name="סטייק עם עצם כשר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">דנבר סטייק טרי פרמיום</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪129.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:6728418" data-name="דנבר סטייק טרי פרמיום" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">אונטריב - בדץ העדה החרדית</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪129.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:321836" data-name="אונטריב - בדץ העדה החרדית" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">רצועות אסאדו בקר חפץ חיים</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪129.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:391449" data-name="רצועות אסאדו בקר חפץ חיים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סינטה עגלה טרי כשר</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪139.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:1842621" data-name="סינטה עגלה טרי כשר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סטייק אנטריקוט טרי יבוא מוכשר צרפתי / פ</div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> בקנייה מעל ₪100 · עד 3 יח׳ · עד 18.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪139.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪159.00</s> במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2129769" data-name="סטייק אנטריקוט טרי יבוא מוכשר צרפתי / פ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סינטה טרי יבוא מוכשר צרפתי פולני</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪139.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2129882" data-name="סינטה טרי יבוא מוכשר צרפתי פולני" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סטייק אנטריקוט טרי יבוא חלק צרפתי / פול</div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> בקנייה מעל ₪100 · עד 3 יח׳ · עד 18.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪139.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪159.00</s> במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2129899" data-name="סטייק אנטריקוט טרי יבוא חלק צרפתי / פול" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סינטה טרי יבוא חלק</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪139.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2336716" data-name="סינטה טרי יבוא חלק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שפיץ צאך / פיקניה / רוסביף</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪139.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2447016" data-name="שפיץ צאך / פיקניה / רוסביף" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סינטה טרי מוכשר יבוא</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪139.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:3610136" data-name="סינטה טרי מוכשר יבוא" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שפיץ צ`אך טרי / פיקנייה יבוא מוכשר</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪139.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:4229986" data-name="שפיץ צ`אך טרי / פיקנייה יבוא מוכשר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">כתף כבש פרוס <button type="button" class="photo-btn" data-photo="7290002533696" data-key="7290002533696" data-name="כתף כבש פרוס" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪139.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290002533696" data-name="כתף כבש פרוס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">רבע טלה מחולק חלק טר <button type="button" class="photo-btn" data-photo="7290004227968" data-key="7290004227968" data-name="רבע טלה מחולק חלק טר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪139.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290004227968" data-name="רבע טלה מחולק חלק טר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סינטה עגל טרי מוכשר</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪145.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2447559" data-name="סינטה עגל טרי מוכשר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סינטה בקר טרי <button type="button" class="photo-btn" data-photo="7290008202121" data-key="7290008202121" data-name="סינטה בקר טרי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪149.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290008202121" data-name="סינטה בקר טרי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שקדים בקר טרי מוכשר מובי</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪159.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:17105" data-name="שקדים בקר טרי מוכשר מובי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אנטריקוט עגל טרי מוכשר סטייק</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪169.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:7472" data-name="אנטריקוט עגל טרי מוכשר סטייק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">צלעות כבש טרי</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪169.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:11226" data-name="צלעות כבש טרי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">דנבר קאט טרי ארוז כשר</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪169.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:4281540" data-name="דנבר קאט טרי ארוז כשר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">צלעות כבש פרוס עט א</div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪169.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪199.90</s> במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:263201" data-name="צלעות כבש פרוס עט א" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אנטריקוט עגל טרי חלק ללא עצם סטייק</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪179.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2519546" data-name="אנטריקוט עגל טרי חלק ללא עצם סטייק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">אנטריקוט פרוס זוגות ואקום &#34;תפארת אנ&#34;ש&#34;</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪189.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:72438" data-name="אנטריקוט פרוס זוגות ואקום &#34;תפארת אנ&#34;ש&#34;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קרפציו בלאק אנגוס 120 גרם נטו <button type="button" class="photo-btn" data-photo="7290001873489" data-key="7290001873489" data-name="קרפציו בלאק אנגוס 120 גרם נטו" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪190.83 <small>לק״ג</small></div>
+          <div class="shelf">₪22.90 · 120 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001873489" data-name="קרפציו בלאק אנגוס 120 גרם נטו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">פילה בקר מוכשר</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪199.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2444480" data-name="פילה בקר מוכשר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סטייק אנטריקוט טרי יבוא מוכשר ארגנטיני</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪199.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:4256685" data-name="סטייק אנטריקוט טרי יבוא מוכשר ארגנטיני" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">פילה בקר טרי יבוא מוכשר צרפתי / פולני</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪259.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2129875" data-name="פילה בקר טרי יבוא מוכשר צרפתי / פולני" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">פילה בקר טרי יבוא</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪259.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:3610143" data-name="פילה בקר טרי יבוא" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פילה בקר טרי <button type="button" class="photo-btn" data-photo="7290008202138" data-key="7290008202138" data-name="פילה בקר טרי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪299.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290008202138" data-name="פילה בקר טרי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+      
+      <li class="divider">ללא מחיר לק״ג (גודל לא ידוע)</li>
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">חצי ראש טלה חלק מחפוד. <button type="button" class="photo-btn" data-photo="7290001842782" data-key="7290001842782" data-name="חצי ראש טלה חלק מחפוד." data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001842782" data-name="חצי ראש טלה חלק מחפוד." aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+</ol>
+</div>
+
+</main>
+<footer>עודכן 7.10 06:15 · ויקטורי 6.10 21:13 · רמי לוי 00:11 · אושר עד 6.10 21:00 · אושר עד 6.10 21:00 · נטו חיסכון 04:03</footer>
+
+
+<nav class="bottom-nav" aria-label="ניווט">
+  <a href="index.html" class="on"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg><span>בית</span></a>
+  <a href="search.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><span>חיפוש</span></a>
+  <a href="scan.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V5a1 1 0 0 1 1-1h2M17 4h2a1 1 0 0 1 1 1v2M20 17v2a1 1 0 0 1-1 1h-2M7 20H5a1 1 0 0 1-1-1v-2"/><path d="M8 8v8M11 8v8M14 8v8M16.5 8v8"/></svg><span>סריקה</span></a>
+  <a href="basket.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h11l2-8H6.2"/><circle cx="9.5" cy="19" r="1.4"/><circle cx="17" cy="19" r="1.4"/></svg><span id="cart-count"></span><span>עגלת קניות</span></a>
+  <a href="spending.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-2-1.4-2 1.4-2-1.4-2 1.4-2-1.4L6 21z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><span>הוצאות</span></a>
+</nav>
+
+<script src="static/basket.js?v=20261007061534"></script>
+<script src="static/photo.js?v=20261007061534"></script>
+
+<script src="static/render.js?v=20261007061534"></script>
+<script src="static/category.js?v=20261007061534" data-build="20261007061534"></script>
+
+<script>
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+</script>
+</body>
+</html>

@@ -1,0 +1,2442 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f7a4d">
+<script>
+// the look this phone chose (settings.html "מראה"), before anything is drawn: html.light / html.dark
+// (none = follow the phone) and html[data-color] (none = green); the browser bar takes the colour too
+(function () {
+  let t = {};
+  try { t = JSON.parse(localStorage.getItem("theme")) || {}; } catch (e) { /* none yet */ }
+  const root = document.documentElement;
+  if (t.mode === "light" || t.mode === "dark") root.classList.add(t.mode);
+  if (t.color) root.dataset.color = t.color;
+  if (t.bar) document.querySelector('meta[name="theme-color"]').content = t.bar;
+})();
+</script>
+<title>תרכיזים וסירופים</title>
+<link rel="manifest" href="static/manifest.webmanifest">
+<link rel="icon" href="static/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="static/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="static/style.css?v=20261007061534">
+<style>.st-0 { --store: #e07000; }.st-1 { --store: #d32f2f; }.st-2 { --store: #1565c0; }.st-3 { --store: #1565c0; }.st-4 { --store: #c99a00; }</style>
+<script src="static/stores.js?v=20261007061534" data-stores="[{&#34;card_cap&#34;: 750, &#34;card_rate&#34;: 0.07, &#34;default&#34;: true, &#34;key&#34;: &#34;victory-038&#34;, &#34;name&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;ramilevy-007&#34;, &#34;name&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-026&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05ea\u05dc\u05e4\u05d9\u05d5\u05ea&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-003&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05d2\u05d1\u05e2\u05ea \u05e9\u05d0\u05d5\u05dc&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;netto-052&#34;, &#34;name&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df \u05e7\u05e8\u05d9\u05d9\u05ea \u05d9\u05e2\u05e8\u05d9\u05dd&#34;, &#34;short&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df&#34;}]"></script>
+<script src="static/avoid.js?v=20261007061534" data-kinds="[&#34;\u05e2\u05d5\u05e3 \u05de\u05e2\u05d5\u05d1\u05d3&#34;, &#34;\u05d1\u05e9\u05e8 \u05de\u05e2\u05d5\u05d1\u05d3&#34;]"></script>
+<script>
+// No long-press menu on links, pictures or text (the user: the home page's tiles opened Chrome's "open in new tab /
+// copy link" menu; CSS can't stop that on Android). Typing fields and the ⓘ sheet's barcode keep theirs.
+document.addEventListener("contextmenu", (e) => {
+  if (!e.target.closest("input, textarea, [contenteditable], .photo-barcode")) e.preventDefault();
+});
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <a class="back" href="t-8.html" aria-label="חזרה">→</a>
+    <h1>תרכיזים וסירופים</h1>
+    <a class="notes-link" href="notes.html" aria-label="רשימת קניות" title="רשימת קניות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="m8.5 10 1.2 1.2 2.3-2.4M8.5 15.5l1.2 1.2 2.3-2.4M14 10.5h2.5M14 16h2.5"/></svg><span>רשימת קניות</span></a>
+    <a class="settings-link" href="settings.html" aria-label="הגדרות" title="הגדרות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></a>
+  </div>
+  
+  <form class="search" action="search.html" method="get" role="search">
+    <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+    <input type="search" name="q" placeholder="חיפוש מוצר" enterkeyhint="search" aria-label="חיפוש מוצר">
+  </form>
+  
+</header>
+<main>
+
+<p class="sub"><span class="sub-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2h4v3l1.5 2.6V20a2 2 0 0 1-2 2h-3a2 2 0 0 1-2-2V7.6L10 5z"/><path d="M8.5 11h7v5h-7z"/></svg></span>משקאות · <span id="cat-count">84</span> מוצרים, מהזול ליקר</p>
+
+
+<div class="cat-filter">
+  <input type="search" id="cat-filter" placeholder="סינון לפי שם או יצרן · ‎-מילה מסתירה" enterkeyhint="done" autocomplete="off" aria-label="סינון המוצרים בקטגוריה">
+</div>
+<div id="cat-list" data-href="c-8-4.html">
+
+<ol class="products">
+  
+  
+    
+    
+    
+    <li class="product st-4 best">
+      <div class="info">
+        <div class="name">סירופ בטעם פטל 4 ליטר אחוה <button type="button" class="photo-btn" data-photo="7290000572611" data-key="7290000572611" data-name="סירופ בטעם פטל 4 ליטר אחוה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אחדות ביחר לטחינה חל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-0">ויקטורי ₪33.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪8.22 <small>לליטר</small></div>
+          <div class="shelf">₪32.90 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000572611" data-name="סירופ בטעם פטל 4 ליטר אחוה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">אחוה סירופ בטעם אננס 4 ליטר <button type="button" class="photo-btn" data-photo="7290013927392" data-key="7290013927392" data-name="אחוה סירופ בטעם אננס 4 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אחדות ביחר לטחינה חל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-0">ויקטורי ₪33.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪8.22 <small>לליטר</small></div>
+          <div class="shelf">₪32.90 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013927392" data-name="אחוה סירופ בטעם אננס 4 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">סירופ 4 ליטר בטעם תות <button type="button" class="photo-btn" data-photo="7290013927415" data-key="7290013927415" data-name="סירופ 4 ליטר בטעם תות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-0">ויקטורי ₪33.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪8.22 <small>לליטר</small></div>
+          <div class="shelf">₪32.90 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013927415" data-name="סירופ 4 ליטר בטעם תות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">סירופ בטעם ענבים אחוה, 4 ליטר <button type="button" class="photo-btn" data-photo="7290013927408" data-key="7290013927408" data-name="סירופ בטעם ענבים אחוה, 4 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אחדות ביחר לטחינה חל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪8.22 <small>לליטר</small></div>
+          <div class="shelf">₪32.90 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013927408" data-name="סירופ בטעם ענבים אחוה, 4 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">סירופ 4 ליטר בטעם משמש <button type="button" class="photo-btn" data-photo="7290013927422" data-key="7290013927422" data-name="סירופ 4 ליטר בטעם משמש" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪8.22 <small>לליטר</small></div>
+          <div class="shelf">₪32.90 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013927422" data-name="סירופ 4 ליטר בטעם משמש" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פריניב מיץ לימון לתי <button type="button" class="photo-btn" data-photo="7290004030018" data-key="7290004030018" data-name="פריניב מיץ לימון לתי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פרי ניב</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪9.40</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.40 <small>לליטר</small></div>
+          <div class="shelf"><s>₪6.90</s> ₪4.70 · 500 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004030018" data-name="פריניב מיץ לימון לתי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סירופ דיאט בטעם ענבים 1 ליטר יכין <button type="button" class="photo-btn" data-photo="7290000208138" data-key="7290000208138" data-name="סירופ דיאט בטעם ענבים 1 ליטר יכין" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זנלכל בע\&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪10.90</span><span class="other st-0">ויקטורי ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90 <small>לליטר</small></div>
+          <div class="shelf">₪9.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000208138" data-name="סירופ דיאט בטעם ענבים 1 ליטר יכין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סירופ דיאט בטעם לימון 1 ליטר יכין <button type="button" class="photo-btn" data-photo="7290000209517" data-key="7290000209517" data-name="סירופ דיאט בטעם לימון 1 ליטר יכין" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זנלכל בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90 <small>לליטר</small></div>
+          <div class="shelf">₪9.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000209517" data-name="סירופ דיאט בטעם לימון 1 ליטר יכין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סירופ דיאט בטעם פטל 1 ליטר יכין <button type="button" class="photo-btn" data-photo="7290000209524" data-key="7290000209524" data-name="סירופ דיאט בטעם פטל 1 ליטר יכין" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זנלכל בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪10.90</span><span class="other st-0">ויקטורי ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90 <small>לליטר</small></div>
+          <div class="shelf">₪9.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000209524" data-name="סירופ דיאט בטעם פטל 1 ליטר יכין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סירופ דיאט בטעם אשכוליות 1 ליטר יכין <button type="button" class="photo-btn" data-photo="7290000209531" data-key="7290000209531" data-name="סירופ דיאט בטעם אשכוליות 1 ליטר יכין" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זנלכל בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90 <small>לליטר</small></div>
+          <div class="shelf">₪9.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000209531" data-name="סירופ דיאט בטעם אשכוליות 1 ליטר יכין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סירופ 1 ליטר דיאט תפוחים <button type="button" class="photo-btn" data-photo="7290000209555" data-key="7290000209555" data-name="סירופ 1 ליטר דיאט תפוחים" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זנלכל בע&#34;\מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90 <small>לליטר</small></div>
+          <div class="shelf">₪9.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000209555" data-name="סירופ 1 ליטר דיאט תפוחים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סירופ דייאט 1 ליטר אננס <button type="button" class="photo-btn" data-photo="7290000209579" data-key="7290000209579" data-name="סירופ דייאט 1 ליטר אננס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זנלכל בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪10.90</span><span class="other st-0">ויקטורי ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90 <small>לליטר</small></div>
+          <div class="shelf">₪9.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000209579" data-name="סירופ דייאט 1 ליטר אננס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סירופ בטעם לימונענע דיאט <button type="button" class="photo-btn" data-photo="7290013531346" data-key="7290013531346" data-name="סירופ בטעם לימונענע דיאט" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זנלכל בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90 <small>לליטר</small></div>
+          <div class="shelf">₪9.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013531346" data-name="סירופ בטעם לימונענע דיאט" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סירופ בטעם ענבים 1 ליטר יכין <button type="button" class="photo-btn" data-photo="7290018989128" data-key="7290018989128" data-name="סירופ בטעם ענבים 1 ליטר יכין" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זנלכל בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪10.90</span><span class="other st-0">ויקטורי ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪9.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018989128" data-name="סירופ בטעם ענבים 1 ליטר יכין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סירופ בטעם פטל 1 ליטר יכין <button type="button" class="photo-btn" data-photo="7290018989135" data-key="7290018989135" data-name="סירופ בטעם פטל 1 ליטר יכין" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זנלכל בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪12.90</span><span class="other st-4">נטו חיסכון ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪9.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018989135" data-name="סירופ בטעם פטל 1 ליטר יכין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סירופ בטעם ענבים 1 ליטר אחוה <button type="button" class="photo-btn" data-photo="7290020030047" data-key="7290020030047" data-name="סירופ בטעם ענבים 1 ליטר אחוה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אחדות ביח&#34;ר לטחינה, חלוה וממתקים בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪9.90</span><span class="other st-0">ויקטורי ₪10.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90 <small>לליטר</small></div>
+          <div class="shelf">₪9.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020030047" data-name="סירופ בטעם ענבים 1 ליטר אחוה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סירופ בטעם פטל אחוה 1 ליטר <button type="button" class="photo-btn" data-photo="7290020030061" data-key="7290020030061" data-name="סירופ בטעם פטל אחוה 1 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אחדות ביח&#34;ר לטחינה, חלוה וממתקים בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪9.90</span><span class="other st-0">ויקטורי ₪10.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90 <small>לליטר</small></div>
+          <div class="shelf">₪9.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020030061" data-name="סירופ בטעם פטל אחוה 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סירופ בטעם לימון אחוה 1 ליטר <button type="button" class="photo-btn" data-photo="7290020030078" data-key="7290020030078" data-name="סירופ בטעם לימון אחוה 1 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אחדות ביח&#34;ר לטחינה, חלוה וממתקים בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪9.90</span><span class="other st-0">ויקטורי ₪10.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90 <small>לליטר</small></div>
+          <div class="shelf">₪9.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020030078" data-name="סירופ בטעם לימון אחוה 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סירופ בטעם אננס 1 ליטר אחוה <button type="button" class="photo-btn" data-photo="7290020030054" data-key="7290020030054" data-name="סירופ בטעם אננס 1 ליטר אחוה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪9.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90 <small>לליטר</small></div>
+          <div class="shelf">₪9.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020030054" data-name="סירופ בטעם אננס 1 ליטר אחוה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סירופ בטעם מנגו אננס 1 ליטר יכין <button type="button" class="photo-btn" data-photo="7290018989678" data-key="7290018989678" data-name="סירופ בטעם מנגו אננס 1 ליטר יכין" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זנלכל</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪9.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018989678" data-name="סירופ בטעם מנגו אננס 1 ליטר יכין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סירופ בטעם לימון 1 ליטר יכין <button type="button" class="photo-btn" data-photo="7290018989685" data-key="7290018989685" data-name="סירופ בטעם לימון 1 ליטר יכין" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זנלכל</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪9.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018989685" data-name="סירופ בטעם לימון 1 ליטר יכין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סירופ בטעם תפו&#34;ע 1 ליטר יכין <button type="button" class="photo-btn" data-photo="7290018989227" data-key="7290018989227" data-name="סירופ בטעם תפו&#34;ע 1 ליטר יכין" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זנלכל</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪9.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018989227" data-name="סירופ בטעם תפו&#34;ע 1 ליטר יכין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סירופ בטעם אננס 1 ליטר יכין <button type="button" class="photo-btn" data-photo="7290018989234" data-key="7290018989234" data-name="סירופ בטעם אננס 1 ליטר יכין" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זנלכל</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪9.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018989234" data-name="סירופ בטעם אננס 1 ליטר יכין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">ויטמינצ&#39;יק אננס 1 ליטר אסם <button type="button" class="photo-btn" data-photo="7290115207941" data-key="7290115207941" data-name="ויטמינצ&#39;יק אננס 1 ליטר אסם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסם השקעות בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪30</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪10.00 (2 ב־₪20)</span><span class="other st-4">נטו חיסכון ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪10.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115207941" data-name="ויטמינצ&#39;יק אננס 1 ליטר אסם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">ויטמינצ&#39;יק בטעם לימון 1 ליטר אסם <button type="button" class="photo-btn" data-photo="7290115207989" data-key="7290115207989" data-name="ויטמינצ&#39;יק בטעם לימון 1 ליטר אסם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסם השקעות בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪30</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪10.00 (2 ב־₪20)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪10.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115207989" data-name="ויטמינצ&#39;יק בטעם לימון 1 ליטר אסם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">ויטמינצ&#39;יק ענבים 1 ליטר אסם <button type="button" class="photo-btn" data-photo="7290115208009" data-key="7290115208009" data-name="ויטמינצ&#39;יק ענבים 1 ליטר אסם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסם השקעות בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪30</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪10.00 (2 ב־₪20)</span><span class="other st-4">נטו חיסכון ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪10.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115208009" data-name="ויטמינצ&#39;יק ענבים 1 ליטר אסם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">ויטמינצ&#39;יק בטעם פטל 1 ליטר אסם <button type="button" class="photo-btn" data-photo="7290115208047" data-key="7290115208047" data-name="ויטמינצ&#39;יק בטעם פטל 1 ליטר אסם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסם השקעות בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪30</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪10.00 (2 ב־₪20)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪10.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115208047" data-name="ויטמינצ&#39;יק בטעם פטל 1 ליטר אסם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">ויטמינצ&#39;יק בטעם תפוח 1 ליטר אסם <button type="button" class="photo-btn" data-photo="7290115208061" data-key="7290115208061" data-name="ויטמינצ&#39;יק בטעם תפוח 1 ליטר אסם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסם השקעות בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪30</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪10.00 (2 ב־₪20)</span><span class="other st-4">נטו חיסכון ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪10.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115208061" data-name="ויטמינצ&#39;יק בטעם תפוח 1 ליטר אסם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סירופ בטעם אפרסק 1 ליטר ויטמינצ`יק אסם <button type="button" class="photo-btn" data-photo="7290118428206" data-key="7290118428206" data-name="סירופ בטעם אפרסק 1 ליטר ויטמינצ`יק אסם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסם השקעות בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪30</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪10.00 (2 ב־₪20)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪10.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118428206" data-name="סירופ בטעם אפרסק 1 ליטר ויטמינצ`יק אסם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">ויטמינצ&#39;יק שקוף בטעם ענבים 1 ליטר אסם <button type="button" class="photo-btn" data-photo="7290118428220" data-key="7290118428220" data-name="ויטמינצ&#39;יק שקוף בטעם ענבים 1 ליטר אסם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסם השקעות בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪30</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪10.00 (2 ב־₪20)</span><span class="other st-4">נטו חיסכון ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪10.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118428220" data-name="ויטמינצ&#39;יק שקוף בטעם ענבים 1 ליטר אסם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">ויטמינצ&#39;יק בטעם טרופי 1 ליטר אסם <button type="button" class="photo-btn" data-photo="7290118428336" data-key="7290118428336" data-name="ויטמינצ&#39;יק בטעם טרופי 1 ליטר אסם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסם השקעות בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪30</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪10.00 (2 ב־₪20)</span><span class="other st-4">נטו חיסכון ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪10.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118428336" data-name="ויטמינצ&#39;יק בטעם טרופי 1 ליטר אסם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">ויטמינצ&#39;יק טעם סודי 1ליטר אסם <button type="button" class="photo-btn" data-photo="7290122783520" data-key="7290122783520" data-name="ויטמינצ&#39;יק טעם סודי 1ליטר אסם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסם נסטלה ישראל בע&#34;מ.</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪30</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪10.00 (2 ב־₪20)</span><span class="other st-4">נטו חיסכון ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪10.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290122783520" data-name="ויטמינצ&#39;יק טעם סודי 1ליטר אסם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">ויטמינצ&#39;יק טעם סודי ביותר1ליטר אסם <button type="button" class="photo-btn" data-photo="7290122783544" data-key="7290122783544" data-name="ויטמינצ&#39;יק טעם סודי ביותר1ליטר אסם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסם נסטלה ישראל בע&#34;מ.</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪30</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪10.00 (2 ב־₪20)</span><span class="other st-4">נטו חיסכון ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪10.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290122783544" data-name="ויטמינצ&#39;יק טעם סודי ביותר1ליטר אסם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סירופ דיאט בטעם תפוזים עסיס 1 ליטר <button type="button" class="photo-btn" data-photo="7290000272443" data-key="7290000272443" data-name="סירופ דיאט בטעם תפוזים עסיס 1 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>עסיס</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.90 <small>לליטר</small></div>
+          <div class="shelf">₪10.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000272443" data-name="סירופ דיאט בטעם תפוזים עסיס 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סירופ דיאט פטל עסיס 1 ליטר <button type="button" class="photo-btn" data-photo="7290000272467" data-key="7290000272467" data-name="סירופ דיאט פטל עסיס 1 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>עסיס</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.90 <small>לליטר</small></div>
+          <div class="shelf">₪10.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000272467" data-name="סירופ דיאט פטל עסיס 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סירופ דיאט לימונענע <button type="button" class="photo-btn" data-photo="7290100681503" data-key="7290100681503" data-name="סירופ דיאט לימונענע" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>עסיס</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.90 <small>לליטר</small></div>
+          <div class="shelf">₪10.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290100681503" data-name="סירופ דיאט לימונענע" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עסיס אננס דיאט 1לי <button type="button" class="photo-btn" data-photo="7290106573024" data-key="7290106573024" data-name="עסיס אננס דיאט 1לי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>עסיס</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.90 <small>לליטר</small></div>
+          <div class="shelf">₪10.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290106573024" data-name="עסיס אננס דיאט 1לי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סירופ דיאט בטעם תה אפרסק 1ליטר יכין <button type="button" class="photo-btn" data-photo="7290017105369" data-key="7290017105369" data-name="סירופ דיאט בטעם תה אפרסק 1ליטר יכין" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זנלכל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪12.90 <small>לליטר</small></div>
+          <div class="shelf">₪12.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017105369" data-name="סירופ דיאט בטעם תה אפרסק 1ליטר יכין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">תרכיז תפוחים 1 ליטר פרי קטיף <button type="button" class="photo-btn" data-photo="7290018563274" data-key="7290018563274" data-name="תרכיז תפוחים 1 ליטר פרי קטיף" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פרי קטיף מזון בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪21.90 (מבצע)</span><span class="other st-0">ויקטורי ₪23.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪17.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪24.90</s> ₪17.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018563274" data-name="תרכיז תפוחים 1 ליטר פרי קטיף" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">תרכיז מנגו פרי קטיף  1 ליטר <button type="button" class="photo-btn" data-photo="7290018563304" data-key="7290018563304" data-name="תרכיז מנגו פרי קטיף  1 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פרי</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪21.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪17.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪24.90</s> ₪17.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018563304" data-name="תרכיז מנגו פרי קטיף  1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">תרכיז אפרסק פרי קטיף 1 ליטר <button type="button" class="photo-btn" data-photo="7290018563328" data-key="7290018563328" data-name="תרכיז אפרסק פרי קטיף 1 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פרי קטיף</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪21.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪17.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪24.90</s> ₪17.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018563328" data-name="תרכיז אפרסק פרי קטיף 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">תרכיז לימונדה פרי קטיף  1 ליטר <button type="button" class="photo-btn" data-photo="7290018563311" data-key="7290018563311" data-name="תרכיז לימונדה פרי קטיף  1 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪17.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪24.90</s> ₪17.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018563311" data-name="תרכיז לימונדה פרי קטיף  1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מיץ לימון טבעי בקבוק 200 מ&#34;ל <button type="button" class="photo-btn" data-photo="7290019393535" data-key="7290019393535" data-name="מיץ לימון טבעי בקבוק 200 מ&#34;ל" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪20.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪6.50</s> ₪4.00 · 200 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019393535" data-name="מיץ לימון טבעי בקבוק 200 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">תרכיז ענבים 30% פרי <button type="button" class="photo-btn" data-photo="7290018563335" data-key="7290018563335" data-name="תרכיז ענבים 30% פרי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פרי</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪21.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪23.80</s> ₪21.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018563335" data-name="תרכיז ענבים 30% פרי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">סירופ תפוחים בבקבוק, 1 ליטר <button type="button" class="photo-btn" data-photo="7290110003647" data-key="7290110003647" data-name="סירופ תפוחים בבקבוק, 1 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>בטר אנד דיפרנט</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪24.90 <small>לליטר</small></div>
+          <div class="shelf">₪24.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110003647" data-name="סירופ תפוחים בבקבוק, 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סירופ פריגת דיאט אשכוליות 750 מ&#34;ל <button type="button" class="photo-btn" data-photo="7290003009596" data-key="7290003009596" data-name="סירופ פריגת דיאט אשכוליות 750 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פריגת</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪18.90</span><span class="other st-0">ויקטורי ₪22.60</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪25.07 <small>לליטר</small></div>
+          <div class="shelf">₪18.80 · 750 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003009596" data-name="סירופ פריגת דיאט אשכוליות 750 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סירופ דיאט אננס פריגת 750 מ&#34;ל <button type="button" class="photo-btn" data-photo="7290011015985" data-key="7290011015985" data-name="סירופ דיאט אננס פריגת 750 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פריגת</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪18.90</span><span class="other st-0">ויקטורי ₪22.60</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪25.07 <small>לליטר</small></div>
+          <div class="shelf">₪18.80 · 750 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011015985" data-name="סירופ דיאט אננס פריגת 750 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סירופ בטעם פטל במתיקות מעודנת פריגת 750 מ&#34;ל <button type="button" class="photo-btn" data-photo="7290110116125" data-key="7290110116125" data-name="סירופ בטעם פטל במתיקות מעודנת פריגת 750 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סירופ גבעת חיים</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪22.60</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪25.07 <small>לליטר</small></div>
+          <div class="shelf">₪18.80 · 750 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110116125" data-name="סירופ בטעם פטל במתיקות מעודנת פריגת 750 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סירופ בטעם לימון פריגת 750 מ&#34;ל <button type="button" class="photo-btn" data-photo="7290110116132" data-key="7290110116132" data-name="סירופ בטעם לימון פריגת 750 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סירופ גבעת חיים</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪18.90</span><span class="other st-0">ויקטורי ₪22.60</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪25.07 <small>לליטר</small></div>
+          <div class="shelf">₪18.80 · 750 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110116132" data-name="סירופ בטעם לימון פריגת 750 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סירופ ענבים 750 מל <button type="button" class="photo-btn" data-photo="7290110116149" data-key="7290110116149" data-name="סירופ ענבים 750 מל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סירופ גבעת חיים</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪18.90</span><span class="other st-0">ויקטורי ₪22.60</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪25.07 <small>לליטר</small></div>
+          <div class="shelf">₪18.80 · 750 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110116149" data-name="סירופ ענבים 750 מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סירופ תפוזים פריגת 750 מ&#34;ל <button type="button" class="photo-btn" data-photo="7290110116392" data-key="7290110116392" data-name="סירופ תפוזים פריגת 750 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪18.90</span><span class="other st-0">ויקטורי ₪22.60</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪25.07 <small>לליטר</small></div>
+          <div class="shelf">₪18.80 · 750 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110116392" data-name="סירופ תפוזים פריגת 750 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סירופ פריגת דיאט בטעם לימונענע 750 מ&#34;ל <button type="button" class="photo-btn" data-photo="7290011015862" data-key="7290011015862" data-name="סירופ פריגת דיאט בטעם לימונענע 750 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פריגת</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪18.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪25.07 <small>לליטר</small></div>
+          <div class="shelf">₪18.80 · 750 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011015862" data-name="סירופ פריגת דיאט בטעם לימונענע 750 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">סירופ דיאט תפוחים 7 <button type="button" class="photo-btn" data-photo="7290003009183" data-key="7290003009183" data-name="סירופ דיאט תפוחים 7" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-0">ויקטורי ₪22.60</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪25.20 <small>לליטר</small></div>
+          <div class="shelf">₪18.90 · 750 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003009183" data-name="סירופ דיאט תפוחים 7" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משקד סירופ רוזטה שקד <button type="button" class="photo-btn" data-photo="7290006496201" data-key="7290006496201" data-name="משקד סירופ רוזטה שקד" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪25.20 <small>לליטר</small></div>
+          <div class="shelf">₪18.90 · 750 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290006496201" data-name="משקד סירופ רוזטה שקד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סירופ מלבי 750 מ&#34;ל <button type="button" class="photo-btn" data-photo="7290006496072" data-key="7290006496072" data-name="סירופ מלבי 750 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>צ&#39;ציק</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪25.20 <small>לליטר</small></div>
+          <div class="shelf">₪18.90 · 750 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290006496072" data-name="סירופ מלבי 750 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">תרכיז תפוחים לל&#34;תס 1 לי <button type="button" class="photo-btn" data-photo="7290018563267" data-key="7290018563267" data-name="תרכיז תפוחים לל&#34;תס 1 לי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פרי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪32.60</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪29.80 <small>לליטר</small></div>
+          <div class="shelf">₪29.80 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018563267" data-name="תרכיז תפוחים לל&#34;תס 1 לי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מיץ לימון טבעי יד מרדכי, 500 מ&#34;ל <button type="button" class="photo-btn" data-photo="7290119385034" data-key="7290119385034" data-name="מיץ לימון טבעי יד מרדכי, 500 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יורו פוד</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪31.00 <small>לליטר</small></div>
+          <div class="shelf">₪15.50 · 500 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119385034" data-name="מיץ לימון טבעי יד מרדכי, 500 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מיץ לימון טבעי 250 מל <button type="button" class="photo-btn" data-photo="7290106668577" data-key="7290106668577" data-name="מיץ לימון טבעי 250 מל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יורופוד ס.ר.ל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪8.50</span><span class="other st-0">ויקטורי ₪8.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪31.60 <small>לליטר</small></div>
+          <div class="shelf">₪7.90 · 250 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290106668577" data-name="מיץ לימון טבעי 250 מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">תרכיז תפוחים סחוט 500מ&#34;ל <button type="button" class="photo-btn" data-photo="7290011154035" data-key="7290011154035" data-name="תרכיז תפוחים סחוט 500מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪33.40 <small>לליטר</small></div>
+          <div class="shelf">₪16.70 · 500 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011154035" data-name="תרכיז תפוחים סחוט 500מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">תרכיז תפוחים צלול 500מ&#34;ל <button type="button" class="photo-btn" data-photo="7290011154080" data-key="7290011154080" data-name="תרכיז תפוחים צלול 500מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪33.40 <small>לליטר</small></div>
+          <div class="shelf">₪16.70 · 500 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011154080" data-name="תרכיז תפוחים צלול 500מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">תרכיז סיידר תפוחים ט <button type="button" class="photo-btn" data-photo="7290011154028" data-key="7290011154028" data-name="תרכיז סיידר תפוחים ט" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טעמי הגליל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪33.67 <small>לליטר</small></div>
+          <div class="shelf">₪40.40 · 1.2 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011154028" data-name="תרכיז סיידר תפוחים ט" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פריגת מיץ תפוזים קפוא <button type="button" class="photo-btn" data-photo="7290006241504" data-key="7290006241504" data-name="פריגת מיץ תפוזים קפוא" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פריגת</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪14.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪35.00 <small>לק״ג</small></div>
+          <div class="shelf">₪11.90 · 340 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290006241504" data-name="פריגת מיץ תפוזים קפוא" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">תרכיז תפוחים, 1 ליטר <button type="button" class="photo-btn" data-photo="7290110003524" data-key="7290110003524" data-name="תרכיז תפוחים, 1 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>בטר אנד דיפרנט</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪35.90 <small>לליטר</small></div>
+          <div class="shelf">₪35.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110003524" data-name="תרכיז תפוחים, 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סירופ פטל ללא סוכר 4 <button type="button" class="photo-btn" data-photo="7290113763043" data-key="7290113763043" data-name="סירופ פטל ללא סוכר 4" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪34</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪38.64 <small>לליטר</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪17.00 · 440 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290113763043" data-name="סירופ פטל ללא סוכר 4" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סירופ תפוז-מנגו ללא <button type="button" class="photo-btn" data-photo="7290113763128" data-key="7290113763128" data-name="סירופ תפוז-מנגו ללא" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪34</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪38.64 <small>לליטר</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪17.00 · 440 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290113763128" data-name="סירופ תפוז-מנגו ללא" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סירופ פפסי מקס ללא ס <button type="button" class="photo-btn" data-photo="8719128117249" data-key="8719128117249" data-name="סירופ פפסי מקס ללא ס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪34</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪38.64 <small>לליטר</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪17.00 · 440 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8719128117249" data-name="סירופ פפסי מקס ללא ס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סירופ בטעם אשכולית א <button type="button" class="photo-btn" data-photo="7290113762718" data-key="7290113762718" data-name="סירופ בטעם אשכולית א" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪34</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪38.64 <small>לליטר</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪17.00 · 440 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290113762718" data-name="סירופ בטעם אשכולית א" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סירופ למשקה בטעם פסי <button type="button" class="photo-btn" data-photo="7290113762732" data-key="7290113762732" data-name="סירופ למשקה בטעם פסי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪34</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪38.64 <small>לליטר</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪17.00 · 440 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290113762732" data-name="סירופ למשקה בטעם פסי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סירופ לימונדה דל קלו <button type="button" class="photo-btn" data-photo="7290113762824" data-key="7290113762824" data-name="סירופ לימונדה דל קלו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪34</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪38.64 <small>לליטר</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪17.00 · 440 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290113762824" data-name="סירופ לימונדה דל קלו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סירופ למשקה אנרגיה 4 <button type="button" class="photo-btn" data-photo="8719128117430" data-key="8719128117430" data-name="סירופ למשקה אנרגיה 4" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪34</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪38.64 <small>לליטר</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪17.00 · 440 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8719128117430" data-name="סירופ למשקה אנרגיה 4" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סירופ סבן אפ בטעם לי <button type="button" class="photo-btn" data-photo="8719128117256" data-key="8719128117256" data-name="סירופ סבן אפ בטעם לי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪34</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪38.64 <small>לליטר</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪17.00 · 440 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8719128117256" data-name="סירופ סבן אפ בטעם לי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סירופ מירנדה 440 מ&#34;ל <button type="button" class="photo-btn" data-photo="8719128117263" data-key="8719128117263" data-name="סירופ מירנדה 440 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪34</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪38.64 <small>לליטר</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪17.00 · 440 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8719128117263" data-name="סירופ מירנדה 440 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סירופ סבן אפ ללא סוכ <button type="button" class="photo-btn" data-photo="8719128117294" data-key="8719128117294" data-name="סירופ סבן אפ ללא סוכ" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪34</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪38.64 <small>לליטר</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪17.00 · 440 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8719128117294" data-name="סירופ סבן אפ ללא סוכ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סירופ מלבי 750 מל נווה התבלין <button type="button" class="photo-btn" data-photo="7290018322963" data-key="7290018322963" data-name="סירופ מלבי 750 מל נווה התבלין" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.87 <small>לליטר</small></div>
+          <div class="shelf">₪29.90 · 750 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018322963" data-name="סירופ מלבי 750 מל נווה התבלין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סירופ תפוחים מרוכז 5 <button type="button" class="photo-btn" data-photo="7290113763289" data-key="7290113763289" data-name="סירופ תפוחים מרוכז 5" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪41.80 <small>לליטר</small></div>
+          <div class="shelf">₪20.90 · 500 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290113763289" data-name="סירופ תפוחים מרוכז 5" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משקה לימונענע מרוכז קפוא פריגת 280 מ&#34;ל <button type="button" class="photo-btn" data-photo="7290006241511" data-key="7290006241511" data-name="משקה לימונענע מרוכז קפוא פריגת 280 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פריגת</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪14.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪42.50 <small>לליטר</small></div>
+          <div class="shelf">₪11.90 · 280 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290006241511" data-name="משקה לימונענע מרוכז קפוא פריגת 280 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משקה לימונים מרוכז קפוא פריגת 280 מ&#34;ל <button type="button" class="photo-btn" data-photo="7290006241689" data-key="7290006241689" data-name="משקה לימונים מרוכז קפוא פריגת 280 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פריגת</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪14.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪42.50 <small>לליטר</small></div>
+          <div class="shelf">₪11.90 · 280 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290006241689" data-name="משקה לימונים מרוכז קפוא פריגת 280 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מימונס תרכיז אייס לי <button type="button" class="photo-btn" data-photo="7290008102063" data-key="7290008102063" data-name="מימונס תרכיז אייס לי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪44.22 <small>לליטר</small></div>
+          <div class="shelf">₪19.90 · 450 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008102063" data-name="מימונס תרכיז אייס לי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סירופ טעם מייפל 429</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪47.09 <small>לליטר</small></div>
+          <div class="shelf">₪20.20 · 429 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058140886:13300928073" data-name="סירופ טעם מייפל 429" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">תרכיז תפוחים 250 מ&#34;ל <button type="button" class="photo-btn" data-photo="7290110003531" data-key="7290110003531" data-name="תרכיז תפוחים 250 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪51.60 <small>לליטר</small></div>
+          <div class="shelf">₪12.90 · 250 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110003531" data-name="תרכיז תפוחים 250 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סירופ אגבה כחולה אור <button type="button" class="photo-btn" data-photo="7503012779405" data-key="7503012779405" data-name="סירופ אגבה כחולה אור" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪55.33 <small>לליטר</small></div>
+          <div class="shelf">₪33.20 · 600 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7503012779405" data-name="סירופ אגבה כחולה אור" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">תומר - רכז רימונים 100% טבעי <button type="button" class="photo-btn" data-photo="7290015437431" data-key="7290015437431" data-name="תומר - רכז רימונים 100% טבעי" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ארומהפרודוקט אל.טי.די</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪66.43 <small>לליטר</small></div>
+          <div class="shelf">₪27.90 · 420 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015437431" data-name="תומר - רכז רימונים 100% טבעי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">סירופ תירס 340 גרם &#34;ליברס&#34; HL</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪73.24 <small>לק״ג</small></div>
+          <div class="shelf">₪24.90 · 340 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:43427501330" data-name="סירופ תירס 340 גרם &#34;ליברס&#34; HL" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">בקבוק אבקה עשירייה משפחתי קולה 100 ג&#39; <button type="button" class="photo-btn" data-photo="726529085099" data-key="726529085099" data-name="בקבוק אבקה עשירייה משפחתי קולה 100 ג&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪99.00 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 100 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="726529085099" data-name="בקבוק אבקה עשירייה משפחתי קולה 100 ג&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+</ol>
+</div>
+
+</main>
+<footer>עודכן 7.10 06:15 · ויקטורי 6.10 21:13 · רמי לוי 00:11 · אושר עד 6.10 21:00 · אושר עד 6.10 21:00 · נטו חיסכון 04:03</footer>
+
+
+<nav class="bottom-nav" aria-label="ניווט">
+  <a href="index.html" class="on"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg><span>בית</span></a>
+  <a href="search.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><span>חיפוש</span></a>
+  <a href="scan.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V5a1 1 0 0 1 1-1h2M17 4h2a1 1 0 0 1 1 1v2M20 17v2a1 1 0 0 1-1 1h-2M7 20H5a1 1 0 0 1-1-1v-2"/><path d="M8 8v8M11 8v8M14 8v8M16.5 8v8"/></svg><span>סריקה</span></a>
+  <a href="basket.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h11l2-8H6.2"/><circle cx="9.5" cy="19" r="1.4"/><circle cx="17" cy="19" r="1.4"/></svg><span id="cart-count"></span><span>עגלת קניות</span></a>
+  <a href="spending.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-2-1.4-2 1.4-2-1.4-2 1.4-2-1.4L6 21z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><span>הוצאות</span></a>
+</nav>
+
+<script src="static/basket.js?v=20261007061534"></script>
+<script src="static/photo.js?v=20261007061534"></script>
+
+<script src="static/render.js?v=20261007061534"></script>
+<script src="static/category.js?v=20261007061534" data-build="20261007061534"></script>
+
+<script>
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+</script>
+</body>
+</html>

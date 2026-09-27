@@ -1,0 +1,1129 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f7a4d">
+<script>
+// the look this phone chose (settings.html "מראה"), before anything is drawn: html.light / html.dark
+// (none = follow the phone) and html[data-color] (none = green); the browser bar takes the colour too
+(function () {
+  let t = {};
+  try { t = JSON.parse(localStorage.getItem("theme")) || {}; } catch (e) { /* none yet */ }
+  const root = document.documentElement;
+  if (t.mode === "light" || t.mode === "dark") root.classList.add(t.mode);
+  if (t.color) root.dataset.color = t.color;
+  if (t.bar) document.querySelector('meta[name="theme-color"]').content = t.bar;
+})();
+</script>
+<title>מגבונים</title>
+<link rel="manifest" href="static/manifest.webmanifest">
+<link rel="icon" href="static/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="static/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="static/style.css?v=20261007061534">
+<style>.st-0 { --store: #e07000; }.st-1 { --store: #d32f2f; }.st-2 { --store: #1565c0; }.st-3 { --store: #1565c0; }.st-4 { --store: #c99a00; }</style>
+<script src="static/stores.js?v=20261007061534" data-stores="[{&#34;card_cap&#34;: 750, &#34;card_rate&#34;: 0.07, &#34;default&#34;: true, &#34;key&#34;: &#34;victory-038&#34;, &#34;name&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;ramilevy-007&#34;, &#34;name&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-026&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05ea\u05dc\u05e4\u05d9\u05d5\u05ea&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-003&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05d2\u05d1\u05e2\u05ea \u05e9\u05d0\u05d5\u05dc&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;netto-052&#34;, &#34;name&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df \u05e7\u05e8\u05d9\u05d9\u05ea \u05d9\u05e2\u05e8\u05d9\u05dd&#34;, &#34;short&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df&#34;}]"></script>
+<script src="static/avoid.js?v=20261007061534" data-kinds="[&#34;\u05e2\u05d5\u05e3 \u05de\u05e2\u05d5\u05d1\u05d3&#34;, &#34;\u05d1\u05e9\u05e8 \u05de\u05e2\u05d5\u05d1\u05d3&#34;]"></script>
+<script>
+// No long-press menu on links, pictures or text (the user: the home page's tiles opened Chrome's "open in new tab /
+// copy link" menu; CSS can't stop that on Android). Typing fields and the ⓘ sheet's barcode keep theirs.
+document.addEventListener("contextmenu", (e) => {
+  if (!e.target.closest("input, textarea, [contenteditable], .photo-barcode")) e.preventDefault();
+});
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <a class="back" href="t-9.html" aria-label="חזרה">→</a>
+    <h1>מגבונים</h1>
+    <a class="notes-link" href="notes.html" aria-label="רשימת קניות" title="רשימת קניות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="m8.5 10 1.2 1.2 2.3-2.4M8.5 15.5l1.2 1.2 2.3-2.4M14 10.5h2.5M14 16h2.5"/></svg><span>רשימת קניות</span></a>
+    <a class="settings-link" href="settings.html" aria-label="הגדרות" title="הגדרות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></a>
+  </div>
+  
+  <form class="search" action="search.html" method="get" role="search">
+    <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+    <input type="search" name="q" placeholder="חיפוש מוצר" enterkeyhint="search" aria-label="חיפוש מוצר">
+  </form>
+  
+</header>
+<main>
+
+<p class="sub"><span class="sub-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 2h3l1 3h-5z"/><path d="M8.5 5h7v2.5h-7z"/><path d="M9 7.5h6V19a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2z"/><path d="M9 11h2.5M9 14h2.5M9 17h2.5"/></svg></span>תינוקות · <span id="cat-count">37</span> מוצרים, מהזול ליקר</p>
+
+
+<div class="cat-filter">
+  <input type="search" id="cat-filter" placeholder="סינון לפי שם או יצרן · ‎-מילה מסתירה" enterkeyhint="done" autocomplete="off" aria-label="סינון המוצרים בקטגוריה">
+</div>
+<div id="cat-list" data-href="c-9-2.html">
+
+<ol class="products">
+  
+  
+    
+    
+    
+    <li class="product st-1 best">
+      <div class="info">
+        <div class="name">מגבוני בלנאום ללא בי <button type="button" class="photo-btn" data-photo="7290111094798" data-key="7290111094798" data-name="מגבוני בלנאום ללא בי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>די.פי.אל</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪28</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.01 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪15.70</s> ₪14.00 · 1400 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111094798" data-name="מגבוני בלנאום ללא בי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מגבונים האגיס רביעייה 56 יח <button type="button" class="photo-btn" data-photo="7290000195537" data-key="7290000195537" data-name="מגבונים האגיס רביעייה 56 יח" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ווטנפס בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪35</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪20.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.08 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪19.70</s> ₪17.50 · 224 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000195537" data-name="מגבונים האגיס רביעייה 56 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מגבונים האגיס רביעייה 56 יח <button type="button" class="photo-btn" data-photo="7290000195773" data-key="7290000195773" data-name="מגבונים האגיס רביעייה 56 יח" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>עלבד משואות יצחק בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪35</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪20.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.08 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪19.70</s> ₪17.50 · 224 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000195773" data-name="מגבונים האגיס רביעייה 56 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מגבונים האגיס בישום עדין רביעייה 56 יח <button type="button" class="photo-btn" data-photo="7290111344206" data-key="7290111344206" data-name="מגבונים האגיס בישום עדין רביעייה 56 יח" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>חוגלה קימברלי</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪35</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪20.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.08 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪19.70</s> ₪17.50 · 224 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111344206" data-name="מגבונים האגיס בישום עדין רביעייה 56 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מגבונים לחים עם דיספנסר קמיל בלו 120 מגבונים <button type="button" class="photo-btn" data-photo="7290001973233" data-key="7290001973233" data-name="מגבונים לחים עם דיספנסר קמיל בלו 120 מגבונים" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ד&#34;ר פישר</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.09 <small>ליח׳</small></div>
+          <div class="shelf">₪10.90 · 120 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001973233" data-name="מגבונים לחים עם דיספנסר קמיל בלו 120 מגבונים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מגבוני לחים לתינוק ללא בישום בייבי סיטר 9 * 60 יחידות <button type="button" class="photo-btn" data-photo="7290111096389" data-key="7290111096389" data-name="מגבוני לחים לתינוק ללא בישום בייבי סיטר 9 * 60 יחידות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>די.פי.אל בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪24.90</span><span class="other st-0">ויקטורי ₪34.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪2.21 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪24.90</s> ₪19.90 · 9 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111096389" data-name="מגבוני לחים לתינוק ללא בישום בייבי סיטר 9 * 60 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מגבונים לחים בבישום עדין בייבי רמי לוי 4 * 72 יחידות <button type="button" class="photo-btn" data-photo="7290017197425" data-key="7290017197425" data-name="מגבונים לחים בבישום עדין בייבי רמי לוי 4 * 72 יחידות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 16.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪2.73 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪15.90</s> ₪10.90 · 4 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017197425" data-name="מגבונים לחים בבישום עדין בייבי רמי לוי 4 * 72 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מגבונים לחים בייבי ל <button type="button" class="photo-btn" data-photo="7290017197432" data-key="7290017197432" data-name="מגבונים לחים בייבי ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 16.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪2.73 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪15.90</s> ₪10.90 · 4 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017197432" data-name="מגבונים לחים בייבי ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מגבונים לחים ללא בישום בייבי לעור רגיש רמי לוי 4 * 72 יחידות <button type="button" class="photo-btn" data-photo="7290017197449" data-key="7290017197449" data-name="מגבונים לחים ללא בישום בייבי לעור רגיש רמי לוי 4 * 72 יחידות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 16.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪2.73 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪15.90</s> ₪10.90 · 4 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017197449" data-name="מגבונים לחים ללא בישום בייבי לעור רגיש רמי לוי 4 * 72 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מגבונים לחים בבישום עדין בייבי סיטר 4 * 60 יחידות <button type="button" class="photo-btn" data-photo="7290014855434" data-key="7290014855434" data-name="מגבונים לחים בבישום עדין בייבי סיטר 4 * 60 יחידות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>די.פי.אל בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪28</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪14.00 (2 ב־₪28)</span><span class="other st-0">ויקטורי ₪14.50 (2 ב־₪29)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪3.50 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪15.70</s> ₪14.00 · 4 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014855434" data-name="מגבונים לחים בבישום עדין בייבי סיטר 4 * 60 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מגבונים לחים בניחוח מרענן פרש וואנס 4 * 64 יחידות <button type="button" class="photo-btn" data-photo="7290016321678" data-key="7290016321678" data-name="מגבונים לחים בניחוח מרענן פרש וואנס 4 * 64 יחידות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>עלבד משואות יצחק</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪28</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪14.00 (2 ב־₪28)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪3.50 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪14.00 · 4 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016321678" data-name="מגבונים לחים בניחוח מרענן פרש וואנס 4 * 64 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מגבונים לחים בניחוח <button type="button" class="photo-btn" data-photo="7290015025959" data-key="7290015025959" data-name="מגבונים לחים בניחוח" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪28</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪3.50 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪14.00 · 4 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015025959" data-name="מגבונים לחים בניחוח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מגבונים לחים ללא בישום אקסטרה סופט בייבי סיטר 4 * 64 יחידות <button type="button" class="photo-btn" data-photo="7290017088327" data-key="7290017088327" data-name="מגבונים לחים ללא בישום אקסטרה סופט בייבי סיטר 4 * 64 יחידות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>די.פי.אל</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪28</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪3.50 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪15.70</s> ₪14.00 · 4 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017088327" data-name="מגבונים לחים ללא בישום אקסטרה סופט בייבי סיטר 4 * 64 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מגבוני קמיל בלו רביעייה 64 יח קלאסי <button type="button" class="photo-btn" data-photo="7290016329278" data-key="7290016329278" data-name="מגבוני קמיל בלו רביעייה 64 יח קלאסי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פישר מעבדות פרמצבטיות בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪19.90</span><span class="other st-0">ויקטורי ₪22.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪4.97 <small>ליח׳</small></div>
+          <div class="shelf">₪19.90 · 4 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016329278" data-name="מגבוני קמיל בלו רביעייה 64 יח קלאסי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מגבונים לחים בייבי ד <button type="button" class="photo-btn" data-photo="7290017197067" data-key="7290017197067" data-name="מגבונים לחים בייבי ד" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪5.90 <small>ליח׳</small></div>
+          <div class="shelf">₪5.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017197067" data-name="מגבונים לחים בייבי ד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מגבונים לחים בייבי בייסיק 72 יחידות <button type="button" class="photo-btn" data-photo="7290014855854" data-key="7290014855854" data-name="מגבונים לחים בייבי בייסיק 72 יחידות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪10.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.90 <small>ליח׳</small></div>
+          <div class="shelf">₪10.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014855854" data-name="מגבונים לחים בייבי בייסיק 72 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מגבונים דרדסים ללא ב <button type="button" class="photo-btn" data-photo="7290019170686" data-key="7290019170686" data-name="מגבונים דרדסים ללא ב" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 15.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪12.90 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪12.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019170686" data-name="מגבונים דרדסים ללא ב" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מגבונים דרדסים בבישום רביעייה wb <button type="button" class="photo-btn" data-photo="7290019170792" data-key="7290019170792" data-name="מגבונים דרדסים בבישום רביעייה wb" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 15.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪12.90 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪12.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019170792" data-name="מגבונים דרדסים בבישום רביעייה wb" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מגבונים לחים לתינוק ללא בישום פישר פרייס רמי לוי 4 * 64 יחידות <button type="button" class="photo-btn" data-photo="7290118661405" data-key="7290118661405" data-name="מגבונים לחים לתינוק ללא בישום פישר פרייס רמי לוי 4 * 64 יחידות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 15.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪12.90 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪16.90</s> ₪12.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118661405" data-name="מגבונים לחים לתינוק ללא בישום פישר פרייס רמי לוי 4 * 64 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">רבעיית מגבונים 6*64 <button type="button" class="photo-btn" data-photo="7290118661412" data-key="7290118661412" data-name="רבעיית מגבונים 6*64" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 15.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪12.90 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪16.90</s> ₪12.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118661412" data-name="רבעיית מגבונים 6*64" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">רביעיית מגבונים בביש <button type="button" class="photo-btn" data-photo="7298171230729" data-key="7298171230729" data-name="רביעיית מגבונים בביש" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪12.90 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪12.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7298171230729" data-name="רביעיית מגבונים בביש" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מגבונים לחים פרפורמנס ללא בישום בייבי סיטר 4 * 66 יחידות <button type="button" class="photo-btn" data-photo="7290014855458" data-key="7290014855458" data-name="מגבונים לחים פרפורמנס ללא בישום בייבי סיטר 4 * 66 יחידות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>די.פי.אל בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪28</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪14.00 (2 ב־₪28)</span><span class="other st-0">ויקטורי ₪14.50 (2 ב־₪29)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪14.00 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪15.70</s> ₪14.00 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014855458" data-name="מגבונים לחים פרפורמנס ללא בישום בייבי סיטר 4 * 66 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מגב&#39; בייביסיטר 60 מהדורה ישראלית <button type="button" class="photo-btn" data-photo="7290111092985" data-key="7290111092985" data-name="מגב&#39; בייביסיטר 60 מהדורה ישראלית" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>די.פי.אל</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪28</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪14.00 (2 ב־₪28)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪14.00 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪15.70</s> ₪14.00 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111092985" data-name="מגב&#39; בייביסיטר 60 מהדורה ישראלית" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מגבונים לחים לתינוק בניחוח עדין בייבי כיף 5 * 64 יחידות <button type="button" class="photo-btn" data-photo="7290108356854" data-key="7290108356854" data-name="מגבונים לחים לתינוק בניחוח עדין בייבי כיף 5 * 64 יחידות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טרופיקל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.90 <small>ליח׳</small></div>
+          <div class="shelf">₪14.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108356854" data-name="מגבונים לחים לתינוק בניחוח עדין בייבי כיף 5 * 64 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מגבוני בייבי כיף חמי <button type="button" class="photo-btn" data-photo="7290108356861" data-key="7290108356861" data-name="מגבוני בייבי כיף חמי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טרופיקל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.90 <small>ליח׳</small></div>
+          <div class="shelf">₪14.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108356861" data-name="מגבוני בייבי כיף חמי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מגבוני קמיל בלו רביעייה 64 יח סנסטיב <button type="button" class="photo-btn" data-photo="7290018921029" data-key="7290018921029" data-name="מגבוני קמיל בלו רביעייה 64 יח סנסטיב" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פישר</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪21.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪17.90 <small>ליח׳</small></div>
+          <div class="shelf">₪17.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018921029" data-name="מגבוני קמיל בלו רביעייה 64 יח סנסטיב" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מגבונים לחים בניחוח מרענן פרש וואנס 6 * 56 יחידות <button type="button" class="photo-btn" data-photo="7290119500192" data-key="7290119500192" data-name="מגבונים לחים בניחוח מרענן פרש וואנס 6 * 56 יחידות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪18.90 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪20.20</s> ₪18.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119500192" data-name="מגבונים לחים בניחוח מרענן פרש וואנס 6 * 56 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מגבוני קמיל בלו רביעייה 64 יח ללא בישום <button type="button" class="photo-btn" data-photo="7290017917283" data-key="7290017917283" data-name="מגבוני קמיל בלו רביעייה 64 יח ללא בישום" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪19.90</span><span class="other st-0">ויקטורי ₪22.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.90 <small>ליח׳</small></div>
+          <div class="shelf">₪19.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017917283" data-name="מגבוני קמיל בלו רביעייה 64 יח ללא בישום" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מגבונים לחים בבישום עדין הפי דייז רמי לוי 6 * 72 יחידות <button type="button" class="photo-btn" data-photo="7290017197388" data-key="7290017197388" data-name="מגבונים לחים בבישום עדין הפי דייז רמי לוי 6 * 72 יחידות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.90 <small>ליח׳</small></div>
+          <div class="shelf">₪19.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017197388" data-name="מגבונים לחים בבישום עדין הפי דייז רמי לוי 6 * 72 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מגבונים לחים הפי דיי <button type="button" class="photo-btn" data-photo="7290017197395" data-key="7290017197395" data-name="מגבונים לחים הפי דיי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.90 <small>ליח׳</small></div>
+          <div class="shelf">₪19.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017197395" data-name="מגבונים לחים הפי דיי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מגבונים לחים בניחוח מרענן פרש וואנס 8 * 56 יחידות <button type="button" class="photo-btn" data-photo="7290017873725" data-key="7290017873725" data-name="מגבונים לחים בניחוח מרענן פרש וואנס 8 * 56 יחידות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪21.90 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪24.90</s> ₪21.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017873725" data-name="מגבונים לחים בניחוח מרענן פרש וואנס 8 * 56 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מגבונים ניו בורן 224 יח <button type="button" class="photo-btn" data-photo="7290111348525" data-key="7290111348525" data-name="מגבונים ניו בורן 224 יח" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>Tuas KC</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪24.90 (מבצע)</span><span class="other st-4">נטו חיסכון ₪24.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪24.70 <small>ליח׳</small></div>
+          <div class="shelf">₪24.70 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111348525" data-name="מגבונים ניו בורן 224 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מגבוני האגיס בייבי ספא מבושם 4*56 <button type="button" class="photo-btn" data-photo="7290000186030" data-key="7290000186030" data-name="מגבוני האגיס בייבי ספא מבושם 4*56" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>האגיס-מגבונים</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-4">נטו חיסכון ₪24.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪24.90 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪29.90</s> ₪24.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000186030" data-name="מגבוני האגיס בייבי ספא מבושם 4*56" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+      
+      <li class="divider">ללא מחיר לק״ג (גודל לא ידוע)</li>
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מגבוני טיטולים <button type="button" class="photo-btn" data-photo="7290111348501" data-key="7290111348501" data-name="מגבוני טיטולים" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪20</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪6.67</div>
+          <div class="shelf"><s>₪9.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111348501" data-name="מגבוני טיטולים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מגבוני האגיס שלישיה נטורל קר ללא בישום <button type="button" class="photo-btn" data-photo="7290000201795" data-key="7290000201795" data-name="מגבוני האגיס שלישיה נטורל קר ללא בישום" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪26</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪13.00</div>
+          <div class="shelf"><s>₪15.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000201795" data-name="מגבוני האגיס שלישיה נטורל קר ללא בישום" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">רביעיות מגבונים לתינוק פרימיום מבושם ויק <button type="button" class="photo-btn" data-photo="7290019105107" data-key="7290019105107" data-name="רביעיות מגבונים לתינוק פרימיום מבושם ויק" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪13.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019105107" data-name="רביעיות מגבונים לתינוק פרימיום מבושם ויק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">ליטופים מגבונים חמישייה <button type="button" class="photo-btn" data-photo="7290107280013" data-key="7290107280013" data-name="ליטופים מגבונים חמישייה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מיוצר עי : טרופיקל דגיל . משווק : החברה הדרומית לש</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-0">ויקטורי ₪20.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪17.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290107280013" data-name="ליטופים מגבונים חמישייה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+</ol>
+</div>
+
+</main>
+<footer>עודכן 7.10 06:15 · ויקטורי 6.10 21:13 · רמי לוי 00:11 · אושר עד 6.10 21:00 · אושר עד 6.10 21:00 · נטו חיסכון 04:03</footer>
+
+
+<nav class="bottom-nav" aria-label="ניווט">
+  <a href="index.html" class="on"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg><span>בית</span></a>
+  <a href="search.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><span>חיפוש</span></a>
+  <a href="scan.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V5a1 1 0 0 1 1-1h2M17 4h2a1 1 0 0 1 1 1v2M20 17v2a1 1 0 0 1-1 1h-2M7 20H5a1 1 0 0 1-1-1v-2"/><path d="M8 8v8M11 8v8M14 8v8M16.5 8v8"/></svg><span>סריקה</span></a>
+  <a href="basket.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h11l2-8H6.2"/><circle cx="9.5" cy="19" r="1.4"/><circle cx="17" cy="19" r="1.4"/></svg><span id="cart-count"></span><span>עגלת קניות</span></a>
+  <a href="spending.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-2-1.4-2 1.4-2-1.4-2 1.4-2-1.4L6 21z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><span>הוצאות</span></a>
+</nav>
+
+<script src="static/basket.js?v=20261007061534"></script>
+<script src="static/photo.js?v=20261007061534"></script>
+
+<script src="static/render.js?v=20261007061534"></script>
+<script src="static/category.js?v=20261007061534" data-build="20261007061534"></script>
+
+<script>
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+</script>
+</body>
+</html>

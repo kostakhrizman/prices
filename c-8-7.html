@@ -1,0 +1,5441 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f7a4d">
+<script>
+// the look this phone chose (settings.html "מראה"), before anything is drawn: html.light / html.dark
+// (none = follow the phone) and html[data-color] (none = green); the browser bar takes the colour too
+(function () {
+  let t = {};
+  try { t = JSON.parse(localStorage.getItem("theme")) || {}; } catch (e) { /* none yet */ }
+  const root = document.documentElement;
+  if (t.mode === "light" || t.mode === "dark") root.classList.add(t.mode);
+  if (t.color) root.dataset.color = t.color;
+  if (t.bar) document.querySelector('meta[name="theme-color"]').content = t.bar;
+})();
+</script>
+<title>קפה</title>
+<link rel="manifest" href="static/manifest.webmanifest">
+<link rel="icon" href="static/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="static/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="static/style.css?v=20261007061534">
+<style>.st-0 { --store: #e07000; }.st-1 { --store: #d32f2f; }.st-2 { --store: #1565c0; }.st-3 { --store: #1565c0; }.st-4 { --store: #c99a00; }</style>
+<script src="static/stores.js?v=20261007061534" data-stores="[{&#34;card_cap&#34;: 750, &#34;card_rate&#34;: 0.07, &#34;default&#34;: true, &#34;key&#34;: &#34;victory-038&#34;, &#34;name&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;ramilevy-007&#34;, &#34;name&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-026&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05ea\u05dc\u05e4\u05d9\u05d5\u05ea&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-003&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05d2\u05d1\u05e2\u05ea \u05e9\u05d0\u05d5\u05dc&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;netto-052&#34;, &#34;name&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df \u05e7\u05e8\u05d9\u05d9\u05ea \u05d9\u05e2\u05e8\u05d9\u05dd&#34;, &#34;short&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df&#34;}]"></script>
+<script src="static/avoid.js?v=20261007061534" data-kinds="[&#34;\u05e2\u05d5\u05e3 \u05de\u05e2\u05d5\u05d1\u05d3&#34;, &#34;\u05d1\u05e9\u05e8 \u05de\u05e2\u05d5\u05d1\u05d3&#34;]"></script>
+<script>
+// No long-press menu on links, pictures or text (the user: the home page's tiles opened Chrome's "open in new tab /
+// copy link" menu; CSS can't stop that on Android). Typing fields and the ⓘ sheet's barcode keep theirs.
+document.addEventListener("contextmenu", (e) => {
+  if (!e.target.closest("input, textarea, [contenteditable], .photo-barcode")) e.preventDefault();
+});
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <a class="back" href="t-8.html" aria-label="חזרה">→</a>
+    <h1>קפה</h1>
+    <a class="notes-link" href="notes.html" aria-label="רשימת קניות" title="רשימת קניות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="m8.5 10 1.2 1.2 2.3-2.4M8.5 15.5l1.2 1.2 2.3-2.4M14 10.5h2.5M14 16h2.5"/></svg><span>רשימת קניות</span></a>
+    <a class="settings-link" href="settings.html" aria-label="הגדרות" title="הגדרות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></a>
+  </div>
+  
+  <form class="search" action="search.html" method="get" role="search">
+    <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+    <input type="search" name="q" placeholder="חיפוש מוצר" enterkeyhint="search" aria-label="חיפוש מוצר">
+  </form>
+  
+</header>
+<main>
+
+<p class="sub"><span class="sub-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2h4v3l1.5 2.6V20a2 2 0 0 1-2 2h-3a2 2 0 0 1-2-2V7.6L10 5z"/><path d="M8.5 11h7v5h-7z"/></svg></span>משקאות · <span id="cat-count">191</span> מוצרים, מהזול ליקר</p>
+
+
+<div class="cat-filter">
+  <input type="search" id="cat-filter" placeholder="סינון לפי שם או יצרן · ‎-מילה מסתירה" enterkeyhint="done" autocomplete="off" aria-label="סינון המוצרים בקטגוריה">
+</div>
+<div id="cat-list" data-href="c-8-7.html">
+
+<ol class="products">
+  
+  
+    
+    
+    
+    <li class="product st-4 best">
+      <div class="info">
+        <div class="name">10 קפסולות אלומניום תואם נספרסו- רוסטרס צ&#39;ויס <button type="button" class="photo-btn" data-photo="7290019104711" data-key="7290019104711" data-name="10 קפסולות אלומניום תואם נספרסו- רוסטרס צ&#39;ויס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪7.90 <small>לק״ג</small></div>
+          <div class="shelf">₪7.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019104711" data-name="10 קפסולות אלומניום תואם נספרסו- רוסטרס צ&#39;ויס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מארז 10 קפסולות תואם נספרסו מאלומיניום - טרה וורדה <button type="button" class="photo-btn" data-photo="7290019104728" data-key="7290019104728" data-name="מארז 10 קפסולות תואם נספרסו מאלומיניום - טרה וורדה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪7.90 <small>לק״ג</small></div>
+          <div class="shelf">₪7.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019104728" data-name="מארז 10 קפסולות תואם נספרסו מאלומיניום - טרה וורדה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">משקה אייס שיבולת שועל <button type="button" class="photo-btn" data-photo="7290116934327" data-key="7290116934327" data-name="משקה אייס שיבולת שועל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-4">נטו חיסכון ₪12.00 (2 ב־₪24)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪13.90</s> ₪10.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116934327" data-name="משקה אייס שיבולת שועל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">נמס אייס קלאסי 250מל <button type="button" class="photo-btn" data-photo="7290110555337" data-key="7290110555337" data-name="נמס אייס קלאסי 250מל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מונסטרלנד לולף</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪12</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪6.50 (2 ב־₪13)</span><span class="other st-4">נטו חיסכון ₪6.67 (3 ב־₪20)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪24.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪7.90</s> ₪6.00 · 250 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110555337" data-name="נמס אייס קלאסי 250מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">נמס אייס וניל 250מל <button type="button" class="photo-btn" data-photo="7290110555344" data-key="7290110555344" data-name="נמס אייס וניל 250מל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מונסטרלנד לולף</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪12</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪6.50 (2 ב־₪13)</span><span class="other st-4">נטו חיסכון ₪6.67 (3 ב־₪20)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪24.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪7.90</s> ₪6.00 · 250 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110555344" data-name="נמס אייס וניל 250מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">קפסולות 14 למכונות נספרסו (פסח) <button type="button" class="photo-btn" data-photo="7290101551027" data-key="7290101551027" data-name="קפסולות 14 למכונות נספרסו (פסח)" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס קפה בי.וי</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪48</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪16.70</span><span class="other st-0">ויקטורי ₪17.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪26.67 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪16.90</s> ₪16.00 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290101551027" data-name="קפסולות 14 למכונות נספרסו (פסח)" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">קפסולות 20 למכונות נספרסו <button type="button" class="photo-btn" data-photo="7290110572884" data-key="7290110572884" data-name="קפסולות 20 למכונות נספרסו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס קפה בי.וי.</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪48</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪16.70</span><span class="other st-0">ויקטורי ₪17.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪26.67 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪16.90</s> ₪16.00 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110572884" data-name="קפסולות 20 למכונות נספרסו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">קפסולות אספרסו בטעם וניל עלית 50 גרם <button type="button" class="photo-btn" data-photo="7290106669857" data-key="7290106669857" data-name="קפסולות אספרסו בטעם וניל עלית 50 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪48</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪16.70</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪26.67 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪16.90</s> ₪16.00 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290106669857" data-name="קפסולות אספרסו בטעם וניל עלית 50 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מאסטר קפה לאטה פחית <button type="button" class="photo-btn" data-photo="4710068001692" data-key="4710068001692" data-name="מאסטר קפה לאטה פחית" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תאיט מרקטינג אנד דיסטריביושין סי או ,ל טי די מדיו</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪8.40</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪28.75 <small>לליטר</small></div>
+          <div class="shelf">₪6.90 · 240 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4710068001692" data-name="מאסטר קפה לאטה פחית" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מאסטר קפה טירמיסו 240 מל <button type="button" class="photo-btn" data-photo="4710068001715" data-key="4710068001715" data-name="מאסטר קפה טירמיסו 240 מל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יוני פרזינדנט אנטרפרייזס</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪8.40</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪28.75 <small>לליטר</small></div>
+          <div class="shelf">₪6.90 · 240 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4710068001715" data-name="מאסטר קפה טירמיסו 240 מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מאסטר קפה קולומביאני 240 מל <button type="button" class="photo-btn" data-photo="4710068001739" data-key="4710068001739" data-name="מאסטר קפה קולומביאני 240 מל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יוני פרזינדנט אנטרפרייזס</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪6.90</span><span class="other st-0">ויקטורי ₪8.40</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪28.75 <small>לליטר</small></div>
+          <div class="shelf">₪6.90 · 240 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4710068001739" data-name="מאסטר קפה קולומביאני 240 מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מאסטר קפה וונילה פחית 240 מל <button type="button" class="photo-btn" data-photo="4710068002798" data-key="4710068002798" data-name="מאסטר קפה וונילה פחית 240 מל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאיטה פוד אינדוסטריאל קו. אל טי די ג&#39;יאן גו 36, יו</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪8.40</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪28.75 <small>לליטר</small></div>
+          <div class="shelf">₪6.90 · 240 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4710068002798" data-name="מאסטר קפה וונילה פחית 240 מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משקה קפה קר עם שיבולת שועל <button type="button" class="photo-btn" data-photo="7290119380824" data-key="7290119380824" data-name="משקה קפה קר עם שיבולת שועל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אנסטל מילק kg</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪8.60</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪34.35 <small>לק״ג</small></div>
+          <div class="shelf">₪7.90 · 230 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119380824" data-name="משקה קפה קר עם שיבולת שועל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אייס קפה להכנה ביתית 350גר <button type="button" class="photo-btn" data-photo="7290013146724" data-key="7290013146724" data-name="אייס קפה להכנה ביתית 350גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪18.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪42.57 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 350 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013146724" data-name="אייס קפה להכנה ביתית 350גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפה טורקי 100ג שלישייה רמילוי <button type="button" class="photo-btn" data-photo="7290018711095" data-key="7290018711095" data-name="קפה טורקי 100ג שלישייה רמילוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 16.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪49.67 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪14.90 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018711095" data-name="קפה טורקי 100ג שלישייה רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מלבין קפה קומפלטה 200 גרם <button type="button" class="photo-btn" data-photo="7290004219819" data-key="7290004219819" data-name="מלבין קפה קומפלטה 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פריזלנד פודס קיוויט בי.וי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.50 <small>לק״ג</small></div>
+          <div class="shelf">₪11.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004219819" data-name="מלבין קפה קומפלטה 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מלבין קפה קומפלטה 400 גרם <button type="button" class="photo-btn" data-photo="7290004219826" data-key="7290004219826" data-name="מלבין קפה קומפלטה 400 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קומפלטה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.75 <small>לק״ג</small></div>
+          <div class="shelf">₪23.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004219826" data-name="מלבין קפה קומפלטה 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפה טורקי וואקום 1קג רמילוי <button type="button" class="photo-btn" data-photo="7290018711101" data-key="7290018711101" data-name="קפה טורקי וואקום 1קג רמילוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.90 <small>לק״ג</small></div>
+          <div class="shelf">₪59.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018711101" data-name="קפה טורקי וואקום 1קג רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">קפה טורקי וואקום מוסדי 1 קג <button type="button" class="photo-btn" data-photo="7290008751902" data-key="7290008751902" data-name="קפה טורקי וואקום מוסדי 1 קג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.90 <small>לק״ג</small></div>
+          <div class="shelf">₪59.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008751902" data-name="קפה טורקי וואקום מוסדי 1 קג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אייס קפה לייט 300 גר <button type="button" class="photo-btn" data-photo="7290013144805" data-key="7290013144805" data-name="אייס קפה לייט 300 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>א.ל ייצור ושיווק תבל</span>
+          <span class="warn">גודל לא ודאי</span>
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪60.82 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 245 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013144805" data-name="אייס קפה לייט 300 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">חלבית חדש 350 גר <button type="button" class="photo-btn" data-photo="7290110554262" data-key="7290110554262" data-name="חלבית חדש 350 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס קפה בי. וי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪22.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪62.57 <small>לק״ג</small></div>
+          <div class="shelf">₪21.90 · 350 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110554262" data-name="חלבית חדש 350 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קקאו עלית 500 גרם <button type="button" class="photo-btn" data-photo="7290100858608" data-key="7290100858608" data-name="קקאו עלית 500 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס קפה בי.וי.</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪32.90</span><span class="other st-0">ויקטורי ₪34.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪63.80 <small>לק״ג</small></div>
+          <div class="shelf">₪31.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290100858608" data-name="קקאו עלית 500 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפה טורקי טעם קקאו קינמון <button type="button" class="photo-btn" data-photo="7290119380428" data-key="7290119380428" data-name="קפה טורקי טעם קקאו קינמון" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס קפה בי.וי.</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪14.90</span><span class="other st-4">נטו חיסכון ₪14.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪69.50 <small>לק״ג</small></div>
+          <div class="shelf">₪13.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119380428" data-name="קפה טורקי טעם קקאו קינמון" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפה טורקי 200גר רמילוי <button type="button" class="photo-btn" data-photo="7290005079962" data-key="7290005079962" data-name="קפה טורקי 200גר רמילוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪69.50 <small>לק״ג</small></div>
+          <div class="shelf">₪13.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290005079962" data-name="קפה טורקי 200גר רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפה טורקי טעם קקאו וניל <button type="button" class="photo-btn" data-photo="7290119380442" data-key="7290119380442" data-name="קפה טורקי טעם קקאו וניל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס קפה בי.וי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪14.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪69.50 <small>לק״ג</small></div>
+          <div class="shelf">₪13.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119380442" data-name="קפה טורקי טעם קקאו וניל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפה קלוי אל נחלה טחון עם הל 400 גר <button type="button" class="photo-btn" data-photo="7290002771371" data-key="7290002771371" data-name="קפה קלוי אל נחלה טחון עם הל 400 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪69.75 <small>לק״ג</small></div>
+          <div class="shelf">₪27.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002771371" data-name="קפה קלוי אל נחלה טחון עם הל 400 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פולי אספרסו עוצמה 10 <button type="button" class="photo-btn" data-photo="7290110570583" data-key="7290110570583" data-name="פולי אספרסו עוצמה 10" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס</span>
+          <span class="warn">גודל לא ודאי</span>
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪69.90 <small>לק״ג</small></div>
+          <div class="shelf">₪69.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110570583" data-name="פולי אספרסו עוצמה 10" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פולי קפה לאספרסו 1 ק&#34;ג GOLD <button type="button" class="photo-btn" data-photo="7290014088290" data-key="7290014088290" data-name="פולי קפה לאספרסו 1 ק&#34;ג GOLD" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪69.90 <small>לק״ג</small></div>
+          <div class="shelf">₪69.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014088290" data-name="פולי קפה לאספרסו 1 ק&#34;ג GOLD" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפה קלוי אל נחלה טחון עם הל 200 גר <button type="button" class="photo-btn" data-photo="7290002771357" data-key="7290002771357" data-name="קפה קלוי אל נחלה טחון עם הל 200 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוגת</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.90 (מבצע)</span><span class="other st-4">נטו חיסכון ₪18.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪74.50 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002771357" data-name="קפה קלוי אל נחלה טחון עם הל 200 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפה קלוי אל נחלה טחון בלי הל 200 גר <button type="button" class="photo-btn" data-photo="7290002771364" data-key="7290002771364" data-name="קפה קלוי אל נחלה טחון בלי הל 200 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוגת</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪74.50 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002771364" data-name="קפה קלוי אל נחלה טחון בלי הל 200 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פולי אספרסו עוצמה 14  450 גר <button type="button" class="photo-btn" data-photo="7290110579784" data-key="7290110579784" data-name="פולי אספרסו עוצמה 14  450 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪33.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪75.33 <small>לק״ג</small></div>
+          <div class="shelf">₪33.90 · 450 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110579784" data-name="פולי אספרסו עוצמה 14  450 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פולי אספרסו עוצמה 10 450 גר <button type="button" class="photo-btn" data-photo="7290110578558" data-key="7290110578558" data-name="פולי אספרסו עוצמה 10 450 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪33.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪75.33 <small>לק״ג</small></div>
+          <div class="shelf">₪33.90 · 450 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110578558" data-name="פולי אספרסו עוצמה 10 450 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פולי אספרסו בלנד הבית 450 גר <button type="button" class="photo-btn" data-photo="7290110579487" data-key="7290110579487" data-name="פולי אספרסו בלנד הבית 450 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪33.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪75.33 <small>לק״ג</small></div>
+          <div class="shelf">₪33.90 · 450 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110579487" data-name="פולי אספרסו בלנד הבית 450 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפה טורקי עלית 3*125 <button type="button" class="photo-btn" data-photo="7290110579852" data-key="7290110579852" data-name="קפה טורקי עלית 3*125" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪77.07 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪31.90</s> ₪28.90 · 375 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110579852" data-name="קפה טורקי עלית 3*125" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפה טורקי עלית 3 * 125 גרם <button type="button" class="photo-btn" data-photo="7290106525375" data-key="7290106525375" data-name="קפה טורקי עלית 3 * 125 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>עלית</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪77.07 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪31.90</s> ₪28.90 · 375 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290106525375" data-name="קפה טורקי עלית 3 * 125 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפה ערבי עלית 250 גר <button type="button" class="photo-btn" data-photo="7290119383764" data-key="7290119383764" data-name="קפה ערבי עלית 250 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪79.20 <small>לק״ג</small></div>
+          <div class="shelf">₪19.80 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119383764" data-name="קפה ערבי עלית 250 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפה נחלה עם הל 1קג <button type="button" class="photo-btn" data-photo="7290003332021" data-key="7290003332021" data-name="קפה נחלה עם הל 1קג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪79.90 <small>לק״ג</small></div>
+          <div class="shelf">₪79.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003332021" data-name="קפה נחלה עם הל 1קג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לרו תחליף קפה טבעי <button type="button" class="photo-btn" data-photo="3067140013113" data-key="3067140013113" data-name="לרו תחליף קפה טבעי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪80.81 <small>לק״ג</small></div>
+          <div class="shelf">₪29.90 · 370 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="3067140013113" data-name="לרו תחליף קפה טבעי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קפה טורקי עלית (200  גרם)15% תוספת <button type="button" class="photo-btn" data-photo="7290119374106" data-key="7290119374106" data-name="קפה טורקי עלית (200  גרם)15% תוספת" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס קפה בי.וי</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-4">נטו חיסכון ₪18.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪82.17 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪18.90 · 230 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119374106" data-name="קפה טורקי עלית (200  גרם)15% תוספת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מארז שלישיות טורקי עלית 85 גרם <button type="button" class="photo-btn" data-photo="7290104721762" data-key="7290104721762" data-name="מארז שלישיות טורקי עלית 85 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס קפה בי.וי.</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪42</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-0">ויקטורי ₪25.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪82.35 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪22.90</s> ₪21.00 · 255 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290104721762" data-name="מארז שלישיות טורקי עלית 85 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפה נמס 200 גרם רמי לוי <button type="button" class="photo-btn" data-photo="7290015543644" data-key="7290015543644" data-name="קפה נמס 200 גרם רמי לוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 30.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪84.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.80</s> ₪16.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015543644" data-name="קפה נמס 200 גרם רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפה טורקי אלאדין 200 <button type="button" class="photo-btn" data-photo="7290000176093" data-key="7290000176093" data-name="קפה טורקי אלאדין 200" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>עלית</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪84.50 <small>לק״ג</small></div>
+          <div class="shelf">₪16.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000176093" data-name="קפה טורקי אלאדין 200" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפה טורקי 125 גר עלית <button type="button" class="photo-btn" data-photo="7290106525382" data-key="7290106525382" data-name="קפה טורקי 125 גר עלית" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>עלית</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪87.20 <small>לק״ג</small></div>
+          <div class="shelf">₪10.90 · 125 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290106525382" data-name="קפה טורקי 125 גר עלית" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפה ערבי עם הל 250גרם <button type="button" class="photo-btn" data-photo="7290014088719" data-key="7290014088719" data-name="קפה ערבי עם הל 250גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪87.60 <small>לק״ג</small></div>
+          <div class="shelf">₪21.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014088719" data-name="קפה ערבי עם הל 250גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפה נחלה 250 ג עם הל <button type="button" class="photo-btn" data-photo="7290003332007" data-key="7290003332007" data-name="קפה נחלה 250 ג עם הל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪87.60 <small>לק״ג</small></div>
+          <div class="shelf">₪21.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003332007" data-name="קפה נחלה 250 ג עם הל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפה נחלה 250 ג <button type="button" class="photo-btn" data-photo="7290003332045" data-key="7290003332045" data-name="קפה נחלה 250 ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪87.60 <small>לק״ג</small></div>
+          <div class="shelf">₪21.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003332045" data-name="קפה נחלה 250 ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפה נמס מגורען רד מאג 200 גרם <button type="button" class="photo-btn" data-photo="7290000061764" data-key="7290000061764" data-name="קפה נמס מגורען רד מאג 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נסטלה ספרד</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪23.90</span><span class="other st-0">ויקטורי ₪27.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪89.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪17.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000061764" data-name="קפה נמס מגורען רד מאג 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">קפה טורקי וואקום עלית 1קג <button type="button" class="photo-btn" data-photo="7290000176116" data-key="7290000176116" data-name="קפה טורקי וואקום עלית 1קג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪89.90 <small>לק״ג</small></div>
+          <div class="shelf">₪89.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000176116" data-name="קפה טורקי וואקום עלית 1קג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קפה שחור קלוי וטחון 100 גרם עם הל טורקי <button type="button" class="photo-btn" data-photo="7290002771388" data-key="7290002771388" data-name="קפה שחור קלוי וטחון 100 גרם עם הל טורקי" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪90.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪9.00 · 100 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002771388" data-name="קפה שחור קלוי וטחון 100 גרם עם הל טורקי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קפה שחור ללא הל אל נחלה 100 גר סוגת <button type="button" class="photo-btn" data-photo="7290002771395" data-key="7290002771395" data-name="קפה שחור ללא הל אל נחלה 100 גר סוגת" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪90.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪9.00 · 100 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002771395" data-name="קפה שחור ללא הל אל נחלה 100 גר סוגת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קקאו עלית 150 גרם <button type="button" class="photo-btn" data-photo="7290100858592" data-key="7290100858592" data-name="קקאו עלית 150 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס קפה בי.וי.</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪14.50</span><span class="other st-0">ויקטורי ₪14.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪92.67 <small>לק״ג</small></div>
+          <div class="shelf">₪13.90 · 150 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290100858592" data-name="קקאו עלית 150 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קפה עלית טורקי 200 גרם <button type="button" class="photo-btn" data-photo="7290005201882" data-key="7290005201882" data-name="קפה עלית טורקי 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס קפה בי.וי.</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-4">נטו חיסכון ₪18.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪94.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪18.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290005201882" data-name="קפה עלית טורקי 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מארז קפה טורקי לדרך 168 גר <button type="button" class="photo-btn" data-photo="7290107953559" data-key="7290107953559" data-name="מארז קפה טורקי לדרך 168 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס קפה בי.וי.</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪16.90 (מבצע)</span><span class="other st-4">נטו חיסכון ₪21.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪94.64 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪16.90</s> ₪15.90 · 168 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290107953559" data-name="מארז קפה טורקי לדרך 168 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפה טורקי עם הל 100 גרם <button type="button" class="photo-btn" data-photo="7290000176079" data-key="7290000176079" data-name="קפה טורקי עם הל 100 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס קפה בי.וי.</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪9.90</span><span class="other st-0">ויקטורי ₪11.30</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪97.00 <small>לק״ג</small></div>
+          <div class="shelf">₪9.70 · 100 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000176079" data-name="קפה טורקי עם הל 100 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מארז טורקי לדרך עם הל 168 גר <button type="button" class="photo-btn" data-photo="7290110565572" data-key="7290110565572" data-name="מארז טורקי לדרך עם הל 168 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪16.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪100.60 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪20.90</s> ₪16.90 · 168 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110565572" data-name="מארז טורקי לדרך עם הל 168 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפה מוקה לפילטר מוקה מספר 1 עלית 500 גרם <button type="button" class="photo-btn" data-photo="7290000176147" data-key="7290000176147" data-name="קפה מוקה לפילטר מוקה מספר 1 עלית 500 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>עלית</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪101.00 <small>לק״ג</small></div>
+          <div class="shelf">₪50.50 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000176147" data-name="קפה מוקה לפילטר מוקה מספר 1 עלית 500 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">נמס קפה קר קלאסי עלית 200 גרם <button type="button" class="photo-btn" data-photo="7290119380992" data-key="7290119380992" data-name="נמס קפה קר קלאסי עלית 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מוקטה אס.פי.</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪22.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪104.50 <small>לק״ג</small></div>
+          <div class="shelf">₪20.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119380992" data-name="נמס קפה קר קלאסי עלית 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפוצ&#39;ינו בטעם אגוזי לוז <button type="button" class="photo-btn" data-photo="7290119382736" data-key="7290119382736" data-name="קפוצ&#39;ינו בטעם אגוזי לוז" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מוקטה אס.פי.</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪22.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪104.50 <small>לק״ג</small></div>
+          <div class="shelf">₪20.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119382736" data-name="קפוצ&#39;ינו בטעם אגוזי לוז" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפוצ&#39;ינו פחית בטעם קלאסי 200 גרם <button type="button" class="photo-btn" data-photo="7290110555795" data-key="7290110555795" data-name="קפוצ&#39;ינו פחית בטעם קלאסי 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪104.50 <small>לק״ג</small></div>
+          <div class="shelf">₪20.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110555795" data-name="קפוצ&#39;ינו פחית בטעם קלאסי 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">קפסולות אספרסו בטעם אגוזי לוז עלית50 גרם <button type="button" class="photo-btn" data-photo="7290107956901" data-key="7290107956901" data-name="קפסולות אספרסו בטעם אגוזי לוז עלית50 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס קפה בי.וי.</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪48</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪16.70</span><span class="other st-0">ויקטורי ₪17.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪106.67 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪16.90</s> ₪16.00 · 150 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290107956901" data-name="קפסולות אספרסו בטעם אגוזי לוז עלית50 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">לנדוור מקורי קפה טחון טורקי 100 גרם <button type="button" class="photo-btn" data-photo="7290000419107" data-key="7290000419107" data-name="לנדוור מקורי קפה טחון טורקי 100 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קפה לנדוור בע&#39;&#39;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-0">ויקטורי ₪11.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪109.00 <small>לק״ג</small></div>
+          <div class="shelf">₪10.90 · 100 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000419107" data-name="לנדוור מקורי קפה טחון טורקי 100 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">לנדוור לבוקר קפה טחון טורקי 100 גרם <button type="button" class="photo-btn" data-photo="7290000419893" data-key="7290000419893" data-name="לנדוור לבוקר קפה טחון טורקי 100 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קפה לנדוור בע&#39;&#39;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-0">ויקטורי ₪11.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪109.00 <small>לק״ג</small></div>
+          <div class="shelf">₪10.90 · 100 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000419893" data-name="לנדוור לבוקר קפה טחון טורקי 100 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">לנדוור חזק קפה טחון טורקי 100 גרם <button type="button" class="photo-btn" data-photo="7290000419909" data-key="7290000419909" data-name="לנדוור חזק קפה טחון טורקי 100 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קפה לנדוור בע&#39;&#39;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-0">ויקטורי ₪11.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪109.00 <small>לק״ג</small></div>
+          <div class="shelf">₪10.90 · 100 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000419909" data-name="לנדוור חזק קפה טחון טורקי 100 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קפה נמס 200 גרם +תוספת (פסח) <button type="button" class="photo-btn" data-photo="7290119382552" data-key="7290119382552" data-name="קפה נמס 200 גרם +תוספת (פסח)" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס קפה בי.וי.</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-4">נטו חיסכון ₪25.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪112.61 <small>לק״ג</small></div>
+          <div class="shelf">₪25.90 · 230 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119382552" data-name="קפה נמס 200 גרם +תוספת (פסח)" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">נמס קפה קר בטעם פסק זמן <button type="button" class="photo-btn" data-photo="7290119380466" data-key="7290119380466" data-name="נמס קפה קר בטעם פסק זמן" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מוקטה אס.פי.</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪114.50 <small>לק״ג</small></div>
+          <div class="shelf">₪22.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119380466" data-name="נמס קפה קר בטעם פסק זמן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">נמס קפה קר בטעם כיף כף <button type="button" class="photo-btn" data-photo="7290119380473" data-key="7290119380473" data-name="נמס קפה קר בטעם כיף כף" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מוקטה אס.פי.</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪114.50 <small>לק״ג</small></div>
+          <div class="shelf">₪22.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119380473" data-name="נמס קפה קר בטעם כיף כף" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מליטה קפה PREMIUMלפי <button type="button" class="photo-btn" data-photo="4002720005736" data-key="4002720005736" data-name="מליטה קפה PREMIUMלפי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>Melitta Kaffee GmbH</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪115.60 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪30.90</s> ₪28.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4002720005736" data-name="מליטה קפה PREMIUMלפי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לוואצה מטינו קלוי וטחון 250גרם <button type="button" class="photo-btn" data-photo="8000070032835" data-key="8000070032835" data-name="לוואצה מטינו קלוי וטחון 250גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>לוואצה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪118.80 <small>לק״ג</small></div>
+          <div class="shelf">₪29.70 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8000070032835" data-name="לוואצה מטינו קלוי וטחון 250גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפה נמס עלית 200 גרם <button type="button" class="photo-btn" data-photo="7290000176420" data-key="7290000176420" data-name="קפה נמס עלית 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס קפה בי.וי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪25.90</span><span class="other st-4">נטו חיסכון ₪25.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪124.50 <small>לק״ג</small></div>
+          <div class="shelf">₪24.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000176420" data-name="קפה נמס עלית 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפה מגורען גולד באריסטה 200 גרם רמי לוי <button type="button" class="photo-btn" data-photo="7290119672134" data-key="7290119672134" data-name="קפה מגורען גולד באריסטה 200 גרם רמי לוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪124.50 <small>לק״ג</small></div>
+          <div class="shelf">₪24.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119672134" data-name="קפה מגורען גולד באריסטה 200 גרם רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עלית קפה טורקי נטול קופאין 200 גרם <button type="button" class="photo-btn" data-photo="7290119377145" data-key="7290119377145" data-name="עלית קפה טורקי נטול קופאין 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪24.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪124.50 <small>לק״ג</small></div>
+          <div class="shelf">₪24.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119377145" data-name="עלית קפה טורקי נטול קופאין 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפה מגורען גולד סלקשן 200 גרם רמי לוי <button type="button" class="photo-btn" data-photo="7290119672127" data-key="7290119672127" data-name="קפה מגורען גולד סלקשן 200 גרם רמי לוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪124.50 <small>לק״ג</small></div>
+          <div class="shelf">₪24.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119672127" data-name="קפה מגורען גולד סלקשן 200 גרם רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">ג&#39;ייקובס קרונונג קפה נמס מיובש בהקפאה ריפיל סיגנט <button type="button" class="photo-btn" data-photo="4607001774549" data-key="4607001774549" data-name="ג&#39;ייקובס קרונונג קפה נמס מיובש בהקפאה ריפיל סיגנט" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪127.22 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪26.90</s> ₪22.90 · 180 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4607001774549" data-name="ג&#39;ייקובס קרונונג קפה נמס מיובש בהקפאה ריפיל סיגנט" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לוואצה קרמה גוסטו פולי קפה1000גרם <button type="button" class="photo-btn" data-photo="8000070038974" data-key="8000070038974" data-name="לוואצה קרמה גוסטו פולי קפה1000גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪129.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪145.00</s> ₪129.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8000070038974" data-name="לוואצה קרמה גוסטו פולי קפה1000גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לוואצה קרמה גוסטו קלוי וטחון 250גרם <button type="button" class="photo-btn" data-photo="8000070038868" data-key="8000070038868" data-name="לוואצה קרמה גוסטו קלוי וטחון 250גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>לוואצה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪131.60 <small>לק״ג</small></div>
+          <div class="shelf">₪32.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8000070038868" data-name="לוואצה קרמה גוסטו קלוי וטחון 250גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">טורקי גוואטמלה <button type="button" class="photo-btn" data-photo="7290119387380" data-key="7290119387380" data-name="טורקי גוואטמלה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪133.04 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 112 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119387380" data-name="טורקי גוואטמלה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סטארבקס פולי קפה בלונד אספרסו 450גר <button type="button" class="photo-btn" data-photo="7613037204797" data-key="7613037204797" data-name="סטארבקס פולי קפה בלונד אספרסו 450גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נסטלה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪59.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪133.11 <small>לק״ג</small></div>
+          <div class="shelf">₪59.90 · 450 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7613037204797" data-name="סטארבקס פולי קפה בלונד אספרסו 450גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לוואצה רוסה קלוי וטחון 250גרם <button type="button" class="photo-btn" data-photo="8000070035980" data-key="8000070035980" data-name="לוואצה רוסה קלוי וטחון 250גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>לוואצה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪135.60 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪35.90</s> ₪33.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8000070035980" data-name="לוואצה רוסה קלוי וטחון 250גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפה נמס וניל עלית 200 גרם <button type="button" class="photo-btn" data-photo="7290102032334" data-key="7290102032334" data-name="קפה נמס וניל עלית 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס קפה בי.וי.</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪28.90</span><span class="other st-4">נטו חיסכון ₪28.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪139.00 <small>לק״ג</small></div>
+          <div class="shelf">₪27.80 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290102032334" data-name="קפה נמס וניל עלית 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפה נמס אגוזים עלית 200 גרם <button type="button" class="photo-btn" data-photo="7290119380459" data-key="7290119380459" data-name="קפה נמס אגוזים עלית 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪28.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪139.00 <small>לק״ג</small></div>
+          <div class="shelf">₪27.80 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119380459" data-name="קפה נמס אגוזים עלית 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפה נמס בטעם מוקה 200 גרם <button type="button" class="photo-btn" data-photo="7290104065187" data-key="7290104065187" data-name="קפה נמס בטעם מוקה 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>עלית</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪28.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪139.00 <small>לק״ג</small></div>
+          <div class="shelf">₪27.80 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290104065187" data-name="קפה נמס בטעם מוקה 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לוואצהקרמה קלסיקו פולי קפה 500גרם <button type="button" class="photo-btn" data-photo="8000070027398" data-key="8000070027398" data-name="לוואצהקרמה קלסיקו פולי קפה 500גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪139.00 <small>לק״ג</small></div>
+          <div class="shelf">₪69.50 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8000070027398" data-name="לוואצהקרמה קלסיקו פולי קפה 500גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לוואצה פולי קפה רוסה 500 גרם <button type="button" class="photo-btn" data-photo="8000070036321" data-key="8000070036321" data-name="לוואצה פולי קפה רוסה 500 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪139.80 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪79.90</s> ₪69.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8000070036321" data-name="לוואצה פולי קפה רוסה 500 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפה נמס ג&#39;קובס מיובש <button type="button" class="photo-btn" data-photo="8714599513781" data-key="8714599513781" data-name="קפה נמס ג&#39;קובס מיובש" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מונדלייז</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪144.50 <small>לק״ג</small></div>
+          <div class="shelf">₪28.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8714599513781" data-name="קפה נמס ג&#39;קובס מיובש" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ג&#39;ייקובס קרונונג קפה נמס צנ&#39; 200ג <button type="button" class="photo-btn" data-photo="8714599513866" data-key="8714599513866" data-name="ג&#39;ייקובס קרונונג קפה נמס צנ&#39; 200ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪29.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪144.50 <small>לק״ג</small></div>
+          <div class="shelf">₪28.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8714599513866" data-name="ג&#39;ייקובס קרונונג קפה נמס צנ&#39; 200ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפסולות קפה Tradizio <button type="button" class="photo-btn" data-photo="7290119672103" data-key="7290119672103" data-name="קפסולות קפה Tradizio" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪16</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪145.45 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.00</s> ₪8.00 · 55 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119672103" data-name="קפסולות קפה Tradizio" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפסולות קפה COLOMBIA <button type="button" class="photo-btn" data-photo="7290119672110" data-key="7290119672110" data-name="קפסולות קפה COLOMBIA" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪16</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪145.45 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.00</s> ₪8.00 · 55 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119672110" data-name="קפסולות קפה COLOMBIA" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפסולות קפה BRAZIL ר <button type="button" class="photo-btn" data-photo="7290119672172" data-key="7290119672172" data-name="קפסולות קפה BRAZIL ר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪16</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪145.45 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.00</s> ₪8.00 · 55 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119672172" data-name="קפסולות קפה BRAZIL ר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפסולות קפה Vivace ר <button type="button" class="photo-btn" data-photo="7290119672189" data-key="7290119672189" data-name="קפסולות קפה Vivace ר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪16</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪145.45 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.00</s> ₪8.00 · 55 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119672189" data-name="קפסולות קפה Vivace ר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפסולות קפה Oro רמילוי 55 גרם <button type="button" class="photo-btn" data-photo="7290119672196" data-key="7290119672196" data-name="קפסולות קפה Oro רמילוי 55 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪16</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪145.45 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.00</s> ₪8.00 · 55 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119672196" data-name="קפסולות קפה Oro רמילוי 55 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">סוויטאנגו אייס קפה 250 <button type="button" class="photo-btn" data-photo="7290018249901" data-key="7290018249901" data-name="סוויטאנגו אייס קפה 250" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>דרך לחיות בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪37.30</span><span class="other st-0">ויקטורי ₪41.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪147.60 <small>לק״ג</small></div>
+          <div class="shelf">₪36.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018249901" data-name="סוויטאנגו אייס קפה 250" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפה פליטנום ברזילאי 200 גרם <button type="button" class="photo-btn" data-photo="7290103401429" data-key="7290103401429" data-name="קפה פליטנום ברזילאי 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס קפה בי.וי.</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪32.90</span><span class="other st-4">נטו חיסכון ₪32.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪149.50 <small>לק״ג</small></div>
+          <div class="shelf">₪29.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290103401429" data-name="קפה פליטנום ברזילאי 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פלטינום קלאסיק 200 גרם עלית <button type="button" class="photo-btn" data-photo="7290112344786" data-key="7290112344786" data-name="פלטינום קלאסיק 200 גרם עלית" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס קפה בי.וי.</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪32.90</span><span class="other st-4">נטו חיסכון ₪32.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪149.50 <small>לק״ג</small></div>
+          <div class="shelf">₪29.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112344786" data-name="פלטינום קלאסיק 200 גרם עלית" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפה פלטניום חזק 200 ג <button type="button" class="photo-btn" data-photo="7290110579302" data-key="7290110579302" data-name="קפה פלטניום חזק 200 ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪32.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪149.50 <small>לק״ג</small></div>
+          <div class="shelf">₪29.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110579302" data-name="קפה פלטניום חזק 200 ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פלטינום נטול בד&#34;צ 20 <button type="button" class="photo-btn" data-photo="7290119372607" data-key="7290119372607" data-name="פלטינום נטול בד&#34;צ 20" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪149.50 <small>לק״ג</small></div>
+          <div class="shelf">₪29.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119372607" data-name="פלטינום נטול בד&#34;צ 20" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפה נמס ג&#39;קובס מיובש <button type="button" class="photo-btn" data-photo="4607001774556" data-key="4607001774556" data-name="קפה נמס ג&#39;קובס מיובש" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪152.11 <small>לק״ג</small></div>
+          <div class="shelf">₪28.90 · 190 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4607001774556" data-name="קפה נמס ג&#39;קובס מיובש" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קפה נמס ג`ייקובס מיובש 190 גר` <button type="button" class="photo-btn" data-photo="8711000578483" data-key="8711000578483" data-name="קפה נמס ג`ייקובס מיובש 190 גר`" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>גייקובס</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪157.37 <small>לק״ג</small></div>
+          <div class="shelf">₪29.90 · 190 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8711000578483" data-name="קפה נמס ג`ייקובס מיובש 190 גר`" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפה נמס ג&#39;ייקובס 190 גרם <button type="button" class="photo-btn" data-photo="8711000601587" data-key="8711000601587" data-name="קפה נמס ג&#39;ייקובס 190 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪33.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪157.37 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪31.90</s> ₪29.90 · 190 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8711000601587" data-name="קפה נמס ג&#39;ייקובס 190 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">ג&#39;ייקובס קפה נמס אינטנס 190 גרם <button type="button" class="photo-btn" data-photo="4607001779698" data-key="4607001779698" data-name="ג&#39;ייקובס קפה נמס אינטנס 190 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪157.37 <small>לק״ג</small></div>
+          <div class="shelf">₪29.90 · 190 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4607001779698" data-name="ג&#39;ייקובס קפה נמס אינטנס 190 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">קפסולות תואם נספרסו אספרסו מור קלאסיקו, 10 יחידות <button type="button" class="photo-btn" data-photo="7290019104230" data-key="7290019104230" data-name="קפסולות תואם נספרסו אספרסו מור קלאסיקו, 10 יחידות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אספרסו מור</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪158.00 <small>לק״ג</small></div>
+          <div class="shelf">₪7.90 · 50 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019104230" data-name="קפסולות תואם נספרסו אספרסו מור קלאסיקו, 10 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לוואצה אורו קלוי וטחון 250גרם <button type="button" class="photo-btn" data-photo="8000070012783" data-key="8000070012783" data-name="לוואצה אורו קלוי וטחון 250גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>לוואצה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪163.60 <small>לק״ג</small></div>
+          <div class="shelf">₪40.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8000070012783" data-name="לוואצה אורו קלוי וטחון 250גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לוואצה אורו שחור קלוי וטחון 250 גרם <button type="button" class="photo-btn" data-photo="8000070029996" data-key="8000070029996" data-name="לוואצה אורו שחור קלוי וטחון 250 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪163.60 <small>לק״ג</small></div>
+          <div class="shelf">₪40.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8000070029996" data-name="לוואצה אורו שחור קלוי וטחון 250 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">נסקפה קפוצ&#39;ינו קלאסי 12 10*12.5ג <button type="button" class="photo-btn" data-photo="8801055709472" data-key="8801055709472" data-name="נסקפה קפוצ&#39;ינו קלאסי 12 10*12.5ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>לוטה נסטלה קוריאה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪22.90</span><span class="other st-4">נטו חיסכון ₪22.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪175.20 <small>לק״ג</small></div>
+          <div class="shelf">₪21.90 · 125 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8801055709472" data-name="נסקפה קפוצ&#39;ינו קלאסי 12 10*12.5ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קפה נמס מיובש טסטרס צ&#39;ויס 200 גרם <button type="button" class="photo-btn" data-photo="7290000072753" data-key="7290000072753" data-name="קפה נמס מיובש טסטרס צ&#39;ויס 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נסטלה צרפת</span>
+          
+        </div>
+        
+        <div class="club">מחיר מועדון ויקטורי: ₪29.90</div>
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪35.90</span><span class="other st-4">נטו חיסכון ₪36.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪179.50 <small>לק״ג</small></div>
+          <div class="shelf">₪35.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000072753" data-name="קפה נמס מיובש טסטרס צ&#39;ויס 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">נסקפה טייסטרס צ&#39;ויס מארז קיץ + כוס לקפה קר <button type="button" class="photo-btn" data-photo="7290118428596" data-key="7290118428596" data-name="נסקפה טייסטרס צ&#39;ויס מארז קיץ + כוס לקפה קר" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נסטלה צרפת</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪179.50 <small>לק״ג</small></div>
+          <div class="shelf">₪35.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118428596" data-name="נסקפה טייסטרס צ&#39;ויס מארז קיץ + כוס לקפה קר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">האג קפה נמס נטול קפאין עלית 200 גרם <button type="button" class="photo-btn" data-photo="7290000176475" data-key="7290000176475" data-name="האג קפה נמס נטול קפאין עלית 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס קפה בי.וי.</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪39.90</span><span class="other st-4">נטו חיסכון ₪40.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪184.50 <small>לק״ג</small></div>
+          <div class="shelf">₪36.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000176475" data-name="האג קפה נמס נטול קפאין עלית 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">תערובת נסקפה קפוצ&#39;ינו בטעם וניל <button type="button" class="photo-btn" data-photo="8445291513365" data-key="8445291513365" data-name="תערובת נסקפה קפוצ&#39;ינו בטעם וניל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נסטלה אנגליה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪19.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪189.00 <small>לק״ג</small></div>
+          <div class="shelf">₪18.90 · 100 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8445291513365" data-name="תערובת נסקפה קפוצ&#39;ינו בטעם וניל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">נסקפה קפוצ&#39;ינו קלאסי 100 גרם <button type="button" class="photo-btn" data-photo="8445291582330" data-key="8445291582330" data-name="נסקפה קפוצ&#39;ינו קלאסי 100 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נסטלה אנגליה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪19.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪189.00 <small>לק״ג</small></div>
+          <div class="shelf">₪18.90 · 100 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8445291582330" data-name="נסקפה קפוצ&#39;ינו קלאסי 100 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">נסקפה קפוצ&#39;ינו טעם קרמל 136 גרם <button type="button" class="photo-btn" data-photo="8445292354769" data-key="8445292354769" data-name="נסקפה קפוצ&#39;ינו טעם קרמל 136 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נסטלה אנגליה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪19.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪189.00 <small>לק״ג</small></div>
+          <div class="shelf">₪18.90 · 100 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8445292354769" data-name="נסקפה קפוצ&#39;ינו טעם קרמל 136 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">קפסולות ג&#39;ייקובס קפה אספרסו קלאסיקו <button type="button" class="photo-btn" data-photo="8711000371176" data-key="8711000371176" data-name="קפסולות ג&#39;ייקובס קפה אספרסו קלאסיקו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">5 ב־₪50</span> בקניית 5 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪13.33 (3 ב־₪40)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪192.31 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪17.90</s> ₪10.00 · 52 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8711000371176" data-name="קפסולות ג&#39;ייקובס קפה אספרסו קלאסיקו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">קפסולות ג&#39;ייקובס קפה אספרסו אינטנסו <button type="button" class="photo-btn" data-photo="8711000371183" data-key="8711000371183" data-name="קפסולות ג&#39;ייקובס קפה אספרסו אינטנסו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">5 ב־₪50</span> בקניית 5 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪13.33 (3 ב־₪40)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪192.31 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪17.90</s> ₪10.00 · 52 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8711000371183" data-name="קפסולות ג&#39;ייקובס קפה אספרסו אינטנסו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">קפסולות ג&#39;ייקובס קפה אספרסו ריסטרטו <button type="button" class="photo-btn" data-photo="8711000371206" data-key="8711000371206" data-name="קפסולות ג&#39;ייקובס קפה אספרסו ריסטרטו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">5 ב־₪50</span> בקניית 5 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪13.33 (3 ב־₪40)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪192.31 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪17.90</s> ₪10.00 · 52 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8711000371206" data-name="קפסולות ג&#39;ייקובס קפה אספרסו ריסטרטו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפה נמס מיובש נטול קפאין טסטר&#39;ס צ&#39;ויס 200 גרם <button type="button" class="photo-btn" data-photo="7290000072777" data-key="7290000072777" data-name="קפה נמס מיובש נטול קפאין טסטר&#39;ס צ&#39;ויס 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נסטלה צרפת</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪40.90</span><span class="other st-4">נטו חיסכון ₪42.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪199.00 <small>לק״ג</small></div>
+          <div class="shelf">₪39.80 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000072777" data-name="קפה נמס מיובש נטול קפאין טסטר&#39;ס צ&#39;ויס 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קפה נמס מגורען טסטר צויס בריסטה 200 גר <button type="button" class="photo-btn" data-photo="8801055724284" data-key="8801055724284" data-name="קפה נמס מגורען טסטר צויס בריסטה 200 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נסטלה צרפת</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪39.80</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪199.00 <small>לק״ג</small></div>
+          <div class="shelf">₪39.80 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8801055724284" data-name="קפה נמס מגורען טסטר צויס בריסטה 200 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">נסקפה אייס 112גר <button type="button" class="photo-btn" data-photo="8445291509207" data-key="8445291509207" data-name="נסקפה אייס 112גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נסטלה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪204.46 <small>לק״ג</small></div>
+          <div class="shelf">₪22.90 · 112 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8445291509207" data-name="נסקפה אייס 112גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפה נמס עלית 50 גרם (פסח) <button type="button" class="photo-btn" data-photo="7290000176413" data-key="7290000176413" data-name="קפה נמס עלית 50 גרם (פסח)" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס קפה בי.וי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪11.90</span><span class="other st-0">ויקטורי ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪238.00 <small>לק״ג</small></div>
+          <div class="shelf">₪11.90 · 50 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000176413" data-name="קפה נמס עלית 50 גרם (פסח)" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפה נמס מנות אישיות <button type="button" class="photo-btn" data-photo="7290119373611" data-key="7290119373611" data-name="קפה נמס מנות אישיות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס קפה בי.וי.</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪13.90</span><span class="other st-4">נטו חיסכון ₪14.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪238.00 <small>לק״ג</small></div>
+          <div class="shelf">₪11.90 · 50 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119373611" data-name="קפה נמס מנות אישיות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפה נמס נסקפה גולד בתוספת קפה קלוי וטחון <button type="button" class="photo-btn" data-photo="7613036314114" data-key="7613036314114" data-name="קפה נמס נסקפה גולד בתוספת קפה קלוי וטחון" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נסטלה אנגליה, טטבורי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪49.00</span><span class="other st-0">ויקטורי ₪49.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪244.50 <small>לק״ג</small></div>
+          <div class="shelf">₪48.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7613036314114" data-name="קפה נמס נסקפה גולד בתוספת קפה קלוי וטחון" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפה נמס מגורען טסטר <button type="button" class="photo-btn" data-photo="7290000072760" data-key="7290000072760" data-name="קפה נמס מגורען טסטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסם</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪249.00 <small>לק״ג</small></div>
+          <div class="shelf">₪24.90 · 100 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000072760" data-name="קפה נמס מגורען טסטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">רביעיית קפסולות 14 עלית 40 יח <button type="button" class="photo-btn" data-photo="7290110577735" data-key="7290110577735" data-name="רביעיית קפסולות 14 עלית 40 יח" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪51.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪249.50 <small>לק״ג</small></div>
+          <div class="shelf">₪49.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110577735" data-name="רביעיית קפסולות 14 עלית 40 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפסולות סטארבקס קולומביה 57גר <button type="button" class="photo-btn" data-photo="7613036984379" data-key="7613036984379" data-name="קפסולות סטארבקס קולומביה 57גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נסטלה נספרסו</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪16.67 (3 ב־₪50)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪263.16 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪22.90</s> ₪15.00 · 57 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7613036984379" data-name="קפסולות סטארבקס קולומביה 57גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפסולות סטארבקס ורונה 57 גרם <button type="button" class="photo-btn" data-photo="7613036984430" data-key="7613036984430" data-name="קפסולות סטארבקס ורונה 57 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נסטלה נספרסו</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪16.67 (3 ב־₪50)</span><span class="other st-4">נטו חיסכון ₪16.67 (3 ב־₪50)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪263.16 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪22.90</s> ₪15.00 · 57 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7613036984430" data-name="קפסולות סטארבקס ורונה 57 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפסולות סטארבקס איטליאן סטייל רוסט 57 גרם <button type="button" class="photo-btn" data-photo="7613287302151" data-key="7613287302151" data-name="קפסולות סטארבקס איטליאן סטייל רוסט 57 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נסטלה נספרסו</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪16.67 (3 ב־₪50)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪263.16 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪22.90</s> ₪15.00 · 57 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7613287302151" data-name="קפסולות סטארבקס איטליאן סטייל רוסט 57 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סטארבקס קפסולות בטעם וניל 12*51ג <button type="button" class="photo-btn" data-photo="8445290156136" data-key="8445290156136" data-name="סטארבקס קפסולות בטעם וניל 12*51ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נסטלה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪16.67 (3 ב־₪50)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪263.16 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪22.90</s> ₪15.00 · 57 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8445290156136" data-name="סטארבקס קפסולות בטעם וניל 12*51ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפסולות סטארבקס האוס בלנד 57גר <button type="button" class="photo-btn" data-photo="8445291363687" data-key="8445291363687" data-name="קפסולות סטארבקס האוס בלנד 57גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נסטלה נספרסו</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪16.67 (3 ב־₪50)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪263.16 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪22.90</s> ₪15.00 · 57 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8445291363687" data-name="קפסולות סטארבקס האוס בלנד 57גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפסולות סטארבקס אספרסו 57גר <button type="button" class="photo-btn" data-photo="8445291367425" data-key="8445291367425" data-name="קפסולות סטארבקס אספרסו 57גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נסטלה נספרסו</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪16.67 (3 ב־₪50)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪263.16 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪22.90</s> ₪15.00 · 57 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8445291367425" data-name="קפסולות סטארבקס אספרסו 57גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפסולות סטארבקס אספרסו נטול 57גר <button type="button" class="photo-btn" data-photo="8445291563667" data-key="8445291563667" data-name="קפסולות סטארבקס אספרסו נטול 57גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נסטלה נספרסו</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪16.67 (3 ב־₪50)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪263.16 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪22.90</s> ₪15.00 · 57 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8445291563667" data-name="קפסולות סטארבקס אספרסו נטול 57גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפסולות סטארבקס קרמל 57 גרם <button type="button" class="photo-btn" data-photo="8445290154552" data-key="8445290154552" data-name="קפסולות סטארבקס קרמל 57 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נסטלה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪263.16 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪22.90</s> ₪15.00 · 57 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8445290154552" data-name="קפסולות סטארבקס קרמל 57 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גייקובס קפה נמס נטול <button type="button" class="photo-btn" data-photo="8711000535806" data-key="8711000535806" data-name="גייקובס קפה נמס נטול" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪268.00 <small>לק״ג</small></div>
+          <div class="shelf">₪26.80 · 100 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8711000535806" data-name="גייקובס קפה נמס נטול" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לוואצה דליסיוזו AMM8 <button type="button" class="photo-btn" data-photo="8000070003798" data-key="8000070003798" data-name="לוואצה דליסיוזו AMM8" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪273.33 <small>לק״ג</small></div>
+          <div class="shelf">₪32.80 · 120 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8000070003798" data-name="לוואצה דליסיוזו AMM8" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לוואצה אינטנסו AMM13 <button type="button" class="photo-btn" data-photo="8000070003774" data-key="8000070003774" data-name="לוואצה אינטנסו AMM13" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪273.33 <small>לק״ג</small></div>
+          <div class="shelf">₪32.80 · 120 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8000070003774" data-name="לוואצה אינטנסו AMM13" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לוואצה פסיונלה AMM11 <button type="button" class="photo-btn" data-photo="8000070003811" data-key="8000070003811" data-name="לוואצה פסיונלה AMM11" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪273.33 <small>לק״ג</small></div>
+          <div class="shelf">₪32.80 · 120 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8000070003811" data-name="לוואצה פסיונלה AMM11" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לוואצה רוסה 10 AMM חדש <button type="button" class="photo-btn" data-photo="8000070064553" data-key="8000070064553" data-name="לוואצה רוסה 10 AMM חדש" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪273.33 <small>לק״ג</small></div>
+          <div class="shelf">₪32.80 · 120 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8000070064553" data-name="לוואצה רוסה 10 AMM חדש" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפסולות קפה בלונד אספרסו <button type="button" class="photo-btn" data-photo="7613036984478" data-key="7613036984478" data-name="קפסולות קפה בלונד אספרסו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נסטלה נספרסו</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪16.67 (3 ב־₪50)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪283.02 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪22.90</s> ₪15.00 · 53 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7613036984478" data-name="קפסולות קפה בלונד אספרסו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפסולות סטארבקס פייק פלייס 53גר <button type="button" class="photo-btn" data-photo="7613036984492" data-key="7613036984492" data-name="קפסולות סטארבקס פייק פלייס 53גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נסטלה נספרסו</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪16.67 (3 ב־₪50)</span><span class="other st-4">נטו חיסכון ₪16.67 (3 ב־₪50)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪283.02 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪22.90</s> ₪15.00 · 53 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7613036984492" data-name="קפסולות סטארבקס פייק פלייס 53גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קפסולות קפה סטארבקס ריסטרטו שוט <button type="button" class="photo-btn" data-photo="8445291451728" data-key="8445291451728" data-name="קפסולות קפה סטארבקס ריסטרטו שוט" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נסטלה נספרסו</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪50</span> בקניית 3 · עד 31.10</div>
+        <div class="club">מחיר מועדון ויקטורי: ₪13.33 (3 ב־₪40)</div>
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪292.46 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪22.90</s> ₪16.67 · 57 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8445291451728" data-name="קפסולות קפה סטארבקס ריסטרטו שוט" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סטארבקס קפסולת האוס בלנד 36 יח&#39; <button type="button" class="photo-btn" data-photo="8445291362178" data-key="8445291362178" data-name="סטארבקס קפסולת האוס בלנד 36 יח&#39;" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נסטלה שוויץ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪293.27 <small>לק״ג</small></div>
+          <div class="shelf">₪54.90 · 187.2 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8445291362178" data-name="סטארבקס קפסולת האוס בלנד 36 יח&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סטארבקס אספרסו רוסט מ.חסכון 198 גרם <button type="button" class="photo-btn" data-photo="8445291365964" data-key="8445291365964" data-name="סטארבקס אספרסו רוסט מ.חסכון 198 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נסטלה שוויץ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-4">נטו חיסכון ₪54.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪293.27 <small>לק״ג</small></div>
+          <div class="shelf">₪54.90 · 187.2 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8445291365964" data-name="סטארבקס אספרסו רוסט מ.חסכון 198 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפסולות סטארבקס טופי 51גר <button type="button" class="photo-btn" data-photo="8445290452566" data-key="8445290452566" data-name="קפסולות סטארבקס טופי 51גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נסטלה נספרסו</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪16.67 (3 ב־₪50)</span><span class="other st-4">נטו חיסכון ₪16.67 (3 ב־₪50)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪294.12 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪22.90</s> ₪15.00 · 51 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8445290452566" data-name="קפסולות סטארבקס טופי 51גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפסולות סטארבקס פמפין סטייל 51גר <button type="button" class="photo-btn" data-photo="8445291972483" data-key="8445291972483" data-name="קפסולות סטארבקס פמפין סטייל 51גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נסטלה נספרסו</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪16.67 (3 ב־₪50)</span><span class="other st-4">נטו חיסכון ₪16.67 (3 ב־₪50)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪294.12 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪22.90</s> ₪15.00 · 51 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8445291972483" data-name="קפסולות סטארבקס פמפין סטייל 51גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קפסולות ארומה אמריקנו 56 גרם <button type="button" class="photo-btn" data-photo="7290019964063" data-key="7290019964063" data-name="קפסולות ארומה אמריקנו 56 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ארומה אספרסו בר</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪50</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪16.67 (3 ב־₪50)</span><span class="other st-4">נטו חיסכון ₪16.67 (3 ב־₪50)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪297.68 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪16.67 · 56 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019964063" data-name="קפסולות ארומה אמריקנו 56 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מארז 10 קפסולות ארומה קפוצ&#39;ינו <button type="button" class="photo-btn" data-photo="7290019964117" data-key="7290019964117" data-name="מארז 10 קפסולות ארומה קפוצ&#39;ינו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ארומה אספרסו בר</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪50</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪16.67 (3 ב־₪50)</span><span class="other st-4">נטו חיסכון ₪16.67 (3 ב־₪50)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪297.68 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪16.67 · 56 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019964117" data-name="מארז 10 קפסולות ארומה קפוצ&#39;ינו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קפסולות ארומה אספרסו 56 גרם <button type="button" class="photo-btn" data-photo="7290019964162" data-key="7290019964162" data-name="קפסולות ארומה אספרסו 56 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ארומה אספרסו בר</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪50</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪16.67 (3 ב־₪50)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪297.68 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪16.67 · 56 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019964162" data-name="קפסולות ארומה אספרסו 56 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קפסולות קפה סטארבקס ברקפסט בלנד <button type="button" class="photo-btn" data-photo="7613287186843" data-key="7613287186843" data-name="קפסולות קפה סטארבקס ברקפסט בלנד" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נסטלה, נספרסו</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪50</span> בקניית 3 · עד 31.10</div>
+        <div class="club">מחיר מועדון ויקטורי: ₪13.33 (3 ב־₪40)</div>
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-4">נטו חיסכון ₪16.67 (3 ב־₪50)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪297.68 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪22.90</s> ₪16.67 · 56 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7613287186843" data-name="קפסולות קפה סטארבקס ברקפסט בלנד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קפסולות קפה סטארבקס סאני דיי <button type="button" class="photo-btn" data-photo="7630311506934" data-key="7630311506934" data-name="קפסולות קפה סטארבקס סאני דיי" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נסטלה שוויץ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪50</span> בקניית 3 · עד 31.10</div>
+        <div class="club">מחיר מועדון ויקטורי: ₪13.33 (3 ב־₪40)</div>
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪297.68 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪22.90</s> ₪16.67 · 56 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7630311506934" data-name="קפסולות קפה סטארבקס סאני דיי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">דוידוף פיין ארומה 10 <button type="button" class="photo-btn" data-photo="4061445096702" data-key="4061445096702" data-name="דוידוף פיין ארומה 10" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪298.00 <small>לק״ג</small></div>
+          <div class="shelf">₪29.80 · 100 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4061445096702" data-name="דוידוף פיין ארומה 10" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפה נמס אספרסו דוידו <button type="button" class="photo-btn" data-photo="4061445096689" data-key="4061445096689" data-name="קפה נמס אספרסו דוידו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪298.00 <small>לק״ג</small></div>
+          <div class="shelf">₪29.80 · 100 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4061445096689" data-name="קפה נמס אספרסו דוידו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">דוידוף ריץ ארומה 100 <button type="button" class="photo-btn" data-photo="4061445096726" data-key="4061445096726" data-name="דוידוף ריץ ארומה 100" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪298.00 <small>לק״ג</small></div>
+          <div class="shelf">₪29.80 · 100 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4061445096726" data-name="דוידוף ריץ ארומה 100" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לרו תחליף קפה קרמל - מתכון חדש 100 גרם <button type="button" class="photo-btn" data-photo="3067140243114" data-key="3067140243114" data-name="לרו תחליף קפה קרמל - מתכון חדש 100 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שסטוביץ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪299.00 <small>לק״ג</small></div>
+          <div class="shelf">₪29.90 · 100 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="3067140243114" data-name="לרו תחליף קפה קרמל - מתכון חדש 100 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">קפסולות קפה אספרסו 9 50 גרם <button type="button" class="photo-btn" data-photo="7290105360250" data-key="7290105360250" data-name="קפסולות קפה אספרסו 9 50 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס קפה בי.וי.</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪48</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪16.70</span><span class="other st-0">ויקטורי ₪17.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪320.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪16.90</s> ₪16.00 · 50 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290105360250" data-name="קפסולות קפה אספרסו 9 50 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">קפסולות אספרסו 10 חזק ועשיר עלית 50 גרם <button type="button" class="photo-btn" data-photo="7290105360328" data-key="7290105360328" data-name="קפסולות אספרסו 10 חזק ועשיר עלית 50 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס קפה בי.וי.</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪48</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪16.70</span><span class="other st-0">ויקטורי ₪17.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪320.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪16.90</s> ₪16.00 · 50 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290105360328" data-name="קפסולות אספרסו 10 חזק ועשיר עלית 50 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">קפסולות אספרסו 07 עדין וקטיפתי עלית 50גרם <button type="button" class="photo-btn" data-photo="7290105360335" data-key="7290105360335" data-name="קפסולות אספרסו 07 עדין וקטיפתי עלית 50גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס קפה בי.וי.</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪48</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪16.70</span><span class="other st-0">ויקטורי ₪17.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪320.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪16.90</s> ₪16.00 · 50 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290105360335" data-name="קפסולות אספרסו 07 עדין וקטיפתי עלית 50גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">קפסולות 15 למכונות נספרסו <button type="button" class="photo-btn" data-photo="7290112350312" data-key="7290112350312" data-name="קפסולות 15 למכונות נספרסו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס קפה בי.וי.</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪48</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪16.70</span><span class="other st-0">ויקטורי ₪17.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪320.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪16.90</s> ₪16.00 · 50 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112350312" data-name="קפסולות 15 למכונות נספרסו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">קפסולות טורקי נספרסו 50 גרם <button type="button" class="photo-btn" data-photo="7290119374045" data-key="7290119374045" data-name="קפסולות טורקי נספרסו 50 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס קפה בי.וי.</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪48</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪16.70</span><span class="other st-0">ויקטורי ₪17.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪320.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪16.90</s> ₪16.00 · 50 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119374045" data-name="קפסולות טורקי נספרסו 50 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">קפסולות אספרסו רומא 08 עלית 50 גרם <button type="button" class="photo-btn" data-photo="7290119380213" data-key="7290119380213" data-name="קפסולות אספרסו רומא 08 עלית 50 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס קפה בי.וי.</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪48</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪16.70</span><span class="other st-0">ויקטורי ₪17.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪320.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪16.90</s> ₪16.00 · 50 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119380213" data-name="קפסולות אספרסו רומא 08 עלית 50 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">קפסולות נאפולי 13 למכונת נספרסו <button type="button" class="photo-btn" data-photo="7290119384259" data-key="7290119384259" data-name="קפסולות נאפולי 13 למכונת נספרסו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס קפה בי.וי.</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪48</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪16.70</span><span class="other st-0">ויקטורי ₪17.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪320.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪16.90</s> ₪16.00 · 50 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119384259" data-name="קפסולות נאפולי 13 למכונת נספרסו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">קפסולות אספרסו מילאנו 05 עלית 50 גרם <button type="button" class="photo-btn" data-photo="7290119380206" data-key="7290119380206" data-name="קפסולות אספרסו מילאנו 05 עלית 50 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪48</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪16.70</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪320.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪16.90</s> ₪16.00 · 50 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119380206" data-name="קפסולות אספרסו מילאנו 05 עלית 50 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">קפסולה נטול 09 50גר <button type="button" class="photo-btn" data-photo="7290119376711" data-key="7290119376711" data-name="קפסולה נטול 09 50גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪48</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪16.70</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪320.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪16.90</s> ₪16.00 · 50 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119376711" data-name="קפסולה נטול 09 50גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">קפסולות אספרסו 11 גואטמלה עלית 50 גרם <button type="button" class="photo-btn" data-photo="7290107937856" data-key="7290107937856" data-name="קפסולות אספרסו 11 גואטמלה עלית 50 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪48</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪16.70</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪320.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪16.90</s> ₪16.00 · 50 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290107937856" data-name="קפסולות אספרסו 11 גואטמלה עלית 50 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">קפסולות קפה טורקי עם הל, 10 יחידות <button type="button" class="photo-btn" data-photo="7290119374052" data-key="7290119374052" data-name="קפסולות קפה טורקי עם הל, 10 יחידות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס קפה בי.וי</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪48</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪320.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪16.90</s> ₪16.00 · 50 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119374052" data-name="קפסולות קפה טורקי עם הל, 10 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קפסולות קפה סטארבקס גוואטמלה <button type="button" class="photo-btn" data-photo="7613287855565" data-key="7613287855565" data-name="קפסולות קפה סטארבקס גוואטמלה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נספרסו</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪50</span> בקניית 3 · עד 31.10</div>
+        <div class="club">מחיר מועדון ויקטורי: ₪13.33 (3 ב־₪40)</div>
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-4">נטו חיסכון ₪16.67 (3 ב־₪50)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪320.58 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪22.90</s> ₪16.67 · 52 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7613287855565" data-name="קפסולות קפה סטארבקס גוואטמלה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קפסולות קפה סטארבקס בטעם שוקולד אגוזים <button type="button" class="photo-btn" data-photo="8445291786790" data-key="8445291786790" data-name="קפסולות קפה סטארבקס בטעם שוקולד אגוזים" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נסטלה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪50</span> בקניית 3 · עד 31.10</div>
+        <div class="club">מחיר מועדון ויקטורי: ₪13.33 (3 ב־₪40)</div>
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪326.86 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪22.90</s> ₪16.67 · 51 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8445291786790" data-name="קפסולות קפה סטארבקס בטעם שוקולד אגוזים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפסולות בטעם שוקולד נוגט <button type="button" class="photo-btn" data-photo="7290119370733" data-key="7290119370733" data-name="קפסולות בטעם שוקולד נוגט" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס קפה בי.וי.</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪17.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪334.00 <small>לק״ג</small></div>
+          <div class="shelf">₪16.70 · 50 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119370733" data-name="קפסולות בטעם שוקולד נוגט" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפסולות שיבולת שועל למכונות נספרסו 65 גרם <button type="button" class="photo-btn" data-photo="7290119375653" data-key="7290119375653" data-name="קפסולות שיבולת שועל למכונות נספרסו 65 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪334.00 <small>לק״ג</small></div>
+          <div class="shelf">₪16.70 · 50 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119375653" data-name="קפסולות שיבולת שועל למכונות נספרסו 65 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">נסקפה טייסטרס צ&#39;ויס 50 גרם <button type="button" class="photo-btn" data-photo="8801055723607" data-key="8801055723607" data-name="נסקפה טייסטרס צ&#39;ויס 50 גרם" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נסטלה צרפת</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪338.00 <small>לק״ג</small></div>
+          <div class="shelf">₪16.90 · 50 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8801055723607" data-name="נסקפה טייסטרס צ&#39;ויס 50 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">רומבוטס קפה עם פילטר מתכלה <button type="button" class="photo-btn" data-photo="5410173004036" data-key="5410173004036" data-name="רומבוטס קפה עם פילטר מתכלה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪341.43 <small>לק״ג</small></div>
+          <div class="shelf">₪23.90 · 70 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5410173004036" data-name="רומבוטס קפה עם פילטר מתכלה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפה נמס אורגני מיובש <button type="button" class="photo-btn" data-photo="4000799136894" data-key="4000799136894" data-name="קפה נמס אורגני מיובש" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪353.00 <small>לק״ג</small></div>
+          <div class="shelf">₪35.30 · 100 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4000799136894" data-name="קפה נמס אורגני מיובש" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קפסולות אספרו ריסטרטו (08)10 יח לנדוור <button type="button" class="photo-btn" data-photo="7290014066366" data-key="7290014066366" data-name="קפסולות אספרו ריסטרטו (08)10 יח לנדוור" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קפה לנדוור בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪358.00 <small>לק״ג</small></div>
+          <div class="shelf">₪17.90 · 50 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014066366" data-name="קפסולות אספרו ריסטרטו (08)10 יח לנדוור" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קפסולות אספרו קלאסיק) (09 10 יח לנדוור <button type="button" class="photo-btn" data-photo="7290014066373" data-key="7290014066373" data-name="קפסולות אספרו קלאסיק) (09 10 יח לנדוור" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קפה לנדוור בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪358.00 <small>לק״ג</small></div>
+          <div class="shelf">₪17.90 · 50 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014066373" data-name="קפסולות אספרו קלאסיק) (09 10 יח לנדוור" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לנדוור קפסולות 10 <button type="button" class="photo-btn" data-photo="7290014066380" data-key="7290014066380" data-name="לנדוור קפסולות 10" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪358.00 <small>לק״ג</small></div>
+          <div class="shelf">₪17.90 · 50 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014066380" data-name="לנדוור קפסולות 10" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לנדוור תערובת הבית 11 <button type="button" class="photo-btn" data-photo="7290014066526" data-key="7290014066526" data-name="לנדוור תערובת הבית 11" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪358.00 <small>לק״ג</small></div>
+          <div class="shelf">₪17.90 · 50 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014066526" data-name="לנדוור תערובת הבית 11" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לנדוור קלייה כפולה 12 <button type="button" class="photo-btn" data-photo="7290014066533" data-key="7290014066533" data-name="לנדוור קלייה כפולה 12" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪358.00 <small>לק״ג</small></div>
+          <div class="shelf">₪17.90 · 50 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014066533" data-name="לנדוור קלייה כפולה 12" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לנדוור-קפסולות אספרסו רוסו (15) <button type="button" class="photo-btn" data-photo="7290014066571" data-key="7290014066571" data-name="לנדוור-קפסולות אספרסו רוסו (15)" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪358.00 <small>לק״ג</small></div>
+          <div class="shelf">₪17.90 · 50 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014066571" data-name="לנדוור-קפסולות אספרסו רוסו (15)" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפסולות קפה קלוי וטח <button type="button" class="photo-btn" data-photo="7290002771333" data-key="7290002771333" data-name="קפסולות קפה קלוי וטח" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪378.00 <small>לק״ג</small></div>
+          <div class="shelf">₪18.90 · 50 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002771333" data-name="קפסולות קפה קלוי וטח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לור קפסולות קפה אספרסו <button type="button" class="photo-btn" data-photo="8711000362617" data-key="8711000362617" data-name="לור קפסולות קפה אספרסו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪421.15 <small>לק״ג</small></div>
+          <div class="shelf">₪21.90 · 52 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8711000362617" data-name="לור קפסולות קפה אספרסו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לור קפסולות קפה אספרסו <button type="button" class="photo-btn" data-photo="8711000362631" data-key="8711000362631" data-name="לור קפסולות קפה אספרסו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪421.15 <small>לק״ג</small></div>
+          <div class="shelf">₪21.90 · 52 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8711000362631" data-name="לור קפסולות קפה אספרסו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לור קפסולות קפה אספרסו <button type="button" class="photo-btn" data-photo="8711000362747" data-key="8711000362747" data-name="לור קפסולות קפה אספרסו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪421.15 <small>לק״ג</small></div>
+          <div class="shelf">₪21.90 · 52 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8711000362747" data-name="לור קפסולות קפה אספרסו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לור קפסולות אספרסו <button type="button" class="photo-btn" data-photo="8711000471296" data-key="8711000471296" data-name="לור קפסולות אספרסו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ג&#39;ייקובס</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪421.15 <small>לק״ג</small></div>
+          <div class="shelf">₪21.90 · 52 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8711000471296" data-name="לור קפסולות אספרסו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">תה נמס מגורען קדמה <button type="button" class="photo-btn" data-photo="7290010507900" data-key="7290010507900" data-name="תה נמס מגורען קדמה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪895.00 <small>לק״ג</small></div>
+          <div class="shelf">₪17.90 · 20 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010507900" data-name="תה נמס מגורען קדמה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קפסולות קפה עלית 50ג <button type="button" class="photo-btn" data-photo="7290119380251" data-key="7290119380251" data-name="קפסולות קפה עלית 50ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.33 <small>ליח׳</small></div>
+          <div class="shelf">₪16.70 · 50 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119380251" data-name="קפסולות קפה עלית 50ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פולי אספרסו עוצמה 14 <button type="button" class="photo-btn" data-photo="7290110570897" data-key="7290110570897" data-name="פולי אספרסו עוצמה 14" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪64.90 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪69.90</s> ₪64.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110570897" data-name="פולי אספרסו עוצמה 14" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פולי אספרסו עלית 1ק&#34; <button type="button" class="photo-btn" data-photo="7290119380411" data-key="7290119380411" data-name="פולי אספרסו עלית 1ק&#34;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪69.90 <small>ליח׳</small></div>
+          <div class="shelf">₪69.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119380411" data-name="פולי אספרסו עלית 1ק&#34;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+      
+      <li class="divider">ללא מחיר לק״ג (גודל לא ידוע)</li>
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">קפסולות ג&#39;ייקובס קפה אספרסו <button type="button" class="photo-btn" data-photo="8711000371244" data-key="8711000371244" data-name="קפסולות ג&#39;ייקובס קפה אספרסו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">5 ב־₪50</span> בקניית 5 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.00</div>
+          <div class="shelf"><s>₪17.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="8711000371244" data-name="קפסולות ג&#39;ייקובס קפה אספרסו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קפסולות קפה דרגת חוזק 08 <button type="button" class="photo-btn" data-photo="5410658902413" data-key="5410658902413" data-name="קפסולות קפה דרגת חוזק 08" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪33</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪11.00</div>
+          <div class="shelf"><s>₪13.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="5410658902413" data-name="קפסולות קפה דרגת חוזק 08" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קפסולות קפה דרגת חוזק 10 <button type="button" class="photo-btn" data-photo="5410658902420" data-key="5410658902420" data-name="קפסולות קפה דרגת חוזק 10" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪33</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪11.00</div>
+          <div class="shelf"><s>₪13.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="5410658902420" data-name="קפסולות קפה דרגת חוזק 10" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קפסולות קפה דרגת חוזק 07 <button type="button" class="photo-btn" data-photo="5410658902437" data-key="5410658902437" data-name="קפסולות קפה דרגת חוזק 07" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪33</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪11.00</div>
+          <div class="shelf"><s>₪13.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="5410658902437" data-name="קפסולות קפה דרגת חוזק 07" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קפסולות קפה דרגת חוזק 14 <button type="button" class="photo-btn" data-photo="5410658902444" data-key="5410658902444" data-name="קפסולות קפה דרגת חוזק 14" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪33</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪11.00</div>
+          <div class="shelf"><s>₪13.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="5410658902444" data-name="קפסולות קפה דרגת חוזק 14" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קפסולות קפה דרגת חוזק 12 <button type="button" class="photo-btn" data-photo="5410658902819" data-key="5410658902819" data-name="קפסולות קפה דרגת חוזק 12" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪33</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪11.00</div>
+          <div class="shelf"><s>₪13.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="5410658902819" data-name="קפסולות קפה דרגת חוזק 12" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">לוואצה אורו NCC אלומיניום - 8 <button type="button" class="photo-btn" data-photo="8000070053465" data-key="8000070053465" data-name="לוואצה אורו NCC אלומיניום - 8" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪45</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪15.00</div>
+          <div class="shelf"><s>₪21.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="8000070053465" data-name="לוואצה אורו NCC אלומיניום - 8" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">לוואצה קרמה גוסטו קלאסיקו NCC אלומיניום- 12 <button type="button" class="photo-btn" data-photo="8000070053472" data-key="8000070053472" data-name="לוואצה קרמה גוסטו קלאסיקו NCC אלומיניום- 12" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪45</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪15.00</div>
+          <div class="shelf"><s>₪21.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="8000070053472" data-name="לוואצה קרמה גוסטו קלאסיקו NCC אלומיניום- 12" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">לוואצה קרמה גוסטו NCC אלומיניום- 13 <button type="button" class="photo-btn" data-photo="8000070055254" data-key="8000070055254" data-name="לוואצה קרמה גוסטו NCC אלומיניום- 13" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪45</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪15.00</div>
+          <div class="shelf"><s>₪21.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="8000070055254" data-name="לוואצה קרמה גוסטו NCC אלומיניום- 13" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+</ol>
+</div>
+
+</main>
+<footer>עודכן 7.10 06:15 · ויקטורי 6.10 21:13 · רמי לוי 00:11 · אושר עד 6.10 21:00 · אושר עד 6.10 21:00 · נטו חיסכון 04:03</footer>
+
+
+<nav class="bottom-nav" aria-label="ניווט">
+  <a href="index.html" class="on"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg><span>בית</span></a>
+  <a href="search.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><span>חיפוש</span></a>
+  <a href="scan.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V5a1 1 0 0 1 1-1h2M17 4h2a1 1 0 0 1 1 1v2M20 17v2a1 1 0 0 1-1 1h-2M7 20H5a1 1 0 0 1-1-1v-2"/><path d="M8 8v8M11 8v8M14 8v8M16.5 8v8"/></svg><span>סריקה</span></a>
+  <a href="basket.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h11l2-8H6.2"/><circle cx="9.5" cy="19" r="1.4"/><circle cx="17" cy="19" r="1.4"/></svg><span id="cart-count"></span><span>עגלת קניות</span></a>
+  <a href="spending.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-2-1.4-2 1.4-2-1.4-2 1.4-2-1.4L6 21z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><span>הוצאות</span></a>
+</nav>
+
+<script src="static/basket.js?v=20261007061534"></script>
+<script src="static/photo.js?v=20261007061534"></script>
+
+<script src="static/render.js?v=20261007061534"></script>
+<script src="static/category.js?v=20261007061534" data-build="20261007061534"></script>
+
+<script>
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+</script>
+</body>
+</html>

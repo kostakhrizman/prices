@@ -1,0 +1,4402 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f7a4d">
+<script>
+// the look this phone chose (settings.html "מראה"), before anything is drawn: html.light / html.dark
+// (none = follow the phone) and html[data-color] (none = green); the browser bar takes the colour too
+(function () {
+  let t = {};
+  try { t = JSON.parse(localStorage.getItem("theme")) || {}; } catch (e) { /* none yet */ }
+  const root = document.documentElement;
+  if (t.mode === "light" || t.mode === "dark") root.classList.add(t.mode);
+  if (t.color) root.dataset.color = t.color;
+  if (t.bar) document.querySelector('meta[name="theme-color"]').content = t.bar;
+})();
+</script>
+<title>מרכך כביסה</title>
+<link rel="manifest" href="static/manifest.webmanifest">
+<link rel="icon" href="static/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="static/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="static/style.css?v=20261007061534">
+<style>.st-0 { --store: #e07000; }.st-1 { --store: #d32f2f; }.st-2 { --store: #1565c0; }.st-3 { --store: #1565c0; }.st-4 { --store: #c99a00; }</style>
+<script src="static/stores.js?v=20261007061534" data-stores="[{&#34;card_cap&#34;: 750, &#34;card_rate&#34;: 0.07, &#34;default&#34;: true, &#34;key&#34;: &#34;victory-038&#34;, &#34;name&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;ramilevy-007&#34;, &#34;name&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-026&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05ea\u05dc\u05e4\u05d9\u05d5\u05ea&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-003&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05d2\u05d1\u05e2\u05ea \u05e9\u05d0\u05d5\u05dc&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;netto-052&#34;, &#34;name&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df \u05e7\u05e8\u05d9\u05d9\u05ea \u05d9\u05e2\u05e8\u05d9\u05dd&#34;, &#34;short&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df&#34;}]"></script>
+<script src="static/avoid.js?v=20261007061534" data-kinds="[&#34;\u05e2\u05d5\u05e3 \u05de\u05e2\u05d5\u05d1\u05d3&#34;, &#34;\u05d1\u05e9\u05e8 \u05de\u05e2\u05d5\u05d1\u05d3&#34;]"></script>
+<script>
+// No long-press menu on links, pictures or text (the user: the home page's tiles opened Chrome's "open in new tab /
+// copy link" menu; CSS can't stop that on Android). Typing fields and the ⓘ sheet's barcode keep theirs.
+document.addEventListener("contextmenu", (e) => {
+  if (!e.target.closest("input, textarea, [contenteditable], .photo-barcode")) e.preventDefault();
+});
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <a class="back" href="t-11.html" aria-label="חזרה">→</a>
+    <h1>מרכך כביסה</h1>
+    <a class="notes-link" href="notes.html" aria-label="רשימת קניות" title="רשימת קניות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="m8.5 10 1.2 1.2 2.3-2.4M8.5 15.5l1.2 1.2 2.3-2.4M14 10.5h2.5M14 16h2.5"/></svg><span>רשימת קניות</span></a>
+    <a class="settings-link" href="settings.html" aria-label="הגדרות" title="הגדרות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></a>
+  </div>
+  
+  <form class="search" action="search.html" method="get" role="search">
+    <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+    <input type="search" name="q" placeholder="חיפוש מוצר" enterkeyhint="search" aria-label="חיפוש מוצר">
+  </form>
+  
+</header>
+<main>
+
+<p class="sub"><span class="sub-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7h5v3H9z"/><path d="M14 8h3.5l1.5-2"/><path d="M10 7V4h3.5"/><path d="M8.5 10h6l1.5 3.5V20a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1v-6.5z"/><path d="M20.5 3.5v.01M21.5 7v.01M19 2v.01"/></svg></span>ניקיון ובית · <span id="cat-count">154</span> מוצרים, מהזול ליקר</p>
+
+
+<div class="cat-filter">
+  <input type="search" id="cat-filter" placeholder="סינון לפי שם או יצרן · ‎-מילה מסתירה" enterkeyhint="done" autocomplete="off" aria-label="סינון המוצרים בקטגוריה">
+</div>
+<div id="cat-list" data-href="c-11-1.html">
+
+<ol class="products">
+  
+  
+    
+    
+    
+    <li class="product st-0 best">
+      <div class="info">
+        <div class="name">מרכך כביסה 4 ליטר ורוד טאצ` <button type="button" class="photo-btn" data-photo="7290001245958" data-key="7290001245958" data-name="מרכך כביסה 4 ליטר ורוד טאצ`" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪3.73 <small>לליטר</small></div>
+          <div class="shelf">₪14.90 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001245958" data-name="מרכך כביסה 4 ליטר ורוד טאצ`" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מרכך כביסה 4 ליטר כחול טאצ` <button type="button" class="photo-btn" data-photo="7290001245965" data-key="7290001245965" data-name="מרכך כביסה 4 ליטר כחול טאצ`" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪3.73 <small>לליטר</small></div>
+          <div class="shelf">₪14.90 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001245965" data-name="מרכך כביסה 4 ליטר כחול טאצ`" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מרכך כביסה 4 ליטר לבן טאצ` <button type="button" class="photo-btn" data-photo="7290001245972" data-key="7290001245972" data-name="מרכך כביסה 4 ליטר לבן טאצ`" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סאסאטק</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪3.73 <small>לליטר</small></div>
+          <div class="shelf">₪14.90 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001245972" data-name="מרכך כביסה 4 ליטר לבן טאצ`" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מרכך כביסה סגול רמילוי 4 ליט <button type="button" class="photo-btn" data-photo="7290016255737" data-key="7290016255737" data-name="מרכך כביסה סגול רמילוי 4 ליט" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סאסאטק</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪3.73 <small>לליטר</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪14.90 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016255737" data-name="מרכך כביסה סגול רמילוי 4 ליט" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מרכך כביסה ירוק רמילוי 4 ליט <button type="button" class="photo-btn" data-photo="7290016255744" data-key="7290016255744" data-name="מרכך כביסה ירוק רמילוי 4 ליט" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סאסאטק</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪3.73 <small>לליטר</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪14.90 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016255744" data-name="מרכך כביסה ירוק רמילוי 4 ליט" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מרכך צהוב רמי לוי 4 ליטר <button type="button" class="photo-btn" data-photo="7290015899246" data-key="7290015899246" data-name="מרכך צהוב רמי לוי 4 ליטר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רמי לוי</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪3.73 <small>לליטר</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪14.90 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015899246" data-name="מרכך צהוב רמי לוי 4 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מרכך כביסה ורוד רמי <button type="button" class="photo-btn" data-photo="7290015899253" data-key="7290015899253" data-name="מרכך כביסה ורוד רמי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רמי לוי</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪3.73 <small>לליטר</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪14.90 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015899253" data-name="מרכך כביסה ורוד רמי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מרכך כביסה לבן רמי לוי 4 ליטר <button type="button" class="photo-btn" data-photo="7290015899260" data-key="7290015899260" data-name="מרכך כביסה לבן רמי לוי 4 ליטר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רמי לוי</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪3.73 <small>לליטר</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪14.90 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015899260" data-name="מרכך כביסה לבן רמי לוי 4 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מרכך כביסה כחול רמי לוי 4 ליטר <button type="button" class="photo-btn" data-photo="7290015899277" data-key="7290015899277" data-name="מרכך כביסה כחול רמי לוי 4 ליטר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רמי לוי</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪3.73 <small>לליטר</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪14.90 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015899277" data-name="מרכך כביסה כחול רמי לוי 4 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מקסימה מרכך כביסה סנסיטיב בייבי סנו 4 ליטר <button type="button" class="photo-btn" data-photo="7290000288642" data-key="7290000288642" data-name="מקסימה מרכך כביסה סנסיטיב בייבי סנו 4 ליטר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בע\&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪36</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪18.00 (2 ב־₪36)</span><span class="other st-0">ויקטורי ₪22.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪4.50 <small>לליטר</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪18.00 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000288642" data-name="מקסימה מרכך כביסה סנסיטיב בייבי סנו 4 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מקסימה מרכך כביסה ביו לבן סנו 4 ליטר <button type="button" class="photo-btn" data-photo="7290000293073" data-key="7290000293073" data-name="מקסימה מרכך כביסה ביו לבן סנו 4 ליטר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪36</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪18.00 (2 ב־₪36)</span><span class="other st-0">ויקטורי ₪22.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪4.50 <small>לליטר</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪18.00 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000293073" data-name="מקסימה מרכך כביסה ביו לבן סנו 4 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מקסימה מרכך כביסה אולט&#39; פרש 4ל&#39; <button type="button" class="photo-btn" data-photo="7290005423734" data-key="7290005423734" data-name="מקסימה מרכך כביסה אולט&#39; פרש 4ל&#39;" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בע\&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪36</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪18.00 (2 ב־₪36)</span><span class="other st-0">ויקטורי ₪22.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪4.50 <small>לליטר</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪18.00 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290005423734" data-name="מקסימה מרכך כביסה אולט&#39; פרש 4ל&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מקסימה מרכך כביסה בייבי אלוורה סנו 4 ליטר <button type="button" class="photo-btn" data-photo="7290005423918" data-key="7290005423918" data-name="מקסימה מרכך כביסה בייבי אלוורה סנו 4 ליטר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪36</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪18.00 (2 ב־₪36)</span><span class="other st-0">ויקטורי ₪22.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪4.50 <small>לליטר</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪18.00 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290005423918" data-name="מקסימה מרכך כביסה בייבי אלוורה סנו 4 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מקסימה מרכך כביסה פצ&#39;ולי לבנדר סגול סנו 4 ליטר <button type="button" class="photo-btn" data-photo="7290005426803" data-key="7290005426803" data-name="מקסימה מרכך כביסה פצ&#39;ולי לבנדר סגול סנו 4 ליטר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מפעלי ברונוס בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪36</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪22.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪4.50 <small>לליטר</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪18.00 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290005426803" data-name="מקסימה מרכך כביסה פצ&#39;ולי לבנדר סגול סנו 4 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מקסימה מרכך כביסה ארומתרפי מאסק סנו 4 ליטר <button type="button" class="photo-btn" data-photo="7290011598402" data-key="7290011598402" data-name="מקסימה מרכך כביסה ארומתרפי מאסק סנו 4 ליטר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪36</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪18.00 (2 ב־₪36)</span><span class="other st-0">ויקטורי ₪22.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪4.50 <small>לליטר</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪18.00 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011598402" data-name="מקסימה מרכך כביסה ארומתרפי מאסק סנו 4 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מקסימה מרכך כביסה ארומתרפי קול סנו 4 ליטר <button type="button" class="photo-btn" data-photo="7290012117732" data-key="7290012117732" data-name="מקסימה מרכך כביסה ארומתרפי קול סנו 4 ליטר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪36</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪18.00 (2 ב־₪36)</span><span class="other st-0">ויקטורי ₪22.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪4.50 <small>לליטר</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪18.00 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290012117732" data-name="מקסימה מרכך כביסה ארומתרפי קול סנו 4 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מקסימה מרכך כביסה חלב ודבש סנו 4 ליטר <button type="button" class="photo-btn" data-photo="7290014397675" data-key="7290014397675" data-name="מקסימה מרכך כביסה חלב ודבש סנו 4 ליטר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪36</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪18.00 (2 ב־₪36)</span><span class="other st-0">ויקטורי ₪22.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪4.50 <small>לליטר</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪18.00 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014397675" data-name="מקסימה מרכך כביסה חלב ודבש סנו 4 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מקסימה מרכך כביסה סנו 4 ליטר. <button type="button" class="photo-btn" data-photo="7290014397873" data-key="7290014397873" data-name="מקסימה מרכך כביסה סנו 4 ליטר." aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪36</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪18.00 (2 ב־₪36)</span><span class="other st-0">ויקטורי ₪22.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪4.50 <small>לליטר</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪18.00 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014397873" data-name="מקסימה מרכך כביסה סנו 4 ליטר." aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מרכך מקסימה אולטרא פרש 4 ל&#39; <button type="button" class="photo-btn" data-photo="7290108351507" data-key="7290108351507" data-name="מרכך מקסימה אולטרא פרש 4 ל&#39;" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪36</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪18.00 (2 ב־₪36)</span><span class="other st-0">ויקטורי ₪22.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪4.50 <small>לליטר</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪18.00 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108351507" data-name="מרכך מקסימה אולטרא פרש 4 ל&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מרכך מקסימה אולטרא פרש כחול 4 ל&#39; <button type="button" class="photo-btn" data-photo="7290108351514" data-key="7290108351514" data-name="מרכך מקסימה אולטרא פרש כחול 4 ל&#39;" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪36</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪18.00 (2 ב־₪36)</span><span class="other st-0">ויקטורי ₪22.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪4.50 <small>לליטר</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪18.00 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108351514" data-name="מרכך מקסימה אולטרא פרש כחול 4 ל&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מקסימה מרכך כביסה סנו 4 ליטר <button type="button" class="photo-btn" data-photo="7290108351835" data-key="7290108351835" data-name="מקסימה מרכך כביסה סנו 4 ליטר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪36</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪18.00 (2 ב־₪36)</span><span class="other st-0">ויקטורי ₪22.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪4.50 <small>לליטר</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪18.00 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108351835" data-name="מקסימה מרכך כביסה סנו 4 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מקסימה מרכך כביסה 4 ליטר ג&#39;וי <button type="button" class="photo-btn" data-photo="7290108352566" data-key="7290108352566" data-name="מקסימה מרכך כביסה 4 ליטר ג&#39;וי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪36</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪18.00 (2 ב־₪36)</span><span class="other st-0">ויקטורי ₪22.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪4.50 <small>לליטר</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪18.00 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108352566" data-name="מקסימה מרכך כביסה 4 ליטר ג&#39;וי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מקסימה מרכך כביסה 4 ליטר קאלם <button type="button" class="photo-btn" data-photo="7290108352573" data-key="7290108352573" data-name="מקסימה מרכך כביסה 4 ליטר קאלם" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪36</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪18.00 (2 ב־₪36)</span><span class="other st-0">ויקטורי ₪22.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪4.50 <small>לליטר</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪18.00 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108352573" data-name="מקסימה מרכך כביסה 4 ליטר קאלם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מקסימה מרכך כביסה בייבי בתוספת תמצית שיבולת שועל <button type="button" class="photo-btn" data-photo="7290108358407" data-key="7290108358407" data-name="מקסימה מרכך כביסה בייבי בתוספת תמצית שיבולת שועל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪36</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪18.00 (2 ב־₪36)</span><span class="other st-0">ויקטורי ₪22.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪4.50 <small>לליטר</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪18.00 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108358407" data-name="מקסימה מרכך כביסה בייבי בתוספת תמצית שיבולת שועל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מרכך כביסה ורוד מפנק - 4 ליטר <button type="button" class="photo-btn" data-photo="7290000245782" data-key="7290000245782" data-name="מרכך כביסה ורוד מפנק - 4 ליטר" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>הנקל סוד בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪4.97 <small>לליטר</small></div>
+          <div class="shelf">₪19.90 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000245782" data-name="מרכך כביסה ורוד מפנק - 4 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מרכך כביסה כחול מרענן - 4 ליטר <button type="button" class="photo-btn" data-photo="7290000245799" data-key="7290000245799" data-name="מרכך כביסה כחול מרענן - 4 ליטר" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>הנקל סוד בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪4.97 <small>לליטר</small></div>
+          <div class="shelf">₪19.90 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000245799" data-name="מרכך כביסה כחול מרענן - 4 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מרכך כביסה לבן בדין (4 ליטר) <button type="button" class="photo-btn" data-photo="7290000111117" data-key="7290000111117" data-name="מרכך כביסה לבן בדין (4 ליטר)" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יוניליוור ישראל טיפוח</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪25.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪5.72 <small>לליטר</small></div>
+          <div class="shelf">₪22.90 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000111117" data-name="מרכך כביסה לבן בדין (4 ליטר)" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מרכך כביסה ורוד 4 ליטר בדין <button type="button" class="photo-btn" data-photo="7290000339566" data-key="7290000339566" data-name="מרכך כביסה ורוד 4 ליטר בדין" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יוניליוור ישראל טיפוח</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪25.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪5.72 <small>לליטר</small></div>
+          <div class="shelf">₪22.90 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000339566" data-name="מרכך כביסה ורוד 4 ליטר בדין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מרכך כביסה כחול בדין (4 ליטר) <button type="button" class="photo-btn" data-photo="7290000342856" data-key="7290000342856" data-name="מרכך כביסה כחול בדין (4 ליטר)" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יוניליוור ישראל טיפוח</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪25.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪5.72 <small>לליטר</small></div>
+          <div class="shelf">₪22.90 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000342856" data-name="מרכך כביסה כחול בדין (4 ליטר)" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בדין מרכך כביסה סגול 4 ליטר <button type="button" class="photo-btn" data-photo="7290008330107" data-key="7290008330107" data-name="בדין מרכך כביסה סגול 4 ליטר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>בדין</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪5.72 <small>לליטר</small></div>
+          <div class="shelf">₪22.90 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008330107" data-name="בדין מרכך כביסה סגול 4 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מרכך מרוכז צהוב רמי לוי 1 ליטר <button type="button" class="photo-btn" data-photo="7290015899291" data-key="7290015899291" data-name="מרכך מרוכז צהוב רמי לוי 1 ליטר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רמי לוי</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 16.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪5.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪5.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015899291" data-name="מרכך מרוכז צהוב רמי לוי 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מרכך מרוכז ורוד רמי לוי 1 ליטר <button type="button" class="photo-btn" data-photo="7290015899307" data-key="7290015899307" data-name="מרכך מרוכז ורוד רמי לוי 1 ליטר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רמי לוי</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 16.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪5.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪5.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015899307" data-name="מרכך מרוכז ורוד רמי לוי 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מרכך מרוכז לבן רמי לוי 1 ליטר <button type="button" class="photo-btn" data-photo="7290015899314" data-key="7290015899314" data-name="מרכך מרוכז לבן רמי לוי 1 ליטר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רמי לוי</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 16.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪5.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪5.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015899314" data-name="מרכך מרוכז לבן רמי לוי 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מרכך מרוכז כחול רמי לוי 1 ליטר <button type="button" class="photo-btn" data-photo="7290015899321" data-key="7290015899321" data-name="מרכך מרוכז כחול רמי לוי 1 ליטר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רמי לוי</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 16.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪5.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪5.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015899321" data-name="מרכך מרוכז כחול רמי לוי 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מרכך כביסה מרוכז 1לי רמילוי <button type="button" class="photo-btn" data-photo="7290017062204" data-key="7290017062204" data-name="מרכך כביסה מרוכז 1לי רמילוי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 16.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪5.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪5.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017062204" data-name="מרכך כביסה מרוכז 1לי רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מרכך כביסה מרוכז 1לי רמילוי ירוק <button type="button" class="photo-btn" data-photo="7290017062211" data-key="7290017062211" data-name="מרכך כביסה מרוכז 1לי רמילוי ירוק" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 16.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪5.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪5.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017062211" data-name="מרכך כביסה מרוכז 1לי רמילוי ירוק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בדין מרכך כביסה לבן בייבי 2 ליטר <button type="button" class="photo-btn" data-photo="7290000341071" data-key="7290000341071" data-name="בדין מרכך כביסה לבן בייבי 2 ליטר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יוניליוור ישראל טיפוח</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪16.90</span><span class="other st-4">נטו חיסכון ₪17.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪7.95 <small>לליטר</small></div>
+          <div class="shelf">₪15.90 · 2 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000341071" data-name="בדין מרכך כביסה לבן בייבי 2 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מרכך מרוכז פרימיום פנטזי 1 ליטר טאצ` <button type="button" class="photo-btn" data-photo="7290001246061" data-key="7290001246061" data-name="מרכך מרוכז פרימיום פנטזי 1 ליטר טאצ`" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪16</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪8.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪13.90</s> ₪8.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001246061" data-name="מרכך מרוכז פרימיום פנטזי 1 ליטר טאצ`" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מרכך מרוכך פרפיום  סנשואל( 1  ליטר)טאצ` <button type="button" class="photo-btn" data-photo="7290001246078" data-key="7290001246078" data-name="מרכך מרוכך פרפיום  סנשואל( 1  ליטר)טאצ`" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪16</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪8.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪13.90</s> ₪8.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001246078" data-name="מרכך מרוכך פרפיום  סנשואל( 1  ליטר)טאצ`" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מרכך כביסה מרוכז פרפיום מיסטרי 1 ליטר טא <button type="button" class="photo-btn" data-photo="7290001246528" data-key="7290001246528" data-name="מרכך כביסה מרוכז פרפיום מיסטרי 1 ליטר טא" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪16</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪8.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪13.90</s> ₪8.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001246528" data-name="מרכך כביסה מרוכז פרפיום מיסטרי 1 ליטר טא" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מרכך מרוכז בייבי 1 ליטר טאצ` <button type="button" class="photo-btn" data-photo="7290017062686" data-key="7290017062686" data-name="מרכך מרוכז בייבי 1 ליטר טאצ`" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪16</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪8.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪13.90</s> ₪8.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017062686" data-name="מרכך מרוכז בייבי 1 ליטר טאצ`" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מרכך מרוכז לבן 1 ליטר טאצ` <button type="button" class="photo-btn" data-photo="7290017062693" data-key="7290017062693" data-name="מרכך מרוכז לבן 1 ליטר טאצ`" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪16</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪8.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪13.90</s> ₪8.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017062693" data-name="מרכך מרוכז לבן 1 ליטר טאצ`" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מרכך מרוכז ורוד 1 ליטר טאצ` <button type="button" class="photo-btn" data-photo="7290017062716" data-key="7290017062716" data-name="מרכך מרוכז ורוד 1 ליטר טאצ`" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪16</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪8.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪13.90</s> ₪8.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017062716" data-name="מרכך מרוכז ורוד 1 ליטר טאצ`" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סוד מרכך מרוכז פרש ירוק 900 מל <button type="button" class="photo-btn" data-photo="7290115480009" data-key="7290115480009" data-name="סוד מרכך מרוכז פרש ירוק 900 מל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪8.78 <small>לליטר</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪7.90 · 900 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115480009" data-name="סוד מרכך מרוכז פרש ירוק 900 מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מרכך כביסה מרוכז - ארומתרפי פלומריה <button type="button" class="photo-btn" data-photo="7290017457703" data-key="7290017457703" data-name="מרכך כביסה מרוכז - ארומתרפי פלומריה" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪11.00 (2 ב־₪22)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.29 <small>לליטר</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪7.90 · 850 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017457703" data-name="מרכך כביסה מרוכז - ארומתרפי פלומריה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סוד מרכך מרוכז 850 מל <button type="button" class="photo-btn" data-photo="7290017457727" data-key="7290017457727" data-name="סוד מרכך מרוכז 850 מל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪11.00 (2 ב־₪22)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.29 <small>לליטר</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪7.90 · 850 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017457727" data-name="סוד מרכך מרוכז 850 מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סוד מרכך מרוכז ורוד 850 מל <button type="button" class="photo-btn" data-photo="7290017457734" data-key="7290017457734" data-name="סוד מרכך מרוכז ורוד 850 מל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪11.00 (2 ב־₪22)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.29 <small>לליטר</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪7.90 · 850 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017457734" data-name="סוד מרכך מרוכז ורוד 850 מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סוד מרכך כביסה מרוכז בייבי 850 מ&#34;ל <button type="button" class="photo-btn" data-photo="7290100924631" data-key="7290100924631" data-name="סוד מרכך כביסה מרוכז בייבי 850 מ&#34;ל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>הנקל סוד בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪11.00 (2 ב־₪22)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.29 <small>לליטר</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪7.90 · 850 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290100924631" data-name="סוד מרכך כביסה מרוכז בייבי 850 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סוד מרכך מרוכז תכלת 850 מל <button type="button" class="photo-btn" data-photo="7290115480207" data-key="7290115480207" data-name="סוד מרכך מרוכז תכלת 850 מל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>הנקל סוד בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪11.00 (2 ב־₪22)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.29 <small>לליטר</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪7.90 · 850 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115480207" data-name="סוד מרכך מרוכז תכלת 850 מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סוד מרכך מרוכז ירוק 850 מל <button type="button" class="photo-btn" data-photo="7290115480214" data-key="7290115480214" data-name="סוד מרכך מרוכז ירוק 850 מל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>הנקל סוד בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪11.00 (2 ב־₪22)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.29 <small>לליטר</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪7.90 · 850 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115480214" data-name="סוד מרכך מרוכז ירוק 850 מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מרכך כביסה מרוכז -Spring Bloom <button type="button" class="photo-btn" data-photo="7290115480726" data-key="7290115480726" data-name="מרכך כביסה מרוכז -Spring Bloom" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.29 <small>לליטר</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪7.90 · 850 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115480726" data-name="מרכך כביסה מרוכז -Spring Bloom" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סוד מרכך מרוכז ורוד <button type="button" class="photo-btn" data-photo="7290017457925" data-key="7290017457925" data-name="סוד מרכך מרוכז ורוד" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.29 <small>לליטר</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪7.90 · 850 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017457925" data-name="סוד מרכך מרוכז ורוד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סוד מרכך מרוכז כחול פרש 850 מל <button type="button" class="photo-btn" data-photo="7290017457932" data-key="7290017457932" data-name="סוד מרכך מרוכז כחול פרש 850 מל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.29 <small>לליטר</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪7.90 · 850 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017457932" data-name="סוד מרכך מרוכז כחול פרש 850 מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סוד מרכך מרוכז ארומה <button type="button" class="photo-btn" data-photo="7290017457710" data-key="7290017457710" data-name="סוד מרכך מרוכז ארומה" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.29 <small>לליטר</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪7.90 · 850 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017457710" data-name="סוד מרכך מרוכז ארומה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סוד מרכך מרוכז סגול <button type="button" class="photo-btn" data-photo="7290017457741" data-key="7290017457741" data-name="סוד מרכך מרוכז סגול" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.29 <small>לליטר</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪7.90 · 850 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017457741" data-name="סוד מרכך מרוכז סגול" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לנור מרכך מרוכז בניחוח האוקיינוס 819מל <button type="button" class="photo-btn" data-photo="8006540865750" data-key="8006540865750" data-name="לנור מרכך מרוכז בניחוח האוקיינוס 819מל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪9.90 (מבצע)</span><span class="other st-0">ויקטורי ₪14.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.65 <small>לליטר</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪7.90 · 819 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8006540865750" data-name="לנור מרכך מרוכז בניחוח האוקיינוס 819מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לנור מרכך מרוכז 819 מל סחלב <button type="button" class="photo-btn" data-photo="8006540910320" data-key="8006540910320" data-name="לנור מרכך מרוכז 819 מל סחלב" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪9.90 (מבצע)</span><span class="other st-0">ויקטורי ₪14.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.65 <small>לליטר</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪7.90 · 819 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8006540910320" data-name="לנור מרכך מרוכז 819 מל סחלב" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לנור מרכך מרוכז בניחוח פריחת הדובדבן 819מל <button type="button" class="photo-btn" data-photo="8006540910368" data-key="8006540910368" data-name="לנור מרכך מרוכז בניחוח פריחת הדובדבן 819מל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪9.90 (מבצע)</span><span class="other st-0">ויקטורי ₪14.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.65 <small>לליטר</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪7.90 · 819 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8006540910368" data-name="לנור מרכך מרוכז בניחוח פריחת הדובדבן 819מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לנור מרכך מרוכז בניחוח אריאל 819 מל <button type="button" class="photo-btn" data-photo="8006540910399" data-key="8006540910399" data-name="לנור מרכך מרוכז בניחוח אריאל 819 מל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪9.90 (מבצע)</span><span class="other st-0">ויקטורי ₪14.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.65 <small>לליטר</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪7.90 · 819 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8006540910399" data-name="לנור מרכך מרוכז בניחוח אריאל 819 מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לנור מרכך מרוכז בניחוח סחלב וניל 819 <button type="button" class="photo-btn" data-photo="8006540865781" data-key="8006540865781" data-name="לנור מרכך מרוכז בניחוח סחלב וניל 819" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪9.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.65 <small>לליטר</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪7.90 · 819 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8006540865781" data-name="לנור מרכך מרוכז בניחוח סחלב וניל 819" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לנור מרכך מרוכז בניחוח מאסק פרחים 819 <button type="button" class="photo-btn" data-photo="8006540865828" data-key="8006540865828" data-name="לנור מרכך מרוכז בניחוח מאסק פרחים 819" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪9.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.65 <small>לליטר</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪7.90 · 819 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8006540865828" data-name="לנור מרכך מרוכז בניחוח מאסק פרחים 819" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לנור מרכך מרוכז בניחוח יסמין 819 מל <button type="button" class="photo-btn" data-photo="8006540865729" data-key="8006540865729" data-name="לנור מרכך מרוכז בניחוח יסמין 819 מל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.65 <small>לליטר</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪7.90 · 819 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8006540865729" data-name="לנור מרכך מרוכז בניחוח יסמין 819 מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">ג&#39;ל בדין בייבי <button type="button" class="photo-btn" data-photo="7290112494818" data-key="7290112494818" data-name="ג&#39;ל בדין בייבי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.76 <small>לק״ג</small></div>
+          <div class="shelf">₪26.90 · 2.5 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112494818" data-name="ג&#39;ל בדין בייבי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בדין אקסטרא פלוס מרוכז כחול 960 מ <button type="button" class="photo-btn" data-photo="7290116536262" data-key="7290116536262" data-name="בדין אקסטרא פלוס מרוכז כחול 960 מ" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יוניליוור ישראל טיפוח</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪25</span> בקניית 2 · עד 31.10</div>
+        <div class="club">מחיר מועדון ויקטורי: ₪9.90</div>
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪12.50 (2 ב־₪25)</span><span class="other st-4">נטו חיסכון ₪12.50 (2 ב־₪25)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪13.02 <small>לליטר</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪12.50 · 960 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116536262" data-name="בדין אקסטרא פלוס מרוכז כחול 960 מ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בדין אקסטרא פלוס מרוכז ורוד 960 מ <button type="button" class="photo-btn" data-photo="7290116536279" data-key="7290116536279" data-name="בדין אקסטרא פלוס מרוכז ורוד 960 מ" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יוניליוור ישראל טיפוח</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪25</span> בקניית 2 · עד 31.10</div>
+        <div class="club">מחיר מועדון ויקטורי: ₪9.90</div>
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪12.50 (2 ב־₪25)</span><span class="other st-4">נטו חיסכון ₪12.50 (2 ב־₪25)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪13.02 <small>לליטר</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪12.50 · 960 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116536279" data-name="בדין אקסטרא פלוס מרוכז ורוד 960 מ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בדין אקסטרא פלוס כחול בייבי 960 מ <button type="button" class="photo-btn" data-photo="7290116536316" data-key="7290116536316" data-name="בדין אקסטרא פלוס כחול בייבי 960 מ" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יוניליוור ישראל טיפוח</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪25</span> בקניית 2 · עד 31.10</div>
+        <div class="club">מחיר מועדון ויקטורי: ₪9.90</div>
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪12.50 (2 ב־₪25)</span><span class="other st-4">נטו חיסכון ₪12.50 (2 ב־₪25)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪13.02 <small>לליטר</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪12.50 · 960 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116536316" data-name="בדין אקסטרא פלוס כחול בייבי 960 מ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בדין אקסטרא פלוס ניחוח פינוק 960 <button type="button" class="photo-btn" data-photo="7290116536347" data-key="7290116536347" data-name="בדין אקסטרא פלוס ניחוח פינוק 960" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יוניליוור ישראל טיפוח</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪25</span> בקניית 2 · עד 31.10</div>
+        <div class="club">מחיר מועדון ויקטורי: ₪9.90</div>
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪12.50 (2 ב־₪25)</span><span class="other st-4">נטו חיסכון ₪12.50 (2 ב־₪25)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪13.02 <small>לליטר</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪12.50 · 960 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116536347" data-name="בדין אקסטרא פלוס ניחוח פינוק 960" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מרכך כביסה בדין אקסטרה בייבי ורוד 960 מל <button type="button" class="photo-btn" data-photo="7290116536910" data-key="7290116536910" data-name="מרכך כביסה בדין אקסטרה בייבי ורוד 960 מל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יוניליוור ישראל טיפוח אישי וביתי בע&#34;מ, ח.פ. 510516</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪25</span> בקניית 2 · עד 31.10</div>
+        <div class="club">מחיר מועדון ויקטורי: ₪9.90</div>
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-4">נטו חיסכון ₪12.50 (2 ב־₪25)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪13.02 <small>לליטר</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪12.50 · 960 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116536910" data-name="מרכך כביסה בדין אקסטרה בייבי ורוד 960 מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בדין אקסטרה פלוס זר חלומות ורודים <button type="button" class="photo-btn" data-photo="7290116536927" data-key="7290116536927" data-name="בדין אקסטרה פלוס זר חלומות ורודים" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יוניליוור ישראל טיפוח</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪25</span> בקניית 2 · עד 31.10</div>
+        <div class="club">מחיר מועדון ויקטורי: ₪9.90</div>
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪12.50 (2 ב־₪25)</span><span class="other st-4">נטו חיסכון ₪12.50 (2 ב־₪25)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪13.02 <small>לליטר</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪12.50 · 960 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116536927" data-name="בדין אקסטרה פלוס זר חלומות ורודים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בדין אקסטרה 960מל אלגנט <button type="button" class="photo-btn" data-photo="7290116537207" data-key="7290116537207" data-name="בדין אקסטרה 960מל אלגנט" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יוניליוור ישראל טיפוח</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪25</span> בקניית 2 · עד 31.10</div>
+        <div class="club">מחיר מועדון ויקטורי: ₪9.90</div>
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪12.50 (2 ב־₪25)</span><span class="other st-4">נטו חיסכון ₪12.50 (2 ב־₪25)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪13.02 <small>לליטר</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪12.50 · 960 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116537207" data-name="בדין אקסטרה 960מל אלגנט" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בדין אקסטרה 960מל ספא HARMONY <button type="button" class="photo-btn" data-photo="7290116538174" data-key="7290116538174" data-name="בדין אקסטרה 960מל ספא HARMONY" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יוניליוור</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪25</span> בקניית 2 · עד 31.10</div>
+        <div class="club">מחיר מועדון ויקטורי: ₪9.90</div>
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪12.50 (2 ב־₪25)</span><span class="other st-4">נטו חיסכון ₪12.50 (2 ב־₪25)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪13.02 <small>לליטר</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪12.50 · 960 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116538174" data-name="בדין אקסטרה 960מל ספא HARMONY" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בדין אקסטרה 960מל ספא GLOW <button type="button" class="photo-btn" data-photo="7290116538181" data-key="7290116538181" data-name="בדין אקסטרה 960מל ספא GLOW" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יוניליוור</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪25</span> בקניית 2 · עד 31.10</div>
+        <div class="club">מחיר מועדון ויקטורי: ₪9.90</div>
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪12.50 (2 ב־₪25)</span><span class="other st-4">נטו חיסכון ₪12.50 (2 ב־₪25)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪13.02 <small>לליטר</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪12.50 · 960 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116538181" data-name="בדין אקסטרה 960מל ספא GLOW" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בדין אקסטרא ZER 4 U 960 סגול מ&#34;ל <button type="button" class="photo-btn" data-photo="7290116538563" data-key="7290116538563" data-name="בדין אקסטרא ZER 4 U 960 סגול מ&#34;ל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יוניליוור ישראל טיפוח אישי וביתי בע&#34;מ, ח.פ. 510516</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪25</span> בקניית 2 · עד 31.10</div>
+        <div class="club">מחיר מועדון ויקטורי: ₪9.90</div>
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪12.50 (2 ב־₪25)</span><span class="other st-4">נטו חיסכון ₪12.50 (2 ב־₪25)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪13.02 <small>לליטר</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪12.50 · 960 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116538563" data-name="בדין אקסטרא ZER 4 U 960 סגול מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בדין אקסטרה 960מל רויאל <button type="button" class="photo-btn" data-photo="7290116537191" data-key="7290116537191" data-name="בדין אקסטרה 960מל רויאל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יוניליוור</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪25</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪12.50 (2 ב־₪25)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪13.02 <small>לליטר</small></div>
+          <div class="shelf"><s>₪15.90</s> ₪12.50 · 960 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116537191" data-name="בדין אקסטרה 960מל רויאל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בדין אקסטרה 960מל לקצוריז <button type="button" class="photo-btn" data-photo="7290116537214" data-key="7290116537214" data-name="בדין אקסטרה 960מל לקצוריז" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יוניליוור</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪25</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪12.50 (2 ב־₪25)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪13.02 <small>לליטר</small></div>
+          <div class="shelf"><s>₪15.90</s> ₪12.50 · 960 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116537214" data-name="בדין אקסטרה 960מל לקצוריז" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בדין אקסטרה פלוס זר הרמוניה לבן 9 <button type="button" class="photo-btn" data-photo="7290116536934" data-key="7290116536934" data-name="בדין אקסטרה פלוס זר הרמוניה לבן 9" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יוניליוור</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪25</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪12.50 (2 ב־₪25)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪13.02 <small>לליטר</small></div>
+          <div class="shelf"><s>₪15.90</s> ₪12.50 · 960 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116536934" data-name="בדין אקסטרה פלוס זר הרמוניה לבן 9" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בדין אקסטרא פלוס צהוב בייבי 960 מ <button type="button" class="photo-btn" data-photo="7290116536323" data-key="7290116536323" data-name="בדין אקסטרא פלוס צהוב בייבי 960 מ" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יוניליוור</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪25</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪12.50 (2 ב־₪25)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪13.02 <small>לליטר</small></div>
+          <div class="shelf"><s>₪15.90</s> ₪12.50 · 960 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116536323" data-name="בדין אקסטרא פלוס צהוב בייבי 960 מ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מקסימה מרכך כביסה מרוכז תכלת סנו 1 ליטר <button type="button" class="photo-btn" data-photo="7290012117534" data-key="7290012117534" data-name="מקסימה מרכך כביסה מרוכז תכלת סנו 1 ליטר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪28</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪15.00 (2 ב־₪30)</span><span class="other st-0">ויקטורי ₪19.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪14.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪18.80</s> ₪14.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290012117534" data-name="מקסימה מרכך כביסה מרוכז תכלת סנו 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מקסימה מרכך כביסה מרוכז צהוב סנו 1 ליטר <button type="button" class="photo-btn" data-photo="7290012117541" data-key="7290012117541" data-name="מקסימה מרכך כביסה מרוכז צהוב סנו 1 ליטר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪28</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪15.00 (2 ב־₪30)</span><span class="other st-0">ויקטורי ₪19.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪14.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪18.80</s> ₪14.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290012117541" data-name="מקסימה מרכך כביסה מרוכז צהוב סנו 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מקסימה מרכך כביסה מרוכז ורוד בניחוח מאסק סנו 1 ליטר <button type="button" class="photo-btn" data-photo="7290012117558" data-key="7290012117558" data-name="מקסימה מרכך כביסה מרוכז ורוד בניחוח מאסק סנו 1 ליטר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪28</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪15.00 (2 ב־₪30)</span><span class="other st-0">ויקטורי ₪19.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪14.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪18.80</s> ₪14.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290012117558" data-name="מקסימה מרכך כביסה מרוכז ורוד בניחוח מאסק סנו 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מקסימה מרכך כביסה מרוכז סנסטיב בייבי סנו 1 ליטר <button type="button" class="photo-btn" data-photo="7290012823381" data-key="7290012823381" data-name="מקסימה מרכך כביסה מרוכז סנסטיב בייבי סנו 1 ליטר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪28</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪15.00 (2 ב־₪30)</span><span class="other st-0">ויקטורי ₪19.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪14.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪18.80</s> ₪14.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290012823381" data-name="מקסימה מרכך כביסה מרוכז סנסטיב בייבי סנו 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מקסימה מרכך כביסה מרוכז בניחוח אולטרא פרש סנו 1 ליטר <button type="button" class="photo-btn" data-photo="7290013268020" data-key="7290013268020" data-name="מקסימה מרכך כביסה מרוכז בניחוח אולטרא פרש סנו 1 ליטר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪28</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪15.00 (2 ב־₪30)</span><span class="other st-0">ויקטורי ₪19.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪14.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪18.80</s> ₪14.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013268020" data-name="מקסימה מרכך כביסה מרוכז בניחוח אולטרא פרש סנו 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מקסימה מרכך כביסה מרוכז בניחוח לבנדר פצ&#39;ולי סנו 1 ליטר <button type="button" class="photo-btn" data-photo="7290013268037" data-key="7290013268037" data-name="מקסימה מרכך כביסה מרוכז בניחוח לבנדר פצ&#39;ולי סנו 1 ליטר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪28</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪15.00 (2 ב־₪30)</span><span class="other st-0">ויקטורי ₪19.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪14.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪18.80</s> ₪14.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013268037" data-name="מקסימה מרכך כביסה מרוכז בניחוח לבנדר פצ&#39;ולי סנו 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מקסימה מרכך כביסה מרוכז 1ליטר ג&#39;וי <button type="button" class="photo-btn" data-photo="7290013268983" data-key="7290013268983" data-name="מקסימה מרכך כביסה מרוכז 1ליטר ג&#39;וי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪28</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪15.00 (2 ב־₪30)</span><span class="other st-0">ויקטורי ₪19.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪14.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪18.80</s> ₪14.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013268983" data-name="מקסימה מרכך כביסה מרוכז 1ליטר ג&#39;וי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מרכך כביסה מרוכז לבן סנו 1 ליטר <button type="button" class="photo-btn" data-photo="7290013268990" data-key="7290013268990" data-name="מרכך כביסה מרוכז לבן סנו 1 ליטר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪28</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪15.00 (2 ב־₪30)</span><span class="other st-0">ויקטורי ₪19.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪14.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪18.80</s> ₪14.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013268990" data-name="מרכך כביסה מרוכז לבן סנו 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מרכך מרוכז בייבי 1ליטר 40 <button type="button" class="photo-btn" data-photo="7290013269003" data-key="7290013269003" data-name="מרכך מרוכז בייבי 1ליטר 40" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪28</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪15.00 (2 ב־₪30)</span><span class="other st-0">ויקטורי ₪21.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪14.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪18.80</s> ₪14.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013269003" data-name="מרכך מרוכז בייבי 1ליטר 40" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מקסימה מרכך כביסה מרוכז חלב ודבש סנו 1 ליטר <button type="button" class="photo-btn" data-photo="7290014397286" data-key="7290014397286" data-name="מקסימה מרכך כביסה מרוכז חלב ודבש סנו 1 ליטר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו ברונוס בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪28</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪15.00 (2 ב־₪30)</span><span class="other st-0">ויקטורי ₪19.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪14.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪18.80</s> ₪14.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014397286" data-name="מקסימה מרכך כביסה מרוכז חלב ודבש סנו 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">סנו מרכך 1 ליטר blue blossom מקסימה <button type="button" class="photo-btn" data-photo="7290108350616" data-key="7290108350616" data-name="סנו מרכך 1 ליטר blue blossom מקסימה" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בע&#34;\מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪28</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪15.00 (2 ב־₪30)</span><span class="other st-0">ויקטורי ₪19.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪14.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪18.80</s> ₪14.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108350616" data-name="סנו מרכך 1 ליטר blue blossom מקסימה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מקסימה מרכך כביסה מרוכז1 ליטר soft silk <button type="button" class="photo-btn" data-photo="7290108350623" data-key="7290108350623" data-name="מקסימה מרכך כביסה מרוכז1 ליטר soft silk" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בע&#34;\מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪28</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪15.00 (2 ב־₪30)</span><span class="other st-0">ויקטורי ₪19.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪14.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪18.80</s> ₪14.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108350623" data-name="מקסימה מרכך כביסה מרוכז1 ליטר soft silk" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מקסימה מרכך סופר מרוכז 1ליטר <button type="button" class="photo-btn" data-photo="7290108351804" data-key="7290108351804" data-name="מקסימה מרכך סופר מרוכז 1ליטר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪28</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪15.00 (2 ב־₪30)</span><span class="other st-0">ויקטורי ₪19.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪14.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪18.80</s> ₪14.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108351804" data-name="מקסימה מרכך סופר מרוכז 1ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מקסימה מרכךסופר מרוכז 1ליטר <button type="button" class="photo-btn" data-photo="7290108351811" data-key="7290108351811" data-name="מקסימה מרכךסופר מרוכז 1ליטר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪28</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪15.00 (2 ב־₪30)</span><span class="other st-0">ויקטורי ₪19.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪14.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪18.80</s> ₪14.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108351811" data-name="מקסימה מרכךסופר מרוכז 1ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מרכך מרוכז ש.שועל בייבי 1 <button type="button" class="photo-btn" data-photo="7290108355994" data-key="7290108355994" data-name="מרכך מרוכז ש.שועל בייבי 1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪28</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪15.00 (2 ב־₪30)</span><span class="other st-0">ויקטורי ₪21.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪14.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪18.80</s> ₪14.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108355994" data-name="מרכך מרוכז ש.שועל בייבי 1" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מקסימה מרכך כביסה מרוכז סנו 1 ליטר <button type="button" class="photo-btn" data-photo="7290108358384" data-key="7290108358384" data-name="מקסימה מרכך כביסה מרוכז סנו 1 ליטר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪28</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪15.00 (2 ב־₪30)</span><span class="other st-0">ויקטורי ₪19.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪14.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪18.80</s> ₪14.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108358384" data-name="מקסימה מרכך כביסה מרוכז סנו 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מרכך מרוכז בניחוח פרש 1 ליטר סנו <button type="button" class="photo-btn" data-photo="7290108358766" data-key="7290108358766" data-name="מרכך מרוכז בניחוח פרש 1 ליטר סנו" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪28</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪15.00 (2 ב־₪30)</span><span class="other st-0">ויקטורי ₪19.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪14.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪18.80</s> ₪14.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108358766" data-name="מרכך מרוכז בניחוח פרש 1 ליטר סנו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מקסימה מרכך כביסה מרוכז 1ליטר קאלם <button type="button" class="photo-btn" data-photo="7290108354270" data-key="7290108354270" data-name="מקסימה מרכך כביסה מרוכז 1ליטר קאלם" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪28</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪15.00 (2 ב־₪30)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪14.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪18.80</s> ₪14.00 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108354270" data-name="מקסימה מרכך כביסה מרוכז 1ליטר קאלם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מרכך כביסה היפואלרגני הדובי המפנק 1 ליטר <button type="button" class="photo-btn" data-photo="4013162036196" data-key="4013162036196" data-name="מרכך כביסה היפואלרגני הדובי המפנק 1 ליטר" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פיט</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪15.90 <small>לליטר</small></div>
+          <div class="shelf">₪15.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4013162036196" data-name="מרכך כביסה היפואלרגני הדובי המפנק 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מרכך כביסה נשיקה ורודה הדובי המפנק 1 ליט <button type="button" class="photo-btn" data-photo="4013162036233" data-key="4013162036233" data-name="מרכך כביסה נשיקה ורודה הדובי המפנק 1 ליט" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פיט</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪15.90 <small>לליטר</small></div>
+          <div class="shelf">₪15.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4013162036233" data-name="מרכך כביסה נשיקה ורודה הדובי המפנק 1 ליט" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מרכך מרוכז לבנדר 1 ל <button type="button" class="photo-btn" data-photo="7290003976355" data-key="7290003976355" data-name="מרכך מרוכז לבנדר 1 ל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪15.90 <small>לליטר</small></div>
+          <div class="shelf">₪15.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003976355" data-name="מרכך מרוכז לבנדר 1 ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מרכך כביסה מרוכז -Spring Touch <button type="button" class="photo-btn" data-photo="7290115480733" data-key="7290115480733" data-name="מרכך כביסה מרוכז -Spring Touch" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪17.67 <small>לליטר</small></div>
+          <div class="shelf">₪15.90 · 900 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115480733" data-name="מרכך כביסה מרוכז -Spring Touch" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">תינוקלין מרכך כביסה כחול <button type="button" class="photo-btn" data-photo="8435495819363" data-key="8435495819363" data-name="תינוקלין מרכך כביסה כחול" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪18.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪17.90 <small>לליטר</small></div>
+          <div class="shelf">₪17.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8435495819363" data-name="תינוקלין מרכך כביסה כחול" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">תינוקלין מרכך כביסה היפואלרגני <button type="button" class="photo-btn" data-photo="8435495807605" data-key="8435495807605" data-name="תינוקלין מרכך כביסה היפואלרגני" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪18.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪17.90 <small>לליטר</small></div>
+          <div class="shelf">₪17.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8435495807605" data-name="תינוקלין מרכך כביסה היפואלרגני" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">סנו מקסימה מרכך פרפיום גולדן 750 מל <button type="button" class="photo-btn" data-photo="7290012823923" data-key="7290012823923" data-name="סנו מקסימה מרכך פרפיום גולדן 750 מל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪28</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪18.67 <small>לליטר</small></div>
+          <div class="shelf"><s>₪16.90</s> ₪14.00 · 750 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290012823923" data-name="סנו מקסימה מרכך פרפיום גולדן 750 מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">סנו מקסימה מרכך פרפיום קריסטל 750 מל <button type="button" class="photo-btn" data-photo="7290012823947" data-key="7290012823947" data-name="סנו מקסימה מרכך פרפיום קריסטל 750 מל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מבצעי מרץ 2011</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪28</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪18.67 <small>לליטר</small></div>
+          <div class="shelf"><s>₪16.90</s> ₪14.00 · 750 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290012823947" data-name="סנו מקסימה מרכך פרפיום קריסטל 750 מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מרכך כביסה אקולוגי 1 <button type="button" class="photo-btn" data-photo="7290003976058" data-key="7290003976058" data-name="מרכך כביסה אקולוגי 1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סאסאטק</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪18.90 <small>לליטר</small></div>
+          <div class="shelf">₪18.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003976058" data-name="מרכך כביסה אקולוגי 1" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">ג&#39;ל + מרכך ספרינג בלוסום <button type="button" class="photo-btn" data-photo="7290108358513" data-key="7290108358513" data-name="ג&#39;ל + מרכך ספרינג בלוסום" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.95 <small>לליטר</small></div>
+          <div class="shelf">₪39.90 · 2 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108358513" data-name="ג&#39;ל + מרכך ספרינג בלוסום" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מקסימה למייבש בלו בלוסום <button type="button" class="photo-btn" data-photo="7290004731564" data-key="7290004731564" data-name="מקסימה למייבש בלו בלוסום" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪16.90</span><span class="other st-0">ויקטורי ₪17.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪20.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪15.90</s> ₪15.00 · 750 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004731564" data-name="מקסימה למייבש בלו בלוסום" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מקסימה מרכך ומבשם למייבש אולטרא פרש סנו 750 מ&#34;ל <button type="button" class="photo-btn" data-photo="7290005423253" data-key="7290005423253" data-name="מקסימה מרכך ומבשם למייבש אולטרא פרש סנו 750 מ&#34;ל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בע\&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪16.90</span><span class="other st-0">ויקטורי ₪17.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪20.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪15.90</s> ₪15.00 · 750 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290005423253" data-name="מקסימה מרכך ומבשם למייבש אולטרא פרש סנו 750 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מבשם ומרכך למייבש הכביסה בייבי <button type="button" class="photo-btn" data-photo="7290108351569" data-key="7290108351569" data-name="מבשם ומרכך למייבש הכביסה בייבי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪17.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪20.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪15.90</s> ₪15.00 · 750 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108351569" data-name="מבשם ומרכך למייבש הכביסה בייבי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מבשם ומרכך למייבש הכביסה בייבי <button type="button" class="photo-btn" data-photo="7290108354089" data-key="7290108354089" data-name="מבשם ומרכך למייבש הכביסה בייבי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪16.90</span><span class="other st-0">ויקטורי ₪17.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪20.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪15.90</s> ₪15.00 · 750 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108354089" data-name="מבשם ומרכך למייבש הכביסה בייבי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מקסימה למייבש בניחוח 750 מ&#34;ל <button type="button" class="photo-btn" data-photo="7290108357189" data-key="7290108357189" data-name="מקסימה למייבש בניחוח 750 מ&#34;ל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪17.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪20.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪15.90</s> ₪15.00 · 750 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108357189" data-name="מקסימה למייבש בניחוח 750 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מבשם למייבש סנו מקסימה 750 מ&#34;ל <button type="button" class="photo-btn" data-photo="7290108358827" data-key="7290108358827" data-name="מבשם למייבש סנו מקסימה 750 מ&#34;ל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪16.90</span><span class="other st-0">ויקטורי ₪17.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪20.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪15.90</s> ₪15.00 · 750 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108358827" data-name="מבשם למייבש סנו מקסימה 750 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מקסימה מרכך ומבשם כביסה למייבש סנסיטיב סנו 750 מ&#34;ל <button type="button" class="photo-btn" data-photo="7290004731519" data-key="7290004731519" data-name="מקסימה מרכך ומבשם כביסה למייבש סנסיטיב סנו 750 מ&#34;ל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪20.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪15.90</s> ₪15.00 · 750 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004731519" data-name="מקסימה מרכך ומבשם כביסה למייבש סנסיטיב סנו 750 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מקסימה תרסיס מרכך ומבשם במייבש מאסק סנו 750 מ&#34;ל <button type="button" class="photo-btn" data-photo="7290004731557" data-key="7290004731557" data-name="מקסימה תרסיס מרכך ומבשם במייבש מאסק סנו 750 מ&#34;ל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪20.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪15.90</s> ₪15.00 · 750 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004731557" data-name="מקסימה תרסיס מרכך ומבשם במייבש מאסק סנו 750 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מרכך כביסה מרוכז אקו <button type="button" class="photo-btn" data-photo="7290003976072" data-key="7290003976072" data-name="מרכך כביסה מרוכז אקו" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סאסאטק</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪20.20 <small>לליטר</small></div>
+          <div class="shelf">₪20.20 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003976072" data-name="מרכך כביסה מרוכז אקו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מרכך כביסה סופר מרוכז פרש וייט 900 מל TN <button type="button" class="photo-btn" data-photo="7290019014638" data-key="7290019014638" data-name="מרכך כביסה סופר מרוכז פרש וייט 900 מל TN" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סאסאטק אגש&#34;\ח בע&#34;\מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪21.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪18.90 · 900 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019014638" data-name="מרכך כביסה סופר מרוכז פרש וייט 900 מל TN" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מבשם כביסה לבן רמי לוי 500 מ&#34;ל <button type="button" class="photo-btn" data-photo="7290015899338" data-key="7290015899338" data-name="מבשם כביסה לבן רמי לוי 500 מ&#34;ל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רמי לוי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪25.80 <small>לליטר</small></div>
+          <div class="shelf">₪12.90 · 500 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015899338" data-name="מבשם כביסה לבן רמי לוי 500 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מבשם כביסה ורוד רמי לוי 500 מ&#34;ל <button type="button" class="photo-btn" data-photo="7290015899345" data-key="7290015899345" data-name="מבשם כביסה ורוד רמי לוי 500 מ&#34;ל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רמי לוי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪25.80 <small>לליטר</small></div>
+          <div class="shelf">₪12.90 · 500 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015899345" data-name="מבשם כביסה ורוד רמי לוי 500 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מבשם כביסה כחול רמי לוי 500 מ&#34;ל <button type="button" class="photo-btn" data-photo="7290015899352" data-key="7290015899352" data-name="מבשם כביסה כחול רמי לוי 500 מ&#34;ל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רמי לוי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪25.80 <small>לליטר</small></div>
+          <div class="shelf">₪12.90 · 500 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015899352" data-name="מבשם כביסה כחול רמי לוי 500 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מבשם רב תכליתי מרוכז בניחוח רוז כביסכל 750 מ&#34;ל <button type="button" class="photo-btn" data-photo="7290015381369" data-key="7290015381369" data-name="מבשם רב תכליתי מרוכז בניחוח רוז כביסכל 750 מ&#34;ל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פרפיום</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪21.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪26.53 <small>לליטר</small></div>
+          <div class="shelf"><s>₪21.90</s> ₪19.90 · 750 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015381369" data-name="מבשם רב תכליתי מרוכז בניחוח רוז כביסכל 750 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מבשם רב תכליתי מרוכז בניחוח בייבי כביסכל 750 מ&#34;ל <button type="button" class="photo-btn" data-photo="7290015381826" data-key="7290015381826" data-name="מבשם רב תכליתי מרוכז בניחוח בייבי כביסכל 750 מ&#34;ל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פרפיום</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪21.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪26.53 <small>לליטר</small></div>
+          <div class="shelf"><s>₪21.90</s> ₪19.90 · 750 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015381826" data-name="מבשם רב תכליתי מרוכז בניחוח בייבי כביסכל 750 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">בדין תרסיס למייבש כביסה ורוד 500 מ&#34;ל <button type="button" class="photo-btn" data-photo="7290100240144" data-key="7290100240144" data-name="בדין תרסיס למייבש כביסה ורוד 500 מ&#34;ל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יוניליוור ישראל טיפוח אישי וביתי בע&#34;מ, ח.פ. 510516</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪15.50 (מבצע)</span><span class="other st-0">ויקטורי ₪20.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪29.80 <small>לליטר</small></div>
+          <div class="shelf"><s>₪17.90</s> ₪14.90 · 500 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290100240144" data-name="בדין תרסיס למייבש כביסה ורוד 500 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בדין תרסיס למייבש כביסה כחול 500 מ&#34;ל <button type="button" class="photo-btn" data-photo="7290100240137" data-key="7290100240137" data-name="בדין תרסיס למייבש כביסה כחול 500 מ&#34;ל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>גליל כימיקלים בע&#34;מ. א.ת צפוני קריית שמונה.</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪20.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪31.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪17.90</s> ₪15.50 · 500 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290100240137" data-name="בדין תרסיס למייבש כביסה כחול 500 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גליס מרכך שמני הזנה <button type="button" class="photo-btn" data-photo="9000100398572" data-key="9000100398572" data-name="גליס מרכך שמני הזנה" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪16</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪40.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪8.00 · 200 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9000100398572" data-name="גליס מרכך שמני הזנה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">דזיטול דאודורנט טקסטיל 500 מל <button type="button" class="photo-btn" data-photo="7290109923444" data-key="7290109923444" data-name="דזיטול דאודורנט טקסטיל 500 מל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪57.60 <small>לליטר</small></div>
+          <div class="shelf">₪28.80 · 500 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290109923444" data-name="דזיטול דאודורנט טקסטיל 500 מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לנור כדוריות בושם סחלב 270 גר <button type="button" class="photo-btn" data-photo="8700216732284" data-key="8700216732284" data-name="לנור כדוריות בושם סחלב 270 גר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪40</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪32.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪74.07 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪32.80</s> ₪20.00 · 270 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8700216732284" data-name="לנור כדוריות בושם סחלב 270 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לנור כדוריות הבושם בניחוח יסמין 270 גרם <button type="button" class="photo-btn" data-photo="8700216732475" data-key="8700216732475" data-name="לנור כדוריות הבושם בניחוח יסמין 270 גרם" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪40</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪32.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪74.07 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪32.80</s> ₪20.00 · 270 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8700216732475" data-name="לנור כדוריות הבושם בניחוח יסמין 270 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לנור כדוריות בושם ניחוח אריאל 270 גר <button type="button" class="photo-btn" data-photo="8700216732499" data-key="8700216732499" data-name="לנור כדוריות בושם ניחוח אריאל 270 גר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪40</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪32.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪74.07 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪32.80</s> ₪20.00 · 270 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8700216732499" data-name="לנור כדוריות בושם ניחוח אריאל 270 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לנור כדוריות הבושם בניחוח רענן 270 גרם <button type="button" class="photo-btn" data-photo="8700216732550" data-key="8700216732550" data-name="לנור כדוריות הבושם בניחוח רענן 270 גרם" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪40</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪32.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪74.07 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪32.80</s> ₪20.00 · 270 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8700216732550" data-name="לנור כדוריות הבושם בניחוח רענן 270 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לנור כדוריות בושם או <button type="button" class="photo-btn" data-photo="8700216732048" data-key="8700216732048" data-name="לנור כדוריות בושם או" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪40</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪74.07 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪32.80</s> ₪20.00 · 270 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8700216732048" data-name="לנור כדוריות בושם או" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">כדוריות לנור לכביסה <button type="button" class="photo-btn" data-photo="8700216806541" data-key="8700216806541" data-name="כדוריות לנור לכביסה" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פרוקטר &amp; גמבל</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪95.10 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪79.90</s> ₪69.90 · 735 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8700216806541" data-name="כדוריות לנור לכביסה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לנור כדוריות 495 גרם <button type="button" class="photo-btn" data-photo="8700216704830" data-key="8700216704830" data-name="לנור כדוריות 495 גרם" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪104.85 <small>לליטר</small></div>
+          <div class="shelf"><s>₪57.90</s> ₪51.90 · 495 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8700216704830" data-name="לנור כדוריות 495 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לנור כדוריות הבושם בניחוח אריאל 495 גרם <button type="button" class="photo-btn" data-photo="8700216704694" data-key="8700216704694" data-name="לנור כדוריות הבושם בניחוח אריאל 495 גרם" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪106.87 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪59.90</s> ₪52.90 · 495 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8700216704694" data-name="לנור כדוריות הבושם בניחוח אריאל 495 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לנור כדוריות הבושם בניחוח רענן (495 גר`) <button type="button" class="photo-btn" data-photo="8700216704861" data-key="8700216704861" data-name="לנור כדוריות הבושם בניחוח רענן (495 גר`)" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-4">נטו חיסכון ₪57.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪106.87 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪59.90</s> ₪52.90 · 495 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8700216704861" data-name="לנור כדוריות הבושם בניחוח רענן (495 גר`)" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">לנור כדוריות הבושם בניחוח כותנה 495 גרם <button type="button" class="photo-btn" data-photo="8006530183185" data-key="8006530183185" data-name="לנור כדוריות הבושם בניחוח כותנה 495 גרם" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪116.97 <small>לק״ג</small></div>
+          <div class="shelf">₪57.90 · 495 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8006530183185" data-name="לנור כדוריות הבושם בניחוח כותנה 495 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">לנור כדוריות הבושם בניחוח אריאל 150 גר <button type="button" class="photo-btn" data-photo="8700216732345" data-key="8700216732345" data-name="לנור כדוריות הבושם בניחוח אריאל 150 גר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪132.67 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 150 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8700216732345" data-name="לנור כדוריות הבושם בניחוח אריאל 150 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">לנור כדוריות הבושם בניחוח רענן 150 גר <button type="button" class="photo-btn" data-photo="8700216732673" data-key="8700216732673" data-name="לנור כדוריות הבושם בניחוח רענן 150 גר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪132.67 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 150 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8700216732673" data-name="לנור כדוריות הבושם בניחוח רענן 150 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">בדין דפים למייבש כביסה ורוד 40 יח&#39; <button type="button" class="photo-btn" data-photo="7290116531762" data-key="7290116531762" data-name="בדין דפים למייבש כביסה ורוד 40 יח&#39;" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קלין</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪15.50 (מבצע)</span><span class="other st-0">ויקטורי ₪15.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.37 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪17.90</s> ₪14.90 · 40 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116531762" data-name="בדין דפים למייבש כביסה ורוד 40 יח&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">בדין דפים למייבש כביסה כחול 40 יח&#39; <button type="button" class="photo-btn" data-photo="7290116531779" data-key="7290116531779" data-name="בדין דפים למייבש כביסה כחול 40 יח&#39;" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קלין טסט פרודקטס</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪15.50 (מבצע)</span><span class="other st-0">ויקטורי ₪15.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.37 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪17.90</s> ₪14.90 · 40 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116531779" data-name="בדין דפים למייבש כביסה כחול 40 יח&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בושם לכביסה 240 מל <button type="button" class="photo-btn" data-photo="7290108358797" data-key="7290108358797" data-name="בושם לכביסה 240 מל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪1.94 <small>ליח׳</small></div>
+          <div class="shelf">₪38.90 · 20 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108358797" data-name="בושם לכביסה 240 מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מקסימה דפי בישום לחים למייבש 20יח <button type="button" class="photo-btn" data-photo="7290108352535" data-key="7290108352535" data-name="מקסימה דפי בישום לחים למייבש 20יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טרופיגל דגיל תעשיות קוסמטיקה בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪12.90</span><span class="other st-4">נטו חיסכון ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪11.90 <small>ליח׳</small></div>
+          <div class="shelf">₪11.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108352535" data-name="מקסימה דפי בישום לחים למייבש 20יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מקסימה דפי בישום לחים למייבש 20יח <button type="button" class="photo-btn" data-photo="7290122150063" data-key="7290122150063" data-name="מקסימה דפי בישום לחים למייבש 20יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טרופיקל דגיל תעשיות קוסמטיקה בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪12.90</span><span class="other st-4">נטו חיסכון ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪11.90 <small>ליח׳</small></div>
+          <div class="shelf">₪11.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290122150063" data-name="מקסימה דפי בישום לחים למייבש 20יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מקסימה דפי בישום לחים למייבש 20יח <button type="button" class="photo-btn" data-photo="7290122150056" data-key="7290122150056" data-name="מקסימה דפי בישום לחים למייבש 20יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טרופיקל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪11.90 <small>ליח׳</small></div>
+          <div class="shelf">₪11.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290122150056" data-name="מקסימה דפי בישום לחים למייבש 20יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מקסימה דפי בישום לחים למייבש 20יח <button type="button" class="photo-btn" data-photo="7290108358124" data-key="7290108358124" data-name="מקסימה דפי בישום לחים למייבש 20יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪12.90 <small>ליח׳</small></div>
+          <div class="shelf">₪12.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108358124" data-name="מקסימה דפי בישום לחים למייבש 20יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מרכך כביסה מרוכז בלו טאצ&#39; 900 מ&#34;ל TNX <button type="button" class="photo-btn" data-photo="7290019014614" data-key="7290019014614" data-name="מרכך כביסה מרוכז בלו טאצ&#39; 900 מ&#34;ל TNX" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סאסאטק אגש&#34;\ח בע&#34;\מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪18.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪17.50 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪17.50 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019014614" data-name="מרכך כביסה מרוכז בלו טאצ&#39; 900 מ&#34;ל TNX" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מרכך כביסה מרוכז לגונה 900 מ&#34;ל TNX <button type="button" class="photo-btn" data-photo="7290019014621" data-key="7290019014621" data-name="מרכך כביסה מרוכז לגונה 900 מ&#34;ל TNX" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סאסאטק אגש&#34;\ח בע&#34;\מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪18.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪17.50 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪17.50 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019014621" data-name="מרכך כביסה מרוכז לגונה 900 מ&#34;ל TNX" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מבשם בדים ביץ&#39; קלאב 500 מ&#34;ל TNX <button type="button" class="photo-btn" data-photo="7290019014737" data-key="7290019014737" data-name="מבשם בדים ביץ&#39; קלאב 500 מ&#34;ל TNX" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סאסאטק אגש&#34;ח בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪35</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪17.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪17.50 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪17.50 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019014737" data-name="מבשם בדים ביץ&#39; קלאב 500 מ&#34;ל TNX" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מבשם בדים בייבי לאב 500 מל TNX <button type="button" class="photo-btn" data-photo="7290019014973" data-key="7290019014973" data-name="מבשם בדים בייבי לאב 500 מל TNX" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סאסאטק אגש&#34;\ח בע&#34;\מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪35</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪17.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪17.50 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪17.50 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019014973" data-name="מבשם בדים בייבי לאב 500 מל TNX" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מבשם בדים לגונה 500 מ&#34;ל TNX <button type="button" class="photo-btn" data-photo="7290019274261" data-key="7290019274261" data-name="מבשם בדים לגונה 500 מ&#34;ל TNX" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סאסאטק אגש&#34;ח בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪35</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪17.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪17.50 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪17.50 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019274261" data-name="מבשם בדים לגונה 500 מ&#34;ל TNX" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מבשם בדים סופט קלין 500 מ&#34;ל TNX <button type="button" class="photo-btn" data-photo="7290019274544" data-key="7290019274544" data-name="מבשם בדים סופט קלין 500 מ&#34;ל TNX" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סאסאטק אגש&#34;ח בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪35</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪17.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪17.50 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪17.50 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019274544" data-name="מבשם בדים סופט קלין 500 מ&#34;ל TNX" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מבשם בדים ניו בורן 500 מ&#34;ל TNX <button type="button" class="photo-btn" data-photo="7290019274551" data-key="7290019274551" data-name="מבשם בדים ניו בורן 500 מ&#34;ל TNX" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סאסאטק אגש&#34;\ח בע&#34;\מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪35</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪17.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪17.50 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪17.50 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019274551" data-name="מבשם בדים ניו בורן 500 מ&#34;ל TNX" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מרכך כביסה מרוכז ריבר סייד 900 מ&#34;ל TNX <button type="button" class="photo-btn" data-photo="7290019611417" data-key="7290019611417" data-name="מרכך כביסה מרוכז ריבר סייד 900 מ&#34;ל TNX" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סאסאטק</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪17.50 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪17.50 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019611417" data-name="מרכך כביסה מרוכז ריבר סייד 900 מ&#34;ל TNX" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מרכך כביסה מרוכז בייבי לאב 900 מ&#34;ל TNX <button type="button" class="photo-btn" data-photo="7290019014652" data-key="7290019014652" data-name="מרכך כביסה מרוכז בייבי לאב 900 מ&#34;ל TNX" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סאסאטק</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪23.90 <small>ליח׳</small></div>
+          <div class="shelf">₪23.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019014652" data-name="מרכך כביסה מרוכז בייבי לאב 900 מ&#34;ל TNX" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">לנור קפסולות בניחוח אמטיסט 30 יח <button type="button" class="photo-btn" data-photo="8006530197625" data-key="8006530197625" data-name="לנור קפסולות בניחוח אמטיסט 30 יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪44.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪39.90 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪49.90</s> ₪39.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8006530197625" data-name="לנור קפסולות בניחוח אמטיסט 30 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לנור קפסולות בניחוח אפרילפרש 30 יח <button type="button" class="photo-btn" data-photo="8006530197915" data-key="8006530197915" data-name="לנור קפסולות בניחוח אפרילפרש 30 יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪44.90 <small>ליח׳</small></div>
+          <div class="shelf">₪44.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8006530197915" data-name="לנור קפסולות בניחוח אפרילפרש 30 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+</ol>
+</div>
+
+</main>
+<footer>עודכן 7.10 06:15 · ויקטורי 6.10 21:13 · רמי לוי 00:11 · אושר עד 6.10 21:00 · אושר עד 6.10 21:00 · נטו חיסכון 04:03</footer>
+
+
+<nav class="bottom-nav" aria-label="ניווט">
+  <a href="index.html" class="on"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg><span>בית</span></a>
+  <a href="search.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><span>חיפוש</span></a>
+  <a href="scan.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V5a1 1 0 0 1 1-1h2M17 4h2a1 1 0 0 1 1 1v2M20 17v2a1 1 0 0 1-1 1h-2M7 20H5a1 1 0 0 1-1-1v-2"/><path d="M8 8v8M11 8v8M14 8v8M16.5 8v8"/></svg><span>סריקה</span></a>
+  <a href="basket.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h11l2-8H6.2"/><circle cx="9.5" cy="19" r="1.4"/><circle cx="17" cy="19" r="1.4"/></svg><span id="cart-count"></span><span>עגלת קניות</span></a>
+  <a href="spending.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-2-1.4-2 1.4-2-1.4-2 1.4-2-1.4L6 21z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><span>הוצאות</span></a>
+</nav>
+
+<script src="static/basket.js?v=20261007061534"></script>
+<script src="static/photo.js?v=20261007061534"></script>
+
+<script src="static/render.js?v=20261007061534"></script>
+<script src="static/category.js?v=20261007061534" data-build="20261007061534"></script>
+
+<script>
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+</script>
+</body>
+</html>

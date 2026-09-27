@@ -1,0 +1,6192 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f7a4d">
+<script>
+// the look this phone chose (settings.html "מראה"), before anything is drawn: html.light / html.dark
+// (none = follow the phone) and html[data-color] (none = green); the browser bar takes the colour too
+(function () {
+  let t = {};
+  try { t = JSON.parse(localStorage.getItem("theme")) || {}; } catch (e) { /* none yet */ }
+  const root = document.documentElement;
+  if (t.mode === "light" || t.mode === "dark") root.classList.add(t.mode);
+  if (t.color) root.dataset.color = t.color;
+  if (t.bar) document.querySelector('meta[name="theme-color"]').content = t.bar;
+})();
+</script>
+<title>פירות טריים</title>
+<link rel="manifest" href="static/manifest.webmanifest">
+<link rel="icon" href="static/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="static/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="static/style.css?v=20261007061534">
+<style>.st-0 { --store: #e07000; }.st-1 { --store: #d32f2f; }.st-2 { --store: #1565c0; }.st-3 { --store: #1565c0; }.st-4 { --store: #c99a00; }</style>
+<script src="static/stores.js?v=20261007061534" data-stores="[{&#34;card_cap&#34;: 750, &#34;card_rate&#34;: 0.07, &#34;default&#34;: true, &#34;key&#34;: &#34;victory-038&#34;, &#34;name&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;ramilevy-007&#34;, &#34;name&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-026&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05ea\u05dc\u05e4\u05d9\u05d5\u05ea&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-003&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05d2\u05d1\u05e2\u05ea \u05e9\u05d0\u05d5\u05dc&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;netto-052&#34;, &#34;name&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df \u05e7\u05e8\u05d9\u05d9\u05ea \u05d9\u05e2\u05e8\u05d9\u05dd&#34;, &#34;short&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df&#34;}]"></script>
+<script src="static/avoid.js?v=20261007061534" data-kinds="[&#34;\u05e2\u05d5\u05e3 \u05de\u05e2\u05d5\u05d1\u05d3&#34;, &#34;\u05d1\u05e9\u05e8 \u05de\u05e2\u05d5\u05d1\u05d3&#34;]"></script>
+<script>
+// No long-press menu on links, pictures or text (the user: the home page's tiles opened Chrome's "open in new tab /
+// copy link" menu; CSS can't stop that on Android). Typing fields and the ⓘ sheet's barcode keep theirs.
+document.addEventListener("contextmenu", (e) => {
+  if (!e.target.closest("input, textarea, [contenteditable], .photo-barcode")) e.preventDefault();
+});
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <a class="back" href="t-0.html" aria-label="חזרה">→</a>
+    <h1>פירות טריים</h1>
+    <a class="notes-link" href="notes.html" aria-label="רשימת קניות" title="רשימת קניות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="m8.5 10 1.2 1.2 2.3-2.4M8.5 15.5l1.2 1.2 2.3-2.4M14 10.5h2.5M14 16h2.5"/></svg><span>רשימת קניות</span></a>
+    <a class="settings-link" href="settings.html" aria-label="הגדרות" title="הגדרות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></a>
+  </div>
+  
+  <form class="search" action="search.html" method="get" role="search">
+    <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+    <input type="search" name="q" placeholder="חיפוש מוצר" enterkeyhint="search" aria-label="חיפוש מוצר">
+  </form>
+  
+</header>
+<main>
+
+<p class="sub"><span class="sub-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8c-1.6-1.3-4.2-1.4-5.8.3C4.6 10 4.8 13.4 6.1 16c1.2 2.4 3 4.4 4.3 4.4.7 0 1-.4 1.6-.4s.9.4 1.6.4c1.3 0 3.1-2 4.3-4.4 1.3-2.6 1.5-6-.1-7.7C16.2 6.6 13.6 6.7 12 8z"/><path d="M12 8c0-2 .7-3.6 2-4.6"/><path d="M13.6 5.2c1.4-1.3 3.3-1.6 4.9-.9-.6 1.6-2.3 2.8-4.3 2.7"/></svg></span>ירקות ופירות · <span id="cat-count">212</span> מוצרים, מהזול ליקר</p>
+
+
+<div class="cat-filter">
+  <input type="search" id="cat-filter" placeholder="סינון לפי שם או יצרן · ‎-מילה מסתירה" enterkeyhint="done" autocomplete="off" aria-label="סינון המוצרים בקטגוריה">
+</div>
+<div id="cat-list" data-href="c-0-1.html">
+
+<ol class="products">
+  
+  
+    
+    
+    
+    <li class="product st-4 best">
+      <div class="info">
+        <div class="name">אבטיח</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪2.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:1250" data-name="אבטיח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">חצי אבטיח</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪2.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:1251" data-name="חצי אבטיח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">תפוז ברשת <button type="button" class="photo-btn" data-photo="7290000000230" data-key="7290000000230" data-name="תפוז ברשת" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪3.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000230" data-name="תפוז ברשת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אבטיח ישראל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪4.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2004" data-name="אבטיח ישראל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אבוקדו <button type="button" class="photo-btn" data-photo="7290000000135" data-key="7290000000135" data-name="אבוקדו" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3 יח׳ · עד 10.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪4.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000135" data-name="אבוקדו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ערמונים <button type="button" class="photo-btn" data-photo="7290000000180" data-key="7290000000180" data-name="ערמונים" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪4.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000180" data-name="ערמונים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קלמנטינה (בשקית רשת) <button type="button" class="photo-btn" data-photo="7290000000287" data-key="7290000000287" data-name="קלמנטינה (בשקית רשת)" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪4.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000287" data-name="קלמנטינה (בשקית רשת)" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מלון</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪4.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:1182" data-name="מלון" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">אבטיח מיני</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪4.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:6804" data-name="אבטיח מיני" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לימון <button type="button" class="photo-btn" data-photo="7290000001117" data-key="7290000001117" data-name="לימון" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪5.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000001117" data-name="לימון" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אפרסק <button type="button" class="photo-btn" data-photo="7290000001183" data-key="7290000001183" data-name="אפרסק" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪5.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000001183" data-name="אפרסק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אבטיח <button type="button" class="photo-btn" data-photo="7290000000169" data-key="7290000000169" data-name="אבטיח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪5.50 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000169" data-name="אבטיח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אשכולית צהובה ישראל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪5.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2001" data-name="אשכולית צהובה ישראל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מלון ספרדי ישראל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪5.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2172" data-name="מלון ספרדי ישראל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אשכולית צהובה <button type="button" class="photo-btn" data-photo="7290000000136" data-key="7290000000136" data-name="אשכולית צהובה" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪5.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000136" data-name="אשכולית צהובה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">רימון אדום <button type="button" class="photo-btn" data-photo="7290000000155" data-key="7290000000155" data-name="רימון אדום" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪5.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000155" data-name="רימון אדום" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אשכולית ברשת <button type="button" class="photo-btn" data-photo="7290000000455" data-key="7290000000455" data-name="אשכולית ברשת" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪5.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000455" data-name="אשכולית ברשת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">תפוח עץ בשקית <button type="button" class="photo-btn" data-photo="7290000002013" data-key="7290000002013" data-name="תפוח עץ בשקית" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪5.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000002013" data-name="תפוח עץ בשקית" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">אבוקדו ברשת</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪5.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:1015" data-name="אבוקדו ברשת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">תפוזים ברשת</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪5.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:2462" data-name="תפוזים ברשת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קלמנטינה <button type="button" class="photo-btn" data-photo="7290000000121" data-key="7290000000121" data-name="קלמנטינה" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3 יח׳ · עד 10.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪6.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000121" data-name="קלמנטינה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">תפוז <button type="button" class="photo-btn" data-photo="7290000000122" data-key="7290000000122" data-name="תפוז" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3 יח׳ · עד 10.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪6.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000122" data-name="תפוז" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פומלה <button type="button" class="photo-btn" data-photo="7290000000137" data-key="7290000000137" data-name="פומלה" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3 יח׳ · עד 10.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪6.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000137" data-name="פומלה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פומלית <button type="button" class="photo-btn" data-photo="7290000000199" data-key="7290000000199" data-name="פומלית" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3 יח׳ · עד 10.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪6.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000199" data-name="פומלית" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">פומלה</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪6.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:1274" data-name="פומלה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אשכולית אדומה ישראל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪7.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2002" data-name="אשכולית אדומה ישראל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מלון ישראל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪7.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2029" data-name="מלון ישראל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">תפוזים ישראל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪7.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2059" data-name="תפוזים ישראל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מלון ספרדי צהוב <button type="button" class="photo-btn" data-photo="7290000000881" data-key="7290000000881" data-name="מלון ספרדי צהוב" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪7.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000881" data-name="מלון ספרדי צהוב" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מלון <button type="button" class="photo-btn" data-photo="7290000000140" data-key="7290000000140" data-name="מלון" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3 יח׳ · עד 10.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪7.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪8.50</s> במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000140" data-name="מלון" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אשכולית אדומה <button type="button" class="photo-btn" data-photo="7290000000142" data-key="7290000000142" data-name="אשכולית אדומה" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪7.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000142" data-name="אשכולית אדומה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מארז אבוקדו ברשת <button type="button" class="photo-btn" data-photo="7290000000153" data-key="7290000000153" data-name="מארז אבוקדו ברשת" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪7.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000153" data-name="מארז אבוקדו ברשת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">נקטרינה <button type="button" class="photo-btn" data-photo="7290000000182" data-key="7290000000182" data-name="נקטרינה" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3 יח׳ · עד 10.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪7.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪15.90</s> במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000182" data-name="נקטרינה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שזיף אדום <button type="button" class="photo-btn" data-photo="7290000000187" data-key="7290000000187" data-name="שזיף אדום" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3 יח׳ · עד 10.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪7.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪16.90</s> במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000187" data-name="שזיף אדום" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אגס כוס&#34;יה <button type="button" class="photo-btn" data-photo="7290000000404" data-key="7290000000404" data-name="אגס כוס&#34;יה" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪7.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000404" data-name="אגס כוס&#34;יה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מלון ספרדי</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪7.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:1183" data-name="מלון ספרדי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">תפוזים בתפזורת</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪7.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:2233" data-name="תפוזים בתפזורת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">קלמנטינה</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪7.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:2288" data-name="קלמנטינה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">אננס חתוך <button type="button" class="photo-btn" data-photo="7290001482186" data-key="7290001482186" data-name="אננס חתוך" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪10</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪8.85 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪6.90</s> ₪5.00 · 565 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001482186" data-name="אננס חתוך" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קלמנטינה ישראל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪8.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2047" data-name="קלמנטינה ישראל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">תפוזינה ישראל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪8.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2093" data-name="תפוזינה ישראל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">תפוח ענה ישראל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪8.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2094" data-name="תפוח ענה ישראל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">תפוח עץ אנה <button type="button" class="photo-btn" data-photo="7290000000295" data-key="7290000000295" data-name="תפוח עץ אנה" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪8.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000295" data-name="תפוח עץ אנה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">פומלית ישראל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2050" data-name="פומלית ישראל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מבצע פירות</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2105" data-name="מבצע פירות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אפרסק פיתה <button type="button" class="photo-btn" data-photo="7290000000344" data-key="7290000000344" data-name="אפרסק פיתה" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000344" data-name="אפרסק פיתה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מנגו <button type="button" class="photo-btn" data-photo="7290000000118" data-key="7290000000118" data-name="מנגו" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3 יח׳ · עד 10.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪17.90</s> במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000118" data-name="מנגו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אפרסק <button type="button" class="photo-btn" data-photo="7290000000183" data-key="7290000000183" data-name="אפרסק" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3 יח׳ · עד 10.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪16.90</s> במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000183" data-name="אפרסק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">תפוח עץ יונתן <button type="button" class="photo-btn" data-photo="7290000000186" data-key="7290000000186" data-name="תפוח עץ יונתן" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000186" data-name="תפוח עץ יונתן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אגס תפוח <button type="button" class="photo-btn" data-photo="7290000000265" data-key="7290000000265" data-name="אגס תפוח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3 יח׳ · עד 10.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪15.90</s> במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000265" data-name="אגס תפוח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אגס אדום <button type="button" class="photo-btn" data-photo="7290000000402" data-key="7290000000402" data-name="אגס אדום" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3 יח׳ · עד 10.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪15.90</s> במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000402" data-name="אגס אדום" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מלון גולדן <button type="button" class="photo-btn" data-photo="7290000000408" data-key="7290000000408" data-name="מלון גולדן" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000408" data-name="מלון גולדן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">תפוח עץ גויה <button type="button" class="photo-btn" data-photo="7290000000512" data-key="7290000000512" data-name="תפוח עץ גויה" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000512" data-name="תפוח עץ גויה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">בננה</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:1120" data-name="בננה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">לימון ברשת</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:1169" data-name="לימון ברשת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">רימון</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:1304" data-name="רימון" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">אפרסק שווה 820 גר <button type="button" class="photo-btn" data-photo="7290117032862" data-key="7290117032862" data-name="אפרסק שווה 820 גר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.85 <small>לק״ג</small></div>
+          <div class="shelf">₪8.90 · 820 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290117032862" data-name="אפרסק שווה 820 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">תפוח יונתן ארצות הברית</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2023" data-name="תפוח יונתן ארצות הברית" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לימון ישראל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2027" data-name="לימון ישראל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">תפוח סטארקינג תוצרת יוון</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2034" data-name="תפוח סטארקינג תוצרת יוון" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">פומלה ישראל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2039" data-name="פומלה ישראל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אפרסמון ישראל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2068" data-name="אפרסמון ישראל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">רימון ישראל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2122" data-name="רימון ישראל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">תפוח גאלה תוצרת יוון</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2186" data-name="תפוח גאלה תוצרת יוון" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לימון <button type="button" class="photo-btn" data-photo="7290000000117" data-key="7290000000117" data-name="לימון" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000117" data-name="לימון" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">תפוח עץ חרמון <button type="button" class="photo-btn" data-photo="7290000000149" data-key="7290000000149" data-name="תפוח עץ חרמון" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000149" data-name="תפוח עץ חרמון" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">תפוח עץ גאלה <button type="button" class="photo-btn" data-photo="7290000000219" data-key="7290000000219" data-name="תפוח עץ גאלה" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000219" data-name="תפוח עץ גאלה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">אננס במשקל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:919" data-name="אננס במשקל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">לימון</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:1168" data-name="לימון" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">תפוע יונתן</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:2196" data-name="תפוע יונתן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">תפוע ענה</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:2219" data-name="תפוע ענה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לימון ליים <button type="button" class="photo-btn" data-photo="7290000000517" data-key="7290000000517" data-name="לימון ליים" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪11.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000517" data-name="לימון ליים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">אבוקדו</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪11.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:1014" data-name="אבוקדו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">תפוח עץ סמיט</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪11.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:1410" data-name="תפוח עץ סמיט" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">תפוח עץ זהוב</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪11.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:1427" data-name="תפוח עץ זהוב" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">תפוח עץ חרמון</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪11.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:1441" data-name="תפוח עץ חרמון" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">תפוע גאלה</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪11.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:6972" data-name="תפוע גאלה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">תפוח עץ לוליפופ <button type="button" class="photo-btn" data-photo="7290000000453" data-key="7290000000453" data-name="תפוח עץ לוליפופ" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪12.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000453" data-name="תפוח עץ לוליפופ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אפרסמון <button type="button" class="photo-btn" data-photo="7290000000144" data-key="7290000000144" data-name="אפרסמון" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪12.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000144" data-name="אפרסמון" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שזיף שגיב <button type="button" class="photo-btn" data-photo="7290000000321" data-key="7290000000321" data-name="שזיף שגיב" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪12.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000321" data-name="שזיף שגיב" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">ענבים אוטום קריספ <button type="button" class="photo-btn" data-photo="7290005678318" data-key="7290005678318" data-name="ענבים אוטום קריספ" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪12.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290005678318" data-name="ענבים אוטום קריספ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בננות ישראל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪13.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2009" data-name="בננות ישראל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">תפוח זהוב תוצרת צרפת</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪13.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2017" data-name="תפוח זהוב תוצרת צרפת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">תפוח סמיט תוצרת יוון</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪13.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2033" data-name="תפוח סמיט תוצרת יוון" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אגס ירוק תוצרת ארגנטינה</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪13.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2063" data-name="אגס ירוק תוצרת ארגנטינה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שזיף ירוק ישראל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪13.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2089" data-name="שזיף ירוק ישראל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אגס <button type="button" class="photo-btn" data-photo="7290000000113" data-key="7290000000113" data-name="אגס" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪13.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000113" data-name="אגס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">תפוח עץ מוזהב <button type="button" class="photo-btn" data-photo="7290000000115" data-key="7290000000115" data-name="תפוח עץ מוזהב" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪13.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000115" data-name="תפוח עץ מוזהב" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">תפוח עץ ירוק גרנד סמ <button type="button" class="photo-btn" data-photo="7290000000116" data-key="7290000000116" data-name="תפוח עץ ירוק גרנד סמ" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪13.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000116" data-name="תפוח עץ ירוק גרנד סמ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בננה <button type="button" class="photo-btn" data-photo="7290000000134" data-key="7290000000134" data-name="בננה" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪13.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000134" data-name="בננה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שזיף ירוק <button type="button" class="photo-btn" data-photo="7290000000189" data-key="7290000000189" data-name="שזיף ירוק" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪13.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000189" data-name="שזיף ירוק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אננס מובחר <button type="button" class="photo-btn" data-photo="7290000000502" data-key="7290000000502" data-name="אננס מובחר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪13.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000502" data-name="אננס מובחר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">אגס.</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪13.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:1038" data-name="אגס." aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">אננס יחידה</div>
+        <div class="meta">
+          
+          <span class="warn">גודל לא ודאי</span>
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪13.90 <small>לק״ג</small></div>
+          <div class="shelf">₪13.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:1076" data-name="אננס יחידה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">חבוש תוצרת יוון</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2106" data-name="חבוש תוצרת יוון" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חבוש <button type="button" class="photo-btn" data-photo="7290000000197" data-key="7290000000197" data-name="חבוש" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ש.פשה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000197" data-name="חבוש" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">לימון סיני</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:1041" data-name="לימון סיני" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">חבושים</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:1151" data-name="חבושים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מנגו</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:1199" data-name="מנגו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">תפוח עץ RED MOON</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:1301" data-name="תפוח עץ RED MOON" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">לימון ליים</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:2031" data-name="לימון ליים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">שזיף שגיב</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:2080" data-name="שזיף שגיב" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">אננס חתוך שווה בד&#34;ץ 565גר <button type="button" class="photo-btn" data-photo="7290117032923" data-key="7290117032923" data-name="אננס חתוך שווה בד&#34;ץ 565גר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪15.75 <small>לק״ג</small></div>
+          <div class="shelf">₪8.90 · 565 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290117032923" data-name="אננס חתוך שווה בד&#34;ץ 565גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">פג`ויה ישראל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪15.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2042" data-name="פג`ויה ישראל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">נקטרינה ישראל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪15.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2080" data-name="נקטרינה ישראל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">תפוז סיני ישראל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪15.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2112" data-name="תפוז סיני ישראל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">תפוח נאשי תוצרת סין <button type="button" class="photo-btn" data-photo="7290002204169" data-key="7290002204169" data-name="תפוח נאשי תוצרת סין" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪15.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290002204169" data-name="תפוח נאשי תוצרת סין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לימון סיני ישראל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪15.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2163" data-name="לימון סיני ישראל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אגס אדום תוצרת ארגנטינה</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪15.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2188" data-name="אגס אדום תוצרת ארגנטינה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לימון סיני <button type="button" class="photo-btn" data-photo="7290000000232" data-key="7290000000232" data-name="לימון סיני" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪15.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000232" data-name="לימון סיני" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שזיפון <button type="button" class="photo-btn" data-photo="7290000000360" data-key="7290000000360" data-name="שזיפון" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪15.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000360" data-name="שזיפון" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">שזיף אדום</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪15.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:1342" data-name="שזיף אדום" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">למון ליים בראשית</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪16.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2000" data-name="למון ליים בראשית" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גויאבה ישראל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪16.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2013" data-name="גויאבה ישראל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אפרסק ישראל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪16.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2091" data-name="אפרסק ישראל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שזיף אדום ישראל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪16.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2099" data-name="שזיף אדום ישראל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שזיף צהוב <button type="button" class="photo-btn" data-photo="7290000000188" data-key="7290000000188" data-name="שזיף צהוב" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪16.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000188" data-name="שזיף צהוב" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גויאבה <button type="button" class="photo-btn" data-photo="7290000000194" data-key="7290000000194" data-name="גויאבה" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪16.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000194" data-name="גויאבה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">אפרסק.</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪16.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:1083" data-name="אפרסק." aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">נקטרינה</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪16.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:1090" data-name="נקטרינה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">שרי תמר</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪16.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:2077" data-name="שרי תמר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אבוקדו מוכן לאכילה 400 ג רמי לוי <button type="button" class="photo-btn" data-photo="7290018732021" data-key="7290018732021" data-name="אבוקדו מוכן לאכילה 400 ג רמי לוי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪14</span> בקניית 2 · עד 30.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪17.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪7.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018732021" data-name="אבוקדו מוכן לאכילה 400 ג רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">תפוח פינק תוצרת איטליה</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪17.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2082" data-name="תפוח פינק תוצרת איטליה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מנגו ישראל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪17.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2088" data-name="מנגו ישראל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">תפוח עץ פינק <button type="button" class="photo-btn" data-photo="7290000000797" data-key="7290000000797" data-name="תפוח עץ פינק" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪17.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000797" data-name="תפוח עץ פינק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">שזיף ירוק</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪17.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:1311" data-name="שזיף ירוק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">תפוח עץ פינק</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪17.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:2022" data-name="תפוח עץ פינק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ענבים ירוקים <button type="button" class="photo-btn" data-photo="7290000000185" data-key="7290000000185" data-name="ענבים ירוקים" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3 יח׳ · עד 10.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪18.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪25.00</s> במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000185" data-name="ענבים ירוקים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ענבים אדומים <button type="button" class="photo-btn" data-photo="7290000000191" data-key="7290000000191" data-name="ענבים אדומים" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3 יח׳ · עד 10.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪18.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪25.90</s> במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000191" data-name="ענבים אדומים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">תמר צהוב ישראל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2107" data-name="תמר צהוב ישראל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אפרסמון קרמבו <button type="button" class="photo-btn" data-photo="7290000000260" data-key="7290000000260" data-name="אפרסמון קרמבו" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000260" data-name="אפרסמון קרמבו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">תמר ברהי צהוב <button type="button" class="photo-btn" data-photo="7290000000195" data-key="7290000000195" data-name="תמר ברהי צהוב" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000195" data-name="תמר ברהי צהוב" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">אבוקדו אס</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:1017" data-name="אבוקדו אס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">משמש</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:1205" data-name="משמש" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">קיווי</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:2073" data-name="קיווי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">ענבים ירוקים (לבנים)</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:2264" data-name="ענבים ירוקים (לבנים)" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קרעה ישראל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪20.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2125" data-name="קרעה ישראל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שרי תמר ארוז <button type="button" class="photo-btn" data-photo="7290000912946" data-key="7290000912946" data-name="שרי תמר ארוז" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪21.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000912946" data-name="שרי תמר ארוז" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שזיף שגיב ישראל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪24.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2102" data-name="שזיף שגיב ישראל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ליצ&#39;י במשקל <button type="button" class="photo-btn" data-photo="7290000000218" data-key="7290000000218" data-name="ליצ&#39;י במשקל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪24.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000218" data-name="ליצ&#39;י במשקל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סברס ישראל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪25.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2095" data-name="סברס ישראל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">ענבים ירוקים ישראל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪25.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2127" data-name="ענבים ירוקים ישראל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סברס <button type="button" class="photo-btn" data-photo="7290000000190" data-key="7290000000190" data-name="סברס" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪25.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000190" data-name="סברס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">ענבים שחורים ישראל <button type="button" class="photo-btn" data-photo="4251291107435" data-key="4251291107435" data-name="ענבים שחורים ישראל" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪25.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="4251291107435" data-name="ענבים שחורים ישראל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">פפאיה ישראל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪25.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2171" data-name="פפאיה ישראל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פפאיה <button type="button" class="photo-btn" data-photo="7290000000202" data-key="7290000000202" data-name="פפאיה" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪25.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000202" data-name="פפאיה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">ענבים שחורים / אדומים</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪25.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:1243" data-name="ענבים שחורים / אדומים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">דובדבנים טרי תפזורת ישראל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪26.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2174" data-name="דובדבנים טרי תפזורת ישראל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פיטאיה <button type="button" class="photo-btn" data-photo="7290000000966" data-key="7290000000966" data-name="פיטאיה" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪27.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000966" data-name="פיטאיה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">תאנים <button type="button" class="photo-btn" data-photo="7290000000221" data-key="7290000000221" data-name="תאנים" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪28.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000221" data-name="תאנים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">תאנים בקופסא <button type="button" class="photo-btn" data-photo="7290000000500" data-key="7290000000500" data-name="תאנים בקופסא" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪29.80 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000500" data-name="תאנים בקופסא" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שסק ישראל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪29.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2090" data-name="שסק ישראל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קיווי <button type="button" class="photo-btn" data-photo="7290000000120" data-key="7290000000120" data-name="קיווי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪29.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000120" data-name="קיווי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שסק <button type="button" class="photo-btn" data-photo="7290000000181" data-key="7290000000181" data-name="שסק" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪29.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000181" data-name="שסק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אנונה <button type="button" class="photo-btn" data-photo="7290000000201" data-key="7290000000201" data-name="אנונה" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3 יח׳ · עד 10.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪29.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪30.90</s> במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000201" data-name="אנונה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">שזיף מטלי</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪29.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:3020" data-name="שזיף מטלי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">משמש ישראל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪30.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2098" data-name="משמש ישראל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">תאנים ישראל תפזורת <button type="button" class="photo-btn" data-photo="7290014462540" data-key="7290014462540" data-name="תאנים ישראל תפזורת" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪30.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290014462540" data-name="תאנים ישראל תפזורת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אנונה ישראל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪30.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2130" data-name="אנונה ישראל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משמש <button type="button" class="photo-btn" data-photo="7290000000184" data-key="7290000000184" data-name="משמש" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪30.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000184" data-name="משמש" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">ליצי ורוד ישראל תפזורת. <button type="button" class="photo-btn" data-photo="7290002204886" data-key="7290002204886" data-name="ליצי ורוד ישראל תפזורת." data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪31.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290002204886" data-name="ליצי ורוד ישראל תפזורת." aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קרמבולה <button type="button" class="photo-btn" data-photo="7290000000203" data-key="7290000000203" data-name="קרמבולה" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪32.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000203" data-name="קרמבולה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">דובדבן אדום במשקל <button type="button" class="photo-btn" data-photo="7290000002155" data-key="7290000002155" data-name="דובדבן אדום במשקל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪38.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000002155" data-name="דובדבן אדום במשקל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קיווי צהוב יח <button type="button" class="photo-btn" data-photo="7290000964652" data-key="7290000964652" data-name="קיווי צהוב יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.80 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000964652" data-name="קיווי צהוב יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">קוקטייל ענבים</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.90 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:700" data-name="קוקטייל ענבים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קיווי ירוק ישראל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪40.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2049" data-name="קיווי ירוק ישראל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קרמבולה ישראל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪50.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2155" data-name="קרמבולה ישראל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קוקוס חתוך טרי <button type="button" class="photo-btn" data-photo="7290001680551" data-key="7290001680551" data-name="קוקוס חתוך טרי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪50.50 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290001680551" data-name="קוקוס חתוך טרי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פסיפלורה 330 גרם <button type="button" class="photo-btn" data-photo="7290015014267" data-key="7290015014267" data-name="פסיפלורה 330 גרם" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪57.27 <small>לק״ג</small></div>
+          <div class="shelf">₪18.90 · 330 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015014267" data-name="פסיפלורה 330 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פסיפלורה מיני 300 גר <button type="button" class="photo-btn" data-photo="7290002589855" data-key="7290002589855" data-name="פסיפלורה מיני 300 גר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪63.00 <small>לק״ג</small></div>
+          <div class="shelf">₪18.90 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002589855" data-name="פסיפלורה מיני 300 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">דובדבן אדום טרי ארוז 250 גר` בראשית <button type="button" class="photo-btn" data-photo="7290008268011" data-key="7290008268011" data-name="דובדבן אדום טרי ארוז 250 גר` בראשית" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪63.60 <small>לק״ג</small></div>
+          <div class="shelf">₪15.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008268011" data-name="דובדבן אדום טרי ארוז 250 גר` בראשית" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לימון פרסי <button type="button" class="photo-btn" data-photo="7290001751220" data-key="7290001751220" data-name="לימון פרסי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪70.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290001751220" data-name="לימון פרסי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ליצ&#39;י טרי ארוז כ-250 <button type="button" class="photo-btn" data-photo="7290003046607" data-key="7290003046607" data-name="ליצ&#39;י טרי ארוז כ-250" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪75.60 <small>לק״ג</small></div>
+          <div class="shelf">₪18.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003046607" data-name="ליצ&#39;י טרי ארוז כ-250" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">דובדבן אדום כ-250 גר <button type="button" class="photo-btn" data-photo="7290000000215" data-key="7290000000215" data-name="דובדבן אדום כ-250 גר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪79.60 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000215" data-name="דובדבן אדום כ-250 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אוכמניות 125 גרם <button type="button" class="photo-btn" data-photo="7750535770000" data-key="7750535770000" data-name="אוכמניות 125 גרם" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪87.20 <small>לק״ג</small></div>
+          <div class="shelf">₪10.90 · 125 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7750535770000" data-name="אוכמניות 125 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אוכמניות טרי ארוז 125 גר` מרינה <button type="button" class="photo-btn" data-photo="8720892385987" data-key="8720892385987" data-name="אוכמניות טרי ארוז 125 גר` מרינה" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אראל תוצרת חקלאית בע</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪22</span> בקניית 2 · עד 30.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪19.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪88.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪11.00 · 125 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8720892385987" data-name="אוכמניות טרי ארוז 125 גר` מרינה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אוכמניות 125 גרם <button type="button" class="photo-btn" data-photo="7758452000590" data-key="7758452000590" data-name="אוכמניות 125 גרם" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪22</span> בקניית 2 · עד 30.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪88.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪11.00 · 125 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7758452000590" data-name="אוכמניות 125 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אוכמניות 125 גרם <button type="button" class="photo-btn" data-photo="710497311021" data-key="710497311021" data-name="אוכמניות 125 גרם" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪22</span> בקניית 2 · עד 30.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪88.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪11.00 · 125 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="710497311021" data-name="אוכמניות 125 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אוכמניות 125 גרם <button type="button" class="photo-btn" data-photo="8437005015180" data-key="8437005015180" data-name="אוכמניות 125 גרם" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪22</span> בקניית 2 · עד 30.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪88.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪11.00 · 125 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8437005015180" data-name="אוכמניות 125 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אוכמניות 125 גרם <button type="button" class="photo-btn" data-photo="7750535770024" data-key="7750535770024" data-name="אוכמניות 125 גרם" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪22</span> בקניית 2 · עד 30.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪88.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪11.00 · 125 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7750535770024" data-name="אוכמניות 125 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אוכמניות 125 גרם <button type="button" class="photo-btn" data-photo="8447029000031" data-key="8447029000031" data-name="אוכמניות 125 גרם" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אראל תוצרת חקלאית בע</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪22</span> בקניית 2 · עד 30.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪88.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪11.00 · 125 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8447029000031" data-name="אוכמניות 125 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אוכמניות 125 גרם <button type="button" class="photo-btn" data-photo="7757365000017" data-key="7757365000017" data-name="אוכמניות 125 גרם" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אראל תוצרת חקלאית בע</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪22</span> בקניית 2 · עד 30.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪88.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪11.00 · 125 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7757365000017" data-name="אוכמניות 125 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אוכמניות 125 גרם <button type="button" class="photo-btn" data-photo="7754856000006" data-key="7754856000006" data-name="אוכמניות 125 גרם" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אראל תוצרת חקלאית בע</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪22</span> בקניית 2 · עד 30.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪88.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪11.00 · 125 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7754856000006" data-name="אוכמניות 125 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אוכמניות 125 גרם <button type="button" class="photo-btn" data-photo="1230000292009" data-key="1230000292009" data-name="אוכמניות 125 גרם" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אראל תוצרת חקלאית בע</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪22</span> בקניית 2 · עד 30.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪88.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪11.00 · 125 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="1230000292009" data-name="אוכמניות 125 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אוכמניות 125 גרם <button type="button" class="photo-btn" data-photo="710497310949" data-key="710497310949" data-name="אוכמניות 125 גרם" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪95.20 <small>לק״ג</small></div>
+          <div class="shelf">₪11.90 · 125 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="710497310949" data-name="אוכמניות 125 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אוכמניות 125 גרם <button type="button" class="photo-btn" data-photo="710497310994" data-key="710497310994" data-name="אוכמניות 125 גרם" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪95.20 <small>לק״ג</small></div>
+          <div class="shelf">₪11.90 · 125 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="710497310994" data-name="אוכמניות 125 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אננס טיבעי <button type="button" class="photo-btn" data-photo="7290001775608" data-key="7290001775608" data-name="אננס טיבעי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪99.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290001775608" data-name="אננס טיבעי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אוכמניות ארוז 125 גר מרינה <button type="button" class="photo-btn" data-photo="7290018192757" data-key="7290018192757" data-name="אוכמניות ארוז 125 גר מרינה" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪159.20 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 125 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018192757" data-name="אוכמניות ארוז 125 גר מרינה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אוכמניות ארוז 125 גר <button type="button" class="photo-btn" data-photo="7750431390142" data-key="7750431390142" data-name="אוכמניות ארוז 125 גר" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אראל תוצרת חקלאית בע</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪159.20 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 125 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7750431390142" data-name="אוכמניות ארוז 125 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קוקוס <button type="button" class="photo-btn" data-photo="7290000000158" data-key="7290000000158" data-name="קוקוס" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪5.00 <small>ליח׳</small></div>
+          <div class="shelf">₪5.00 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000158" data-name="קוקוס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">אבטיח <button type="button" class="photo-btn" data-photo="7290004872250" data-key="7290004872250" data-name="אבטיח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪8.90 <small>ליח׳</small></div>
+          <div class="shelf">₪8.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004872250" data-name="אבטיח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">תפוז סיני <button type="button" class="photo-btn" data-photo="7290000000160" data-key="7290000000160" data-name="תפוז סיני" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90 <small>ליח׳</small></div>
+          <div class="shelf">₪9.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000160" data-name="תפוז סיני" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ליצ&#39;י 4 עונות <button type="button" class="photo-btn" data-photo="7290017593203" data-key="7290017593203" data-name="ליצ&#39;י 4 עונות" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪13.90 <small>ליח׳</small></div>
+          <div class="shelf">₪13.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017593203" data-name="ליצ&#39;י 4 עונות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">פסיפלורה ארוזה <button type="button" class="photo-btn" data-photo="7290017593227" data-key="7290017593227" data-name="פסיפלורה ארוזה" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪14.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.90 <small>ליח׳</small></div>
+          <div class="shelf">₪14.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017593227" data-name="פסיפלורה ארוזה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קופסא מעוצבת ענבים 2 <button type="button" class="photo-btn" data-photo="7290004469184" data-key="7290004469184" data-name="קופסא מעוצבת ענבים 2" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪17.90 <small>ליח׳</small></div>
+          <div class="shelf">₪17.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004469184" data-name="קופסא מעוצבת ענבים 2" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ליצ&#39;י מובחר <button type="button" class="photo-btn" data-photo="7290000966700" data-key="7290000966700" data-name="ליצ&#39;י מובחר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.90 <small>ליח׳</small></div>
+          <div class="shelf">₪19.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000966700" data-name="ליצ&#39;י מובחר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פסיפלורה <button type="button" class="photo-btn" data-photo="7290000000322" data-key="7290000000322" data-name="פסיפלורה" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.90 <small>ליח׳</small></div>
+          <div class="shelf">₪19.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000000322" data-name="פסיפלורה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קיווי ירוק יח <button type="button" class="photo-btn" data-photo="7290000993621" data-key="7290000993621" data-name="קיווי ירוק יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורי השקמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪19.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.90 <small>ליח׳</small></div>
+          <div class="shelf">₪19.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000993621" data-name="קיווי ירוק יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אתרוג <button type="button" class="photo-btn" data-photo="7290107397926" data-key="7290107397926" data-name="אתרוג" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪45.00 <small>ליח׳</small></div>
+          <div class="shelf">₪45.00 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290107397926" data-name="אתרוג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+      
+      <li class="divider">ללא מחיר לק״ג (גודל לא ידוע)</li>
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אפרסמון ארוז גיבורי על <button type="button" class="photo-btn" data-photo="7290010582228" data-key="7290010582228" data-name="אפרסמון ארוז גיבורי על" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010582228" data-name="אפרסמון ארוז גיבורי על" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אבוקדו בשל ארוז מוכן לאכילה <button type="button" class="photo-btn" data-photo="611745285685" data-key="7290696200003:611745285685" data-name="אבוקדו בשל ארוז מוכן לאכילה" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מור בריאות בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪12.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:611745285685" data-name="אבוקדו בשל ארוז מוכן לאכילה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אבוקדו בשל האס ארוז - <button type="button" class="photo-btn" data-photo="693493172745" data-key="7290696200003:693493172745" data-name="אבוקדו בשל האס ארוז -" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪12.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:693493172745" data-name="אבוקדו בשל האס ארוז -" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אבוקדו האס בשל ארוז <button type="button" class="photo-btn" data-photo="7290014462342" data-key="7290014462342" data-name="אבוקדו האס בשל ארוז" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אראל תוצרת חקלאית בע</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪12.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014462342" data-name="אבוקדו האס בשל ארוז" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אבוקדו בשל מוכן לאכילה גרנות <button type="button" class="photo-btn" data-photo="7290018732601" data-key="7290018732601" data-name="אבוקדו בשל מוכן לאכילה גרנות" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>גרנות</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪12.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018732601" data-name="אבוקדו בשל מוכן לאכילה גרנות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">דובדבנים פירות השלום ארוז <button type="button" class="photo-btn" data-photo="693493247054" data-key="7290696200003:693493247054" data-name="דובדבנים פירות השלום ארוז" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪16.00</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:693493247054" data-name="דובדבנים פירות השלום ארוז" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קיווי זהוב ארוז</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:964652" data-name="קיווי זהוב ארוז" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קיווי ארוז ירוק</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:993621" data-name="קיווי ארוז ירוק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">תות אפגני ישראל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪20.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2011" data-name="תות אפגני ישראל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אננס טרי ישראל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪30.00</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2012" data-name="אננס טרי ישראל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">אתרוג כשר לברכה <button type="button" class="photo-btn" data-photo="796520525597" data-key="796520525597" data-name="אתרוג כשר לברכה" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪34.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="796520525597" data-name="אתרוג כשר לברכה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">אתרוג מהודר א <button type="button" class="photo-btn" data-photo="796520525580" data-key="796520525580" data-name="אתרוג מהודר א" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="796520525580" data-name="אתרוג מהודר א" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">אתרוג מהודר א&#39;א&#39; <button type="button" class="photo-btn" data-photo="796520525573" data-key="796520525573" data-name="אתרוג מהודר א&#39;א&#39;" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪89.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="796520525573" data-name="אתרוג מהודר א&#39;א&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+</ol>
+</div>
+
+</main>
+<footer>עודכן 7.10 06:15 · ויקטורי 6.10 21:13 · רמי לוי 00:11 · אושר עד 6.10 21:00 · אושר עד 6.10 21:00 · נטו חיסכון 04:03</footer>
+
+
+<nav class="bottom-nav" aria-label="ניווט">
+  <a href="index.html" class="on"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg><span>בית</span></a>
+  <a href="search.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><span>חיפוש</span></a>
+  <a href="scan.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V5a1 1 0 0 1 1-1h2M17 4h2a1 1 0 0 1 1 1v2M20 17v2a1 1 0 0 1-1 1h-2M7 20H5a1 1 0 0 1-1-1v-2"/><path d="M8 8v8M11 8v8M14 8v8M16.5 8v8"/></svg><span>סריקה</span></a>
+  <a href="basket.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h11l2-8H6.2"/><circle cx="9.5" cy="19" r="1.4"/><circle cx="17" cy="19" r="1.4"/></svg><span id="cart-count"></span><span>עגלת קניות</span></a>
+  <a href="spending.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-2-1.4-2 1.4-2-1.4-2 1.4-2-1.4L6 21z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><span>הוצאות</span></a>
+</nav>
+
+<script src="static/basket.js?v=20261007061534"></script>
+<script src="static/photo.js?v=20261007061534"></script>
+
+<script src="static/render.js?v=20261007061534"></script>
+<script src="static/category.js?v=20261007061534" data-build="20261007061534"></script>
+
+<script>
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+</script>
+</body>
+</html>

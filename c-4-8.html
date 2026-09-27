@@ -1,0 +1,1574 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f7a4d">
+<script>
+// the look this phone chose (settings.html "מראה"), before anything is drawn: html.light / html.dark
+// (none = follow the phone) and html[data-color] (none = green); the browser bar takes the colour too
+(function () {
+  let t = {};
+  try { t = JSON.parse(localStorage.getItem("theme")) || {}; } catch (e) { /* none yet */ }
+  const root = document.documentElement;
+  if (t.mode === "light" || t.mode === "dark") root.classList.add(t.mode);
+  if (t.color) root.dataset.color = t.color;
+  if (t.bar) document.querySelector('meta[name="theme-color"]').content = t.bar;
+})();
+</script>
+<title>קטניות משומרות</title>
+<link rel="manifest" href="static/manifest.webmanifest">
+<link rel="icon" href="static/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="static/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="static/style.css?v=20261007061534">
+<style>.st-0 { --store: #e07000; }.st-1 { --store: #d32f2f; }.st-2 { --store: #1565c0; }.st-3 { --store: #1565c0; }.st-4 { --store: #c99a00; }</style>
+<script src="static/stores.js?v=20261007061534" data-stores="[{&#34;card_cap&#34;: 750, &#34;card_rate&#34;: 0.07, &#34;default&#34;: true, &#34;key&#34;: &#34;victory-038&#34;, &#34;name&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;ramilevy-007&#34;, &#34;name&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-026&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05ea\u05dc\u05e4\u05d9\u05d5\u05ea&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-003&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05d2\u05d1\u05e2\u05ea \u05e9\u05d0\u05d5\u05dc&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;netto-052&#34;, &#34;name&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df \u05e7\u05e8\u05d9\u05d9\u05ea \u05d9\u05e2\u05e8\u05d9\u05dd&#34;, &#34;short&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df&#34;}]"></script>
+<script src="static/avoid.js?v=20261007061534" data-kinds="[&#34;\u05e2\u05d5\u05e3 \u05de\u05e2\u05d5\u05d1\u05d3&#34;, &#34;\u05d1\u05e9\u05e8 \u05de\u05e2\u05d5\u05d1\u05d3&#34;]"></script>
+<script>
+// No long-press menu on links, pictures or text (the user: the home page's tiles opened Chrome's "open in new tab /
+// copy link" menu; CSS can't stop that on Android). Typing fields and the ⓘ sheet's barcode keep theirs.
+document.addEventListener("contextmenu", (e) => {
+  if (!e.target.closest("input, textarea, [contenteditable], .photo-barcode")) e.preventDefault();
+});
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <a class="back" href="t-4.html" aria-label="חזרה">→</a>
+    <h1>קטניות משומרות</h1>
+    <a class="notes-link" href="notes.html" aria-label="רשימת קניות" title="רשימת קניות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="m8.5 10 1.2 1.2 2.3-2.4M8.5 15.5l1.2 1.2 2.3-2.4M14 10.5h2.5M14 16h2.5"/></svg><span>רשימת קניות</span></a>
+    <a class="settings-link" href="settings.html" aria-label="הגדרות" title="הגדרות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></a>
+  </div>
+  
+  <form class="search" action="search.html" method="get" role="search">
+    <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+    <input type="search" name="q" placeholder="חיפוש מוצר" enterkeyhint="search" aria-label="חיפוש מוצר">
+  </form>
+  
+</header>
+<main>
+
+<p class="sub"><span class="sub-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8v3H8z"/><path d="M7 6h10a1 1 0 0 1 1 1v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V7a1 1 0 0 1 1-1z"/><path d="M6 11h12v5H6z"/></svg></span>מזווה · <span id="cat-count">53</span> מוצרים, מהזול ליקר</p>
+
+
+<div class="cat-filter">
+  <input type="search" id="cat-filter" placeholder="סינון לפי שם או יצרן · ‎-מילה מסתירה" enterkeyhint="done" autocomplete="off" aria-label="סינון המוצרים בקטגוריה">
+</div>
+<div id="cat-list" data-href="c-4-8.html">
+
+<ol class="products">
+  
+  
+    
+    
+    
+    <li class="product st-1 best">
+      <div class="info">
+        <div class="name">שעועית לבנה ברוטב 580 גר רמי לוי <button type="button" class="photo-btn" data-photo="7290120860162" data-key="7290120860162" data-name="שעועית לבנה ברוטב 580 גר רמי לוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪11</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.48 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪7.90</s> ₪5.50 · 580 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290120860162" data-name="שעועית לבנה ברוטב 580 גר רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">שעועית לבנה ברוטב עגבניות, 355 גרם <button type="button" class="photo-btn" data-photo="7290012313882" data-key="7290012313882" data-name="שעועית לבנה ברוטב עגבניות, 355 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>א.א. שימורי עדן</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪12</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.91 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪7.90</s> ₪6.00 · 550 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290012313882" data-name="שעועית לבנה ברוטב עגבניות, 355 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שימורי שעועית לבנה <button type="button" class="photo-btn" data-photo="7290019926900" data-key="7290019926900" data-name="שימורי שעועית לבנה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪12.55 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.50</s> ₪6.90 · 550 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019926900" data-name="שימורי שעועית לבנה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גרגירי חומוס <button type="button" class="photo-btn" data-photo="7290019926955" data-key="7290019926955" data-name="גרגירי חומוס" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪12.55 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.50</s> ₪6.90 · 550 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019926955" data-name="גרגירי חומוס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גרגירי חומוס שלמים <button type="button" class="photo-btn" data-photo="7290117266076" data-key="7290117266076" data-name="גרגירי חומוס שלמים" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪13.64 <small>לק״ג</small></div>
+          <div class="shelf">₪7.50 · 550 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290117266076" data-name="גרגירי חומוס שלמים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">שעועית לבנה ברוטב עגבניות פרי מבורך פ&#34;מ, 580 גרם <button type="button" class="photo-btn" data-photo="7290002111764" data-key="7290002111764" data-name="שעועית לבנה ברוטב עגבניות פרי מבורך פ&#34;מ, 580 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פרי מבורך</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪16</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪13.79 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪8.00 · 580 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002111764" data-name="שעועית לבנה ברוטב עגבניות פרי מבורך פ&#34;מ, 580 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שעועית לבנה ברוטב עגבניות 336 גרם A2 יכין <button type="button" class="photo-btn" data-photo="7290000208213" data-key="7290000208213" data-name="שעועית לבנה ברוטב עגבניות 336 גרם A2 יכין" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זנלכל בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪16</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪8.00 (2 ב־₪16)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪14.29 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪8.00 · 560 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000208213" data-name="שעועית לבנה ברוטב עגבניות 336 גרם A2 יכין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">חומוס 281 גרם A2 יכין <button type="button" class="photo-btn" data-photo="7290000208428" data-key="7290000208428" data-name="חומוס 281 גרם A2 יכין" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זנלכל בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪16</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪8.00 (2 ב־₪16)</span><span class="other st-4">נטו חיסכון ₪8.00 (2 ב־₪16)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪14.55 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪8.00 · 550 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000208428" data-name="חומוס 281 גרם A2 יכין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">חומוס פרי מבורך, 550 גרם <button type="button" class="photo-btn" data-photo="7290002111634" data-key="7290002111634" data-name="חומוס פרי מבורך, 550 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פרי מבורך</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪16</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪14.55 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪8.00 · 550 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002111634" data-name="חומוס פרי מבורך, 550 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">פטריות חתוכות וילי פוד 230 גר <button type="button" class="photo-btn" data-photo="7290008175814" data-key="7290008175814" data-name="פטריות חתוכות וילי פוד 230 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אוקצ&#39;מפ אס, איי אויי, דבורבסקייגו</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪5.90</span><span class="other st-4">נטו חיסכון ₪5.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.75 <small>לק״ג</small></div>
+          <div class="shelf">₪5.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008175814" data-name="פטריות חתוכות וילי פוד 230 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שימור שעועית לבנה ברוטב <button type="button" class="photo-btn" data-photo="7290100704998" data-key="7290100704998" data-name="שימור שעועית לבנה ברוטב" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>לה דוריה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪12.90</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪15.36 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪7.90</s> ₪6.45 · 420 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290100704998" data-name="שימור שעועית לבנה ברוטב" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חומוס גרגירים שלם 30 <button type="button" class="photo-btn" data-photo="7290120860155" data-key="7290120860155" data-name="חומוס גרגירים שלם 30" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> בקנייה מעל ₪75 · עד 16.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪16.33 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪7.90</s> ₪4.90 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290120860155" data-name="חומוס גרגירים שלם 30" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שעועית לבנה ברוטב עגבניות רמילוי <button type="button" class="photo-btn" data-photo="7290119670802" data-key="7290119670802" data-name="שעועית לבנה ברוטב עגבניות רמילוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪11</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪16.67 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪6.60</s> ₪5.50 · 330 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119670802" data-name="שעועית לבנה ברוטב עגבניות רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שעועית לבנה רוטב עגבניות 380גר <button type="button" class="photo-btn" data-photo="7290119384020" data-key="7290119384020" data-name="שעועית לבנה רוטב עגבניות 380גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קונסרב איטליה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪7.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪18.16 <small>לק״ג</small></div>
+          <div class="shelf">₪6.90 · 380 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119384020" data-name="שעועית לבנה רוטב עגבניות 380גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שעועית שחורה 380גר טעם הטבע <button type="button" class="photo-btn" data-photo="7290110559014" data-key="7290110559014" data-name="שעועית שחורה 380גר טעם הטבע" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קונסרב איטליה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪7.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪18.16 <small>לק״ג</small></div>
+          <div class="shelf">₪6.90 · 380 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110559014" data-name="שעועית שחורה 380גר טעם הטבע" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גרגירי חומוס במי מלח <button type="button" class="photo-btn" data-photo="7290119670857" data-key="7290119670857" data-name="גרגירי חומוס במי מלח" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪18.18 <small>לק״ג</small></div>
+          <div class="shelf">₪6.00 · 330 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119670857" data-name="גרגירי חומוס במי מלח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שעועית קון רנה 400 גרם <button type="button" class="photo-btn" data-photo="7290018989951" data-key="7290018989951" data-name="שעועית קון רנה 400 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זנלכל בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪14.90</span> בקניית 2 · עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪7.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪18.62 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪8.90</s> ₪7.45 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018989951" data-name="שעועית קון רנה 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חומוס קון רנה 400 גרם <button type="button" class="photo-btn" data-photo="7290018989968" data-key="7290018989968" data-name="חומוס קון רנה 400 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זנלכל בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪14.90</span> בקניית 2 · עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪7.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪18.62 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪8.90</s> ₪7.45 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018989968" data-name="חומוס קון רנה 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">פול מצרי 550 גר יכין <button type="button" class="photo-btn" data-photo="7290000208404" data-key="7290000208404" data-name="פול מצרי 550 גר יכין" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זנלכל בע&#34;\מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.09 <small>לק״ג</small></div>
+          <div class="shelf">₪10.50 · 550 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000208404" data-name="פול מצרי 550 גר יכין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">האופה - לבבות דקל <button type="button" class="photo-btn" data-photo="7290019926801" data-key="7290019926801" data-name="האופה - לבבות דקל" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪19.75 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪12.90</s> ₪7.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019926801" data-name="האופה - לבבות דקל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">ארבעס מתובל פרי מבורך <button type="button" class="photo-btn" data-photo="7290018989074" data-key="7290018989074" data-name="ארבעס מתובל פרי מבורך" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.82 <small>לק״ג</small></div>
+          <div class="shelf">₪10.90 · 550 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018989074" data-name="ארבעס מתובל פרי מבורך" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">גרגירי חומוס, 300 גרם <button type="button" class="photo-btn" data-photo="7290012313875" data-key="7290012313875" data-name="גרגירי חומוס, 300 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>א.א. שימורי עדן</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪12</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪20.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪7.90</s> ₪6.00 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290012313875" data-name="גרגירי חומוס, 300 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">פול מצרי יבנה, 300 גרם <button type="button" class="photo-btn" data-photo="7290012313899" data-key="7290012313899" data-name="פול מצרי יבנה, 300 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>א.א. שימורי עדן</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪12</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪20.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪7.90</s> ₪6.00 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290012313899" data-name="פול מצרי יבנה, 300 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שימורי פטריות חתוכות 230 גר wb <button type="button" class="photo-btn" data-photo="7290020661159" data-key="7290020661159" data-name="שימורי פטריות חתוכות 230 גר wb" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪21.30 <small>לק״ג</small></div>
+          <div class="shelf">₪4.90 · 230 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020661159" data-name="שימורי פטריות חתוכות 230 גר wb" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פטריות שלם ויליגר 230 ג <button type="button" class="photo-btn" data-photo="7290002348054" data-key="7290002348054" data-name="פטריות שלם ויליגר 230 ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>גריניארד פריפרד</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪10</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪7.30</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪21.74 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.90</s> ₪5.00 · 230 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002348054" data-name="פטריות שלם ויליגר 230 ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גרגירי חומוס <button type="button" class="photo-btn" data-photo="7290018989289" data-key="7290018989289" data-name="גרגירי חומוס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זנלכל בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪9.00 (2 ב־₪18)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪11.00</s> ₪9.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018989289" data-name="גרגירי חומוס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">תורמוס במים ומלח יכין 2 * 200 גרם <button type="button" class="photo-btn" data-photo="7290018989296" data-key="7290018989296" data-name="תורמוס במים ומלח יכין 2 * 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זנלכל בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪9.00 (2 ב־₪18)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪11.00</s> ₪9.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018989296" data-name="תורמוס במים ומלח יכין 2 * 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שימורי שעועית לבנה 240 גר סוגת <button type="button" class="photo-btn" data-photo="7290100704936" data-key="7290100704936" data-name="שימורי שעועית לבנה 240 גר סוגת" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>לה דוריה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪10.90</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪6.45 (2 ב־₪12.90)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.71 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪7.70</s> ₪5.45 · 240 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290100704936" data-name="שימורי שעועית לבנה 240 גר סוגת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שימורי שעועית מנומרת 240 גר סוגת <button type="button" class="photo-btn" data-photo="7290100704943" data-key="7290100704943" data-name="שימורי שעועית מנומרת 240 גר סוגת" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>לה דוריה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪10.90</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪6.45 (2 ב־₪12.90)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.71 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪7.70</s> ₪5.45 · 240 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290100704943" data-name="שימורי שעועית מנומרת 240 גר סוגת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שעועית אדומה 400 גר סוגת <button type="button" class="photo-btn" data-photo="7290100704950" data-key="7290100704950" data-name="שעועית אדומה 400 גר סוגת" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>לה דוריה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪10.90</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪6.45 (2 ב־₪12.90)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.71 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪7.70</s> ₪5.45 · 240 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290100704950" data-name="שעועית אדומה 400 גר סוגת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עדשים ירוקות 400 גר סוגת <button type="button" class="photo-btn" data-photo="7290100704967" data-key="7290100704967" data-name="עדשים ירוקות 400 גר סוגת" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>לה דוריה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪10.90</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪6.45 (2 ב־₪12.90)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.71 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪7.70</s> ₪5.45 · 240 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290100704967" data-name="עדשים ירוקות 400 גר סוגת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גרגירי חומוס 400 גר סוגת <button type="button" class="photo-btn" data-photo="7290100704974" data-key="7290100704974" data-name="גרגירי חומוס 400 גר סוגת" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>לה דוריה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪10.90</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪6.45 (2 ב־₪12.90)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.71 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪7.70</s> ₪5.45 · 240 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290100704974" data-name="גרגירי חומוס 400 גר סוגת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גרגירי חומוס שלמים במי מלח 800 גר SERA ו <button type="button" class="photo-btn" data-photo="7290117265062" data-key="7290117265062" data-name="גרגירי חומוס שלמים במי מלח 800 גר SERA ו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>---</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪10.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪24.75 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290117265062" data-name="גרגירי חומוס שלמים במי מלח 800 גר SERA ו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שימורי פטריות שלמות 230 גר wb <button type="button" class="photo-btn" data-photo="7290020661166" data-key="7290020661166" data-name="שימורי פטריות שלמות 230 גר wb" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪25.65 <small>לק״ג</small></div>
+          <div class="shelf">₪5.90 · 230 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020661166" data-name="שימורי פטריות שלמות 230 גר wb" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">שעועית אדומה ברוטב עגבניות פיקנטי ותירס <button type="button" class="photo-btn" data-photo="7290119387236" data-key="7290119387236" data-name="שעועית אדומה ברוטב עגבניות פיקנטי ותירס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪26.05 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 380 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119387236" data-name="שעועית אדומה ברוטב עגבניות פיקנטי ותירס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לקט קטניות לחמין סנפ <button type="button" class="photo-btn" data-photo="7290000101132" data-key="7290000101132" data-name="לקט קטניות לחמין סנפ" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנפרוסט</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪27.37 <small>לק״ג</small></div>
+          <div class="shelf">₪21.90 · 800 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000101132" data-name="לקט קטניות לחמין סנפ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שעועית לבנה מבושלת 7 <button type="button" class="photo-btn" data-photo="7290020239495" data-key="7290020239495" data-name="שעועית לבנה מבושלת 7" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנפרוסט</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪28.43 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020239495" data-name="שעועית לבנה מבושלת 7" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">קינג קול שעועית אדומה בהירה 439 גרם</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪29.38 <small>לק״ג</small></div>
+          <div class="shelf">₪12.90 · 439 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:11182700923" data-name="קינג קול שעועית אדומה בהירה 439 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">האופה - לבבות דקל <button type="button" class="photo-btn" data-photo="7290019926856" data-key="7290019926856" data-name="האופה - לבבות דקל" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪29.75 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪15.90</s> ₪11.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019926856" data-name="האופה - לבבות דקל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שעועית לבנה 230גר קופסה <button type="button" class="photo-btn" data-photo="7290112348142" data-key="7290112348142" data-name="שעועית לבנה 230גר קופסה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קונסרב איטליה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪7.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪30.00 <small>לק״ג</small></div>
+          <div class="shelf">₪6.90 · 230 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112348142" data-name="שעועית לבנה 230גר קופסה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שעועית חומה מבושלת ומוכנה לאכילה טעם הטבע 380 גרם <button type="button" class="photo-btn" data-photo="7290110559007" data-key="7290110559007" data-name="שעועית חומה מבושלת ומוכנה לאכילה טעם הטבע 380 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪30.00 <small>לק״ג</small></div>
+          <div class="shelf">₪6.90 · 230 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110559007" data-name="שעועית חומה מבושלת ומוכנה לאכילה טעם הטבע 380 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עדשים חומות מבושלות ומוכנות לאכילה טעם הטבע 380 גרם <button type="button" class="photo-btn" data-photo="7290110571184" data-key="7290110571184" data-name="עדשים חומות מבושלות ומוכנות לאכילה טעם הטבע 380 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קונסרב איטליה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪7.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪30.00 <small>לק״ג</small></div>
+          <div class="shelf">₪6.90 · 230 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110571184" data-name="עדשים חומות מבושלות ומוכנות לאכילה טעם הטבע 380 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גרגירי חומוס 230 גר קופסה <button type="button" class="photo-btn" data-photo="7290112357113" data-key="7290112357113" data-name="גרגירי חומוס 230 גר קופסה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קונסרב איטליה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪7.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪30.00 <small>לק״ג</small></div>
+          <div class="shelf">₪6.90 · 230 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112357113" data-name="גרגירי חומוס 230 גר קופסה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שעועית אדומה 230 גרם קופסה <button type="button" class="photo-btn" data-photo="7290112357106" data-key="7290112357106" data-name="שעועית אדומה 230 גרם קופסה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קונסרב איטליה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪7.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪30.00 <small>לק״ג</small></div>
+          <div class="shelf">₪6.90 · 230 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112357106" data-name="שעועית אדומה 230 גרם קופסה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חומוס גדול{קיסר} 290 גרם יכין <button type="button" class="photo-btn" data-photo="7290018359686" data-key="7290018359686" data-name="חומוס גדול{קיסר} 290 גרם יכין" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זנלכל בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪9.90</span><span class="other st-4">נטו חיסכון ₪9.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪30.69 <small>לק״ג</small></div>
+          <div class="shelf">₪8.90 · 290 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018359686" data-name="חומוס גדול{קיסר} 290 גרם יכין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שעועית לבנה במים 310 גרם A2 יכין <button type="button" class="photo-btn" data-photo="7290013531759" data-key="7290013531759" data-name="שעועית לבנה במים 310 גרם A2 יכין" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זנלכל בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪11.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪31.94 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 310 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013531759" data-name="שעועית לבנה במים 310 גרם A2 יכין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פטריות שמפיניון שלמות וילי פוד 230 גרם <button type="button" class="photo-btn" data-photo="7290006511157" data-key="7290006511157" data-name="פטריות שמפיניון שלמות וילי פוד 230 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אוקצ&#39;מפס אס.איי אויי דברובסקייגו 259, 60-406</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪7.90</span><span class="other st-4">נטו חיסכון ₪7.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪33.91 <small>לק״ג</small></div>
+          <div class="shelf">₪7.80 · 230 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290006511157" data-name="פטריות שמפיניון שלמות וילי פוד 230 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פטריות שמפיניון שלמות טעמן 400 גרם <button type="button" class="photo-btn" data-photo="7290013625458" data-key="7290013625458" data-name="פטריות שמפיניון שלמות טעמן 400 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פרוצאמפ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪7.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪34.35 <small>לק״ג</small></div>
+          <div class="shelf">₪7.90 · 230 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013625458" data-name="פטריות שמפיניון שלמות טעמן 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שעועית לבנה ברוטב עגבניות יכין 2 * 200 גרם <button type="button" class="photo-btn" data-photo="7290018989319" data-key="7290018989319" data-name="שעועית לבנה ברוטב עגבניות יכין 2 * 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זנלכל</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪35.16 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.70</s> ₪9.00 · 256 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018989319" data-name="שעועית לבנה ברוטב עגבניות יכין 2 * 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">ארבעס 330 גרם <button type="button" class="photo-btn" data-photo="7290111651892" data-key="7290111651892" data-name="ארבעס 330 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪36.06 <small>לק״ג</small></div>
+          <div class="shelf">₪11.90 · 330 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111651892" data-name="ארבעס 330 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שעועית צ&#39;ילי 281 גרם A2 יכין <button type="button" class="photo-btn" data-photo="7290000208220" data-key="7290000208220" data-name="שעועית צ&#39;ילי 281 גרם A2 יכין" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זנלכל בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪10.90</span><span class="other st-0">ויקטורי ₪11.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪38.79 <small>לק״ג</small></div>
+          <div class="shelf">₪10.90 · 281 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000208220" data-name="שעועית צ&#39;ילי 281 גרם A2 יכין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">שעועית אפויה ברוטב עגבניות 420 גרם &#34;רומפלרס&#34; <button type="button" class="photo-btn" data-photo="5016616000537" data-key="5016616000537" data-name="שעועית אפויה ברוטב עגבניות 420 גרם &#34;רומפלרס&#34;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪42.62 <small>לק״ג</small></div>
+          <div class="shelf">₪17.90 · 420 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5016616000537" data-name="שעועית אפויה ברוטב עגבניות 420 גרם &#34;רומפלרס&#34;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שעועית אדומה ברוטב עגבניות צ&#39;ילי חריף יכין 2 * 200 גרם <button type="button" class="photo-btn" data-photo="7290018989272" data-key="7290018989272" data-name="שעועית אדומה ברוטב עגבניות צ&#39;ילי חריף יכין 2 * 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זנלכל</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪42.86 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.70</s> ₪9.00 · 210 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018989272" data-name="שעועית אדומה ברוטב עגבניות צ&#39;ילי חריף יכין 2 * 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+</ol>
+</div>
+
+</main>
+<footer>עודכן 7.10 06:15 · ויקטורי 6.10 21:13 · רמי לוי 00:11 · אושר עד 6.10 21:00 · אושר עד 6.10 21:00 · נטו חיסכון 04:03</footer>
+
+
+<nav class="bottom-nav" aria-label="ניווט">
+  <a href="index.html" class="on"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg><span>בית</span></a>
+  <a href="search.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><span>חיפוש</span></a>
+  <a href="scan.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V5a1 1 0 0 1 1-1h2M17 4h2a1 1 0 0 1 1 1v2M20 17v2a1 1 0 0 1-1 1h-2M7 20H5a1 1 0 0 1-1-1v-2"/><path d="M8 8v8M11 8v8M14 8v8M16.5 8v8"/></svg><span>סריקה</span></a>
+  <a href="basket.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h11l2-8H6.2"/><circle cx="9.5" cy="19" r="1.4"/><circle cx="17" cy="19" r="1.4"/></svg><span id="cart-count"></span><span>עגלת קניות</span></a>
+  <a href="spending.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-2-1.4-2 1.4-2-1.4-2 1.4-2-1.4L6 21z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><span>הוצאות</span></a>
+</nav>
+
+<script src="static/basket.js?v=20261007061534"></script>
+<script src="static/photo.js?v=20261007061534"></script>
+
+<script src="static/render.js?v=20261007061534"></script>
+<script src="static/category.js?v=20261007061534" data-build="20261007061534"></script>
+
+<script>
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+</script>
+</body>
+</html>
