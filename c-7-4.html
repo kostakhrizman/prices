@@ -1,0 +1,3912 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f7a4d">
+<script>
+// the look this phone chose (settings.html "מראה"), before anything is drawn: html.light / html.dark
+// (none = follow the phone) and html[data-color] (none = green); the browser bar takes the colour too
+(function () {
+  let t = {};
+  try { t = JSON.parse(localStorage.getItem("theme")) || {}; } catch (e) { /* none yet */ }
+  const root = document.documentElement;
+  if (t.mode === "light" || t.mode === "dark") root.classList.add(t.mode);
+  if (t.color) root.dataset.color = t.color;
+  if (t.bar) document.querySelector('meta[name="theme-color"]').content = t.bar;
+})();
+</script>
+<title>בייגלה ופופקורן</title>
+<link rel="manifest" href="static/manifest.webmanifest">
+<link rel="icon" href="static/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="static/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="static/style.css?v=20261010235052">
+<style>.st-0 { --store: #e07000; }.st-1 { --store: #d32f2f; }.st-2 { --store: #1565c0; }.st-3 { --store: #1565c0; }.st-4 { --store: #c99a00; }</style>
+<script src="static/stores.js?v=20261010235052" data-stores="[{&#34;card_cap&#34;: 750, &#34;card_rate&#34;: 0.07, &#34;default&#34;: true, &#34;key&#34;: &#34;victory-038&#34;, &#34;name&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;ramilevy-007&#34;, &#34;name&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-026&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05ea\u05dc\u05e4\u05d9\u05d5\u05ea&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-003&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05d2\u05d1\u05e2\u05ea \u05e9\u05d0\u05d5\u05dc&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;netto-052&#34;, &#34;name&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df \u05e7\u05e8\u05d9\u05d9\u05ea \u05d9\u05e2\u05e8\u05d9\u05dd&#34;, &#34;short&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df&#34;}]"></script>
+<script src="static/avoid.js?v=20261010235052" data-kinds="[&#34;\u05e2\u05d5\u05e3 \u05de\u05e2\u05d5\u05d1\u05d3&#34;, &#34;\u05d1\u05e9\u05e8 \u05de\u05e2\u05d5\u05d1\u05d3&#34;]"></script>
+<script>
+// No long-press menu on links, pictures or text (the user: the home page's tiles opened Chrome's "open in new tab /
+// copy link" menu; CSS can't stop that on Android). Typing fields and the ⓘ sheet's barcode keep theirs.
+document.addEventListener("contextmenu", (e) => {
+  if (!e.target.closest("input, textarea, [contenteditable], .photo-barcode")) e.preventDefault();
+});
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <a class="back" href="t-7.html" aria-label="חזרה">→</a>
+    <h1>בייגלה ופופקורן</h1>
+    <a class="notes-link" href="notes.html" aria-label="רשימת קניות" title="רשימת קניות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="m8.5 10 1.2 1.2 2.3-2.4M8.5 15.5l1.2 1.2 2.3-2.4M14 10.5h2.5M14 16h2.5"/></svg><span>רשימת קניות</span></a>
+    <a class="settings-link" href="settings.html" aria-label="הגדרות" title="הגדרות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></a>
+  </div>
+  
+  <form class="search" action="search.html" method="get" role="search">
+    <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+    <input type="search" name="q" placeholder="חיפוש מוצר" enterkeyhint="search" aria-label="חיפוש מוצר">
+  </form>
+  
+</header>
+<main>
+
+<p class="sub"><span class="sub-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="12" rx="4.5" ry="3.6"/><path d="M7.5 12 3 8.8v6.4zM16.5 12 21 8.8v6.4z"/><path d="M10.5 9.2c-.8 1.8-.8 3.8 0 5.6M13.5 9.2c.8 1.8.8 3.8 0 5.6"/></svg></span>חטיפים ומתוקים · <span id="cat-count">136</span> מוצרים, מהזול ליקר</p>
+
+
+<div class="cat-filter">
+  <input type="search" id="cat-filter" placeholder="סינון לפי שם או יצרן · ‎-מילה מסתירה" enterkeyhint="done" autocomplete="off" aria-label="סינון המוצרים בקטגוריה">
+  <button type="button" id="facet-btn" class="facet-btn" aria-expanded="false" aria-controls="facet-list">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h18l-7 8v6l-4-2v-4z"/></svg>
+    <span>סינון</span><b id="facet-n" hidden></b></button>
+</div>
+<div id="facet-list" class="facet-list" hidden>
+  <div class="facet-items" id="facet-kinds"><label class="facet"><input type="checkbox" value="ביגלה"> <span>ביגלה</span> <small></small></label><label class="facet"><input type="checkbox" value="פופקורן"> <span>פופקורן</span> <small></small></label><label class="facet"><input type="checkbox" value="דקים"> <span>דקים</span> <small></small></label><label class="facet"><input type="checkbox" value="מאיר"> <span>מאיר</span> <small></small></label><label class="facet"><input type="checkbox" value="מעדני"> <span>מעדני</span> <small></small></label><label class="facet"><input type="checkbox" value="מקלות"> <span>מקלות</span> <small></small></label><label class="facet"><input type="checkbox" value="גריסיני"> <span>גריסיני</span> <small></small></label><label class="facet"><input type="checkbox" value="סולטי"> <span>סולטי</span> <small></small></label><label class="facet"><input type="checkbox" value="סנידרס"> <span>סנידרס</span> <small></small></label><label class="facet"><input type="checkbox" value="שברי"> <span>שברי</span> <small></small></label><label class="facet"><input type="checkbox" value="גדולות שומשום"> <span>גדולות שומשום</span> <small></small></label><label class="facet"><input type="checkbox" value="הוט פופ"> <span>הוט פופ</span> <small></small></label><label class="facet"><input type="checkbox" value="מלך הביגלה"> <span>מלך הביגלה</span> <small></small></label></div>
+  <div class="facet-stores" id="facet-stores" hidden><div class="facet-title">חנויות</div><div class="facet-items"></div></div>
+  <div class="facet-actions"><button type="button" class="link" id="facet-clear">ניקוי</button>
+    <button type="button" id="facet-done">הצגה</button></div>
+</div>
+<div id="cat-list" data-href="c-7-4.html">
+
+<ol class="products">
+  
+  
+    
+    
+    
+    <li class="product st-4 best">
+      <div class="info">
+        <div class="name">פופקורן 1 ק&#39;ג מיה<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290001041185" data-key="7290001041185" data-name="פופקורן 1 ק&#39;ג מיה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪20</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪6.67 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪6.67 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001041185" data-name="פופקורן 1 ק&#39;ג מיה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פופקורן רמי לוי 1 ק&#34;<button type="button" class="unsold" data-sold="20260831" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290015994149" data-key="7290015994149" data-name="פופקורן רמי לוי 1 ק&#34;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רמי לוי</span>
+          <span class="warn">גודל לא ודאי</span>
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪8.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪8.50 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015994149" data-name="פופקורן רמי לוי 1 ק&#34;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">פופקורן 500 ג&#39; מיה<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290002319177" data-key="7290002319177" data-name="פופקורן 500 ג&#39; מיה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.80 <small>לק״ג</small></div>
+          <div class="shelf">₪4.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002319177" data-name="פופקורן 500 ג&#39; מיה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גרעיני פופקורן 1 ק&#34;ג<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290020661241" data-key="7290020661241" data-name="גרעיני פופקורן 1 ק&#34;ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.00 <small>לק״ג</small></div>
+          <div class="shelf">₪10.00 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020661241" data-name="גרעיני פופקורן 1 ק&#34;ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גרעיני תירס פופקורן<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="835811007180" data-key="7290696200003:835811007180" data-name="גרעיני תירס פופקורן" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יבוא ושיווק: הנמל אריזות ושיווק בעמ.</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪10.90</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪6.90</s> ₪5.45 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:835811007180" data-name="גרעיני תירס פופקורן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">פופקורן 500 גרם סוגת כשל&#34;פ<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290003643776" data-key="7290003643776" data-name="פופקורן 500 גרם סוגת כשל&#34;פ" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוגת</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪10.90</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪5.45 (2 ב־₪10.90)</span><span class="other st-4">נטו חיסכון ₪6.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪7.30</s> ₪5.45 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003643776" data-name="פופקורן 500 גרם סוגת כשל&#34;פ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פופקורן 500ג רמילוי<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290016865790" data-key="7290016865790" data-name="פופקורן 500ג רמילוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוגת</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪11.80 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪6.50</s> ₪5.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016865790" data-name="פופקורן 500ג רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">פופקורן 1 קג סוגת<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290001990421" data-key="7290001990421" data-name="פופקורן 1 קג סוגת" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪11.90 <small>לק״ג</small></div>
+          <div class="shelf">₪11.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001990421" data-name="פופקורן 1 קג סוגת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">בייגלה רשתות מלח 300 הדר - מאנצ&#39;י<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290018790588" data-key="7290018790588" data-name="בייגלה רשתות מלח 300 הדר - מאנצ&#39;י" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12.90</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪14.33 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪6.90</s> ₪4.30 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018790588" data-name="בייגלה רשתות מלח 300 הדר - מאנצ&#39;י" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">בייגלה שמיניות מלח 300 הדר - מאנצ&#39;י<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290018790595" data-key="7290018790595" data-name="בייגלה שמיניות מלח 300 הדר - מאנצ&#39;י" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12.90</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪14.33 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪6.90</s> ₪4.30 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018790595" data-name="בייגלה שמיניות מלח 300 הדר - מאנצ&#39;י" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">בייגלה שמיניות מלח 200 הדר<button type="button" class="unsold" data-sold="20261002" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290015856171" data-key="7290015856171" data-name="בייגלה שמיניות מלח 200 הדר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪10</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪16.65 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪3.90</s> ₪3.33 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015856171" data-name="בייגלה שמיניות מלח 200 הדר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">בייגלה רשתות עם מלח הדר 200 גרם<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290018790052" data-key="7290018790052" data-name="בייגלה רשתות עם מלח הדר 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪10</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪16.65 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪3.90</s> ₪3.33 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018790052" data-name="בייגלה רשתות עם מלח הדר 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מעדני מלך -בייגלה שמיניות עם מלח 300 גרם<button type="button" class="unsold" data-sold="20261006" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290018720578" data-key="7290018720578" data-name="מעדני מלך -בייגלה שמיניות עם מלח 300 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪10</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪16.67 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪6.90</s> ₪5.00 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018720578" data-name="מעדני מלך -בייגלה שמיניות עם מלח 300 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מעדני מלך -בייגלה שמיניות עם שומשום 300 גרם<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290018720585" data-key="7290018720585" data-name="מעדני מלך -בייגלה שמיניות עם שומשום 300 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪10</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪16.67 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪6.90</s> ₪5.00 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018720585" data-name="מעדני מלך -בייגלה שמיניות עם שומשום 300 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מעדני מלך -בייגלה שטוחנים עם מלח 300 גרם<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290018720738" data-key="7290018720738" data-name="מעדני מלך -בייגלה שטוחנים עם מלח 300 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪10</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪16.67 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪6.90</s> ₪5.00 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018720738" data-name="מעדני מלך -בייגלה שטוחנים עם מלח 300 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מעדני מלך -בייגלה שטוחנים עם שומשום 300 גרם<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290018720745" data-key="7290018720745" data-name="מעדני מלך -בייגלה שטוחנים עם שומשום 300 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪10</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪16.67 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪6.90</s> ₪5.00 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018720745" data-name="מעדני מלך -בייגלה שטוחנים עם שומשום 300 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">פופקורן 500 גרם<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290010068005" data-key="7290010068005" data-name="פופקורן 500 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪17.80 <small>לק״ג</small></div>
+          <div class="shelf">₪8.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010068005" data-name="פופקורן 500 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בייגלה מקלות עם מלח 200 גרם רמי לוי<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290017928081" data-key="7290017928081" data-name="בייגלה מקלות עם מלח 200 גרם רמי לוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 16.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪19.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.50</s> ₪3.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017928081" data-name="בייגלה מקלות עם מלח 200 גרם רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בייגלה שמיניות עם מלח 200 גרם רמי לוי<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290017928289" data-key="7290017928289" data-name="בייגלה שמיניות עם מלח 200 גרם רמי לוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 16.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪19.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.50</s> ₪3.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017928289" data-name="בייגלה שמיניות עם מלח 200 גרם רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בייגלה גדול עם מלח 2<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290017928487" data-key="7290017928487" data-name="בייגלה גדול עם מלח 2" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 16.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪19.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.50</s> ₪3.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017928487" data-name="בייגלה גדול עם מלח 2" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">פופקורן סלקטד 500 ג&#39;<button type="button" class="unsold" data-sold="20260930" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290013677051" data-key="7290013677051" data-name="פופקורן סלקטד 500 ג&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.80 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013677051" data-name="פופקורן סלקטד 500 ג&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בייגלה מקלות מלוחים אסם 400 גרם<button type="button" class="unsold" data-sold="20261006" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290000060088" data-key="7290000060088" data-name="בייגלה מקלות מלוחים אסם 400 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסם השקעות בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪16</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪10.00 (2 ב־₪20)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪20.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪8.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000060088" data-name="בייגלה מקלות מלוחים אסם 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בייגלה שמיניות עם מלח אסם 400 גרם<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290000076133" data-key="7290000076133" data-name="בייגלה שמיניות עם מלח אסם 400 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסם השקעות בע\&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪16</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪10.00 (2 ב־₪20)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪20.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪8.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000076133" data-name="בייגלה שמיניות עם מלח אסם 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בייגלה טבעות מלח 400 גר אסם<button type="button" class="unsold" data-sold="20261002" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290111568961" data-key="7290111568961" data-name="בייגלה טבעות מלח 400 גר אסם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסם השקעות בע\&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪16</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪10.00 (2 ב־₪20)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪20.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪8.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111568961" data-name="בייגלה טבעות מלח 400 גר אסם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">פופקורן פופסטאר חמישייה טבעי סוגת<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290000420325" data-key="7290000420325" data-name="פופקורן פופסטאר חמישייה טבעי סוגת" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סאות&#39;רן פוד אנד סנאקס</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪22</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-0">ויקטורי ₪12.90 (מבצע)</span><span class="other st-1">רמי לוי ₪12.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪17.90</s> ₪11.00 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000420325" data-name="פופקורן פופסטאר חמישייה טבעי סוגת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">פופקורן פופסטאר חמישייה חמאה סוגת<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290000420332" data-key="7290000420332" data-name="פופקורן פופסטאר חמישייה חמאה סוגת" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סאות&#39;רן פוד אנד סנאקס</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪22</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-0">ויקטורי ₪12.90 (מבצע)</span><span class="other st-1">רמי לוי ₪12.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪17.90</s> ₪11.00 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000420332" data-name="פופקורן פופסטאר חמישייה חמאה סוגת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מאיר בייגל שמיניות מלח 400 גר<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290017928685" data-key="7290017928685" data-name="מאיר בייגל שמיניות מלח 400 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאיר את בייגל תעשיות בע\</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪17.90</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪9.00 (2 ב־₪18)</span><span class="other st-4">נטו חיסכון ₪9.00 (2 ב־₪18)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.37 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪8.95 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017928685" data-name="מאיר בייגל שמיניות מלח 400 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">דקים בייגלה שטוח מלח 200ג רמילוי<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290017928357" data-key="7290017928357" data-name="דקים בייגלה שטוח מלח 200ג רמילוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">4 ב־₪18</span> בקניית 4 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.90</s> ₪4.50 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017928357" data-name="דקים בייגלה שטוח מלח 200ג רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">דקים בייגלה שטוח פינוקים 200ג רמילוי<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290017928753" data-key="7290017928753" data-name="דקים בייגלה שטוח פינוקים 200ג רמילוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">4 ב־₪18</span> בקניית 4 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.90</s> ₪4.50 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017928753" data-name="דקים בייגלה שטוח פינוקים 200ג רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">דקים בייגלה שטוח שומ<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290017928555" data-key="7290017928555" data-name="דקים בייגלה שטוח שומ" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">4 ב־₪18</span> בקניית 4 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.90</s> ₪4.50 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017928555" data-name="דקים בייגלה שטוח שומ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בייגלה שמיניות מלוחות 400 גרםנ.ל.פ<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290000461625" data-key="7290000461625" data-name="בייגלה שמיניות מלוחות 400 גרםנ.ל.פ" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>בייגל את בייגל מזון ( 1985) בע&#34;מ, דרך השוקולד 1, צ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪11.00 (2 ב־₪22)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪9.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000461625" data-name="בייגלה שמיניות מלוחות 400 גרםנ.ל.פ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בייגלה מקלות 400 גרם בייגל בייגלנ.ל.פ<button type="button" class="unsold" data-sold="20261001" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290000461656" data-key="7290000461656" data-name="בייגלה מקלות 400 גרם בייגל בייגלנ.ל.פ" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>בייגל את בייגל מזון ( 1985) בע&#34;מ, דרך השוקולד 1, צ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪9.00 (2 ב־₪18)</span><span class="other st-0">ויקטורי ₪10.00 (2 ב־₪20)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪9.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000461656" data-name="בייגלה מקלות 400 גרם בייגל בייגלנ.ל.פ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בייגלה מקלות מלח<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290017928128" data-key="7290017928128" data-name="בייגלה מקלות מלח" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאיר בייגל</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 31.10</div>
+        <div class="club">מחיר מועדון ויקטורי: ₪6.90</div>
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪12.50</s> ₪9.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017928128" data-name="בייגלה מקלות מלח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בייגלה שמיניות עם מלח<button type="button" class="unsold" data-sold="20260909" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290020452504" data-key="7290020452504" data-name="בייגלה שמיניות עם מלח" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪23.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪6.90 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020452504" data-name="בייגלה שמיניות עם מלח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בייגלה רשתות עם מלח<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290020452757" data-key="7290020452757" data-name="בייגלה רשתות עם מלח" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪23.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪6.90 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020452757" data-name="בייגלה רשתות עם מלח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">הוטפופ מלוח 600 ג&#39;) ב(12<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="5701932026964" data-key="5701932026964" data-name="הוטפופ מלוח 600 ג&#39;) ב(12" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פופז בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪14.90 (מבצע)</span><span class="other st-4">נטו חיסכון ₪15.00 (2 ב־₪30)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪24.83 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪14.90 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5701932026964" data-name="הוטפופ מלוח 600 ג&#39;) ב(12" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">הוט חמאה 600 ג&#39;) ב(12<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="5701932026971" data-key="5701932026971" data-name="הוט חמאה 600 ג&#39;) ב(12" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פופז בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪14.90 (מבצע)</span><span class="other st-4">נטו חיסכון ₪15.00 (2 ב־₪30)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪24.83 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪14.90 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5701932026971" data-name="הוט חמאה 600 ג&#39;) ב(12" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">פירורי בייגלה<button type="button" class="unsold" data-sold="20260911" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290020297068" data-key="7290020297068" data-name="פירורי בייגלה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאיר את בייגל תעשיות בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪15</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪9.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪25.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪7.50 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020297068" data-name="פירורי בייגלה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">פופסטאר מופחת שומן טבעי 5יח&#39;<button type="button" class="unsold" data-sold="20261006" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290010195268" data-key="7290010195268" data-name="פופסטאר מופחת שומן טבעי 5יח&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סאות&#39;רן פוד אנד סנאקס</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪22</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-0">ויקטורי ₪12.90 (מבצע)</span><span class="other st-1">רמי לוי ₪12.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪25.88 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪17.90</s> ₪11.00 · 425 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010195268" data-name="פופסטאר מופחת שומן טבעי 5יח&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">פופקורן פופסטאר חמישייה מופחת שומן חמאה<button type="button" class="unsold" data-sold="20261001" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290010195275" data-key="7290010195275" data-name="פופקורן פופסטאר חמישייה מופחת שומן חמאה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סאות&#39;רן פוד אנד סנאקס</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪22</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-0">ויקטורי ₪12.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪25.88 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪17.90</s> ₪11.00 · 425 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010195275" data-name="פופקורן פופסטאר חמישייה מופחת שומן חמאה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בייגלה טבעות שומשום אסם 300 גרם<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290000081663" data-key="7290000081663" data-name="בייגלה טבעות שומשום אסם 300 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסם השקעות בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪16</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪10.00 (2 ב־₪20)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪26.67 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪8.00 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000081663" data-name="בייגלה טבעות שומשום אסם 300 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בייגלה שטוחים עם שומשום אסם<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290106574953" data-key="7290106574953" data-name="בייגלה שטוחים עם שומשום אסם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסם השקעות בע\&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪16</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪10.00 (2 ב־₪20)</span><span class="other st-4">נטו חיסכון ₪10.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪26.67 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪8.00 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290106574953" data-name="בייגלה שטוחים עם שומשום אסם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בייגלה שטוחים מלח אסם 300 גרם<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290106574977" data-key="7290106574977" data-name="בייגלה שטוחים מלח אסם 300 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסם השקעות בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪16</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪10.00 (2 ב־₪20)</span><span class="other st-4">נטו חיסכון ₪10.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪26.67 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪8.00 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290106574977" data-name="בייגלה שטוחים מלח אסם 300 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בייגלה שטוחים ביסלי<button type="button" class="unsold" data-sold="20261001" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290115204698" data-key="7290115204698" data-name="בייגלה שטוחים ביסלי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסם</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪16</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪26.67 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪8.00 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115204698" data-name="בייגלה שטוחים ביסלי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בייגלה אסם שטוחים במליחות מעודנת 300 גרם<button type="button" class="unsold" data-sold="20260928" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290115200881" data-key="7290115200881" data-name="בייגלה אסם שטוחים במליחות מעודנת 300 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסם</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪16</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪10.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪26.67 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪8.00 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115200881" data-name="בייגלה אסם שטוחים במליחות מעודנת 300 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בייגלה שטוחים טעם חמוץ חריף 300 גרם<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290118423683" data-key="7290118423683" data-name="בייגלה שטוחים טעם חמוץ חריף 300 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסם</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪16</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪10.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪26.67 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪8.00 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118423683" data-name="בייגלה שטוחים טעם חמוץ חריף 300 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בייגלה שמיניות מלח ב<button type="button" class="unsold" data-sold="20260927" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290112965905" data-key="7290112965905" data-name="בייגלה שמיניות מלח ב" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסם</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪16</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪26.67 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪8.00 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112965905" data-name="בייגלה שמיניות מלח ב" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מאיר בייגל שטוח מלח 330 גר<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290017928098" data-key="7290017928098" data-name="מאיר בייגל שטוח מלח 330 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאיר בייגל</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪17.90</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪9.00 (2 ב־₪18)</span><span class="other st-4">נטו חיסכון ₪9.00 (2 ב־₪18)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪27.12 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪8.95 · 330 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017928098" data-name="מאיר בייגל שטוח מלח 330 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מאיר בייגל שטוחלה שומשום 330 גר<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290017928616" data-key="7290017928616" data-name="מאיר בייגל שטוחלה שומשום 330 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאיר את בייגל תעשיות בע\</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪17.90</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪9.00 (2 ב־₪18)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪27.12 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪8.95 · 330 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017928616" data-name="מאיר בייגל שטוחלה שומשום 330 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מאיר בייגל שטוח ניגובים מלח 330 גר<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290017928524" data-key="7290017928524" data-name="מאיר בייגל שטוח ניגובים מלח 330 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪17.90</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪9.00 (2 ב־₪18)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪27.12 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪8.95 · 330 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017928524" data-name="מאיר בייגל שטוח ניגובים מלח 330 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">המיניונים - מארז פופקורן<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290019926474" data-key="7290019926474" data-name="המיניונים - מארז פופקורן" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪29.75 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪16.90</s> ₪11.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019926474" data-name="המיניונים - מארז פופקורן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">המיניונים - מארז פופקורן<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290019926528" data-key="7290019926528" data-name="המיניונים - מארז פופקורן" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪29.75 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪16.90</s> ₪11.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019926528" data-name="המיניונים - מארז פופקורן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מאיר בייגל שטוחלה פינוקים 300 גר<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290017928227" data-key="7290017928227" data-name="מאיר בייגל שטוחלה פינוקים 300 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאיר את בייגל תעשיות בע\</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪17.90</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪9.00 (2 ב־₪18)</span><span class="other st-4">נטו חיסכון ₪9.00 (2 ב־₪18)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪29.83 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪8.95 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017928227" data-name="מאיר בייגל שטוחלה פינוקים 300 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מאיר בייגל 300 גר בייגלה מלח גדול<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290017928364" data-key="7290017928364" data-name="מאיר בייגל 300 גר בייגלה מלח גדול" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאיר את בייגל תעשיות בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪17.90</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪9.00 (2 ב־₪18)</span><span class="other st-4">נטו חיסכון ₪9.00 (2 ב־₪18)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪29.83 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪8.95 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017928364" data-name="מאיר בייגל 300 גר בייגלה מלח גדול" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מאיר בייגל אצבעות שומשום 300 גר<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290017928807" data-key="7290017928807" data-name="מאיר בייגל אצבעות שומשום 300 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאיר את בייגל תעשיות בע\</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪17.90</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪9.00 (2 ב־₪18)</span><span class="other st-4">נטו חיסכון ₪9.00 (2 ב־₪18)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪29.83 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪8.95 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017928807" data-name="מאיר בייגל אצבעות שומשום 300 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מאיר בייגל שטוח ניגובים שומשום 300 גר<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290017928722" data-key="7290017928722" data-name="מאיר בייגל שטוח ניגובים שומשום 300 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪17.90</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪29.83 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪8.95 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017928722" data-name="מאיר בייגל שטוח ניגובים שומשום 300 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מאיר בייגל טבעות שומשום 300 גרם<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290017928609" data-key="7290017928609" data-name="מאיר בייגל טבעות שומשום 300 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאיר בייגל</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 31.10</div>
+        <div class="club">מחיר מועדון ויקטורי: ₪6.90</div>
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-4">נטו חיסכון ₪9.00 (2 ב־₪18)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪30.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪12.50</s> ₪9.00 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017928609" data-name="מאיר בייגל טבעות שומשום 300 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מאיר בייגל סמאש שברי בייגלה טעם צ&#39;דר 300 גר<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290017928661" data-key="7290017928661" data-name="מאיר בייגל סמאש שברי בייגלה טעם צ&#39;דר 300 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סבימקס</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪30.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪9.00 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017928661" data-name="מאיר בייגל סמאש שברי בייגלה טעם צ&#39;דר 300 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">טבעות שומשום 300 גר&#39;<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290107649100" data-key="7290107649100" data-name="טבעות שומשום 300 גר&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>דרך השוקולד 1, צפת 1340401, ישראל.</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-0">ויקטורי ₪11.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪30.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪9.00 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290107649100" data-name="טבעות שומשום 300 גר&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">דקים דקים מלוח 300 ג&#39;<button type="button" class="unsold" data-sold="20260817" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290112491770" data-key="7290112491770" data-name="דקים דקים מלוח 300 ג&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>דרך השוקולד 1, צפת 1340401, ישראל.</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-4">נטו חיסכון ₪9.00 (2 ב־₪18)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪30.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪9.00 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112491770" data-name="דקים דקים מלוח 300 ג&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בייגלה דקים ושומשום 300 גר&#39; בייגל בייגל<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290112491787" data-key="7290112491787" data-name="בייגלה דקים ושומשום 300 גר&#39; בייגל בייגל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>דרך השוקולד 1, צפת 1340401, ישראל.</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪9.00 (2 ב־₪18)</span><span class="other st-4">נטו חיסכון ₪9.00 (2 ב־₪18)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪30.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪9.00 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112491787" data-name="בייגלה דקים ושומשום 300 גר&#39; בייגל בייגל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בייגלה דקים שמנת בצל 300 גר&#39; בייגל בייגל<button type="button" class="unsold" data-sold="20260909" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290112491794" data-key="7290112491794" data-name="בייגלה דקים שמנת בצל 300 גר&#39; בייגל בייגל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>דרך השוקולד 1, צפת 1340401, ישראל.</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪9.00 (2 ב־₪18)</span><span class="other st-4">נטו חיסכון ₪9.00 (2 ב־₪18)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪30.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪9.00 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112491794" data-name="בייגלה דקים שמנת בצל 300 גר&#39; בייגל בייגל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">דקים דקים בטעם צ&#39;דר 300 גר&#39;<button type="button" class="unsold" data-sold="20260922" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290116537467" data-key="7290116537467" data-name="דקים דקים בטעם צ&#39;דר 300 גר&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>דרך השוקולד 1, צפת 1340401, ישראל.</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪9.00 (2 ב־₪18)</span><span class="other st-4">נטו חיסכון ₪9.00 (2 ב־₪18)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪30.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪9.00 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116537467" data-name="דקים דקים בטעם צ&#39;דר 300 גר&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קרוקו בייגלה ארוך 80 גרם<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="5941194000375" data-key="5941194000375" data-name="קרוקו בייגלה ארוך 80 גרם" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קרוקו אס אר אל</span>
+          
+        </div>
+        <div class="deal"><span class="badge">4 ב־₪10</span> בקניית 4 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪31.25 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪3.90</s> ₪2.50 · 80 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5941194000375" data-name="קרוקו בייגלה ארוך 80 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">בייגלה דג דג מלוח 250נ גרנ.ל.פ<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290116533704" data-key="7290116533704" data-name="בייגלה דג דג מלוח 250נ גרנ.ל.פ" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>דרך השוקולד 1, צפת 1340401, ישראל.</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪9.00 (2 ב־₪18)</span><span class="other st-0">ויקטורי ₪14.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪31.60 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪7.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116533704" data-name="בייגלה דג דג מלוח 250נ גרנ.ל.פ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סולטי בייגלה שטוח מלח 200 ג<button type="button" class="unsold" data-sold="20261001" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290018893654" data-key="7290018893654" data-name="סולטי בייגלה שטוח מלח 200 ג" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אלקה קו.</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪12.90</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪32.25 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪6.45 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018893654" data-name="סולטי בייגלה שטוח מלח 200 ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סולטי ביגלה שטוח שמשום 200<button type="button" class="unsold" data-sold="20261002" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290018893852" data-key="7290018893852" data-name="סולטי ביגלה שטוח שמשום 200" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אלקה קו.</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪12.90</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪32.25 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪6.45 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018893852" data-name="סולטי ביגלה שטוח שמשום 200" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בייגלה שמיניות גדולות מלוחות 400 גרם<button type="button" class="unsold" data-sold="20260914" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290000461700" data-key="7290000461700" data-name="בייגלה שמיניות גדולות מלוחות 400 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>בייגל את בייגל מזון ( 1985) בע&#34;מ, דרך השוקולד 1, צ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪34.75 <small>לק״ג</small></div>
+          <div class="shelf">₪13.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000461700" data-name="בייגלה שמיניות גדולות מלוחות 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בייגלה שמיניות גדולות שומשום<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290000461724" data-key="7290000461724" data-name="בייגלה שמיניות גדולות שומשום" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>בייגל&amp;בייגל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪34.75 <small>לק״ג</small></div>
+          <div class="shelf">₪13.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000461724" data-name="בייגלה שמיניות גדולות שומשום" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מאיר בייגל בייגלה גדול שומשום 250 גר<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290017928210" data-key="7290017928210" data-name="מאיר בייגל בייגלה גדול שומשום 250 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאיר את בייגל תעשיות בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪17.90</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪9.00 (2 ב־₪18)</span><span class="other st-4">נטו חיסכון ₪9.00 (2 ב־₪18)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪35.80 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪8.95 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017928210" data-name="מאיר בייגל בייגלה גדול שומשום 250 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בייגלה לוני טונס 45ג רמילוי wb<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290020297051" data-key="7290020297051" data-name="בייגלה לוני טונס 45ג רמילוי wb" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪36.25 <small>לק״ג</small></div>
+          <div class="shelf">₪2.90 · 80 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020297051" data-name="בייגלה לוני טונס 45ג רמילוי wb" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סניידרס בייגל אמריקא<button type="button" class="unsold" data-sold="20260920" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="" data-key="7290058140886:77975022757" data-name="סניידרס בייגל אמריקא" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ליימן שלייסל</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪29.90</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪39.14 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪14.95 · 382 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058140886:77975022757" data-name="סניידרס בייגל אמריקא" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בייגלה ארוך ארוך 150 גר<button type="button" class="unsold" data-sold="20260820" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290000461793" data-key="7290000461793" data-name="בייגלה ארוך ארוך 150 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>בייגל&amp;בייגל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.33 <small>לק״ג</small></div>
+          <div class="shelf">₪5.90 · 150 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000461793" data-name="בייגלה ארוך ארוך 150 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בייגלה שמיניות ללא גלוטן<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290112967138" data-key="7290112967138" data-name="בייגלה שמיניות ללא גלוטן" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסם השקעות בע\&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.60 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112967138" data-name="בייגלה שמיניות ללא גלוטן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בייגלה שומשום<button type="button" class="unsold" data-sold="20260910" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290019393566" data-key="7290019393566" data-name="בייגלה שומשום" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.64 <small>לק״ג</small></div>
+          <div class="shelf">₪10.90 · 275 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019393566" data-name="בייגלה שומשום" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אסם בייגלה שטוח ללא גלוטן 300 גר<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290112963321" data-key="7290112963321" data-name="אסם בייגלה שטוח ללא גלוטן 300 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסם</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.67 <small>לק״ג</small></div>
+          <div class="shelf">₪11.90 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112963321" data-name="אסם בייגלה שטוח ללא גלוטן 300 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">פצפוצי אורז מלא ללס תפוח קל 500 בי&amp;די<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290000446776" data-key="7290000446776" data-name="פצפוצי אורז מלא ללס תפוח קל 500 בי&amp;די" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪39.80 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪21.90</s> ₪19.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000446776" data-name="פצפוצי אורז מלא ללס תפוח קל 500 בי&amp;די" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בייגלה ביג ביג שומשום 150ג<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290107649094" data-key="7290107649094" data-name="בייגלה ביג ביג שומשום 150ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪40.00 <small>לק״ג</small></div>
+          <div class="shelf">₪6.00 · 150 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290107649094" data-name="בייגלה ביג ביג שומשום 150ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בייגלה כפיות פיזור כפרי 200 גרם<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290112961327" data-key="7290112961327" data-name="בייגלה כפיות פיזור כפרי 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסם</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪16</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪40.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪8.00 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112961327" data-name="בייגלה כפיות פיזור כפרי 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סולטי ביגלה שטוח חרדל דבש 160<button type="button" class="unsold" data-sold="20260805" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290018893005" data-key="7290018893005" data-name="סולטי ביגלה שטוח חרדל דבש 160" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אלקה קו.</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪12.90</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪6.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪40.31 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪6.45 · 160 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018893005" data-name="סולטי ביגלה שטוח חרדל דבש 160" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">צוקטה בייגלה מקלות אפויים דבש מלוח 160 גר<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290018894460" data-key="7290018894460" data-name="צוקטה בייגלה מקלות אפויים דבש מלוח 160 גר" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אלקה קו.</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪12.90</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪40.31 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪6.45 · 160 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018894460" data-name="צוקטה בייגלה מקלות אפויים דבש מלוח 160 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בייגלה אפוי בטעם בצל מקורמל 160 ג צ`וקטה<button type="button" class="unsold" data-sold="20260828" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290018894668" data-key="7290018894668" data-name="בייגלה אפוי בטעם בצל מקורמל 160 ג צ`וקטה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>SRL CO Trading Alka SC</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪12.90</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪40.31 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪6.45 · 160 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018894668" data-name="בייגלה אפוי בטעם בצל מקורמל 160 ג צ`וקטה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פופקו חטיף פופקורן בטעם חמאה ודבש אסם 80 גרם<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290000066431" data-key="7290000066431" data-name="פופקו חטיף פופקורן בטעם חמאה ודבש אסם 80 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסם השקעות בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">9 ב־₪30</span> בקניית 9 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪3.33 (6 ב־₪20)</span><span class="other st-0">ויקטורי ₪3.75 (8 ב־₪30)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪41.62 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪4.50</s> ₪3.33 · 80 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000066431" data-name="פופקו חטיף פופקורן בטעם חמאה ודבש אסם 80 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בייגלה שמיניות עם מלח 80 גר אסם<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290000076126" data-key="7290000076126" data-name="בייגלה שמיניות עם מלח 80 גר אסם" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסם השקעות בע\&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪10</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪41.62 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪4.00</s> ₪3.33 · 80 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000076126" data-name="בייגלה שמיניות עם מלח 80 גר אסם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פופקו פופקורן במבה אסם 80 גרם<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290115203134" data-key="7290115203134" data-name="פופקו פופקורן במבה אסם 80 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסם השקעות בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">9 ב־₪30</span> בקניית 9 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪3.33 (6 ב־₪20)</span><span class="other st-0">ויקטורי ₪3.75 (8 ב־₪30)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪41.62 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪4.50</s> ₪3.33 · 80 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115203134" data-name="פופקו פופקורן במבה אסם 80 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בייגל בסגנון אמריקאי<button type="button" class="unsold" data-sold="20260917" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="" data-key="7290696200003:77975022757" data-name="בייגל בסגנון אמריקאי" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סניידרס אוף האנובר</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪32</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪41.81 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪16.00 · 382.7 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:77975022757" data-name="בייגל בסגנון אמריקאי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סניידרס מקלונים דבש<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="" data-key="7290058140886:77975010167" data-name="סניידרס מקלונים דבש" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סניידרס</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪29.90</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪43.97 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪14.95 · 340 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058140886:77975010167" data-name="סניידרס מקלונים דבש" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בייגלה שטוחים שמנת בצל<button type="button" class="unsold" data-sold="20260817" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290122783339" data-key="7290122783339" data-name="בייגלה שטוחים שמנת בצל" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסם נסטלה ישראל בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪44.07 <small>לק״ג</small></div>
+          <div class="shelf">₪11.90 · 270 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290122783339" data-name="בייגלה שטוחים שמנת בצל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מאיר בייגל מקלות גריסיני 200 גר<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290017928821" data-key="7290017928821" data-name="מאיר בייגל מקלות גריסיני 200 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאיר את בייגל תעשיות בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪9.00 (2 ב־₪18)</span><span class="other st-4">נטו חיסכון ₪11.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪45.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪12.50</s> ₪9.00 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017928821" data-name="מאיר בייגל מקלות גריסיני 200 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שברי בייגלה בטעם דבש, חרדל ובצל.<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290017928463" data-key="7290017928463" data-name="שברי בייגלה בטעם דבש, חרדל ובצל." data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סבימקס</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪46.33 <small>לק״ג</small></div>
+          <div class="shelf">₪13.90 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017928463" data-name="שברי בייגלה בטעם דבש, חרדל ובצל." aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סניידרס דבש וחרדל 31<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="" data-key="7290058140886:77975095270" data-name="סניידרס דבש וחרדל 31" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪29.90</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪46.87 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪14.95 · 319 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058140886:77975095270" data-name="סניידרס דבש וחרדל 31" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בייגלה חיטה בתוספת דבש<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="" data-key="7290696200003:77975010167" data-name="בייגלה חיטה בתוספת דבש" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סניידרס אוף האנובר</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪32</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪47.06 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪16.00 · 340 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:77975010167" data-name="בייגלה חיטה בתוספת דבש" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פרצל&#39;ס מסובבים עם בצל מקורמל 200 גר<button type="button" class="unsold" data-sold="20261006" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290112198228" data-key="7290112198228" data-name="פרצל&#39;ס מסובבים עם בצל מקורמל 200 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪49.50 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112198228" data-name="פרצל&#39;ס מסובבים עם בצל מקורמל 200 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פרצל&#39;ס מסובבים עם דבש ומלח 200 גר<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290112198235" data-key="7290112198235" data-name="פרצל&#39;ס מסובבים עם דבש ומלח 200 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪49.50 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112198235" data-name="פרצל&#39;ס מסובבים עם דבש ומלח 200 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סניידרס צ&#39;דר 319גרם<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="" data-key="7290058140886:77975095263" data-name="סניידרס צ&#39;דר 319גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סניידרס</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪29.90</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪49.83 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪14.95 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058140886:77975095263" data-name="סניידרס צ&#39;דר 319גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פופקורן בשקית<button type="button" class="unsold" data-sold="20260730" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290001775585" data-key="7290001775585" data-name="פופקורן בשקית" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪50.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290001775585" data-name="פופקורן בשקית" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בייגלה בטעם צ&#39;דר<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="" data-key="7290696200003:77975095263" data-name="בייגלה בטעם צ&#39;דר" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪32</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪50.16 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪16.00 · 319 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:77975095263" data-name="בייגלה בטעם צ&#39;דר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בייגלה בטעם דבש חרדל<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="" data-key="7290696200003:77975095270" data-name="בייגלה בטעם דבש חרדל" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪32</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪50.16 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪16.00 · 319 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:77975095270" data-name="בייגלה בטעם דבש חרדל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מאיר בייגל מקלות גריסיני שומשום 175 גר<button type="button" class="unsold" data-sold="20261004" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290017928036" data-key="7290017928036" data-name="מאיר בייגל מקלות גריסיני שומשום 175 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאיר את בייגל תעשיות בע\</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪9.00 (2 ב־₪18)</span><span class="other st-4">נטו חיסכון ₪11.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪51.43 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪12.50</s> ₪9.00 · 175 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017928036" data-name="מאיר בייגל מקלות גריסיני שומשום 175 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מאיר בייגל גריסיני קראנץ מלח 175 גר<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290017928043" data-key="7290017928043" data-name="מאיר בייגל גריסיני קראנץ מלח 175 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאיר את בייגל תעשיות בע\</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪9.00 (2 ב־₪18)</span><span class="other st-4">נטו חיסכון ₪11.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪51.43 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪12.50</s> ₪9.00 · 175 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017928043" data-name="מאיר בייגל גריסיני קראנץ מלח 175 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מאיר בייגל גריסיני קראנץ פינוקים 175 גר<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290017928630" data-key="7290017928630" data-name="מאיר בייגל גריסיני קראנץ פינוקים 175 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪11.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪51.43 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪9.00 · 175 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017928630" data-name="מאיר בייגל גריסיני קראנץ פינוקים 175 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סניידרס בייגלה במילו<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="" data-key="7290058140886:77975094624" data-name="סניידרס בייגלה במילו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪29.90</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪53.39 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪14.95 · 280 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058140886:77975094624" data-name="סניידרס בייגלה במילו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סניידרס סנדביץ קרם צ<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="" data-key="7290058140886:77975094631" data-name="סניידרס סנדביץ קרם צ" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סניידרס</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪29.90</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪56.20 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪14.95 · 266 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058140886:77975094631" data-name="סניידרס סנדביץ קרם צ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בייגלה במילוי חמאת בוטנים<button type="button" class="unsold" data-sold="20260827" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="" data-key="7290696200003:77975094624" data-name="בייגלה במילוי חמאת בוטנים" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪32</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪57.14 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪16.00 · 280 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:77975094624" data-name="בייגלה במילוי חמאת בוטנים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">צונגו פופקורן מצופה 600 גר עוף טוב <button type="button" class="photo-btn" data-photo="7290018236635" data-key="7290018236635" data-name="צונגו פופקורן מצופה 600 גר עוף טוב" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מוצרי עוף טוב (2001) בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪58.17 <small>לק״ג</small></div>
+          <div class="shelf">₪34.90 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018236635" data-name="צונגו פופקורן מצופה 600 גר עוף טוב" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">צונגו פופקורן מתובל 600  גר`עוף טוב <button type="button" class="photo-btn" data-photo="7290018236659" data-key="7290018236659" data-name="צונגו פופקורן מתובל 600  גר`עוף טוב" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪58.17 <small>לק״ג</small></div>
+          <div class="shelf">₪34.90 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018236659" data-name="צונגו פופקורן מתובל 600  גר`עוף טוב" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">פופקורן קולנוע 200 גר`<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="783495092445" data-key="7290696200003:783495092445" data-name="פופקורן קולנוע 200 גר`" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.50 <small>לק״ג</small></div>
+          <div class="shelf">₪11.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:783495092445" data-name="פופקורן קולנוע 200 גר`" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בייגלה שטוחים טבעות עם מלח 60 גר אסם<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290000071008" data-key="7290000071008" data-name="בייגלה שטוחים טבעות עם מלח 60 גר אסם" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסם השקעות בע\&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪66.67 <small>לק״ג</small></div>
+          <div class="shelf">₪4.00 · 60 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000071008" data-name="בייגלה שטוחים טבעות עם מלח 60 גר אסם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בייגלה כוסמין אורגני 200גר<button type="button" class="unsold" data-sold="20260923" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290011830236" data-key="7290011830236" data-name="בייגלה כוסמין אורגני 200גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪69.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪15.90</s> ₪13.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011830236" data-name="בייגלה כוסמין אורגני 200גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">יוניק פרצל בייגלה שלס אוריגינל 284 גרם<button type="button" class="unsold" data-sold="20261002" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="" data-key="7290058156016:79927102111" data-name="יוניק פרצל בייגלה שלס אוריגינל 284 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪70.07 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 284 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:79927102111" data-name="יוניק פרצל בייגלה שלס אוריגינל 284 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בייגלה במילוי קרם צדר 226 גר סניידרס<button type="button" class="unsold" data-sold="20261002" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="" data-key="7290696200003:77975094631" data-name="בייגלה במילוי קרם צדר 226 גר סניידרס" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סניידרס לאנס</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪32</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪70.80 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪16.00 · 226 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:77975094631" data-name="בייגלה במילוי קרם צדר 226 גר סניידרס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מיקס בייגלה שוקולד חלב<button type="button" class="unsold" data-sold="20260904" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290019644972" data-key="7290019644972" data-name="מיקס בייגלה שוקולד חלב" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>כרמית תעשיות ממתקים בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪11.90</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪4.50 (2 ב־₪9)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪72.18 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.30</s> ₪3.97 · 55 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019644972" data-name="מיקס בייגלה שוקולד חלב" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מיקס בייגלה שוקולד חלב 55 גר<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290019939832" data-key="7290019939832" data-name="מיקס בייגלה שוקולד חלב 55 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>כרמית</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪11.90</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪5.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪72.18 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.30</s> ₪3.97 · 55 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019939832" data-name="מיקס בייגלה שוקולד חלב 55 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מיקסים בייגלה מצופים שוקולד לבן<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290019644927" data-key="7290019644927" data-name="מיקסים בייגלה מצופים שוקולד לבן" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>כרמית</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪11.90</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪5.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪72.18 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.30</s> ₪3.97 · 55 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019644927" data-name="מיקסים בייגלה מצופים שוקולד לבן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טעמי בייגלה 40 גרם<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290106525504" data-key="7290106525504" data-name="טעמי בייגלה 40 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>עלית</span>
+          
+        </div>
+        <div class="deal"><span class="badge">4 ב־₪12</span> בקניית 4 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪4.00 (4 ב־₪16)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪75.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪4.50</s> ₪3.00 · 40 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290106525504" data-name="טעמי בייגלה 40 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">פיטנס בייגלה סלק 12*150גרם<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290115208245" data-key="7290115208245" data-name="פיטנס בייגלה סלק 12*150גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪90.00 <small>לק״ג</small></div>
+          <div class="shelf">₪13.50 · 150 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115208245" data-name="פיטנס בייגלה סלק 12*150גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">פיטנס בייגלה בטטה 12*150גרם<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290115208269" data-key="7290115208269" data-name="פיטנס בייגלה בטטה 12*150גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪90.00 <small>לק״ג</small></div>
+          <div class="shelf">₪13.50 · 150 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115208269" data-name="פיטנס בייגלה בטטה 12*150גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">פופקורן מופחת שומן בטעם טבעי הוט פופ 5 * 32 גרם<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="5706516031358" data-key="5706516031358" data-name="פופקורן מופחת שומן בטעם טבעי הוט פופ 5 * 32 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פופס אירופה בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪14.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪93.12 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪14.90 · 160 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5706516031358" data-name="פופקורן מופחת שומן בטעם טבעי הוט פופ 5 * 32 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">רשתות בייגלה עגול מצופה שוקולד חלבי הום<button type="button" class="unsold" data-sold="20260818" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290116131726" data-key="7290116131726" data-name="רשתות בייגלה עגול מצופה שוקולד חלבי הום" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טחנת האבן תעשיות בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪99.17 <small>לק״ג</small></div>
+          <div class="shelf">₪11.90 · 120 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116131726" data-name="רשתות בייגלה עגול מצופה שוקולד חלבי הום" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">וורטר פופקורן קרמל מלוח 140גרם (ב 14)<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="4014400935677" data-key="4014400935677" data-name="וורטר פופקורן קרמל מלוח 140גרם (ב 14)" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪19.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪99.38 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪16.80</s> ₪15.90 · 160 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4014400935677" data-name="וורטר פופקורן קרמל מלוח 140גרם (ב 14)" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">חטיף פופקורן  חמאה ודבש<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290100705025" data-key="7290100705025" data-name="חטיף פופקורן  חמאה ודבש" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נטורל קייקס בע&#34;מ (בבלעדיות עבור פופקולנד בע&#34;מ)</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪106.43 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 140 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290100705025" data-name="חטיף פופקורן  חמאה ודבש" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">וורטר פופקורן קרמל 140 גרם<button type="button" class="unsold" data-sold="20260918" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="4014400925319" data-key="4014400925319" data-name="וורטר פופקורן קרמל 140 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪19.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪113.57 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪16.80</s> ₪15.90 · 140 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4014400925319" data-name="וורטר פופקורן קרמל 140 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בייגלה מצופה בשוקולד לבן<button type="button" class="unsold" data-sold="20260929" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290116131757" data-key="7290116131757" data-name="בייגלה מצופה בשוקולד לבן" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טחנת האבן תעשיות בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪115.83 <small>לק״ג</small></div>
+          <div class="shelf">₪13.90 · 120 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116131757" data-name="בייגלה מצופה בשוקולד לבן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בייגלה קיטו<button type="button" class="unsold" data-sold="20260929" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290014321229" data-key="7290014321229" data-name="בייגלה קיטו" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪117.06 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 170 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014321229" data-name="בייגלה קיטו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שברי בייגלה צ&#39;דר 55 גרם<button type="button" class="unsold" data-sold="20260901" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290017928395" data-key="7290017928395" data-name="שברי בייגלה צ&#39;דר 55 גרם" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪125.45 <small>לק״ג</small></div>
+          <div class="shelf">₪6.90 · 55 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017928395" data-name="שברי בייגלה צ&#39;דר 55 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שברי בייגלה<button type="button" class="unsold" data-sold="20260908" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290017928593" data-key="7290017928593" data-name="שברי בייגלה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪125.45 <small>לק״ג</small></div>
+          <div class="shelf">₪6.90 · 55 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017928593" data-name="שברי בייגלה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">גפן צ&#39;יפס פופקורן ממותק 142 גרם<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="710069004566" data-key="710069004566" data-name="גפן צ&#39;יפס פופקורן ממותק 142 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪126.06 <small>לק״ג</small></div>
+          <div class="shelf">₪17.90 · 142 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="710069004566" data-name="גפן צ&#39;יפס פופקורן ממותק 142 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בייגלה חלבון קריספאוור עם פינוקים 50 גרם<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290020297075" data-key="7290020297075" data-name="בייגלה חלבון קריספאוור עם פינוקים 50 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאיר את בייגל תעשיות בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪180.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪12.80</s> ₪9.00 · 50 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020297075" data-name="בייגלה חלבון קריספאוור עם פינוקים 50 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בייגלה חלבון קריספאוור עם צ&#39;דר 50 גרם<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290020297082" data-key="7290020297082" data-name="בייגלה חלבון קריספאוור עם צ&#39;דר 50 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאיר את בייגל תעשיות בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪180.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪12.80</s> ₪9.00 · 50 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020297082" data-name="בייגלה חלבון קריספאוור עם צ&#39;דר 50 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בייגלה כפיות איטלקי<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290112961266" data-key="7290112961266" data-name="בייגלה כפיות איטלקי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסם</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪16</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪8.00 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪8.00 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112961266" data-name="בייגלה כפיות איטלקי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מארז 3 בייגלה<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290008504010" data-key="7290008504010" data-name="מארז 3 בייגלה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.90 <small>ליח׳</small></div>
+          <div class="shelf">₪14.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008504010" data-name="מארז 3 בייגלה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בייגלה 5 יח<button type="button" class="unsold" data-sold="20260930" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290008504133" data-key="7290008504133" data-name="בייגלה 5 יח" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪16.00 <small>ליח׳</small></div>
+          <div class="shelf">₪16.00 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008504133" data-name="בייגלה 5 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בייגלה מלוח 3 יח<button type="button" class="unsold" data-sold="20260731" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290004033460" data-key="7290004033460" data-name="בייגלה מלוח 3 יח" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪17.90 <small>ליח׳</small></div>
+          <div class="shelf">₪17.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004033460" data-name="בייגלה מלוח 3 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">הוט פופ פופקורן במיק<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290111354526" data-key="7290111354526" data-name="הוט פופ פופקורן במיק" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪18.10 <small>ליח׳</small></div>
+          <div class="shelf">₪18.10 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111354526" data-name="הוט פופ פופקורן במיק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">הוט פופ פופקורן במיק<button type="button" class="unsold" data-sold="20261001" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290111354533" data-key="7290111354533" data-name="הוט פופ פופקורן במיק" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪18.10 <small>ליח׳</small></div>
+          <div class="shelf">₪18.10 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111354533" data-name="הוט פופ פופקורן במיק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+      
+      <li class="divider">ללא מחיר לק״ג (גודל לא ידוע)</li>
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">רוסטיק בפרצל<button type="button" class="unsold" data-sold="20260914" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="" data-key="7290696200003:6804754" data-name="רוסטיק בפרצל" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪4.80</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:6804754" data-name="רוסטיק בפרצל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+</ol>
+</div>
+
+</main>
+<footer>עודכן 10.10 23:50 · ויקטורי 9.10 22:08 · רמי לוי 9.10 21:00 · אושר עד 9.10 14:05 · אושר עד 9.10 14:05 · נטו חיסכון 9.10 22:14</footer>
+
+
+<nav class="bottom-nav" aria-label="ניווט">
+  <a href="index.html" class="on"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg><span>בית</span></a>
+  <a href="search.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><span>חיפוש</span></a>
+  <a href="scan.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V5a1 1 0 0 1 1-1h2M17 4h2a1 1 0 0 1 1 1v2M20 17v2a1 1 0 0 1-1 1h-2M7 20H5a1 1 0 0 1-1-1v-2"/><path d="M8 8v8M11 8v8M14 8v8M16.5 8v8"/></svg><span>סריקה</span></a>
+  <a href="basket.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h11l2-8H6.2"/><circle cx="9.5" cy="19" r="1.4"/><circle cx="17" cy="19" r="1.4"/></svg><span id="cart-count"></span><span>עגלת קניות</span></a>
+  <a href="spending.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-2-1.4-2 1.4-2-1.4-2 1.4-2-1.4L6 21z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><span>הוצאות</span></a>
+</nav>
+
+<script src="static/basket.js?v=20261010235052"></script>
+<script src="static/catpick.js?v=20261010235052"></script>
+<script src="static/photo.js?v=20261010235052"></script>
+
+<script src="static/render.js?v=20261010235052"></script>
+<script src="static/category.js?v=20261010235052" data-build="20261010235052"></script>
+
+<script>
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+</script>
+</body>
+</html>

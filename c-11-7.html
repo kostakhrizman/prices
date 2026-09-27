@@ -1,0 +1,4584 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f7a4d">
+<script>
+// the look this phone chose (settings.html "מראה"), before anything is drawn: html.light / html.dark
+// (none = follow the phone) and html[data-color] (none = green); the browser bar takes the colour too
+(function () {
+  let t = {};
+  try { t = JSON.parse(localStorage.getItem("theme")) || {}; } catch (e) { /* none yet */ }
+  const root = document.documentElement;
+  if (t.mode === "light" || t.mode === "dark") root.classList.add(t.mode);
+  if (t.color) root.dataset.color = t.color;
+  if (t.bar) document.querySelector('meta[name="theme-color"]').content = t.bar;
+})();
+</script>
+<title>שקיות אשפה ואחסון</title>
+<link rel="manifest" href="static/manifest.webmanifest">
+<link rel="icon" href="static/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="static/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="static/style.css?v=20261010235052">
+<style>.st-0 { --store: #e07000; }.st-1 { --store: #d32f2f; }.st-2 { --store: #1565c0; }.st-3 { --store: #1565c0; }.st-4 { --store: #c99a00; }</style>
+<script src="static/stores.js?v=20261010235052" data-stores="[{&#34;card_cap&#34;: 750, &#34;card_rate&#34;: 0.07, &#34;default&#34;: true, &#34;key&#34;: &#34;victory-038&#34;, &#34;name&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;ramilevy-007&#34;, &#34;name&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-026&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05ea\u05dc\u05e4\u05d9\u05d5\u05ea&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-003&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05d2\u05d1\u05e2\u05ea \u05e9\u05d0\u05d5\u05dc&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;netto-052&#34;, &#34;name&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df \u05e7\u05e8\u05d9\u05d9\u05ea \u05d9\u05e2\u05e8\u05d9\u05dd&#34;, &#34;short&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df&#34;}]"></script>
+<script src="static/avoid.js?v=20261010235052" data-kinds="[&#34;\u05e2\u05d5\u05e3 \u05de\u05e2\u05d5\u05d1\u05d3&#34;, &#34;\u05d1\u05e9\u05e8 \u05de\u05e2\u05d5\u05d1\u05d3&#34;]"></script>
+<script>
+// No long-press menu on links, pictures or text (the user: the home page's tiles opened Chrome's "open in new tab /
+// copy link" menu; CSS can't stop that on Android). Typing fields and the ⓘ sheet's barcode keep theirs.
+document.addEventListener("contextmenu", (e) => {
+  if (!e.target.closest("input, textarea, [contenteditable], .photo-barcode")) e.preventDefault();
+});
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <a class="back" href="t-11.html" aria-label="חזרה">→</a>
+    <h1>שקיות אשפה ואחסון</h1>
+    <a class="notes-link" href="notes.html" aria-label="רשימת קניות" title="רשימת קניות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="m8.5 10 1.2 1.2 2.3-2.4M8.5 15.5l1.2 1.2 2.3-2.4M14 10.5h2.5M14 16h2.5"/></svg><span>רשימת קניות</span></a>
+    <a class="settings-link" href="settings.html" aria-label="הגדרות" title="הגדרות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></a>
+  </div>
+  
+  <form class="search" action="search.html" method="get" role="search">
+    <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+    <input type="search" name="q" placeholder="חיפוש מוצר" enterkeyhint="search" aria-label="חיפוש מוצר">
+  </form>
+  
+</header>
+<main>
+
+<p class="sub"><span class="sub-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7h5v3H9z"/><path d="M14 8h3.5l1.5-2"/><path d="M10 7V4h3.5"/><path d="M8.5 10h6l1.5 3.5V20a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1v-6.5z"/><path d="M20.5 3.5v.01M21.5 7v.01M19 2v.01"/></svg></span>ניקיון ובית · <span id="cat-count">160</span> מוצרים, מהזול ליקר</p>
+
+
+<div class="cat-filter">
+  <input type="search" id="cat-filter" placeholder="סינון לפי שם או יצרן · ‎-מילה מסתירה" enterkeyhint="done" autocomplete="off" aria-label="סינון המוצרים בקטגוריה">
+  <button type="button" id="facet-btn" class="facet-btn" aria-expanded="false" aria-controls="facet-list">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h18l-7 8v6l-4-2v-4z"/></svg>
+    <span>סינון</span><b id="facet-n" hidden></b></button>
+</div>
+<div id="facet-list" class="facet-list" hidden>
+  <div class="facet-items" id="facet-kinds"><label class="facet"><input type="checkbox" value="אשפה"> <span>אשפה</span> <small></small></label><label class="facet"><input type="checkbox" value="אוכל"> <span>אוכל</span> <small></small></label><label class="facet"><input type="checkbox" value="הקפאה"> <span>הקפאה</span> <small></small></label><label class="facet"><input type="checkbox" value="סושי"> <span>סושי</span> <small></small></label><label class="facet"><input type="checkbox" value="סנו"> <span>סנו</span> <small></small></label><label class="facet"><input type="checkbox" value="עלמה"> <span>עלמה</span> <small></small></label><label class="facet"><input type="checkbox" value="פסגור"> <span>פסגור</span> <small></small></label><label class="facet"><input type="checkbox" value="זיפלוק"> <span>זיפלוק</span> <small></small></label><label class="facet"><input type="checkbox" value="זיפר"> <span>זיפר</span> <small></small></label><label class="facet"><input type="checkbox" value="גופיה"> <span>גופיה</span> <small></small></label><label class="facet"><input type="checkbox" value="גלילונית"> <span>גלילונית</span> <small></small></label><label class="facet"><input type="checkbox" value="מזון"> <span>מזון</span> <small></small></label><label class="facet"><input type="checkbox" value="רוכסן"> <span>רוכסן</span> <small></small></label><label class="facet"><input type="checkbox" value="אשפתון"> <span>אשפתון</span> <small></small></label><label class="facet"><input type="checkbox" value="פטנט לאחסון"> <span>פטנט לאחסון</span> <small></small></label><label class="facet"><input type="checkbox" value="קליפסים"> <span>קליפסים</span> <small></small></label><label class="facet"><input type="checkbox" value="רב שימושיות"> <span>רב שימושיות</span> <small></small></label><label class="facet"><input type="checkbox" value="גביעי איחסון"> <span>גביעי איחסון</span> <small></small></label></div>
+  <div class="facet-stores" id="facet-stores" hidden><div class="facet-title">חנויות</div><div class="facet-items"></div></div>
+  <div class="facet-actions"><button type="button" class="link" id="facet-clear">ניקוי</button>
+    <button type="button" id="facet-done">הצגה</button></div>
+</div>
+<div id="cat-list" data-href="c-11-7.html">
+
+<ol class="products">
+  
+  
+    
+    
+    
+    <li class="product st-4 best">
+      <div class="info">
+        <div class="name">שקית גופיה גליל נטו חיסכון<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290014236967" data-key="7290014236967" data-name="שקית גופיה גליל נטו חיסכון" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.10 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290014236967" data-name="שקית גופיה גליל נטו חיסכון" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גביע אחסון 1  ליטר- 10 יח`<button type="button" class="unsold" data-sold="20260929" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290103151492" data-key="7290103151492" data-name="גביע אחסון 1  ליטר- 10 יח`" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪1.19 <small>לליטר</small></div>
+          <div class="shelf">₪11.90 · 10 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290103151492" data-name="גביע אחסון 1  ליטר- 10 יח`" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גביעי איחסון 1/4 ליטר לפיד) (20<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290103151478" data-key="7290103151478" data-name="גביעי איחסון 1/4 ליטר לפיד) (20" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪2.98 <small>לליטר</small></div>
+          <div class="shelf">₪11.90 · 4 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290103151478" data-name="גביעי איחסון 1/4 ליטר לפיד) (20" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קופסאת אחסון 2 ליטר<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290108271812" data-key="7290108271812" data-name="קופסאת אחסון 2 ליטר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>חגיגית</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪4.45 <small>לליטר</small></div>
+          <div class="shelf">₪8.90 · 2 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108271812" data-name="קופסאת אחסון 2 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גביעי איחסון 1/2 ליטר לפיד) (15<button type="button" class="unsold" data-sold="20261006" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290103151485" data-key="7290103151485" data-name="גביעי איחסון 1/2 ליטר לפיד) (15" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪5.95 <small>לליטר</small></div>
+          <div class="shelf">₪11.90 · 2 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290103151485" data-name="גביעי איחסון 1/2 ליטר לפיד) (15" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מיכל אחסון 2 ליטר 4 לפיד<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290103151515" data-key="7290103151515" data-name="מיכל אחסון 2 ליטר 4 לפיד" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪5.95 <small>לליטר</small></div>
+          <div class="shelf">₪11.90 · 2 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290103151515" data-name="מיכל אחסון 2 ליטר 4 לפיד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">שקיות אשפה בגליל 25 יח` 900 גרם כחול<button type="button" class="unsold" data-sold="20261004" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290120301498" data-key="7290120301498" data-name="שקיות אשפה בגליל 25 יח` 900 גרם כחול" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪8.78 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪7.90 · 900 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290120301498" data-name="שקיות אשפה בגליל 25 יח` 900 גרם כחול" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קופסאות אחסון 1 ליטר* 5 יח<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290108271829" data-key="7290108271829" data-name="קופסאות אחסון 1 ליטר* 5 יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>חגיגית</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪8.90 <small>לליטר</small></div>
+          <div class="shelf">₪8.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108271829" data-name="קופסאות אחסון 1 ליטר* 5 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">סנדוויצון שקיות זוג 150 יח ר. שמאי<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290008453608" data-key="7290008453608" data-name="סנדוויצון שקיות זוג 150 יח ר. שמאי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          <span class="warn">גודל לא ודאי</span>
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪8.90 <small>לק״ג</small></div>
+          <div class="shelf">₪8.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008453608" data-name="סנדוויצון שקיות זוג 150 יח ר. שמאי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מיכל אחסון 1 ליטר 5 לפיד<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290103151508" data-key="7290103151508" data-name="מיכל אחסון 1 ליטר 5 לפיד" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪11.90 <small>לליטר</small></div>
+          <div class="shelf">₪11.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290103151508" data-name="מיכל אחסון 1 ליטר 5 לפיד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">שקיות אוכל הנמל<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="835811007678" data-key="835811007678" data-name="שקיות אוכל הנמל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סאם גלובל תורכיה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.01 <small>ליח׳</small></div>
+          <div class="shelf">₪2.90 · 200 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="835811007678" data-name="שקיות אוכל הנמל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">שקיות אוכל ארוז הנמל 150X2יח&#39;<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="835811005339" data-key="835811005339" data-name="שקיות אוכל ארוז הנמל 150X2יח&#39;" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מוצרי קופה חודשי</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪12</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.02 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪7.90</s> ₪6.00 · 300 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="835811005339" data-name="שקיות אוכל ארוז הנמל 150X2יח&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקיות מזון בקופסא רמי לוי 300 יח<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290108271454" data-key="7290108271454" data-name="שקיות מזון בקופסא רמי לוי 300 יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רמי לוי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.03 <small>ליח׳</small></div>
+          <div class="shelf">₪9.90 · 300 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108271454" data-name="שקיות מזון בקופסא רמי לוי 300 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">עלמה  שקיות הקפאה 3*100 רב שימושי<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290019750901" data-key="7290019750901" data-name="עלמה  שקיות הקפאה 3*100 רב שימושי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קו קופות נובמבר</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.03 <small>ליח׳</small></div>
+          <div class="shelf">₪9.90 · 300 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019750901" data-name="עלמה  שקיות הקפאה 3*100 רב שימושי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">עלמה 100 שקיות מזון עם ידית<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290121750158" data-key="7290121750158" data-name="עלמה 100 שקיות מזון עם ידית" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קו קופות נובמבר</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.04 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪6.90</s> ₪4.00 · 100 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121750158" data-name="עלמה 100 שקיות מזון עם ידית" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקיות רב שימושיות (הקפאה) 200 יחידות<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290108271461" data-key="7290108271461" data-name="שקיות רב שימושיות (הקפאה) 200 יחידות" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רמי לוי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.04 <small>ליח׳</small></div>
+          <div class="shelf">₪7.90 · 200 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108271461" data-name="שקיות רב שימושיות (הקפאה) 200 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סנו סושי שקיות רב שימושיות 270 יחידות 25*35 ס&#39;&#39;מ<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290108350142" data-key="7290108350142" data-name="סנו סושי שקיות רב שימושיות 270 יחידות 25*35 ס&#39;&#39;מ" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו סושי</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪9.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.04 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪9.90 · 270 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108350142" data-name="סנו סושי שקיות רב שימושיות 270 יחידות 25*35 ס&#39;&#39;מ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">סנו סושי זוג שקיות אוכל 2*150 יחידות<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290000295503" data-key="7290000295503" data-name="סנו סושי זוג שקיות אוכל 2*150 יחידות" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪22</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪11.90 (מבצע)</span><span class="other st-0">ויקטורי ₪12.50 (2 ב־₪25)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.04 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪13.90</s> ₪11.00 · 300 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000295503" data-name="סנו סושי זוג שקיות אוכל 2*150 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סנדוויצ&#39;ון שקיות אוכל ניקול 300 יח<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290000197432" data-key="7290000197432" data-name="סנדוויצ&#39;ון שקיות אוכל ניקול 300 יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אשלפסט תעשיות בעמ   ווינפק סחר בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪13.90 (מבצע)</span><span class="other st-4">נטו חיסכון ₪14.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.04 <small>ליח׳</small></div>
+          <div class="shelf">₪12.90 · 300 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000197432" data-name="סנדוויצ&#39;ון שקיות אוכל ניקול 300 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקיות רב שימושיות מתכלות ניקול 250 יחידות<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290000197470" data-key="7290000197470" data-name="שקיות רב שימושיות מתכלות ניקול 250 יחידות" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אשלפסט תעשיות בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪14.90 (מבצע)</span><span class="other st-4">נטו חיסכון ₪14.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.06 <small>ליח׳</small></div>
+          <div class="shelf">₪13.90 · 250 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000197470" data-name="שקיות רב שימושיות מתכלות ניקול 250 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקיות גופיה ורוד רמי<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290121046510" data-key="7290121046510" data-name="שקיות גופיה ורוד רמי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.10 <small>ליח׳</small></div>
+          <div class="shelf">₪0.10 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121046510" data-name="שקיות גופיה ורוד רמי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקיות ניילון סופר בי<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290000005999" data-key="7290000005999" data-name="שקיות ניילון סופר בי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.10 <small>ליח׳</small></div>
+          <div class="shelf">₪0.10 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000005999" data-name="שקיות ניילון סופר בי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקיות ידני<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290000005998" data-key="7290000005998" data-name="שקיות ידני" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.10 <small>ליח׳</small></div>
+          <div class="shelf">₪0.10 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000005998" data-name="שקיות ידני" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סנו סושי שקיות זיפר 100יח<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290108359107" data-key="7290108359107" data-name="סנו סושי שקיות זיפר 100יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פיין ונטג</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪9.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.10 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪12.90</s> ₪9.90 · 100 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108359107" data-name="סנו סושי שקיות זיפר 100יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שקיות אשפה לפח קטן<button type="button" class="unsold" data-sold="20261004" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290019393450" data-key="7290019393450" data-name="שקיות אשפה לפח קטן" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪15</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.15 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪12.90</s> ₪7.50 · 50 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019393450" data-name="שקיות אשפה לפח קטן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סנו סושי שקיות אוכל מנייר 70 יח<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290108353648" data-key="7290108353648" data-name="סנו סושי שקיות אוכל מנייר 70 יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>איי טיי אריזות טורקיה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪10.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.16 <small>ליח׳</small></div>
+          <div class="shelf">₪10.90 · 70 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108353648" data-name="סנו סושי שקיות אוכל מנייר 70 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גלילונית שקיות אשפה לפחים קטנים 100 יח<button type="button" class="unsold" data-sold="20261002" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290119500321" data-key="7290119500321" data-name="גלילונית שקיות אשפה לפחים קטנים 100 יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.16 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪17.90</s> ₪15.90 · 100 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119500321" data-name="גלילונית שקיות אשפה לפחים קטנים 100 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סנו שקיות אשפה לפח קטן 100 יח<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290108352801" data-key="7290108352801" data-name="סנו שקיות אשפה לפח קטן 100 יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪18.90</span><span class="other st-4">נטו חיסכון ₪19.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.19 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪21.90</s> ₪18.90 · 100 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108352801" data-name="סנו שקיות אשפה לפח קטן 100 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שקיות אשפה לפח ענק<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290019393498" data-key="7290019393498" data-name="שקיות אשפה לפח ענק" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.20 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪16.90</s> ₪9.90 · 50 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019393498" data-name="שקיות אשפה לפח ענק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">50 שקיות זיפר בגודל  19*20 ס&#34;מ, M<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290108352795" data-key="7290108352795" data-name="50 שקיות זיפר בגודל  19*20 ס&#34;מ, M" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פיין ונטג</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-4">נטו חיסכון ₪10.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.20 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪12.90</s> ₪9.90 · 50 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108352795" data-name="50 שקיות זיפר בגודל  19*20 ס&#34;מ, M" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">שקיות אשפה עם שרוך 52 * 65 100 יחידות<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290001713464" data-key="7290001713464" data-name="שקיות אשפה עם שרוך 52 * 65 100 יחידות" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.20 <small>ליח׳</small></div>
+          <div class="shelf">₪19.90 · 100 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001713464" data-name="שקיות אשפה עם שרוך 52 * 65 100 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שקיות אשפה עם שרוך<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290019393481" data-key="7290019393481" data-name="שקיות אשפה עם שרוך" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.25 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪15.90</s> ₪14.90 · 60 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019393481" data-name="שקיות אשפה עם שרוך" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מארז שקיות זיפר 50יח<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290019626558" data-key="7290019626558" data-name="מארז שקיות זיפר 50יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.26 <small>ליח׳</small></div>
+          <div class="shelf">₪12.90 · 50 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019626558" data-name="מארז שקיות זיפר 50יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סנו סושי שקיות 100 יח<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290108353532" data-key="7290108353532" data-name="סנו סושי שקיות 100 יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>Elif</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪27.90</span><span class="other st-4">נטו חיסכון ₪29.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.28 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪30.90</s> ₪27.90 · 100 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108353532" data-name="סנו סושי שקיות 100 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">שקיות פס סגור =אינגליש= 19X41 ס&#39;&#39;מ 30 יח&#39; L.D כשל&#39;&#39;פ עד&#39;&#39;ח אחת שתיים ר. שמאי<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290019375531" data-key="7290019375531" data-name="שקיות פס סגור =אינגליש= 19X41 ס&#39;&#39;מ 30 יח&#39; L.D כשל&#39;&#39;פ עד&#39;&#39;ח אחת שתיים ר. שמאי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.30 <small>ליח׳</small></div>
+          <div class="shelf">₪8.90 · 30 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019375531" data-name="שקיות פס סגור =אינגליש= 19X41 ס&#39;&#39;מ 30 יח&#39; L.D כשל&#39;&#39;פ עד&#39;&#39;ח אחת שתיים ר. שמאי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גלילונית שקיות אשפה 90*75 50יח<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290119500178" data-key="7290119500178" data-name="גלילונית שקיות אשפה 90*75 50יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.32 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪17.90</s> ₪15.90 · 50 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119500178" data-name="גלילונית שקיות אשפה 90*75 50יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">סנו סושי שקיות אשפה כחולות 54*65 - 60 יחידות<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290000295404" data-key="7290000295404" data-name="סנו סושי שקיות אשפה כחולות 54*65 - 60 יחידות" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-0">ויקטורי ₪19.90 (מבצע)</span><span class="other st-1">רמי לוי ₪19.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.32 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪21.90</s> ₪18.90 · 60 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000295404" data-name="סנו סושי שקיות אשפה כחולות 54*65 - 60 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שקיות אשפה עם ידיות, בגודל L 52*70 ס&#34;מ, 60 יח&#39;<button type="button" class="unsold" data-sold="20261004" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290108359183" data-key="7290108359183" data-name="שקיות אשפה עם ידיות, בגודל L 52*70 ס&#34;מ, 60 יח&#39;" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אשפלסט תעשיות פלסטיק בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.33 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪23.90</s> ₪19.90 · 60 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108359183" data-name="שקיות אשפה עם ידיות, בגודל L 52*70 ס&#34;מ, 60 יח&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סנו סושי שקיות אשפה - 50 יחידות<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290000289472" data-key="7290000289472" data-name="סנו סושי שקיות אשפה - 50 יחידות" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪16.90</span><span class="other st-0">ויקטורי ₪17.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.34 <small>ליח׳</small></div>
+          <div class="shelf">₪16.90 · 50 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000289472" data-name="סנו סושי שקיות אשפה - 50 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גלילונית שקיות אשפה 52*65 60 יח<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290119500123" data-key="7290119500123" data-name="גלילונית שקיות אשפה 52*65 60 יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.35 <small>ליח׳</small></div>
+          <div class="shelf">₪20.90 · 60 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119500123" data-name="גלילונית שקיות אשפה 52*65 60 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקיות אשפה עם שרוך 52*64 ניקול 55 יחידות<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290000189871" data-key="7290000189871" data-name="שקיות אשפה עם שרוך 52*64 ניקול 55 יחידות" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ניקול</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.36 <small>ליח׳</small></div>
+          <div class="shelf">₪19.90 · 55 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000189871" data-name="שקיות אשפה עם שרוך 52*64 ניקול 55 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקיות גופייה 50/70 רמי לוי 40 יח<button type="button" class="unsold" data-sold="20260930" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290108271478" data-key="7290108271478" data-name="שקיות גופייה 50/70 רמי לוי 40 יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>איכותית</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.37 <small>ליח׳</small></div>
+          <div class="shelf">₪14.90 · 40 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108271478" data-name="שקיות גופייה 50/70 רמי לוי 40 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקיות ענקיות רמי לוי 40 יחידות<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290108275063" data-key="7290108275063" data-name="שקיות ענקיות רמי לוי 40 יחידות" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ב.ה. דבליו</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.37 <small>ליח׳</small></div>
+          <div class="shelf">₪14.90 · 40 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108275063" data-name="שקיות ענקיות רמי לוי 40 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">שקיות פסגור לאחסון (1 גל&#39;) פלסטיקו 40 יחי 6853<button type="button" class="unsold" data-sold="20261004" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="807405068532" data-key="807405068532" data-name="שקיות פסגור לאחסון (1 גל&#39;) פלסטיקו 40 יחי 6853" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.37 <small>ליח׳</small></div>
+          <div class="shelf">₪14.90 · 40 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="807405068532" data-name="שקיות פסגור לאחסון (1 גל&#39;) פלסטיקו 40 יחי 6853" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שקיות אשפה לפח ענק<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290019393474" data-key="7290019393474" data-name="שקיות אשפה לפח ענק" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪15</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.38 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪16.90</s> ₪7.50 · 20 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019393474" data-name="שקיות אשפה לפח ענק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקיות גופייה 75/90 רמי לוי 25 יח<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290108271485" data-key="7290108271485" data-name="שקיות גופייה 75/90 רמי לוי 25 יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>איכותית</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 16.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.40 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪13.90</s> ₪9.90 · 25 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108271485" data-name="שקיות גופייה 75/90 רמי לוי 25 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">שקיות אשפה עם ידיות, 25 יחידות<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="835811005803" data-key="835811005803" data-name="שקיות אשפה עם ידיות, 25 יחידות" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תעשיות והשקעה אל רסא</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.40 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪12.90</s> ₪10.00 · 25 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="835811005803" data-name="שקיות אשפה עם ידיות, 25 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שקיות אשפה לפח ענק XL<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290000197654" data-key="7290000197654" data-name="שקיות אשפה לפח ענק XL" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אשפלסט</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.42 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪24.90</s> ₪20.90 · 50 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000197654" data-name="שקיות אשפה לפח ענק XL" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">שקיות אשפה גורילה ידיות 70/95<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290018213438" data-key="7290018213438" data-name="שקיות אשפה גורילה ידיות 70/95" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.44 <small>ליח׳</small></div>
+          <div class="shelf">₪10.90 · 25 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018213438" data-name="שקיות אשפה גורילה ידיות 70/95" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שקיות אשפה 45 יח M ניקול<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290016197877" data-key="7290016197877" data-name="שקיות אשפה 45 יח M ניקול" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אשפלסט</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪20.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.46 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪24.90</s> ₪20.90 · 45 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016197877" data-name="שקיות אשפה 45 יח M ניקול" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שקיות אשפה XXL<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290019393436" data-key="7290019393436" data-name="שקיות אשפה XXL" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.48 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪16.90</s> ₪11.90 · 25 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019393436" data-name="שקיות אשפה XXL" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקיות אשפה חזקות ניקול 40 יחידות<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290000196763" data-key="7290000196763" data-name="שקיות אשפה חזקות ניקול 40 יחידות" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אשפלסט</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪20.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.50 <small>ליח׳</small></div>
+          <div class="shelf">₪19.90 · 40 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000196763" data-name="שקיות אשפה חזקות ניקול 40 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקיות אשפה קומפקט 90*75 משי 40 יח<button type="button" class="unsold" data-sold="20261006" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290005033599" data-key="7290005033599" data-name="שקיות אשפה קומפקט 90*75 משי 40 יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>משי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.50 <small>ליח׳</small></div>
+          <div class="shelf">₪20.00 · 40 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290005033599" data-name="שקיות אשפה קומפקט 90*75 משי 40 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סנו סושי 40 שקיות אשפה EXTRA<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290108350128" data-key="7290108350128" data-name="סנו סושי 40 שקיות אשפה EXTRA" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪23.90</span><span class="other st-0">ויקטורי ₪26.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.57 <small>ליח׳</small></div>
+          <div class="shelf">₪22.90 · 40 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108350128" data-name="סנו סושי 40 שקיות אשפה EXTRA" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקיות אשפה קרם עם ידית 40יח 90*75<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290005033209" data-key="7290005033209" data-name="שקיות אשפה קרם עם ידית 40יח 90*75" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>משי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.58 <small>ליח׳</small></div>
+          <div class="shelf">₪23.20 · 40 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290005033209" data-name="שקיות אשפה קרם עם ידית 40יח 90*75" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גלילונית שקיות אשפה<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290119500277" data-key="7290119500277" data-name="גלילונית שקיות אשפה" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.64 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪16.90</s> ₪15.90 · 25 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119500277" data-name="גלילונית שקיות אשפה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקיות ריצ&#39;רץ&#39; אחסון למזון ניקול 15 יחידות<button type="button" class="unsold" data-sold="20260804" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290000197012" data-key="7290000197012" data-name="שקיות ריצ&#39;רץ&#39; אחסון למזון ניקול 15 יחידות" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ניקול</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.66 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪12.90</s> ₪9.90 · 15 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000197012" data-name="שקיות ריצ&#39;רץ&#39; אחסון למזון ניקול 15 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">20 שקיות זיפר עם סליידר, מידה ,M 17*20 ס&#34;מ<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290108359015" data-key="7290108359015" data-name="20 שקיות זיפר עם סליידר, מידה ,M 17*20 ס&#34;מ" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פיין ונטג</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.70 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪15.90</s> ₪13.90 · 20 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108359015" data-name="20 שקיות זיפר עם סליידר, מידה ,M 17*20 ס&#34;מ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקיות אשפה נשלפות עם<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290118661917" data-key="7290118661917" data-name="שקיות אשפה נשלפות עם" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.70 <small>ליח׳</small></div>
+          <div class="shelf">₪13.90 · 20 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118661917" data-name="שקיות אשפה נשלפות עם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שקיות אשפה ניקול 30 יח<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290111346439" data-key="7290111346439" data-name="שקיות אשפה ניקול 30 יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪20.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.70 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪25.90</s> ₪20.90 · 30 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111346439" data-name="שקיות אשפה ניקול 30 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">סושי שקיות זיפר עם סליידר 15יח לארג&#39;<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290108359008" data-key="7290108359008" data-name="סושי שקיות זיפר עם סליידר 15יח לארג&#39;" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪22</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.73 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪11.00 · 15 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108359008" data-name="סושי שקיות זיפר עם סליידר 15יח לארג&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שקיות אשפה לגינה<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290019393504" data-key="7290019393504" data-name="שקיות אשפה לגינה" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.74 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪15.90</s> ₪14.90 · 20 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019393504" data-name="שקיות אשפה לגינה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקיות אשפה עם שרוך 2*10 רמי לוי<button type="button" class="unsold" data-sold="20260914" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290108271430" data-key="7290108271430" data-name="שקיות אשפה עם שרוך 2*10 רמי לוי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רמי לוי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.74 <small>ליח׳</small></div>
+          <div class="shelf">₪14.90 · 20 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108271430" data-name="שקיות אשפה עם שרוך 2*10 רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">שקיות אשפה 75/90 אפור ידית 20 יח&#39;<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290017969206" data-key="7290017969206" data-name="שקיות אשפה 75/90 אפור ידית 20 יח&#39;" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.75 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪17.90</s> ₪15.00 · 20 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017969206" data-name="שקיות אשפה 75/90 אפור ידית 20 יח&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סנו סושי 25שקיות אטומות<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290108353501" data-key="7290108353501" data-name="סנו סושי 25שקיות אטומות" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנאט גרופ, טורקיה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪19.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.80 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪21.90</s> ₪19.90 · 25 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108353501" data-name="סנו סושי 25שקיות אטומות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקיות אשפה אפור ידית 90*75 משי 25 יח<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290005033582" data-key="7290005033582" data-name="שקיות אשפה אפור ידית 90*75 משי 25 יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>משי</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.80 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪22.90</s> ₪19.90 · 25 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290005033582" data-name="שקיות אשפה אפור ידית 90*75 משי 25 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">30 שקיות אשפה EXTRA חזקות לפחים גדולים, XL בגודל 6<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290108350210" data-key="7290108350210" data-name="30 שקיות אשפה EXTRA חזקות לפחים גדולים, XL בגודל 6" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-4">נטו חיסכון ₪24.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.80 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪26.90</s> ₪23.90 · 30 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108350210" data-name="30 שקיות אשפה EXTRA חזקות לפחים גדולים, XL בגודל 6" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקיות ריצ&#39;רץ&#39; רב תכליתיות ניקול 12 יחידות<button type="button" class="unsold" data-sold="20260904" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290000197029" data-key="7290000197029" data-name="שקיות ריצ&#39;רץ&#39; רב תכליתיות ניקול 12 יחידות" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סין</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪13.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.83 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪12.90</s> ₪9.90 · 12 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000197029" data-name="שקיות ריצ&#39;רץ&#39; רב תכליתיות ניקול 12 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גלילונית שקיות אשפה 78X90<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290119500222" data-key="7290119500222" data-name="גלילונית שקיות אשפה 78X90" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.84 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪21.90</s> ₪16.90 · 20 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119500222" data-name="גלילונית שקיות אשפה 78X90" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">שקיות אשפה מתכלות עם שרוך 78*90 ניקול 20 יחידות<button type="button" class="unsold" data-sold="20261002" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290000189550" data-key="7290000189550" data-name="שקיות אשפה מתכלות עם שרוך 78*90 ניקול 20 יחידות" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אשפלסט</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 30.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪19.90</span><span class="other st-0">ויקטורי ₪20.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.89 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪22.90</s> ₪17.90 · 20 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000189550" data-name="שקיות אשפה מתכלות עם שרוך 78*90 ניקול 20 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סנו סושי 20 שקיות אשפה 80*90<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290108358896" data-key="7290108358896" data-name="סנו סושי 20 שקיות אשפה 80*90" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>וויפאנג הנגשן</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪17.90 (מבצע)</span><span class="other st-4">נטו חיסכון ₪17.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.89 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪26.90</s> ₪17.90 · 20 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108358896" data-name="סנו סושי 20 שקיות אשפה 80*90" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">שקיות פסגור ענק לחלות (2 גל&#39;) פלסטיקו 15 יחי6851<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="807405068518" data-key="807405068518" data-name="שקיות פסגור ענק לחלות (2 גל&#39;) פלסטיקו 15 יחי6851" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.99 <small>ליח׳</small></div>
+          <div class="shelf">₪14.90 · 15 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="807405068518" data-name="שקיות פסגור ענק לחלות (2 גל&#39;) פלסטיקו 15 יחי6851" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סנו סושי 20 שקיות אשפה XXL<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290107280129" data-key="7290107280129" data-name="סנו סושי 20 שקיות אשפה XXL" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪21.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪1.09 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪26.90</s> ₪21.90 · 20 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290107280129" data-name="סנו סושי 20 שקיות אשפה XXL" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקית רב פעמית ורודה<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290101031550" data-key="7290101031550" data-name="שקית רב פעמית ורודה" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רמי לוי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪2.90 <small>ליח׳</small></div>
+          <div class="shelf">₪2.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290101031550" data-name="שקית רב פעמית ורודה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקיות קרח 12 יח רמי לוי<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290108272673" data-key="7290108272673" data-name="שקיות קרח 12 יח רמי לוי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ב.ה. דבליו</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪2.90 <small>ליח׳</small></div>
+          <div class="shelf">₪2.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108272673" data-name="שקיות קרח 12 יח רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקיות הקפאה 35*25 רמ<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290108272666" data-key="7290108272666" data-name="שקיות הקפאה 35*25 רמ" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪3.80 <small>ליח׳</small></div>
+          <div class="shelf">₪3.80 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108272666" data-name="שקיות הקפאה 35*25 רמ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקיות מזון רמי לוי 200 יח<button type="button" class="unsold" data-sold="20261006" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290108272659" data-key="7290108272659" data-name="שקיות מזון רמי לוי 200 יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪3.90 <small>ליח׳</small></div>
+          <div class="shelf">₪3.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108272659" data-name="שקיות מזון רמי לוי 200 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מארז שקיות אוכל<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290019393443" data-key="7290019393443" data-name="מארז שקיות אוכל" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪4.95 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪12.90</s> ₪9.90 · 2 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019393443" data-name="מארז שקיות אוכל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שקיות אוכל<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="835811005339" data-key="7290696200003:835811005339" data-name="שקיות אוכל" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יבוא ושיווק: הנמל אריזות ושיווק בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪5.45 <small>ליח׳</small></div>
+          <div class="shelf">₪10.90 · 2 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:835811005339" data-name="שקיות אוכל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקית זיפר 28*26 רמי לוי<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290108277722" data-key="7290108277722" data-name="שקית זיפר 28*26 רמי לוי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪6.90 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪7.90</s> ₪6.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108277722" data-name="שקית זיפר 28*26 רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קליפיסים לסגירת שקיו<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290118070245" data-key="7290118070245" data-name="קליפיסים לסגירת שקיו" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪6.90 <small>ליח׳</small></div>
+          <div class="shelf">₪6.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118070245" data-name="קליפיסים לסגירת שקיו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קליפסים ארוכים לשקיו<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7777886600732" data-key="7777886600732" data-name="קליפסים ארוכים לשקיו" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪6.90 <small>ליח׳</small></div>
+          <div class="shelf">₪6.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7777886600732" data-name="קליפסים ארוכים לשקיו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקית רוכסן סמי הכבאי<button type="button" class="unsold" data-sold="20260910" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290019936008" data-key="7290019936008" data-name="שקית רוכסן סמי הכבאי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪15</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪7.50 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪7.50 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019936008" data-name="שקית רוכסן סמי הכבאי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקית רוכסן טום וג&#39;רי<button type="button" class="unsold" data-sold="20260914" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290019936152" data-key="7290019936152" data-name="שקית רוכסן טום וג&#39;רי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪15</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪7.50 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪7.50 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019936152" data-name="שקית רוכסן טום וג&#39;רי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקית רוכסן ברבי wb<button type="button" class="unsold" data-sold="20260812" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290019936206" data-key="7290019936206" data-name="שקית רוכסן ברבי wb" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪15</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪7.50 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪7.50 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019936206" data-name="שקית רוכסן ברבי wb" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקית רוכסן דרדסים wb<button type="button" class="unsold" data-sold="20260910" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290019936251" data-key="7290019936251" data-name="שקית רוכסן דרדסים wb" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪15</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪7.50 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪7.50 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019936251" data-name="שקית רוכסן דרדסים wb" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">כיסוי ניילון עם גומי<button type="button" class="unsold" data-sold="20260818" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290121046602" data-key="7290121046602" data-name="כיסוי ניילון עם גומי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪7.90 <small>ליח׳</small></div>
+          <div class="shelf">₪7.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121046602" data-name="כיסוי ניילון עם גומי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקיות זיפר 20*19 ס&#34;מ (50 יח&#39;) רמי לוי<button type="button" class="unsold" data-sold="20260928" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290118669630" data-key="7290118669630" data-name="שקיות זיפר 20*19 ס&#34;מ (50 יח&#39;) רמי לוי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪7.90 <small>ליח׳</small></div>
+          <div class="shelf">₪7.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118669630" data-name="שקיות זיפר 20*19 ס&#34;מ (50 יח&#39;) רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקית זיפר 18*19 רמי לוי<button type="button" class="unsold" data-sold="20261003" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290108277739" data-key="7290108277739" data-name="שקית זיפר 18*19 רמי לוי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪7.90 <small>ליח׳</small></div>
+          <div class="shelf">₪7.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108277739" data-name="שקית זיפר 18*19 רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקיות אוכל מנייר 50 יחידות<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290108272550" data-key="7290108272550" data-name="שקיות אוכל מנייר 50 יחידות" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪7.90 <small>ליח׳</small></div>
+          <div class="shelf">₪7.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108272550" data-name="שקיות אוכל מנייר 50 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">שקיות אשפה עם ידיות 90\75עלמה<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290001713242" data-key="7290001713242" data-name="שקיות אשפה עם ידיות 90\75עלמה" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪16</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪11.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪8.00 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪8.00 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001713242" data-name="שקיות אשפה עם ידיות 90\75עלמה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">סושי שקיות אוכל 300XL<button type="button" class="unsold" data-sold="20261004" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290014397279" data-key="7290014397279" data-name="סושי שקיות אוכל 300XL" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪9.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.00 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪9.00 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014397279" data-name="סושי שקיות אוכל 300XL" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סנו סושי - שקיות אוכל נקשרות 250 יחידות XL<button type="button" class="unsold" data-sold="20261006" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290108353006" data-key="7290108353006" data-name="סנו סושי - שקיות אוכל נקשרות 250 יחידות XL" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>וויפנג הנגשנג, סין</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪10.00 (2 ב־₪20)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.90 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪9.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108353006" data-name="סנו סושי - שקיות אוכל נקשרות 250 יחידות XL" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סט 12יח קליפסים לסגי<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290118070009" data-key="7290118070009" data-name="סט 12יח קליפסים לסגי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90 <small>ליח׳</small></div>
+          <div class="shelf">₪9.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118070009" data-name="סט 12יח קליפסים לסגי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקיות אשפה 50*50 רמי לוי<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290108277579" data-key="7290108277579" data-name="שקיות אשפה 50*50 רמי לוי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ב.ה. דבליו</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90 <small>ליח׳</small></div>
+          <div class="shelf">₪9.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108277579" data-name="שקיות אשפה 50*50 רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">עלמה שקיות אשפה גופייה עם ידית נשלפות אחד אחד 90*75 מידה XXL<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290019750550" data-key="7290019750550" data-name="עלמה שקיות אשפה גופייה עם ידית נשלפות אחד אחד 90*75 מידה XXL" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪11.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.00 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪10.00 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019750550" data-name="עלמה שקיות אשפה גופייה עם ידית נשלפות אחד אחד 90*75 מידה XXL" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקית אשפה 90*75 גליל רמי לוי<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290108271447" data-key="7290108271447" data-name="שקית אשפה 90*75 גליל רמי לוי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רמי לוי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.90 <small>ליח׳</small></div>
+          <div class="shelf">₪10.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108271447" data-name="שקית אשפה 90*75 גליל רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקיות אוכל והקפאה 25*35<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290005033049" data-key="7290005033049" data-name="שקיות אוכל והקפאה 25*35" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>משי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪11.10 <small>ליח׳</small></div>
+          <div class="shelf">₪11.10 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290005033049" data-name="שקיות אוכל והקפאה 25*35" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">זיפלוק שקיות הקפאה ג<button type="button" class="unsold" data-sold="20260909" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="" data-key="7290058140886:25700005650" data-name="זיפלוק שקיות הקפאה ג" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>JOHNSON &amp; JOHNSON CO</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪13.90 <small>ליח׳</small></div>
+          <div class="shelf">₪13.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058140886:25700005650" data-name="זיפלוק שקיות הקפאה ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">זיפלוק שקיות לאחסון<button type="button" class="unsold" data-sold="20260929" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="" data-key="7290058140886:25700005681" data-name="זיפלוק שקיות לאחסון" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.80 <small>ליח׳</small></div>
+          <div class="shelf">₪14.80 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058140886:25700005681" data-name="זיפלוק שקיות לאחסון" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקיות אשפה 75/90<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290115640526" data-key="7290115640526" data-name="שקיות אשפה 75/90" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.90 <small>ליח׳</small></div>
+          <div class="shelf">₪14.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115640526" data-name="שקיות אשפה 75/90" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקית ואקום ענקית<button type="button" class="unsold" data-sold="20260927" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290008815468" data-key="7290008815468" data-name="שקית ואקום ענקית" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>דגש</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.90 <small>ליח׳</small></div>
+          <div class="shelf">₪14.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008815468" data-name="שקית ואקום ענקית" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקית אשפה 55*70 על ידית<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290005033247" data-key="7290005033247" data-name="שקית אשפה 55*70 על ידית" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>משי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪15.10 <small>ליח׳</small></div>
+          <div class="shelf">₪15.10 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290005033247" data-name="שקית אשפה 55*70 על ידית" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקיות אשפה ענקיות 100/110 ס&#34;מ XXXXXL שחור (15 יח&#39;) רמי לוי<button type="button" class="unsold" data-sold="20260902" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290120125568" data-key="7290120125568" data-name="שקיות אשפה ענקיות 100/110 ס&#34;מ XXXXXL שחור (15 יח&#39;) רמי לוי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪15.90 <small>ליח׳</small></div>
+          <div class="shelf">₪15.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290120125568" data-name="שקיות אשפה ענקיות 100/110 ס&#34;מ XXXXXL שחור (15 יח&#39;) רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקיות אשפה 52/65 עם<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290108271416" data-key="7290108271416" data-name="שקיות אשפה 52/65 עם" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רמי לוי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪15.90 <small>ליח׳</small></div>
+          <div class="shelf">₪15.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108271416" data-name="שקיות אשפה 52/65 עם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">זיפלוק שקיות אחסון ס<button type="button" class="unsold" data-sold="20260930" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="" data-key="7290058140886:25700005674" data-name="זיפלוק שקיות אחסון ס" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪16.80 <small>ליח׳</small></div>
+          <div class="shelf">₪16.80 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058140886:25700005674" data-name="זיפלוק שקיות אחסון ס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקיות אשפה ביג חזקות ללא תלישה<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290005033100" data-key="7290005033100" data-name="שקיות אשפה ביג חזקות ללא תלישה" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>משי</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪16.90 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪25.20</s> ₪16.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290005033100" data-name="שקיות אשפה ביג חזקות ללא תלישה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקיות גדולות 100 יח<button type="button" class="unsold" data-sold="20260922" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290108274127" data-key="7290108274127" data-name="שקיות גדולות 100 יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ב.ה. דבליו</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪17.90 <small>ליח׳</small></div>
+          <div class="shelf">₪17.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108274127" data-name="שקיות גדולות 100 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקיות אשפה 75*90 50 יחידות<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290005033230" data-key="7290005033230" data-name="שקיות אשפה 75*90 50 יחידות" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>משי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.00 <small>ליח׳</small></div>
+          <div class="shelf">₪19.00 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290005033230" data-name="שקיות אשפה 75*90 50 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקיות אשפה חזקות במיוחד<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290016197839" data-key="7290016197839" data-name="שקיות אשפה חזקות במיוחד" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אשפלסט תעשיות בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪20.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.90 <small>ליח׳</small></div>
+          <div class="shelf">₪19.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016197839" data-name="שקיות אשפה חזקות במיוחד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקיות אשפה XXL שחור ניקול<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290111344527" data-key="7290111344527" data-name="שקיות אשפה XXL שחור ניקול" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪20.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.90 <small>ליח׳</small></div>
+          <div class="shelf">₪19.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111344527" data-name="שקיות אשפה XXL שחור ניקול" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקיות אשפה 90*75 רמי<button type="button" class="unsold" data-sold="20260920" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290108277555" data-key="7290108277555" data-name="שקיות אשפה 90*75 רמי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.90 <small>ליח׳</small></div>
+          <div class="shelf">₪19.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108277555" data-name="שקיות אשפה 90*75 רמי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקיות אשפה עם ידית 50*70 משי<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290005033087" data-key="7290005033087" data-name="שקיות אשפה עם ידית 50*70 משי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>משי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪20.90 <small>ליח׳</small></div>
+          <div class="shelf">₪20.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290005033087" data-name="שקיות אשפה עם ידית 50*70 משי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ניקול שקיות אשפה גדו<button type="button" class="unsold" data-sold="20260908" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290111344572" data-key="7290111344572" data-name="ניקול שקיות אשפה גדו" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪22.90 <small>ליח׳</small></div>
+          <div class="shelf">₪22.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111344572" data-name="ניקול שקיות אשפה גדו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שקיות אשפה אקסטרה חזקות<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290108359046" data-key="7290108359046" data-name="שקיות אשפה אקסטרה חזקות" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>Elif</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪24.90</span><span class="other st-4">נטו חיסכון ₪24.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪24.90 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪25.90</s> ₪24.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108359046" data-name="שקיות אשפה אקסטרה חזקות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פטנט לאחסון ואקום<button type="button" class="unsold" data-sold="20260911" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7777886602927" data-key="7777886602927" data-name="פטנט לאחסון ואקום" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪24.90 <small>ליח׳</small></div>
+          <div class="shelf">₪24.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7777886602927" data-name="פטנט לאחסון ואקום" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקיות אשפה 52/65 עם שרוך רמי לוי 100 יח<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290108271423" data-key="7290108271423" data-name="שקיות אשפה 52/65 עם שרוך רמי לוי 100 יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רמי לוי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪26.90 <small>ליח׳</small></div>
+          <div class="shelf">₪26.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108271423" data-name="שקיות אשפה 52/65 עם שרוך רמי לוי 100 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פטנט לאחסון ואקום<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7777886602934" data-key="7777886602934" data-name="פטנט לאחסון ואקום" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪29.90 <small>ליח׳</small></div>
+          <div class="shelf">₪29.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7777886602934" data-name="פטנט לאחסון ואקום" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקיות אשפה שרוך 86*7<button type="button" class="unsold" data-sold="20260831" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290121043687" data-key="7290121043687" data-name="שקיות אשפה שרוך 86*7" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪34.90 <small>ליח׳</small></div>
+          <div class="shelf">₪34.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121043687" data-name="שקיות אשפה שרוך 86*7" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקיות אשפה שרוך 71*61 ס&#34;מ גדולות נשלפות (90יח) - לבן<button type="button" class="unsold" data-sold="20261001" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290121043694" data-key="7290121043694" data-name="שקיות אשפה שרוך 71*61 ס&#34;מ גדולות נשלפות (90יח) - לבן" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪34.90 <small>ליח׳</small></div>
+          <div class="shelf">₪34.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121043694" data-name="שקיות אשפה שרוך 71*61 ס&#34;מ גדולות נשלפות (90יח) - לבן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פטנט לאחסון ואקום<button type="button" class="unsold" data-sold="20260826" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7777886602941" data-key="7777886602941" data-name="פטנט לאחסון ואקום" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪34.90 <small>ליח׳</small></div>
+          <div class="shelf">₪34.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7777886602941" data-name="פטנט לאחסון ואקום" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+      
+      <li class="divider">ללא מחיר לק״ג (גודל לא ידוע)</li>
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">שקית גופיה<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290006751393" data-key="7290006751393" data-name="שקית גופיה" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.10</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290006751393" data-name="שקית גופיה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שקית הקפאה<button type="button" class="unsold" data-sold="20260807" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="" data-key="7290696200003:5402" data-name="שקית הקפאה" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪4.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:5402" data-name="שקית הקפאה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">שקיות להקפאה שטוח 100 יח<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290011433437" data-key="7290011433437" data-name="שקיות להקפאה שטוח 100 יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪4.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011433437" data-name="שקיות להקפאה שטוח 100 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">פיקס קלין מארז אטבי כביסה פלסטיק 20 יח<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7296049017267" data-key="7296049017267" data-name="פיקס קלין מארז אטבי כביסה פלסטיק 20 יח" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪10</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪5.00</div>
+          <div class="shelf"><s>₪5.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296049017267" data-name="פיקס קלין מארז אטבי כביסה פלסטיק 20 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">עלמה שקיות אשפה פלטינה עם ידית 20 יחידות 85*75 נשלף אחד אחד<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290121750073" data-key="7290121750073" data-name="עלמה שקיות אשפה פלטינה עם ידית 20 יחידות 85*75 נשלף אחד אחד" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪10</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪5.00</div>
+          <div class="shelf"><s>₪6.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121750073" data-name="עלמה שקיות אשפה פלטינה עם ידית 20 יחידות 85*75 נשלף אחד אחד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שקית 20 פסטל רחבה<button type="button" class="unsold" data-sold="20261006" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290006785657" data-key="7290006785657" data-name="שקית 20 פסטל רחבה" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪5.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290006785657" data-name="שקית 20 פסטל רחבה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">שקיות אשפה פלטינה עם ידית 25 יח&#39; 75*90 עלמה<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290121750066" data-key="7290121750066" data-name="שקיות אשפה פלטינה עם ידית 25 יח&#39; 75*90 עלמה" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪12</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪6.00</div>
+          <div class="shelf"><s>₪9.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121750066" data-name="שקיות אשפה פלטינה עם ידית 25 יח&#39; 75*90 עלמה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">שקיות הקפאה הנמל<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="835811007661" data-key="835811007661" data-name="שקיות הקפאה הנמל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סאם גלובל תורכיה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪6.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="835811007661" data-name="שקיות הקפאה הנמל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">קליפסים לסגירת שקיות<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290018929469" data-key="7290018929469" data-name="קליפסים לסגירת שקיות" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪6.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018929469" data-name="קליפסים לסגירת שקיות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">שקיות לקוביות קרח<button type="button" class="unsold" data-sold="20261006" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290100575086" data-key="7290100575086" data-name="שקיות לקוביות קרח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪6.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290100575086" data-name="שקיות לקוביות קרח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">אשפה 50/50 H.D שטוח 50 יח&#39; =ר. שמאי= כשלפ עדח<button type="button" class="unsold" data-sold="20261006" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290013301413" data-key="7290013301413" data-name="אשפה 50/50 H.D שטוח 50 יח&#39; =ר. שמאי= כשלפ עדח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪7.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013301413" data-name="אשפה 50/50 H.D שטוח 50 יח&#39; =ר. שמאי= כשלפ עדח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">שקיות מזון שלישייה שמאי<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290015008976" data-key="7290015008976" data-name="שקיות מזון שלישייה שמאי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪7.90</div>
+          <div class="shelf"><s>₪9.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015008976" data-name="שקיות מזון שלישייה שמאי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">שקיות נשיאה קטנות<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290015008921" data-key="7290015008921" data-name="שקיות נשיאה קטנות" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪8.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015008921" data-name="שקיות נשיאה קטנות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אטבי כביסה ארוז ( 50 יח`) מבריקל<button type="button" class="unsold" data-sold="20260709" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290016564327" data-key="7290016564327" data-name="אטבי כביסה ארוז ( 50 יח`) מבריקל" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016564327" data-name="אטבי כביסה ארוז ( 50 יח`) מבריקל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">אשפתון<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290002814542" data-key="7290002814542" data-name="אשפתון" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002814542" data-name="אשפתון" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">שקיות מזון שטוח 200 יח<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290011431884" data-key="7290011431884" data-name="שקיות מזון שטוח 200 יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011431884" data-name="שקיות מזון שטוח 200 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">שקיות L.D הקפאה כשלפ<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290011431891" data-key="7290011431891" data-name="שקיות L.D הקפאה כשלפ" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011431891" data-name="שקיות L.D הקפאה כשלפ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">אשפתון אפור 20 יח&#39;<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290015008860" data-key="7290015008860" data-name="אשפתון אפור 20 יח&#39;" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015008860" data-name="אשפתון אפור 20 יח&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">עלמה שקיות אשפה לפחים קטנים 100 יח&#39;<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290019750796" data-key="7290019750796" data-name="עלמה שקיות אשפה לפחים קטנים 100 יח&#39;" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019750796" data-name="עלמה שקיות אשפה לפחים קטנים 100 יח&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">עלמה שקיות אשפה 50 יחידות 52*65 עם שרוך<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290121750240" data-key="7290121750240" data-name="עלמה שקיות אשפה 50 יחידות 52*65 עם שרוך" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121750240" data-name="עלמה שקיות אשפה 50 יחידות 52*65 עם שרוך" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">שקיות אשפה עם ידיות, 50 * 70 ס&#34;מ<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="835811003878" data-key="835811003878" data-name="שקיות אשפה עם ידיות, 50 * 70 ס&#34;מ" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זמזמ תעשיות פלסטיק</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.00</div>
+          <div class="shelf"><s>₪11.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="835811003878" data-name="שקיות אשפה עם ידיות, 50 * 70 ס&#34;מ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">אשפה 75/90 גליל אקסטרא 800 =שחור=ר. שמאי<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290015008044" data-key="7290015008044" data-name="אשפה 75/90 גליל אקסטרא 800 =שחור=ר. שמאי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015008044" data-name="אשפה 75/90 גליל אקסטרא 800 =שחור=ר. שמאי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">סנו סושי שקיות זיפר 20 יח במידה L<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290108352788" data-key="7290108352788" data-name="סנו סושי שקיות זיפר 20 יח במידה L" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108352788" data-name="סנו סושי שקיות זיפר 20 יח במידה L" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">שקיות אשפה עם ידיות נשלפת 24 יח&#39;<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="835811007968" data-key="835811007968" data-name="שקיות אשפה עם ידיות נשלפת 24 יח&#39;" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪22</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪11.00</div>
+          <div class="shelf"><s>₪15.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="835811007968" data-name="שקיות אשפה עם ידיות נשלפת 24 יח&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">שקיות פסגור לאיחסון (1/4 גל) פלסטיקו 50 יחי 6855<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="807405068556" data-key="807405068556" data-name="שקיות פסגור לאיחסון (1/4 גל) פלסטיקו 50 יחי 6855" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪12.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="807405068556" data-name="שקיות פסגור לאיחסון (1/4 גל) פלסטיקו 50 יחי 6855" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">שקיות פסגור  לחטיף פלסטיקו 100 יחי&#39; 6857<button type="button" class="unsold" data-sold="20260924" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="807405068570" data-key="807405068570" data-name="שקיות פסגור  לחטיף פלסטיקו 100 יחי&#39; 6857" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪12.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="807405068570" data-name="שקיות פסגור  לחטיף פלסטיקו 100 יחי&#39; 6857" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">שקיות פסגור לסנדוויץ פלסטיקו, 100 יחידות<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="807405068594" data-key="807405068594" data-name="שקיות פסגור לסנדוויץ פלסטיקו, 100 יחידות" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פנטסטיק</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪12.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="807405068594" data-name="שקיות פסגור לסנדוויץ פלסטיקו, 100 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">שקיות אוכל חמישייה<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290015008402" data-key="7290015008402" data-name="שקיות אוכל חמישייה" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪28</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪14.00</div>
+          <div class="shelf"><s>₪15.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015008402" data-name="שקיות אוכל חמישייה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">שקיות הקפאה חמישייה<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290015008419" data-key="7290015008419" data-name="שקיות הקפאה חמישייה" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪28</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪14.00</div>
+          <div class="shelf"><s>₪15.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015008419" data-name="שקיות הקפאה חמישייה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">זיפלוק שקיות אחסון בינוניות 24 יח<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="" data-key="7290058156016:25700005698" data-name="זיפלוק שקיות אחסון בינוניות 24 יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:25700005698" data-name="זיפלוק שקיות אחסון בינוניות 24 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">עלמה שקיות אשפה כתומות 78 90 נשלפות 20 יחידות<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290121750042" data-key="7290121750042" data-name="עלמה שקיות אשפה כתומות 78 90 נשלפות 20 יחידות" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪14.90</div>
+          <div class="shelf"><s>₪17.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121750042" data-name="עלמה שקיות אשפה כתומות 78 90 נשלפות 20 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">אשפתון שרוך 80/90 צהוב 25 יח&#39; =ר. שמאי=<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290013301086" data-key="7290013301086" data-name="אשפתון שרוך 80/90 צהוב 25 יח&#39; =ר. שמאי=" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪29.90</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪14.95</div>
+          <div class="shelf"><s>₪16.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013301086" data-name="אשפתון שרוך 80/90 צהוב 25 יח&#39; =ר. שמאי=" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">אשפה 75/90 =קרם= 40 יח&#39; ידית שטוח מרשרש ר. שמאי<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290008453844" data-key="7290008453844" data-name="אשפה 75/90 =קרם= 40 יח&#39; ידית שטוח מרשרש ר. שמאי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪15.00</div>
+          <div class="shelf"><s>₪17.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008453844" data-name="אשפה 75/90 =קרם= 40 יח&#39; ידית שטוח מרשרש ר. שמאי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">אשפה 75/90 אפור ידית שטוח חדש 25 יחי&#39; ר. שמאי עבה מאוד<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290011431501" data-key="7290011431501" data-name="אשפה 75/90 אפור ידית שטוח חדש 25 יחי&#39; ר. שמאי עבה מאוד" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪15.00</div>
+          <div class="shelf"><s>₪17.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011431501" data-name="אשפה 75/90 אפור ידית שטוח חדש 25 יחי&#39; ר. שמאי עבה מאוד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">זיפלוק שקיות אחסון גדולות 19 יח<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="5000204133509" data-key="5000204133509" data-name="זיפלוק שקיות אחסון גדולות 19 יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪15.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="5000204133509" data-name="זיפלוק שקיות אחסון גדולות 19 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">זיפלוק שקיות אחסון סליידר גדולות 15 יח&#39;<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="" data-key="7290058156016:25700005674" data-name="זיפלוק שקיות אחסון סליידר גדולות 15 יח&#39;" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪16.80</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:25700005674" data-name="זיפלוק שקיות אחסון סליידר גדולות 15 יח&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שקיות אשפה עם ידיות, בגדול XL 90*60 ס&#34;מ, 30 יח&#39;<button type="button" class="unsold" data-sold="20260923" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290108359039" data-key="7290108359039" data-name="שקיות אשפה עם ידיות, בגדול XL 90*60 ס&#34;מ, 30 יח&#39;" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנאט גרופ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪19.90</div>
+          <div class="shelf"><s>₪21.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108359039" data-name="שקיות אשפה עם ידיות, בגדול XL 90*60 ס&#34;מ, 30 יח&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שקיות אקסטרא ענקיות XXXL10 יח&#39;<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290111347672" data-key="7290111347672" data-name="שקיות אקסטרא ענקיות XXXL10 יח&#39;" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אשפלסט</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪20.90</div>
+          <div class="shelf"><s>₪25.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111347672" data-name="שקיות אקסטרא ענקיות XXXL10 יח&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">שקיות אשפה ריחניות לטיטולים 100 יחידות &#34;סאסי&#34;<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="" data-key="7290058156016:37977400144" data-name="שקיות אשפה ריחניות לטיטולים 100 יחידות &#34;סאסי&#34;" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪31.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:37977400144" data-name="שקיות אשפה ריחניות לטיטולים 100 יחידות &#34;סאסי&#34;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+</ol>
+</div>
+
+</main>
+<footer>עודכן 10.10 23:50 · ויקטורי 9.10 22:08 · רמי לוי 9.10 21:00 · אושר עד 9.10 14:05 · אושר עד 9.10 14:05 · נטו חיסכון 9.10 22:14</footer>
+
+
+<nav class="bottom-nav" aria-label="ניווט">
+  <a href="index.html" class="on"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg><span>בית</span></a>
+  <a href="search.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><span>חיפוש</span></a>
+  <a href="scan.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V5a1 1 0 0 1 1-1h2M17 4h2a1 1 0 0 1 1 1v2M20 17v2a1 1 0 0 1-1 1h-2M7 20H5a1 1 0 0 1-1-1v-2"/><path d="M8 8v8M11 8v8M14 8v8M16.5 8v8"/></svg><span>סריקה</span></a>
+  <a href="basket.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h11l2-8H6.2"/><circle cx="9.5" cy="19" r="1.4"/><circle cx="17" cy="19" r="1.4"/></svg><span id="cart-count"></span><span>עגלת קניות</span></a>
+  <a href="spending.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-2-1.4-2 1.4-2-1.4-2 1.4-2-1.4L6 21z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><span>הוצאות</span></a>
+</nav>
+
+<script src="static/basket.js?v=20261010235052"></script>
+<script src="static/catpick.js?v=20261010235052"></script>
+<script src="static/photo.js?v=20261010235052"></script>
+
+<script src="static/render.js?v=20261010235052"></script>
+<script src="static/category.js?v=20261010235052" data-build="20261010235052"></script>
+
+<script>
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+</script>
+</body>
+</html>

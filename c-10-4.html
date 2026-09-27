@@ -1,0 +1,1979 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f7a4d">
+<script>
+// the look this phone chose (settings.html "מראה"), before anything is drawn: html.light / html.dark
+// (none = follow the phone) and html[data-color] (none = green); the browser bar takes the colour too
+(function () {
+  let t = {};
+  try { t = JSON.parse(localStorage.getItem("theme")) || {}; } catch (e) { /* none yet */ }
+  const root = document.documentElement;
+  if (t.mode === "light" || t.mode === "dark") root.classList.add(t.mode);
+  if (t.color) root.dataset.color = t.color;
+  if (t.bar) document.querySelector('meta[name="theme-color"]').content = t.bar;
+})();
+</script>
+<title>גילוח</title>
+<link rel="manifest" href="static/manifest.webmanifest">
+<link rel="icon" href="static/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="static/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="static/style.css?v=20261010235052">
+<style>.st-0 { --store: #e07000; }.st-1 { --store: #d32f2f; }.st-2 { --store: #1565c0; }.st-3 { --store: #1565c0; }.st-4 { --store: #c99a00; }</style>
+<script src="static/stores.js?v=20261010235052" data-stores="[{&#34;card_cap&#34;: 750, &#34;card_rate&#34;: 0.07, &#34;default&#34;: true, &#34;key&#34;: &#34;victory-038&#34;, &#34;name&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;ramilevy-007&#34;, &#34;name&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-026&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05ea\u05dc\u05e4\u05d9\u05d5\u05ea&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-003&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05d2\u05d1\u05e2\u05ea \u05e9\u05d0\u05d5\u05dc&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;netto-052&#34;, &#34;name&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df \u05e7\u05e8\u05d9\u05d9\u05ea \u05d9\u05e2\u05e8\u05d9\u05dd&#34;, &#34;short&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df&#34;}]"></script>
+<script src="static/avoid.js?v=20261010235052" data-kinds="[&#34;\u05e2\u05d5\u05e3 \u05de\u05e2\u05d5\u05d1\u05d3&#34;, &#34;\u05d1\u05e9\u05e8 \u05de\u05e2\u05d5\u05d1\u05d3&#34;]"></script>
+<script>
+// No long-press menu on links, pictures or text (the user: the home page's tiles opened Chrome's "open in new tab /
+// copy link" menu; CSS can't stop that on Android). Typing fields and the ⓘ sheet's barcode keep theirs.
+document.addEventListener("contextmenu", (e) => {
+  if (!e.target.closest("input, textarea, [contenteditable], .photo-barcode")) e.preventDefault();
+});
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <a class="back" href="t-10.html" aria-label="חזרה">→</a>
+    <h1>גילוח</h1>
+    <a class="notes-link" href="notes.html" aria-label="רשימת קניות" title="רשימת קניות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="m8.5 10 1.2 1.2 2.3-2.4M8.5 15.5l1.2 1.2 2.3-2.4M14 10.5h2.5M14 16h2.5"/></svg><span>רשימת קניות</span></a>
+    <a class="settings-link" href="settings.html" aria-label="הגדרות" title="הגדרות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></a>
+  </div>
+  
+  <form class="search" action="search.html" method="get" role="search">
+    <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+    <input type="search" name="q" placeholder="חיפוש מוצר" enterkeyhint="search" aria-label="חיפוש מוצר">
+  </form>
+  
+</header>
+<main>
+
+<p class="sub"><span class="sub-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 7h4v3h-4z"/><path d="M12 7V4h4"/><path d="M8 10h8a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1z"/><circle cx="19" cy="6" r="1.3"/></svg></span>טואלטיקה והיגיינה · <span id="cat-count">67</span> מוצרים, מהזול ליקר</p>
+
+
+<div class="cat-filter">
+  <input type="search" id="cat-filter" placeholder="סינון לפי שם או יצרן · ‎-מילה מסתירה" enterkeyhint="done" autocomplete="off" aria-label="סינון המוצרים בקטגוריה">
+  <button type="button" id="facet-btn" class="facet-btn" aria-expanded="false" aria-controls="facet-list">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h18l-7 8v6l-4-2v-4z"/></svg>
+    <span>סינון</span><b id="facet-n" hidden></b></button>
+</div>
+<div id="facet-list" class="facet-list" hidden>
+  <div class="facet-items" id="facet-kinds"><label class="facet"><input type="checkbox" value="סכיני גילוח"> <span>סכיני גילוח</span> <small></small></label><label class="facet"><input type="checkbox" value="גל גילוח"> <span>גל גילוח</span> <small></small></label><label class="facet"><input type="checkbox" value="גילט"> <span>גילט</span> <small></small></label><label class="facet"><input type="checkbox" value="אינטואישן"> <span>אינטואישן</span> <small></small></label><label class="facet"><input type="checkbox" value="אדג"> <span>אדג</span> <small></small></label><label class="facet"><input type="checkbox" value="קרם"> <span>קרם</span> <small></small></label><label class="facet"><input type="checkbox" value="רצועות שעוה"> <span>רצועות שעוה</span> <small></small></label></div>
+  <div class="facet-stores" id="facet-stores" hidden><div class="facet-title">חנויות</div><div class="facet-items"></div></div>
+  <div class="facet-actions"><button type="button" class="link" id="facet-clear">ניקוי</button>
+    <button type="button" id="facet-done">הצגה</button></div>
+</div>
+<div id="cat-list" data-href="c-10-4.html">
+
+<ol class="products">
+  
+  
+    
+    
+    
+    <li class="product st-1 best">
+      <div class="info">
+        <div class="name">קרמה מן קצף גילוח 200 מל<button type="button" class="unsold" data-sold="20260811" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290108353303" data-key="7290108353303" data-name="קרמה מן קצף גילוח 200 מל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪14.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪47.50 <small>לליטר</small></div>
+          <div class="shelf">₪9.50 · 200 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108353303" data-name="קרמה מן קצף גילוח 200 מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ג&#39;ל גילוח עור רגיל רמי לוי<button type="button" class="unsold" data-sold="20261006" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290001072080" data-key="7290001072080" data-name="ג&#39;ל גילוח עור רגיל רמי לוי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סאסא</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪54.50 <small>לליטר</small></div>
+          <div class="shelf">₪10.90 · 200 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001072080" data-name="ג&#39;ל גילוח עור רגיל רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ג&#39;ל גילוח עור עדין ר<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290001072097" data-key="7290001072097" data-name="ג&#39;ל גילוח עור עדין ר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סאסא</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪54.50 <small>לליטר</small></div>
+          <div class="shelf">₪10.90 · 200 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001072097" data-name="ג&#39;ל גילוח עור עדין ר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ג&#39;ל גילוח קמומיל ויטמין אי רמי לוי<button type="button" class="unsold" data-sold="20261006" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290001072103" data-key="7290001072103" data-name="ג&#39;ל גילוח קמומיל ויטמין אי רמי לוי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סאסא</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪54.50 <small>לליטר</small></div>
+          <div class="shelf">₪10.90 · 200 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001072103" data-name="ג&#39;ל גילוח קמומיל ויטמין אי רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גל סירייס לעור רגיש 200 מל<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7702018980819" data-key="7702018980819" data-name="גל סירייס לעור רגיש 200 מל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פרוקטר אנד גמבל</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪25</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪62.50 <small>לליטר</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪12.50 · 200 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7702018980819" data-name="גל סירייס לעור רגיש 200 מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">ג&#39;ילט קצף גילוח סירייס רגיש 250 מ&#34;ל<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="8006530154710" data-key="8006530154710" data-name="ג&#39;ילט קצף גילוח סירייס רגיש 250 מ&#34;ל" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>Reading, 452 BASINGSTOKE ROAD, UK, 8285</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪63.60 <small>לליטר</small></div>
+          <div class="shelf">₪15.90 · 250 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8006530154710" data-name="ג&#39;ילט קצף גילוח סירייס רגיש 250 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ג&#39;ל גילוח לעור עדין קרמה מן פרו 200 מ&#34;ל<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290108353280" data-key="7290108353280" data-name="ג&#39;ל גילוח לעור עדין קרמה מן פרו 200 מ&#34;ל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪14.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪64.50 <small>לליטר</small></div>
+          <div class="shelf">₪12.90 · 200 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108353280" data-name="ג&#39;ל גילוח לעור עדין קרמה מן פרו 200 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ג&#39;ל גילוח לעור עדין קרמה מן פרו 200 מ&#34;ל<button type="button" class="unsold" data-sold="20260929" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290108359640" data-key="7290108359640" data-name="ג&#39;ל גילוח לעור עדין קרמה מן פרו 200 מ&#34;ל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪14.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪64.50 <small>לליטר</small></div>
+          <div class="shelf">₪12.90 · 200 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108359640" data-name="ג&#39;ל גילוח לעור עדין קרמה מן פרו 200 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ג&#39;ל גילוח לעור עדין קרמה מן 200 מ&#34;ל<button type="button" class="unsold" data-sold="20260830" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290108356229" data-key="7290108356229" data-name="ג&#39;ל גילוח לעור עדין קרמה מן 200 מ&#34;ל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪64.50 <small>לליטר</small></div>
+          <div class="shelf">₪12.90 · 200 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108356229" data-name="ג&#39;ל גילוח לעור עדין קרמה מן 200 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ג&#39;ל גילוח לעור עדין<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290011765095" data-key="7290011765095" data-name="ג&#39;ל גילוח לעור עדין" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קרמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪64.50 <small>לליטר</small></div>
+          <div class="shelf">₪12.90 · 200 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011765095" data-name="ג&#39;ל גילוח לעור עדין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ג&#39;ל גילוח ג&#39;ילט סירי<button type="button" class="unsold" data-sold="20260831" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="3014260220051" data-key="3014260220051" data-name="ג&#39;ל גילוח ג&#39;ילט סירי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ג&#39;ילט</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪65.50 <small>לליטר</small></div>
+          <div class="shelf">₪13.10 · 200 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="3014260220051" data-name="ג&#39;ל גילוח ג&#39;ילט סירי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">ג&#39;ל גילוח מקרר 200 מ&#34;ל<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7702018457786" data-key="7702018457786" data-name="ג&#39;ל גילוח מקרר 200 מ&#34;ל" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪69.50 <small>לליטר</small></div>
+          <div class="shelf">₪13.90 · 200 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7702018457786" data-name="ג&#39;ל גילוח מקרר 200 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גילט  קצף גילוח לעור רגיל<button type="button" class="unsold" data-sold="20260709" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="3014260228668" data-key="3014260228668" data-name="גילט  קצף גילוח לעור רגיל" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪74.50 <small>לליטר</small></div>
+          <div class="shelf">₪14.90 · 200 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="3014260228668" data-name="גילט  קצף גילוח לעור רגיל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">ג&#39;ילט קצף גילוח לעור רגיש<button type="button" class="unsold" data-sold="20260828" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="3014260240226" data-key="3014260240226" data-name="ג&#39;ילט קצף גילוח לעור רגיש" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ג&#39;ילט</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪79.50 <small>לליטר</small></div>
+          <div class="shelf">₪15.90 · 200 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="3014260240226" data-name="ג&#39;ילט קצף גילוח לעור רגיש" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אדג&#39; ג&#39;ל גילוח ירוק לעור רגיל 198גרם<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290000560533" data-key="7290000560533" data-name="אדג&#39; ג&#39;ל גילוח ירוק לעור רגיל 198גרם" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אס.סי ג&#39;ונסון ובניו</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪16.90 (מבצע)</span><span class="other st-4">נטו חיסכון ₪19.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪80.30 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪15.90 · 198 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000560533" data-name="אדג&#39; ג&#39;ל גילוח ירוק לעור רגיל 198גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אדג&#39; ג&#39;ל גילוח כתום לעור רגיש 198גרם<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290000560540" data-key="7290000560540" data-name="אדג&#39; ג&#39;ל גילוח כתום לעור רגיש 198גרם" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אס.סי ג&#39;ונסון</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪16.90 (מבצע)</span><span class="other st-4">נטו חיסכון ₪19.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪80.30 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪15.90 · 198 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000560540" data-name="אדג&#39; ג&#39;ל גילוח כתום לעור רגיש 198גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אדג&#39; ג&#39;ל סגול כהה לעור יבש 198ג&#39;<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290000560557" data-key="7290000560557" data-name="אדג&#39; ג&#39;ל סגול כהה לעור יבש 198ג&#39;" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אס.סי ג&#39;ונסון ובניו</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪16.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪80.30 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪15.90 · 198 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000560557" data-name="אדג&#39; ג&#39;ל סגול כהה לעור יבש 198ג&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ג&#39;ל גילוח קול קיק פרש 200 מל<button type="button" class="unsold" data-sold="20261006" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="4005900841148" data-key="4005900841148" data-name="ג&#39;ל גילוח קול קיק פרש 200 מל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪84.50 <small>לליטר</small></div>
+          <div class="shelf">₪16.90 · 200 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4005900841148" data-name="ג&#39;ל גילוח קול קיק פרש 200 מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ג&#39;ל גילוח לעור רגיש ניוואה 200 מ&#34;ל<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="4005808817405" data-key="4005808817405" data-name="ג&#39;ל גילוח לעור רגיש ניוואה 200 מ&#34;ל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ניוואה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪84.50 <small>לליטר</small></div>
+          <div class="shelf">₪16.90 · 200 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4005808817405" data-name="ג&#39;ל גילוח לעור רגיש ניוואה 200 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קרם לאחר גילוח 120 מ&#34;ל הוואי<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290000244143" data-key="7290000244143" data-name="קרם לאחר גילוח 120 מ&#34;ל הוואי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טרופיקל  דגיל בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪18.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪140.83 <small>לליטר</small></div>
+          <div class="shelf">₪16.90 · 120 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000244143" data-name="קרם לאחר גילוח 120 מ&#34;ל הוואי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ויט קרם להסרת שיער לעור רגיש 100 מ&#34;ל<button type="button" class="unsold" data-sold="20260916" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="4053700288205" data-key="4053700288205" data-name="ויט קרם להסרת שיער לעור רגיש 100 מ&#34;ל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ויט</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪199.00 <small>לליטר</small></div>
+          <div class="shelf">₪19.90 · 100 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4053700288205" data-name="ויט קרם להסרת שיער לעור רגיש 100 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">ג&#39;ילט דאו ג&#39;ל CHAMPOIN GOLD אקטיב פרוטקט 5X<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="8006530029766" data-key="8006530029766" data-name="ג&#39;ילט דאו ג&#39;ל CHAMPOIN GOLD אקטיב פרוטקט 5X" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪214.29 <small>לליטר</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪15.00 · 70 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8006530029766" data-name="ג&#39;ילט דאו ג&#39;ל CHAMPOIN GOLD אקטיב פרוטקט 5X" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מגע המשי שעווה מתקלפ<button type="button" class="unsold" data-sold="20260910" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290016319118" data-key="7290016319118" data-name="מגע המשי שעווה מתקלפ" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪292.00 <small>לק״ג</small></div>
+          <div class="shelf">₪29.20 · 100 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016319118" data-name="מגע המשי שעווה מתקלפ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">OLD SPICE  דאו סטיק קפטן 50 מ&#34;ל<button type="button" class="unsold" data-sold="20261004" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="8001090970497" data-key="8001090970497" data-name="OLD SPICE  דאו סטיק קפטן 50 מ&#34;ל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪298.00 <small>לליטר</small></div>
+          <div class="shelf">₪14.90 · 50 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8001090970497" data-name="OLD SPICE  דאו סטיק קפטן 50 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ניוואה אפטר שייב לעור 100 מ&#34;ל<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="4005808813063" data-key="4005808813063" data-name="ניוואה אפטר שייב לעור 100 מ&#34;ל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ניוואה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪399.00 <small>לליטר</small></div>
+          <div class="shelf">₪39.90 · 100 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4005808813063" data-name="ניוואה אפטר שייב לעור 100 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">רצועות שעווה 50 יח<button type="button" class="unsold" data-sold="20260929" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7296073363804" data-key="7296073363804" data-name="רצועות שעווה 50 יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.30 <small>ליח׳</small></div>
+          <div class="shelf">₪14.90 · 50 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296073363804" data-name="רצועות שעווה 50 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סכיני גילוח חד פעמי עשיריה LA BELLE<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290014648081" data-key="7290014648081" data-name="סכיני גילוח חד פעמי עשיריה LA BELLE" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-4">נטו חיסכון ₪10.00</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.99 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪9.90 · 10 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014648081" data-name="סכיני גילוח חד פעמי עשיריה LA BELLE" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סכיני גילוח חד פעמי חמישייה LA BELLE<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290014648098" data-key="7290014648098" data-name="סכיני גילוח חד פעמי חמישייה LA BELLE" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-4">נטו חיסכון ₪10.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪1.98 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪12.90</s> ₪9.90 · 5 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014648098" data-name="סכיני גילוח חד פעמי חמישייה LA BELLE" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מגע המשי רצועות שעוו<button type="button" class="unsold" data-sold="20260723" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290016321555" data-key="7290016321555" data-name="מגע המשי רצועות שעוו" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪1.99 <small>ליח׳</small></div>
+          <div class="shelf">₪23.90 · 12 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016321555" data-name="מגע המשי רצועות שעוו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ויט רצועות שעווה מוכנות להסרת שיער לעור רגיל 12 יחידות<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="4053700292455" data-key="4053700292455" data-name="ויט רצועות שעווה מוכנות להסרת שיער לעור רגיל 12 יחידות" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ויט</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪29.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪2.07 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪29.70</s> ₪24.90 · 12 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4053700292455" data-name="ויט רצועות שעווה מוכנות להסרת שיער לעור רגיל 12 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ויט רצועות שעווה מוכנות לעור רגיש 12 יחידות<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="5997321770307" data-key="5997321770307" data-name="ויט רצועות שעווה מוכנות לעור רגיש 12 יחידות" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪29.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪2.07 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪29.70</s> ₪24.90 · 12 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5997321770307" data-name="ויט רצועות שעווה מוכנות לעור רגיש 12 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ויט רצועות שעווה מוכנות לעור יבש 12 יחידות<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="8410104511340" data-key="8410104511340" data-name="ויט רצועות שעווה מוכנות לעור יבש 12 יחידות" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ויט</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪29.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪2.07 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪29.70</s> ₪24.90 · 12 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8410104511340" data-name="ויט רצועות שעווה מוכנות לעור יבש 12 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שיק אקזקטה 2 נשים צבעוני 10 יח&#39;<button type="button" class="unsold" data-sold="20260922" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="4891228430061" data-key="4891228430061" data-name="שיק אקזקטה 2 נשים צבעוני 10 יח&#39;" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ש. שסטוביץ בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪24.90</span><span class="other st-4">נטו חיסכון ₪24.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪2.49 <small>ליח׳</small></div>
+          <div class="shelf">₪24.90 · 10 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4891228430061" data-name="שיק אקזקטה 2 נשים צבעוני 10 יח&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סכיני גילוח חד פעמי GILLETTE BLUE II PLUS חמישייה<button type="button" class="unsold" data-sold="20260709" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="3014260283254" data-key="3014260283254" data-name="סכיני גילוח חד פעמי GILLETTE BLUE II PLUS חמישייה" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-4">נטו חיסכון ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪2.78 <small>ליח׳</small></div>
+          <div class="shelf">₪13.90 · 5 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="3014260283254" data-name="סכיני גילוח חד פעמי GILLETTE BLUE II PLUS חמישייה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שייק אקזקטה2 גברים חמישייה<button type="button" class="unsold" data-sold="20260823" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="4891228430030" data-key="4891228430030" data-name="שייק אקזקטה2 גברים חמישייה" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שיק</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪3.18 <small>ליח׳</small></div>
+          <div class="shelf">₪15.90 · 5 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4891228430030" data-name="שייק אקזקטה2 גברים חמישייה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אינטואישן אקסטרים 3 אשה חדפ בליסטר 4 יח<button type="button" class="unsold" data-sold="20260924" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="4891228430092" data-key="4891228430092" data-name="אינטואישן אקסטרים 3 אשה חדפ בליסטר 4 יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שיק</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪18.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪4.22 <small>ליח׳</small></div>
+          <div class="shelf">₪16.90 · 4 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4891228430092" data-name="אינטואישן אקסטרים 3 אשה חדפ בליסטר 4 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אינטואישן טאצ&#39; אפ חדפ לאישה 3 יח<button type="button" class="unsold" data-sold="20261006" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="4891228309268" data-key="4891228309268" data-name="אינטואישן טאצ&#39; אפ חדפ לאישה 3 יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪5.93 <small>ליח׳</small></div>
+          <div class="shelf">₪17.80 · 3 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4891228309268" data-name="אינטואישן טאצ&#39; אפ חדפ לאישה 3 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אינטואישן חד פעמי 2 יח<button type="button" class="unsold" data-sold="20260819" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="4891228318574" data-key="4891228318574" data-name="אינטואישן חד פעמי 2 יח" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪6.38 <small>ליח׳</small></div>
+          <div class="shelf">₪31.90 · 5 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4891228318574" data-name="אינטואישן חד פעמי 2 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סכיני גילוח לגבר 5יח רמילוי<button type="button" class="unsold" data-sold="20261006" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290112194350" data-key="7290112194350" data-name="סכיני גילוח לגבר 5יח רמילוי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.00 <small>ליח׳</small></div>
+          <div class="shelf">₪9.00 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112194350" data-name="סכיני גילוח לגבר 5יח רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שיק אקזקטה2 נשים חמישייה<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="4891228430054" data-key="4891228430054" data-name="שיק אקזקטה2 נשים חמישייה" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שיק</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪11.90 <small>ליח׳</small></div>
+          <div class="shelf">₪11.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4891228430054" data-name="שיק אקזקטה2 נשים חמישייה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סכיני גילוח לאישה 10יח רמילוי<button type="button" class="unsold" data-sold="20260910" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290112194367" data-key="7290112194367" data-name="סכיני גילוח לאישה 10יח רמילוי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪17.10 <small>ליח׳</small></div>
+          <div class="shelf">₪17.10 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112194367" data-name="סכיני גילוח לאישה 10יח רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סכיני גילוח לגבר 10יח רמילוי<button type="button" class="unsold" data-sold="20260929" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290112194374" data-key="7290112194374" data-name="סכיני גילוח לגבר 10יח רמילוי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪17.10 <small>ליח׳</small></div>
+          <div class="shelf">₪17.10 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112194374" data-name="סכיני גילוח לגבר 10יח רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סכיני גילוח 3 להבים לאישה 4יח רמילוי<button type="button" class="unsold" data-sold="20260813" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290112194381" data-key="7290112194381" data-name="סכיני גילוח 3 להבים לאישה 4יח רמילוי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪17.10 <small>ליח׳</small></div>
+          <div class="shelf">₪17.10 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112194381" data-name="סכיני גילוח 3 להבים לאישה 4יח רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סכיני גילוח 3 להבים לגבר 4יח רמילוי<button type="button" class="unsold" data-sold="20260927" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290112194398" data-key="7290112194398" data-name="סכיני גילוח 3 להבים לגבר 4יח רמילוי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪17.10 <small>ליח׳</small></div>
+          <div class="shelf">₪17.10 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112194398" data-name="סכיני גילוח 3 להבים לגבר 4יח רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">TITANIA להבים למכשיר<button type="button" class="unsold" data-sold="20260723" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="4008576310024" data-key="4008576310024" data-name="TITANIA להבים למכשיר" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪17.80 <small>ליח׳</small></div>
+          <div class="shelf">₪17.80 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4008576310024" data-name="TITANIA להבים למכשיר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אינטואישן היידרו סיל<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="9330344004473" data-key="9330344004473" data-name="אינטואישן היידרו סיל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪26.90 <small>ליח׳</small></div>
+          <div class="shelf">₪26.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9330344004473" data-name="אינטואישן היידרו סיל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אינטואישן ירוק לאישה ידית+2 סכינים<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="6937266700761" data-key="6937266700761" data-name="אינטואישן ירוק לאישה ידית+2 סכינים" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪29.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪27.90 <small>ליח׳</small></div>
+          <div class="shelf">₪27.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="6937266700761" data-name="אינטואישן ירוק לאישה ידית+2 סכינים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אינטואישן ירוק לאישה ריפיל 3 יח<button type="button" class="unsold" data-sold="20260915" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="6937266700785" data-key="6937266700785" data-name="אינטואישן ירוק לאישה ריפיל 3 יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪34.80</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪30.90 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪34.90</s> ₪30.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="6937266700785" data-name="אינטואישן ירוק לאישה ריפיל 3 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ג&#39;ילט מארז ונוס תות ידית +2+מתלה<button type="button" class="unsold" data-sold="20261001" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="8700216940955" data-key="8700216940955" data-name="ג&#39;ילט מארז ונוס תות ידית +2+מתלה" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪45.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.90 <small>ליח׳</small></div>
+          <div class="shelf">₪39.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8700216940955" data-name="ג&#39;ילט מארז ונוס תות ידית +2+מתלה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ג&#39;ילט מארז ונוס סווירל ידית +2+מתלה<button type="button" class="unsold" data-sold="20260816" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="8700216941013" data-key="8700216941013" data-name="ג&#39;ילט מארז ונוס סווירל ידית +2+מתלה" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פרוקטר &amp; גמבל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪45.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.90 <small>ליח׳</small></div>
+          <div class="shelf">₪39.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8700216941013" data-name="ג&#39;ילט מארז ונוס סווירל ידית +2+מתלה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אינטואישן אישה מארז ידית +5<button type="button" class="unsold" data-sold="20260930" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="4891228308032" data-key="4891228308032" data-name="אינטואישן אישה מארז ידית +5" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪69.90 <small>ליח׳</small></div>
+          <div class="shelf">₪69.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4891228308032" data-name="אינטואישן אישה מארז ידית +5" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+      
+      <li class="divider">ללא מחיר לק״ג (גודל לא ידוע)</li>
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">סכין גילוח ח&#34;פ<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290105180353" data-key="7290105180353" data-name="סכין גילוח ח&#34;פ" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אריסטוקרט</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪8.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290105180353" data-name="סכין גילוח ח&#34;פ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">ג`ילט סכיני גילוח חדפ לגבר יבוא מקביל<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="3014260287030" data-key="3014260287030" data-name="ג`ילט סכיני גילוח חדפ לגבר יבוא מקביל" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="3014260287030" data-name="ג`ילט סכיני גילוח חדפ לגבר יבוא מקביל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">וונוס סכיני גילוח חדפ חמישייה יבוא מקבי<button type="button" class="unsold" data-sold="20260827" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7702018482740" data-key="7702018482740" data-name="וונוס סכיני גילוח חדפ חמישייה יבוא מקבי" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7702018482740" data-name="וונוס סכיני גילוח חדפ חמישייה יבוא מקבי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סכין גילוח חד פעמי בלו<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="3014260289287" data-key="3014260289287" data-name="סכין גילוח חד פעמי בלו" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פרוקטר אנד גמבל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪17.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="3014260289287" data-name="סכין גילוח חד פעמי בלו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סכיני סימפלי ונוס מארז 6 סכינים<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7702018070794" data-key="7702018070794" data-name="סכיני סימפלי ונוס מארז 6 סכינים" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>---</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪17.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7702018070794" data-name="סכיני סימפלי ונוס מארז 6 סכינים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סכיני גילוח חדפ 4  יח`וונוס<button type="button" class="unsold" data-sold="20260918" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7702018024636" data-key="7702018024636" data-name="סכיני גילוח חדפ 4  יח`וונוס" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪24.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7702018024636" data-name="סכיני גילוח חדפ 4  יח`וונוס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">סכיני גילוח שיק קוואטרו נשים 3 יח.<button type="button" class="unsold" data-sold="20260922" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="4891228460242" data-key="4891228460242" data-name="סכיני גילוח שיק קוואטרו נשים 3 יח." aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪29.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="4891228460242" data-name="סכיני גילוח שיק קוואטרו נשים 3 יח." aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סכיני גילוח חד פעמי בלו פלוס 10 ג`ילט<button type="button" class="unsold" data-sold="20260917" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7702018468447" data-key="7702018468447" data-name="סכיני גילוח חד פעמי בלו פלוס 10 ג`ילט" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪31.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7702018468447" data-name="סכיני גילוח חד פעמי בלו פלוס 10 ג`ילט" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">ג`ילט מכשיר פיוז`ן +5סכין<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="4987176282927" data-key="4987176282927" data-name="ג`ילט מכשיר פיוז`ן +5סכין" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪37.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="4987176282927" data-name="ג`ילט מכשיר פיוז`ן +5סכין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מכשיר סנסטיב+סכין  ג`ילט<button type="button" class="unsold" data-sold="20260929" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7702018500031" data-key="7702018500031" data-name="מכשיר סנסטיב+סכין  ג`ילט" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪37.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7702018500031" data-name="מכשיר סנסטיב+סכין  ג`ילט" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">ג&#39;ילט מארז ונוס תות ידית ו-3 סכינים<button type="button" class="unsold" data-sold="20260914" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7702018539468" data-key="7702018539468" data-name="ג&#39;ילט מארז ונוס תות ידית ו-3 סכינים" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ג&#39;ילט, פולין.</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪45.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7702018539468" data-name="ג&#39;ילט מארז ונוס תות ידית ו-3 סכינים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מכשיר+ שלושה סכינים וונוס<button type="button" class="unsold" data-sold="20260910" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="4902430852944" data-key="4902430852944" data-name="מכשיר+ שלושה סכינים וונוס" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪49.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="4902430852944" data-name="מכשיר+ שלושה סכינים וונוס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סכיני גילוח פיוזון סטארט רביעייה ג`ילט<button type="button" class="unsold" data-sold="20261002" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7702018578252" data-key="7702018578252" data-name="סכיני גילוח פיוזון סטארט רביעייה ג`ילט" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪49.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7702018578252" data-name="סכיני גילוח פיוזון סטארט רביעייה ג`ילט" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שמיניית סכיני מאך 3<button type="button" class="unsold" data-sold="20260915" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="3014260239640" data-key="3014260239640" data-name="שמיניית סכיני מאך 3" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ג&#39;ילט</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪71.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="3014260239640" data-name="שמיניית סכיני מאך 3" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">אינטואישיין פרפקט טאץ ידית +5 סכינים גילוח שיק<button type="button" class="unsold" data-sold="20261004" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="4891228320386" data-key="4891228320386" data-name="אינטואישיין פרפקט טאץ ידית +5 סכינים גילוח שיק" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪79.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="4891228320386" data-name="אינטואישיין פרפקט טאץ ידית +5 סכינים גילוח שיק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גילט סקינגארד אלוורה 10 סכינים<button type="button" class="unsold" data-sold="20260721" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7702018609130" data-key="7702018609130" data-name="גילט סקינגארד אלוורה 10 סכינים" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פרוקטר אנד גמבל, גרמניה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪118.00</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7702018609130" data-name="גילט סקינגארד אלוורה 10 סכינים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+</ol>
+</div>
+
+</main>
+<footer>עודכן 10.10 23:50 · ויקטורי 9.10 22:08 · רמי לוי 9.10 21:00 · אושר עד 9.10 14:05 · אושר עד 9.10 14:05 · נטו חיסכון 9.10 22:14</footer>
+
+
+<nav class="bottom-nav" aria-label="ניווט">
+  <a href="index.html" class="on"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg><span>בית</span></a>
+  <a href="search.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><span>חיפוש</span></a>
+  <a href="scan.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V5a1 1 0 0 1 1-1h2M17 4h2a1 1 0 0 1 1 1v2M20 17v2a1 1 0 0 1-1 1h-2M7 20H5a1 1 0 0 1-1-1v-2"/><path d="M8 8v8M11 8v8M14 8v8M16.5 8v8"/></svg><span>סריקה</span></a>
+  <a href="basket.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h11l2-8H6.2"/><circle cx="9.5" cy="19" r="1.4"/><circle cx="17" cy="19" r="1.4"/></svg><span id="cart-count"></span><span>עגלת קניות</span></a>
+  <a href="spending.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-2-1.4-2 1.4-2-1.4-2 1.4-2-1.4L6 21z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><span>הוצאות</span></a>
+</nav>
+
+<script src="static/basket.js?v=20261010235052"></script>
+<script src="static/catpick.js?v=20261010235052"></script>
+<script src="static/photo.js?v=20261010235052"></script>
+
+<script src="static/render.js?v=20261010235052"></script>
+<script src="static/category.js?v=20261010235052" data-build="20261010235052"></script>
+
+<script>
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+</script>
+</body>
+</html>

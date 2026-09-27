@@ -1,0 +1,3964 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f7a4d">
+<script>
+// the look this phone chose (settings.html "מראה"), before anything is drawn: html.light / html.dark
+// (none = follow the phone) and html[data-color] (none = green); the browser bar takes the colour too
+(function () {
+  let t = {};
+  try { t = JSON.parse(localStorage.getItem("theme")) || {}; } catch (e) { /* none yet */ }
+  const root = document.documentElement;
+  if (t.mode === "light" || t.mode === "dark") root.classList.add(t.mode);
+  if (t.color) root.dataset.color = t.color;
+  if (t.bar) document.querySelector('meta[name="theme-color"]').content = t.bar;
+})();
+</script>
+<title>אטריות</title>
+<link rel="manifest" href="static/manifest.webmanifest">
+<link rel="icon" href="static/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="static/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="static/style.css?v=20261010235052">
+<style>.st-0 { --store: #e07000; }.st-1 { --store: #d32f2f; }.st-2 { --store: #1565c0; }.st-3 { --store: #1565c0; }.st-4 { --store: #c99a00; }</style>
+<script src="static/stores.js?v=20261010235052" data-stores="[{&#34;card_cap&#34;: 750, &#34;card_rate&#34;: 0.07, &#34;default&#34;: true, &#34;key&#34;: &#34;victory-038&#34;, &#34;name&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;ramilevy-007&#34;, &#34;name&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-026&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05ea\u05dc\u05e4\u05d9\u05d5\u05ea&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-003&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05d2\u05d1\u05e2\u05ea \u05e9\u05d0\u05d5\u05dc&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;netto-052&#34;, &#34;name&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df \u05e7\u05e8\u05d9\u05d9\u05ea \u05d9\u05e2\u05e8\u05d9\u05dd&#34;, &#34;short&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df&#34;}]"></script>
+<script src="static/avoid.js?v=20261010235052" data-kinds="[&#34;\u05e2\u05d5\u05e3 \u05de\u05e2\u05d5\u05d1\u05d3&#34;, &#34;\u05d1\u05e9\u05e8 \u05de\u05e2\u05d5\u05d1\u05d3&#34;]"></script>
+<script>
+// No long-press menu on links, pictures or text (the user: the home page's tiles opened Chrome's "open in new tab /
+// copy link" menu; CSS can't stop that on Android). Typing fields and the ⓘ sheet's barcode keep theirs.
+document.addEventListener("contextmenu", (e) => {
+  if (!e.target.closest("input, textarea, [contenteditable], .photo-barcode")) e.preventDefault();
+});
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <a class="back" href="t-4.html" aria-label="חזרה">→</a>
+    <h1>אטריות</h1>
+    <a class="notes-link" href="notes.html" aria-label="רשימת קניות" title="רשימת קניות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="m8.5 10 1.2 1.2 2.3-2.4M8.5 15.5l1.2 1.2 2.3-2.4M14 10.5h2.5M14 16h2.5"/></svg><span>רשימת קניות</span></a>
+    <a class="settings-link" href="settings.html" aria-label="הגדרות" title="הגדרות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></a>
+  </div>
+  
+  <form class="search" action="search.html" method="get" role="search">
+    <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+    <input type="search" name="q" placeholder="חיפוש מוצר" enterkeyhint="search" aria-label="חיפוש מוצר">
+  </form>
+  
+</header>
+<main>
+
+<p class="sub"><span class="sub-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8v3H8z"/><path d="M7 6h10a1 1 0 0 1 1 1v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V7a1 1 0 0 1 1-1z"/><path d="M6 11h12v5H6z"/></svg></span>מזווה · <span id="cat-count">138</span> מוצרים, מהזול ליקר</p>
+
+
+<div class="cat-filter">
+  <input type="search" id="cat-filter" placeholder="סינון לפי שם או יצרן · ‎-מילה מסתירה" enterkeyhint="done" autocomplete="off" aria-label="סינון המוצרים בקטגוריה">
+  <button type="button" id="facet-btn" class="facet-btn" aria-expanded="false" aria-controls="facet-list">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h18l-7 8v6l-4-2v-4z"/></svg>
+    <span>סינון</span><b id="facet-n" hidden></b></button>
+</div>
+<div id="facet-list" class="facet-list" hidden>
+  <div class="facet-items" id="facet-kinds"><label class="facet"><input type="checkbox" value="אטריות"> <span>אטריות</span> <small></small></label><label class="facet"><input type="checkbox" value="נודלס"> <span>נודלס</span> <small></small></label><label class="facet"><input type="checkbox" value="איטריות"> <span>איטריות</span> <small></small></label><label class="facet"><input type="checkbox" value="אטריות אורז"> <span>אטריות אורז</span> <small></small></label><label class="facet"><input type="checkbox" value="אטריות ביצים"> <span>אטריות ביצים</span> <small></small></label><label class="facet"><input type="checkbox" value="מאסטר שף"> <span>מאסטר שף</span> <small></small></label><label class="facet"><input type="checkbox" value="אסם"> <span>אסם</span> <small></small></label><label class="facet"><input type="checkbox" value="דפי אורז"> <span>דפי אורז</span> <small></small></label><label class="facet"><input type="checkbox" value="מקלוני אורז"> <span>מקלוני אורז</span> <small></small></label><label class="facet"><input type="checkbox" value="סקיני פסטה"> <span>סקיני פסטה</span> <small></small></label></div>
+  <div class="facet-stores" id="facet-stores" hidden><div class="facet-title">חנויות</div><div class="facet-items"></div></div>
+  <div class="facet-actions"><button type="button" class="link" id="facet-clear">ניקוי</button>
+    <button type="button" id="facet-done">הצגה</button></div>
+</div>
+<div id="cat-list" data-href="c-4-3.html">
+
+<ol class="products">
+  
+  
+    
+    
+    
+    <li class="product st-1 best">
+      <div class="info">
+        <div class="name">אטריות דקות 500גר רמילוי<button type="button" class="unsold" data-sold="20260906" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290119673452" data-key="7290119673452" data-name="אטריות דקות 500גר רמילוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">4 ב־₪12.50</span> בקניית 4 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪6.24 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪4.00</s> ₪3.12 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119673452" data-name="אטריות דקות 500גר רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">אטריות בינוניות 400 גרם וילי פוד<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290117267004" data-key="7290117267004" data-name="אטריות בינוניות 400 גרם וילי פוד" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪10</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪4.00 (3 ב־₪12)</span><span class="other st-0">ויקטורי ₪4.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪8.32 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪4.90</s> ₪3.33 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290117267004" data-name="אטריות בינוניות 400 גרם וילי פוד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">אטריות דקות 400 גר מנת השף וילי פוד<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290117267011" data-key="7290117267011" data-name="אטריות דקות 400 גר מנת השף וילי פוד" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פי.פי.איג&#39; ארטלקס</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪10</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪4.00 (3 ב־₪12)</span><span class="other st-0">ויקטורי ₪4.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪8.32 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪4.90</s> ₪3.33 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290117267011" data-name="אטריות דקות 400 גר מנת השף וילי פוד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">אטריות דקיקות 400 גרם וילי פוד<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290117267028" data-key="7290117267028" data-name="אטריות דקיקות 400 גרם וילי פוד" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪10</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-0">ויקטורי ₪4.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪8.32 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪4.90</s> ₪3.33 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290117267028" data-name="אטריות דקיקות 400 גרם וילי פוד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">האופה- אטריות דקות<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290019393764" data-key="7290019393764" data-name="האופה- אטריות דקות" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪10.90</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.07 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪6.50</s> ₪3.63 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019393764" data-name="האופה- אטריות דקות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">האופה - איטריות דקיקות<button type="button" class="unsold" data-sold="20261006" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290019393849" data-key="7290019393849" data-name="האופה - איטריות דקיקות" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪10.90</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.07 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪6.50</s> ₪3.63 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019393849" data-name="האופה - איטריות דקיקות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מאסטר שף איטריות דקיקות 400 גר<button type="button" class="unsold" data-sold="20260930" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290107978323" data-key="7290107978323" data-name="מאסטר שף איטריות דקיקות 400 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פי.פי.איג&#39; ארטלקס ג&#39;.איי.אי. יגילסצה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪6.20</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.50</s> ₪4.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290107978323" data-name="מאסטר שף איטריות דקיקות 400 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מאסטר שף איטריות דקות 400 גר<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290107978330" data-key="7290107978330" data-name="מאסטר שף איטריות דקות 400 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פי.פי.איג&#39; ארטלקס ג&#39;.איי.אי. יגילסצה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪6.20</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.50</s> ₪4.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290107978330" data-name="מאסטר שף איטריות דקות 400 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מאסטר שף איטריות בינוניות 400 גר<button type="button" class="unsold" data-sold="20261006" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290107978347" data-key="7290107978347" data-name="מאסטר שף איטריות בינוניות 400 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פי.פי.איג&#39; ארטלקס ג&#39;.איי.אי. יגילסצה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪5.90</span><span class="other st-0">ויקטורי ₪6.20</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.50</s> ₪4.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290107978347" data-name="מאסטר שף איטריות בינוניות 400 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">איטריות ביצים<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290019393740" data-key="7290019393740" data-name="איטריות ביצים" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">1+1</span> בקניית 2 · עד 17.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪11.29 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪7.90</s> ₪3.95 · 350 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019393740" data-name="איטריות ביצים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אטריות דקיקות 400 גר<button type="button" class="unsold" data-sold="20260903" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290019587637" data-key="7290019587637" data-name="אטריות דקיקות 400 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪12.25 <small>לק״ג</small></div>
+          <div class="shelf">₪4.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019587637" data-name="אטריות דקיקות 400 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אטריות דקות 400 גרם תומר<button type="button" class="unsold" data-sold="20260920" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290019587644" data-key="7290019587644" data-name="אטריות דקות 400 גרם תומר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪12.25 <small>לק״ג</small></div>
+          <div class="shelf">₪4.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019587644" data-name="אטריות דקות 400 גרם תומר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אטריות רחבות 400 גרם תומר<button type="button" class="unsold" data-sold="20261006" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290019587651" data-key="7290019587651" data-name="אטריות רחבות 400 גרם תומר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪12.25 <small>לק״ג</small></div>
+          <div class="shelf">₪4.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019587651" data-name="אטריות רחבות 400 גרם תומר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פסטה רגיה אטריות עגו<button type="button" class="unsold" data-sold="20260805" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="8008857406152" data-key="8008857406152" data-name="פסטה רגיה אטריות עגו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪20</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪13.34 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪7.80</s> ₪6.67 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8008857406152" data-name="פסטה רגיה אטריות עגו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אטריות עגולות דקות<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="8008857500003" data-key="8008857500003" data-name="אטריות עגולות דקות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪20</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪13.34 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪7.80</s> ₪6.67 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8008857500003" data-name="אטריות עגולות דקות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אטריות דקות אסם 400 גרם<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290000060163" data-key="7290000060163" data-name="אטריות דקות אסם 400 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מספקס-לובלה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪6.30 (3 ב־₪18.90)</span><span class="other st-4">נטו חיסכון ₪6.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.50 <small>לק״ג</small></div>
+          <div class="shelf">₪5.80 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000060163" data-name="אטריות דקות אסם 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אטריות בינוניות אסם 400 גרם<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290000060958" data-key="7290000060958" data-name="אטריות בינוניות אסם 400 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מספקס-לובלה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪6.30 (3 ב־₪18.90)</span><span class="other st-4">נטו חיסכון ₪6.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.50 <small>לק״ג</small></div>
+          <div class="shelf">₪5.80 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000060958" data-name="אטריות בינוניות אסם 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אסם אטריות רחבות 12*400גרם<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290000060965" data-key="7290000060965" data-name="אסם אטריות רחבות 12*400גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פזז לובלה ג.מ.ו ספ. ז.ו.ו לובלין</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪6.30 (3 ב־₪18.90)</span><span class="other st-4">נטו חיסכון ₪6.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.50 <small>לק״ג</small></div>
+          <div class="shelf">₪5.80 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000060965" data-name="אסם אטריות רחבות 12*400גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אסם אטריות דקיקות 12*400גרם<button type="button" class="unsold" data-sold="20261004" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290000060972" data-key="7290000060972" data-name="אסם אטריות דקיקות 12*400גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פסטה זארה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪6.30 (3 ב־₪18.90)</span><span class="other st-4">נטו חיסכון ₪6.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.50 <small>לק״ג</small></div>
+          <div class="shelf">₪5.80 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000060972" data-name="אסם אטריות דקיקות 12*400גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אטריות קלסיות אסם 400 גרם<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290118423140" data-key="7290118423140" data-name="אטריות קלסיות אסם 400 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מספקס-לובלה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪6.30 (3 ב־₪18.90)</span><span class="other st-4">נטו חיסכון ₪6.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.50 <small>לק״ג</small></div>
+          <div class="shelf">₪5.80 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118423140" data-name="אטריות קלסיות אסם 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">אטריות דקות טעמן, 360 גרם<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290013625922" data-key="7290013625922" data-name="אטריות דקות טעמן, 360 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שיבולים</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.75 <small>לק״ג</small></div>
+          <div class="shelf">₪5.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013625922" data-name="אטריות דקות טעמן, 360 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">אטריות דקיקות טעמן, 360 גרם<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290013625939" data-key="7290013625939" data-name="אטריות דקיקות טעמן, 360 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שיבולים</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪16.39 <small>לק״ג</small></div>
+          <div class="shelf">₪5.90 · 360 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013625939" data-name="אטריות דקיקות טעמן, 360 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">נודלס ביצים להקפצה 200 גר וילי פוד<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290010259359" data-key="7290010259359" data-name="נודלס ביצים להקפצה 200 גר וילי פוד" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪10</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-0">ויקטורי ₪4.00 (3 ב־₪12)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪16.65 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪4.90</s> ₪3.33 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010259359" data-name="נודלס ביצים להקפצה 200 גר וילי פוד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">נודלס אטריות ביצים מסולסלות 200 ג&#39;<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290010259366" data-key="7290010259366" data-name="נודלס אטריות ביצים מסולסלות 200 ג&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪10</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-0">ויקטורי ₪4.00 (3 ב־₪12)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪16.65 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪4.90</s> ₪3.33 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010259366" data-name="נודלס אטריות ביצים מסולסלות 200 ג&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אטריות אורז רחבות 5 מ&#34;מ<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290013358578" data-key="7290013358578" data-name="אטריות אורז רחבות 5 מ&#34;מ" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ליינג טונג רייס פלוור קומפני אל.טי.די</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪15</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪18.75 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪7.50 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013358578" data-name="אטריות אורז רחבות 5 מ&#34;מ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">נודלס ביצים 400 גר מאסטר שף<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290013358585" data-key="7290013358585" data-name="נודלס ביצים 400 גר מאסטר שף" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ש. שסטוביץ בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪15</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪18.75 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪7.50 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013358585" data-name="נודלס ביצים 400 גר מאסטר שף" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אטריות אורז דקות ורמיצ&#39;לי<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290114606561" data-key="7290114606561" data-name="אטריות אורז דקות ורמיצ&#39;לי" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ליינג טונג רייס פלוור קומפני אל.טי.די</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪15</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪18.75 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪7.50 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290114606561" data-name="אטריות אורז דקות ורמיצ&#39;לי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אטריות ביצים דקות 40<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290018860984" data-key="7290018860984" data-name="אטריות ביצים דקות 40" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>XIAMEN</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪15</span> בקניית 2 · עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪18.75 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.80</s> ₪7.50 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018860984" data-name="אטריות ביצים דקות 40" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אטריות ביצים רחבות ל<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290018860991" data-key="7290018860991" data-name="אטריות ביצים רחבות ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>XIAMEN</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪15</span> בקניית 2 · עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪18.75 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.80</s> ₪7.50 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018860991" data-name="אטריות ביצים רחבות ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אטריות עם בטטה סגולה<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290020394675" data-key="7290020394675" data-name="אטריות עם בטטה סגולה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪19.60 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪8.90 · 454 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020394675" data-name="אטריות עם בטטה סגולה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">איטריות ביצים מזרח ומערב 454 גרם<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290015603188" data-key="7290015603188" data-name="איטריות ביצים מזרח ומערב 454 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מזרח ומערב</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪19.60 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪8.90 · 454 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015603188" data-name="איטריות ביצים מזרח ומערב 454 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אטריות תרד מזרח ומערב 454 גרם<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290015603195" data-key="7290015603195" data-name="אטריות תרד מזרח ומערב 454 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מזרח ומערב</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪19.60 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪8.90 · 454 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015603195" data-name="אטריות תרד מזרח ומערב 454 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">איטריות קמח מלא מזרח ומערב 454 גרם<button type="button" class="unsold" data-sold="20260917" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290015603201" data-key="7290015603201" data-name="איטריות קמח מלא מזרח ומערב 454 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>yan val yun corpora</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪19.60 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪8.90 · 454 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015603201" data-name="איטריות קמח מלא מזרח ומערב 454 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">איטריות עם עגבניות מזרח ומערב 454 גרם<button type="button" class="unsold" data-sold="20260923" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290015603218" data-key="7290015603218" data-name="איטריות עם עגבניות מזרח ומערב 454 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מזרח ומערב</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪19.60 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪8.90 · 454 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015603218" data-name="איטריות עם עגבניות מזרח ומערב 454 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">איטריות עם גזר 454 גרם<button type="button" class="unsold" data-sold="20261006" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290015603225" data-key="7290015603225" data-name="איטריות עם גזר 454 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מזרח ומערב</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪19.60 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪8.90 · 454 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015603225" data-name="איטריות עם גזר 454 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">איטריות עם דלעת 454 גרם<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290015603232" data-key="7290015603232" data-name="איטריות עם דלעת 454 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מזרח ומערב</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪19.60 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪8.90 · 454 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015603232" data-name="איטריות עם דלעת 454 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">איטריות אורז רחבות<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290019926993" data-key="7290019926993" data-name="איטריות אורז רחבות" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪19.75 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪8.90</s> ₪7.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019926993" data-name="איטריות אורז רחבות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">ווק מקלוני אורז<button type="button" class="unsold" data-sold="20261001" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290003220779" data-key="7290003220779" data-name="ווק מקלוני אורז" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪19.75 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪7.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003220779" data-name="ווק מקלוני אורז" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">ווק מקלוני אורז<button type="button" class="unsold" data-sold="20261002" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290003220939" data-key="7290003220939" data-name="ווק מקלוני אורז" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪19.75 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪7.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003220939" data-name="ווק מקלוני אורז" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אטריות ביצים רצועות דקות 500 גר<button type="button" class="unsold" data-sold="20260917" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="4260147890513" data-key="4260147890513" data-name="אטריות ביצים רצועות דקות 500 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>דין שיווק</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.80 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4260147890513" data-name="אטריות ביצים רצועות דקות 500 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אטריות ביצים רצועות רחבות 500 גר דין שיווק<button type="button" class="unsold" data-sold="20261004" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="4260147890537" data-key="4260147890537" data-name="אטריות ביצים רצועות רחבות 500 גר דין שיווק" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>דין שיווק</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.80 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4260147890537" data-name="אטריות ביצים רצועות רחבות 500 גר דין שיווק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אטריות ביצים רצועות<button type="button" class="unsold" data-sold="20261006" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="4260147890551" data-key="4260147890551" data-name="אטריות ביצים רצועות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>דין שיווק</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.80 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4260147890551" data-name="אטריות ביצים רצועות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אטריות אודון מוכנות 200 גר טעמי אסיה<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290014785564" data-key="7290014785564" data-name="אטריות אודון מוכנות 200 גר טעמי אסיה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>PRIMA QINGDAO</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪20.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪6.50</s> ₪4.00 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014785564" data-name="אטריות אודון מוכנות 200 גר טעמי אסיה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אטריות מוכנות להקפצה 200 גר טעמי אסיה<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290014785571" data-key="7290014785571" data-name="אטריות מוכנות להקפצה 200 גר טעמי אסיה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>PRIMA QINGDAO</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪20.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.50</s> ₪4.00 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014785571" data-name="אטריות מוכנות להקפצה 200 גר טעמי אסיה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אטריות מבושלות טעם ב<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="6979073770063" data-key="6979073770063" data-name="אטריות מבושלות טעם ב" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קינגדאו ספרינג</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪8</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪20.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪4.90</s> ₪4.00 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="6979073770063" data-name="אטריות מבושלות טעם ב" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אטריות מבושלות טעם צ<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="6979073770070" data-key="6979073770070" data-name="אטריות מבושלות טעם צ" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קינגדאו ספרינג</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪8</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪20.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪4.90</s> ₪4.00 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="6979073770070" data-name="אטריות מבושלות טעם צ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אטריות מבושלות טעם ק<button type="button" class="unsold" data-sold="20261002" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="6979073770087" data-key="6979073770087" data-name="אטריות מבושלות טעם ק" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קינגדאו ספרינג</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪8</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪20.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪4.90</s> ₪4.00 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="6979073770087" data-name="אטריות מבושלות טעם ק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אטריות טריות דקות 200 גרם<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="6934731200078" data-key="6934731200078" data-name="אטריות טריות דקות 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יאנטאי ינסידה לנוגקא</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪8</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪6.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪20.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪4.90</s> ₪4.00 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="6934731200078" data-name="אטריות טריות דקות 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אטריות טריות עבות 200 גרם<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="6934731210138" data-key="6934731210138" data-name="אטריות טריות עבות 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יאנטאי ינסידה לנוגקא</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪8</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪6.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪20.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪4.90</s> ₪4.00 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="6934731210138" data-name="אטריות טריות עבות 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אטריות אורז דקות 200<button type="button" class="unsold" data-sold="20260916" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="8856429000266" data-key="8856429000266" data-name="אטריות אורז דקות 200" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪8</span> בקניית 2 · עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪20.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪6.90</s> ₪4.00 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8856429000266" data-name="אטריות אורז דקות 200" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אטריות ביצים רחבות 400ג רמילוי<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290017752631" data-key="7290017752631" data-name="אטריות ביצים רחבות 400ג רמילוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪20.00 <small>לק״ג</small></div>
+          <div class="shelf">₪8.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017752631" data-name="אטריות ביצים רחבות 400ג רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אטריות ביצים דקות 400ג רמילוי<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290017752648" data-key="7290017752648" data-name="אטריות ביצים דקות 400ג רמילוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פוג&#39;יאן</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪20.00 <small>לק״ג</small></div>
+          <div class="shelf">₪8.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017752648" data-name="אטריות ביצים דקות 400ג רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סו שף, אטריות ביצים צרות להכנה מהירה, 400 גרם<button type="button" class="unsold" data-sold="20260929" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290013725752" data-key="7290013725752" data-name="סו שף, אטריות ביצים צרות להכנה מהירה, 400 גרם" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זהונגשאן זוליון גרופ קו לימטד</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪21.25 <small>לק״ג</small></div>
+          <div class="shelf">₪8.50 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013725752" data-name="סו שף, אטריות ביצים צרות להכנה מהירה, 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">נודלס אטריות חיטה להקפצה<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290111935992" data-key="7290111935992" data-name="נודלס אטריות חיטה להקפצה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נגוק הונג קוזי ויטנאם קומפני לימיטד</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪15</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪21.43 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪7.50 · 350 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111935992" data-name="נודלס אטריות חיטה להקפצה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אטריות אורז דקות מזרח ומערב 454 גרם<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="308910525744" data-key="308910525744" data-name="אטריות אורז דקות מזרח ומערב 454 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מזרח ומערב</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪10.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪21.81 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 454 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="308910525744" data-name="אטריות אורז דקות מזרח ומערב 454 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מקלוני אורז ללא גלוטן 5 מ&#34;מ 454גר&#39; (אור)<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290014860070" data-key="7290014860070" data-name="מקלוני אורז ללא גלוטן 5 מ&#34;מ 454גר&#39; (אור)" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מזרח ומערב</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪10.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪21.81 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 454 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014860070" data-name="מקלוני אורז ללא גלוטן 5 מ&#34;מ 454גר&#39; (אור)" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מקלוני אורז ללא גלוטן 3מ&#34;מ 454גר&#39; (אור)<button type="button" class="unsold" data-sold="20261003" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290014860094" data-key="7290014860094" data-name="מקלוני אורז ללא גלוטן 3מ&#34;מ 454גר&#39; (אור)" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מזרח ומערב</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪21.81 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 454 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014860094" data-name="מקלוני אורז ללא גלוטן 3מ&#34;מ 454גר&#39; (אור)" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אטריות אורז דקות 1מ&#34;<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="8934878081835" data-key="8934878081835" data-name="אטריות אורז דקות 1מ&#34;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פרפקטו</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪22.00 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 450 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8934878081835" data-name="אטריות אורז דקות 1מ&#34;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מאסטר שף אטריות ביצים עבות 340 גרם<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290117383070" data-key="7290117383070" data-name="מאסטר שף אטריות ביצים עבות 340 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פוג&#39;יאן לונגהיי אנלידה אינדסטרי אנד טריי</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪15</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-4">נטו חיסכון ₪8.00 (2 ב־₪16)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.06 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪7.50 · 340 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290117383070" data-name="מאסטר שף אטריות ביצים עבות 340 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מאסטר שף אטריות ביצים דקות 340 גרם<button type="button" class="unsold" data-sold="20261006" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290117383087" data-key="7290117383087" data-name="מאסטר שף אטריות ביצים דקות 340 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פוג&#39;יאן לונגהיי אנלידה אינדסטרי אנד טריי</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪15</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-4">נטו חיסכון ₪8.00 (2 ב־₪16)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.06 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪7.50 · 340 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290117383087" data-name="מאסטר שף אטריות ביצים דקות 340 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אטריות ראמן אטריות מוכנות<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290014785588" data-key="7290014785588" data-name="אטריות ראמן אטריות מוכנות" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.22 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.90</s> ₪4.00 · 180 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014785588" data-name="אטריות ראמן אטריות מוכנות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">איטריות נודלס 400 גר`<button type="button" class="unsold" data-sold="20260924" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290008175692" data-key="7290008175692" data-name="איטריות נודלס 400 גר`" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>---</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪22.25 <small>לק״ג</small></div>
+          <div class="shelf">₪8.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008175692" data-name="איטריות נודלס 400 גר`" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מקלוני אורז 300 גר` וילי פוד<button type="button" class="unsold" data-sold="20260922" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290003578290" data-key="7290003578290" data-name="מקלוני אורז 300 גר` וילי פוד" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>כללי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪23.00 <small>לק״ג</small></div>
+          <div class="shelf">₪6.90 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003578290" data-name="מקלוני אורז 300 גר` וילי פוד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מאסטר שף אטריות נודלס רחבות 340 גר<button type="button" class="unsold" data-sold="20260923" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290122632613" data-key="7290122632613" data-name="מאסטר שף אטריות נודלס רחבות 340 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪16</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪23.53 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪8.00 · 340 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290122632613" data-name="מאסטר שף אטריות נודלס רחבות 340 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אטריות אורז דקות 454ג רמילוי<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290017752709" data-key="7290017752709" data-name="אטריות אורז דקות 454ג רמילוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪23.57 <small>לק״ג</small></div>
+          <div class="shelf">₪10.70 · 454 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017752709" data-name="אטריות אורז דקות 454ג רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אטריות אורז רחבות 454ג רמילוי<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290017752716" data-key="7290017752716" data-name="אטריות אורז רחבות 454ג רמילוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪23.57 <small>לק״ג</small></div>
+          <div class="shelf">₪10.70 · 454 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017752716" data-name="אטריות אורז רחבות 454ג רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אטריות אורז דקות<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290117389324" data-key="7290117389324" data-name="אטריות אורז דקות" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פוג&#39;יאן לונגהיי אנלידה אינדסטרי אנד טריי</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪15</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪25.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪7.50 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290117389324" data-name="אטריות אורז דקות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אסם נודלס אטריות להקפצה 10*350גרם<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290111568251" data-key="7290111568251" data-name="אסם נודלס אטריות להקפצה 10*350גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תאי פרזידנטפוד</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪11.00</span><span class="other st-0">ויקטורי ₪11.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪25.43 <small>לק״ג</small></div>
+          <div class="shelf">₪8.90 · 350 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111568251" data-name="אסם נודלס אטריות להקפצה 10*350גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אטריות ביצים 300 ג&#39;<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290016523447" data-key="7290016523447" data-name="אטריות ביצים 300 ג&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פוג&#39;יאן</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪26.00 <small>לק״ג</small></div>
+          <div class="shelf">₪7.80 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016523447" data-name="אטריות ביצים 300 ג&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אטריות שעועית 250 גר&#39; ( Yantai)ללא גלוטן(כ)<button type="button" class="unsold" data-sold="20260720" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="6912977000140" data-key="6912977000140" data-name="אטריות שעועית 250 גר&#39; ( Yantai)ללא גלוטן(כ)" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מזרח ומערב</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪13.90</span> בקניית 2 · עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪8.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪27.80 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪8.90</s> ₪6.95 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="6912977000140" data-name="אטריות שעועית 250 גר&#39; ( Yantai)ללא גלוטן(כ)" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">נודלס ביצים 500 גרם<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290002053538" data-key="7290002053538" data-name="נודלס ביצים 500 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פ.פ.ה טאביט ספ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪27.80 <small>לק״ג</small></div>
+          <div class="shelf">₪13.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002053538" data-name="נודלס ביצים 500 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אטריות שעועית ירוקה<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290020394699" data-key="7290020394699" data-name="אטריות שעועית ירוקה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יאנטאי ינסידה לנוגקא</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪14</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪28.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪8.90</s> ₪7.00 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020394699" data-name="אטריות שעועית ירוקה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אסם נודלס אטריות אורז רחבות 16*300גרם<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290111568275" data-key="7290111568275" data-name="אסם נודלס אטריות אורז רחבות 16*300גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תאי פרזידנט</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪8.90</span><span class="other st-4">נטו חיסכון ₪11.00</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪29.67 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪8.90 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111568275" data-name="אסם נודלס אטריות אורז רחבות 16*300גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אטריות נאמה אודון 20<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="8801085020301" data-key="8801085020301" data-name="אטריות נאמה אודון 20" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אלפה אינטרנשיונל</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪12</span> בקניית 2 · עד 28.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪30.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪6.80</s> ₪6.00 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8801085020301" data-name="אטריות נאמה אודון 20" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אטריות ביצים פטוצ&#39;יני<button type="button" class="unsold" data-sold="20260909" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290016865943" data-key="7290016865943" data-name="אטריות ביצים פטוצ&#39;יני" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪24</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪30.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪12.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016865943" data-name="אטריות ביצים פטוצ&#39;יני" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אטריות עם תרד<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290011996017" data-key="7290011996017" data-name="אטריות עם תרד" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קסיאמן קסינגשאנג פודסטופס קו בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪32.82 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 454 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011996017" data-name="אטריות עם תרד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אטריות ביצים 454 גר טעמי אסיה<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290011996031" data-key="7290011996031" data-name="אטריות ביצים 454 גר טעמי אסיה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קסיאמן קסינגשאנג פודסטופס קו בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪32.82 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 454 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011996031" data-name="אטריות ביצים 454 גר טעמי אסיה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">איטריות חיטה להכנה מהירה<button type="button" class="unsold" data-sold="20260928" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290018515716" data-key="7290018515716" data-name="איטריות חיטה להכנה מהירה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪33.00 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018515716" data-name="איטריות חיטה להכנה מהירה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">איטריות חיטה עם כוסמת להכנה מהירה<button type="button" class="unsold" data-sold="20260922" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290018515723" data-key="7290018515723" data-name="איטריות חיטה עם כוסמת להכנה מהירה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪33.00 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018515723" data-name="איטריות חיטה עם כוסמת להכנה מהירה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">איטריות חיטה להכנה מהירה<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290018515747" data-key="7290018515747" data-name="איטריות חיטה להכנה מהירה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪33.00 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018515747" data-name="איטריות חיטה להכנה מהירה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">דפי אורז למילוי קוטר 22 ס  מ 300 גרם<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290108504934" data-key="7290108504934" data-name="דפי אורז למילוי קוטר 22 ס  מ 300 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פודס</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-4">נטו חיסכון ₪9.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪33.00 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108504934" data-name="דפי אורז למילוי קוטר 22 ס  מ 300 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מקלוני שעועית 250 גר טעמי אסיה<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290011996819" data-key="7290011996819" data-name="מקלוני שעועית 250 גר טעמי אסיה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יאנטאי ינסידה לונגקאו וורמיצ&#39;ילי קוץ בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪34.00 <small>לק״ג</small></div>
+          <div class="shelf">₪8.50 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011996819" data-name="מקלוני שעועית 250 גר טעמי אסיה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">גפן אטריות להכנה מהירה בטעם עוף 85 גרם<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="710069601000" data-key="710069601000" data-name="גפן אטריות להכנה מהירה בטעם עוף 85 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪34.12 <small>לק״ג</small></div>
+          <div class="shelf">₪2.90 · 85 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="710069601000" data-name="גפן אטריות להכנה מהירה בטעם עוף 85 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">גפןאטריות להכנה מהירה בטעם ירקות 85 גרם<button type="button" class="unsold" data-sold="20261002" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="710069601017" data-key="710069601017" data-name="גפןאטריות להכנה מהירה בטעם ירקות 85 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪34.12 <small>לק״ג</small></div>
+          <div class="shelf">₪2.90 · 85 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="710069601017" data-name="גפןאטריות להכנה מהירה בטעם ירקות 85 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מאסטר שף איטריות פאד תאי 200 גרם<button type="button" class="unsold" data-sold="20261004" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290121163613" data-key="7290121163613" data-name="מאסטר שף איטריות פאד תאי 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪34.50 <small>לק״ג</small></div>
+          <div class="shelf">₪6.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121163613" data-name="מאסטר שף איטריות פאד תאי 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מאסטר שף איטריות אודון להקפצה 200 גרם<button type="button" class="unsold" data-sold="20261006" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290121163637" data-key="7290121163637" data-name="מאסטר שף איטריות אודון להקפצה 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪34.50 <small>לק״ג</small></div>
+          <div class="shelf">₪6.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121163637" data-name="מאסטר שף איטריות אודון להקפצה 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אטריות אורז דקות 400 גר טעמי אסיה<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290011996499" data-key="7290011996499" data-name="אטריות אורז דקות 400 גר טעמי אסיה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פוג&#39;יאן לונגהאי אנלידה אינדסטרי אנד טרייד קומפני ב</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪34.75 <small>לק״ג</small></div>
+          <div class="shelf">₪13.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011996499" data-name="אטריות אורז דקות 400 גר טעמי אסיה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אטריות אורז<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290011996512" data-key="7290011996512" data-name="אטריות אורז" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ליהן  תאי רייס</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪34.75 <small>לק״ג</small></div>
+          <div class="shelf">₪13.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011996512" data-name="אטריות אורז" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אטריות אורז 5 סמ 400 גר טעמי אסיה<button type="button" class="unsold" data-sold="20260925" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290011996529" data-key="7290011996529" data-name="אטריות אורז 5 סמ 400 גר טעמי אסיה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>RICE ASIA THAI</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪34.75 <small>לק״ג</small></div>
+          <div class="shelf">₪13.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011996529" data-name="אטריות אורז 5 סמ 400 גר טעמי אסיה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אטריות אורז טעמי אסיה (400 גרם)<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290012911651" data-key="7290012911651" data-name="אטריות אורז טעמי אסיה (400 גרם)" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪34.75 <small>לק״ג</small></div>
+          <div class="shelf">₪13.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290012911651" data-name="אטריות אורז טעמי אסיה (400 גרם)" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">אסם נודלס אטריות אורז דקיקות כלפ 16*300ג<button type="button" class="unsold" data-sold="20261004" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290112961181" data-key="7290112961181" data-name="אסם נודלס אטריות אורז דקיקות כלפ 16*300ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪36.67 <small>לק״ג</small></div>
+          <div class="shelf">₪11.00 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112961181" data-name="אסם נודלס אטריות אורז דקיקות כלפ 16*300ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">נודלס אטריות ביצים רחבות אסם 350 גרם<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290118427520" data-key="7290118427520" data-name="נודלס אטריות ביצים רחבות אסם 350 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪36.86 <small>לק״ג</small></div>
+          <div class="shelf">₪12.90 · 350 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118427520" data-name="נודלס אטריות ביצים רחבות אסם 350 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">נודלס אטריות ביצים דקות אסם, 350 גרם<button type="button" class="unsold" data-sold="20260930" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290118427544" data-key="7290118427544" data-name="נודלס אטריות ביצים דקות אסם, 350 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪36.86 <small>לק״ג</small></div>
+          <div class="shelf">₪12.90 · 350 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118427544" data-name="נודלס אטריות ביצים דקות אסם, 350 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אטריות נודלס<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290015129121" data-key="7290015129121" data-name="אטריות נודלס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סצ&#39;ואן סנטאיואן</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪10.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪37.04 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪10.00 · 270 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015129121" data-name="אטריות נודלס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אטריות קונגאק בצורת ספגטי<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290015129145" data-key="7290015129145" data-name="אטריות קונגאק בצורת ספגטי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סצ&#39;ואן סנטאיואן</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪10.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪37.04 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪10.00 · 270 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015129145" data-name="אטריות קונגאק בצורת ספגטי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סקיני פסטה פטוצ&#39;יני<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290015129251" data-key="7290015129251" data-name="סקיני פסטה פטוצ&#39;יני" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סצ&#39;ואן סנטאיואן</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪10.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪37.04 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪10.00 · 270 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015129251" data-name="סקיני פסטה פטוצ&#39;יני" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">נודלס של מסעדות 400 גרם וונדרס זוגלובק<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290109580531" data-key="7290109580531" data-name="נודלס של מסעדות 400 גרם וונדרס זוגלובק" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פרש אסיה בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪37.25 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290109580531" data-name="נודלס של מסעדות 400 גרם וונדרס זוגלובק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מנת השף אטריות בטעם ירקות 85גר<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290108509908" data-key="7290108509908" data-name="מנת השף אטריות בטעם ירקות 85גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נמצ&#39;או(תאילנד) בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪10</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪3.63 (3 ב־₪10.90)</span><span class="other st-4">נטו חיסכון ₪3.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪39.18 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪3.90</s> ₪3.33 · 85 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108509908" data-name="מנת השף אטריות בטעם ירקות 85גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מנת השף אטריות בטעם סיני פיקנטי 85גר<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290108509915" data-key="7290108509915" data-name="מנת השף אטריות בטעם סיני פיקנטי 85גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נמצ&#39;או(תאילנד) בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪10</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪3.63 (3 ב־₪10.90)</span><span class="other st-4">נטו חיסכון ₪3.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪39.18 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪3.90</s> ₪3.33 · 85 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108509915" data-name="מנת השף אטריות בטעם סיני פיקנטי 85גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">פערפיל ביצים  200 גרם<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290002701088" data-key="7290002701088" data-name="פערפיל ביצים  200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.50 <small>לק״ג</small></div>
+          <div class="shelf">₪7.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002701088" data-name="פערפיל ביצים  200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">אטריות ללא גלוטן אסם כשלפ 300 גרם<button type="button" class="unsold" data-sold="20260930" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290118427346" data-key="7290118427346" data-name="אטריות ללא גלוטן אסם כשלפ 300 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פרינסס אס.פי.איי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-0">ויקטורי ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.67 <small>לק״ג</small></div>
+          <div class="shelf">₪11.90 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118427346" data-name="אטריות ללא גלוטן אסם כשלפ 300 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">איטריות אורז 1 מ&#34;מ 300 גרם<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="8532453030140" data-key="8532453030140" data-name="איטריות אורז 1 מ&#34;מ 300 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.67 <small>לק״ג</small></div>
+          <div class="shelf">₪11.90 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8532453030140" data-name="איטריות אורז 1 מ&#34;מ 300 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">איטריות אורז 5 מ&#34;מ 300 גרם<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="8532453030157" data-key="8532453030157" data-name="איטריות אורז 5 מ&#34;מ 300 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.67 <small>לק״ג</small></div>
+          <div class="shelf">₪11.90 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8532453030157" data-name="איטריות אורז 5 מ&#34;מ 300 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אטריות מקלונים ללא גלוטן<button type="button" class="unsold" data-sold="20261006" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290016136746" data-key="7290016136746" data-name="אטריות מקלונים ללא גלוטן" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אנדריאני אס.פי.איי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪40.88 <small>לק״ג</small></div>
+          <div class="shelf">₪13.90 · 340 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016136746" data-name="אטריות מקלונים ללא גלוטן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סלים נודלס<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290019137795" data-key="7290019137795" data-name="סלים נודלס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪41.11 <small>לק״ג</small></div>
+          <div class="shelf">₪11.10 · 270 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019137795" data-name="סלים נודלס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">פסטה ללא גלוטן איטריות דקות 400 גר&#39;<button type="button" class="unsold" data-sold="20260923" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="8052747935109" data-key="8052747935109" data-name="פסטה ללא גלוטן איטריות דקות 400 גר&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאסימוזירו</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-0">ויקטורי ₪18.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪42.25 <small>לק״ג</small></div>
+          <div class="shelf">₪16.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8052747935109" data-name="פסטה ללא גלוטן איטריות דקות 400 גר&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">נודלס אטריות מסולסלות אסם 200 גרם<button type="button" class="unsold" data-sold="20260923" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290000313290" data-key="7290000313290" data-name="נודלס אטריות מסולסלות אסם 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טאי רזידנט</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪11.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪44.50 <small>לק״ג</small></div>
+          <div class="shelf">₪8.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000313290" data-name="נודלס אטריות מסולסלות אסם 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סקיני פסטה דפי אורז<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290015129589" data-key="7290015129589" data-name="סקיני פסטה דפי אורז" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪46.33 <small>לק״ג</small></div>
+          <div class="shelf">₪13.90 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015129589" data-name="סקיני פסטה דפי אורז" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סקיני דפי אורז אדום<button type="button" class="unsold" data-sold="20260925" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290015129596" data-key="7290015129596" data-name="סקיני דפי אורז אדום" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪46.33 <small>לק״ג</small></div>
+          <div class="shelf">₪13.90 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015129596" data-name="סקיני דפי אורז אדום" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">דפי אורז 16 ס&#34;מ 270 גרם<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="8532453030164" data-key="8532453030164" data-name="דפי אורז 16 ס&#34;מ 270 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪47.78 <small>לק״ג</small></div>
+          <div class="shelf">₪12.90 · 270 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8532453030164" data-name="דפי אורז 16 ס&#34;מ 270 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">דפי אורז 22 ס&#34;מ 270 גרם<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="8532453030171" data-key="8532453030171" data-name="דפי אורז 22 ס&#34;מ 270 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪47.78 <small>לק״ג</small></div>
+          <div class="shelf">₪12.90 · 270 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8532453030171" data-name="דפי אורז 22 ס&#34;מ 270 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">נודלס בקר 70גר רמי לוי בטמן WB<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290119672936" data-key="7290119672936" data-name="נודלס בקר 70גר רמי לוי בטמן WB" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪10.90</span> בקניית 3 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪51.86 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪4.90</s> ₪3.63 · 70 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119672936" data-name="נודלס בקר 70גר רמי לוי בטמן WB" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">נודלס ירקות 70גר גרין לנטר רמי לוי WB<button type="button" class="unsold" data-sold="20260903" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290119672943" data-key="7290119672943" data-name="נודלס ירקות 70גר גרין לנטר רמי לוי WB" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪10.90</span> בקניית 3 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪51.86 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪4.90</s> ₪3.63 · 70 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119672943" data-name="נודלס ירקות 70גר גרין לנטר רמי לוי WB" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">נודלס חריף מאד 70גר פלאש רמי לוי WB<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290119672981" data-key="7290119672981" data-name="נודלס חריף מאד 70גר פלאש רמי לוי WB" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪10.90</span> בקניית 3 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪51.86 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪4.90</s> ₪3.63 · 70 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119672981" data-name="נודלס חריף מאד 70גר פלאש רמי לוי WB" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">נודלס חריף 70גר גוקר רמי לוי WB<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290119672998" data-key="7290119672998" data-name="נודלס חריף 70גר גוקר רמי לוי WB" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪10.90</span> בקניית 3 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪51.86 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪4.90</s> ₪3.63 · 70 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119672998" data-name="נודלס חריף 70גר גוקר רמי לוי WB" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">נודלס עוף 70גר סופרמן רמי לוי WB<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290119673001" data-key="7290119673001" data-name="נודלס עוף 70גר סופרמן רמי לוי WB" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪10.90</span> בקניית 3 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪51.86 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪4.90</s> ₪3.63 · 70 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119673001" data-name="נודלס עוף 70גר סופרמן רמי לוי WB" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אטריות ביצים<button type="button" class="unsold" data-sold="20260716" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290002053095" data-key="7290002053095" data-name="אטריות ביצים" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פ.פ.ח טאביט ספ. ז.או.או.</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪54.50 <small>לק״ג</small></div>
+          <div class="shelf">₪10.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002053095" data-name="אטריות ביצים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אטריות 250ג<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290018338612" data-key="7290018338612" data-name="אטריות 250ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.60 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018338612" data-name="אטריות 250ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אטריות רחבות כוסמין<button type="button" class="unsold" data-sold="20260925" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="4018722100188" data-key="4018722100188" data-name="אטריות רחבות כוסמין" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.60 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4018722100188" data-name="אטריות רחבות כוסמין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אטריות ראמן אורז מלא 280 גר<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290018677636" data-key="7290018677636" data-name="אטריות ראמן אורז מלא 280 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪64.64 <small>לק״ג</small></div>
+          <div class="shelf">₪18.10 · 280 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018677636" data-name="אטריות ראמן אורז מלא 280 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אטריות ראמן רייסברי 280 גר<button type="button" class="unsold" data-sold="20260823" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290018677643" data-key="7290018677643" data-name="אטריות ראמן רייסברי 280 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪64.64 <small>לק״ג</small></div>
+          <div class="shelf">₪18.10 · 280 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018677643" data-name="אטריות ראמן רייסברי 280 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אטריות ראמן כוסמת 28<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290018677650" data-key="7290018677650" data-name="אטריות ראמן כוסמת 28" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪64.64 <small>לק״ג</small></div>
+          <div class="shelf">₪18.10 · 280 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018677650" data-name="אטריות ראמן כוסמת 28" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">נודלס אורגני ללא גלו<button type="button" class="unsold" data-sold="20261002" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290011830250" data-key="7290011830250" data-name="נודלס אורגני ללא גלו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪71.60 <small>לק״ג</small></div>
+          <div class="shelf">₪17.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011830250" data-name="נודלס אורגני ללא גלו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">נודלס בטעם סיני טעים פיקנטי, 65 גרם<button type="button" class="unsold" data-sold="20261006" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290010176243" data-key="7290010176243" data-name="נודלס בטעם סיני טעים פיקנטי, 65 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זיזיאנג גרין הום פוד</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪76.92 <small>לק״ג</small></div>
+          <div class="shelf">₪5.00 · 65 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010176243" data-name="נודלס בטעם סיני טעים פיקנטי, 65 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">תאי צ&#39;יקן נודלס 380<button type="button" class="unsold" data-sold="20260826" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290109580562" data-key="7290109580562" data-name="תאי צ&#39;יקן נודלס 380" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪85.00 <small>לק״ג</small></div>
+          <div class="shelf">₪32.30 · 380 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290109580562" data-name="תאי צ&#39;יקן נודלס 380" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">נודלס צ&#39;יקן סצ&#39;ואן 3<button type="button" class="unsold" data-sold="20260826" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290109580623" data-key="7290109580623" data-name="נודלס צ&#39;יקן סצ&#39;ואן 3" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪92.29 <small>לק״ג</small></div>
+          <div class="shelf">₪32.30 · 350 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290109580623" data-name="נודלס צ&#39;יקן סצ&#39;ואן 3" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אטריות אורז חום טעם ירקות לל&#34;ג 55 גר<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290018677605" data-key="7290018677605" data-name="אטריות אורז חום טעם ירקות לל&#34;ג 55 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪230.91 <small>לק״ג</small></div>
+          <div class="shelf">₪12.70 · 55 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018677605" data-name="אטריות אורז חום טעם ירקות לל&#34;ג 55 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אטריות ראמן אורז מלא טעם עוף 55 גר<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290018677612" data-key="7290018677612" data-name="אטריות ראמן אורז מלא טעם עוף 55 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪12.90</span><span class="other st-4">נטו חיסכון ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪234.55 <small>לק״ג</small></div>
+          <div class="shelf">₪12.90 · 55 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018677612" data-name="אטריות ראמן אורז מלא טעם עוף 55 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אטריות ראמן אורז מלא טעם בקר 55 גר<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290018677629" data-key="7290018677629" data-name="אטריות ראמן אורז מלא טעם בקר 55 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪12.90</span><span class="other st-4">נטו חיסכון ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪234.55 <small>לק״ג</small></div>
+          <div class="shelf">₪12.90 · 55 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018677629" data-name="אטריות ראמן אורז מלא טעם בקר 55 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אטריות אורז חום טעם תירס לל&#34;ג 55 גר<button type="button" class="unsold" data-sold="20260729" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290018677599" data-key="7290018677599" data-name="אטריות אורז חום טעם תירס לל&#34;ג 55 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪234.55 <small>לק״ג</small></div>
+          <div class="shelf">₪12.90 · 55 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018677599" data-name="אטריות אורז חום טעם תירס לל&#34;ג 55 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">אטריות נודלס דקות 200 גרם<button type="button" class="unsold" data-sold="20261001" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290015328302" data-key="7290015328302" data-name="אטריות נודלס דקות 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.02 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪4.90</s> ₪4.00 · 200 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015328302" data-name="אטריות נודלס דקות 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">אטריות נודלס עבות 200 גרם<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290015328319" data-key="7290015328319" data-name="אטריות נודלס עבות 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.02 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪4.90</s> ₪4.00 · 200 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015328319" data-name="אטריות נודלס עבות 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">איטריות נודלס בטעם ח<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290119672332" data-key="7290119672332" data-name="איטריות נודלס בטעם ח" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪11.90</span> בקניית 3 · עד 6.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪3.97 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪4.00</s> ₪3.97 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119672332" data-name="איטריות נודלס בטעם ח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">איטריות נודלס בטעם ח<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290119672325" data-key="7290119672325" data-name="איטריות נודלס בטעם ח" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪11.90</span> בקניית 3 · עד 6.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪3.97 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪4.00</s> ₪3.97 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119672325" data-name="איטריות נודלס בטעם ח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">איטריות נודלס בטעם עוף רמי לוי 65גר<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290119670765" data-key="7290119670765" data-name="איטריות נודלס בטעם עוף רמי לוי 65גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪11.90</span> בקניית 3 · עד 6.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪3.97 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪4.00</s> ₪3.97 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119670765" data-name="איטריות נודלס בטעם עוף רמי לוי 65גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">איטריות נודלס טעם יר<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290119670772" data-key="7290119670772" data-name="איטריות נודלס טעם יר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪11.90</span> בקניית 3 · עד 6.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪3.97 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪4.00</s> ₪3.97 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119670772" data-name="איטריות נודלס טעם יר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">איטריות נודלס בטעם ב<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290119670789" data-key="7290119670789" data-name="איטריות נודלס בטעם ב" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪11.90</span> בקניית 3 · עד 6.11</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪3.97 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪4.00</s> ₪3.97 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119670789" data-name="איטריות נודלס בטעם ב" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אטריות עדשלג<button type="button" class="unsold" data-sold="20260813" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290018338605" data-key="7290018338605" data-name="אטריות עדשלג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.90 <small>ליח׳</small></div>
+          <div class="shelf">₪14.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018338605" data-name="אטריות עדשלג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+</ol>
+</div>
+
+</main>
+<footer>עודכן 10.10 23:50 · ויקטורי 9.10 22:08 · רמי לוי 9.10 21:00 · אושר עד 9.10 14:05 · אושר עד 9.10 14:05 · נטו חיסכון 9.10 22:14</footer>
+
+
+<nav class="bottom-nav" aria-label="ניווט">
+  <a href="index.html" class="on"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg><span>בית</span></a>
+  <a href="search.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><span>חיפוש</span></a>
+  <a href="scan.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V5a1 1 0 0 1 1-1h2M17 4h2a1 1 0 0 1 1 1v2M20 17v2a1 1 0 0 1-1 1h-2M7 20H5a1 1 0 0 1-1-1v-2"/><path d="M8 8v8M11 8v8M14 8v8M16.5 8v8"/></svg><span>סריקה</span></a>
+  <a href="basket.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h11l2-8H6.2"/><circle cx="9.5" cy="19" r="1.4"/><circle cx="17" cy="19" r="1.4"/></svg><span id="cart-count"></span><span>עגלת קניות</span></a>
+  <a href="spending.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-2-1.4-2 1.4-2-1.4-2 1.4-2-1.4L6 21z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><span>הוצאות</span></a>
+</nav>
+
+<script src="static/basket.js?v=20261010235052"></script>
+<script src="static/catpick.js?v=20261010235052"></script>
+<script src="static/photo.js?v=20261010235052"></script>
+
+<script src="static/render.js?v=20261010235052"></script>
+<script src="static/category.js?v=20261010235052" data-build="20261010235052"></script>
+
+<script>
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+</script>
+</body>
+</html>

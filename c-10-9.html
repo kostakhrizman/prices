@@ -1,0 +1,3631 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f7a4d">
+<script>
+// the look this phone chose (settings.html "מראה"), before anything is drawn: html.light / html.dark
+// (none = follow the phone) and html[data-color] (none = green); the browser bar takes the colour too
+(function () {
+  let t = {};
+  try { t = JSON.parse(localStorage.getItem("theme")) || {}; } catch (e) { /* none yet */ }
+  const root = document.documentElement;
+  if (t.mode === "light" || t.mode === "dark") root.classList.add(t.mode);
+  if (t.color) root.dataset.color = t.color;
+  if (t.bar) document.querySelector('meta[name="theme-color"]').content = t.bar;
+})();
+</script>
+<title>ממחטות ומגבות נייר</title>
+<link rel="manifest" href="static/manifest.webmanifest">
+<link rel="icon" href="static/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="static/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="static/style.css?v=20261010235052">
+<style>.st-0 { --store: #e07000; }.st-1 { --store: #d32f2f; }.st-2 { --store: #1565c0; }.st-3 { --store: #1565c0; }.st-4 { --store: #c99a00; }</style>
+<script src="static/stores.js?v=20261010235052" data-stores="[{&#34;card_cap&#34;: 750, &#34;card_rate&#34;: 0.07, &#34;default&#34;: true, &#34;key&#34;: &#34;victory-038&#34;, &#34;name&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;ramilevy-007&#34;, &#34;name&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-026&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05ea\u05dc\u05e4\u05d9\u05d5\u05ea&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-003&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05d2\u05d1\u05e2\u05ea \u05e9\u05d0\u05d5\u05dc&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;netto-052&#34;, &#34;name&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df \u05e7\u05e8\u05d9\u05d9\u05ea \u05d9\u05e2\u05e8\u05d9\u05dd&#34;, &#34;short&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df&#34;}]"></script>
+<script src="static/avoid.js?v=20261010235052" data-kinds="[&#34;\u05e2\u05d5\u05e3 \u05de\u05e2\u05d5\u05d1\u05d3&#34;, &#34;\u05d1\u05e9\u05e8 \u05de\u05e2\u05d5\u05d1\u05d3&#34;]"></script>
+<script>
+// No long-press menu on links, pictures or text (the user: the home page's tiles opened Chrome's "open in new tab /
+// copy link" menu; CSS can't stop that on Android). Typing fields and the ⓘ sheet's barcode keep theirs.
+document.addEventListener("contextmenu", (e) => {
+  if (!e.target.closest("input, textarea, [contenteditable], .photo-barcode")) e.preventDefault();
+});
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <a class="back" href="t-10.html" aria-label="חזרה">→</a>
+    <h1>ממחטות ומגבות נייר</h1>
+    <a class="notes-link" href="notes.html" aria-label="רשימת קניות" title="רשימת קניות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="m8.5 10 1.2 1.2 2.3-2.4M8.5 15.5l1.2 1.2 2.3-2.4M14 10.5h2.5M14 16h2.5"/></svg><span>רשימת קניות</span></a>
+    <a class="settings-link" href="settings.html" aria-label="הגדרות" title="הגדרות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></a>
+  </div>
+  
+  <form class="search" action="search.html" method="get" role="search">
+    <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+    <input type="search" name="q" placeholder="חיפוש מוצר" enterkeyhint="search" aria-label="חיפוש מוצר">
+  </form>
+  
+</header>
+<main>
+
+<p class="sub"><span class="sub-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 7h4v3h-4z"/><path d="M12 7V4h4"/><path d="M8 10h8a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1z"/><circle cx="19" cy="6" r="1.3"/></svg></span>טואלטיקה והיגיינה · <span id="cat-count">126</span> מוצרים, מהזול ליקר</p>
+
+
+<div class="cat-filter">
+  <input type="search" id="cat-filter" placeholder="סינון לפי שם או יצרן · ‎-מילה מסתירה" enterkeyhint="done" autocomplete="off" aria-label="סינון המוצרים בקטגוריה">
+  <button type="button" id="facet-btn" class="facet-btn" aria-expanded="false" aria-controls="facet-list">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h18l-7 8v6l-4-2v-4z"/></svg>
+    <span>סינון</span><b id="facet-n" hidden></b></button>
+</div>
+<div id="facet-list" class="facet-list" hidden>
+  <div class="facet-items" id="facet-kinds"><label class="facet"><input type="checkbox" value="מפיות"> <span>מפיות</span> <small></small></label><label class="facet"><input type="checkbox" value="מגבונים"> <span>מגבונים</span> <small></small></label><label class="facet"><input type="checkbox" value="מגבות"> <span>מגבות</span> <small></small></label><label class="facet"><input type="checkbox" value="ממחטות"> <span>ממחטות</span> <small></small></label><label class="facet"><input type="checkbox" value="מגבונים לחים"> <span>מגבונים לחים</span> <small></small></label><label class="facet"><input type="checkbox" value="קלינקס"> <span>קלינקס</span> <small></small></label><label class="facet"><input type="checkbox" value="טישו"> <span>טישו</span> <small></small></label><label class="facet"><input type="checkbox" value="מפות"> <span>מפות</span> <small></small></label><label class="facet"><input type="checkbox" value="גליל"> <span>גליל</span> <small></small></label><label class="facet"><input type="checkbox" value="ממחטות אף"> <span>ממחטות אף</span> <small></small></label><label class="facet"><input type="checkbox" value="חב"> <span>חב</span> <small></small></label><label class="facet"><input type="checkbox" value="ניר"> <span>ניר</span> <small></small></label></div>
+  <div class="facet-stores" id="facet-stores" hidden><div class="facet-title">חנויות</div><div class="facet-items"></div></div>
+  <div class="facet-actions"><button type="button" class="link" id="facet-clear">ניקוי</button>
+    <button type="button" id="facet-done">הצגה</button></div>
+</div>
+<div id="cat-list" data-href="c-10-9.html">
+
+<ol class="products">
+  
+  
+    
+    
+    
+    <li class="product st-4 best">
+      <div class="info">
+        <div class="name">מגבונים לניקוי כללי רוז , 150 יחידות<button type="button" class="unsold" data-sold="20261001" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290020228499" data-key="7290020228499" data-name="מגבונים לניקוי כללי רוז , 150 יחידות" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪21.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪15.31 <small>לליטר</small></div>
+          <div class="shelf"><s>₪23.90</s> ₪19.90 · 1.3 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020228499" data-name="מגבונים לניקוי כללי רוז , 150 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מפות 45 מטר =סגול= ע. במיוחד 3 קג ר. שמאי כשל&#39;&#39;פ עד&#39;&#39;ח<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290016102765" data-key="7290016102765" data-name="מפות 45 מטר =סגול= ע. במיוחד 3 קג ר. שמאי כשל&#39;&#39;פ עד&#39;&#39;ח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪16.63 <small>לק״ג</small></div>
+          <div class="shelf">₪49.90 · 3 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016102765" data-name="מפות 45 מטר =סגול= ע. במיוחד 3 קג ר. שמאי כשל&#39;&#39;פ עד&#39;&#39;ח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">ממחטות אף לילי 450 יח<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290000191539" data-key="7290000191539" data-name="ממחטות אף לילי 450 יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קימברלי קלארק שיווק ישראל בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪22</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪12.50</span><span class="other st-0">ויקטורי ₪14.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪18.55 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪11.00 · 593 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000191539" data-name="ממחטות אף לילי 450 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מגבות נייר סנו סושי 6 יחידות<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290005427107" data-key="7290005427107" data-name="מגבות נייר סנו סושי 6 יחידות" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪22</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪11.90 (מבצע)</span><span class="other st-0">ויקטורי ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪19.30 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪12.90</s> ₪11.00 · 570 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290005427107" data-name="מגבות נייר סנו סושי 6 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">סופר מגבת (כ-400 גר&#39;)<button type="button" class="unsold" data-sold="20261002" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290000599847" data-key="7290000599847" data-name="סופר מגבת (כ-400 גר&#39;)" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪24.75 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000599847" data-name="סופר מגבת (כ-400 גר&#39;)" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מגבות נייר כפול 6 יח<button type="button" class="unsold" data-sold="20260922" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290011097349" data-key="7290011097349" data-name="מגבות נייר כפול 6 יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קלין</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪26.88 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪17.90</s> ₪15.00 · 558 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011097349" data-name="מגבות נייר כפול 6 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קלינקס טישו אוריגינל 5*70 דפים<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290111346347" data-key="7290111346347" data-name="קלינקס טישו אוריגינל 5*70 דפים" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪12.50 (2 ב־₪25)</span><span class="other st-0">ויקטורי ₪14.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪30.79 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪12.50 · 406 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111346347" data-name="קלינקס טישו אוריגינל 5*70 דפים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קלינקס טישו לושן קופסא<button type="button" class="unsold" data-sold="20261002" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="" data-key="7290696200003:36000516890" data-name="קלינקס טישו לושן קופסא" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קימברלי קלארק ארהב</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪40.72 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪16.90 · 415 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:36000516890" data-name="קלינקס טישו לושן קופסא" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">רב מגבת ג&#39;מבו סנו סושי 75 יחידות<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290000295541" data-key="7290000295541" data-name="רב מגבת ג&#39;מבו סנו סושי 75 יחידות" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪17.90</span><span class="other st-0">ויקטורי ₪21.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪45.90 <small>לק״ג</small></div>
+          <div class="shelf">₪17.90 · 390 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000295541" data-name="רב מגבת ג&#39;מבו סנו סושי 75 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מפיות נייר תלת שכבתיות ניקול 20 יחידות<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290000190150" data-key="7290000190150" data-name="מפיות נייר תלת שכבתיות ניקול 20 יחידות" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ניקול</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪12</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪6.00 (2 ב־₪12)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪58.82 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪12.90</s> ₪6.00 · 102 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000190150" data-name="מפיות נייר תלת שכבתיות ניקול 20 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מפיות לבן הנמל 100 יח<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290001670385" data-key="7290001670385" data-name="מפיות לבן הנמל 100 יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>לילה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪10</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-0">ויקטורי ₪5.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.03 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪4.90</s> ₪3.33 · 100 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001670385" data-name="מפיות לבן הנמל 100 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מפיות נייר סנו סושי 150 יחידות<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290005424847" data-key="7290005424847" data-name="מפיות נייר סנו סושי 150 יחידות" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪12</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪7.50</span><span class="other st-0">ויקטורי ₪8.00 (2 ב־₪16)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.04 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪7.90</s> ₪6.00 · 150 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290005424847" data-name="מפיות נייר סנו סושי 150 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מפיות 150 יח שווה<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290117031612" data-key="7290117031612" data-name="מפיות 150 יח שווה" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪12</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.04 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪6.90</s> ₪6.00 · 150 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290117031612" data-name="מפיות 150 יח שווה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מגבונים בדלי קומפקט לינקוי וחיטוי<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290018213117" data-key="7290018213117" data-name="מגבונים בדלי קומפקט לינקוי וחיטוי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.04 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪14.90 · 400 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018213117" data-name="מגבונים בדלי קומפקט לינקוי וחיטוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מגבונים אסותא בדלי עיסא ערטול (400)<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290017044019" data-key="7290017044019" data-name="מגבונים אסותא בדלי עיסא ערטול (400)" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪35</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.04 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪17.50 · 400 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017044019" data-name="מגבונים אסותא בדלי עיסא ערטול (400)" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מגבונים אסותא בדלי ריח לימון (400)<button type="button" class="unsold" data-sold="20260929" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290017044071" data-key="7290017044071" data-name="מגבונים אסותא בדלי ריח לימון (400)" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪35</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.04 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪17.50 · 400 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017044071" data-name="מגבונים אסותא בדלי ריח לימון (400)" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מגבונים לחים 72 יח<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290011431761" data-key="7290011431761" data-name="מגבונים לחים 72 יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪10</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.05 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪3.90</s> ₪3.33 · 72 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011431761" data-name="מגבונים לחים 72 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ניקול מפיות אירוח 150 יח<button type="button" class="unsold" data-sold="20261001" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290111348549" data-key="7290111348549" data-name="ניקול מפיות אירוח 150 יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.05 <small>ליח׳</small></div>
+          <div class="shelf">₪7.80 · 150 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111348549" data-name="ניקול מפיות אירוח 150 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מגבונים לחים סופטנס 72X4 יח&#39;<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290018204726" data-key="7290018204726" data-name="מגבונים לחים סופטנס 72X4 יח&#39;" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.05 <small>ליח׳</small></div>
+          <div class="shelf">₪14.90 · 288 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018204726" data-name="מגבונים לחים סופטנס 72X4 יח&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מגבונים ליטופים מארז 72X5 יח&#39;<button type="button" class="unsold" data-sold="20261001" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290005427725" data-key="7290005427725" data-name="מגבונים ליטופים מארז 72X5 יח&#39;" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.05 <small>ליח׳</small></div>
+          <div class="shelf">₪17.90 · 360 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290005427725" data-name="מגבונים ליטופים מארז 72X5 יח&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מפיות מנוקדות 80 יח<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290016898842" data-key="7290016898842" data-name="מפיות מנוקדות 80 יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.07 <small>ליח׳</small></div>
+          <div class="shelf">₪5.90 · 80 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016898842" data-name="מפיות מנוקדות 80 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ממחטות אף במארז מעוצב קלינקס 3 יחידות<button type="button" class="unsold" data-sold="20260827" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290000191652" data-key="7290000191652" data-name="ממחטות אף במארז מעוצב קלינקס 3 יחידות" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קימברלי קלארק שיווק ישראל בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪10.00 (2 ב־₪20)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.11 <small>ליח׳</small></div>
+          <div class="shelf">₪9.90 · 90 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000191652" data-name="ממחטות אף במארז מעוצב קלינקס 3 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קלינקס טישו לושן זוגות<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290111343117" data-key="7290111343117" data-name="קלינקס טישו לושן זוגות" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.11 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪15.90</s> ₪14.90 · 140 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111343117" data-name="קלינקס טישו לושן זוגות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מפיות דו שכבתיות 50יח רמילוי<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290103703509" data-key="7290103703509" data-name="מפיות דו שכבתיות 50יח רמילוי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שניב</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.12 <small>ליח׳</small></div>
+          <div class="shelf">₪5.90 · 50 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290103703509" data-name="מפיות דו שכבתיות 50יח רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קוויק מגבונים שיש לב<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290121603508" data-key="7290121603508" data-name="קוויק מגבונים שיש לב" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>DPL</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪12.90</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.13 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪8.00</s> ₪6.45 · 50 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121603508" data-name="קוויק מגבונים שיש לב" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קוויק מגבונים שיש שח<button type="button" class="unsold" data-sold="20261006" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290121603553" data-key="7290121603553" data-name="קוויק מגבונים שיש שח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>DPL</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪12.90</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.13 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪8.00</s> ₪6.45 · 50 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121603553" data-name="קוויק מגבונים שיש שח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">ממחטות כיס טאצ`<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290103702212" data-key="7290103702212" data-name="ממחטות כיס טאצ`" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.79 <small>ליח׳</small></div>
+          <div class="shelf">₪7.90 · 10 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290103702212" data-name="ממחטות כיס טאצ`" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">ממחטות כיס מנטול טאצ`<button type="button" class="unsold" data-sold="20260902" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290103702311" data-key="7290103702311" data-name="ממחטות כיס מנטול טאצ`" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.79 <small>ליח׳</small></div>
+          <div class="shelf">₪7.90 · 10 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290103702311" data-name="ממחטות כיס מנטול טאצ`" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מגבת נייר בגליל אורך לפי צורך (8 גלילים)<button type="button" class="unsold" data-sold="20260929" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290111348044" data-key="7290111348044" data-name="מגבת נייר בגליל אורך לפי צורך (8 גלילים)" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-0">ויקטורי ₪17.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪2.11 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪16.90 · 8 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111348044" data-name="מגבת נייר בגליל אורך לפי צורך (8 גלילים)" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">ממחטות נייר<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290103746001" data-key="7290103746001" data-name="ממחטות נייר" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪2.38 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪15.90</s> ₪11.90 · 5 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290103746001" data-name="ממחטות נייר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">ממחטות חמישייה עדן<button type="button" class="unsold" data-sold="20260712" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290103702649" data-key="7290103702649" data-name="ממחטות חמישייה עדן" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪2.58 <small>ליח׳</small></div>
+          <div class="shelf">₪12.90 · 5 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290103702649" data-name="ממחטות חמישייה עדן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מגבונים לחים חמישייה 72 יח טייגר<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290011969158" data-key="7290011969158" data-name="מגבונים לחים חמישייה 72 יח טייגר" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪2.78 <small>ליח׳</small></div>
+          <div class="shelf">₪13.90 · 5 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011969158" data-name="מגבונים לחים חמישייה 72 יח טייגר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מגבונים לחים ללא בישום פרש וואנס 4 * 64 יחידות<button type="button" class="unsold" data-sold="20261006" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290016321661" data-key="7290016321661" data-name="מגבונים לחים ללא בישום פרש וואנס 4 * 64 יחידות" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>די.פי. אל תעשיות מוצרים חד פעמים בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪28</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪14.00 (2 ב־₪28)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪3.50 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪14.00 · 4 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016321661" data-name="מגבונים לחים ללא בישום פרש וואנס 4 * 64 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מפית מובלטת לבן (15<button type="button" class="unsold" data-sold="20260910" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290113471146" data-key="7290113471146" data-name="מפית מובלטת לבן (15" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪3.90 <small>ליח׳</small></div>
+          <div class="shelf">₪3.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290113471146" data-name="מפית מובלטת לבן (15" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מפיות 33*33 ס&#34;מ מובל<button type="button" class="unsold" data-sold="20261003" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290120125445" data-key="7290120125445" data-name="מפיות 33*33 ס&#34;מ מובל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 10.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪3.90 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪7.90</s> ₪3.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290120125445" data-name="מפיות 33*33 ס&#34;מ מובל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מפית מובלטת כסף (15<button type="button" class="unsold" data-sold="20260901" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290113471160" data-key="7290113471160" data-name="מפית מובלטת כסף (15" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪3.90 <small>ליח׳</small></div>
+          <div class="shelf">₪3.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290113471160" data-name="מפית מובלטת כסף (15" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מפיות שולחן מעוטרות 20יח<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="6920190014417" data-key="6920190014417" data-name="מפיות שולחן מעוטרות 20יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪3.90 <small>ליח׳</small></div>
+          <div class="shelf">₪3.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="6920190014417" data-name="מפיות שולחן מעוטרות 20יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מפיות נייר רמי לוי 100 יח<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290015835954" data-key="7290015835954" data-name="מפיות נייר רמי לוי 100 יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רמי לוי</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12</span> בקניית 3 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪4.00 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪4.90</s> ₪4.00 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015835954" data-name="מפיות נייר רמי לוי 100 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מארז טישו אישי טום ו<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290120124684" data-key="7290120124684" data-name="מארז טישו אישי טום ו" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪8.90</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪4.45 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪6.90</s> ₪4.45 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290120124684" data-name="מארז טישו אישי טום ו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מארז טישו אישי סמי ה<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290120124691" data-key="7290120124691" data-name="מארז טישו אישי סמי ה" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪8.90</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪4.45 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪6.90</s> ₪4.45 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290120124691" data-name="מארז טישו אישי סמי ה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מפיות נייר 33*33 ס&#34;מ<button type="button" class="unsold" data-sold="20260907" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290122884708" data-key="7290122884708" data-name="מפיות נייר 33*33 ס&#34;מ" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪4.90 <small>ליח׳</small></div>
+          <div class="shelf">₪4.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290122884708" data-name="מפיות נייר 33*33 ס&#34;מ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מפיות נייר 33*33 ס&#34;מ<button type="button" class="unsold" data-sold="20260908" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290122884715" data-key="7290122884715" data-name="מפיות נייר 33*33 ס&#34;מ" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪4.90 <small>ליח׳</small></div>
+          <div class="shelf">₪4.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290122884715" data-name="מפיות נייר 33*33 ס&#34;מ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מפיות נייר 33*33 ס&#34;מ ושמחת בחגך ארבעת המינים (20 יח&#39;) סוכות<button type="button" class="unsold" data-sold="20261001" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290122884753" data-key="7290122884753" data-name="מפיות נייר 33*33 ס&#34;מ ושמחת בחגך ארבעת המינים (20 יח&#39;) סוכות" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪4.90 <small>ליח׳</small></div>
+          <div class="shelf">₪4.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290122884753" data-name="מפיות נייר 33*33 ס&#34;מ ושמחת בחגך ארבעת המינים (20 יח&#39;) סוכות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מפיות 33*33 ס&#34;מ פרחי לבנדר סגול-אפור (20 יח&#39;) 25336<button type="button" class="unsold" data-sold="20260803" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290120125452" data-key="7290120125452" data-name="מפיות 33*33 ס&#34;מ פרחי לבנדר סגול-אפור (20 יח&#39;) 25336" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪4.90 <small>ליח׳</small></div>
+          <div class="shelf">₪4.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290120125452" data-name="מפיות 33*33 ס&#34;מ פרחי לבנדר סגול-אפור (20 יח&#39;) 25336" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מפיות 33*33 ס&#34;מ לבן<button type="button" class="unsold" data-sold="20260818" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290120125469" data-key="7290120125469" data-name="מפיות 33*33 ס&#34;מ לבן" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪4.90 <small>ליח׳</small></div>
+          <div class="shelf">₪4.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290120125469" data-name="מפיות 33*33 ס&#34;מ לבן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מפיות 33*33 ס&#34;מ לבן-<button type="button" class="unsold" data-sold="20260818" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290120125476" data-key="7290120125476" data-name="מפיות 33*33 ס&#34;מ לבן-" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪4.90 <small>ליח׳</small></div>
+          <div class="shelf">₪4.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290120125476" data-name="מפיות 33*33 ס&#34;מ לבן-" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מפיות 33*33 ס&#34;מ גיאומטרי כסף-לבן (20 יח&#39;) 25344<button type="button" class="unsold" data-sold="20260820" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290120125490" data-key="7290120125490" data-name="מפיות 33*33 ס&#34;מ גיאומטרי כסף-לבן (20 יח&#39;) 25344" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪4.90 <small>ליח׳</small></div>
+          <div class="shelf">₪4.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290120125490" data-name="מפיות 33*33 ס&#34;מ גיאומטרי כסף-לבן (20 יח&#39;) 25344" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מפיות 33*33 ס&#34;מ גיאו<button type="button" class="unsold" data-sold="20260923" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290120125506" data-key="7290120125506" data-name="מפיות 33*33 ס&#34;מ גיאו" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪4.90 <small>ליח׳</small></div>
+          <div class="shelf">₪4.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290120125506" data-name="מפיות 33*33 ס&#34;מ גיאו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מפיות 33*33 ס&#34;מ שושנ<button type="button" class="unsold" data-sold="20260816" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290120125643" data-key="7290120125643" data-name="מפיות 33*33 ס&#34;מ שושנ" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪4.90 <small>ליח׳</small></div>
+          <div class="shelf">₪4.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290120125643" data-name="מפיות 33*33 ס&#34;מ שושנ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מפיות 33*33 ס&#34;מ עיטו<button type="button" class="unsold" data-sold="20260720" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290120125698" data-key="7290120125698" data-name="מפיות 33*33 ס&#34;מ עיטו" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪4.90 <small>ליח׳</small></div>
+          <div class="shelf">₪4.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290120125698" data-name="מפיות 33*33 ס&#34;מ עיטו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מגבוני ניקיון שלישיי<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290017197678" data-key="7290017197678" data-name="מגבוני ניקיון שלישיי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪4.97 <small>ליח׳</small></div>
+          <div class="shelf">₪14.90 · 3 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017197678" data-name="מגבוני ניקיון שלישיי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מארז 5 חב&#39; טישו (5*1<button type="button" class="unsold" data-sold="20260826" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290121045438" data-key="7290121045438" data-name="מארז 5 חב&#39; טישו (5*1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪5.90 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪5.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121045438" data-name="מארז 5 חב&#39; טישו (5*1" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ממחטות נייר דו שכבתי<button type="button" class="unsold" data-sold="20260804" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7296014048203" data-key="7296014048203" data-name="ממחטות נייר דו שכבתי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪5.90 <small>ליח׳</small></div>
+          <div class="shelf">₪5.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296014048203" data-name="ממחטות נייר דו שכבתי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מארז 5 חב&#39; טישו (5*100 יח&#39;)<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290121042833" data-key="7290121042833" data-name="מארז 5 חב&#39; טישו (5*100 יח&#39;)" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪5.90 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪5.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121042833" data-name="מארז 5 חב&#39; טישו (5*100 יח&#39;)" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ממחטות כיס רמילוי<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290016733020" data-key="7290016733020" data-name="ממחטות כיס רמילוי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪6.80 <small>ליח׳</small></div>
+          <div class="shelf">₪6.80 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016733020" data-name="ממחטות כיס רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מגבונים לחים בלוקס 1<button type="button" class="unsold" data-sold="20260722" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="8692730512780" data-key="8692730512780" data-name="מגבונים לחים בלוקס 1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רנקסאן</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪6.90 <small>ליח׳</small></div>
+          <div class="shelf">₪6.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8692730512780" data-name="מגבונים לחים בלוקס 1" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מפיות עבות וחזקות 150יח<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290103702878" data-key="7290103702878" data-name="מפיות עבות וחזקות 150יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪6.90 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪7.80</s> ₪6.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290103702878" data-name="מפיות עבות וחזקות 150יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מפיות נייר 33*33 ס&#34;מ<button type="button" class="unsold" data-sold="20260915" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290118665038" data-key="7290118665038" data-name="מפיות נייר 33*33 ס&#34;מ" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪7.90 <small>ליח׳</small></div>
+          <div class="shelf">₪7.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118665038" data-name="מפיות נייר 33*33 ס&#34;מ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מפיות נייר אמיליה 40*40 ס&#34;מ (50יח) - לבן<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290121043731" data-key="7290121043731" data-name="מפיות נייר אמיליה 40*40 ס&#34;מ (50יח) - לבן" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪8.90 <small>ליח׳</small></div>
+          <div class="shelf">₪8.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121043731" data-name="מפיות נייר אמיליה 40*40 ס&#34;מ (50יח) - לבן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ממחטות אף דו שכבתיות נשלפות אחת אחת, 100 יח&#39; במארז<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290108353099" data-key="7290108353099" data-name="ממחטות אף דו שכבתיות נשלפות אחת אחת, 100 יח&#39; במארז" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>איימי פייפר</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪9.90 (מבצע)</span><span class="other st-0">ויקטורי ₪10.00 (2 ב־₪20)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.90 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪12.90</s> ₪9.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108353099" data-name="ממחטות אף דו שכבתיות נשלפות אחת אחת, 100 יח&#39; במארז" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מגבונים לחים לרענון<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290019170549" data-key="7290019170549" data-name="מגבונים לחים לרענון" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90 <small>ליח׳</small></div>
+          <div class="shelf">₪9.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019170549" data-name="מגבונים לחים לרענון" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קלינקס לושן 3 שכבות<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="" data-key="7290058140886:36000516876" data-name="קלינקס לושן 3 שכבות" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>חוגלה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90 <small>ליח׳</small></div>
+          <div class="shelf">₪9.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058140886:36000516876" data-name="קלינקס לושן 3 שכבות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קלינקס טישו ממחטות אוריג<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="3034250007813" data-key="3034250007813" data-name="קלינקס טישו ממחטות אוריג" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪12.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.00 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪12.90</s> ₪10.00 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="3034250007813" data-name="קלינקס טישו ממחטות אוריג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ממחטות 4 שכבות 110יח<button type="button" class="unsold" data-sold="20260827" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290020320155" data-key="7290020320155" data-name="ממחטות 4 שכבות 110יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.00 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪10.00 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020320155" data-name="ממחטות 4 שכבות 110יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">זוג מגבות מטבח 100%<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290121045322" data-key="7290121045322" data-name="זוג מגבות מטבח 100%" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪12.90 <small>ליח׳</small></div>
+          <div class="shelf">₪12.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121045322" data-name="זוג מגבות מטבח 100%" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">זוג מגבות מטבח 100%<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290121045339" data-key="7290121045339" data-name="זוג מגבות מטבח 100%" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪12.90 <small>ליח׳</small></div>
+          <div class="shelf">₪12.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121045339" data-name="זוג מגבות מטבח 100%" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ממחטות מארז 5*100 יח רמי לוי<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290015835978" data-key="7290015835978" data-name="ממחטות מארז 5*100 יח רמי לוי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רמי לוי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪12.90 <small>ליח׳</small></div>
+          <div class="shelf">₪12.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015835978" data-name="ממחטות מארז 5*100 יח רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מגבוני טישו צבעוני סופט מארז 20X5יח&#39;<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290005428852" data-key="7290005428852" data-name="מגבוני טישו צבעוני סופט מארז 20X5יח&#39;" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪14.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪13.80 <small>ליח׳</small></div>
+          <div class="shelf">₪13.80 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290005428852" data-name="מגבוני טישו צבעוני סופט מארז 20X5יח&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מארז 5 חב&#39; טישו דו-שכבתי במגע רך (5*150 יח&#39;)<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290118661924" data-key="7290118661924" data-name="מארז 5 חב&#39; טישו דו-שכבתי במגע רך (5*150 יח&#39;)" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪14.90 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪17.90</s> ₪14.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118661924" data-name="מארז 5 חב&#39; טישו דו-שכבתי במגע רך (5*150 יח&#39;)" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קלינקס לושן 3שכבות<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="" data-key="7290058140886:36000516890" data-name="קלינקס לושן 3שכבות" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>חוגלה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪15.00 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪16.90</s> ₪15.00 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058140886:36000516890" data-name="קלינקס לושן 3שכבות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מגבת נייר 2 גלילי EXTRA<button type="button" class="unsold" data-sold="20260924" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290111346989" data-key="7290111346989" data-name="מגבת נייר 2 גלילי EXTRA" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪17.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪16.90 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪22.90</s> ₪16.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111346989" data-name="מגבת נייר 2 גלילי EXTRA" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ניקול מגבת נייר מגה 6 גלילים<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290111347559" data-key="7290111347559" data-name="ניקול מגבת נייר מגה 6 גלילים" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קימברלי-קלארק</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪16.90 (מבצע)</span><span class="other st-0">ויקטורי ₪17.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪16.90 <small>ליח׳</small></div>
+          <div class="shelf">₪16.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111347559" data-name="ניקול מגבת נייר מגה 6 גלילים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גליל נייר מגבת ג&#39;מבו<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290121044202" data-key="7290121044202" data-name="גליל נייר מגבת ג&#39;מבו" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪17.90 <small>ליח׳</small></div>
+          <div class="shelf">₪17.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121044202" data-name="גליל נייר מגבת ג&#39;מבו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גליל מגבות נייר ג&#39;מבו 3 שכבות - חגיגית<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290120125421" data-key="7290120125421" data-name="גליל מגבות נייר ג&#39;מבו 3 שכבות - חגיגית" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪17.90 <small>ליח׳</small></div>
+          <div class="shelf">₪17.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290120125421" data-name="גליל מגבות נייר ג&#39;מבו 3 שכבות - חגיגית" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">נייר מגבת תלת שכבתית 3 יח&#39; TNX<button type="button" class="unsold" data-sold="20261002" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290103704957" data-key="7290103704957" data-name="נייר מגבת תלת שכבתית 3 יח&#39; TNX" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>---</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪18.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪18.90 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪18.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290103704957" data-name="נייר מגבת תלת שכבתית 3 יח&#39; TNX" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ממחטות אף דו שכבתיות רמילוי<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="8698996006483" data-key="8698996006483" data-name="ממחטות אף דו שכבתיות רמילוי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪18.90 <small>ליח׳</small></div>
+          <div class="shelf">₪18.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8698996006483" data-name="ממחטות אף דו שכבתיות רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גליל נייר מגבת תעשייתי דו שכבתי 1000 יח רמי לוי<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290123640181" data-key="7290123640181" data-name="גליל נייר מגבת תעשייתי דו שכבתי 1000 יח רמי לוי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪34.90 <small>ליח׳</small></div>
+          <div class="shelf">₪34.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290123640181" data-name="גליל נייר מגבת תעשייתי דו שכבתי 1000 יח רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+      
+      <li class="divider">ללא מחיר לק״ג (גודל לא ידוע)</li>
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מגבונים לחים טייגר 72 יח<button type="button" class="unsold" data-sold="20260911" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290011969141" data-key="7290011969141" data-name="מגבונים לחים טייגר 72 יח" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">4 ב־₪10.90</span> בקניית 4 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪2.73</div>
+          <div class="shelf"><s>₪4.40</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011969141" data-name="מגבונים לחים טייגר 72 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מגבונים לחים 72 יח<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290017969534" data-key="7290017969534" data-name="מגבונים לחים 72 יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪2.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017969534" data-name="מגבונים לחים 72 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מפיות מודפס 20 יח&#39; ר.שמאי כשל&#39;&#39;פ עד&#39;&#39;ח<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290018608685" data-key="7290018608685" data-name="מפיות מודפס 20 יח&#39; ר.שמאי כשל&#39;&#39;פ עד&#39;&#39;ח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪10</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪3.33</div>
+          <div class="shelf"><s>₪5.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018608685" data-name="מפיות מודפס 20 יח&#39; ר.שמאי כשל&#39;&#39;פ עד&#39;&#39;ח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מפיות 30*30 - ארוז 150<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="761742026061" data-key="761742026061" data-name="מפיות 30*30 - ארוז 150" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪10</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪5.00</div>
+          <div class="shelf"><s>₪7.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="761742026061" data-name="מפיות 30*30 - ארוז 150" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מפות שמיניות עבה כתום ר. שמאי כשל&#39;&#39;פ עד&#39;&#39;ח<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290011431853" data-key="7290011431853" data-name="מפות שמיניות עבה כתום ר. שמאי כשל&#39;&#39;פ עד&#39;&#39;ח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪10.90</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪5.45</div>
+          <div class="shelf"><s>₪6.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011431853" data-name="מפות שמיניות עבה כתום ר. שמאי כשל&#39;&#39;פ עד&#39;&#39;ח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מפות שישיות עבה כתום ר. שמאי כשל&#39;&#39;פ עד&#39;&#39;ח<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290011431860" data-key="7290011431860" data-name="מפות שישיות עבה כתום ר. שמאי כשל&#39;&#39;פ עד&#39;&#39;ח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪10.90</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪5.45</div>
+          <div class="shelf"><s>₪6.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011431860" data-name="מפות שישיות עבה כתום ר. שמאי כשל&#39;&#39;פ עד&#39;&#39;ח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מפיות  טאצ&#39; 100<button type="button" class="unsold" data-sold="20260924" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290008792264" data-key="7290008792264" data-name="מפיות  טאצ&#39; 100" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שניב תעשיות נייר בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪5.50</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008792264" data-name="מפיות  טאצ&#39; 100" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">נייר טישו חמישיה נטו חיסכון<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290117038857" data-key="7290117038857" data-name="נייר טישו חמישיה נטו חיסכון" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪12</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪6.00</div>
+          <div class="shelf"><s>₪9.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290117038857" data-name="נייר טישו חמישיה נטו חיסכון" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">הנמל ממחטות טישו משי 5*100 י<button type="button" class="unsold" data-sold="20260924" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="835811004431" data-key="835811004431" data-name="הנמל ממחטות טישו משי 5*100 י" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪20</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪6.67</div>
+          <div class="shelf"><s>₪9.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="835811004431" data-name="הנמל ממחטות טישו משי 5*100 י" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">פרימיום טישו מארז 5*100יח<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290011431709" data-key="7290011431709" data-name="פרימיום טישו מארז 5*100יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪20</span> בקניית 3 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪6.67</div>
+          <div class="shelf"><s>₪9.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011431709" data-name="פרימיום טישו מארז 5*100יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מגבות רמי לוי 6 יח<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290016272802" data-key="7290016272802" data-name="מגבות רמי לוי 6 יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שניב</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 16.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪6.90</div>
+          <div class="shelf"><s>₪11.80</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016272802" data-name="מגבות רמי לוי 6 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">קמיל בלו מגבוני שבת 100% פוליאסטר 40 יח<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290017917405" data-key="7290017917405" data-name="קמיל בלו מגבוני שבת 100% פוליאסטר 40 יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪15</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪7.50</div>
+          <div class="shelf"><s>₪9.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017917405" data-name="קמיל בלו מגבוני שבת 100% פוליאסטר 40 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מארז 3 מגבות מטבח 33/66 ס&#34;מ<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7297623234070" data-key="7297623234070" data-name="מארז 3 מגבות מטבח 33/66 ס&#34;מ" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪7.90</div>
+          <div class="shelf"><s>₪14.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="7297623234070" data-name="מארז 3 מגבות מטבח 33/66 ס&#34;מ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מגבוני נייר טואלט לחים שלישייה ויקטורי<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290019105893" data-key="7290019105893" data-name="מגבוני נייר טואלט לחים שלישייה ויקטורי" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪16</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪8.00</div>
+          <div class="shelf"><s>₪9.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019105893" data-name="מגבוני נייר טואלט לחים שלישייה ויקטורי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מפיות אירוח חד שכבתיות, 100 יחידות<button type="button" class="unsold" data-sold="20260908" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290005428845" data-key="7290005428845" data-name="מפיות אירוח חד שכבתיות, 100 יחידות" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>חי מוצרי נייר בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290005428845" data-name="מפיות אירוח חד שכבתיות, 100 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מפיות טאצ 150 יח&#39;<button type="button" class="unsold" data-sold="20260915" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290103702779" data-key="7290103702779" data-name="מפיות טאצ 150 יח&#39;" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שניב תעשיות נייר</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290103702779" data-name="מפיות טאצ 150 יח&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מפיות אירוח חד שכבתיות<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290108350180" data-key="7290108350180" data-name="מפיות אירוח חד שכבתיות" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>חי מוצרי נייר בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108350180" data-name="מפיות אירוח חד שכבתיות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">טישו שמאי<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290011431723" data-key="7290011431723" data-name="טישו שמאי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011431723" data-name="טישו שמאי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קלינקס טישו לושן קוביה<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="" data-key="7290696200003:36000516876" data-name="קלינקס טישו לושן קוביה" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קימברלי קלארק ארהב</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.00</div>
+          <div class="shelf"><s>₪13.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:36000516876" data-name="קלינקס טישו לושן קוביה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מגבות נייר ניקול 6 יחידות<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290000188355" data-key="7290000188355" data-name="מגבות נייר ניקול 6 יחידות" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קימברלי-קלארק</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪10.90</span><span class="other st-0">ויקטורי ₪12.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.00</div>
+          <div class="shelf"><s>₪10.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000188355" data-name="מגבות נייר ניקול 6 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מגבת מטבח 6 כדור פורח<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290103704650" data-key="7290103704650" data-name="מגבת מטבח 6 כדור פורח" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שניב תעשיות נייר בע\&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 31.10</div>
+        <div class="club">מחיר מועדון ויקטורי: ₪5.90</div>
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.00</div>
+          <div class="shelf"><s>₪11.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290103704650" data-name="מגבת מטבח 6 כדור פורח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מגבות נייר שישייה<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290103704155" data-key="7290103704155" data-name="מגבות נייר שישייה" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שניב תעשיות נייר בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.90</div>
+          <div class="shelf"><s>₪13.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290103704155" data-name="מגבות נייר שישייה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">נייר חתוך ר.שמאי<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290011431716" data-key="7290011431716" data-name="נייר חתוך ר.שמאי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011431716" data-name="נייר חתוך ר.שמאי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מפות שמיניות עבה במיוחד קריסטלי כחול ר. שמאי כשל&#39;&#39;פ עד&#39;&#39;ח<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290011431815" data-key="7290011431815" data-name="מפות שמיניות עבה במיוחד קריסטלי כחול ר. שמאי כשל&#39;&#39;פ עד&#39;&#39;ח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011431815" data-name="מפות שמיניות עבה במיוחד קריסטלי כחול ר. שמאי כשל&#39;&#39;פ עד&#39;&#39;ח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מפות שישיות עבה במיוחד קריסטלי כחול ר. שמאי כשל&#39;&#39;פ עד&#39;&#39;ח<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290011431822" data-key="7290011431822" data-name="מפות שישיות עבה במיוחד קריסטלי כחול ר. שמאי כשל&#39;&#39;פ עד&#39;&#39;ח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011431822" data-name="מפות שישיות עבה במיוחד קריסטלי כחול ר. שמאי כשל&#39;&#39;פ עד&#39;&#39;ח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מגבוני נייר טואלט לחים שלישייה<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290016898095" data-key="7290016898095" data-name="מגבוני נייר טואלט לחים שלישייה" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016898095" data-name="מגבוני נייר טואלט לחים שלישייה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מפיות מוטבעות 34 יח<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290020130990" data-key="7290020130990" data-name="מפיות מוטבעות 34 יח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪11.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020130990" data-name="מפיות מוטבעות 34 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מפיות נייר תלת  שכבתיות 40 יחידות &#34;אלפיין&#34;<button type="button" class="unsold" data-sold="20260928" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="748322707473" data-key="748322707473" data-name="מפיות נייר תלת  שכבתיות 40 יחידות &#34;אלפיין&#34;" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪12.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="748322707473" data-name="מפיות נייר תלת  שכבתיות 40 יחידות &#34;אלפיין&#34;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מגבוני האגיס שלישייה ללא בישום<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290111346125" data-key="7290111346125" data-name="מגבוני האגיס שלישייה ללא בישום" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪26</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪13.00</div>
+          <div class="shelf"><s>₪15.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111346125" data-name="מגבוני האגיס שלישייה ללא בישום" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מגבוני האגיס שלישייה סטיב קר ללא בישום<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290111346132" data-key="7290111346132" data-name="מגבוני האגיס שלישייה סטיב קר ללא בישום" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪26</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪13.00</div>
+          <div class="shelf"><s>₪15.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111346132" data-name="מגבוני האגיס שלישייה סטיב קר ללא בישום" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">קלינקס לושן שלש שכבות 75 דף<button type="button" class="unsold" data-sold="20260920" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="" data-key="7290058156016:36000516876" data-name="קלינקס לושן שלש שכבות 75 דף" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪13.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058156016:36000516876" data-name="קלינקס לושן שלש שכבות 75 דף" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גליל נייר מגבת מודפס איכותי למטבח רמי לוי<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290113479708" data-key="7290113479708" data-name="גליל נייר מגבת מודפס איכותי למטבח רמי לוי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290113479708" data-name="גליל נייר מגבת מודפס איכותי למטבח רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מפות 45 מטר עבה כתום ר. שמאי כשל&#39;&#39;פ עד&#39;&#39;ח<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290011431846" data-key="7290011431846" data-name="מפות 45 מטר עבה כתום ר. שמאי כשל&#39;&#39;פ עד&#39;&#39;ח" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪14.90</div>
+          <div class="shelf"><s>₪18.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011431846" data-name="מפות 45 מטר עבה כתום ר. שמאי כשל&#39;&#39;פ עד&#39;&#39;ח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מגבות הפלא מארז שמינייה<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290004731816" data-key="7290004731816" data-name="מגבות הפלא מארז שמינייה" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪15.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004731816" data-name="מגבות הפלא מארז שמינייה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מגבות נייר רמי לוי 8<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290015835930" data-key="7290015835930" data-name="מגבות נייר רמי לוי 8" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רמי לוי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪15.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015835930" data-name="מגבות נייר רמי לוי 8" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מגבות נייר 9ב1 רמילוי<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="8698996006490" data-key="8698996006490" data-name="מגבות נייר 9ב1 רמילוי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪16.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="8698996006490" data-name="מגבות נייר 9ב1 רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מגבונים לחים בניחוח עדין, 4 יחידות במארז<button type="button" class="unsold" data-sold="20260909" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290104963001" data-key="7290104963001" data-name="מגבונים לחים בניחוח עדין, 4 יחידות במארז" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מיוצר עי טרופיקל דגיל תעשיות קוסמטיקה בעמ. משווק ע</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪17.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290104963001" data-name="מגבונים לחים בניחוח עדין, 4 יחידות במארז" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מגבות נייר כפול 6 יח רמילוי<button type="button" class="unsold" data-sold="20261006" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290103702533" data-key="7290103702533" data-name="מגבות נייר כפול 6 יח רמילוי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שניב</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪17.90</div>
+          <div class="shelf"><s>₪21.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290103702533" data-name="מגבות נייר כפול 6 יח רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מגבות נייר שמינייה<button type="button" class="unsold" data-sold="20260823" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290103704179" data-key="7290103704179" data-name="מגבות נייר שמינייה" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שניב תעשיות נייר בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪18.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290103704179" data-name="מגבות נייר שמינייה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מגבונים לניקוי כללי ארומטי, 150 יחידות<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290020228475" data-key="7290020228475" data-name="מגבונים לניקוי כללי ארומטי, 150 יחידות" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪19.90</div>
+          <div class="shelf"><s>₪23.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020228475" data-name="מגבונים לניקוי כללי ארומטי, 150 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מגבות נייר כפול שישייה<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290103704186" data-key="7290103704186" data-name="מגבות נייר כפול שישייה" data-first="v" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שניב תעשיות נייר בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪20.90</div>
+          <div class="shelf"><s>₪24.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290103704186" data-name="מגבות נייר כפול שישייה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מגבות הפלא בגליל כפול, 6 גלילים במארז<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290108352900" data-key="7290108352900" data-name="מגבות הפלא בגליל כפול, 6 גלילים במארז" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-4">נטו חיסכון ₪24.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.90</div>
+          <div class="shelf"><s>₪26.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108352900" data-name="מגבות הפלא בגליל כפול, 6 גלילים במארז" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מגבות הפלא פרימיום בעלות 4 שכבות עבות במיוחד, 6 גל<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290108353600" data-key="7290108353600" data-name="מגבות הפלא פרימיום בעלות 4 שכבות עבות במיוחד, 6 גל" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-4">נטו חיסכון ₪24.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.90</div>
+          <div class="shelf"><s>₪26.90</s> </div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108353600" data-name="מגבות הפלא פרימיום בעלות 4 שכבות עבות במיוחד, 6 גל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מגבונים לחים לשבת בליס, 4 יחידות<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="633710238588" data-key="633710238588" data-name="מגבונים לחים לשבת בליס, 4 יחידות" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ו.נ.</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪22.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="633710238588" data-name="מגבונים לחים לשבת בליס, 4 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מגבוני טואלט לחים נשטפים לשבת שלישיה בליס<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="748322707404" data-key="748322707404" data-name="מגבוני טואלט לחים נשטפים לשבת שלישיה בליס" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪22.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="748322707404" data-name="מגבוני טואלט לחים נשטפים לשבת שלישיה בליס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מגבות הפלא בגליל ארוך פי 3, 4 גלילים במארז<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290108359190" data-key="7290108359190" data-name="מגבות הפלא בגליל ארוך פי 3, 4 גלילים במארז" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנו מפעלי ברונוס בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪25.50</span><span class="other st-0">ויקטורי ₪25.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪24.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108359190" data-name="מגבות הפלא בגליל ארוך פי 3, 4 גלילים במארז" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מגבת גוף 68/128 ס&#34;מ- 40 יחידות בקרטון מיקס צבעים<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7297623232496" data-key="7297623232496" data-name="מגבת גוף 68/128 ס&#34;מ- 40 יחידות בקרטון מיקס צבעים" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪24.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7297623232496" data-name="מגבת גוף 68/128 ס&#34;מ- 40 יחידות בקרטון מיקס צבעים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מפות 45 מטר עבה מאוד כחול קריסטלי ר. שמאי<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290011431808" data-key="7290011431808" data-name="מפות 45 מטר עבה מאוד כחול קריסטלי ר. שמאי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪29.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011431808" data-name="מפות 45 מטר עבה מאוד כחול קריסטלי ר. שמאי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מפה 33 מטר רחב במיוחד קריסטלי<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290011431877" data-key="7290011431877" data-name="מפה 33 מטר רחב במיוחד קריסטלי" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪29.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011431877" data-name="מפה 33 מטר רחב במיוחד קריסטלי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+</ol>
+</div>
+
+</main>
+<footer>עודכן 10.10 23:50 · ויקטורי 9.10 22:08 · רמי לוי 9.10 21:00 · אושר עד 9.10 14:05 · אושר עד 9.10 14:05 · נטו חיסכון 9.10 22:14</footer>
+
+
+<nav class="bottom-nav" aria-label="ניווט">
+  <a href="index.html" class="on"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg><span>בית</span></a>
+  <a href="search.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><span>חיפוש</span></a>
+  <a href="scan.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V5a1 1 0 0 1 1-1h2M17 4h2a1 1 0 0 1 1 1v2M20 17v2a1 1 0 0 1-1 1h-2M7 20H5a1 1 0 0 1-1-1v-2"/><path d="M8 8v8M11 8v8M14 8v8M16.5 8v8"/></svg><span>סריקה</span></a>
+  <a href="basket.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h11l2-8H6.2"/><circle cx="9.5" cy="19" r="1.4"/><circle cx="17" cy="19" r="1.4"/></svg><span id="cart-count"></span><span>עגלת קניות</span></a>
+  <a href="spending.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-2-1.4-2 1.4-2-1.4-2 1.4-2-1.4L6 21z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><span>הוצאות</span></a>
+</nav>
+
+<script src="static/basket.js?v=20261010235052"></script>
+<script src="static/catpick.js?v=20261010235052"></script>
+<script src="static/photo.js?v=20261010235052"></script>
+
+<script src="static/render.js?v=20261010235052"></script>
+<script src="static/category.js?v=20261010235052" data-build="20261010235052"></script>
+
+<script>
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+</script>
+</body>
+</html>

@@ -1,0 +1,682 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f7a4d">
+<script>
+// the look this phone chose (settings.html "מראה"), before anything is drawn: html.light / html.dark
+// (none = follow the phone) and html[data-color] (none = green); the browser bar takes the colour too
+(function () {
+  let t = {};
+  try { t = JSON.parse(localStorage.getItem("theme")) || {}; } catch (e) { /* none yet */ }
+  const root = document.documentElement;
+  if (t.mode === "light" || t.mode === "dark") root.classList.add(t.mode);
+  if (t.color) root.dataset.color = t.color;
+  if (t.bar) document.querySelector('meta[name="theme-color"]').content = t.bar;
+})();
+</script>
+<title>הגדרות</title>
+<link rel="manifest" href="static/manifest.webmanifest">
+<link rel="icon" href="static/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="static/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="static/style.css?v=20261010235052">
+<style>.st-0 { --store: #e07000; }.st-1 { --store: #d32f2f; }.st-2 { --store: #1565c0; }.st-3 { --store: #1565c0; }.st-4 { --store: #c99a00; }</style>
+<script src="static/stores.js?v=20261010235052" data-stores="[{&#34;card_cap&#34;: 750, &#34;card_rate&#34;: 0.07, &#34;default&#34;: true, &#34;key&#34;: &#34;victory-038&#34;, &#34;name&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;ramilevy-007&#34;, &#34;name&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-026&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05ea\u05dc\u05e4\u05d9\u05d5\u05ea&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-003&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05d2\u05d1\u05e2\u05ea \u05e9\u05d0\u05d5\u05dc&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;netto-052&#34;, &#34;name&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df \u05e7\u05e8\u05d9\u05d9\u05ea \u05d9\u05e2\u05e8\u05d9\u05dd&#34;, &#34;short&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df&#34;}]"></script>
+<script src="static/avoid.js?v=20261010235052" data-kinds="[&#34;\u05e2\u05d5\u05e3 \u05de\u05e2\u05d5\u05d1\u05d3&#34;, &#34;\u05d1\u05e9\u05e8 \u05de\u05e2\u05d5\u05d1\u05d3&#34;]"></script>
+<script>
+// No long-press menu on links, pictures or text (the user: the home page's tiles opened Chrome's "open in new tab /
+// copy link" menu; CSS can't stop that on Android). Typing fields and the ⓘ sheet's barcode keep theirs.
+document.addEventListener("contextmenu", (e) => {
+  if (!e.target.closest("input, textarea, [contenteditable], .photo-barcode")) e.preventDefault();
+});
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <a class="back" href="basket.html" aria-label="חזרה">→</a>
+    <h1>הגדרות</h1>
+    <a class="notes-link" href="notes.html" aria-label="רשימת קניות" title="רשימת קניות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="m8.5 10 1.2 1.2 2.3-2.4M8.5 15.5l1.2 1.2 2.3-2.4M14 10.5h2.5M14 16h2.5"/></svg><span>רשימת קניות</span></a>
+    <a class="settings-link" href="settings.html" aria-label="הגדרות" title="הגדרות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></a>
+  </div>
+  
+  <form class="search" action="search.html" method="get" role="search">
+    <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+    <input type="search" name="q" placeholder="חיפוש מוצר" enterkeyhint="search" aria-label="חיפוש מוצר">
+  </form>
+  
+</header>
+<main>
+
+
+<details class="settings-card" id="look">
+  <summary><span>מראה</span><span class="sum-val" data-sum="look"></span></summary>
+  <section class="settings">
+  
+  <div class="theme-modes" role="group" aria-label="בהיר או כהה">
+    <button type="button" data-mode="">אוטומטי</button><button type="button" data-mode="light">בהיר</button><button type="button" data-mode="dark">כהה</button>
+  </div>
+  <p class="sub">אוטומטי: לפי הגדרת הטלפון.</p>
+  <div class="theme-colors" role="group" aria-label="צבע">
+    
+    <button type="button" data-color="" data-bar="#1f7a4d" style="background: #1f7a4d" aria-label="ירוק" title="ירוק"></button>
+    
+    <button type="button" data-color="blue" data-bar="#1e63c6" style="background: #1e63c6" aria-label="כחול" title="כחול"></button>
+    
+    <button type="button" data-color="teal" data-bar="#0f7c80" style="background: #0f7c80" aria-label="טורקיז" title="טורקיז"></button>
+    
+    <button type="button" data-color="purple" data-bar="#6d3fc4" style="background: #6d3fc4" aria-label="סגול" title="סגול"></button>
+    
+    <button type="button" data-color="pink" data-bar="#c2306e" style="background: #c2306e" aria-label="ורוד" title="ורוד"></button>
+    
+    <button type="button" data-color="orange" data-bar="#c75a12" style="background: #c75a12" aria-label="כתום" title="כתום"></button>
+    
+    <button type="button" data-color="indigo" data-bar="#3f51b5" style="background: #3f51b5" aria-label="אינדיגו" title="אינדיגו"></button>
+    
+    <button type="button" data-color="graphite" data-bar="#37474f" style="background: #37474f" aria-label="אפור" title="אפור"></button>
+    
+  </div>
+  <p class="sub">נשמר רק בטלפון הזה.</p>
+
+  </section>
+</details>
+<details class="settings-card" id="stores">
+  <summary><span>חנויות</span><span class="sum-val" data-sum="stores"></span></summary>
+  <section class="settings">
+  
+  <p class="sub">החנויות שמוצגות במחירון, ברשימה ובהשוואה. נשמר רק בטלפון הזה.</p>
+  <div class="store-choice">
+    
+    <label class="st-0"><input type="checkbox" data-store="victory-038"> <span class="store-tag">ויקטורי</span> ויקטורי מבשרת ציון</label>
+    
+    <label class="st-1"><input type="checkbox" data-store="ramilevy-007"> <span class="store-tag">רמי לוי</span> רמי לוי מבשרת ציון</label>
+    
+    <label class="st-2"><input type="checkbox" data-store="osherad-026"> <span class="store-tag">אושר עד</span> אושר עד תלפיות</label>
+    
+    <label class="st-3"><input type="checkbox" data-store="osherad-003"> <span class="store-tag">אושר עד</span> אושר עד גבעת שאול</label>
+    
+    <label class="st-4"><input type="checkbox" data-store="netto-052"> <span class="store-tag">נטו חיסכון</span> נטו חיסכון קריית יערים</label>
+    
+  </div>
+
+  </section>
+</details>
+<details class="settings-card" id="compare">
+  <summary><span>השוואה בין חנויות</span><span class="sum-val" data-sum="compare"></span></summary>
+  <section class="settings">
+  <p class="sub">מתי להציע פיצול הקנייה לשתי חנויות (בעגלת הקניות): רק כשהוא חוסך לפחות</p>
+  <label class="split-min">₪ <input type="number" id="split-min" inputmode="numeric" min="0" step="5"></label>
+  <p class="sub">וגם לפחות 3% מהסכום בחנות אחת. כשבחנות הזולה חסר פריט מהרשימה, הפיצול מוצע תמיד, בלי קשר לחיסכון.
+    נשמר רק בטלפון הזה; ברירת המחדל 40.</p>
+  </section>
+</details>
+<details class="settings-card" id="ai">
+  <summary><span>סקירות AI למוצרי חשמל</span><span class="sum-val" data-sum="ai"></span></summary>
+  <form class="settings" id="ai-form">
+  <p class="sub">הסקירות נכתבות בחינם על ידי Gemini של Google, לפי הידע שלו (בלי חיפוש ברשת). צריך מפתח פעם אחת, לשני הטלפונים:</p>
+  <ol class="sub">
+    <li>פתחו את <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">aistudio.google.com/apikey</a> והתחברו עם חשבון Google.</li>
+    <li>לחצו Create API key, והעתיקו את המפתח.</li>
+    <li>הדביקו אותו כאן ולחצו שמירה. הוא נשמר במאגר הפרטי של הרשימה, ושני הטלפונים משתמשים בו.</li>
+  </ol>
+  <label>מפתח Gemini
+    <input name="key" type="password" dir="ltr" autocomplete="off" placeholder="AIza… / AQ.…">
+  </label>
+  <div class="actions"><button type="submit">שמירה</button></div>
+  <p class="sub" id="ai-status"></p>
+  </form>
+</details>
+<details class="settings-card" id="serper">
+  <summary><span>חיפוש תמונות (Serper)</span><span class="sum-val" data-sum="serper"></span></summary>
+  <form class="settings" id="serper-form">
+  <p class="sub">המחשב מחפש תמונות למוצרים שאין להם (חשמל, ואושר עד) דרך Serper: 2,500 חיפושים חינם לכל מפתח. מפתח חדש מחפש מיד את כל המוצרים שמחכים (כחצי שעה), ואחר כך מוצרים חדשים בכל בוקר.
+    כשהמפתח נגמר, פותחים מפתח חדש ב־<a href="https://serper.dev/api-keys" target="_blank" rel="noopener">serper.dev</a> ומדביקים אותו כאן.</p>
+  <p class="sub" id="serper-state">טוען…</p>
+  <label>מפתח Serper חדש
+    <input name="key" type="password" dir="ltr" autocomplete="off" placeholder="…">
+  </label>
+  <div class="actions"><button type="submit">שמירה</button></div>
+  <p class="sub" id="serper-status"></p>
+  </form>
+</details>
+<details class="settings-card" id="packs">
+  <summary><span>העדפות מוצרים</span><span class="sum-val" data-sum="packs"></span></summary>
+  <section class="settings">
+  <p class="sub">מה לקנות כמארז: בעגלה פריט כללי מהסוג הזה מושווה לפי המארז (כמו דוריטוס 10 יח׳, שישיית מים), ובבחירת מוצר
+    המארזים ראשונים. ההגדרה לטלפון הזה.</p>
+  <div class="packs-kinds" id="packs-list">
+    <label class="pack-kind"><input type="checkbox" data-group="חטיפים" data-default="1"> חטיפים</label>
+    <label class="pack-kind"><input type="checkbox" data-group="שוקולד"> שוקולד</label>
+    <label class="pack-kind"><input type="checkbox" data-group="מים"> מים</label>
+    <label class="pack-kind"><input type="checkbox" data-group="סבון"> סבון</label>
+  </div>
+  <label class="gone-days">מוצר שלא נמכר יותר מ־<input type="number" id="gone-days" min="1" max="60" step="1" inputmode="numeric"> ימים (בלי שבתות) נחשב שאזל:
+    העגלה לא בוחרת בו, וכשאין בחנות מוצר מתאים שכן נמכר היא כותבת ״לא נמכר״.</label>
+  <label class="gone-days">בשר, עוף ודגים טריים: יותר מ־<input type="number" id="gone-days-fresh" min="1" max="60" step="1" inputmode="numeric"> ימים (בלי שבתות), כי הם מתקלקלים מהר.</label>
+  <p class="sub avoid-sub">מה להסתיר מהמחירון, מהחיפוש ומהמבצעים (מה שכבר ברשימה נשאר, מסומן ״מעובד״):</p>
+  <div class="packs-kinds" id="avoid-list">
+    <label class="pack-kind"><input type="checkbox" data-avoid="עוף מעובד"> עוף מעובד</label>
+    <label class="pack-kind"><input type="checkbox" data-avoid="בשר מעובד"> בשר מעובד</label>
+    
+  </div>
+  </section>
+</details>
+<details class="settings-card" id="groups">
+  <summary><span>פירות, ירקות, פיצוחים וחטיפים</span><span class="sum-val" data-sum="groups"></span></summary>
+  <section class="settings">
+  
+  <p class="sub">מה שמוצע כשכותבים "פירות", "ירקות", "פיצוחים" או "חטיפים" ברשימת הקניות. משותף לשני הטלפונים, דרך סנכרון הרשימה.</p>
+  <div id="groups-edit"></div>
+
+  </section>
+</details>
+<details class="settings-card" id="sync">
+  <summary><span>סנכרון הרשימה והווידג'ט</span><span class="sum-val" data-sum="sync"></span></summary>
+  <form class="settings" id="sync-form">
+  
+  <p class="sub">רשימת הקניות נשמרת במאגר פרטי ב־GitHub, כך ששני הטלפונים רואים אותה. המפתח נשמר רק בטלפון הזה.</p>
+  <label>מאגר
+    <input name="repo" dir="ltr" autocomplete="off" placeholder="kostakhrizman/grocery-list">
+  </label>
+  <label>מפתח גישה (GitHub token)
+    <input name="token" type="password" dir="ltr" autocomplete="off" placeholder="github_pat_…">
+  </label>
+  <div class="actions">
+    <button type="submit">שמירה ובדיקה</button>
+    <button type="button" class="link" id="disconnect">ניתוק</button>
+  </div>
+  <p id="sync-result" class="sub"></p>
+  <p class="sub">הווידג'ט של רשימת הקניות (באפליקציית האנדרואיד) שומר עותק משלו של המפתח. פעם אחת בכל טלפון:
+    <button type="button" class="link" id="connect-widget">חיבור הווידג'ט</button>
+    (או <button type="button" class="link" id="copy-token">העתקת המפתח</button> והדבקה בהגדרת הווידג'ט)</p>
+
+  </form>
+</details>
+<details class="settings-card" id="recent">
+  <summary><span>שינויים אחרונים במחלקות</span><span class="sum-val" data-sum="recent"></span></summary>
+  <section class="settings">
+  <p class="sub">ההחלטות האחרונות מהטלפונים (מוצרים לא בטוחים, ⓘ). "ביטול" מחזיר מוצר למחלקה שהייתה לו קודם.</p>
+  <ul id="recent-list" class="recent-list"><li class="sub">טוען…</li></ul>
+  </section>
+</details>
+<details class="settings-card" id="new-today">
+  <summary><span>נוספו היום</span><span class="sum-val" data-sum="new-today"></span></summary>
+  <section class="settings">
+  <p class="sub">מוצרים שנכנסו היום למחירון וקיבלו מחלקה מה־AI, בטוח או לא. אפשר לעבור עליהם ולתקן.</p>
+  <ul id="new-list" class="recent-list"><li class="sub">טוען…</li></ul>
+  <a class="link" href="review.html?list=new" id="new-link" hidden>לבדיקת המחלקות ←</a>
+  </section>
+</details>
+<details class="settings-card" id="unsure">
+  <summary><span>מוצרים לא בטוחים</span><span class="sum-val" data-sum="unsure"></span></summary>
+  <section class="settings">
+  
+  <p class="sub">מוצרים שה־AI לא היה בטוח לאיזו מחלקה הם שייכים: מחליטים כאן, וזה נשמר כתיקון ידני.</p>
+  <a class="link" href="review.html">להחלטה על המחלקות ←</a>
+
+  </section>
+</details>
+<details class="settings-card" id="blocked-card">
+  <summary><span>סומנו כ״לא מתאים״</span><span class="sum-val" data-sum="blocked-card"></span></summary>
+  <section class="settings">
+  
+  <p class="sub">זוגות מוצרים שלא יוצעו זה במקום זה (בהחלפות ובהשוואה). נשמר רק בטלפון הזה.</p>
+  <div id="blocked"><p class="sub">טוען…</p></div>
+
+  </section>
+</details>
+
+</main>
+<footer>עודכן 10.10 23:50 · ויקטורי 9.10 22:08 · רמי לוי 9.10 21:00 · אושר עד 9.10 14:05 · אושר עד 9.10 14:05 · נטו חיסכון 9.10 22:14</footer>
+
+
+<nav class="bottom-nav" aria-label="ניווט">
+  <a href="index.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg><span>בית</span></a>
+  <a href="search.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><span>חיפוש</span></a>
+  <a href="scan.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V5a1 1 0 0 1 1-1h2M17 4h2a1 1 0 0 1 1 1v2M20 17v2a1 1 0 0 1-1 1h-2M7 20H5a1 1 0 0 1-1-1v-2"/><path d="M8 8v8M11 8v8M14 8v8M16.5 8v8"/></svg><span>סריקה</span></a>
+  <a href="basket.html" class="on"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h11l2-8H6.2"/><circle cx="9.5" cy="19" r="1.4"/><circle cx="17" cy="19" r="1.4"/></svg><span id="cart-count"></span><span>עגלת קניות</span></a>
+  <a href="spending.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-2-1.4-2 1.4-2-1.4-2 1.4-2-1.4L6 21z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><span>הוצאות</span></a>
+</nav>
+
+<script src="static/basket.js?v=20261010235052"></script>
+<script src="static/catpick.js?v=20261010235052"></script>
+<script src="static/photo.js?v=20261010235052"></script>
+
+
+<script>
+// "מראה": saved as localStorage "theme" {mode, color, bar} and applied at once (the script in base.html
+// applies it on every page before it's drawn)
+(function () {
+  const root = document.documentElement, bar = document.querySelector('meta[name="theme-color"]');
+  let t = {};
+  try { t = JSON.parse(localStorage.getItem("theme")) || {}; } catch (e) { /* none yet */ }
+  function apply() {
+    root.classList.remove("light", "dark");
+    if (t.mode) root.classList.add(t.mode);
+    if (t.color) root.dataset.color = t.color; else delete root.dataset.color;
+    bar.content = t.bar || "#1f7a4d";
+    document.querySelectorAll("[data-mode]").forEach((b) => b.classList.toggle("on", b.dataset.mode === (t.mode || "")));
+    document.querySelectorAll(".theme-colors [data-color]").forEach((b) => b.classList.toggle("on", b.dataset.color === (t.color || "")));
+    try { localStorage.setItem("theme", JSON.stringify(t)); } catch (e) { /* private mode: this page only */ }
+  }
+  document.getElementById("look").addEventListener("click", (e) => {
+    const b = e.target.closest("button");
+    if (!b) return;
+    if ("mode" in b.dataset) t.mode = b.dataset.mode;
+    else { t.color = b.dataset.color; t.bar = b.dataset.bar; }
+    apply();
+  });
+  apply();
+})();
+</script>
+<script>
+(function () {
+  const boxes = [...document.querySelectorAll("[data-store]")];
+  const on = window.Stores.choice();
+  boxes.forEach((b) => {
+    b.checked = on[b.dataset.store];
+    b.addEventListener("change", () => {
+      if (!b.checked && !boxes.some((x) => x.checked)) { b.checked = true; return; }  // keep one store on
+      window.Stores.set(b.dataset.store, b.checked);
+    });
+  });
+})();
+</script>
+<script src="static/render.js?v=20261010235052"></script>
+<script data-build="20261010235052" id="blocked-script">
+(function () {
+  const { esc, load } = window.Render;
+  const box = document.getElementById("blocked");
+  const build = document.getElementById("blocked-script").dataset.build;
+  let names = new Map();
+  function draw() {
+    const pairs = window.Basket.blockedList();
+    if (!pairs.length) { box.innerHTML = '<p class="sub">אין.</p>'; return; }
+    const name = (k) => esc(names.get(k) || "מוצר שכבר לא במחירון");
+    box.innerHTML = '<ul class="blocked-list">' + pairs.map(([a, b]) =>
+      `<li><span>${name(a)} ↔ ${name(b)}</span>
+        <button type="button" class="link" data-a="${esc(a)}" data-b="${esc(b)}">החזרה</button></li>`).join("") +
+      '</ul><button type="button" class="link" data-clear-all>ניקוי הכול</button>';
+  }
+  box.addEventListener("click", (e) => {
+    const t = e.target.closest("button");
+    if (!t) return;
+    if ("clearAll" in t.dataset) { if (confirm("להחזיר את כל ההתאמות?")) window.Basket.clearBlocked(); }
+    else window.Basket.unblock(t.dataset.a, t.dataset.b);
+    draw();
+  });
+  load(build).then((d) => { names = new Map(d.items.map((it) => [it.key, it.name])); draw(); })
+    .catch(draw);
+})();
+</script>
+<script>
+(function () {
+  const form = document.getElementById("sync-form"), result = document.getElementById("sync-result");
+  const s = window.Basket.settings();
+  form.repo.value = s.repo || "kostakhrizman/grocery-list";
+  form.token.value = s.token || "";
+  const MESSAGES = {
+    synced: "מחובר. הרשימה מסונכרנת.",
+    saving: "מחובר, שומר…",
+    error: "החיבור נכשל. כדאי לבדוק את שם המאגר ואת המפתח (הרשאת Contents: Read and write).",
+    offline: "אין חיבור לאינטרנט. הרשימה תסונכרן כשיחזור.",
+    unconfigured: "לא מחובר: הרשימה נשמרת רק בטלפון הזה.",
+  };
+  // what GitHub's answer means, for the usual setup mistakes
+  const REASONS = {
+    401: "המפתח לא תקין או שפג תוקפו. כדאי להעתיק אותו שוב במלואו, או ליצור מפתח חדש.",
+    403: "למפתח אין הרשאת כתיבה. בהגדרות המפתח: Contents → Read and write.",
+    404: "המאגר לא נמצא, או שהמפתח לא קיבל גישה אליו. בהגדרות המפתח: Only select repositories → grocery-list, ושם המאגר כאן מדויק.",
+  };
+  const show = () => {
+    const s = window.Basket.status(), code = window.Basket.lastError();
+    const repo = window.Basket.settings().repo;  // a renamed repository is picked up by the sync
+    if (repo && repo !== form.repo.value.trim() && document.activeElement !== form.repo) form.repo.value = repo;
+    const detail = window.Basket.lastDetail();
+    result.textContent = (MESSAGES[s] || "") + (s === "error" && code ? ` (קוד ${code}) ${REASONS[code] || ""}` : "")
+      + (s === "error" && detail ? ` GitHub: "${detail}"` : "");
+  };
+  window.Basket.onChange(show);
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const token = form.token.value.trim();
+    // GitHub keys start with github_pat_ (fine-grained) or ghp_ (classic) and are long;
+    // a token's name or a partial copy is the usual mistake
+    if (token && !/^(github_pat_|ghp_)[A-Za-z0-9_]{30,}$/.test(token)) {
+      result.textContent = token.startsWith("github_pat_") || token.startsWith("ghp_")
+        ? `המפתח נראה קטוע (${token.length} תווים). כדאי להעתיק אותו שוב במלואו עם כפתור ההעתקה ב־GitHub.`
+        : "זה לא נראה כמו מפתח: מפתח מתחיל ב־github_pat_. אולי הודבק שם המפתח במקום הערך שלו?";
+      return;
+    }
+    result.textContent = "בודק…";
+    await window.Basket.saveSettings({ repo: form.repo.value.trim(), token: form.token.value.trim() });
+    show();
+  });
+  // The Android widget keeps its own copy of the key (it can't read Chrome's storage). "חיבור הווידג'ט" hands it
+  // to the app on the phone itself: an Android intent link (the key rides as an intent extra, not a web address,
+  // and nothing goes over the network) opens the widget's setup filled in; the user confirms with שמירה there.
+  document.getElementById("connect-widget").addEventListener("click", () => {
+    const s = window.Basket.settings();
+    if (!s.token) { result.textContent = "אין עדיין מפתח שמור בטלפון הזה: קודם שומרים אותו כאן."; return; }
+    const extra = (k, v) => `S.${k}=${encodeURIComponent(v)};`;
+    // an app too old for this link: back to this page (not the Play Store); the message below says why
+    location.href = "intent://widget#Intent;scheme=mechiron;package=io.github.kostakhrizman.prices;" +
+      extra("repo", s.repo || "") + extra("token", s.token) +
+      extra("browser_fallback_url", location.href.split("#")[0] + "#sync") + "end";
+    result.textContent = "אם הגדרת הווידג'ט לא נפתחה: צריך את אפליקציית האנדרואיד בגרסה 4 ומעלה.";
+  });
+  // or by hand: copied here, pasted there
+  document.getElementById("copy-token").addEventListener("click", async () => {
+    const t = window.Basket.settings().token;
+    if (!t) { result.textContent = "אין עדיין מפתח שמור בטלפון הזה."; return; }
+    try { await navigator.clipboard.writeText(t); result.textContent = "המפתח הועתק. עכשיו פותחים את הגדרת הווידג'ט ומדביקים."; }
+    catch (e) { result.textContent = "לא הצלחתי להעתיק; אפשר להעתיק את המפתח מ־GitHub."; }
+  });
+  document.getElementById("disconnect").addEventListener("click", async () => {
+    form.token.value = "";
+    await window.Basket.saveSettings({ repo: form.repo.value.trim(), token: "" });
+    show();
+  });
+  show();
+})();
+</script>
+<script src="static/receipt-upload.js?v=20261010235052"></script>
+<script>
+// "חיפוש תמונות (Serper)": a new key goes to the private list repository as config/serper-key.json; the PC uses the
+// newest one (grocery/serper.py) and reports config/serper-status.json {state, used, free, key_at, at}.
+(function () {
+  const form = document.getElementById("serper-form"), status = document.getElementById("serper-status");
+  const stateEl = document.getElementById("serper-state");
+  const sum = (t) => { const el = document.querySelector('[data-sum="serper"]'); if (el) el.textContent = t; };
+  const day = (t) => (t ? new Date(t).toLocaleDateString("he-IL") : "");
+  async function get(path) {
+    const G = window.Basket.github;
+    const r = await fetch(G.url(path), { headers: G.headers(), cache: "no-store" });
+    if (!r.ok) return { data: null, sha: null };
+    const j = await r.json();
+    return { data: JSON.parse(G.decode(j.content)), sha: j.sha };
+  }
+  async function show() {
+    if (!window.Basket.configured()) { stateEl.textContent = "קודם צריך לחבר את הרשימה (סנכרון הרשימה והווידג'ט)."; sum(""); return; }
+    try {
+      const [k, st] = await Promise.all([get("config/serper-key.json"), get("config/serper-status.json")]);
+      const keyAt = k.data && k.data.at, s = st.data;
+      if (!keyAt && !s) { stateEl.textContent = "אין מפתח מהטלפון (המחשב משתמש במפתח שלו, אם יש)."; sum(""); return; }
+      if (s && s.key_at === (keyAt || null)) {
+        if (s.state === "empty") { stateEl.textContent = `המפתח נגמר (${day(s.at)}). הדביקו מפתח חדש.`; sum("נגמר"); }
+        else if (s.state === "refused") { stateEl.textContent = "Serper לא קיבל את המפתח. בדקו שהעתקתם אותו שלם."; sum("לא תקין"); }
+        else { stateEl.textContent = `נוצלו כ־${s.used.toLocaleString()} מתוך ${s.free.toLocaleString()} (עודכן ${day(s.at)}).`; sum(`${s.used}/${s.free}`); }
+      } else { stateEl.textContent = `מפתח נשמר ${day(keyAt)}, המחשב יתחיל לחפש תוך דקה.`; sum("חדש"); }
+    } catch (e) { stateEl.textContent = "לא ניתן לבדוק כרגע."; }
+  }
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const key = form.key.value.trim();
+    if (!/^[A-Za-z0-9_.-]{20,200}$/.test(key)) { status.textContent = "זה לא נראה כמו מפתח. העתיקו אותו שוב מהאתר."; return; }
+    if (!window.Basket.configured()) { status.textContent = "קודם צריך לחבר את הרשימה (סנכרון הרשימה והווידג'ט)."; return; }
+    const G = window.Basket.github, path = "config/serper-key.json";
+    status.textContent = "שולח…";
+    try {
+      const { sha } = await get(path);
+      const body = { message: "Serper key", content: G.encode(JSON.stringify({ key, at: new Date().toISOString() })), ...(sha ? { sha } : {}) };
+      const r = await fetch(G.url(path), { method: "PUT", headers: G.headers(), body: JSON.stringify(body) });
+      if (!r.ok) throw new Error(`GitHub ${r.status}`);
+      form.key.value = "";
+      status.textContent = "נשמר. המחשב יתחיל לחפש תמונות תוך דקה; התמונות יופיעו באפליקציה כשהחיפוש יסתיים (כחצי שעה).";
+      show();
+    } catch (err) { status.textContent = "לא נשלח: " + err.message; }
+  });
+  document.getElementById("serper").addEventListener("toggle", (e) => { if (e.target.open) show(); });
+  show();
+})();
+</script>
+<script>
+// "סקירות AI": the Gemini key goes to the private list repository as config/gemini-key.json, where both phones
+// read it for the ⓘ sheet's AI review (photo.js). Not kept in this phone's storage.
+(function () {
+  const form = document.getElementById("ai-form"), status = document.getElementById("ai-status");
+  const sum = (t) => { const el = document.querySelector('[data-sum="ai"]'); if (el) el.textContent = t; };
+  let sent = null;
+  try { sent = localStorage.getItem("aiKeySent"); } catch (e) { /* private mode */ }
+  sum(sent ? `נשמר ${sent}` : "");
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const key = form.key.value.trim();
+    if (!/^[A-Za-z0-9_.-]{20,200}$/.test(key)) { status.textContent = "זה לא נראה כמו מפתח. העתיקו אותו שוב מהאתר."; return; }
+    if (!window.Basket.configured()) { status.textContent = "קודם צריך לחבר את הרשימה (סנכרון הרשימה והווידג'ט)."; return; }
+    const G = window.Basket.github, path = "config/gemini-key.json";
+    status.textContent = "שולח…";
+    try {
+      const old = await fetch(G.url(path), { headers: G.headers(), cache: "no-store" });
+      const sha = old.ok ? (await old.json()).sha : null;
+      const body = { message: "Gemini key for the PC", content: G.encode(JSON.stringify({ key, at: new Date().toISOString() })),
+        ...(sha ? { sha } : {}) };
+      const r = await fetch(G.url(path), { method: "PUT", headers: G.headers(), body: JSON.stringify(body) });
+      if (!r.ok) throw new Error(`GitHub ${r.status}`);
+      form.key.value = "";
+      const d = new Date().toLocaleDateString("he-IL");
+      try { localStorage.setItem("aiKeySent", d); } catch (err) { /* private mode */ }
+      sum(`נשמר ${d}`);
+      status.textContent = "נשמר. אפשר ללחוץ ✨ סקירת AI במוצרי חשמל.";
+    } catch (err) {
+      status.textContent = "לא נשלח: " + err.message;
+    }
+  });
+})();
+</script>
+<script data-build="20261010235052">
+// "שינויים אחרונים במחלקות": data/recent.json (publish.py); "ביטול" writes review/<key>.json {key, undo: true} to the
+// list repository, and the PC (review.apply) puts the product back in its AI department within a minute
+(function () {
+  const build = document.currentScript.dataset.build, el = document.getElementById("recent-list");
+  const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+  const leaf = (p) => (p || "").split(" > ").pop();
+  const when = (t) => { const d = new Date(t); return `${d.getDate()}.${d.getMonth() + 1} ${String(d.getHours()).padStart(2, "0")}:${String(d.getMinutes()).padStart(2, "0")}`; };
+  const undone = new Set();
+  let rows = [];
+  function draw() {
+    const left = rows.filter((r) => !undone.has(r[0]) || true);
+    const s = document.querySelector('[data-sum="recent"]');
+    if (s) s.textContent = rows.length ? `${rows.length} אחרונים` : "אין";
+    el.innerHTML = left.length ? left.map(([key, name, now, was, at]) => {
+      const what = was && was !== now ? `${esc(leaf(was))} ← <b>${esc(leaf(now))}</b>` : `אושר: <b>${esc(leaf(now))}</b>`;
+      return `<li><div><div class="recent-name">${esc(name)}</div><div class="sub">${what} · ${when(at)}</div></div>${
+        undone.has(key) ? '<span class="sub">בוטל · יתעדכן בעוד דקה</span>'
+          : `<button type="button" class="link" data-undo="${esc(key)}">ביטול</button>`}</li>`;
+    }).join("") : '<li class="sub">אין עדיין החלטות מהטלפונים.</li>';
+  }
+  el.addEventListener("click", async (e) => {
+    const b = e.target.closest("[data-undo]");
+    if (!b || !window.Basket.configured()) return;
+    const key = b.dataset.undo, path = `review/${key.replace(/:/g, "_")}.json`;
+    b.disabled = true;
+    try {
+      const { api, put } = window.ReceiptUpload, G = window.Basket.github;
+      const old = await api(path);
+      await put(path, G.encode(JSON.stringify({ key, undo: true, at: new Date().toISOString() })), "Department decision undone", old && old.sha);
+      undone.add(key);
+      try {  // the review page on this phone shows it again
+        const done = JSON.parse(localStorage.getItem("reviewDone")) || {};
+        delete done[key];
+        localStorage.setItem("reviewDone", JSON.stringify(done));
+      } catch (err) { /* private mode */ }
+      draw();
+    } catch (err) {
+      b.disabled = false;
+      alert("לא נשמר: " + err.message);
+    }
+  });
+  fetch(`data/recent.json?v=${build}`).then((r) => (r.ok ? r.json() : [])).then((d) => { rows = d; draw(); })
+    .catch(() => { el.innerHTML = '<li class="sub">לא ניתן לטעון.</li>'; });
+})();
+</script>
+<script>
+// "אזל": the days without a sale after which the cart skips a product (compare.js GONE_DAYS; localStorage goneDays, 3)
+(function () {
+  const input = document.getElementById("gone-days");
+  let v = 3;
+  try { v = Number(localStorage.getItem("goneDays")) || 3; } catch (e) { /* private mode */ }
+  input.value = v;
+  input.addEventListener("change", () => {
+    const n = Math.min(60, Math.max(1, Math.round(Number(input.value) || 3)));
+    input.value = n;
+    try { localStorage.setItem("goneDays", String(n)); } catch (e) { /* private mode */ }
+  });
+  const fresh = document.getElementById("gone-days-fresh");
+  try { fresh.value = Number(localStorage.getItem("goneDaysFresh")) || 1; } catch (e) { fresh.value = 1; }
+  fresh.addEventListener("change", () => {
+    const n = Math.min(60, Math.max(1, Math.round(Number(fresh.value) || 1)));
+    fresh.value = n;
+    try { localStorage.setItem("goneDaysFresh", String(n)); } catch (e) { /* private mode */ }
+  });
+})();
+</script>
+<script>
+// "העדפות מוצרים": four pack ticks (compare.js PACK_GROUPS; localStorage packGroups {name: bool}), then a tick per
+// processed kind to hide (static/avoid.js; localStorage avoidKinds {name: bool}, all off until ticked)
+(function () {
+  const read = () => {
+    try {
+      const own = JSON.parse(localStorage.getItem("packGroups")) || {};
+      if (!("חטיפים" in own) && localStorage.getItem("snackPacks") === "0") own["חטיפים"] = false;
+      return own;
+    } catch (e) { return {}; }
+  };
+  const boxes = [...document.querySelectorAll("#packs-list [data-group]")];
+  const avoid = [...document.querySelectorAll("#avoid-list [data-avoid]")];
+  const sum = () => {
+    const on = boxes.filter((b) => b.checked).map((b) => b.dataset.group);
+    const hid = avoid.filter((b) => b.checked).map((b) => b.dataset.avoid.replace(" מעובד", ""));
+    const el = document.querySelector('[data-sum="packs"]');
+    // "חטיפים, מים · בלי עוף, בשר מעובד"
+    if (el) el.textContent = (on.length ? on.join(", ") : "ללא מארזים") + (hid.length ? ` · בלי ${hid.join(", ")} מעובד` : "");
+  };
+  const hidden = window.Avoid.on();
+  avoid.forEach((b, i) => { b.checked = hidden.has(i + 1); });
+  document.getElementById("avoid-list").addEventListener("change", (e) => {
+    if (!e.target.dataset.avoid) return;
+    window.Avoid.set(e.target.dataset.avoid, e.target.checked);
+    sum();
+  });
+  const own = read();
+  for (const b of boxes) b.checked = b.dataset.group in own ? own[b.dataset.group] : b.dataset.default === "1";
+  sum();
+  document.getElementById("packs-list").addEventListener("change", (e) => {
+    const g = e.target.dataset.group;
+    if (!g) return;
+    const map = read();
+    map[g] = e.target.checked;
+    try { localStorage.setItem("packGroups", JSON.stringify(map)); } catch (err) { /* private mode */ }
+    sum();
+  });
+})();
+</script>
+<script data-build="20261010235052">
+// "נוספו היום": data/new.json (publish.py), the first few here and all of them in review.html?list=new; what was
+// already decided on this phone (localStorage reviewDone, shared with the unsure list) is left out
+(function () {
+  const build = document.currentScript.dataset.build, el = document.getElementById("new-list");
+  const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const SHOW = 8;
+  fetch(`data/new.json?v=${build}`).then((r) => (r.ok ? r.json() : { cats: [], items: [] })).then((d) => {
+    let done = {};
+    try { done = JSON.parse(localStorage.getItem("reviewDone")) || {}; } catch (e) { /* none yet */ }
+    const left = d.items.filter(([key]) => !done[key]), unsure = left.filter((x) => x[5]).length;
+    const sum = document.querySelector('[data-sum="new-today"]');
+    if (sum) sum.textContent = d.items.length ? (left.length ? `${left.length} לבדיקה` : `${d.items.length}, כולם נבדקו`) : "אין";
+    if (!left.length) {
+      el.innerHTML = `<li class="sub">${d.items.length ? "כל המוצרים החדשים של היום נבדקו." : "לא נוספו מוצרים חדשים היום."}</li>`;
+      return;
+    }
+    el.innerHTML = left.slice(0, SHOW).map(([, name, , cat, , notSure]) => `<li><div><div class="recent-name">${esc(name)}</div>
+      <div class="sub">${esc(d.cats[cat].replace(" > ", " › "))}${notSure ? ' · <span class="review-unsure">לא בטוח</span>' : ""}</div></div></li>`).join("") +
+      (left.length > SHOW ? `<li class="sub">ועוד ${left.length - SHOW}${unsure ? ` · ${unsure} לא בטוחים בסך הכול` : ""}</li>` : "");
+    document.getElementById("new-link").hidden = false;
+  }).catch(() => { el.innerHTML = '<li class="sub">לא ניתן לטעון את הרשימה.</li>'; });
+})();
+</script>
+<script src="static/groups.js?v=20261010235052"></script>
+<script>
+// "פירות וירקות לבחירה": remove with ✕, add with the box, or back to the defaults
+(function () {
+  const G = window.Groups, box = document.getElementById("groups-edit");
+  const esc = (t) => String(t).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  function draw() {
+    box.innerHTML = G.names.map((g) => `<div class="group-edit" data-g="${esc(g)}"><h3>${esc(g)}</h3>
+      <div class="group-chips">${G.get(g).map((x) => `<span class="group-chip">${esc(x)}<button type="button" data-del="${esc(x)}" aria-label="הסרה">✕</button></span>`).join("")}</div>
+      <form class="group-add-form"><input type="text" placeholder="הוספה ל${esc(g)}" aria-label="הוספה ל${esc(g)}"><button type="submit">הוספה</button>
+        <button type="button" class="link" data-reset>ברירת מחדל</button></form></div>`).join("");
+  }
+  box.addEventListener("click", (e) => {
+    const g = e.target.closest("[data-g]") && e.target.closest("[data-g]").dataset.g;
+    if (!g) return;
+    if (e.target.dataset.del) { G.set(g, G.get(g).filter((x) => x !== e.target.dataset.del)); draw(); }
+    else if ("reset" in e.target.dataset) { G.reset(g); draw(); }
+  });
+  box.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const g = e.target.closest("[data-g]").dataset.g, input = e.target.querySelector("input");
+    const items = input.value.split(/[,\n]+/).map((x) => x.trim()).filter(Boolean);
+    const list = G.get(g);
+    for (const x of items) if (!list.includes(x)) list.push(x);
+    G.set(g, list);
+    draw();
+    const again = box.querySelector(`[data-g="${g}"] input`);
+    if (again) again.focus();
+  });
+  // the other phone's edits arrive with the list's sync; don't redraw under someone typing a new item
+  window.Basket.onChange(() => { if (!box.contains(document.activeElement)) draw(); });
+  draw();
+})();
+</script>
+<script>
+// Settings cards: closed by default, each with its current value next to the title; a link to settings.html#<card>
+// opens that card. "השוואה בין חנויות": the two-store split's minimum saving, per phone (localStorage splitMin,
+// read by static/compare.js; default 40).
+(function () {
+  const COLORS = { "": "ירוק", blue: "כחול", teal: "טורקיז", purple: "סגול", pink: "ורוד", orange: "כתום", indigo: "אינדיגו", graphite: "אפור" };
+  const MODES = { "": "אוטומטי", light: "בהיר", dark: "כהה" };
+  const read = (k, d) => { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch (e) { return d; } };
+  const set = (id, text) => { const el = document.querySelector(`[data-sum="${id}"]`); if (el) el.textContent = text; };
+  const splitBox = document.getElementById("split-min");
+  splitBox.value = read("splitMin", 40);
+  splitBox.addEventListener("change", () => {
+    const v = Math.max(0, Math.round(Number(splitBox.value) || 0));
+    splitBox.value = v;
+    try { localStorage.setItem("splitMin", JSON.stringify(v)); } catch (e) { /* private mode */ }
+    summaries();
+  });
+  function summaries() {
+    const t = read("theme", {});
+    set("look", `${MODES[t.mode || ""]} · ${COLORS[t.color || ""] || ""}`);
+    if (window.Stores) {
+      const on = window.Stores.choice();
+      set("stores", [...new Set(window.Stores.list.filter((st) => on[st.key]).map((st) => st.short))].join(" · "));
+    }
+    set("compare", `פיצול מ־₪${read("splitMin", 40)}`);
+    if (window.Groups) set("groups", window.Groups.names.map((g) => `${g} ${window.Groups.get(g).length}`).join(" · "));
+    if (window.Basket) {
+      set("sync", window.Basket.configured() ? "מחובר" : "לא מחובר");
+      set("blocked-card", String(window.Basket.blockedList().length || "אין"));
+    }
+  }
+  const open = () => {
+    const card = location.hash && document.getElementById(location.hash.slice(1));
+    if (card && card.tagName === "DETAILS") { card.open = true; card.scrollIntoView(); }
+  };
+  document.addEventListener("click", () => setTimeout(summaries, 0));
+  document.addEventListener("change", () => setTimeout(summaries, 0));
+  window.addEventListener("hashchange", open);
+  document.addEventListener("DOMContentLoaded", () => { summaries(); open(); });
+  if (window.Basket) window.Basket.onChange(summaries);
+})();
+</script>
+
+<script>
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+</script>
+</body>
+</html>

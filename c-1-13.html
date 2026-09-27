@@ -1,0 +1,3852 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f7a4d">
+<script>
+// the look this phone chose (settings.html "מראה"), before anything is drawn: html.light / html.dark
+// (none = follow the phone) and html[data-color] (none = green); the browser bar takes the colour too
+(function () {
+  let t = {};
+  try { t = JSON.parse(localStorage.getItem("theme")) || {}; } catch (e) { /* none yet */ }
+  const root = document.documentElement;
+  if (t.mode === "light" || t.mode === "dark") root.classList.add(t.mode);
+  if (t.color) root.dataset.color = t.color;
+  if (t.bar) document.querySelector('meta[name="theme-color"]').content = t.bar;
+})();
+</script>
+<title>תחליפי בשר וטופו</title>
+<link rel="manifest" href="static/manifest.webmanifest">
+<link rel="icon" href="static/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="static/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="static/style.css?v=20261010235052">
+<style>.st-0 { --store: #e07000; }.st-1 { --store: #d32f2f; }.st-2 { --store: #1565c0; }.st-3 { --store: #1565c0; }.st-4 { --store: #c99a00; }</style>
+<script src="static/stores.js?v=20261010235052" data-stores="[{&#34;card_cap&#34;: 750, &#34;card_rate&#34;: 0.07, &#34;default&#34;: true, &#34;key&#34;: &#34;victory-038&#34;, &#34;name&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;ramilevy-007&#34;, &#34;name&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-026&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05ea\u05dc\u05e4\u05d9\u05d5\u05ea&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-003&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05d2\u05d1\u05e2\u05ea \u05e9\u05d0\u05d5\u05dc&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;netto-052&#34;, &#34;name&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df \u05e7\u05e8\u05d9\u05d9\u05ea \u05d9\u05e2\u05e8\u05d9\u05dd&#34;, &#34;short&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df&#34;}]"></script>
+<script src="static/avoid.js?v=20261010235052" data-kinds="[&#34;\u05e2\u05d5\u05e3 \u05de\u05e2\u05d5\u05d1\u05d3&#34;, &#34;\u05d1\u05e9\u05e8 \u05de\u05e2\u05d5\u05d1\u05d3&#34;]"></script>
+<script>
+// No long-press menu on links, pictures or text (the user: the home page's tiles opened Chrome's "open in new tab /
+// copy link" menu; CSS can't stop that on Android). Typing fields and the ⓘ sheet's barcode keep theirs.
+document.addEventListener("contextmenu", (e) => {
+  if (!e.target.closest("input, textarea, [contenteditable], .photo-barcode")) e.preventDefault();
+});
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <a class="back" href="t-1.html" aria-label="חזרה">→</a>
+    <h1>תחליפי בשר וטופו</h1>
+    <a class="notes-link" href="notes.html" aria-label="רשימת קניות" title="רשימת קניות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="m8.5 10 1.2 1.2 2.3-2.4M8.5 15.5l1.2 1.2 2.3-2.4M14 10.5h2.5M14 16h2.5"/></svg><span>רשימת קניות</span></a>
+    <a class="settings-link" href="settings.html" aria-label="הגדרות" title="הגדרות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></a>
+  </div>
+  
+  <form class="search" action="search.html" method="get" role="search">
+    <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+    <input type="search" name="q" placeholder="חיפוש מוצר" enterkeyhint="search" aria-label="חיפוש מוצר">
+  </form>
+  
+</header>
+<main>
+
+<p class="sub"><span class="sub-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 12c2.2-3.6 5.3-5.5 8.6-5.5 2.8 0 4.9 1.9 6.4 5.5-1.5 3.6-3.6 5.5-6.4 5.5-3.3 0-6.4-1.9-8.6-5.5z"/><path d="M6.5 12 3 8.5v7z"/><circle cx="17" cy="11" r=".7" fill="currentColor" stroke="none"/></svg></span>בשר, עוף ודגים · <span id="cat-count">134</span> מוצרים, מהזול ליקר</p>
+
+
+<div class="cat-filter">
+  <input type="search" id="cat-filter" placeholder="סינון לפי שם או יצרן · ‎-מילה מסתירה" enterkeyhint="done" autocomplete="off" aria-label="סינון המוצרים בקטגוריה">
+  <button type="button" id="facet-btn" class="facet-btn" aria-expanded="false" aria-controls="facet-list">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h18l-7 8v6l-4-2v-4z"/></svg>
+    <span>סינון</span><b id="facet-n" hidden></b></button>
+</div>
+<div id="facet-list" class="facet-list" hidden>
+  <div class="facet-items" id="facet-kinds"><label class="facet"><input type="checkbox" value="טופו"> <span>טופו</span> <small></small></label><label class="facet"><input type="checkbox" value="שניצל"> <span>שניצל</span> <small></small></label><label class="facet"><input type="checkbox" value="נאגטס"> <span>נאגטס</span> <small></small></label><label class="facet"><input type="checkbox" value="טופו במרקם"> <span>טופו במרקם</span> <small></small></label><label class="facet"><input type="checkbox" value="שניצל תירס"> <span>שניצל תירס</span> <small></small></label><label class="facet"><input type="checkbox" value="נקניקיות"> <span>נקניקיות</span> <small></small></label><label class="facet"><input type="checkbox" value="plant bite"> <span>plant bite</span> <small></small></label><label class="facet"><input type="checkbox" value="בורגר"> <span>בורגר</span> <small></small></label><label class="facet"><input type="checkbox" value="המבורגר"> <span>המבורגר</span> <small></small></label><label class="facet"><input type="checkbox" value="נקניקיות מן"> <span>נקניקיות מן</span> <small></small></label><label class="facet"><input type="checkbox" value="נתח"> <span>נתח</span> <small></small></label><label class="facet"><input type="checkbox" value="טחון"> <span>טחון</span> <small></small></label><label class="facet"><input type="checkbox" value="כדורי"> <span>כדורי</span> <small></small></label><label class="facet"><input type="checkbox" value="מפורק מן"> <span>מפורק מן</span> <small></small></label><label class="facet"><input type="checkbox" value="נתחוני סויה"> <span>נתחוני סויה</span> <small></small></label><label class="facet"><input type="checkbox" value="סופר"> <span>סופר</span> <small></small></label><label class="facet"><input type="checkbox" value="סטיק מן"> <span>סטיק מן</span> <small></small></label><label class="facet"><input type="checkbox" value="רידיפין"> <span>רידיפין</span> <small></small></label><label class="facet"><input type="checkbox" value="תחליף"> <span>תחליף</span> <small></small></label></div>
+  <div class="facet-stores" id="facet-stores" hidden><div class="facet-title">חנויות</div><div class="facet-items"></div></div>
+  <div class="facet-actions"><button type="button" class="link" id="facet-clear">ניקוי</button>
+    <button type="button" id="facet-done">הצגה</button></div>
+</div>
+<div id="cat-list" data-href="c-1-13.html">
+
+<ol class="products">
+  
+  
+    
+    
+    
+    <li class="product st-0 best">
+      <div class="info">
+        <div class="name">טופו במרקם קשה 1.2 קג ויקטורי<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="642135553046" data-key="7290696200003:642135553046" data-name="טופו במרקם קשה 1.2 קג ויקטורי" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪50</span> בקניית 3 · עד 31.10</div>
+        <div class="club">מחיר מועדון ויקטורי: ₪14.90</div>
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪13.89 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪24.90</s> ₪16.67 · 1.2 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:642135553046" data-name="טופו במרקם קשה 1.2 קג ויקטורי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">טופו במרקם קשה פאנג` 300 גר` ויקטורי<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="783495675877" data-key="7290696200003:783495675877" data-name="טופו במרקם קשה פאנג` 300 גר` ויקטורי" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        <div class="club">מחיר מועדון ויקטורי: ₪3.90</div>
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪19.67 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪6.90</s> ₪5.90 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:783495675877" data-name="טופו במרקם קשה פאנג` 300 גר` ויקטורי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">לקריספי סטיקס תירס זוגלובק 500 גר&#39;<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290000536743" data-key="7290000536743" data-name="לקריספי סטיקס תירס זוגלובק 500 גר&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זוגלובק</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 17.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪14.00 (2 ב־₪28)</span><span class="other st-0">ויקטורי ₪16.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪19.80 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪17.90</s> ₪9.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000536743" data-name="לקריספי סטיקס תירס זוגלובק 500 גר&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">טופו במרקם קשה 1.2 קג T40 טעמי אסיה<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="8888351200124" data-key="8888351200124" data-name="טופו במרקם קשה 1.2 קג T40 טעמי אסיה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪23.25 <small>לק״ג</small></div>
+          <div class="shelf">₪27.90 · 1.2 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8888351200124" data-name="טופו במרקם קשה 1.2 קג T40 טעמי אסיה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">טופו במרקם קשה<button type="button" class="unsold" data-sold="20260810" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="796520972315" data-key="7290696200003:796520972315" data-name="טופו במרקם קשה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סאן-אפ בין פוד אמאפגי פיטיאי אלטידי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪24.08 <small>לק״ג</small></div>
+          <div class="shelf">₪28.90 · 1.2 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:796520972315" data-name="טופו במרקם קשה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">כדורי פלאפל טעם ביתי טבעוני שף הטבע 700<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290001922231" data-key="7290001922231" data-name="כדורי פלאפל טעם ביתי טבעוני שף הטבע 700" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טופ שף בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪25.57 <small>לק״ג</small></div>
+          <div class="shelf">₪17.90 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001922231" data-name="כדורי פלאפל טעם ביתי טבעוני שף הטבע 700" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שניצל צמחי רמי לוי 750 גרם<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290015681179" data-key="7290015681179" data-name="שניצל צמחי רמי לוי 750 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רמי לוי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪26.93 <small>לק״ג</small></div>
+          <div class="shelf">₪20.20 · 750 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015681179" data-name="שניצל צמחי רמי לוי 750 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שניצל תירס 1.75קג בדצ<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290109580043" data-key="7290109580043" data-name="שניצל תירס 1.75קג בדצ" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זוגלובק</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪49.90 (מבצע)</span><span class="other st-4">נטו חיסכון ₪54.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪28.51 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪55.90</s> ₪49.90 · 1.75 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290109580043" data-name="שניצל תירס 1.75קג בדצ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טופו סאן אפ בין 450<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="796520972322" data-key="796520972322" data-name="טופו סאן אפ בין 450" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪28.67 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪13.90</s> ₪12.90 · 450 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="796520972322" data-name="טופו סאן אפ בין 450" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שניצל צמחי דק 700 גרם רמי לוי<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290016865141" data-key="7290016865141" data-name="שניצל צמחי דק 700 גרם רמי לוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪28.86 <small>לק״ג</small></div>
+          <div class="shelf">₪20.20 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016865141" data-name="שניצל צמחי דק 700 גרם רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שניצל תירס מרכיבים טבעיים טבעול 750 גרם<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290000300900" data-key="7290000300900" data-name="שניצל תירס מרכיבים טבעיים טבעול 750 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טבעול</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪44</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪30.90</span><span class="other st-4">נטו חיסכון ₪33.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪29.33 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪29.90</s> ₪22.00 · 750 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000300900" data-name="שניצל תירס מרכיבים טבעיים טבעול 750 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">נגיסי תירס רמי לוי 750 גרם<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290015681148" data-key="7290015681148" data-name="נגיסי תירס רמי לוי 750 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רמי לוי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪29.60 <small>לק״ג</small></div>
+          <div class="shelf">₪22.20 · 750 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015681148" data-name="נגיסי תירס רמי לוי 750 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שניצל תירס רמי לוי 750 גרם<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290015681162" data-key="7290015681162" data-name="שניצל תירס רמי לוי 750 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רמי לוי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪29.60 <small>לק״ג</small></div>
+          <div class="shelf">₪22.20 · 750 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015681162" data-name="שניצל תירס רמי לוי 750 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">טופו במרקם קשה<button type="button" class="unsold" data-sold="20260901" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="783495694502" data-key="7290696200003:783495694502" data-name="טופו במרקם קשה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סאן-אפ בין פוד אמאפגי פיטיאי אלטידי</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪29.67 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪12.90</s> ₪8.90 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:783495694502" data-name="טופו במרקם קשה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">טופו במרקם קשה 450 גר ויקטורי<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="642135553039" data-key="7290696200003:642135553039" data-name="טופו במרקם קשה 450 גר ויקטורי" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        <div class="club">מחיר מועדון ויקטורי: ₪4.90</div>
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪30.89 <small>לק״ג</small></div>
+          <div class="shelf">₪13.90 · 450 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:642135553039" data-name="טופו במרקם קשה 450 גר ויקטורי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טופו הבית 500 גרם משק ויילר<button type="button" class="unsold" data-sold="20261006" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290003726516" data-key="7290003726516" data-name="טופו הבית 500 גרם משק ויילר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪20.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪31.40 <small>לק״ג</small></div>
+          <div class="shelf">₪15.70 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003726516" data-name="טופו הבית 500 גרם משק ויילר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טופו הבית מוגדל ויילר 345 גר<button type="button" class="unsold" data-sold="20260910" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290020215048" data-key="7290020215048" data-name="טופו הבית מוגדל ויילר 345 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪31.59 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪12.90</s> ₪10.90 · 345 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020215048" data-name="טופו הבית מוגדל ויילר 345 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שניצל תירס 99 קלוריות 693 גרם טבעול<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290111566752" data-key="7290111566752" data-name="שניצל תירס 99 קלוריות 693 גרם טבעול" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טבעול תעשיות מזון בע&#34;מ (מקבוצת אסם השקעות בע&#34;מ)</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪44</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪35.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪31.75 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪29.90</s> ₪22.00 · 693 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111566752" data-name="שניצל תירס 99 קלוריות 693 גרם טבעול" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">כוכבי תירס רמי לוי 600 גרם<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290015681155" data-key="7290015681155" data-name="כוכבי תירס רמי לוי 600 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רמי לוי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪31.83 <small>לק״ג</small></div>
+          <div class="shelf">₪19.10 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015681155" data-name="כוכבי תירס רמי לוי 600 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שניצל מן הצומח זוגלובק 1 ק&#34;ג<button type="button" class="unsold" data-sold="20261006" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290000536316" data-key="7290000536316" data-name="שניצל מן הצומח זוגלובק 1 ק&#34;ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זוגלובק טבע</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪32.50 (2 ב־₪65)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪31.90 <small>לק״ג</small></div>
+          <div class="shelf">₪31.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000536316" data-name="שניצל מן הצומח זוגלובק 1 ק&#34;ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">טופו במרקם קשה 400 גר כשר טעמי אסיה<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="8888351200070" data-key="8888351200070" data-name="טופו במרקם קשה 400 גר כשר טעמי אסיה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪32.25 <small>לק״ג</small></div>
+          <div class="shelf">₪12.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8888351200070" data-name="טופו במרקם קשה 400 גר כשר טעמי אסיה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">נקניקיות וינר צמחוני 680 גרם טבעול<button type="button" class="unsold" data-sold="20260827" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290111566332" data-key="7290111566332" data-name="נקניקיות וינר צמחוני 680 גרם טבעול" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טבעול</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪44</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪32.90</span><span class="other st-0">ויקטורי ₪35.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪32.35 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪29.90</s> ₪22.00 · 680 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111566332" data-name="נקניקיות וינר צמחוני 680 גרם טבעול" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">נקניקיות קוקטיל צמחוני 680 גרם טבעול<button type="button" class="unsold" data-sold="20260825" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290111566776" data-key="7290111566776" data-name="נקניקיות קוקטיל צמחוני 680 גרם טבעול" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טבעול</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪44</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪35.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪32.35 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪29.90</s> ₪22.00 · 680 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111566776" data-name="נקניקיות קוקטיל צמחוני 680 גרם טבעול" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">נקניקיות מן הצומח זוגלובק 1 ק&#34;ג<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290000536774" data-key="7290000536774" data-name="נקניקיות מן הצומח זוגלובק 1 ק&#34;ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זוגלובק טבע</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪65</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪34.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪32.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪34.90</s> ₪32.50 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000536774" data-name="נקניקיות מן הצומח זוגלובק 1 ק&#34;ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טבעול שניצל ברוקולי 6*664גרם<button type="button" class="unsold" data-sold="20260925" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290111566226" data-key="7290111566226" data-name="טבעול שניצל ברוקולי 6*664גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טבעול תעשיות מזון בע&#34;מ (מקבוצת אסם השקעות בע&#34;מ)</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪44</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪32.90</span><span class="other st-0">ויקטורי ₪35.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪32.98 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪34.90</s> ₪22.00 · 667 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111566226" data-name="טבעול שניצל ברוקולי 6*664גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">נקניקיות מן הצומח 1.2 ק&#34;ג טבעול<button type="button" class="unsold" data-sold="20260826" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290112968722" data-key="7290112968722" data-name="נקניקיות מן הצומח 1.2 ק&#34;ג טבעול" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טבעול תעשיות מזון בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪45.90</span><span class="other st-0">ויקטורי ₪49.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪33.25 <small>לק״ג</small></div>
+          <div class="shelf">₪39.90 · 1.2 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112968722" data-name="נקניקיות מן הצומח 1.2 ק&#34;ג טבעול" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טופו טבעי 300גרם ליב<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290011923303" data-key="7290011923303" data-name="טופו טבעי 300גרם ליב" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪33.33 <small>לק״ג</small></div>
+          <div class="shelf">₪10.00 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011923303" data-name="טופו טבעי 300גרם ליב" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שניצל תירס קלאסי 750 גרם זוגלובק טבע<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290006739445" data-key="7290006739445" data-name="שניצל תירס קלאסי 750 גרם זוגלובק טבע" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זוגלובק</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪50</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪25.90 (מבצע)</span><span class="other st-4">נטו חיסכון ₪26.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪33.33 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪25.90</s> ₪25.00 · 750 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290006739445" data-name="שניצל תירס קלאסי 750 גרם זוגלובק טבע" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חטיפי תירס 657 גרם טבעול<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290111566271" data-key="7290111566271" data-name="חטיפי תירס 657 גרם טבעול" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טבעול תעשיות מזון בע&#34;מ (מקבוצת אסם השקעות בע&#34;מ)</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪44</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪32.90</span><span class="other st-4">נטו חיסכון ₪32.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪33.49 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪29.90</s> ₪22.00 · 657 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111566271" data-name="חטיפי תירס 657 גרם טבעול" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טופו 500גרם ליב טבעי<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290013903327" data-key="7290013903327" data-name="טופו 500גרם ליב טבעי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪33.80 <small>לק״ג</small></div>
+          <div class="shelf">₪16.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013903327" data-name="טופו 500גרם ליב טבעי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שניצל צמחוני 99 קלוריות 650 גרם טבעול<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290111566585" data-key="7290111566585" data-name="שניצל צמחוני 99 קלוריות 650 גרם טבעול" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טבעול</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪44</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪27.50 (2 ב־₪55)</span><span class="other st-0">ויקטורי ₪35.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪33.85 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪29.90</s> ₪22.00 · 650 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111566585" data-name="שניצל צמחוני 99 קלוריות 650 גרם טבעול" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שניצל תירס ללא גלוטן טבעול 664 גרם<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290012522581" data-key="7290012522581" data-name="שניצל תירס ללא גלוטן טבעול 664 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טבעול תעשיות מזון בע&#34;מ (מקבוצת אסם השקעות בע&#34;מ)</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪27.90</span><span class="other st-0">ויקטורי ₪30.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪34.49 <small>לק״ג</small></div>
+          <div class="shelf">₪22.90 · 664 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290012522581" data-name="שניצל תירס ללא גלוטן טבעול 664 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">טופו בטעם טבעי אלטרנטיב 1 ק&#34;ג<button type="button" class="unsold" data-sold="20261001" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290116936925" data-key="7290116936925" data-name="טופו בטעם טבעי אלטרנטיב 1 ק&#34;ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪34.90 <small>לק״ג</small></div>
+          <div class="shelf">₪34.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116936925" data-name="טופו בטעם טבעי אלטרנטיב 1 ק&#34;ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">טופו במרקם קשה<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="796520972322" data-key="7290696200003:796520972322" data-name="טופו במרקם קשה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סאן-אפ בין פוד אמאפגי פיטיאי אלטידי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪35.33 <small>לק״ג</small></div>
+          <div class="shelf">₪15.90 · 450 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:796520972322" data-name="טופו במרקם קשה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טופו הבית במרקם קשה 300 גר&#39;<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290003726615" data-key="7290003726615" data-name="טופו הבית במרקם קשה 300 גר&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>משק ווילר בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪12.90</span><span class="other st-0">ויקטורי ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪36.33 <small>לק״ג</small></div>
+          <div class="shelf">₪10.90 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003726615" data-name="טופו הבית במרקם קשה 300 גר&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טופו רך בתוספת סידן 300 גרם משק ויילר<button type="button" class="unsold" data-sold="20261006" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290020215017" data-key="7290020215017" data-name="טופו רך בתוספת סידן 300 גרם משק ויילר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪36.33 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪12.90</s> ₪10.90 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020215017" data-name="טופו רך בתוספת סידן 300 גרם משק ויילר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">המבורגר צמחוני 99 קלוריות 600 גרם טבעול<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290111566714" data-key="7290111566714" data-name="המבורגר צמחוני 99 קלוריות 600 גרם טבעול" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טבעול</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪44</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪35.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪36.67 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪29.90</s> ₪22.00 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111566714" data-name="המבורגר צמחוני 99 קלוריות 600 גרם טבעול" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טופו טבעי 500 גרם Alternative 2 יחידות * 250 גרם<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290110328641" data-key="7290110328641" data-name="טופו טבעי 500 גרם Alternative 2 יחידות * 250 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪18.90</span><span class="other st-0">ויקטורי ₪20.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪37.80 <small>לק״ג</small></div>
+          <div class="shelf">₪18.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110328641" data-name="טופו טבעי 500 גרם Alternative 2 יחידות * 250 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">המבורגר טבעונית 580 גרם טבעול<button type="button" class="unsold" data-sold="20260927" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290112964724" data-key="7290112964724" data-name="המבורגר טבעונית 580 גרם טבעול" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טבעול תעשיות מזון בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪44</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪33.90</span><span class="other st-0">ויקטורי ₪35.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪37.93 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪29.90</s> ₪22.00 · 580 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112964724" data-name="המבורגר טבעונית 580 גרם טבעול" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">נאגטס מן הצומח 1קג<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290109580470" data-key="7290109580470" data-name="נאגטס מן הצומח 1קג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זוגלובק</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪38.90 <small>לק״ג</small></div>
+          <div class="shelf">₪38.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290109580470" data-name="נאגטס מן הצומח 1קג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טבעול שניצל דק בטעם צילי חריף 8*564גרם<button type="button" class="unsold" data-sold="20260918" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290111566240" data-key="7290111566240" data-name="טבעול שניצל דק בטעם צילי חריף 8*564גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טבעול</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪44</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪32.90</span><span class="other st-0">ויקטורי ₪37.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪39.01 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪29.90</s> ₪22.00 · 564 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111566240" data-name="טבעול שניצל דק בטעם צילי חריף 8*564גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שניצל דק מהצומח 564 גרם טבעול<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290111566318" data-key="7290111566318" data-name="שניצל דק מהצומח 564 גרם טבעול" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טבעול</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪44</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪32.90</span><span class="other st-0">ויקטורי ₪37.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪39.01 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪29.90</s> ₪22.00 · 564 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111566318" data-name="שניצל דק מהצומח 564 גרם טבעול" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חזה בגריל צמחוני 560 גרם טבעול<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290111566547" data-key="7290111566547" data-name="חזה בגריל צמחוני 560 גרם טבעול" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טבעול</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪44</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪27.50 (2 ב־₪55)</span><span class="other st-0">ויקטורי ₪35.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪39.29 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪34.90</s> ₪22.00 · 560 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111566547" data-name="חזה בגריל צמחוני 560 גרם טבעול" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שניצל ברוקולי 99 קלוריות 560 גרם טבעול<button type="button" class="unsold" data-sold="20260905" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290111566561" data-key="7290111566561" data-name="שניצל ברוקולי 99 קלוריות 560 גרם טבעול" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טבעול תעשיות מזון בע&#34;מ (מקבוצת אסם השקעות בע&#34;מ)</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪44</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪35.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪39.29 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪29.90</s> ₪22.00 · 560 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111566561" data-name="שניצל ברוקולי 99 קלוריות 560 גרם טבעול" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טבעול שניצל צימחוני עדה חרדית 6*1.2 קג<button type="button" class="unsold" data-sold="20260716" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290122782080" data-key="7290122782080" data-name="טבעול שניצל צימחוני עדה חרדית 6*1.2 קג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסם</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪45.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.90 <small>לק״ג</small></div>
+          <div class="shelf">₪39.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290122782080" data-name="טבעול שניצל צימחוני עדה חרדית 6*1.2 קג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טופו אורגני 300גרם ליב<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290011923273" data-key="7290011923273" data-name="טופו אורגני 300גרם ליב" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪40.33 <small>לק״ג</small></div>
+          <div class="shelf">₪12.10 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011923273" data-name="טופו אורגני 300גרם ליב" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טופו בטעם טבעי אלטרנטיב 300 גרם עד&#34;ח<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290110322014" data-key="7290110322014" data-name="טופו בטעם טבעי אלטרנטיב 300 גרם עד&#34;ח" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוי מג&#39;ק</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪13.50</span><span class="other st-0">ויקטורי ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪43.00 <small>לק״ג</small></div>
+          <div class="shelf">₪12.90 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110322014" data-name="טופו בטעם טבעי אלטרנטיב 300 גרם עד&#34;ח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טופו בזיליקום 300 גר&#39;<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290110322021" data-key="7290110322021" data-name="טופו בזיליקום 300 גר&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוי מג&#39;ק</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪13.50</span><span class="other st-0">ויקטורי ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪43.00 <small>לק״ג</small></div>
+          <div class="shelf">₪12.90 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110322021" data-name="טופו בזיליקום 300 גר&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טופו פיקנטי אלטרנטיב 300 גרם עד&#34;ח<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290110322038" data-key="7290110322038" data-name="טופו פיקנטי אלטרנטיב 300 גרם עד&#34;ח" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוי מג&#39;ק</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪13.50</span><span class="other st-0">ויקטורי ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪43.00 <small>לק״ג</small></div>
+          <div class="shelf">₪12.90 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110322038" data-name="טופו פיקנטי אלטרנטיב 300 גרם עד&#34;ח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טופו מעודן בטעם טבעי 300 גר&#39;<button type="button" class="unsold" data-sold="20260924" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290116936079" data-key="7290116936079" data-name="טופו מעודן בטעם טבעי 300 גר&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪13.50</span><span class="other st-0">ויקטורי ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪43.00 <small>לק״ג</small></div>
+          <div class="shelf">₪12.90 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116936079" data-name="טופו מעודן בטעם טבעי 300 גר&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">טופו במרקם דחוס 300 גר טעמי אסיה<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="8888351100073" data-key="8888351100073" data-name="טופו במרקם דחוס 300 גר טעמי אסיה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪43.00 <small>לק״ג</small></div>
+          <div class="shelf">₪12.90 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8888351100073" data-name="טופו במרקם דחוס 300 גר טעמי אסיה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ליב טופו אורגני 500 גרם<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290013903310" data-key="7290013903310" data-name="ליב טופו אורגני 500 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪43.80 <small>לק״ג</small></div>
+          <div class="shelf">₪21.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013903310" data-name="ליב טופו אורגני 500 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טבעול כדורי בשר מן הצומח 6*500גרם<button type="button" class="unsold" data-sold="20260821" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290111564666" data-key="7290111564666" data-name="טבעול כדורי בשר מן הצומח 6*500גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טבעול</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪44</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪35.90</span><span class="other st-4">נטו חיסכון ₪35.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪44.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪29.90</s> ₪22.00 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111564666" data-name="טבעול כדורי בשר מן הצומח 6*500גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מקלוני ירקות לבנים 500 גרם טבעול<button type="button" class="unsold" data-sold="20260715" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290118424987" data-key="7290118424987" data-name="מקלוני ירקות לבנים 500 גרם טבעול" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טבעול</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪44</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪44.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪34.90</s> ₪22.00 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118424987" data-name="מקלוני ירקות לבנים 500 גרם טבעול" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שניצל כרובית 99 קלוריות 500 גרם טבעול<button type="button" class="unsold" data-sold="20260915" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290118427964" data-key="7290118427964" data-name="שניצל כרובית 99 קלוריות 500 גרם טבעול" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טבעול</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪44</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪44.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪29.90</s> ₪22.00 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118427964" data-name="שניצל כרובית 99 קלוריות 500 גרם טבעול" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">נאגטס ירקות ירוקים 500 גרם טבעול<button type="button" class="unsold" data-sold="20260907" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290112965943" data-key="7290112965943" data-name="נאגטס ירקות ירוקים 500 גרם טבעול" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טבעול</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪44</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪44.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪34.90</s> ₪22.00 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112965943" data-name="נאגטס ירקות ירוקים 500 גרם טבעול" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">נאגטס ירקות כתומים 500 גרם טבעול<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290112965967" data-key="7290112965967" data-name="נאגטס ירקות כתומים 500 גרם טבעול" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טבעול</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪44</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪44.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪35.90</s> ₪22.00 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112965967" data-name="נאגטס ירקות כתומים 500 גרם טבעול" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קראנץ שניצל תירס דק חריף 490גר טבעול<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290118426479" data-key="7290118426479" data-name="קראנץ שניצל תירס דק חריף 490גר טבעול" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טבעול</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪44</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪29.90</span><span class="other st-4">נטו חיסכון ₪29.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪44.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪28.90</s> ₪22.00 · 490 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118426479" data-name="קראנץ שניצל תירס דק חריף 490גר טבעול" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קראנץ שניצל תירס דק 490גר טבעול<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290118426493" data-key="7290118426493" data-name="קראנץ שניצל תירס דק 490גר טבעול" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טבעול</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪44</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪29.90</span><span class="other st-4">נטו חיסכון ₪29.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪44.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪28.90</s> ₪22.00 · 490 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118426493" data-name="קראנץ שניצל תירס דק 490גר טבעול" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינת טופו משק צוריאל 300 גרם<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290003126958" data-key="7290003126958" data-name="גבינת טופו משק צוריאל 300 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>משק צוריאל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪45.00 <small>לק״ג</small></div>
+          <div class="shelf">₪13.50 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003126958" data-name="גבינת טופו משק צוריאל 300 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">טופו ללא גלוטן<button type="button" class="unsold" data-sold="20260826" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="" data-key="7290696200003:85696608044" data-name="טופו ללא גלוטן" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>Morinaga NUTRITIONAL FOODS, INC</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪45.56 <small>לק״ג</small></div>
+          <div class="shelf">₪15.90 · 349 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:85696608044" data-name="טופו ללא גלוטן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">נאגטס מן הצומח 500 גרם<button type="button" class="unsold" data-sold="20260928" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290109580241" data-key="7290109580241" data-name="נאגטס מן הצומח 500 גרם" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪45.80 <small>לק״ג</small></div>
+          <div class="shelf">₪22.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290109580241" data-name="נאגטס מן הצומח 500 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טבעול טופו קראנץ צילי 470 גרם<button type="button" class="unsold" data-sold="20260925" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290118429005" data-key="7290118429005" data-name="טבעול טופו קראנץ צילי 470 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טבעול</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪44</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪32.90</span><span class="other st-0">ויקטורי ₪35.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪46.81 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪29.90</s> ₪22.00 · 470 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118429005" data-name="טבעול טופו קראנץ צילי 470 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טבעול טופו קראנצ&#39;ים<button type="button" class="unsold" data-sold="20260914" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290118429340" data-key="7290118429340" data-name="טבעול טופו קראנצ&#39;ים" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טבעול</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪44</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪35.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪46.81 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪29.90</s> ₪22.00 · 470 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118429340" data-name="טבעול טופו קראנצ&#39;ים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">נאגטס צימחוני טעם עוף 460 גרם טבעול<button type="button" class="unsold" data-sold="20260928" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290115209150" data-key="7290115209150" data-name="נאגטס צימחוני טעם עוף 460 גרם טבעול" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אוסם</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪44</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪35.90</span><span class="other st-4">נטו חיסכון ₪35.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪47.83 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪34.90</s> ₪22.00 · 460 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115209150" data-name="נאגטס צימחוני טעם עוף 460 גרם טבעול" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טבעול נאגטס טבעי ללא גלוטן 460 גרם<button type="button" class="unsold" data-sold="20260925" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290118428879" data-key="7290118428879" data-name="טבעול נאגטס טבעי ללא גלוטן 460 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טבעול</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪44</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪30.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪47.83 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪27.90</s> ₪22.00 · 460 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118428879" data-name="טבעול נאגטס טבעי ללא גלוטן 460 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טבעול נאגטס תירס ללא גלוטן 460 גרם<button type="button" class="unsold" data-sold="20260930" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290118428916" data-key="7290118428916" data-name="טבעול נאגטס תירס ללא גלוטן 460 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טבעול</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪44</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪30.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪47.83 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪27.90</s> ₪22.00 · 460 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118428916" data-name="טבעול נאגטס תירס ללא גלוטן 460 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">נאגטס תירס ברביקיו 4<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290118423881" data-key="7290118423881" data-name="נאגטס תירס ברביקיו 4" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טבעול</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪44</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪47.83 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪34.90</s> ₪22.00 · 460 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118423881" data-name="נאגטס תירס ברביקיו 4" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">PLANT BITE- נגיסי שניצל טופו בתוספת גרעיני תירס<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290018564509" data-key="7290018564509" data-name="PLANT BITE- נגיסי שניצל טופו בתוספת גרעיני תירס" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טופ שף בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪49.80 <small>לק״ג</small></div>
+          <div class="shelf">₪24.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018564509" data-name="PLANT BITE- נגיסי שניצל טופו בתוספת גרעיני תירס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">PLANT BITE- נגיסי טופו במרקם רך 500 גרם<button type="button" class="unsold" data-sold="20260922" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290018564516" data-key="7290018564516" data-name="PLANT BITE- נגיסי טופו במרקם רך 500 גרם" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טופ שף בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪49.80 <small>לק״ג</small></div>
+          <div class="shelf">₪24.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018564516" data-name="PLANT BITE- נגיסי טופו במרקם רך 500 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">PLANT BITE- נאגטס טופו בציפוי זהב<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290018564523" data-key="7290018564523" data-name="PLANT BITE- נאגטס טופו בציפוי זהב" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טופ שף בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪49.80 <small>לק״ג</small></div>
+          <div class="shelf">₪24.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018564523" data-name="PLANT BITE- נאגטס טופו בציפוי זהב" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">PLANT BITE- שניצל טופו בתוספת גרעיני תירס<button type="button" class="unsold" data-sold="20261004" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290018564844" data-key="7290018564844" data-name="PLANT BITE- שניצל טופו בתוספת גרעיני תירס" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טופ שף בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪49.80 <small>לק״ג</small></div>
+          <div class="shelf">₪24.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018564844" data-name="PLANT BITE- שניצל טופו בתוספת גרעיני תירס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שניצל דק מן הצומח 620 גר<button type="button" class="unsold" data-sold="20260928" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290109580821" data-key="7290109580821" data-name="שניצל דק מן הצומח 620 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪53.06 <small>לק״ג</small></div>
+          <div class="shelf">₪32.90 · 620 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290109580821" data-name="שניצל דק מן הצומח 620 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שניצל דק צ&#39;ילי מן הצומח 620 גר<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290109580838" data-key="7290109580838" data-name="שניצל דק צ&#39;ילי מן הצומח 620 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪32.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪53.06 <small>לק״ג</small></div>
+          <div class="shelf">₪32.90 · 620 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290109580838" data-name="שניצל דק צ&#39;ילי מן הצומח 620 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טחון צמחוני 400 גרם טבעול<button type="button" class="unsold" data-sold="20260919" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7613039771174" data-key="7613039771174" data-name="טחון צמחוני 400 גרם טבעול" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טבעול צ&#39;כיה בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪44</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪37.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪55.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪37.90</s> ₪22.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7613039771174" data-name="טחון צמחוני 400 גרם טבעול" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חטיפי כרובית 400 גרם טבעול<button type="button" class="unsold" data-sold="20261002" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290118428855" data-key="7290118428855" data-name="חטיפי כרובית 400 גרם טבעול" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טבעול</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪44</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪55.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪24.90</s> ₪22.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118428855" data-name="חטיפי כרובית 400 גרם טבעול" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חטיפי ברוקולי  400 גרם טבעול<button type="button" class="unsold" data-sold="20260920" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290118428893" data-key="7290118428893" data-name="חטיפי ברוקולי  400 גרם טבעול" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טבעול</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪44</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪55.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪24.90</s> ₪22.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118428893" data-name="חטיפי ברוקולי  400 גרם טבעול" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">חלבון סויה מיובש בצורת כנפי עוף 300 גר<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290018515020" data-key="7290018515020" data-name="חלבון סויה מיובש בצורת כנפי עוף 300 גר" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪56.33 <small>לק״ג</small></div>
+          <div class="shelf">₪16.90 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018515020" data-name="חלבון סויה מיובש בצורת כנפי עוף 300 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חטיפי כרובית קראנצ&#39;ית 400 גר<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290109581781" data-key="7290109581781" data-name="חטיפי כרובית קראנצ&#39;ית 400 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זוגלובק</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪24.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪57.25 <small>לק״ג</small></div>
+          <div class="shelf">₪22.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290109581781" data-name="חטיפי כרובית קראנצ&#39;ית 400 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מיני בורגר פטריות טבעוני<button type="button" class="unsold" data-sold="20260804" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290019462156" data-key="7290019462156" data-name="מיני בורגר פטריות טבעוני" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מרינה פטריות הגליל</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪50</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪34.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪62.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪34.30</s> ₪25.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019462156" data-name="מיני בורגר פטריות טבעוני" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">נתחוני עוף צמחוני 350 גרם טבעול<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7613287821348" data-key="7613287821348" data-name="נתחוני עוף צמחוני 350 גרם טבעול" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טבעול צ&#39;כיה בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪44</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪37.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪62.86 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪37.90</s> ₪22.00 · 350 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7613287821348" data-name="נתחוני עוף צמחוני 350 גרם טבעול" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שניצל תירס במיוחד לילדים 750 מל<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290109581774" data-key="7290109581774" data-name="שניצל תירס במיוחד לילדים 750 מל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זוגלובק</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪26.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪64.75 <small>לק״ג</small></div>
+          <div class="shelf">₪25.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290109581774" data-name="שניצל תירס במיוחד לילדים 750 מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בורגר מן הצומח 227 גר INSTEAD<button type="button" class="unsold" data-sold="20261002" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290008458801" data-key="7290008458801" data-name="בורגר מן הצומח 227 גר INSTEAD" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪66.08 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪24.90</s> ₪15.00 · 227 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008458801" data-name="בורגר מן הצומח 227 גר INSTEAD" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">נקניקיות פטריות קפוא<button type="button" class="unsold" data-sold="20260914" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290020174307" data-key="7290020174307" data-name="נקניקיות פטריות קפוא" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מרינה פטריות</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪40</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪20.00 (2 ב־₪40)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪66.67 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪29.90</s> ₪20.00 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020174307" data-name="נקניקיות פטריות קפוא" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">נאגטס מן הצומח 180 גר INSTEAD<button type="button" class="unsold" data-sold="20260911" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290008458788" data-key="7290008458788" data-name="נאגטס מן הצומח 180 גר INSTEAD" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪25</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪69.44 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪12.50 · 180 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008458788" data-name="נאגטס מן הצומח 180 גר INSTEAD" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">כדורי בשר מן הצומח 180 גר INSTEAD<button type="button" class="unsold" data-sold="20260826" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290008458825" data-key="7290008458825" data-name="כדורי בשר מן הצומח 180 גר INSTEAD" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪25</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪69.44 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪12.50 · 180 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008458825" data-name="כדורי בשר מן הצומח 180 גר INSTEAD" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קבב פטריות טבעוני קפוא קמעונאי 360 גר<button type="button" class="unsold" data-sold="20260803" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290019462446" data-key="7290019462446" data-name="קבב פטריות טבעוני קפוא קמעונאי 360 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מרינה פטריות הגליל</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪50</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪34.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪69.44 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪34.30</s> ₪25.00 · 360 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019462446" data-name="קבב פטריות טבעוני קפוא קמעונאי 360 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">טבעול מקלוני ירקות כתומים 6*500גרם<button type="button" class="unsold" data-sold="20260924" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290118425007" data-key="7290118425007" data-name="טבעול מקלוני ירקות כתומים 6*500גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪71.80 <small>לק״ג</small></div>
+          <div class="shelf">₪35.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118425007" data-name="טבעול מקלוני ירקות כתומים 6*500גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סופר טופו מעושן 210 גרם משק ויילר<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290020215208" data-key="7290020215208" data-name="סופר טופו מעושן 210 גרם משק ויילר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>משק ויילר בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪16.90</span><span class="other st-4">נטו חיסכון ₪16.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪72.61 <small>לק״ג</small></div>
+          <div class="shelf">₪16.70 · 230 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020215208" data-name="סופר טופו מעושן 210 גרם משק ויילר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סופר טופו בטעם טמאגו 210 גרם משק ויילר<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290020215222" data-key="7290020215222" data-name="סופר טופו בטעם טמאגו 210 גרם משק ויילר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>משק ויילר בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪16.90</span><span class="other st-4">נטו חיסכון ₪16.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪72.61 <small>לק״ג</small></div>
+          <div class="shelf">₪16.70 · 230 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020215222" data-name="סופר טופו בטעם טמאגו 210 גרם משק ויילר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">נאגטס דגים מן הצומח 168 גר INSTEAD<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290008458979" data-key="7290008458979" data-name="נאגטס דגים מן הצומח 168 גר INSTEAD" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪25</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪74.40 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪12.50 · 168 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008458979" data-name="נאגטס דגים מן הצומח 168 גר INSTEAD" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">גוש בסגנון חלומי מרכיבים צמחיים MASHU משו טבעוני 250 גרם יצרן/מותג: משומשו<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290109640204" data-key="7290109640204" data-name="גוש בסגנון חלומי מרכיבים צמחיים MASHU משו טבעוני 250 גרם יצרן/מותג: משומשו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪75.60 <small>לק״ג</small></div>
+          <div class="shelf">₪18.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290109640204" data-name="גוש בסגנון חלומי מרכיבים צמחיים MASHU משו טבעוני 250 גרם יצרן/מותג: משומשו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בורגר פטריות טבעוני 260 גר מרינה<button type="button" class="unsold" data-sold="20261002" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290019462187" data-key="7290019462187" data-name="בורגר פטריות טבעוני 260 גר מרינה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪40</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪20.00 (2 ב־₪40)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪76.92 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪24.90</s> ₪20.00 · 260 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019462187" data-name="בורגר פטריות טבעוני 260 גר מרינה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סופר טופו בטעם תוניסאי 210 גרם משק ויילר<button type="button" class="unsold" data-sold="20261002" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290020215239" data-key="7290020215239" data-name="סופר טופו בטעם תוניסאי 210 גרם משק ויילר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪16.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪79.52 <small>לק״ג</small></div>
+          <div class="shelf">₪16.70 · 210 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020215239" data-name="סופר טופו בטעם תוניסאי 210 גרם משק ויילר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שווארמה פטריות טבעוני 250 גר מרינה<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290019462170" data-key="7290019462170" data-name="שווארמה פטריות טבעוני 250 גר מרינה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מרינה פטריות הגליל</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪40</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪20.00 (2 ב־₪40)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪80.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪24.90</s> ₪20.00 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019462170" data-name="שווארמה פטריות טבעוני 250 גר מרינה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">טבעול פילה דג סלמון טבעוני<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290118420125" data-key="7290118420125" data-name="טבעול פילה דג סלמון טבעוני" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טבעול</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪80.13 <small>לק״ג</small></div>
+          <div class="shelf">₪35.90 · 448 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118420125" data-name="טבעול פילה דג סלמון טבעוני" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">טבעול פילה דג טבעוני בסגנון מרוקאי<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290118420187" data-key="7290118420187" data-name="טבעול פילה דג טבעוני בסגנון מרוקאי" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טבעול</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪80.13 <small>לק״ג</small></div>
+          <div class="shelf">₪35.90 · 448 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118420187" data-name="טבעול פילה דג טבעוני בסגנון מרוקאי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לביבות בטטה וקארי 455 גר` טבעול גורמה<button type="button" class="unsold" data-sold="20260813" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290115201451" data-key="7290115201451" data-name="לביבות בטטה וקארי 455 גר` טבעול גורמה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>Osem Group Commerce</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪83.30 <small>לק״ג</small></div>
+          <div class="shelf">₪37.90 · 455 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115201451" data-name="לביבות בטטה וקארי 455 גר` טבעול גורמה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">תנובה נתחוני סויה בטעם בקר 350גר<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290000663043" data-key="7290000663043" data-name="תנובה נתחוני סויה בטעם בקר 350גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪29.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪85.43 <small>לק״ג</small></div>
+          <div class="shelf">₪29.90 · 350 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000663043" data-name="תנובה נתחוני סויה בטעם בקר 350גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">תנובה נתחוני סויה בטעם עוף 350גר<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290000663050" data-key="7290000663050" data-name="תנובה נתחוני סויה בטעם עוף 350גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪29.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪85.43 <small>לק״ג</small></div>
+          <div class="shelf">₪29.90 · 350 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000663050" data-name="תנובה נתחוני סויה בטעם עוף 350גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">תנובה נתחוני סויה בטעם שווארמה 350גר<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290000663067" data-key="7290000663067" data-name="תנובה נתחוני סויה בטעם שווארמה 350גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪29.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪85.43 <small>לק״ג</small></div>
+          <div class="shelf">₪29.90 · 350 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000663067" data-name="תנובה נתחוני סויה בטעם שווארמה 350גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">רידיפיין טחון מן הצומח 350 גר<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290018938850" data-key="7290018938850" data-name="רידיפיין טחון מן הצומח 350 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רידפיין מיט</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪60</span> בקניית 2 · עד 11.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪30.00 (2 ב־₪60)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪85.71 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪32.90</s> ₪30.00 · 350 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018938850" data-name="רידיפיין טחון מן הצומח 350 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">טחון מהצומח לקציצות RAYS<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290019707226" data-key="7290019707226" data-name="טחון מהצומח לקציצות RAYS" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪87.25 <small>לק״ג</small></div>
+          <div class="shelf">₪34.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019707226" data-name="טחון מהצומח לקציצות RAYS" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">רידיפיין נקניקיות מרגז מהצומח 338גר<button type="button" class="unsold" data-sold="20260922" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290018938157" data-key="7290018938157" data-name="רידיפיין נקניקיות מרגז מהצומח 338גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪65</span> בקניית 2 · עד 11.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪32.50 (2 ב־₪65)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪96.15 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪37.90</s> ₪32.50 · 338 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018938157" data-name="רידיפיין נקניקיות מרגז מהצומח 338גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בורגר צמחוני 226 גרם טבעול<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7613039770450" data-key="7613039770450" data-name="בורגר צמחוני 226 גרם טבעול" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טבעול</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪44</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪97.35 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪36.90</s> ₪22.00 · 226 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7613039770450" data-name="בורגר צמחוני 226 גרם טבעול" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מפורק מן הצומח (ברבקואה)<button type="button" class="unsold" data-sold="20260914" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="850067456858" data-key="7290696200003:850067456858" data-name="מפורק מן הצומח (ברבקואה)" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪60.90</span> בקניית 2 · עד 11.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪97.60 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪39.90</s> ₪30.45 · 312 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:850067456858" data-name="מפורק מן הצומח (ברבקואה)" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מפורק מן הצומח (קוריאני)<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="850067456865" data-key="7290696200003:850067456865" data-name="מפורק מן הצומח (קוריאני)" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪60.90</span> בקניית 2 · עד 11.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪97.60 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪39.90</s> ₪30.45 · 312 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:850067456865" data-name="מפורק מן הצומח (קוריאני)" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מפורק מן הצומח (טריאקי)<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="850067456889" data-key="7290696200003:850067456889" data-name="מפורק מן הצומח (טריאקי)" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪60.90</span> בקניית 2 · עד 11.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪97.60 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪39.90</s> ₪30.45 · 312 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:850067456889" data-name="מפורק מן הצומח (טריאקי)" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">רידיפיין קבב מהצומח טעם טלה 330גר<button type="button" class="unsold" data-sold="20260922" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290018938195" data-key="7290018938195" data-name="רידיפיין קבב מהצומח טעם טלה 330גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רידיפיין מיט בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪65</span> בקניית 2 · עד 11.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪32.50 (2 ב־₪65)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪98.48 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪37.90</s> ₪32.50 · 330 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018938195" data-name="רידיפיין קבב מהצומח טעם טלה 330גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">כמו בשר טחון 300  גר`ריינבו<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290018140543" data-key="7290018140543" data-name="כמו בשר טחון 300  גר`ריינבו" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪99.67 <small>לק״ג</small></div>
+          <div class="shelf">₪29.90 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018140543" data-name="כמו בשר טחון 300  גר`ריינבו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">המבורגר טבעוני RAYS<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290019707202" data-key="7290019707202" data-name="המבורגר טבעוני RAYS" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪103.46 <small>לק״ג</small></div>
+          <div class="shelf">₪26.90 · 260 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019707202" data-name="המבורגר טבעוני RAYS" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">רידיפיין המבורגר מן הצומח 280גר<button type="button" class="unsold" data-sold="20260928" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290018938881" data-key="7290018938881" data-name="רידיפיין המבורגר מן הצומח 280גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רידפיין מיט</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪60</span> בקניית 2 · עד 11.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪30.00 (2 ב־₪60)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪107.14 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪34.90</s> ₪30.00 · 280 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018938881" data-name="רידיפיין המבורגר מן הצומח 280גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">נתח מפורק סגנון בקר מהצומח 300גר<button type="button" class="unsold" data-sold="20261006" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290018938829" data-key="7290018938829" data-name="נתח מפורק סגנון בקר מהצומח 300גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רידיפיין מיט בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪65</span> בקניית 2 · עד 11.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪32.50 (2 ב־₪65)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪108.33 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪39.90</s> ₪32.50 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018938829" data-name="נתח מפורק סגנון בקר מהצומח 300גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שווארמה על בסיס רכיבים צמחיים<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290119760244" data-key="7290119760244" data-name="שווארמה על בסיס רכיבים צמחיים" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רידיפיין מיט בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪65</span> בקניית 2 · עד 11.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪32.50 (2 ב־₪65)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪108.33 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪39.90</s> ₪32.50 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119760244" data-name="שווארמה על בסיס רכיבים צמחיים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">נתחוני סטייק בסגנון בקר על בסיס רכיבים צמחיים<button type="button" class="unsold" data-sold="20261004" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290119760466" data-key="7290119760466" data-name="נתחוני סטייק בסגנון בקר על בסיס רכיבים צמחיים" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪65</span> בקניית 2 · עד 11.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪108.33 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪39.90</s> ₪32.50 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119760466" data-name="נתחוני סטייק בסגנון בקר על בסיס רכיבים צמחיים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">נתח מפורק מן הצומח<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="850067456834" data-key="7290696200003:850067456834" data-name="נתח מפורק מן הצומח" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪55</span> בקניית 2 · עד 11.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪121.68 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪34.90</s> ₪27.50 · 226 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:850067456834" data-name="נתח מפורק מן הצומח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בשר טחון ביונד מיט 250 גרם<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="1230000116466" data-key="1230000116466" data-name="בשר טחון ביונד מיט 250 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זנברגן וורלד פינסט מיט בי.וי הולנד</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪31.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪123.60 <small>לק״ג</small></div>
+          <div class="shelf">₪30.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="1230000116466" data-name="בשר טחון ביונד מיט 250 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סטייק מן הצומח<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="850067456803" data-key="7290696200003:850067456803" data-name="סטייק מן הצומח" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪45</span> בקניית 2 · עד 11.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪132.35 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪29.90</s> ₪22.50 · 170 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:850067456803" data-name="סטייק מן הצומח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שני סטייקים מן הצומח<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="850067456810" data-key="7290696200003:850067456810" data-name="שני סטייקים מן הצומח" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪60.90</span> בקניית 2 · עד 11.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪134.73 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪39.90</s> ₪30.45 · 226 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:850067456810" data-name="שני סטייקים מן הצומח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">נתח שלם מן הצומח<button type="button" class="unsold" data-sold="20261001" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="850067456841" data-key="7290696200003:850067456841" data-name="נתח שלם מן הצומח" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪60.90</span> בקניית 2 · עד 11.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪134.73 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪39.90</s> ₪30.45 · 226 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:850067456841" data-name="נתח שלם מן הצומח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">המבורגר ביונד מיט 2* 113 גר<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="1230000116022" data-key="1230000116022" data-name="המבורגר ביונד מיט 2* 113 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>דה ניו פלאנט הולנד</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪35.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪136.73 <small>לק״ג</small></div>
+          <div class="shelf">₪30.90 · 226 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="1230000116022" data-name="המבורגר ביונד מיט 2* 113 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">תחליף טונה טבעוני<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290109640600" data-key="7290109640600" data-name="תחליף טונה טבעוני" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪143.89 <small>לק״ג</small></div>
+          <div class="shelf">₪25.90 · 180 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290109640600" data-name="תחליף טונה טבעוני" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">נתח מפורק מן הצומח 2<button type="button" class="unsold" data-sold="20260924" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="850067456834" data-key="850067456834" data-name="נתח מפורק מן הצומח 2" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪145.58 <small>לק״ג</small></div>
+          <div class="shelf">₪32.90 · 226 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="850067456834" data-name="נתח מפורק מן הצומח 2" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מארז ביצת עין הפוכה מן הצומח 4 יח YO EGG<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="850062251137" data-key="7290696200003:850062251137" data-name="מארז ביצת עין הפוכה מן הצומח 4 יח YO EGG" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טופ שף בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪147.74 <small>לק״ג</small></div>
+          <div class="shelf">₪35.90 · 243 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:850062251137" data-name="מארז ביצת עין הפוכה מן הצומח 4 יח YO EGG" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ביונד מיט בורגר טעם חלפיניו 200גר<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="1230000068413" data-key="1230000068413" data-name="ביונד מיט בורגר טעם חלפיניו 200גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪35.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪154.50 <small>לק״ג</small></div>
+          <div class="shelf">₪30.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="1230000068413" data-name="ביונד מיט בורגר טעם חלפיניו 200גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סלמי פרוסות טבעוני<button type="button" class="unsold" data-sold="20260924" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290109640983" data-key="7290109640983" data-name="סלמי פרוסות טבעוני" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪161.88 <small>לק״ג</small></div>
+          <div class="shelf">₪25.90 · 160 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290109640983" data-name="סלמי פרוסות טבעוני" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">פרוסות פסטרמה גחלים<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290109641355" data-key="7290109641355" data-name="פרוסות פסטרמה גחלים" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ויגרדן בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪161.88 <small>לק״ג</small></div>
+          <div class="shelf">₪25.90 · 160 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290109641355" data-name="פרוסות פסטרמה גחלים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סטייק בסגנון פלאנק בקר על בסיס רכיבים צמחיים<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="8721022800509" data-key="8721022800509" data-name="סטייק בסגנון פלאנק בקר על בסיס רכיבים צמחיים" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רידיפיין מיט בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪65</span> בקניית 2 · עד 11.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪32.50 (2 ב־₪65)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪162.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪41.90</s> ₪32.50 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8721022800509" data-name="סטייק בסגנון פלאנק בקר על בסיס רכיבים צמחיים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">זוג סטייקים מן הצומח 226 גר<button type="button" class="unsold" data-sold="20260920" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="850067456810" data-key="850067456810" data-name="זוג סטייקים מן הצומח 226 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪167.70 <small>לק״ג</small></div>
+          <div class="shelf">₪37.90 · 226 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="850067456810" data-name="זוג סטייקים מן הצומח 226 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סטייק מן הצומח 170 גר<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="850067456803" data-key="850067456803" data-name="סטייק מן הצומח 170 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪170.00 <small>לק״ג</small></div>
+          <div class="shelf">₪28.90 · 170 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="850067456803" data-name="סטייק מן הצומח 170 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">תחליף בשר על בסיס חלבון אפונה 130 גר קרי<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290010701568" data-key="7290010701568" data-name="תחליף בשר על בסיס חלבון אפונה 130 גר קרי" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪191.54 <small>לק״ג</small></div>
+          <div class="shelf">₪24.90 · 130 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010701568" data-name="תחליף בשר על בסיס חלבון אפונה 130 גר קרי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">תחליף עוף על בסיס חלבון אפונה 130 גר קרי<button type="button" class="unsold" data-sold="20261006" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290010701575" data-key="7290010701575" data-name="תחליף עוף על בסיס חלבון אפונה 130 גר קרי" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪191.54 <small>לק״ג</small></div>
+          <div class="shelf">₪24.90 · 130 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010701575" data-name="תחליף עוף על בסיס חלבון אפונה 130 גר קרי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">רצועות בסגנון סטייק מן הצומח<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="1220000750166" data-key="1220000750166" data-name="רצועות בסגנון סטייק מן הצומח" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ווסקו ג&#39;י.אמ.בי.אייץ&#39; אנד קו קיי.ג&#39;י</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪35.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪193.12 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪34.90</s> ₪30.90 · 160 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="1220000750166" data-name="רצועות בסגנון סטייק מן הצומח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סלמון מעושן טבעוני<button type="button" class="unsold" data-sold="20260828" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290109641324" data-key="7290109641324" data-name="סלמון מעושן טבעוני" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪259.00 <small>לק״ג</small></div>
+          <div class="shelf">₪25.90 · 100 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290109641324" data-name="סלמון מעושן טבעוני" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+</ol>
+</div>
+
+</main>
+<footer>עודכן 10.10 23:50 · ויקטורי 9.10 22:08 · רמי לוי 9.10 21:00 · אושר עד 9.10 14:05 · אושר עד 9.10 14:05 · נטו חיסכון 9.10 22:14</footer>
+
+
+<nav class="bottom-nav" aria-label="ניווט">
+  <a href="index.html" class="on"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg><span>בית</span></a>
+  <a href="search.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><span>חיפוש</span></a>
+  <a href="scan.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V5a1 1 0 0 1 1-1h2M17 4h2a1 1 0 0 1 1 1v2M20 17v2a1 1 0 0 1-1 1h-2M7 20H5a1 1 0 0 1-1-1v-2"/><path d="M8 8v8M11 8v8M14 8v8M16.5 8v8"/></svg><span>סריקה</span></a>
+  <a href="basket.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h11l2-8H6.2"/><circle cx="9.5" cy="19" r="1.4"/><circle cx="17" cy="19" r="1.4"/></svg><span id="cart-count"></span><span>עגלת קניות</span></a>
+  <a href="spending.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-2-1.4-2 1.4-2-1.4-2 1.4-2-1.4L6 21z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><span>הוצאות</span></a>
+</nav>
+
+<script src="static/basket.js?v=20261010235052"></script>
+<script src="static/catpick.js?v=20261010235052"></script>
+<script src="static/photo.js?v=20261010235052"></script>
+
+<script src="static/render.js?v=20261010235052"></script>
+<script src="static/category.js?v=20261010235052" data-build="20261010235052"></script>
+
+<script>
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+</script>
+</body>
+</html>

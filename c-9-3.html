@@ -1,0 +1,3547 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f7a4d">
+<script>
+// the look this phone chose (settings.html "מראה"), before anything is drawn: html.light / html.dark
+// (none = follow the phone) and html[data-color] (none = green); the browser bar takes the colour too
+(function () {
+  let t = {};
+  try { t = JSON.parse(localStorage.getItem("theme")) || {}; } catch (e) { /* none yet */ }
+  const root = document.documentElement;
+  if (t.mode === "light" || t.mode === "dark") root.classList.add(t.mode);
+  if (t.color) root.dataset.color = t.color;
+  if (t.bar) document.querySelector('meta[name="theme-color"]').content = t.bar;
+})();
+</script>
+<title>טיפוח ואביזרים לתינוק ולילדים</title>
+<link rel="manifest" href="static/manifest.webmanifest">
+<link rel="icon" href="static/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="static/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="static/style.css?v=20261010235052">
+<style>.st-0 { --store: #e07000; }.st-1 { --store: #d32f2f; }.st-2 { --store: #1565c0; }.st-3 { --store: #1565c0; }.st-4 { --store: #c99a00; }</style>
+<script src="static/stores.js?v=20261010235052" data-stores="[{&#34;card_cap&#34;: 750, &#34;card_rate&#34;: 0.07, &#34;default&#34;: true, &#34;key&#34;: &#34;victory-038&#34;, &#34;name&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;ramilevy-007&#34;, &#34;name&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-026&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05ea\u05dc\u05e4\u05d9\u05d5\u05ea&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-003&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05d2\u05d1\u05e2\u05ea \u05e9\u05d0\u05d5\u05dc&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;netto-052&#34;, &#34;name&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df \u05e7\u05e8\u05d9\u05d9\u05ea \u05d9\u05e2\u05e8\u05d9\u05dd&#34;, &#34;short&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df&#34;}]"></script>
+<script src="static/avoid.js?v=20261010235052" data-kinds="[&#34;\u05e2\u05d5\u05e3 \u05de\u05e2\u05d5\u05d1\u05d3&#34;, &#34;\u05d1\u05e9\u05e8 \u05de\u05e2\u05d5\u05d1\u05d3&#34;]"></script>
+<script>
+// No long-press menu on links, pictures or text (the user: the home page's tiles opened Chrome's "open in new tab /
+// copy link" menu; CSS can't stop that on Android). Typing fields and the ⓘ sheet's barcode keep theirs.
+document.addEventListener("contextmenu", (e) => {
+  if (!e.target.closest("input, textarea, [contenteditable], .photo-barcode")) e.preventDefault();
+});
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <a class="back" href="t-9.html" aria-label="חזרה">→</a>
+    <h1>טיפוח ואביזרים לתינוק ולילדים</h1>
+    <a class="notes-link" href="notes.html" aria-label="רשימת קניות" title="רשימת קניות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="m8.5 10 1.2 1.2 2.3-2.4M8.5 15.5l1.2 1.2 2.3-2.4M14 10.5h2.5M14 16h2.5"/></svg><span>רשימת קניות</span></a>
+    <a class="settings-link" href="settings.html" aria-label="הגדרות" title="הגדרות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></a>
+  </div>
+  
+  <form class="search" action="search.html" method="get" role="search">
+    <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+    <input type="search" name="q" placeholder="חיפוש מוצר" enterkeyhint="search" aria-label="חיפוש מוצר">
+  </form>
+  
+</header>
+<main>
+
+<p class="sub"><span class="sub-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 2h3l1 3h-5z"/><path d="M8.5 5h7v2.5h-7z"/><path d="M9 7.5h6V19a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2z"/><path d="M9 11h2.5M9 14h2.5M9 17h2.5"/></svg></span>תינוקות · <span id="cat-count">123</span> מוצרים, מהזול ליקר</p>
+
+
+<div class="cat-filter">
+  <input type="search" id="cat-filter" placeholder="סינון לפי שם או יצרן · ‎-מילה מסתירה" enterkeyhint="done" autocomplete="off" aria-label="סינון המוצרים בקטגוריה">
+  <button type="button" id="facet-btn" class="facet-btn" aria-expanded="false" aria-controls="facet-list">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h18l-7 8v6l-4-2v-4z"/></svg>
+    <span>סינון</span><b id="facet-n" hidden></b></button>
+</div>
+<div id="facet-list" class="facet-list" hidden>
+  <div class="facet-items" id="facet-kinds"><label class="facet"><input type="checkbox" value="מוצץ"> <span>מוצץ</span> <small></small></label><label class="facet"><input type="checkbox" value="מוצצים סיליקון"> <span>מוצצים סיליקון</span> <small></small></label><label class="facet"><input type="checkbox" value="לתינוק"> <span>לתינוק</span> <small></small></label><label class="facet"><input type="checkbox" value="מאמ"> <span>מאמ</span> <small></small></label><label class="facet"><input type="checkbox" value="רפידות הנקה"> <span>רפידות הנקה</span> <small></small></label><label class="facet"><input type="checkbox" value="כוס אימון"> <span>כוס אימון</span> <small></small></label><label class="facet"><input type="checkbox" value="מברשת"> <span>מברשת</span> <small></small></label><label class="facet"><input type="checkbox" value="צר"> <span>צר</span> <small></small></label><label class="facet"><input type="checkbox" value="אונט"> <span>אונט</span> <small></small></label><label class="facet"><input type="checkbox" value="נשכן"> <span>נשכן</span> <small></small></label><label class="facet"><input type="checkbox" value="פטמה לבקבוק"> <span>פטמה לבקבוק</span> <small></small></label><label class="facet"><input type="checkbox" value="מחזיק למוצץ"> <span>מחזיק למוצץ</span> <small></small></label></div>
+  <div class="facet-stores" id="facet-stores" hidden><div class="facet-title">חנויות</div><div class="facet-items"></div></div>
+  <div class="facet-actions"><button type="button" class="link" id="facet-clear">ניקוי</button>
+    <button type="button" id="facet-done">הצגה</button></div>
+</div>
+<div id="cat-list" data-href="c-9-3.html">
+
+<ol class="products">
+  
+  
+    
+    
+    
+    <li class="product st-4 best">
+      <div class="info">
+        <div class="name">בקבוק 500 מל פלסטיק עם צמידים - הפוני הקטן שלי<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290115072655" data-key="7290115072655" data-name="בקבוק 500 מל פלסטיק עם צמידים - הפוני הקטן שלי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪20.00 <small>לליטר</small></div>
+          <div class="shelf">₪10.00 · 500 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115072655" data-name="בקבוק 500 מל פלסטיק עם צמידים - הפוני הקטן שלי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">קמיל בלו קלאסיק שמפו לתינוק ליטר<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290019075479" data-key="7290019075479" data-name="קמיל בלו קלאסיק שמפו לתינוק ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          <span class="warn">גודל לא ודאי</span>
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪40</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪20.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪26.90</s> ₪20.00 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019075479" data-name="קמיל בלו קלאסיק שמפו לתינוק ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בקבוק 650 מל VFM מיקי<button type="button" class="unsold" data-sold="20260916" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290120098978" data-key="7290120098978" data-name="בקבוק 650 מל VFM מיקי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪22.92 <small>לליטר</small></div>
+          <div class="shelf">₪14.90 · 650 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290120098978" data-name="בקבוק 650 מל VFM מיקי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">בקבוק טריטן 700 מל עם צמידים מיני מאוס צבעי קשת<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290121802505" data-key="7290121802505" data-name="בקבוק טריטן 700 מל עם צמידים מיני מאוס צבעי קשת" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪28.43 <small>לליטר</small></div>
+          <div class="shelf">₪19.90 · 700 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121802505" data-name="בקבוק טריטן 700 מל עם צמידים מיני מאוס צבעי קשת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בקבוק שתייה דגם  שקוף-700  מל-מפרץ ההרפ<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290101455264" data-key="7290101455264" data-name="בקבוק שתייה דגם  שקוף-700  מל-מפרץ ההרפ" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪35.57 <small>לליטר</small></div>
+          <div class="shelf">₪24.90 · 700 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290101455264" data-name="בקבוק שתייה דגם  שקוף-700  מל-מפרץ ההרפ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">שמן תינוקות 400מל<button type="button" class="unsold" data-sold="20260920" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290105181329" data-key="7290105181329" data-name="שמן תינוקות 400מל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪42.25 <small>לליטר</small></div>
+          <div class="shelf">₪16.90 · 400 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290105181329" data-name="שמן תינוקות 400מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">בקבוק 500 מל טריטן עם פיית סיליקון- מיקי ג&#39;ונג&#39;ל<button type="button" class="unsold" data-sold="20261006" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290116915166" data-key="7290116915166" data-name="בקבוק 500 מל טריטן עם פיית סיליקון- מיקי ג&#39;ונג&#39;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪49.80 <small>לליטר</small></div>
+          <div class="shelf">₪24.90 · 500 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116915166" data-name="בקבוק 500 מל טריטן עם פיית סיליקון- מיקי ג&#39;ונג&#39;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בקבוק 450מל כחול<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7296168021008" data-key="7296168021008" data-name="בקבוק 450מל כחול" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪55.33 <small>לליטר</small></div>
+          <div class="shelf">₪24.90 · 450 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296168021008" data-name="בקבוק 450מל כחול" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בקבוק 450מל ורוד<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7296168021145" data-key="7296168021145" data-name="בקבוק 450מל ורוד" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪55.33 <small>לליטר</small></div>
+          <div class="shelf">₪24.90 · 450 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296168021145" data-name="בקבוק 450מל ורוד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בקבוק 360מל סוויטי<button type="button" class="unsold" data-sold="20260908" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7296168089299" data-key="7296168089299" data-name="בקבוק 360מל סוויטי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪56.11 <small>לליטר</small></div>
+          <div class="shelf">₪20.20 · 360 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296168089299" data-name="בקבוק 360מל סוויטי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בקבוק 300מל כחול<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7296168021107" data-key="7296168021107" data-name="בקבוק 300מל כחול" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪66.33 <small>לליטר</small></div>
+          <div class="shelf">₪19.90 · 300 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296168021107" data-name="בקבוק 300מל כחול" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בקבוק 300מל ורוד<button type="button" class="unsold" data-sold="20261006" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7296168021213" data-key="7296168021213" data-name="בקבוק 300מל ורוד" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪66.33 <small>לליטר</small></div>
+          <div class="shelf">₪19.90 · 300 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296168021213" data-name="בקבוק 300מל ורוד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סווטי שרשרת למוצץ סר<button type="button" class="unsold" data-sold="20260930" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7296168089015" data-key="7296168089015" data-name="סווטי שרשרת למוצץ סר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪80.80 <small>לליטר</small></div>
+          <div class="shelf">₪20.20 · 250 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296168089015" data-name="סווטי שרשרת למוצץ סר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בקבוק לתינוק 150מל ס<button type="button" class="unsold" data-sold="20260925" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7296168893001" data-key="7296168893001" data-name="בקבוק לתינוק 150מל ס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪107.33 <small>לליטר</small></div>
+          <div class="shelf">₪16.10 · 150 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296168893001" data-name="בקבוק לתינוק 150מל ס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בקבוק לתינוק 150 מל<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7296168330100" data-key="7296168330100" data-name="בקבוק לתינוק 150 מל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪114.00 <small>לליטר</small></div>
+          <div class="shelf">₪17.10 · 150 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296168330100" data-name="בקבוק לתינוק 150 מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בקבוק לתינוק 330 מ&#34;ל<button type="button" class="unsold" data-sold="20261003" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="9001616861420" data-key="9001616861420" data-name="בקבוק לתינוק 330 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪120.91 <small>לליטר</small></div>
+          <div class="shelf">₪39.90 · 330 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9001616861420" data-name="בקבוק לתינוק 330 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בקבוק לתינוק 330 מ&#34;ל<button type="button" class="unsold" data-sold="20261006" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="9001616861437" data-key="9001616861437" data-name="בקבוק לתינוק 330 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪120.91 <small>לליטר</small></div>
+          <div class="shelf">₪39.90 · 330 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9001616861437" data-name="בקבוק לתינוק 330 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בקבוק תינוק 330 מ&#34;ל אננס<button type="button" class="unsold" data-sold="20260916" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="9001616861444" data-key="9001616861444" data-name="בקבוק תינוק 330 מ&#34;ל אננס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪39.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪120.91 <small>לליטר</small></div>
+          <div class="shelf">₪39.90 · 330 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9001616861444" data-name="בקבוק תינוק 330 מ&#34;ל אננס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בקבוק לתינוק 330 מ&#34;ל<button type="button" class="unsold" data-sold="20260807" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="9001616861451" data-key="9001616861451" data-name="בקבוק לתינוק 330 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪120.91 <small>לליטר</small></div>
+          <div class="shelf">₪39.90 · 330 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9001616861451" data-name="בקבוק לתינוק 330 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בקבוק תינוק 330 מ&#34;ל פטריה, טורקיז<button type="button" class="unsold" data-sold="20260927" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="9001616861468" data-key="9001616861468" data-name="בקבוק תינוק 330 מ&#34;ל פטריה, טורקיז" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪39.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪120.91 <small>לליטר</small></div>
+          <div class="shelf">₪39.90 · 330 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9001616861468" data-name="בקבוק תינוק 330 מ&#34;ל פטריה, טורקיז" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קרם החתלה פרש וואנס<button type="button" class="unsold" data-sold="20260831" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290017872001" data-key="7290017872001" data-name="קרם החתלה פרש וואנס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪127.00 <small>לליטר</small></div>
+          <div class="shelf">₪12.70 · 100 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017872001" data-name="קרם החתלה פרש וואנס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קרם החתלה פרש וואנס<button type="button" class="unsold" data-sold="20260901" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290017872018" data-key="7290017872018" data-name="קרם החתלה פרש וואנס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪127.00 <small>לליטר</small></div>
+          <div class="shelf">₪12.70 · 100 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017872018" data-name="קרם החתלה פרש וואנס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">אנטי קוליק 260 מ&#34;ל אופוויט<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="9001616861352" data-key="9001616861352" data-name="אנטי קוליק 260 מ&#34;ל אופוויט" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          <span class="other st-1">רמי לוי ₪40.40</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪153.46 <small>לליטר</small></div>
+          <div class="shelf">₪39.90 · 260 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9001616861352" data-name="אנטי קוליק 260 מ&#34;ל אופוויט" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מאמ בקבוק 130מל+מוצץ<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="9001616671715" data-key="9001616671715" data-name="מאמ בקבוק 130מל+מוצץ" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪193.85 <small>לליטר</small></div>
+          <div class="shelf">₪25.20 · 130 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9001616671715" data-name="מאמ בקבוק 130מל+מוצץ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בקבוק טרינר 220 מל מ<button type="button" class="unsold" data-sold="20260922" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="9001616692857" data-key="9001616692857" data-name="בקבוק טרינר 220 מל מ" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאם</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪206.36 <small>לליטר</small></div>
+          <div class="shelf">₪45.40 · 220 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9001616692857" data-name="בקבוק טרינר 220 מל מ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקיות איחסון חלב אם<button type="button" class="unsold" data-sold="20260918" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7296168154232" data-key="7296168154232" data-name="שקיות איחסון חלב אם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>איתן</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.93 <small>ליח׳</small></div>
+          <div class="shelf">₪23.20 · 25 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296168154232" data-name="שקיות איחסון חלב אם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">זוג כפיות רכות לתינו<button type="button" class="unsold" data-sold="20260925" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7296168015786" data-key="7296168015786" data-name="זוג כפיות רכות לתינו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>איתן</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪5.55 <small>ליח׳</small></div>
+          <div class="shelf">₪11.10 · 2 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296168015786" data-name="זוג כפיות רכות לתינו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קופסא איחסון למוצץ<button type="button" class="unsold" data-sold="20260811" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7296168021770" data-key="7296168021770" data-name="קופסא איחסון למוצץ" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>איתן</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪11.10 <small>ליח׳</small></div>
+          <div class="shelf">₪11.10 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296168021770" data-name="קופסא איחסון למוצץ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מברשת לבקבוק מהודרת<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7296168014314" data-key="7296168014314" data-name="מברשת לבקבוק מהודרת" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪12.90 <small>ליח׳</small></div>
+          <div class="shelf">₪12.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296168014314" data-name="מברשת לבקבוק מהודרת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">כפית סיליקון לתינוק<button type="button" class="unsold" data-sold="20261002" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7296168330049" data-key="7296168330049" data-name="כפית סיליקון לתינוק" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>איתן</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪13.10 <small>ליח׳</small></div>
+          <div class="shelf">₪13.10 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296168330049" data-name="כפית סיליקון לתינוק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ברווזי גומי לאמבט<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7296168890130" data-key="7296168890130" data-name="ברווזי גומי לאמבט" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪13.10 <small>ליח׳</small></div>
+          <div class="shelf">₪13.10 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296168890130" data-name="ברווזי גומי לאמבט" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מחלק מנות<button type="button" class="unsold" data-sold="20261001" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7296168089114" data-key="7296168089114" data-name="מחלק מנות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪13.90 <small>ליח׳</small></div>
+          <div class="shelf">₪13.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296168089114" data-name="מחלק מנות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מברשת מסרק לתינוק<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7296168330025" data-key="7296168330025" data-name="מברשת מסרק לתינוק" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.90 <small>ליח׳</small></div>
+          <div class="shelf">₪14.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296168330025" data-name="מברשת מסרק לתינוק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סדין עם גומי למיטת ת<button type="button" class="unsold" data-sold="20260915" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7296168015496" data-key="7296168015496" data-name="סדין עם גומי למיטת ת" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>איתן</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪15.10 <small>ליח׳</small></div>
+          <div class="shelf">₪15.10 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296168015496" data-name="סדין עם גומי למיטת ת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סדין שעוונית<button type="button" class="unsold" data-sold="20260925" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7296168015519" data-key="7296168015519" data-name="סדין שעוונית" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪15.10 <small>ליח׳</small></div>
+          <div class="shelf">₪15.10 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296168015519" data-name="סדין שעוונית" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שואב נזלת לתינוק<button type="button" class="unsold" data-sold="20260923" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7296168025389" data-key="7296168025389" data-name="שואב נזלת לתינוק" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>איתן</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪15.10 <small>ליח׳</small></div>
+          <div class="shelf">₪15.10 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296168025389" data-name="שואב נזלת לתינוק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קוצץ ציפורניים לתינו<button type="button" class="unsold" data-sold="20260910" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7296168089176" data-key="7296168089176" data-name="קוצץ ציפורניים לתינו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪16.10 <small>ליח׳</small></div>
+          <div class="shelf">₪16.10 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296168089176" data-name="קוצץ ציפורניים לתינו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">כוס אימון לתינוק 340<button type="button" class="unsold" data-sold="20260901" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7296168330056" data-key="7296168330056" data-name="כוס אימון לתינוק 340" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>איתן</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪18.10 <small>ליח׳</small></div>
+          <div class="shelf">₪18.10 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296168330056" data-name="כוס אימון לתינוק 340" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מספריים לתינוק סוויט<button type="button" class="unsold" data-sold="20260930" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7296168089183" data-key="7296168089183" data-name="מספריים לתינוק סוויט" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪18.10 <small>ליח׳</small></div>
+          <div class="shelf">₪18.10 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296168089183" data-name="מספריים לתינוק סוויט" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סט מברשת ומסרק לתינו<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7296168089190" data-key="7296168089190" data-name="סט מברשת ומסרק לתינו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪18.10 <small>ליח׳</small></div>
+          <div class="shelf">₪18.10 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296168089190" data-name="סט מברשת ומסרק לתינו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מוצץ לתינוק ללא ביספנול 0-2 מאם 2 יחידות<button type="button" class="unsold" data-sold="20260928" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="9001616860874" data-key="9001616860874" data-name="מוצץ לתינוק ללא ביספנול 0-2 מאם 2 יחידות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.65 <small>ליח׳</small></div>
+          <div class="shelf">₪39.30 · 2 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9001616860874" data-name="מוצץ לתינוק ללא ביספנול 0-2 מאם 2 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מוצץ סיליקון סוויט 0<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7296168009365" data-key="7296168009365" data-name="מוצץ סיליקון סוויט 0" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.90 <small>ליח׳</small></div>
+          <div class="shelf">₪19.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296168009365" data-name="מוצץ סיליקון סוויט 0" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מוצץ סיליקון סוויט 6<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7296168009426" data-key="7296168009426" data-name="מוצץ סיליקון סוויט 6" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.90 <small>ליח׳</small></div>
+          <div class="shelf">₪19.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296168009426" data-name="מוצץ סיליקון סוויט 6" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סינר גמיש לתינוק<button type="button" class="unsold" data-sold="20260911" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7296168330018" data-key="7296168330018" data-name="סינר גמיש לתינוק" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪20.20 <small>ליח׳</small></div>
+          <div class="shelf">₪20.20 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296168330018" data-name="סינר גמיש לתינוק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מתלה לעגלה<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7296168143885" data-key="7296168143885" data-name="מתלה לעגלה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>איתן</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪20.20 <small>ליח׳</small></div>
+          <div class="shelf">₪20.20 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296168143885" data-name="מתלה לעגלה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">נשכן קקטוס<button type="button" class="unsold" data-sold="20260913" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7296168089336" data-key="7296168089336" data-name="נשכן קקטוס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪25.20 <small>ליח׳</small></div>
+          <div class="shelf">₪25.20 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296168089336" data-name="נשכן קקטוס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">נשכן סיליקון סנאי<button type="button" class="unsold" data-sold="20260916" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7296168089381" data-key="7296168089381" data-name="נשכן סיליקון סנאי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪25.20 <small>ליח׳</small></div>
+          <div class="shelf">₪25.20 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296168089381" data-name="נשכן סיליקון סנאי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">נשכן רשת לפירות<button type="button" class="unsold" data-sold="20260924" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7296168089169" data-key="7296168089169" data-name="נשכן רשת לפירות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪25.20 <small>ליח׳</small></div>
+          <div class="shelf">₪25.20 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296168089169" data-name="נשכן רשת לפירות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מחזיק למוצץ מאם<button type="button" class="unsold" data-sold="20260928" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="" data-key="7290058140886:37977005455" data-name="מחזיק למוצץ מאם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאם</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪29.90 <small>ליח׳</small></div>
+          <div class="shelf">₪29.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058140886:37977005455" data-name="מחזיק למוצץ מאם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פטמה לבקבוק שלב 2 מא<button type="button" class="unsold" data-sold="20261003" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="9001616203367" data-key="9001616203367" data-name="פטמה לבקבוק שלב 2 מא" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאם</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪29.90 <small>ליח׳</small></div>
+          <div class="shelf">₪29.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9001616203367" data-name="פטמה לבקבוק שלב 2 מא" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פטמה שלב 3<button type="button" class="unsold" data-sold="20261006" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="9001616203626" data-key="9001616203626" data-name="פטמה שלב 3" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאם</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪29.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪29.90 <small>ליח׳</small></div>
+          <div class="shelf">₪29.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9001616203626" data-name="פטמה שלב 3" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מחזיק למוצץ מאם<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="9001616703225" data-key="9001616703225" data-name="מחזיק למוצץ מאם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאם</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪29.90 <small>ליח׳</small></div>
+          <div class="shelf">₪29.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9001616703225" data-name="מחזיק למוצץ מאם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פטמה לבקבוק שלב 1 מא<button type="button" class="unsold" data-sold="20261001" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="9001616203350" data-key="9001616203350" data-name="פטמה לבקבוק שלב 1 מא" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאם</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪30.30 <small>ליח׳</small></div>
+          <div class="shelf">₪30.30 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9001616203350" data-name="פטמה לבקבוק שלב 1 מא" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">זוג ידיות לבק&#39; תכלת<button type="button" class="unsold" data-sold="20260914" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="9001616804564" data-key="9001616804564" data-name="זוג ידיות לבק&#39; תכלת" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאם</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪30.30 <small>ליח׳</small></div>
+          <div class="shelf">₪30.30 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9001616804564" data-name="זוג ידיות לבק&#39; תכלת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">זוג ידיות לבק&#39; ורוד<button type="button" class="unsold" data-sold="20260903" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="9001616804571" data-key="9001616804571" data-name="זוג ידיות לבק&#39; ורוד" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאם</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪30.30 <small>ליח׳</small></div>
+          <div class="shelf">₪30.30 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9001616804571" data-name="זוג ידיות לבק&#39; ורוד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">זוג מוצצים סיליקון מאמ 0-2 ורוד<button type="button" class="unsold" data-sold="20261001" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="9001616860881" data-key="9001616860881" data-name="זוג מוצצים סיליקון מאמ 0-2 ורוד" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.30 <small>ליח׳</small></div>
+          <div class="shelf">₪39.30 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9001616860881" data-name="זוג מוצצים סיליקון מאמ 0-2 ורוד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">זוג מוצצי ננו סיליקון חיות מאם<button type="button" class="unsold" data-sold="20260925" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="9001616860904" data-key="9001616860904" data-name="זוג מוצצי ננו סיליקון חיות מאם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.30 <small>ליח׳</small></div>
+          <div class="shelf">₪39.30 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9001616860904" data-name="זוג מוצצי ננו סיליקון חיות מאם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מוצץ לתינוק ללא ביספנול 6+ מאם 2 יחידות<button type="button" class="unsold" data-sold="20260928" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="9001616860966" data-key="9001616860966" data-name="מוצץ לתינוק ללא ביספנול 6+ מאם 2 יחידות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪39.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.30 <small>ליח׳</small></div>
+          <div class="shelf">₪39.30 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9001616860966" data-name="מוצץ לתינוק ללא ביספנול 6+ מאם 2 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מוצץ לתינוק אולטי סיליקון ללא ביספנול 16+ מאם<button type="button" class="unsold" data-sold="20260927" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="9001616861055" data-key="9001616861055" data-name="מוצץ לתינוק אולטי סיליקון ללא ביספנול 16+ מאם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.30 <small>ליח׳</small></div>
+          <div class="shelf">₪39.30 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9001616861055" data-name="מוצץ לתינוק אולטי סיליקון ללא ביספנול 16+ מאם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מוצץ לתינוק מיני אולטי סיליקון עיגולים מאם 2 יחידות<button type="button" class="unsold" data-sold="20260914" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="9001616861116" data-key="9001616861116" data-name="מוצץ לתינוק מיני אולטי סיליקון עיגולים מאם 2 יחידות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.30 <small>ליח׳</small></div>
+          <div class="shelf">₪39.30 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9001616861116" data-name="מוצץ לתינוק מיני אולטי סיליקון עיגולים מאם 2 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מוצץ לתינוק מיני ללא ביספנול 0-6 מאם<button type="button" class="unsold" data-sold="20260930" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="9001616861161" data-key="9001616861161" data-name="מוצץ לתינוק מיני ללא ביספנול 0-6 מאם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.30 <small>ליח׳</small></div>
+          <div class="shelf">₪39.30 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9001616861161" data-name="מוצץ לתינוק מיני ללא ביספנול 0-6 מאם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מוצץ לתינוק אולטי סילקון ללא ביספנול 6+ מאם<button type="button" class="unsold" data-sold="20260923" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="9001616861192" data-key="9001616861192" data-name="מוצץ לתינוק אולטי סילקון ללא ביספנול 6+ מאם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪39.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.30 <small>ליח׳</small></div>
+          <div class="shelf">₪39.30 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9001616861192" data-name="מוצץ לתינוק אולטי סילקון ללא ביספנול 6+ מאם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מאם מוצץ מיני אולטי סילקון 0-6 מאמ<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="9001616861222" data-key="9001616861222" data-name="מאם מוצץ מיני אולטי סילקון 0-6 מאמ" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪39.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.30 <small>ליח׳</small></div>
+          <div class="shelf">₪39.30 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9001616861222" data-name="מאם מוצץ מיני אולטי סילקון 0-6 מאמ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">זוג מוצצים סיליקון ק<button type="button" class="unsold" data-sold="20260826" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="9001616860911" data-key="9001616860911" data-name="זוג מוצצים סיליקון ק" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.30 <small>ליח׳</small></div>
+          <div class="shelf">₪39.30 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9001616860911" data-name="זוג מוצצים סיליקון ק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">זוג מוצצים סיליקון פ<button type="button" class="unsold" data-sold="20260807" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="9001616860997" data-key="9001616860997" data-name="זוג מוצצים סיליקון פ" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.30 <small>ליח׳</small></div>
+          <div class="shelf">₪39.30 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9001616860997" data-name="זוג מוצצים סיליקון פ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">זוג מוצצים סיליקון מ<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="9001616861062" data-key="9001616861062" data-name="זוג מוצצים סיליקון מ" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.30 <small>ליח׳</small></div>
+          <div class="shelf">₪39.30 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9001616861062" data-name="זוג מוצצים סיליקון מ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מאמ זוג מוצצים  0-6 סיליקון טבע אפור לבן<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="9001616861093" data-key="9001616861093" data-name="מאמ זוג מוצצים  0-6 סיליקון טבע אפור לבן" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪39.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.30 <small>ליח׳</small></div>
+          <div class="shelf">₪39.30 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9001616861093" data-name="מאמ זוג מוצצים  0-6 סיליקון טבע אפור לבן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">זוג מוצצים סיליקון פ<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="9001616861109" data-key="9001616861109" data-name="זוג מוצצים סיליקון פ" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.30 <small>ליח׳</small></div>
+          <div class="shelf">₪39.30 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9001616861109" data-name="זוג מוצצים סיליקון פ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מאמ זוג מוצצים  0-6 סיליקון מאט חלק ורוד סגול<button type="button" class="unsold" data-sold="20261006" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="9001616861123" data-key="9001616861123" data-name="מאמ זוג מוצצים  0-6 סיליקון מאט חלק ורוד סגול" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪39.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.30 <small>ליח׳</small></div>
+          <div class="shelf">₪39.30 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9001616861123" data-name="מאמ זוג מוצצים  0-6 סיליקון מאט חלק ורוד סגול" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">זוג מוצצים סיליקון ב<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="9001616861147" data-key="9001616861147" data-name="זוג מוצצים סיליקון ב" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.30 <small>ליח׳</small></div>
+          <div class="shelf">₪39.30 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9001616861147" data-name="זוג מוצצים סיליקון ב" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מאמ זוג מוצצים 6+ סיליקון זוהר בחושך ורוד סגול<button type="button" class="unsold" data-sold="20261004" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="9001616861208" data-key="9001616861208" data-name="מאמ זוג מוצצים 6+ סיליקון זוהר בחושך ורוד סגול" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪39.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.30 <small>ליח׳</small></div>
+          <div class="shelf">₪39.30 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9001616861208" data-name="מאמ זוג מוצצים 6+ סיליקון זוהר בחושך ורוד סגול" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מאמ זוג מוצצים  0-6 סיליקון זוהרים בחושך סגול ורוד<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="9001616861239" data-key="9001616861239" data-name="מאמ זוג מוצצים  0-6 סיליקון זוהרים בחושך סגול ורוד" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-4">נטו חיסכון ₪39.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.30 <small>ליח׳</small></div>
+          <div class="shelf">₪39.30 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9001616861239" data-name="מאמ זוג מוצצים  0-6 סיליקון זוהרים בחושך סגול ורוד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">זוג מוצצים סיליקון ק<button type="button" class="unsold" data-sold="20260903" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="9001616861505" data-key="9001616861505" data-name="זוג מוצצים סיליקון ק" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.30 <small>ליח׳</small></div>
+          <div class="shelf">₪39.30 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9001616861505" data-name="זוג מוצצים סיליקון ק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">זוג מוצצים איר סיליק<button type="button" class="unsold" data-sold="20260907" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="9001616861543" data-key="9001616861543" data-name="זוג מוצצים איר סיליק" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.30 <small>ליח׳</small></div>
+          <div class="shelf">₪39.30 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9001616861543" data-name="זוג מוצצים איר סיליק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">זוג מוצצים סיליקון ק<button type="button" class="unsold" data-sold="20260827" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="9001616702808" data-key="9001616702808" data-name="זוג מוצצים סיליקון ק" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאם</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.30 <small>ליח׳</small></div>
+          <div class="shelf">₪39.30 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9001616702808" data-name="זוג מוצצים סיליקון ק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">זוג מוצצים איר סיליק<button type="button" class="unsold" data-sold="20260831" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="9001616702853" data-key="9001616702853" data-name="זוג מוצצים איר סיליק" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאם</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.30 <small>ליח׳</small></div>
+          <div class="shelf">₪39.30 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9001616702853" data-name="זוג מוצצים איר סיליק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מברשת לניקוי בקבוקים<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="9001616205828" data-key="9001616205828" data-name="מברשת לניקוי בקבוקים" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.30 <small>ליח׳</small></div>
+          <div class="shelf">₪39.30 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9001616205828" data-name="מברשת לניקוי בקבוקים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">זוג בקבוקי ילדים 500 מל<button type="button" class="unsold" data-sold="20260824" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290116748405" data-key="7290116748405" data-name="זוג בקבוקי ילדים 500 מל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.40 <small>ליח׳</small></div>
+          <div class="shelf">₪39.40 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116748405" data-name="זוג בקבוקי ילדים 500 מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בקבוק לתינוק מאם 270<button type="button" class="unsold" data-sold="20261006" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="9001616861482" data-key="9001616861482" data-name="בקבוק לתינוק מאם 270" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.90 <small>ליח׳</small></div>
+          <div class="shelf">₪39.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9001616861482" data-name="בקבוק לתינוק מאם 270" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מאמ זוג מוצצים  0-2 סיליקון טבע אפור לבן<button type="button" class="unsold" data-sold="20261001" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="9001616860898" data-key="9001616860898" data-name="מאמ זוג מוצצים  0-2 סיליקון טבע אפור לבן" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.90 <small>ליח׳</small></div>
+          <div class="shelf">₪39.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9001616860898" data-name="מאמ זוג מוצצים  0-2 סיליקון טבע אפור לבן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מאמ זוג מוצצים 6+ סיליקון זוהר בחושך ירוק לבן<button type="button" class="unsold" data-sold="20261006" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="9001616861215" data-key="9001616861215" data-name="מאמ זוג מוצצים 6+ סיליקון זוהר בחושך ירוק לבן" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.90 <small>ליח׳</small></div>
+          <div class="shelf">₪39.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9001616861215" data-name="מאמ זוג מוצצים 6+ סיליקון זוהר בחושך ירוק לבן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מאמ בקבוק אנטי קוליק<button type="button" class="unsold" data-sold="20260810" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="9001616682216" data-key="9001616682216" data-name="מאמ בקבוק אנטי קוליק" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאם</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪40.40 <small>ליח׳</small></div>
+          <div class="shelf">₪40.40 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9001616682216" data-name="מאמ בקבוק אנטי קוליק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מאם בקבוק לתינוק 160<button type="button" class="unsold" data-sold="20260830" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="9001616682223" data-key="9001616682223" data-name="מאם בקבוק לתינוק 160" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאם</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪40.40 <small>ליח׳</small></div>
+          <div class="shelf">₪40.40 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9001616682223" data-name="מאם בקבוק לתינוק 160" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אוונט זוג מוצצי אייר<button type="button" class="unsold" data-sold="20260910" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="8710103949275" data-key="8710103949275" data-name="אוונט זוג מוצצי אייר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪40.40 <small>ליח׳</small></div>
+          <div class="shelf">₪40.40 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8710103949275" data-name="אוונט זוג מוצצי אייר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אוונט זוג מוצצי אייר<button type="button" class="unsold" data-sold="20260806" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="8710103949398" data-key="8710103949398" data-name="אוונט זוג מוצצי אייר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪40.40 <small>ליח׳</small></div>
+          <div class="shelf">₪40.40 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8710103949398" data-name="אוונט זוג מוצצי אייר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אוונט זוג מוצצי אייר<button type="button" class="unsold" data-sold="20260822" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="8710103949435" data-key="8710103949435" data-name="אוונט זוג מוצצי אייר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪40.40 <small>ליח׳</small></div>
+          <div class="shelf">₪40.40 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8710103949435" data-name="אוונט זוג מוצצי אייר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בקבוק לתינוק שלב 2 מ<button type="button" class="unsold" data-sold="20260901" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="9001616661099" data-key="9001616661099" data-name="בקבוק לתינוק שלב 2 מ" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאם</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪40.40 <small>ליח׳</small></div>
+          <div class="shelf">₪40.40 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9001616661099" data-name="בקבוק לתינוק שלב 2 מ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בקבוק לתינוק אנטי קו<button type="button" class="unsold" data-sold="20260802" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="9001616680991" data-key="9001616680991" data-name="בקבוק לתינוק אנטי קו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאם</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪40.40 <small>ליח׳</small></div>
+          <div class="shelf">₪40.40 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9001616680991" data-name="בקבוק לתינוק אנטי קו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בקבוק לתינוק אנטי קו<button type="button" class="unsold" data-sold="20261004" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="9001616681363" data-key="9001616681363" data-name="בקבוק לתינוק אנטי קו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאם</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪40.40 <small>ליח׳</small></div>
+          <div class="shelf">₪40.40 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9001616681363" data-name="בקבוק לתינוק אנטי קו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בקבוק לתינוק מאם 270<button type="button" class="unsold" data-sold="20260802" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="9001616702969" data-key="9001616702969" data-name="בקבוק לתינוק מאם 270" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאם</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪40.40 <small>ליח׳</small></div>
+          <div class="shelf">₪40.40 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9001616702969" data-name="בקבוק לתינוק מאם 270" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">הכוס הראשונה שלי בנו<button type="button" class="unsold" data-sold="20261002" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="9001616703058" data-key="9001616703058" data-name="הכוס הראשונה שלי בנו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪45.40 <small>ליח׳</small></div>
+          <div class="shelf">₪45.40 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9001616703058" data-name="הכוס הראשונה שלי בנו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+      
+      <li class="divider">ללא מחיר לק״ג (גודל לא ידוע)</li>
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מקלוני אוזניים לתינוקות 55 יח LA BELLE<button type="button" class="unsold" data-sold="20260906" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290014648661" data-key="7290014648661" data-name="מקלוני אוזניים לתינוקות 55 יח LA BELLE" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪5.20</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014648661" data-name="מקלוני אוזניים לתינוקות 55 יח LA BELLE" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">בקבוק יחיד ללא ביספינול סדרת סופטי פמילי(193)<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290105180193" data-key="7290105180193" data-name="בקבוק יחיד ללא ביספינול סדרת סופטי פמילי(193)" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪6.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290105180193" data-name="בקבוק יחיד ללא ביספינול סדרת סופטי פמילי(193)" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">רפידות הנקה 30 יח<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290008257503" data-key="7290008257503" data-name="רפידות הנקה 30 יח" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008257503" data-name="רפידות הנקה 30 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">בקבוק צר ג&#39;רני (220 )<button type="button" class="unsold" data-sold="20261001" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290008257220" data-key="7290008257220" data-name="בקבוק צר ג&#39;רני (220 )" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008257220" data-name="בקבוק צר ג&#39;רני (220 )" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">כוס אימון מרקיז (555)<button type="button" class="unsold" data-sold="20260924" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290010617555" data-key="7290010617555" data-name="כוס אימון מרקיז (555)" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010617555" data-name="כוס אימון מרקיז (555)" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מתז לניקוי התינוק (395)<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290010617395" data-key="7290010617395" data-name="מתז לניקוי התינוק (395)" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪11.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010617395" data-name="מתז לניקוי התינוק (395)" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מוצץ לילך זוג- גדול(312)<button type="button" class="unsold" data-sold="20260929" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290008257312" data-key="7290008257312" data-name="מוצץ לילך זוג- גדול(312)" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪13.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008257312" data-name="מוצץ לילך זוג- גדול(312)" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">סינר מגבת עבה<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290008257411" data-key="7290008257411" data-name="סינר מגבת עבה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אריסטוקרט</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪13.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008257411" data-name="סינר מגבת עבה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">כוס אימון עם ידיות<button type="button" class="unsold" data-sold="20261001" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290010617593" data-key="7290010617593" data-name="כוס אימון עם ידיות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪13.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010617593" data-name="כוס אימון עם ידיות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מחזיק שרשרת למוצץ יוקרתית<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290010617920" data-key="7290010617920" data-name="מחזיק שרשרת למוצץ יוקרתית" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אריסטוקרט</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪13.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010617920" data-name="מחזיק שרשרת למוצץ יוקרתית" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">כוס אימון דוכס (623)<button type="button" class="unsold" data-sold="20260930" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290010617623" data-key="7290010617623" data-name="כוס אימון דוכס (623)" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010617623" data-name="כוס אימון דוכס (623)" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">רפידות הנקה דקות<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290010617890" data-key="7290010617890" data-name="רפידות הנקה דקות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010617890" data-name="רפידות הנקה דקות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">בקבוק צר ג&#39;רני עם ידיות (186)<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290105180186" data-key="7290105180186" data-name="בקבוק צר ג&#39;רני עם ידיות (186)" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290105180186" data-name="בקבוק צר ג&#39;רני עם ידיות (186)" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">זוג מוצצים סיליקון בינוניים ב-PVC לתינוק 6+ חודשים כשל&#34;פ עד&#34;ח אחת שתיים ר. שמאי<button type="button" class="unsold" data-sold="20261006" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290019375647" data-key="7290019375647" data-name="זוג מוצצים סיליקון בינוניים ב-PVC לתינוק 6+ חודשים כשל&#34;פ עד&#34;ח אחת שתיים ר. שמאי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪15.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019375647" data-name="זוג מוצצים סיליקון בינוניים ב-PVC לתינוק 6+ חודשים כשל&#34;פ עד&#34;ח אחת שתיים ר. שמאי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מוצץ סיליקון צבעוני קטן, 4 יחידות<button type="button" class="unsold" data-sold="20260928" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290105180360" data-key="7290105180360" data-name="מוצץ סיליקון צבעוני קטן, 4 יחידות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אריסטוקרט</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪15.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290105180360" data-name="מוצץ סיליקון צבעוני קטן, 4 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מוצץ סיליקון צבעוני בינוני, שלישיה<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290105180377" data-key="7290105180377" data-name="מוצץ סיליקון צבעוני בינוני, שלישיה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אריסטוקרט</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪15.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290105180377" data-name="מוצץ סיליקון צבעוני בינוני, שלישיה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מוצץ סיליקון צבעוני גדול, שלישיה<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290105180384" data-key="7290105180384" data-name="מוצץ סיליקון צבעוני גדול, שלישיה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אריסטוקרט</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪15.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290105180384" data-name="מוצץ סיליקון צבעוני גדול, שלישיה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מוצץ סיליקון פרח גדול, זוג<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290010617180" data-key="7290010617180" data-name="מוצץ סיליקון פרח גדול, זוג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אריסטוקרט</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪16.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010617180" data-name="מוצץ סיליקון פרח גדול, זוג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מוצץ פרח בינוני, זוג<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290010617241" data-key="7290010617241" data-name="מוצץ פרח בינוני, זוג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אריסטוקרט</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪16.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010617241" data-name="מוצץ פרח בינוני, זוג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מוצץ פרח קטן, זוג<button type="button" class="unsold" data-sold="20261007" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290010617258" data-key="7290010617258" data-name="מוצץ פרח קטן, זוג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אריסטוקרט</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪16.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010617258" data-name="מוצץ פרח קטן, זוג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">בקבוק שלישיה גדול סדרת סופטי פמילי (209)<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290105180209" data-key="7290105180209" data-name="בקבוק שלישיה גדול סדרת סופטי פמילי (209)" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אריסטוקרט</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪16.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290105180209" data-name="בקבוק שלישיה גדול סדרת סופטי פמילי (209)" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">בקבוק רחב סייף גדול (913)<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290010617913" data-key="7290010617913" data-name="בקבוק רחב סייף גדול (913)" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪18.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010617913" data-name="בקבוק רחב סייף גדול (913)" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">בקבוק צר בעיצוב טלפון 2+1 מתנה (391)<button type="button" class="unsold" data-sold="20261001" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290105180391" data-key="7290105180391" data-name="בקבוק צר בעיצוב טלפון 2+1 מתנה (391)" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪18.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290105180391" data-name="בקבוק צר בעיצוב טלפון 2+1 מתנה (391)" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בקבוק פלסטיק 500 מיקי מאוס ג`ונגל<button type="button" class="unsold" data-sold="20260904" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290118873327" data-key="7290118873327" data-name="בקבוק פלסטיק 500 מיקי מאוס ג`ונגל" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118873327" data-name="בקבוק פלסטיק 500 מיקי מאוס ג`ונגל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מוצץ מלכות בקופסה בינוני, זוג<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290105181732" data-key="7290105181732" data-name="מוצץ מלכות בקופסה בינוני, זוג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אריסטוקרט</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290105181732" data-name="מוצץ מלכות בקופסה בינוני, זוג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">בקבוק עם צמידים 700 - מיני מאוס בת הים<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290118873457" data-key="7290118873457" data-name="בקבוק עם צמידים 700 - מיני מאוס בת הים" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118873457" data-name="בקבוק עם צמידים 700 - מיני מאוס בת הים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">רפידות הנקה, זוג 2 * 30 יחידות<button type="button" class="unsold" data-sold="20261005" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290008257718" data-key="7290008257718" data-name="רפידות הנקה, זוג 2 * 30 יחידות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אריסטוקרט</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪20.00</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008257718" data-name="רפידות הנקה, זוג 2 * 30 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">(2302) אם חלב לאחסון שקיות<button type="button" class="unsold sold-ok" data-sold="20261008" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290105182302" data-key="7290105182302" data-name="(2302) אם חלב לאחסון שקיות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪21.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290105182302" data-name="(2302) אם חלב לאחסון שקיות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">רפידות הנקה בלונס בייבי 50 יח&#39; L<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290117388099" data-key="7290117388099" data-name="רפידות הנקה בלונס בייבי 50 יח&#39; L" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪23.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290117388099" data-name="רפידות הנקה בלונס בייבי 50 יח&#39; L" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">מחזיקונים לעגלת, זוג<button type="button" class="unsold" data-sold="20260925" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290105181367" data-key="7290105181367" data-name="מחזיקונים לעגלת, זוג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אריסטוקרט</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪24.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290105181367" data-name="מחזיקונים לעגלת, זוג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">רפידות הנקה &#39;גן עדן&#39; מגע הפלא<button type="button" class="unsold" data-sold="20261001" aria-label="מתי נמכר לאחרונה">?</button> <button type="button" class="photo-btn" data-photo="7290105182319" data-key="7290105182319" data-name="רפידות הנקה &#39;גן עדן&#39; מגע הפלא" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪24.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290105182319" data-name="רפידות הנקה &#39;גן עדן&#39; מגע הפלא" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    
+    <li class="product st-4">
+      <div class="info">
+        <div class="name">בקבוק רחב גדול, זוג<button type="button" class="unsold sold-ok" data-sold="20261009" aria-label="מתי נמכר לאחרונה">✓</button> <button type="button" class="photo-btn" data-photo="7290105180407" data-key="7290105180407" data-name="בקבוק רחב גדול, זוג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אריסטוקרט</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">נטו חיסכון</span>
+          
+          <span class="only">רק בנטו חיסכון</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪29.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290105180407" data-name="בקבוק רחב גדול, זוג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+</ol>
+</div>
+
+</main>
+<footer>עודכן 10.10 23:50 · ויקטורי 9.10 22:08 · רמי לוי 9.10 21:00 · אושר עד 9.10 14:05 · אושר עד 9.10 14:05 · נטו חיסכון 9.10 22:14</footer>
+
+
+<nav class="bottom-nav" aria-label="ניווט">
+  <a href="index.html" class="on"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg><span>בית</span></a>
+  <a href="search.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><span>חיפוש</span></a>
+  <a href="scan.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V5a1 1 0 0 1 1-1h2M17 4h2a1 1 0 0 1 1 1v2M20 17v2a1 1 0 0 1-1 1h-2M7 20H5a1 1 0 0 1-1-1v-2"/><path d="M8 8v8M11 8v8M14 8v8M16.5 8v8"/></svg><span>סריקה</span></a>
+  <a href="basket.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h11l2-8H6.2"/><circle cx="9.5" cy="19" r="1.4"/><circle cx="17" cy="19" r="1.4"/></svg><span id="cart-count"></span><span>עגלת קניות</span></a>
+  <a href="spending.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-2-1.4-2 1.4-2-1.4-2 1.4-2-1.4L6 21z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><span>הוצאות</span></a>
+</nav>
+
+<script src="static/basket.js?v=20261010235052"></script>
+<script src="static/catpick.js?v=20261010235052"></script>
+<script src="static/photo.js?v=20261010235052"></script>
+
+<script src="static/render.js?v=20261010235052"></script>
+<script src="static/category.js?v=20261010235052" data-build="20261010235052"></script>
+
+<script>
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+</script>
+</body>
+</html>
