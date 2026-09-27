@@ -1,0 +1,3144 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f7a4d">
+<script>
+// the look this phone chose (settings.html "מראה"), before anything is drawn: html.light / html.dark
+// (none = follow the phone) and html[data-color] (none = green); the browser bar takes the colour too
+(function () {
+  let t = {};
+  try { t = JSON.parse(localStorage.getItem("theme")) || {}; } catch (e) { /* none yet */ }
+  const root = document.documentElement;
+  if (t.mode === "light" || t.mode === "dark") root.classList.add(t.mode);
+  if (t.color) root.dataset.color = t.color;
+  if (t.bar) document.querySelector('meta[name="theme-color"]').content = t.bar;
+})();
+</script>
+<title>קוסקוס, פתיתים ובורגול</title>
+<link rel="manifest" href="static/manifest.webmanifest">
+<link rel="icon" href="static/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="static/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="static/style.css?v=20261003210153">
+<style>.st-0 { --store: #e07000; }.st-1 { --store: #d32f2f; }.st-2 { --store: #1565c0; }.st-3 { --store: #1565c0; }</style>
+<script src="static/stores.js?v=20261003210153" data-stores="[{&#34;card_cap&#34;: 750, &#34;card_rate&#34;: 0.07, &#34;default&#34;: true, &#34;key&#34;: &#34;victory-038&#34;, &#34;name&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;ramilevy-007&#34;, &#34;name&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-026&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05ea\u05dc\u05e4\u05d9\u05d5\u05ea&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-003&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05d2\u05d1\u05e2\u05ea \u05e9\u05d0\u05d5\u05dc&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}]"></script>
+<script>
+// No long-press menu on links, pictures or text (the user: the home page's tiles opened Chrome's "open in new tab /
+// copy link" menu; CSS can't stop that on Android). Typing fields and the ⓘ sheet's barcode keep theirs.
+document.addEventListener("contextmenu", (e) => {
+  if (!e.target.closest("input, textarea, [contenteditable], .photo-barcode")) e.preventDefault();
+});
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <a class="back" href="t-4.html" aria-label="חזרה">→</a>
+    <h1>קוסקוס, פתיתים ובורגול</h1>
+    <a class="notes-link" href="notes.html" aria-label="רשימת קניות" title="רשימת קניות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="m8.5 10 1.2 1.2 2.3-2.4M8.5 15.5l1.2 1.2 2.3-2.4M14 10.5h2.5M14 16h2.5"/></svg><span>רשימת קניות</span></a>
+    <a class="settings-link" href="settings.html" aria-label="הגדרות" title="הגדרות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></a>
+  </div>
+  
+  <form class="search" action="search.html" method="get" role="search">
+    <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+    <input type="search" name="q" placeholder="חיפוש מוצר" enterkeyhint="search" aria-label="חיפוש מוצר">
+  </form>
+  
+</header>
+<main>
+
+<p class="sub"><span class="sub-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8v3H8z"/><path d="M7 6h10a1 1 0 0 1 1 1v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V7a1 1 0 0 1 1-1z"/><path d="M6 11h12v5H6z"/></svg></span>מזווה · <span id="cat-count">113</span> מוצרים, מהזול ליקר</p>
+
+
+<div class="cat-filter">
+  <input type="search" id="cat-filter" placeholder="סינון לפי שם או יצרן · ‎-מילה מסתירה" enterkeyhint="done" autocomplete="off" aria-label="סינון המוצרים בקטגוריה">
+</div>
+<div id="cat-list" data-href="c-4-4.html">
+
+<ol class="products">
+  
+  
+    
+    
+    <li class="product st-1 best">
+      <div class="info">
+        <div class="name">גריסים 500ג רמילוי <button type="button" class="photo-btn" data-photo="7290016865752" data-key="7290016865752" data-name="גריסים 500ג רמילוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוגת</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪4.90</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪4.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.90</s> ₪2.45 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016865752" data-name="גריסים 500ג רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גרישה 500ג רמי לוי <button type="button" class="photo-btn" data-photo="7290016865882" data-key="7290016865882" data-name="גרישה 500ג רמי לוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוגת</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪4.90</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪4.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪4.00</s> ₪2.45 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016865882" data-name="גרישה 500ג רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בורגול רמי לוי 1 ק&#34;ג <button type="button" class="photo-btn" data-photo="7290015994064" data-key="7290015994064" data-name="בורגול רמי לוי 1 ק&#34;ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רמי לוי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪7.90 <small>לק״ג</small></div>
+          <div class="shelf">₪7.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015994064" data-name="בורגול רמי לוי 1 ק&#34;ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גריסי פנינה רמי לוי 1 ק&#34;ג <button type="button" class="photo-btn" data-photo="7290015994088" data-key="7290015994088" data-name="גריסי פנינה רמי לוי 1 ק&#34;ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רמי לוי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪7.90 <small>לק״ג</small></div>
+          <div class="shelf">₪7.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015994088" data-name="גריסי פנינה רמי לוי 1 ק&#34;ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חיטה רמי לוי 1 ק&#34;ג <button type="button" class="photo-btn" data-photo="7290015994118" data-key="7290015994118" data-name="חיטה רמי לוי 1 ק&#34;ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רמי לוי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪7.90 <small>לק״ג</small></div>
+          <div class="shelf">₪7.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015994118" data-name="חיטה רמי לוי 1 ק&#34;ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גריסים <button type="button" class="photo-btn" data-photo="7290003643707" data-key="7290003643707" data-name="גריסים" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוגת תעשיות בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪6.30</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪8.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.90</s> ₪4.00 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003643707" data-name="גריסים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חיטה 500 גר סוגת <button type="button" class="photo-btn" data-photo="7290003643738" data-key="7290003643738" data-name="חיטה 500 גר סוגת" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוגת</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪6.30</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪8.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.90</s> ₪4.00 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003643738" data-name="חיטה 500 גר סוגת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גריסי פנינה 500 גרם סוגת <button type="button" class="photo-btn" data-photo="7290100700020" data-key="7290100700020" data-name="גריסי פנינה 500 גרם סוגת" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוגת</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪6.30</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪8.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.90</s> ₪4.00 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290100700020" data-name="גריסי פנינה 500 גרם סוגת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בורגול 500 גר סוגת <button type="button" class="photo-btn" data-photo="7290100700587" data-key="7290100700587" data-name="בורגול 500 גר סוגת" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוגת</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪6.30</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪8.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.90</s> ₪4.00 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290100700587" data-name="בורגול 500 גר סוגת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גרישה <button type="button" class="photo-btn" data-photo="7290100701454" data-key="7290100701454" data-name="גרישה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוגת תעשיות בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪6.30</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪8.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.90</s> ₪4.00 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290100701454" data-name="גרישה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פתיתים חישוקים 500 ג <button type="button" class="photo-btn" data-photo="7290016733501" data-key="7290016733501" data-name="פתיתים חישוקים 500 ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪8.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪4.80</s> ₪4.00 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016733501" data-name="פתיתים חישוקים 500 ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פתיתים 3 צבעים 500 גר רמילוי <button type="button" class="photo-btn" data-photo="7290016733525" data-key="7290016733525" data-name="פתיתים 3 צבעים 500 גר רמילוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪8.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪4.80</s> ₪4.00 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016733525" data-name="פתיתים 3 צבעים 500 גר רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פתיתים 50% קמח מלא 500גר רמילוי <button type="button" class="photo-btn" data-photo="7290112191878" data-key="7290112191878" data-name="פתיתים 50% קמח מלא 500גר רמילוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪8.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪4.80</s> ₪4.00 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112191878" data-name="פתיתים 50% קמח מלא 500גר רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פתיתים אורז רמי לוי 500 גרם <button type="button" class="photo-btn" data-photo="7290015834285" data-key="7290015834285" data-name="פתיתים אורז רמי לוי 500 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רמי לוי</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪8.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪4.80</s> ₪4.00 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015834285" data-name="פתיתים אורז רמי לוי 500 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פתיתים קוסקוס רמי לוי 500 גרם <button type="button" class="photo-btn" data-photo="7290015834292" data-key="7290015834292" data-name="פתיתים קוסקוס רמי לוי 500 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רמי לוי</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪8.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪4.80</s> ₪4.00 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015834292" data-name="פתיתים קוסקוס רמי לוי 500 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גרישה רמי לוי 1 ק&#34;ג <button type="button" class="photo-btn" data-photo="7290015994071" data-key="7290015994071" data-name="גרישה רמי לוי 1 ק&#34;ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רמי לוי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪8.00 <small>לק״ג</small></div>
+          <div class="shelf">₪8.00 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015994071" data-name="גרישה רמי לוי 1 ק&#34;ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בורגול סוגת 1 ק&#34;ג <button type="button" class="photo-btn" data-photo="7290100700419" data-key="7290100700419" data-name="בורגול סוגת 1 ק&#34;ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוגת</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪8.80 <small>לק״ג</small></div>
+          <div class="shelf">₪8.80 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290100700419" data-name="בורגול סוגת 1 ק&#34;ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בורגול 500ג רמי לוי <button type="button" class="photo-btn" data-photo="7290016865875" data-key="7290016865875" data-name="בורגול 500ג רמי לוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוגת</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.20 <small>לק״ג</small></div>
+          <div class="shelf">₪4.60 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016865875" data-name="בורגול 500ג רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בורגול <button type="button" class="photo-btn" data-photo="835811006985" data-key="7290696200003:835811006985" data-name="בורגול" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יבוא ושיווק: הנמל אריזות ושיווק בעמ.</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.80 <small>לק״ג</small></div>
+          <div class="shelf">₪4.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:835811006985" data-name="בורגול" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">חיטה יבשה <button type="button" class="photo-btn" data-photo="835811007227" data-key="7290696200003:835811007227" data-name="חיטה יבשה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יבוא ושיווק: הנמל אריזות ושיווק בעמ.</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.80 <small>לק״ג</small></div>
+          <div class="shelf">₪4.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:835811007227" data-name="חיטה יבשה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פתיתים אפויים קוסקוס אסם 500 גרם <button type="button" class="photo-btn" data-photo="7290000060200" data-key="7290000060200" data-name="פתיתים אפויים קוסקוס אסם 500 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסם תעשיות מזון בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪7.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.80 <small>לק״ג</small></div>
+          <div class="shelf">₪4.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000060200" data-name="פתיתים אפויים קוסקוס אסם 500 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פתיתים אפויים טבעות אסם 500 גרם <button type="button" class="photo-btn" data-photo="7290000060408" data-key="7290000060408" data-name="פתיתים אפויים טבעות אסם 500 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסם תעשיות מזון בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪7.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.80 <small>לק״ג</small></div>
+          <div class="shelf">₪4.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000060408" data-name="פתיתים אפויים טבעות אסם 500 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פתיתים אפויים כוכבים אסם 500 גרם <button type="button" class="photo-btn" data-photo="7290000060576" data-key="7290000060576" data-name="פתיתים אפויים כוכבים אסם 500 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסם תעשיות מזון בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪7.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.80 <small>לק״ג</small></div>
+          <div class="shelf">₪4.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000060576" data-name="פתיתים אפויים כוכבים אסם 500 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פתיתים אפויים אורז אסם 500 גרם <button type="button" class="photo-btn" data-photo="7290000060903" data-key="7290000060903" data-name="פתיתים אפויים אורז אסם 500 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסם תעשיות מזון בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪7.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.80 <small>לק״ג</small></div>
+          <div class="shelf">₪4.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000060903" data-name="פתיתים אפויים אורז אסם 500 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פתיתים אפויים קוסקוס עם בצל אסם 500 גרם <button type="button" class="photo-btn" data-photo="7290000061214" data-key="7290000061214" data-name="פתיתים אפויים קוסקוס עם בצל אסם 500 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסם השקעות בע\&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪7.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.80 <small>לק״ג</small></div>
+          <div class="shelf">₪4.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000061214" data-name="פתיתים אפויים קוסקוס עם בצל אסם 500 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פתיתים אפויים קוסקוס 3 צבעים אסם 500 גרם <button type="button" class="photo-btn" data-photo="7290000061450" data-key="7290000061450" data-name="פתיתים אפויים קוסקוס 3 צבעים אסם 500 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסם השקעות בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪7.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.80 <small>לק״ג</small></div>
+          <div class="shelf">₪4.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000061450" data-name="פתיתים אפויים קוסקוס 3 צבעים אסם 500 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פתיתים אפויים אורז עם אטריות אסם 500 גרם <button type="button" class="photo-btn" data-photo="7290105695024" data-key="7290105695024" data-name="פתיתים אפויים אורז עם אטריות אסם 500 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסם השקעות בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪7.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.80 <small>לק״ג</small></div>
+          <div class="shelf">₪4.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290105695024" data-name="פתיתים אפויים אורז עם אטריות אסם 500 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פתיתים עם בצל 400 ג <button type="button" class="photo-btn" data-photo="7290016733518" data-key="7290016733518" data-name="פתיתים עם בצל 400 ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪4.80</s> ₪4.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016733518" data-name="פתיתים עם בצל 400 ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">ג&#39;ריש 500 גרם <button type="button" class="photo-btn" data-photo="7290010153527" data-key="7290010153527" data-name="ג&#39;ריש 500 גרם" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מיה תעשיות מזון מ.ת.מ. בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.00 <small>לק״ג</small></div>
+          <div class="shelf">₪5.00 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010153527" data-name="ג&#39;ריש 500 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פתיתים אפויים אורז סוגת 500 גרם <button type="button" class="photo-btn" data-photo="7290100702611" data-key="7290100702611" data-name="פתיתים אפויים אורז סוגת 500 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסיף</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪10</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.80</s> ₪5.00 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290100702611" data-name="פתיתים אפויים אורז סוגת 500 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פתיתים אפויים קוסקוס סוגת 500 גרם <button type="button" class="photo-btn" data-photo="7290100702628" data-key="7290100702628" data-name="פתיתים אפויים קוסקוס סוגת 500 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסיף</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪10</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.80</s> ₪5.00 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290100702628" data-name="פתיתים אפויים קוסקוס סוגת 500 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פתיתים אפויים כוכבים 500ג סוגת <button type="button" class="photo-btn" data-photo="7290100702635" data-key="7290100702635" data-name="פתיתים אפויים כוכבים 500ג סוגת" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסיף</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪10</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.80</s> ₪5.00 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290100702635" data-name="פתיתים אפויים כוכבים 500ג סוגת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בורגול דק / עבה <button type="button" class="photo-btn" data-photo="7290001751237" data-key="7290001751237" data-name="בורגול דק / עבה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290001751237" data-name="בורגול דק / עבה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בורגול דק 1קג רמי לו <button type="button" class="photo-btn" data-photo="7290119671793" data-key="7290119671793" data-name="בורגול דק 1קג רמי לו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.00 <small>לק״ג</small></div>
+          <div class="shelf">₪10.00 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119671793" data-name="בורגול דק 1קג רמי לו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חיטה 1 קג רמי לוי <button type="button" class="photo-btn" data-photo="7290119671748" data-key="7290119671748" data-name="חיטה 1 קג רמי לוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.00 <small>לק״ג</small></div>
+          <div class="shelf">₪10.00 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119671748" data-name="חיטה 1 קג רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בורגול עבה 1קג רמי ל <button type="button" class="photo-btn" data-photo="7290119671083" data-key="7290119671083" data-name="בורגול עבה 1קג רמי ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.00 <small>לק״ג</small></div>
+          <div class="shelf">₪10.00 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119671083" data-name="בורגול עבה 1קג רמי ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">כוסמת קלויה 700 גר <button type="button" class="photo-btn" data-photo="7290008961592" data-key="7290008961592" data-name="כוסמת קלויה 700 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪16</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.67 <small>לליטר</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪8.00 · 750 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008961592" data-name="כוסמת קלויה 700 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גריסי פנינה <button type="button" class="photo-btn" data-photo="7290003681716" data-key="7290003681716" data-name="גריסי פנינה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מיה תעשיות מזון מ.ת.מ. בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪11.00 <small>לק״ג</small></div>
+          <div class="shelf">₪5.50 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003681716" data-name="גריסי פנינה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חיטה 500ג רמי לוי <button type="button" class="photo-btn" data-photo="7290016865851" data-key="7290016865851" data-name="חיטה 500ג רמי לוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוגת</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪11.80 <small>לק״ג</small></div>
+          <div class="shelf">₪5.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016865851" data-name="חיטה 500ג רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גריסי פנינה 500ג רמי לוי <button type="button" class="photo-btn" data-photo="7290016865868" data-key="7290016865868" data-name="גריסי פנינה 500ג רמי לוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוגת</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪11.80 <small>לק״ג</small></div>
+          <div class="shelf">₪5.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016865868" data-name="גריסי פנינה 500ג רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קוסקוס מרוקאי קאינה 1 קג <button type="button" class="photo-btn" data-photo="6111251460230" data-key="6111251460230" data-name="קוסקוס מרוקאי קאינה 1 קג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תומר</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪11.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪11.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="6111251460230" data-name="קוסקוס מרוקאי קאינה 1 קג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">כוסמת רמי לוי 1 ק&#34;ג <button type="button" class="photo-btn" data-photo="7290015994125" data-key="7290015994125" data-name="כוסמת רמי לוי 1 ק&#34;ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רמי לוי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪11.90 <small>לק״ג</small></div>
+          <div class="shelf">₪11.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015994125" data-name="כוסמת רמי לוי 1 ק&#34;ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פתיתים אותיות אסם 400 גרם <button type="button" class="photo-btn" data-photo="7290122783407" data-key="7290122783407" data-name="פתיתים אותיות אסם 400 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסם</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪7.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪12.25 <small>לק״ג</small></div>
+          <div class="shelf">₪4.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290122783407" data-name="פתיתים אותיות אסם 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קוסקוס דק רמי לוי 350 גרם <button type="button" class="photo-btn" data-photo="7290015834230" data-key="7290015834230" data-name="קוסקוס דק רמי לוי 350 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רמי לוי</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12.90</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪12.29 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.00</s> ₪4.30 · 350 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015834230" data-name="קוסקוס דק רמי לוי 350 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קוסקוס בינוני רמי לוי 350 גרם <button type="button" class="photo-btn" data-photo="7290015834247" data-key="7290015834247" data-name="קוסקוס בינוני רמי לוי 350 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רמי לוי</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12.90</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪12.29 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.00</s> ₪4.30 · 350 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015834247" data-name="קוסקוס בינוני רמי לוי 350 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קוסקוס עבה רמי לוי 350 גר <button type="button" class="photo-btn" data-photo="7290015834254" data-key="7290015834254" data-name="קוסקוס עבה רמי לוי 350 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רמי לוי</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12.90</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪12.29 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.00</s> ₪4.30 · 350 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015834254" data-name="קוסקוס עבה רמי לוי 350 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פתיתים אפוים סוגת קמח מלא 400 ג <button type="button" class="photo-btn" data-photo="7290100702659" data-key="7290100702659" data-name="פתיתים אפוים סוגת קמח מלא 400 ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסיף</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪10</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪12.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.80</s> ₪5.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290100702659" data-name="פתיתים אפוים סוגת קמח מלא 400 ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">כוסמת חומה 800 גר רמי לוי <button type="button" class="photo-btn" data-photo="7290119671847" data-key="7290119671847" data-name="כוסמת חומה 800 גר רמי לוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪12.50 <small>לק״ג</small></div>
+          <div class="shelf">₪10.00 · 800 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119671847" data-name="כוסמת חומה 800 גר רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">חיטה 500 גר סוגת <button type="button" class="photo-btn" data-photo="7290100705018" data-key="7290100705018" data-name="חיטה 500 גר סוגת" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוגת תעשיות בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪12.60 <small>לק״ג</small></div>
+          <div class="shelf">₪6.30 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290100705018" data-name="חיטה 500 גר סוגת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קוסקוס רגיל הנמל 350 גרם <button type="button" class="photo-btn" data-photo="7290002040019" data-key="7290002040019" data-name="קוסקוס רגיל הנמל 350 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קוסקוס מזון</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪6.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪12.86 <small>לק״ג</small></div>
+          <div class="shelf">₪4.50 · 350 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002040019" data-name="קוסקוס רגיל הנמל 350 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קוסקוס דק הנמל 350 גרם <button type="button" class="photo-btn" data-photo="7290002040064" data-key="7290002040064" data-name="קוסקוס דק הנמל 350 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קוסקוס מזון</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪6.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪12.86 <small>לק״ג</small></div>
+          <div class="shelf">₪4.50 · 350 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002040064" data-name="קוסקוס דק הנמל 350 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קוסקוס עבה הנמל 350 גרם <button type="button" class="photo-btn" data-photo="7290002040071" data-key="7290002040071" data-name="קוסקוס עבה הנמל 350 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קוסקוס מזון בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪6.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪12.86 <small>לק״ג</small></div>
+          <div class="shelf">₪4.50 · 350 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002040071" data-name="קוסקוס עבה הנמל 350 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קוסקוס בינוני 350 גר <button type="button" class="photo-btn" data-photo="7290003643325" data-key="7290003643325" data-name="קוסקוס בינוני 350 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסיף</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪9</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪12.86 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.00</s> ₪4.50 · 350 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003643325" data-name="קוסקוס בינוני 350 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קוסקוס דק 350 גרם סוגת <button type="button" class="photo-btn" data-photo="7290100702260" data-key="7290100702260" data-name="קוסקוס דק 350 גרם סוגת" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסיף</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪9</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪12.86 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.00</s> ₪4.50 · 350 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290100702260" data-name="קוסקוס דק 350 גרם סוגת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קוסקוס עבה 350 גרם סוגת <button type="button" class="photo-btn" data-photo="7290100702277" data-key="7290100702277" data-name="קוסקוס עבה 350 גרם סוגת" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסיף</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪9</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪12.86 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.00</s> ₪4.50 · 350 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290100702277" data-name="קוסקוס עבה 350 גרם סוגת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קינואה 500ג רמי לוי <button type="button" class="photo-btn" data-photo="7290016865899" data-key="7290016865899" data-name="קינואה 500ג רמי לוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוגת</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪12.90</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪12.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪12.90</s> ₪6.45 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016865899" data-name="קינואה 500ג רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">כוסמת לא קלוי 500 ג <button type="button" class="photo-btn" data-photo="7290100703458" data-key="7290100703458" data-name="כוסמת לא קלוי 500 ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוגת</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪13.60 <small>לק״ג</small></div>
+          <div class="shelf">₪6.80 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290100703458" data-name="כוסמת לא קלוי 500 ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">כוסמת 500 גר סוגת <button type="button" class="photo-btn" data-photo="7290003643745" data-key="7290003643745" data-name="כוסמת 500 גר סוגת" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוגת</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪8.30</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪13.80 <small>לק״ג</small></div>
+          <div class="shelf">₪6.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003643745" data-name="כוסמת 500 גר סוגת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">כוסמת סוגת 1 ק&#34;ג <button type="button" class="photo-btn" data-photo="7290100700310" data-key="7290100700310" data-name="כוסמת סוגת 1 ק&#34;ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוגת</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪13.90 <small>לק״ג</small></div>
+          <div class="shelf">₪13.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290100700310" data-name="כוסמת סוגת 1 ק&#34;ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">כוסמת 500 ג רמי לוי <button type="button" class="photo-btn" data-photo="7290016865844" data-key="7290016865844" data-name="כוסמת 500 ג רמי לוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוגת</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.00 <small>לק״ג</small></div>
+          <div class="shelf">₪7.00 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016865844" data-name="כוסמת 500 ג רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קוסקוס מלא 350 גרם סוגת <button type="button" class="photo-btn" data-photo="7290100702284" data-key="7290100702284" data-name="קוסקוס מלא 350 גרם סוגת" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסיף תעשיות מזון בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪6.30</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.29 <small>לק״ג</small></div>
+          <div class="shelf">₪5.00 · 350 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290100702284" data-name="קוסקוס מלא 350 גרם סוגת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קוסקוס בינוני 1קג שק <button type="button" class="photo-btn" data-photo="7290117904565" data-key="7290117904565" data-name="קוסקוס בינוני 1קג שק" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.90 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290117904565" data-name="קוסקוס בינוני 1קג שק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קוסקוס מזרח תיכוני 3 <button type="button" class="photo-btn" data-photo="7290002040170" data-key="7290002040170" data-name="קוסקוס מזרח תיכוני 3" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪15.67 <small>לק״ג</small></div>
+          <div class="shelf">₪4.70 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002040170" data-name="קוסקוס מזרח תיכוני 3" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">פתיתים בצורת אורז <button type="button" class="photo-btn" data-photo="7290019393078" data-key="7290019393078" data-name="פתיתים בצורת אורז" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪16.25 <small>לק״ג</small></div>
+          <div class="shelf">₪6.50 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019393078" data-name="פתיתים בצורת אורז" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">פתיתים בצורת קוסקוס <button type="button" class="photo-btn" data-photo="7290019393085" data-key="7290019393085" data-name="פתיתים בצורת קוסקוס" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪16.25 <small>לק״ג</small></div>
+          <div class="shelf">₪6.50 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019393085" data-name="פתיתים בצורת קוסקוס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">האופה - פתיתים בצורת כוכב מחיטת דורום <button type="button" class="photo-btn" data-photo="7290019926979" data-key="7290019926979" data-name="האופה - פתיתים בצורת כוכב מחיטת דורום" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪16.25 <small>לק״ג</small></div>
+          <div class="shelf">₪6.50 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019926979" data-name="האופה - פתיתים בצורת כוכב מחיטת דורום" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קוסקוס מלא הנמל 350 גרם <button type="button" class="photo-btn" data-photo="7290002040088" data-key="7290002040088" data-name="קוסקוס מלא הנמל 350 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קוסקוס מזון בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪6.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪16.86 <small>לק״ג</small></div>
+          <div class="shelf">₪5.90 · 350 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002040088" data-name="קוסקוס מלא הנמל 350 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">כוסמת 500 גרם <button type="button" class="photo-btn" data-photo="7290002319207" data-key="7290002319207" data-name="כוסמת 500 גרם" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מיה תעשיות מזון מ.ת.מ. בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪17.00 <small>לק״ג</small></div>
+          <div class="shelf">₪8.50 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002319207" data-name="כוסמת 500 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מיה חיטה 500 גרם <button type="button" class="photo-btn" data-photo="7290013677075" data-key="7290013677075" data-name="מיה חיטה 500 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מיה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪17.00 <small>לק״ג</small></div>
+          <div class="shelf">₪8.50 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013677075" data-name="מיה חיטה 500 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מיה בורגול 500 גרם <button type="button" class="photo-btn" data-photo="7290013677112" data-key="7290013677112" data-name="מיה בורגול 500 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מיה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪17.00 <small>לק״ג</small></div>
+          <div class="shelf">₪8.50 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013677112" data-name="מיה בורגול 500 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פריקה 800גרם (בד&#39;ץ) <button type="button" class="photo-btn" data-photo="7290006439598" data-key="7290006439598" data-name="פריקה 800גרם (בד&#39;ץ)" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪17.62 <small>לק״ג</small></div>
+          <div class="shelf">₪14.10 · 800 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290006439598" data-name="פריקה 800גרם (בד&#39;ץ)" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">כוסמת אורגני הרדוף 500 גרם <button type="button" class="photo-btn" data-photo="7290002333838" data-key="7290002333838" data-name="כוסמת אורגני הרדוף 500 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>הרדוף</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪18.00 <small>לק״ג</small></div>
+          <div class="shelf">₪9.00 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002333838" data-name="כוסמת אורגני הרדוף 500 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קוסקוס סולת  דק <button type="button" class="photo-btn" data-photo="7290114604864" data-key="7290114604864" data-name="קוסקוס סולת  דק" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאפית דוידוביץ&#39; ובניו בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.71 <small>לק״ג</small></div>
+          <div class="shelf">₪6.90 · 350 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290114604864" data-name="קוסקוס סולת  דק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קוסקוס סולת  בינוני <button type="button" class="photo-btn" data-photo="7290114604871" data-key="7290114604871" data-name="קוסקוס סולת  בינוני" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאפית דוידוביץ&#39; ובניו בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.71 <small>לק״ג</small></div>
+          <div class="shelf">₪6.90 · 350 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290114604871" data-name="קוסקוס סולת  בינוני" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קוסקוס מרוקאי בינוני <button type="button" class="photo-btn" data-photo="7290019926337" data-key="7290019926337" data-name="קוסקוס מרוקאי בינוני" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.80 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019926337" data-name="קוסקוס מרוקאי בינוני" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מיה כוסמת 500 גרם <button type="button" class="photo-btn" data-photo="7290013677068" data-key="7290013677068" data-name="מיה כוסמת 500 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מיה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.80 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013677068" data-name="מיה כוסמת 500 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גריסיפנינהאו500 <button type="button" class="photo-btn" data-photo="7290011473297" data-key="7290011473297" data-name="גריסיפנינהאו500" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תבואות</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪20.00 <small>לק״ג</small></div>
+          <div class="shelf">₪10.00 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011473297" data-name="גריסיפנינהאו500" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קוסקוס בינוני 350 גרם אסם <button type="button" class="photo-btn" data-photo="7290000064758" data-key="7290000064758" data-name="קוסקוס בינוני 350 גרם אסם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מיוצר ע&#34;י קוד יצרן KM, משווק ע&#34;י אסם תעשיות מזון ב</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪8.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪22.57 <small>לק״ג</small></div>
+          <div class="shelf">₪7.90 · 350 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000064758" data-name="קוסקוס בינוני 350 גרם אסם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קוסקוס דק 350 גרם אסם <button type="button" class="photo-btn" data-photo="7290006653819" data-key="7290006653819" data-name="קוסקוס דק 350 גרם אסם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קוסקוס מזון</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪8.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪22.57 <small>לק״ג</small></div>
+          <div class="shelf">₪7.90 · 350 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290006653819" data-name="קוסקוס דק 350 גרם אסם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קוסקוס ישראלי 350 גר אסם <button type="button" class="photo-btn" data-photo="7290006567048" data-key="7290006567048" data-name="קוסקוס ישראלי 350 גר אסם" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מיוצר ע&#34;י קוד יצרן KM, משווק ע&#34;י אסם תעשיות מזון ב</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪25.43 <small>לק״ג</small></div>
+          <div class="shelf">₪8.90 · 350 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290006567048" data-name="קוסקוס ישראלי 350 גר אסם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פריקה חיטה ירוקה קלויה 500 גר סוגת <button type="button" class="photo-btn" data-photo="7290100704745" data-key="7290100704745" data-name="פריקה חיטה ירוקה קלויה 500 גר סוגת" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוגת</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪25.80 <small>לק״ג</small></div>
+          <div class="shelf">₪12.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290100704745" data-name="פריקה חיטה ירוקה קלויה 500 גר סוגת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פתיתי ביצים לילדים <button type="button" class="photo-btn" data-photo="7290120870802" data-key="7290120870802" data-name="פתיתי ביצים לילדים" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪27.25 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪10.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290120870802" data-name="פתיתי ביצים לילדים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פתיתי ביצים כוכ <button type="button" class="photo-btn" data-photo="7290120870796" data-key="7290120870796" data-name="פתיתי ביצים כוכ" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪27.25 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪10.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290120870796" data-name="פתיתי ביצים כוכ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קינואה <button type="button" class="photo-btn" data-photo="835811008743" data-key="7290696200003:835811008743" data-name="קינואה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יבוא ושיווק: הנמל אריזות ושיווק בעמ.</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪29.80 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:835811008743" data-name="קינואה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קינואה 500 גר סוגת <button type="button" class="photo-btn" data-photo="7290100700273" data-key="7290100700273" data-name="קינואה 500 גר סוגת" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוגת</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪16.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪29.80 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290100700273" data-name="קינואה 500 גר סוגת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קינואה אדומה 500גר סוגת <button type="button" class="photo-btn" data-photo="7290100701300" data-key="7290100701300" data-name="קינואה אדומה 500גר סוגת" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוגת תעשיות בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪16.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪29.80 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290100701300" data-name="קינואה אדומה 500גר סוגת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אשבל פתיתים אפויים קוסקוס ללא גלוטן 25 <button type="button" class="photo-btn" data-photo="7290011571009" data-key="7290011571009" data-name="אשבל פתיתים אפויים קוסקוס ללא גלוטן 25" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">1 ב־₪8.05</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪17.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪32.20 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪16.10</s> ₪8.05 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011571009" data-name="אשבל פתיתים אפויים קוסקוס ללא גלוטן 25" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ברילי פתיתים בצורת אורז 250ג *18 <button type="button" class="photo-btn" data-photo="7290010561650" data-key="7290010561650" data-name="ברילי פתיתים בצורת אורז 250ג *18" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אשבל -מזון פונקציונל</span>
+          
+        </div>
+        <div class="deal"><span class="badge">1 ב־₪8.05</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪32.20 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪16.10</s> ₪8.05 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010561650" data-name="ברילי פתיתים בצורת אורז 250ג *18" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קינואה MIX <button type="button" class="photo-btn" data-photo="835811006541" data-key="7290696200003:835811006541" data-name="קינואה MIX" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יבוא ושיווק: הנמל אריזות ושיווק בעמ.</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪33.80 <small>לק״ג</small></div>
+          <div class="shelf">₪16.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:835811006541" data-name="קינואה MIX" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קינואה לבנה סלקטד 50 <button type="button" class="photo-btn" data-photo="7290015347167" data-key="7290015347167" data-name="קינואה לבנה סלקטד 50" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪33.80 <small>לק״ג</small></div>
+          <div class="shelf">₪16.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015347167" data-name="קינואה לבנה סלקטד 50" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אסם פתיתים ללא גלוטן <button type="button" class="photo-btn" data-photo="7290122781663" data-key="7290122781663" data-name="אסם פתיתים ללא גלוטן" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פרינסס ניולאט</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪34.00 <small>לק״ג</small></div>
+          <div class="shelf">₪11.90 · 350 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290122781663" data-name="אסם פתיתים ללא גלוטן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קינואה רויאל אורגני 500 ג הרדוף <button type="button" class="photo-btn" data-photo="7290013994653" data-key="7290013994653" data-name="קינואה רויאל אורגני 500 ג הרדוף" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪35.80 <small>לק״ג</small></div>
+          <div class="shelf">₪17.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013994653" data-name="קינואה רויאל אורגני 500 ג הרדוף" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מגדרה קינואה500 <button type="button" class="photo-btn" data-photo="7290011474683" data-key="7290011474683" data-name="מגדרה קינואה500" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תבואות</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪36.20 <small>לק״ג</small></div>
+          <div class="shelf">₪18.10 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011474683" data-name="מגדרה קינואה500" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סקיני פסטה קוסקוס 27 <button type="button" class="photo-btn" data-photo="7290015129220" data-key="7290015129220" data-name="סקיני פסטה קוסקוס 27" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סקיני</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪37.04 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪10.00 · 270 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015129220" data-name="סקיני פסטה קוסקוס 27" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קינואה מעורבת אורגני 500 ג הרדוף <button type="button" class="photo-btn" data-photo="7290013994318" data-key="7290013994318" data-name="קינואה מעורבת אורגני 500 ג הרדוף" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.80 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013994318" data-name="קינואה מעורבת אורגני 500 ג הרדוף" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">תמי פתיתים ללא גלוטן 300גר <button type="button" class="photo-btn" data-photo="7290017907253" data-key="7290017907253" data-name="תמי פתיתים ללא גלוטן 300גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪16.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪43.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪13.90</s> ₪12.90 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017907253" data-name="תמי פתיתים ללא גלוטן 300גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קינואהטריואו500 <button type="button" class="photo-btn" data-photo="7290011473969" data-key="7290011473969" data-name="קינואהטריואו500" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תבואות</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪43.80 <small>לק״ג</small></div>
+          <div class="shelf">₪21.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011473969" data-name="קינואהטריואו500" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פתית שוודי תלמה 300 גרם <button type="button" class="photo-btn" data-photo="7290003805501" data-key="7290003805501" data-name="פתית שוודי תלמה 300 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יוניליוור ישראל מזון בע&#34;</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪19.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪53.00 <small>לק״ג</small></div>
+          <div class="shelf">₪15.90 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003805501" data-name="פתית שוודי תלמה 300 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">תמי פתיתים עדשים אדומות לל&#34;ג 300 מל <button type="button" class="photo-btn" data-photo="7290017907505" data-key="7290017907505" data-name="תמי פתיתים עדשים אדומות לל&#34;ג 300 מל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪53.00 <small>לק״ג</small></div>
+          <div class="shelf">₪15.90 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017907505" data-name="תמי פתיתים עדשים אדומות לל&#34;ג 300 מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">צייה טיב הטבע <button type="button" class="photo-btn" data-photo="7290011473617" data-key="7290011473617" data-name="צייה טיב הטבע" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תבואות</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.67 <small>לק״ג</small></div>
+          <div class="shelf">₪17.90 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011473617" data-name="צייה טיב הטבע" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קינואה 450 גר רמי לו <button type="button" class="photo-btn" data-photo="7290119671649" data-key="7290119671649" data-name="קינואה 450 גר רמי לו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          <span class="warn">גודל לא ודאי</span>
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪62.50 <small>לק״ג</small></div>
+          <div class="shelf">₪10.00 · 160 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119671649" data-name="קינואה 450 גר רמי לו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פתית חיטה מלאה תלמה 250 גרם <button type="button" class="photo-btn" data-photo="7290003805587" data-key="7290003805587" data-name="פתית חיטה מלאה תלמה 250 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יוניליוור ישראל מזון בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪19.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪63.60 <small>לק״ג</small></div>
+          <div class="shelf">₪15.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003805587" data-name="פתית חיטה מלאה תלמה 250 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פתית 6 דגנים תלמה 250 גרם <button type="button" class="photo-btn" data-photo="7290100240632" data-key="7290100240632" data-name="פתית 6 דגנים תלמה 250 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יוניליוור ישראל מזון בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪19.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪63.60 <small>לק״ג</small></div>
+          <div class="shelf">₪15.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290100240632" data-name="פתית 6 דגנים תלמה 250 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קוסקוס מתירס ואורז ללג אורגני <button type="button" class="photo-btn" data-photo="8011033182610" data-key="8011033182610" data-name="קוסקוס מתירס ואורז ללג אורגני" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>BIA S.p.A</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪79.60 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8011033182610" data-name="קוסקוס מתירס ואורז ללג אורגני" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">פתיתים אפויים עם ירקות 130  גר`אסם <button type="button" class="photo-btn" data-photo="7290112965141" data-key="7290112965141" data-name="פתיתים אפויים עם ירקות 130  גר`אסם" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסם</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪114.62 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 130 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112965141" data-name="פתיתים אפויים עם ירקות 130  גר`אסם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גריסי פנינה 800 ג&#39; רמי לוי <button type="button" class="photo-btn" data-photo="7290119671342" data-key="7290119671342" data-name="גריסי פנינה 800 ג&#39; רמי לוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.50 <small>ליח׳</small></div>
+          <div class="shelf">₪10.00 · 20 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119671342" data-name="גריסי פנינה 800 ג&#39; רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קוסקוס בינוני בקרטונ <button type="button" class="photo-btn" data-photo="8032942611695" data-key="8032942611695" data-name="קוסקוס בינוני בקרטונ" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪7.90 <small>ליח׳</small></div>
+          <div class="shelf">₪7.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8032942611695" data-name="קוסקוס בינוני בקרטונ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לקט בורגול ופטריות <button type="button" class="photo-btn" data-photo="7290010650798" data-key="7290010650798" data-name="לקט בורגול ופטריות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>חוות פטריות תקוע</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪13.10 <small>ליח׳</small></div>
+          <div class="shelf">₪13.10 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010650798" data-name="לקט בורגול ופטריות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לקט פתיתים ופטריות <button type="button" class="photo-btn" data-photo="7290010650804" data-key="7290010650804" data-name="לקט פתיתים ופטריות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>חוות פטריות תקוע</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪13.10 <small>ליח׳</small></div>
+          <div class="shelf">₪13.10 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010650804" data-name="לקט פתיתים ופטריות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+      
+      <li class="divider">ללא מחיר לק״ג (גודל לא ידוע)</li>
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גריסי פנינה <button type="button" class="photo-btn" data-photo="835811008767" data-key="7290696200003:835811008767" data-name="גריסי פנינה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יבוא ושיווק: הנמל אריזות ושיווק בעמ.</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪4.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:835811008767" data-name="גריסי פנינה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">כוסמת <button type="button" class="photo-btn" data-photo="7290002007036" data-key="7290002007036" data-name="כוסמת" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יבוא ושיווק: הנמל אריזות ושיווק בעמ.</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪4.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002007036" data-name="כוסמת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בורגול גס <button type="button" class="photo-btn" data-photo="7290006439574" data-key="7290006439574" data-name="בורגול גס" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>בני ג&#39;ורג&#39; שוקחה (חיפה) בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪8.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290006439574" data-name="בורגול גס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">כוסמת <button type="button" class="photo-btn" data-photo="7290013677846" data-key="7290013677846" data-name="כוסמת" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מיה תעשיות מזון מ.ת.מ. בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013677846" data-name="כוסמת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+</ol>
+</div>
+
+</main>
+<footer>עודכן 3.10 21:01 · ויקטורי 09:06 · רמי לוי 10:00 · אושר עד 08:00 · אושר עד 08:00</footer>
+
+
+<nav class="bottom-nav" aria-label="ניווט">
+  <a href="index.html" class="on"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg><span>בית</span></a>
+  <a href="search.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><span>חיפוש</span></a>
+  <a href="scan.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V5a1 1 0 0 1 1-1h2M17 4h2a1 1 0 0 1 1 1v2M20 17v2a1 1 0 0 1-1 1h-2M7 20H5a1 1 0 0 1-1-1v-2"/><path d="M8 8v8M11 8v8M14 8v8M16.5 8v8"/></svg><span>סריקה</span></a>
+  <a href="basket.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h11l2-8H6.2"/><circle cx="9.5" cy="19" r="1.4"/><circle cx="17" cy="19" r="1.4"/></svg><span id="cart-count"></span><span>עגלת קניות</span></a>
+  <a href="spending.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-2-1.4-2 1.4-2-1.4-2 1.4-2-1.4L6 21z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><span>הוצאות</span></a>
+</nav>
+
+<script src="static/basket.js?v=20261003210153"></script>
+<script src="static/photo.js?v=20261003210153"></script>
+
+<script src="static/render.js?v=20261003210153"></script>
+<script src="static/category.js?v=20261003210153" data-build="20261003210153"></script>
+
+<script>
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+</script>
+</body>
+</html>

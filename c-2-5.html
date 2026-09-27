@@ -1,0 +1,5218 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f7a4d">
+<script>
+// the look this phone chose (settings.html "מראה"), before anything is drawn: html.light / html.dark
+// (none = follow the phone) and html[data-color] (none = green); the browser bar takes the colour too
+(function () {
+  let t = {};
+  try { t = JSON.parse(localStorage.getItem("theme")) || {}; } catch (e) { /* none yet */ }
+  const root = document.documentElement;
+  if (t.mode === "light" || t.mode === "dark") root.classList.add(t.mode);
+  if (t.color) root.dataset.color = t.color;
+  if (t.bar) document.querySelector('meta[name="theme-color"]').content = t.bar;
+})();
+</script>
+<title>גבינות צהובות</title>
+<link rel="manifest" href="static/manifest.webmanifest">
+<link rel="icon" href="static/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="static/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="static/style.css?v=20261003210153">
+<style>.st-0 { --store: #e07000; }.st-1 { --store: #d32f2f; }.st-2 { --store: #1565c0; }.st-3 { --store: #1565c0; }</style>
+<script src="static/stores.js?v=20261003210153" data-stores="[{&#34;card_cap&#34;: 750, &#34;card_rate&#34;: 0.07, &#34;default&#34;: true, &#34;key&#34;: &#34;victory-038&#34;, &#34;name&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;ramilevy-007&#34;, &#34;name&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-026&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05ea\u05dc\u05e4\u05d9\u05d5\u05ea&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-003&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05d2\u05d1\u05e2\u05ea \u05e9\u05d0\u05d5\u05dc&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}]"></script>
+<script>
+// No long-press menu on links, pictures or text (the user: the home page's tiles opened Chrome's "open in new tab /
+// copy link" menu; CSS can't stop that on Android). Typing fields and the ⓘ sheet's barcode keep theirs.
+document.addEventListener("contextmenu", (e) => {
+  if (!e.target.closest("input, textarea, [contenteditable], .photo-barcode")) e.preventDefault();
+});
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <a class="back" href="t-2.html" aria-label="חזרה">→</a>
+    <h1>גבינות צהובות</h1>
+    <a class="notes-link" href="notes.html" aria-label="רשימת קניות" title="רשימת קניות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="m8.5 10 1.2 1.2 2.3-2.4M8.5 15.5l1.2 1.2 2.3-2.4M14 10.5h2.5M14 16h2.5"/></svg><span>רשימת קניות</span></a>
+    <a class="settings-link" href="settings.html" aria-label="הגדרות" title="הגדרות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></a>
+  </div>
+  
+  <form class="search" action="search.html" method="get" role="search">
+    <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+    <input type="search" name="q" placeholder="חיפוש מוצר" enterkeyhint="search" aria-label="חיפוש מוצר">
+  </form>
+  
+</header>
+<main>
+
+<p class="sub"><span class="sub-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8v3l2 3v11a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V9l2-3z"/><path d="M8 6h8"/><path d="M6 9h12"/><path d="M10 13.5a2 2 0 0 0 4 0c0-1.2-2-3.5-2-3.5s-2 2.3-2 3.5z"/></svg></span>חלב וביצים · <span id="cat-count">187</span> מוצרים, מהזול ליקר</p>
+
+
+<div class="cat-filter">
+  <input type="search" id="cat-filter" placeholder="סינון לפי שם או יצרן · ‎-מילה מסתירה" enterkeyhint="done" autocomplete="off" aria-label="סינון המוצרים בקטגוריה">
+</div>
+<div id="cat-list" data-href="c-2-5.html">
+
+<ol class="products">
+  
+  
+    
+    
+    <li class="product st-1 best">
+      <div class="info">
+        <div class="name">גבינה צהובה 28% רמי <button type="button" class="photo-btn" data-photo="7290002083979" data-key="7290002083979" data-name="גבינה צהובה 28% רמי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪31.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290002083979" data-name="גבינה צהובה 28% רמי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינה צהובה 28% רמי לוי 400 ג <button type="button" class="photo-btn" data-photo="7290019936190" data-key="7290019936190" data-name="גבינה צהובה 28% רמי לוי 400 ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪35.00 <small>לק״ג</small></div>
+          <div class="shelf">₪14.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019936190" data-name="גבינה צהובה 28% רמי לוי 400 ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">הצהובה הטובה 500 ג <button type="button" class="photo-btn" data-photo="7290003189281" data-key="7290003189281" data-name="הצהובה הטובה 500 ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪36.00 <small>לק״ג</small></div>
+          <div class="shelf">₪18.00 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003189281" data-name="הצהובה הטובה 500 ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פיצרלה מגורדת 22% 500 גר כפיר <button type="button" class="photo-btn" data-photo="7290003189076" data-key="7290003189076" data-name="פיצרלה מגורדת 22% 500 גר כפיר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>צי תעשיות מזון יבנה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪26.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪42.00 <small>לק״ג</small></div>
+          <div class="shelf">₪21.00 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003189076" data-name="פיצרלה מגורדת 22% 500 גר כפיר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">צהובה מעושנת א.חלב נ <button type="button" class="photo-btn" data-photo="7290003189274" data-key="7290003189274" data-name="צהובה מעושנת א.חלב נ" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>TBD</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪42.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290003189274" data-name="צהובה מעושנת א.חלב נ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינת גאודה חצי קשה 28% יורו 400 גר <button type="button" class="photo-btn" data-photo="7290108502725" data-key="7290108502725" data-name="גבינת גאודה חצי קשה 28% יורו 400 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ג.וילי פוד אינטרנשיונל בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪21.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪44.75 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪17.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108502725" data-name="גבינת גאודה חצי קשה 28% יורו 400 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעושן פרוס 350 גר כפיר <button type="button" class="photo-btn" data-photo="7290006920836" data-key="7290006920836" data-name="מעושן פרוס 350 גר כפיר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>צי תעשיות מזון יבנה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪18.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪45.43 <small>לק״ג</small></div>
+          <div class="shelf">₪15.90 · 350 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290006920836" data-name="מעושן פרוס 350 גר כפיר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">צ&#39;דר פרוס 350גר <button type="button" class="photo-btn" data-photo="7290006920829" data-key="7290006920829" data-name="צ&#39;דר פרוס 350גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪45.43 <small>לק״ג</small></div>
+          <div class="shelf">₪15.90 · 350 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290006920829" data-name="צ&#39;דר פרוס 350גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חריפה פרוס 350גר <button type="button" class="photo-btn" data-photo="7290006920935" data-key="7290006920935" data-name="חריפה פרוס 350גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪46.00 <small>לק״ג</small></div>
+          <div class="shelf">₪16.10 · 350 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290006920935" data-name="חריפה פרוס 350גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינה צהובה 27% טום וג&#39;רי 200 גרם רמי לוי wb <button type="button" class="photo-btn" data-photo="7290123640167" data-key="7290123640167" data-name="גבינה צהובה 27% טום וג&#39;רי 200 גרם רמי לוי wb" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מלקפול</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪49.50 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290123640167" data-name="גבינה צהובה 27% טום וג&#39;רי 200 גרם רמי לוי wb" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינת גלבוע 22% תנובה <button type="button" class="photo-btn" data-photo="7290000046020" data-key="7290000046020" data-name="גבינת גלבוע 22% תנובה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪50.24</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪49.50 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000046020" data-name="גבינת גלבוע 22% תנובה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינה צהובה 27% מגור <button type="button" class="photo-btn" data-photo="7290003359493" data-key="7290003359493" data-name="גבינה צהובה 27% מגור" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מלקפול</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪49.80 <small>לק״ג</small></div>
+          <div class="shelf">₪24.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003359493" data-name="גבינה צהובה 27% מגור" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינת נעם 22% שומן <button type="button" class="photo-btn" data-photo="7290005079672" data-key="7290005079672" data-name="גבינת נעם 22% שומן" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪50.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290005079672" data-name="גבינת נעם 22% שומן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">חריץ צהובה נעם במשקל 22%</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪50.24 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:395422" data-name="חריץ צהובה נעם במשקל 22%" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גבינת גאודה מגורדת <button type="button" class="photo-btn" data-photo="7290108501346" data-key="7290108501346" data-name="גבינת גאודה מגורדת" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ג. וילי פוד אינטרנשיונל בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪51.80 <small>לק״ג</small></div>
+          <div class="shelf">₪25.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108501346" data-name="גבינת גאודה מגורדת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינת נעם 28% שומן <button type="button" class="photo-btn" data-photo="7290005079658" data-key="7290005079658" data-name="גבינת נעם 28% שומן" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪52.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290005079658" data-name="גבינת נעם 28% שומן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">עמק פיקוח 28% חריץ צהובה</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪52.30 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:4725426" data-name="עמק פיקוח 28% חריץ צהובה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינת עמק 28% שומן <button type="button" class="photo-btn" data-photo="7290000055350" data-key="7290000055350" data-name="גבינת עמק 28% שומן" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪52.50 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000055350" data-name="גבינת עמק 28% שומן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינה עמק 28% בד&#34;ץ <button type="button" class="photo-btn" data-photo="7290000057453" data-key="7290000057453" data-name="גבינה עמק 28% בד&#34;ץ" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪52.50 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000057453" data-name="גבינה עמק 28% בד&#34;ץ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מיקס גבינות מגורדות לפיצה 300 גר יורו וי <button type="button" class="photo-btn" data-photo="7290117261910" data-key="7290117261910" data-name="מיקס גבינות מגורדות לפיצה 300 גר יורו וי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>---</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪17.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪52.67 <small>לק״ג</small></div>
+          <div class="shelf">₪15.80 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290117261910" data-name="מיקס גבינות מגורדות לפיצה 300 גר יורו וי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">עמק פיקוח 28% צהובה מעדנייה <button type="button" class="photo-btn" data-photo="7290000046181" data-key="7290000046181" data-name="עמק פיקוח 28% צהובה מעדנייה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪52.85 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000046181" data-name="עמק פיקוח 28% צהובה מעדנייה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">חריץ צהובה נעם במשקל 28%</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪52.85 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:395408" data-name="חריץ צהובה נעם במשקל 28%" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">נעם גבינה צהובה דק דק 9% טרה 360 גרם <button type="button" class="photo-btn" data-photo="7290102396672" data-key="7290102396672" data-name="נעם גבינה צהובה דק דק 9% טרה 360 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪32.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪55.28 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪29.90</s> ₪19.90 · 360 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290102396672" data-name="נעם גבינה צהובה דק דק 9% טרה 360 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">צהובה פרוסה 400 גר ריצ <button type="button" class="photo-btn" data-photo="7290004256371" data-key="7290004256371" data-name="צהובה פרוסה 400 גר ריצ" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מלקפול אלוורטוסקה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪57.25 <small>לק״ג</small></div>
+          <div class="shelf">₪22.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004256371" data-name="צהובה פרוסה 400 גר ריצ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינה צהובה עמק 28% שומן 600 גרם ואקום <button type="button" class="photo-btn" data-photo="7290014763395" data-key="7290014763395" data-name="גבינה צהובה עמק 28% שומן 600 גרם ואקום" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪39.00</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪58.17 <small>לק״ג</small></div>
+          <div class="shelf">₪34.90 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014763395" data-name="גבינה צהובה עמק 28% שומן 600 גרם ואקום" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">נעם גבינה צהובה מגורדת 28% טרה 500 גרם <button type="button" class="photo-btn" data-photo="7290000474830" data-key="7290000474830" data-name="נעם גבינה צהובה מגורדת 28% טרה 500 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪42.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪59.80 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪35.90</s> ₪29.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000474830" data-name="נעם גבינה צהובה מגורדת 28% טרה 500 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינה צהובה עמק 28% שומן 400 גרם ואקום <button type="button" class="photo-btn" data-photo="7290000057118" data-key="7290000057118" data-name="גבינה צהובה עמק 28% שומן 400 גרם ואקום" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪28.00</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪63.75 <small>לק״ג</small></div>
+          <div class="shelf">₪25.50 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000057118" data-name="גבינה צהובה עמק 28% שומן 400 גרם ואקום" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טל העמק 32% צהובה <button type="button" class="photo-btn" data-photo="7290000053219" data-key="7290000053219" data-name="טל העמק 32% צהובה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪75.00</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪64.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000053219" data-name="טל העמק 32% צהובה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גבינה צהובה עמק סמי 600 <button type="button" class="photo-btn" data-photo="7290014761698" data-key="7290014761698" data-name="גבינה צהובה עמק סמי 600" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪39.00</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪65.00 <small>לק״ג</small></div>
+          <div class="shelf">₪39.00 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014761698" data-name="גבינה צהובה עמק סמי 600" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גאודה הולנדית תוצרת <button type="button" class="photo-btn" data-photo="7290004256180" data-key="7290004256180" data-name="גאודה הולנדית תוצרת" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪65.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290004256180" data-name="גאודה הולנדית תוצרת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינת גאודה פרוסה 29% וילי פוד 150 גרם <button type="button" class="photo-btn" data-photo="7290014083479" data-key="7290014083479" data-name="גבינת גאודה פרוסה 29% וילי פוד 150 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ג.וילי פוד אינטרנשיונל בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪10.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪66.00 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 150 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014083479" data-name="גבינת גאודה פרוסה 29% וילי פוד 150 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינה צהובה גלבוע 22% שומן 400 גרם <button type="button" class="photo-btn" data-photo="7290014760448" data-key="7290014760448" data-name="גבינה צהובה גלבוע 22% שומן 400 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מחלבת בית יצחק</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪28.60</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪66.25 <small>לק״ג</small></div>
+          <div class="shelf">₪26.50 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014760448" data-name="גבינה צהובה גלבוע 22% שומן 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">צהובה נעם 28% <button type="button" class="photo-btn" data-photo="7290102395378" data-key="7290102395378" data-name="צהובה נעם 28%" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪25.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪66.39 <small>לק״ג</small></div>
+          <div class="shelf">₪23.90 · 360 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290102395378" data-name="צהובה נעם 28%" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינת גאודה הולנדית <button type="button" class="photo-btn" data-photo="7290002370598" data-key="7290002370598" data-name="גבינת גאודה הולנדית" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪68.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290002370598" data-name="גבינת גאודה הולנדית" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינת צ&#39;דר מגורדת 20 <button type="button" class="photo-btn" data-photo="7290117261149" data-key="7290117261149" data-name="גבינת צ&#39;דר מגורדת 20" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪69.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪13.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290117261149" data-name="גבינת צ&#39;דר מגורדת 20" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינה צהובה גוש חלב 28% שומן 400 גרם <button type="button" class="photo-btn" data-photo="7290014760912" data-key="7290014760912" data-name="גבינה צהובה גוש חלב 28% שומן 400 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪30.70</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪71.25 <small>לק״ג</small></div>
+          <div class="shelf">₪28.50 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014760912" data-name="גבינה צהובה גוש חלב 28% שומן 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גבינת גאודה מהולנד</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪72.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2370420" data-name="גבינת גאודה מהולנד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">פרוסות גבינה 150 גרם <button type="button" class="photo-btn" data-photo="7290108503982" data-key="7290108503982" data-name="פרוסות גבינה 150 גרם" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪72.67 <small>לק״ג</small></div>
+          <div class="shelf">₪10.90 · 150 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108503982" data-name="פרוסות גבינה 150 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">פרוסות גבינה בטעם גאודה <button type="button" class="photo-btn" data-photo="7290108503999" data-key="7290108503999" data-name="פרוסות גבינה בטעם גאודה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪72.67 <small>לק״ג</small></div>
+          <div class="shelf">₪10.90 · 150 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108503999" data-name="פרוסות גבינה בטעם גאודה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינה צהובה גלבוע 22% שומן 200 גרם <button type="button" class="photo-btn" data-photo="7290000046327" data-key="7290000046327" data-name="גבינה צהובה גלבוע 22% שומן 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪17.40</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪73.00 <small>לק״ג</small></div>
+          <div class="shelf">₪14.60 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000046327" data-name="גבינה צהובה גלבוע 22% שומן 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גבינה צהובה 28% <button type="button" class="photo-btn" data-photo="7290102394463" data-key="7290102394463" data-name="גבינה צהובה 28%" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪73.80 <small>לק״ג</small></div>
+          <div class="shelf">₪36.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290102394463" data-name="גבינה צהובה 28%" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינה צהובה מגורדת עמק 28% שומן 500 גרם <button type="button" class="photo-btn" data-photo="7290110320867" data-key="7290110320867" data-name="גבינה צהובה מגורדת עמק 28% שומן 500 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪44.00</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪75.00 <small>לק״ג</small></div>
+          <div class="shelf">₪37.50 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110320867" data-name="גבינה צהובה מגורדת עמק 28% שומן 500 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גבינת צ&#39;דר בשלה</div>
+        <div class="meta">
+          <span>וויקה פארמס אל.טי.די וויאט האוס פארם</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪75.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2370161" data-name="גבינת צ&#39;דר בשלה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינה צ&#39;דר בשלה 35% <button type="button" class="photo-btn" data-photo="7290001022245" data-key="7290001022245" data-name="גבינה צ&#39;דר בשלה 35%" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪75.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290001022245" data-name="גבינה צ&#39;דר בשלה 35%" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינה סקנדינבית <button type="button" class="photo-btn" data-photo="7290004725600" data-key="7290004725600" data-name="גבינה סקנדינבית" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪75.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290004725600" data-name="גבינה סקנדינבית" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינת מאסדם <button type="button" class="photo-btn" data-photo="7290006511508" data-key="7290006511508" data-name="גבינת מאסדם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪76.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290006511508" data-name="גבינת מאסדם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינה מגורדת טריו 27% שומן השף הלבן 300ג <button type="button" class="photo-btn" data-photo="7290110328504" data-key="7290110328504" data-name="גבינה מגורדת טריו 27% שומן השף הלבן 300ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪31.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪76.33 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪28.50</s> ₪22.90 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110328504" data-name="גבינה מגורדת טריו 27% שומן השף הלבן 300ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינה צהובה גוש חלב 28% שומן 200 גרם <button type="button" class="photo-btn" data-photo="7290004122195" data-key="7290004122195" data-name="גבינה צהובה גוש חלב 28% שומן 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪20.40</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪76.50 <small>לק״ג</small></div>
+          <div class="shelf">₪15.30 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004122195" data-name="גבינה צהובה גוש חלב 28% שומן 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סקנדינבית 31% תנובה</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪77.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:46662" data-name="סקנדינבית 31% תנובה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבנצ 15% נעם חריץ מעדנייה <button type="button" class="photo-btn" data-photo="7290005079290" data-key="7290005079290" data-name="גבנצ 15% נעם חריץ מעדנייה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪93.00</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪78.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290005079290" data-name="גבנצ 15% נעם חריץ מעדנייה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">צ&#39;דר אנגלי <button type="button" class="photo-btn" data-photo="7290002857372" data-key="7290002857372" data-name="צ&#39;דר אנגלי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪79.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290002857372" data-name="צ&#39;דר אנגלי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינה חצי קשה מסוג א <button type="button" class="photo-btn" data-photo="7290006511904" data-key="7290006511904" data-name="גבינה חצי קשה מסוג א" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ויליפוד</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪79.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290006511904" data-name="גבינה חצי קשה מסוג א" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינה צ&#39;דר בשלה פרוס <button type="button" class="photo-btn" data-photo="7290108502145" data-key="7290108502145" data-name="גבינה צ&#39;דר בשלה פרוס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪79.33 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪15.90</s> ₪11.90 · 150 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108502145" data-name="גבינה צ&#39;דר בשלה פרוס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינת נעם 9% שומן <button type="button" class="photo-btn" data-photo="7290005079665" data-key="7290005079665" data-name="גבינת נעם 9% שומן" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪82.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290005079665" data-name="גבינת נעם 9% שומן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינה צהובה עמק 28% שומן 400 גרם <button type="button" class="photo-btn" data-photo="7290004125776" data-key="7290004125776" data-name="גבינה צהובה עמק 28% שומן 400 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪35.80</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪83.25 <small>לק״ג</small></div>
+          <div class="shelf">₪33.30 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004125776" data-name="גבינה צהובה עמק 28% שומן 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינה עיראקית 24% שו <button type="button" class="photo-btn" data-photo="7290002511212" data-key="7290002511212" data-name="גבינה עיראקית 24% שו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מחלבת המושבה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪84.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290002511212" data-name="גבינה עיראקית 24% שו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">צ&#39;דר אנגלי כתום <button type="button" class="photo-btn" data-photo="7290002857358" data-key="7290002857358" data-name="צ&#39;דר אנגלי כתום" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>וויק פארמס לימיטד</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪19.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪84.50 <small>לק״ג</small></div>
+          <div class="shelf">₪16.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002857358" data-name="צ&#39;דר אנגלי כתום" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינת צ&#39;דר אנגלי לבן 200 גר <button type="button" class="photo-btn" data-photo="7290002857365" data-key="7290002857365" data-name="גבינת צ&#39;דר אנגלי לבן 200 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>וויק פארמס לימיטד</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪19.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪84.50 <small>לק״ג</small></div>
+          <div class="shelf">₪16.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002857365" data-name="גבינת צ&#39;דר אנגלי לבן 200 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גבינת טל העמק לייט 9% שומן 200 ג&#39; <button type="button" class="photo-btn" data-photo="7290004126674" data-key="7290004126674" data-name="גבינת טל העמק לייט 9% שומן 200 ג&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪21.40</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪84.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪23.60</s> ₪16.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004126674" data-name="גבינת טל העמק לייט 9% שומן 200 ג&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גבינת טל העמק 32% שומן 200 ג&#39; <button type="button" class="photo-btn" data-photo="7290110323301" data-key="7290110323301" data-name="גבינת טל העמק 32% שומן 200 ג&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪21.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪84.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪24.60</s> ₪16.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110323301" data-name="גבינת טל העמק 32% שומן 200 ג&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">פרוסות גאודה עמק <button type="button" class="photo-btn" data-photo="7290116931524" data-key="7290116931524" data-name="פרוסות גאודה עמק" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪21.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪84.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪24.60</s> ₪16.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116931524" data-name="פרוסות גאודה עמק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינה דנבלו בשלה עם <button type="button" class="photo-btn" data-photo="7290002370475" data-key="7290002370475" data-name="גבינה דנבלו בשלה עם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪85.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290002370475" data-name="גבינה דנבלו בשלה עם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בלוק  לגירוד על פיצה <button type="button" class="photo-btn" data-photo="7290015599047" data-key="7290015599047" data-name="בלוק  לגירוד על פיצה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אריויה ס.א.</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪19.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪85.50 <small>לק״ג</small></div>
+          <div class="shelf">₪17.10 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015599047" data-name="בלוק  לגירוד על פיצה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עמק גבינה חצי קשה 9% <button type="button" class="photo-btn" data-photo="7290004137311" data-key="7290004137311" data-name="עמק גבינה חצי קשה 9%" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪38.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪86.25 <small>לק״ג</small></div>
+          <div class="shelf">₪34.50 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004137311" data-name="עמק גבינה חצי קשה 9%" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בלוז גבינה כחולה מעדנייה <button type="button" class="photo-btn" data-photo="9711953105807" data-key="9711953105807" data-name="בלוז גבינה כחולה מעדנייה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪87.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="9711953105807" data-name="בלוז גבינה כחולה מעדנייה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גבינה צהובה אצבעות עמק 28% שומן 172 גרם <button type="button" class="photo-btn" data-photo="7290004122683" data-key="7290004122683" data-name="גבינה צהובה אצבעות עמק 28% שומן 172 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪18.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪87.21 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪21.50</s> ₪15.00 · 172 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004122683" data-name="גבינה צהובה אצבעות עמק 28% שומן 172 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינת צ&#39;ידר בשלה 200 גר <button type="button" class="photo-btn" data-photo="7290108501360" data-key="7290108501360" data-name="גבינת צ&#39;ידר בשלה 200 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>וויקה פארמס אל.טי.די וויאט האוס פארם</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪19.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪87.50 <small>לק״ג</small></div>
+          <div class="shelf">₪17.50 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108501360" data-name="גבינת צ&#39;ידר בשלה 200 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינת קשקבל <button type="button" class="photo-btn" data-photo="8695543009126" data-key="8695543009126" data-name="גבינת קשקבל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪24.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪88.44 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 225 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8695543009126" data-name="גבינת קשקבל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גבינת אמנטל חצי קשה</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪90.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:5384356" data-name="גבינת אמנטל חצי קשה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינה צהובה עמק 15% שומן 200 גרם <button type="button" class="photo-btn" data-photo="7290000052311" data-key="7290000052311" data-name="גבינה צהובה עמק 15% שומן 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪19.40</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪92.00 <small>לק״ג</small></div>
+          <div class="shelf">₪18.40 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000052311" data-name="גבינה צהובה עמק 15% שומן 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינה צהובה עמק 28% שומן דק דק 200 גרם <button type="button" class="photo-btn" data-photo="7290000057088" data-key="7290000057088" data-name="גבינה צהובה עמק 28% שומן דק דק 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪19.40</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪92.00 <small>לק״ג</small></div>
+          <div class="shelf">₪18.40 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000057088" data-name="גבינה צהובה עמק 28% שומן דק דק 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינה צהובה עמק 28% שומן 200 גרם <button type="button" class="photo-btn" data-photo="7290004122270" data-key="7290004122270" data-name="גבינה צהובה עמק 28% שומן 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪19.40</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪92.00 <small>לק״ג</small></div>
+          <div class="shelf">₪18.40 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004122270" data-name="גבינה צהובה עמק 28% שומן 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">פתיתי 28% שומן 200 גר עמק <button type="button" class="photo-btn" data-photo="7290110320850" data-key="7290110320850" data-name="פתיתי 28% שומן 200 גר עמק" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪92.00 <small>לק״ג</small></div>
+          <div class="shelf">₪18.40 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110320850" data-name="פתיתי 28% שומן 200 גר עמק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">עמק 28% 400 גר&#39; בדצ <button type="button" class="photo-btn" data-photo="7290000056760" data-key="7290000056760" data-name="עמק 28% 400 גר&#39; בדצ" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה, מחלבת תל יוסף</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪92.00 <small>לק״ג</small></div>
+          <div class="shelf">₪36.80 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000056760" data-name="עמק 28% 400 גר&#39; בדצ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">נעם גבינה צהובה פרוסה 28% טרה 200 גרם <button type="button" class="photo-btn" data-photo="7290102394821" data-key="7290102394821" data-name="נעם גבינה צהובה פרוסה 28% טרה 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪21.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪92.50 <small>לק״ג</small></div>
+          <div class="shelf">₪18.50 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290102394821" data-name="נעם גבינה צהובה פרוסה 28% טרה 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">נעם גבינה צהובה דק דק 15% טרה 200 גרם <button type="button" class="photo-btn" data-photo="7290102396665" data-key="7290102396665" data-name="נעם גבינה צהובה דק דק 15% טרה 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪22.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪92.50 <small>לק״ג</small></div>
+          <div class="shelf">₪18.50 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290102396665" data-name="נעם גבינה צהובה דק דק 15% טרה 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">נעם גבינה צהובה דק דק 22% טרה 200 גרם <button type="button" class="photo-btn" data-photo="7290102397204" data-key="7290102397204" data-name="נעם גבינה צהובה דק דק 22% טרה 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪22.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪92.50 <small>לק״ג</small></div>
+          <div class="shelf">₪18.50 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290102397204" data-name="נעם גבינה צהובה דק דק 22% טרה 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גבינת גאודה חצי קשה</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪93.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:4256180" data-name="גבינת גאודה חצי קשה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינת איבריקו שקיל <button type="button" class="photo-btn" data-photo="7290002370727" data-key="7290002370727" data-name="גבינת איבריקו שקיל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪93.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290002370727" data-name="גבינת איבריקו שקיל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינה חצי קשה 9% שומן <button type="button" class="photo-btn" data-photo="7290004122348" data-key="7290004122348" data-name="גבינה חצי קשה 9% שומן" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪21.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪94.50 <small>לק״ג</small></div>
+          <div class="shelf">₪18.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004122348" data-name="גבינה חצי קשה 9% שומן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינה צהובה גלבוע 5% שומן פרוס 200 גר עמ <button type="button" class="photo-btn" data-photo="7290110324872" data-key="7290110324872" data-name="גבינה צהובה גלבוע 5% שומן פרוס 200 גר עמ" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪21.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪96.50 <small>לק״ג</small></div>
+          <div class="shelf">₪19.30 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110324872" data-name="גבינה צהובה גלבוע 5% שומן פרוס 200 גר עמ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">עמק קלאסית 28% שומן פרוס בדצ בקופסא <button type="button" class="photo-btn" data-photo="7290000056753" data-key="7290000056753" data-name="עמק קלאסית 28% שומן פרוס בדצ בקופסא" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה, מחלבת תל יוסף</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪97.00 <small>לק״ג</small></div>
+          <div class="shelf">₪19.40 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000056753" data-name="עמק קלאסית 28% שומן פרוס בדצ בקופסא" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">נעם גבינה צהובה לייט פרוסה דק דק 9% טרה 200 גרם <button type="button" class="photo-btn" data-photo="7290102394845" data-key="7290102394845" data-name="נעם גבינה צהובה לייט פרוסה דק דק 9% טרה 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪22.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪97.50 <small>לק״ג</small></div>
+          <div class="shelf">₪19.50 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290102394845" data-name="נעם גבינה צהובה לייט פרוסה דק דק 9% טרה 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גאודה עיזים <button type="button" class="photo-btn" data-photo="7290004256197" data-key="7290004256197" data-name="גאודה עיזים" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪98.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290004256197" data-name="גאודה עיזים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">חריץ גבנ&#34;צ 9% נעם</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪99.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:395415" data-name="חריץ גבנ&#34;צ 9% נעם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">עמק לייט 9% חריץ מעדניה צהובה</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪99.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:4122607" data-name="עמק לייט 9% חריץ מעדניה צהובה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">פרוסות גבינה סקנדינבית 170 ג <button type="button" class="photo-btn" data-photo="7290110326333" data-key="7290110326333" data-name="פרוסות גבינה סקנדינבית 170 ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪19.70</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪99.41 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪23.90</s> ₪16.90 · 170 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110326333" data-name="פרוסות גבינה סקנדינבית 170 ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינת קשקבל פרוסות <button type="button" class="photo-btn" data-photo="7290003781850" data-key="7290003781850" data-name="גבינת קשקבל פרוסות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סאסו פטוראגס קומטויס אף אר 7050</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪21.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪99.50 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003781850" data-name="גבינת קשקבל פרוסות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קשקבל נעם 25% <button type="button" class="photo-btn" data-photo="7290102399048" data-key="7290102399048" data-name="קשקבל נעם 25%" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪28.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪99.50 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290102399048" data-name="קשקבל נעם 25%" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">נעם גאודה פתיחה חוזרת 200 גרם <button type="button" class="photo-btn" data-photo="7290114311601" data-key="7290114311601" data-name="נעם גאודה פתיחה חוזרת 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪26.60</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪99.50 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290114311601" data-name="נעם גאודה פתיחה חוזרת 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינת אמנטל נעם פתיחה חוזרת 200 גר <button type="button" class="photo-btn" data-photo="7290114312813" data-key="7290114312813" data-name="גבינת אמנטל נעם פתיחה חוזרת 200 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪24.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪99.50 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290114312813" data-name="גבינת אמנטל נעם פתיחה חוזרת 200 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">פלח צ`דר פיראוס 200 גר <button type="button" class="photo-btn" data-photo="7290116935447" data-key="7290116935447" data-name="פלח צ`דר פיראוס 200 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה בע\&#34;מ\n</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪21.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪99.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪22.90</s> ₪19.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116935447" data-name="פלח צ`דר פיראוס 200 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינת צ&#39;דר המושבה מע <button type="button" class="photo-btn" data-photo="7290002511670" data-key="7290002511670" data-name="גבינת צ&#39;דר המושבה מע" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪100.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290002511670" data-name="גבינת צ&#39;דר המושבה מע" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינת גאודה הולנדית <button type="button" class="photo-btn" data-photo="7290117269343" data-key="7290117269343" data-name="גבינת גאודה הולנדית" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪25.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪104.50 <small>לק״ג</small></div>
+          <div class="shelf">₪20.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290117269343" data-name="גבינת גאודה הולנדית" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינת קשקבל רמי לוי <button type="button" class="photo-btn" data-photo="7290002370628" data-key="7290002370628" data-name="גבינת קשקבל רמי לוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪105.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290002370628" data-name="גבינת קשקבל רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">פרוסות צ`דר פיראוס 160 גר <button type="button" class="photo-btn" data-photo="7290116935454" data-key="7290116935454" data-name="פרוסות צ`דר פיראוס 160 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה בע\&#34;מ\n</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪19.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪105.62 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪16.90 · 160 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116935454" data-name="פרוסות צ`דר פיראוס 160 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טוסטי בסגנון אמריקאי 23% שומן 200 גרם <button type="button" class="photo-btn" data-photo="7290000040462" data-key="7290000040462" data-name="טוסטי בסגנון אמריקאי 23% שומן 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪23.60</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪107.00 <small>לק״ג</small></div>
+          <div class="shelf">₪21.40 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000040462" data-name="טוסטי בסגנון אמריקאי 23% שומן 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינה אנגלית קשה צדר 200  גר`גד <button type="button" class="photo-btn" data-photo="7290017065786" data-key="7290017065786" data-name="גבינה אנגלית קשה צדר 200  גר`גד" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מחלבות גד בע&#34;\מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪29.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪107.14 <small>לק״ג</small></div>
+          <div class="shelf">₪22.50 · 210 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017065786" data-name="גבינה אנגלית קשה צדר 200  גר`גד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גבינת נעם נטול לקטוז 200 גר <button type="button" class="photo-btn" data-photo="7290114313582" data-key="7290114313582" data-name="גבינת נעם נטול לקטוז 200 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪21.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪109.50 <small>לק״ג</small></div>
+          <div class="shelf">₪21.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290114313582" data-name="גבינת נעם נטול לקטוז 200 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גאודה 30% חריץ מעדניה <button type="button" class="photo-btn" data-photo="7290000571119" data-key="7290000571119" data-name="גאודה 30% חריץ מעדניה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪110.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000571119" data-name="גאודה 30% חריץ מעדניה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מאסדם הולנדי אמיתי חצי גלגל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪110.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2345060" data-name="מאסדם הולנדי אמיתי חצי גלגל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משולש גאודה כמון קימ <button type="button" class="photo-btn" data-photo="7290001258323" data-key="7290001258323" data-name="משולש גאודה כמון קימ" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪110.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290001258323" data-name="משולש גאודה כמון קימ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משולש גאודה <button type="button" class="photo-btn" data-photo="7290001258255" data-key="7290001258255" data-name="משולש גאודה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪110.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290001258255" data-name="משולש גאודה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משולש גאודה תיבול <button type="button" class="photo-btn" data-photo="7290001258262" data-key="7290001258262" data-name="משולש גאודה תיבול" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪110.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290001258262" data-name="משולש גאודה תיבול" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פרוסות קאשקבל 150 גרם <button type="button" class="photo-btn" data-photo="7290019635871" data-key="7290019635871" data-name="פרוסות קאשקבל 150 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מחלבות גד בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪27.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪112.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪23.90</s> ₪16.80 · 150 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019635871" data-name="פרוסות קאשקבל 150 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קשקבל צ&#39;אנק 150 גר <button type="button" class="photo-btn" data-photo="7290108504279" data-key="7290108504279" data-name="קשקבל צ&#39;אנק 150 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪112.67 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪16.90 · 150 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108504279" data-name="קשקבל צ&#39;אנק 150 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טריפל צ&#39;דר אנגלי <button type="button" class="photo-btn" data-photo="7290008461283" data-key="7290008461283" data-name="טריפל צ&#39;דר אנגלי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>דאוליי צ&#39;סמייקרס</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪27.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪114.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪24.90</s> ₪22.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008461283" data-name="טריפל צ&#39;דר אנגלי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינת צדר אנגלי כתומה 200גר <button type="button" class="photo-btn" data-photo="7290102300822" data-key="7290102300822" data-name="גבינת צדר אנגלי כתומה 200גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪30.20</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪114.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪24.90</s> ₪22.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290102300822" data-name="גבינת צדר אנגלי כתומה 200גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינה קשה 200 גרם <button type="button" class="photo-btn" data-photo="7290117268605" data-key="7290117268605" data-name="גבינה קשה 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪29.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪114.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪29.90</s> ₪22.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290117268605" data-name="גבינה קשה 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינה קשה 200 גרם <button type="button" class="photo-btn" data-photo="7290117268612" data-key="7290117268612" data-name="גבינה קשה 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪29.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪114.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪29.90</s> ₪22.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290117268612" data-name="גבינה קשה 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינה קשה 200 גרם <button type="button" class="photo-btn" data-photo="7290117268629" data-key="7290117268629" data-name="גבינה קשה 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪29.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪114.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪29.90</s> ₪22.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290117268629" data-name="גבינה קשה 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינה קשה 200 גרם <button type="button" class="photo-btn" data-photo="7290117268957" data-key="7290117268957" data-name="גבינה קשה 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪29.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪114.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪29.90</s> ₪22.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290117268957" data-name="גבינה קשה 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינת גאודה צ&#39;לי <button type="button" class="photo-btn" data-photo="7290117269398" data-key="7290117269398" data-name="גבינת גאודה צ&#39;לי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪29.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪114.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪29.90</s> ₪22.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290117269398" data-name="גבינת גאודה צ&#39;לי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינת גאודה יעקבס 200 גרם <button type="button" class="photo-btn" data-photo="7290001258576" data-key="7290001258576" data-name="גבינת גאודה יעקבס 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יעקבס</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪114.50 <small>לק״ג</small></div>
+          <div class="shelf">₪22.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001258576" data-name="גבינת גאודה יעקבס 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גאודה מעושנת 30% במשקל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪115.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:571294" data-name="גאודה מעושנת 30% במשקל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינת רסטה 20% <button type="button" class="photo-btn" data-photo="7290003578931" data-key="7290003578931" data-name="גבינת רסטה 20%" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ויליפוד</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪115.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290003578931" data-name="גבינת רסטה 20%" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משולש גאודה בקר 30% <button type="button" class="photo-btn" data-photo="7290019635697" data-key="7290019635697" data-name="משולש גאודה בקר 30%" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪118.12 <small>לק״ג</small></div>
+          <div class="shelf">₪18.90 · 160 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019635697" data-name="משולש גאודה בקר 30%" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינת חלומי 24% מחלב בקר 200 גר גד <button type="button" class="photo-btn" data-photo="7290011499365" data-key="7290011499365" data-name="גבינת חלומי 24% מחלב בקר 200 גר גד" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מחלבות גד בע&#34;\מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪29.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪118.50 <small>לק״ג</small></div>
+          <div class="shelf">₪23.70 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011499365" data-name="גבינת חלומי 24% מחלב בקר 200 גר גד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גבינת רסטה 20%שומן</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪119.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:3578931" data-name="גבינת רסטה 20%שומן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינת גאודה בקר 30% <button type="button" class="photo-btn" data-photo="7290004480332" data-key="7290004480332" data-name="גבינת גאודה בקר 30%" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪119.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290004480332" data-name="גבינת גאודה בקר 30%" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גלגל גבינת גאודה</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪120.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2370017" data-name="גלגל גבינת גאודה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גבינת צ`דר אנגלי כתום מעדנייה</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪120.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2857372" data-name="גבינת צ`דר אנגלי כתום מעדנייה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גבינת צ`דר אנגלי לבן מעדנייה</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪120.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2857389" data-name="גבינת צ`דר אנגלי לבן מעדנייה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינת גאודה תוספת פס <button type="button" class="photo-btn" data-photo="7290001022863" data-key="7290001022863" data-name="גבינת גאודה תוספת פס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪120.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290001022863" data-name="גבינת גאודה תוספת פס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גבינה קשה למחצה הולנד 24.5% <button type="button" class="photo-btn" data-photo="4823065731841" data-key="4823065731841" data-name="גבינה קשה למחצה הולנד 24.5%" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪124.37 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 160 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4823065731841" data-name="גבינה קשה למחצה הולנד 24.5%" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גבינה קשה למחצה גאודה 28.5% <button type="button" class="photo-btn" data-photo="4823065731865" data-key="4823065731865" data-name="גבינה קשה למחצה גאודה 28.5%" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪124.37 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 160 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4823065731865" data-name="גבינה קשה למחצה גאודה 28.5%" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גבינה קשה למחצה טילזיטר 28.5% <button type="button" class="photo-btn" data-photo="4823065731902" data-key="4823065731902" data-name="גבינה קשה למחצה טילזיטר 28.5%" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪124.37 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 160 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4823065731902" data-name="גבינה קשה למחצה טילזיטר 28.5%" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינת גאודה חצי קשה <button type="button" class="photo-btn" data-photo="7290102302246" data-key="7290102302246" data-name="גבינת גאודה חצי קשה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>א.סיימן סחר בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪27.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪124.50 <small>לק״ג</small></div>
+          <div class="shelf">₪24.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290102302246" data-name="גבינת גאודה חצי קשה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משולש קשקבל <button type="button" class="photo-btn" data-photo="7290001258736" data-key="7290001258736" data-name="משולש קשקבל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪129.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290001258736" data-name="משולש קשקבל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גאודה עיזים משולשים <button type="button" class="photo-btn" data-photo="7290004480349" data-key="7290004480349" data-name="גאודה עיזים משולשים" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪129.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290004480349" data-name="גאודה עיזים משולשים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גלעד קשקבל <button type="button" class="photo-btn" data-photo="7290000047027" data-key="7290000047027" data-name="גלעד קשקבל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪130.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000047027" data-name="גלעד קשקבל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משולש גאודה עיזים 160 גרם <button type="button" class="photo-btn" data-photo="7290019635680" data-key="7290019635680" data-name="משולש גאודה עיזים 160 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סי.זד ראובן יו.איי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪22.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪130.62 <small>לק״ג</small></div>
+          <div class="shelf">₪20.90 · 160 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019635680" data-name="משולש גאודה עיזים 160 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גבינת אמנטל 28% שומן <button type="button" class="photo-btn" data-photo="7290014083769" data-key="7290014083769" data-name="גבינת אמנטל 28% שומן" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ג.וילי פוד אינטרנשיונל בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪19.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪132.67 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 150 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014083769" data-name="גבינת אמנטל 28% שומן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">פרוסות צ&#39;דר <button type="button" class="photo-btn" data-photo="7290109641362" data-key="7290109641362" data-name="פרוסות צ&#39;דר" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪132.67 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 150 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290109641362" data-name="פרוסות צ&#39;דר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גבינת צדר אנגלית במשקל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪135.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2300878" data-name="גבינת צדר אנגלית במשקל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גבינת קשקבל צאן בשלה משקל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪135.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:8403191" data-name="גבינת קשקבל צאן בשלה משקל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גבינת צ`דר אנגלית 200 גרם <button type="button" class="photo-btn" data-photo="7290102300860" data-key="7290102300860" data-name="גבינת צ`דר אנגלית 200 גרם" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪136.00 <small>לק״ג</small></div>
+          <div class="shelf">₪27.20 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290102300860" data-name="גבינת צ`דר אנגלית 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">משולש קאשקבל 160 גרם <button type="button" class="photo-btn" data-photo="7290019635659" data-key="7290019635659" data-name="משולש קאשקבל 160 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נארז ע&#34;י דותן MDTN</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪22.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪136.88 <small>לק״ג</small></div>
+          <div class="shelf">₪21.90 · 160 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019635659" data-name="משולש קאשקבל 160 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינת קשקבל מחלבות גד 210 גרם <button type="button" class="photo-btn" data-photo="7290011499341" data-key="7290011499341" data-name="גבינת קשקבל מחלבות גד 210 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מחלבות גד בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪32.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪137.62 <small>לק״ג</small></div>
+          <div class="shelf">₪28.90 · 210 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011499341" data-name="גבינת קשקבל מחלבות גד 210 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינת קשקבל משק יעקבס 180 גרם <button type="button" class="photo-btn" data-photo="7290001258804" data-key="7290001258804" data-name="גבינת קשקבל משק יעקבס 180 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יעקבס</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪138.33 <small>לק״ג</small></div>
+          <div class="shelf">₪24.90 · 180 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001258804" data-name="גבינת קשקבל משק יעקבס 180 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פרוסות צדר 150 גר גד <button type="button" class="photo-btn" data-photo="7290017065977" data-key="7290017065977" data-name="פרוסות צדר 150 גר גד" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מחלבות גד בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪23.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪139.33 <small>לק״ג</small></div>
+          <div class="shelf">₪20.90 · 150 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017065977" data-name="פרוסות צדר 150 גר גד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גאודה פרוסה 200 גרם <button type="button" class="photo-btn" data-photo="7290000571232" data-key="7290000571232" data-name="גאודה פרוסה 200 גרם" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>גבינות משק אחים מאיר בית יצחק בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪139.50 <small>לק״ג</small></div>
+          <div class="shelf">₪27.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000571232" data-name="גאודה פרוסה 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">פרוסות גאודה 200 גרם <button type="button" class="photo-btn" data-photo="7290017065434" data-key="7290017065434" data-name="פרוסות גאודה 200 גרם" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מחלבות גד בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪139.50 <small>לק״ג</small></div>
+          <div class="shelf">₪27.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017065434" data-name="פרוסות גאודה 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">צ`דר  טריפל- מעדנייה <button type="button" class="photo-btn" data-photo="7290004982355" data-key="7290004982355" data-name="צ`דר  טריפל- מעדנייה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪142.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290004982355" data-name="צ`דר  טריפל- מעדנייה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גבינת גאודה 34% שומן</div>
+        <div class="meta">
+          <span>הנרי וויליך</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪142.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:8211147" data-name="גבינת גאודה 34% שומן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גאודה עגבניות וזיתים-מעדנייה</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪142.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:8403900" data-name="גאודה עגבניות וזיתים-מעדנייה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינה קשה פטריות כמה <button type="button" class="photo-btn" data-photo="7290001022825" data-key="7290001022825" data-name="גבינה קשה פטריות כמה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪144.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290001022825" data-name="גבינה קשה פטריות כמה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינה קשה רוטב פסטו <button type="button" class="photo-btn" data-photo="7290001022849" data-key="7290001022849" data-name="גבינה קשה רוטב פסטו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪144.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290001022849" data-name="גבינה קשה רוטב פסטו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינה קשה פיקנטי 34% <button type="button" class="photo-btn" data-photo="7290001022856" data-key="7290001022856" data-name="גבינה קשה פיקנטי 34%" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪144.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290001022856" data-name="גבינה קשה פיקנטי 34%" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינה קשה 22% סן פול <button type="button" class="photo-btn" data-photo="7290013261014" data-key="7290013261014" data-name="גבינה קשה 22% סן פול" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ארצינו</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪144.50 <small>לק״ג</small></div>
+          <div class="shelf">₪28.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013261014" data-name="גבינה קשה 22% סן פול" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קאשקבל משולש מעדנייה גד</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪145.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:554006" data-name="קאשקבל משולש מעדנייה גד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גלגל גבינה קשה</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪145.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:1022825" data-name="גלגל גבינה קשה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גאודה כמון-מעדנייה</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪145.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:8403931" data-name="גאודה כמון-מעדנייה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינה קשקאבל בלו 22% <button type="button" class="photo-btn" data-photo="7290000554006" data-key="7290000554006" data-name="גבינה קשקאבל בלו 22%" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מחלבות גד</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪145.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000554006" data-name="גבינה קשקאבל בלו 22%" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">פרוסות גבינה קשה למחצה הולנד 24.5% <button type="button" class="photo-btn" data-photo="4823065735580" data-key="4823065735580" data-name="פרוסות גבינה קשה למחצה הולנד 24.5%" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪147.41 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 135 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4823065735580" data-name="פרוסות גבינה קשה למחצה הולנד 24.5%" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">פרוסות גבינה קשה למחצה טילזיטר 28.5% <button type="button" class="photo-btn" data-photo="4823065735603" data-key="4823065735603" data-name="פרוסות גבינה קשה למחצה טילזיטר 28.5%" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪147.41 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 135 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4823065735603" data-name="פרוסות גבינה קשה למחצה טילזיטר 28.5%" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">פרוסות גבינה קשה למחצה גאודה 28.5% <button type="button" class="photo-btn" data-photo="4823065735627" data-key="4823065735627" data-name="פרוסות גבינה קשה למחצה גאודה 28.5%" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪147.41 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 135 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4823065735627" data-name="פרוסות גבינה קשה למחצה גאודה 28.5%" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קצקבל גלעד 27% פלח 200 גרם <button type="button" class="photo-btn" data-photo="7290014759978" data-key="7290014759978" data-name="קצקבל גלעד 27% פלח 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪33.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪147.50 <small>לק״ג</small></div>
+          <div class="shelf">₪29.50 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014759978" data-name="קצקבל גלעד 27% פלח 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גאודה כמון <button type="button" class="photo-btn" data-photo="7290117269411" data-key="7290117269411" data-name="גאודה כמון" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪29.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪149.50 <small>לק״ג</small></div>
+          <div class="shelf">₪29.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290117269411" data-name="גאודה כמון" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גאודה מיושנת <button type="button" class="photo-btn" data-photo="7290117269428" data-key="7290117269428" data-name="גאודה מיושנת" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪149.50 <small>לק״ג</small></div>
+          <div class="shelf">₪29.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290117269428" data-name="גאודה מיושנת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גבינת צ`דר אנגלי כתום משקל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪150.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2300885" data-name="גבינת צ`דר אנגלי כתום משקל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גבינת גאודה עם פטריות כמהין</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪153.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2370994" data-name="גבינת גאודה עם פטריות כמהין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גבינת קשה למחצה שקיל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪155.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2370789" data-name="גבינת קשה למחצה שקיל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גבינת גאודה טריקולור מעדנייה</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪155.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2857921" data-name="גבינת גאודה טריקולור מעדנייה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גאודה עיזים משולש מעדנייה גד</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪155.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:4068585" data-name="גאודה עיזים משולש מעדנייה גד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קשקבל ספרדי <button type="button" class="photo-btn" data-photo="7290102304912" data-key="7290102304912" data-name="קשקבל ספרדי" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רבילה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪156.50 <small>לק״ג</small></div>
+          <div class="shelf">₪31.30 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290102304912" data-name="קשקבל ספרדי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינה מגורדת אמנטל 2 <button type="button" class="photo-btn" data-photo="3227134010201" data-key="3227134010201" data-name="גבינה מגורדת אמנטל 2" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מכבי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪157.00 <small>לק״ג</small></div>
+          <div class="shelf">₪31.40 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="3227134010201" data-name="גבינה מגורדת אמנטל 2" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פרוסות גאודה עיזים 30% 160 גר <button type="button" class="photo-btn" data-photo="7290019635192" data-key="7290019635192" data-name="פרוסות גאודה עיזים 30% 160 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪31.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪157.50 <small>לק״ג</small></div>
+          <div class="shelf">₪25.20 · 160 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019635192" data-name="פרוסות גאודה עיזים 30% 160 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משולש גרוייר <button type="button" class="photo-btn" data-photo="7290001258651" data-key="7290001258651" data-name="משולש גרוייר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪159.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290001258651" data-name="משולש גרוייר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינת אמנטל קשה 240 <button type="button" class="photo-btn" data-photo="370086481322" data-key="370086481322" data-name="גבינת אמנטל קשה 240" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪160.00 <small>לק״ג</small></div>
+          <div class="shelf">₪38.40 · 240 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="370086481322" data-name="גבינת אמנטל קשה 240" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קשקבל (27% גלעד) תנובה</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪160.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:47027" data-name="קשקבל (27% גלעד) תנובה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גאודה עז 28% <button type="button" class="photo-btn" data-photo="7290000571188" data-key="7290000571188" data-name="גאודה עז 28%" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪160.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290000571188" data-name="גאודה עז 28%" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינה הולנדית חצי קשה עם פסטו ירוק <button type="button" class="photo-btn" data-photo="7290102302864" data-key="7290102302864" data-name="גבינה הולנדית חצי קשה עם פסטו ירוק" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪38.30</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪161.50 <small>לק״ג</small></div>
+          <div class="shelf">₪32.30 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290102302864" data-name="גבינה הולנדית חצי קשה עם פסטו ירוק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינת עיזים חצי קשה 200 גרם <button type="button" class="photo-btn" data-photo="7290102302253" data-key="7290102302253" data-name="גבינת עיזים חצי קשה 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪38.30</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪169.50 <small>לק״ג</small></div>
+          <div class="shelf">₪33.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290102302253" data-name="גבינת עיזים חצי קשה 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינת גרויר 30% 220 <button type="button" class="photo-btn" data-photo="370086480134" data-key="370086480134" data-name="גבינת גרויר 30% 220" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪172.27 <small>לק״ג</small></div>
+          <div class="shelf">₪37.90 · 220 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="370086480134" data-name="גבינת גרויר 30% 220" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גאודה פסטו ירוק-מעדנייה</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪177.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:8403917" data-name="גאודה פסטו ירוק-מעדנייה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גאודה פסטו אדום-מעדנייה</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪178.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:8403924" data-name="גאודה פסטו אדום-מעדנייה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גאודה עיזים מארז <button type="button" class="photo-btn" data-photo="7290008866033" data-key="7290008866033" data-name="גאודה עיזים מארז" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪179.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290008866033" data-name="גאודה עיזים מארז" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גאודה בקר פרוס 150 גר` <button type="button" class="photo-btn" data-photo="7290102305841" data-key="7290102305841" data-name="גאודה בקר פרוס 150 גר`" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪180.00 <small>לק״ג</small></div>
+          <div class="shelf">₪27.00 · 150 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290102305841" data-name="גאודה בקר פרוס 150 גר`" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">פרימדונה חצי גלגל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪180.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:8403535" data-name="פרימדונה חצי גלגל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גלוריוס עיזים גבינה קשה 4 קג</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪181.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:6578655" data-name="גלוריוס עיזים גבינה קשה 4 קג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גבינה הולנדית עם כמון <button type="button" class="photo-btn" data-photo="7290102302888" data-key="7290102302888" data-name="גבינה הולנדית עם כמון" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קאסמאקרי הנרי ויליך</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪191.50 <small>לק״ג</small></div>
+          <div class="shelf">₪38.30 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290102302888" data-name="גבינה הולנדית עם כמון" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גבינה בסגנון מנצ&#39;גו <button type="button" class="photo-btn" data-photo="7290102304929" data-key="7290102304929" data-name="גבינה בסגנון מנצ&#39;גו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רבילה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪35.30</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪194.67 <small>לק״ג</small></div>
+          <div class="shelf">₪29.20 · 150 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290102304929" data-name="גבינה בסגנון מנצ&#39;גו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גבינת עיזים הולנדית 34% שומן, 4.5 קג</div>
+        <div class="meta">
+          <span>קאסמאקר הנרי וויליך</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪201.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:58214" data-name="גבינת עיזים הולנדית 34% שומן, 4.5 קג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גאודה-תום פרוסה 200 גרם <button type="button" class="photo-btn" data-photo="7290000571478" data-key="7290000571478" data-name="גאודה-תום פרוסה 200 גרם" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>גבינות משק אחים מאיר בית יצחק בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪214.50 <small>לק״ג</small></div>
+          <div class="shelf">₪42.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000571478" data-name="גאודה-תום פרוסה 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">כדורי גבינה מותכת 29 <button type="button" class="photo-btn" data-photo="9000133236735" data-key="9000133236735" data-name="כדורי גבינה מותכת 29" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪224.00 <small>לק״ג</small></div>
+          <div class="shelf">₪22.40 · 100 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9000133236735" data-name="כדורי גבינה מותכת 29" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+      
+      <li class="divider">ללא מחיר לק״ג (גודל לא ידוע)</li>
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גבינת אדם הולנדי <button type="button" class="photo-btn" data-photo="7290003189144" data-key="7290003189144" data-name="גבינת אדם הולנדי" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>צי תעשיות מזון יבנה בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪45.00</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003189144" data-name="גבינת אדם הולנדי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+</ol>
+</div>
+
+</main>
+<footer>עודכן 3.10 21:01 · ויקטורי 09:06 · רמי לוי 10:00 · אושר עד 08:00 · אושר עד 08:00</footer>
+
+
+<nav class="bottom-nav" aria-label="ניווט">
+  <a href="index.html" class="on"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg><span>בית</span></a>
+  <a href="search.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><span>חיפוש</span></a>
+  <a href="scan.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V5a1 1 0 0 1 1-1h2M17 4h2a1 1 0 0 1 1 1v2M20 17v2a1 1 0 0 1-1 1h-2M7 20H5a1 1 0 0 1-1-1v-2"/><path d="M8 8v8M11 8v8M14 8v8M16.5 8v8"/></svg><span>סריקה</span></a>
+  <a href="basket.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h11l2-8H6.2"/><circle cx="9.5" cy="19" r="1.4"/><circle cx="17" cy="19" r="1.4"/></svg><span id="cart-count"></span><span>עגלת קניות</span></a>
+  <a href="spending.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-2-1.4-2 1.4-2-1.4-2 1.4-2-1.4L6 21z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><span>הוצאות</span></a>
+</nav>
+
+<script src="static/basket.js?v=20261003210153"></script>
+<script src="static/photo.js?v=20261003210153"></script>
+
+<script src="static/render.js?v=20261003210153"></script>
+<script src="static/category.js?v=20261003210153" data-build="20261003210153"></script>
+
+<script>
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+</script>
+</body>
+</html>

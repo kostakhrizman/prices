@@ -1,0 +1,2117 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f7a4d">
+<script>
+// the look this phone chose (settings.html "מראה"), before anything is drawn: html.light / html.dark
+// (none = follow the phone) and html[data-color] (none = green); the browser bar takes the colour too
+(function () {
+  let t = {};
+  try { t = JSON.parse(localStorage.getItem("theme")) || {}; } catch (e) { /* none yet */ }
+  const root = document.documentElement;
+  if (t.mode === "light" || t.mode === "dark") root.classList.add(t.mode);
+  if (t.color) root.dataset.color = t.color;
+  if (t.bar) document.querySelector('meta[name="theme-color"]').content = t.bar;
+})();
+</script>
+<title>חיתולים</title>
+<link rel="manifest" href="static/manifest.webmanifest">
+<link rel="icon" href="static/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="static/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="static/style.css?v=20261003210153">
+<style>.st-0 { --store: #e07000; }.st-1 { --store: #d32f2f; }.st-2 { --store: #1565c0; }.st-3 { --store: #1565c0; }</style>
+<script src="static/stores.js?v=20261003210153" data-stores="[{&#34;card_cap&#34;: 750, &#34;card_rate&#34;: 0.07, &#34;default&#34;: true, &#34;key&#34;: &#34;victory-038&#34;, &#34;name&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;ramilevy-007&#34;, &#34;name&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-026&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05ea\u05dc\u05e4\u05d9\u05d5\u05ea&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-003&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05d2\u05d1\u05e2\u05ea \u05e9\u05d0\u05d5\u05dc&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}]"></script>
+<script>
+// No long-press menu on links, pictures or text (the user: the home page's tiles opened Chrome's "open in new tab /
+// copy link" menu; CSS can't stop that on Android). Typing fields and the ⓘ sheet's barcode keep theirs.
+document.addEventListener("contextmenu", (e) => {
+  if (!e.target.closest("input, textarea, [contenteditable], .photo-barcode")) e.preventDefault();
+});
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <a class="back" href="t-9.html" aria-label="חזרה">→</a>
+    <h1>חיתולים</h1>
+    <a class="notes-link" href="notes.html" aria-label="רשימת קניות" title="רשימת קניות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="m8.5 10 1.2 1.2 2.3-2.4M8.5 15.5l1.2 1.2 2.3-2.4M14 10.5h2.5M14 16h2.5"/></svg><span>רשימת קניות</span></a>
+    <a class="settings-link" href="settings.html" aria-label="הגדרות" title="הגדרות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></a>
+  </div>
+  
+  <form class="search" action="search.html" method="get" role="search">
+    <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+    <input type="search" name="q" placeholder="חיפוש מוצר" enterkeyhint="search" aria-label="חיפוש מוצר">
+  </form>
+  
+</header>
+<main>
+
+<p class="sub"><span class="sub-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 2h3l1 3h-5z"/><path d="M8.5 5h7v2.5h-7z"/><path d="M9 7.5h6V19a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2z"/><path d="M9 11h2.5M9 14h2.5M9 17h2.5"/></svg></span>תינוקות · <span id="cat-count">75</span> מוצרים, מהזול ליקר</p>
+
+
+<div class="cat-filter">
+  <input type="search" id="cat-filter" placeholder="סינון לפי שם או יצרן · ‎-מילה מסתירה" enterkeyhint="done" autocomplete="off" aria-label="סינון המוצרים בקטגוריה">
+</div>
+<div id="cat-list" data-href="c-9-1.html">
+
+<ol class="products">
+  
+  
+    
+    
+    <li class="product st-1 best">
+      <div class="info">
+        <div class="name">חיתולי בייביסיטר בייבי מידה 1 <button type="button" class="photo-btn" data-photo="7290017088969" data-key="7290017088969" data-name="חיתולי בייביסיטר בייבי מידה 1" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪29.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.47 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪26.10</s> ₪19.90 · 42 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017088969" data-name="חיתולי בייביסיטר בייבי מידה 1" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חיתולים בייבי סופרים מידה 3 רמי לוי <button type="button" class="photo-btn" data-photo="7290111094576" data-key="7290111094576" data-name="חיתולים בייבי סופרים מידה 3 רמי לוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>די.פי.אל</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪75</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.48 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪29.20</s> ₪25.00 · 52 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111094576" data-name="חיתולים בייבי סופרים מידה 3 רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חיתולי בייביסיטר בייבי מידה 2 <button type="button" class="photo-btn" data-photo="7290017088983" data-key="7290017088983" data-name="חיתולי בייביסיטר בייבי מידה 2" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪29.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.52 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪26.10</s> ₪19.90 · 38 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017088983" data-name="חיתולי בייביסיטר בייבי מידה 2" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בייביסיטר משופר מידה 3 50יח <button type="button" class="photo-btn" data-photo="7290017088051" data-key="7290017088051" data-name="בייביסיטר משופר מידה 3 50יח" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>די.פי.אל תעשיות מוצרים חד פעמיים בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪54</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪36.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.54 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪32.90</s> ₪27.00 · 50 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017088051" data-name="בייביסיטר משופר מידה 3 50יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חיתולים בייבי סופרים <button type="button" class="photo-btn" data-photo="7290111094866" data-key="7290111094866" data-name="חיתולים בייבי סופרים" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>די.פי.אל</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪75</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.60 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪29.20</s> ₪25.00 · 42 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111094866" data-name="חיתולים בייבי סופרים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חיתולי פמפרס בייבי דריי מידה 2 43יח <button type="button" class="photo-btn" data-photo="8700216350433" data-key="8700216350433" data-name="חיתולי פמפרס בייבי דריי מידה 2 43יח" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪52</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.60 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪34.90</s> ₪26.00 · 43 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8700216350433" data-name="חיתולי פמפרס בייבי דריי מידה 2 43יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חיתולי פמפרס פרימיום <button type="button" class="photo-btn" data-photo="8700216891080" data-key="8700216891080" data-name="חיתולי פמפרס פרימיום" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪80</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.61 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪34.50</s> ₪26.67 · 44 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8700216891080" data-name="חיתולי פמפרס פרימיום" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חיתולים בייבי סופרים מידה 4+ רמי לוי <button type="button" class="photo-btn" data-photo="7290111095276" data-key="7290111095276" data-name="חיתולים בייבי סופרים מידה 4+ רמי לוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>די.פי.אל</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪75</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.62 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪29.20</s> ₪25.00 · 40 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111095276" data-name="חיתולים בייבי סופרים מידה 4+ רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חיתולים פרידום דריי 6-10 קילו שלב 3 האגיס 46 יחידות <button type="button" class="photo-btn" data-photo="7290000197425" data-key="7290000197425" data-name="חיתולים פרידום דריי 6-10 קילו שלב 3 האגיס 46 יחידות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קימברלי קלארק ישראל בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 4.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪43.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.65 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪41.50</s> ₪29.90 · 46 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000197425" data-name="חיתולים פרידום דריי 6-10 קילו שלב 3 האגיס 46 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חיתולי פמפרס פרימיום מידה 2 39 יח <button type="button" class="photo-btn" data-photo="8700216891134" data-key="8700216891134" data-name="חיתולי פמפרס פרימיום מידה 2 39 יח" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪80</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪37.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.68 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪34.50</s> ₪26.67 · 39 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8700216891134" data-name="חיתולי פמפרס פרימיום מידה 2 39 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בייביסיטר משופר מידה 4 40יח <button type="button" class="photo-btn" data-photo="7290017088068" data-key="7290017088068" data-name="בייביסיטר משופר מידה 4 40יח" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>די.פי.אל תעשיות מוצרים חד פעמיים בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪54</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪36.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.68 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪32.90</s> ₪27.00 · 40 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017088068" data-name="בייביסיטר משופר מידה 4 40יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טיטולים פרימיום שלב 2 44 יחידות <button type="button" class="photo-btn" data-photo="7290000201818" data-key="7290000201818" data-name="טיטולים פרימיום שלב 2 44 יחידות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קימברלי קלארק  שיווק ישראל בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪31.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.68 <small>ליח׳</small></div>
+          <div class="shelf">₪29.90 · 44 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000201818" data-name="טיטולים פרימיום שלב 2 44 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חיתולים בייבי סופרים מידה 5 רמי לוי <button type="button" class="photo-btn" data-photo="7290111095566" data-key="7290111095566" data-name="חיתולים בייבי סופרים מידה 5 רמי לוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>די.פי.אל</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪75</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.69 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪29.20</s> ₪25.00 · 36 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111095566" data-name="חיתולים בייבי סופרים מידה 5 רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חיתולי פמפרס בייבי דריי מידה 1 37יח <button type="button" class="photo-btn" data-photo="8700216350358" data-key="8700216350358" data-name="חיתולי פמפרס בייבי דריי מידה 1 37יח" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪52</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.70 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪34.90</s> ₪26.00 · 37 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8700216350358" data-name="חיתולי פמפרס בייבי דריי מידה 1 37יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בייביסיטר משופר מידה +4 38יח <button type="button" class="photo-btn" data-photo="7290017088075" data-key="7290017088075" data-name="בייביסיטר משופר מידה +4 38יח" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>די.פי.אל תעשיות מוצרים חד פעמיים בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪54</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪36.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.71 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪32.90</s> ₪27.00 · 38 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017088075" data-name="בייביסיטר משופר מידה +4 38יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טיטולים פרימיום שלב 3 42 יחידות <button type="button" class="photo-btn" data-photo="7290000201832" data-key="7290000201832" data-name="טיטולים פרימיום שלב 3 42 יחידות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קימברלי קלארק שיווק ישראל בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪31.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.71 <small>ליח׳</small></div>
+          <div class="shelf">₪29.90 · 42 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000201832" data-name="טיטולים פרימיום שלב 3 42 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חיתולים עד 6 קילו שלב 1 האגיס אקסטרה קר 40 יחידות <button type="button" class="photo-btn" data-photo="7290000263359" data-key="7290000263359" data-name="חיתולים עד 6 קילו שלב 1 האגיס אקסטרה קר 40 יחידות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קימברלי קלארק שיווק ישראל בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪38.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.72 <small>ליח׳</small></div>
+          <div class="shelf">₪28.90 · 40 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000263359" data-name="חיתולים עד 6 קילו שלב 1 האגיס אקסטרה קר 40 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פמפרס בייבי דריי מידה 3 <button type="button" class="photo-btn" data-photo="8700216350402" data-key="8700216350402" data-name="פמפרס בייבי דריי מידה 3" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪52</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪36.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.74 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪34.90</s> ₪26.00 · 35 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8700216350402" data-name="פמפרס בייבי דריי מידה 3" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בייביסיטר משופר מידה 5 34יח <button type="button" class="photo-btn" data-photo="7290017088082" data-key="7290017088082" data-name="בייביסיטר משופר מידה 5 34יח" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>די.פי.אל תעשיות מוצרים חד פעמיים בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪54</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪36.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.79 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪32.90</s> ₪27.00 · 34 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017088082" data-name="בייביסיטר משופר מידה 5 34יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בייביסיטר משופר מידה 6 34יח <button type="button" class="photo-btn" data-photo="7290017088099" data-key="7290017088099" data-name="בייביסיטר משופר מידה 6 34יח" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>די.פי.אל תעשיות מוצרים חד פעמיים בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪54</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪36.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.79 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪32.90</s> ₪27.00 · 34 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017088099" data-name="בייביסיטר משופר מידה 6 34יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חיתולים פרידום דריי 8-12 קילו שלב 4 האגיס 38 יחידות <button type="button" class="photo-btn" data-photo="7290000197456" data-key="7290000197456" data-name="חיתולים פרידום דריי 8-12 קילו שלב 4 האגיס 38 יחידות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קימברלי קלארק ישראל בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 4.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪43.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.79 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪41.50</s> ₪29.90 · 38 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000197456" data-name="חיתולים פרידום דריי 8-12 קילו שלב 4 האגיס 38 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חיתולים ניו בורן עד 4 קילו האגיס אקסטרה קר 36 יחידות <button type="button" class="photo-btn" data-photo="7290000191645" data-key="7290000191645" data-name="חיתולים ניו בורן עד 4 קילו האגיס אקסטרה קר 36 יחידות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קימברלי קלארק ארהב</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪31.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.80 <small>ליח׳</small></div>
+          <div class="shelf">₪28.90 · 36 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000191645" data-name="חיתולים ניו בורן עד 4 קילו האגיס אקסטרה קר 36 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חיתולים בייבי סופרים <button type="button" class="photo-btn" data-photo="7290111095856" data-key="7290111095856" data-name="חיתולים בייבי סופרים" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>די.פי.אל</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪75</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.83 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪29.20</s> ₪25.00 · 30 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111095856" data-name="חיתולים בייבי סופרים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חיתולי פמפרס פרימיום מידה 3 32 יח <button type="button" class="photo-btn" data-photo="8700216890984" data-key="8700216890984" data-name="חיתולי פמפרס פרימיום מידה 3 32 יח" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪80</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪37.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.83 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪34.50</s> ₪26.67 · 32 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8700216890984" data-name="חיתולי פמפרס פרימיום מידה 3 32 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טיטולים פרימיום שלב 4 36יחידות <button type="button" class="photo-btn" data-photo="7290000201849" data-key="7290000201849" data-name="טיטולים פרימיום שלב 4 36יחידות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קימברלי קלארק  שיווק ישראל בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪31.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.83 <small>ליח׳</small></div>
+          <div class="shelf">₪29.90 · 36 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000201849" data-name="טיטולים פרימיום שלב 4 36יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פמפרס בייבי דריי מידה 4 31 יחידות <button type="button" class="photo-btn" data-photo="8700216363228" data-key="8700216363228" data-name="פמפרס בייבי דריי מידה 4 31 יחידות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪52</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪36.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.84 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪34.90</s> ₪26.00 · 31 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8700216363228" data-name="פמפרס בייבי דריי מידה 4 31 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טיטולים פרימיום שלב4+ 34 יחידות . <button type="button" class="photo-btn" data-photo="7290000201856" data-key="7290000201856" data-name="טיטולים פרימיום שלב4+ 34 יחידות ." data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קימברלי קלארק שיווק ישראל בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪31.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪0.88 <small>ליח׳</small></div>
+          <div class="shelf">₪29.90 · 34 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000201856" data-name="טיטולים פרימיום שלב4+ 34 יחידות ." aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פמפרס בייבי דריי מידה 4+ 28 יחידות <button type="button" class="photo-btn" data-photo="8700216350310" data-key="8700216350310" data-name="פמפרס בייבי דריי מידה 4+ 28 יחידות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪52</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪36.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.93 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪34.90</s> ₪26.00 · 28 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8700216350310" data-name="פמפרס בייבי דריי מידה 4+ 28 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חיתולי פמפרס פרימיום מידה 4 28 יח <button type="button" class="photo-btn" data-photo="8700216890946" data-key="8700216890946" data-name="חיתולי פמפרס פרימיום מידה 4 28 יח" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪80</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪37.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.95 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪34.50</s> ₪26.67 · 28 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8700216890946" data-name="חיתולי פמפרס פרימיום מידה 4 28 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חיתולי פמפרס בייבי ד <button type="button" class="photo-btn" data-photo="8700216350396" data-key="8700216350396" data-name="חיתולי פמפרס בייבי ד" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪52</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪0.96 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪34.90</s> ₪26.00 · 27 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8700216350396" data-name="חיתולי פמפרס בייבי ד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טיטולים פרימיום שלב 5 30 יחידות <button type="button" class="photo-btn" data-photo="7290000201863" data-key="7290000201863" data-name="טיטולים פרימיום שלב 5 30 יחידות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קימברלי קלארק שיווק ישראל בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪31.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪1.00 <small>ליח׳</small></div>
+          <div class="shelf">₪29.90 · 30 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000201863" data-name="טיטולים פרימיום שלב 5 30 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חיתולי פמפרס פרימיום <button type="button" class="photo-btn" data-photo="8006530259217" data-key="8006530259217" data-name="חיתולי פמפרס פרימיום" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פרוקטר אנד גמבל</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪80</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪1.03 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪34.90</s> ₪26.67 · 26 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8006530259217" data-name="חיתולי פמפרס פרימיום" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">האגיס פרידום דריי פנ <button type="button" class="photo-btn" data-photo="7290016437621" data-key="7290016437621" data-name="האגיס פרידום דריי פנ" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪1.05 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪42.30</s> ₪37.90 · 36 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016437621" data-name="האגיס פרידום דריי פנ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טיטולים פרימיום שלב 6 28יחידות <button type="button" class="photo-btn" data-photo="7290000201870" data-key="7290000201870" data-name="טיטולים פרימיום שלב 6 28יחידות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קימברלי קלארק שיווק ישראל בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪31.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪1.07 <small>ליח׳</small></div>
+          <div class="shelf">₪29.90 · 28 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000201870" data-name="טיטולים פרימיום שלב 6 28יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פרימיום מידה 5 24 יח <button type="button" class="photo-btn" data-photo="8700216891103" data-key="8700216891103" data-name="פרימיום מידה 5 24 יח" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪80</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪37.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪1.11 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪34.50</s> ₪26.67 · 24 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8700216891103" data-name="פרימיום מידה 5 24 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">האגיס פרידום דריי פנטס מידה 5 <button type="button" class="photo-btn" data-photo="7290016437645" data-key="7290016437645" data-name="האגיס פרידום דריי פנטס מידה 5" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יצרן: קימברלי קלארק צ&#39;כיה. יבואן ומשווק: קימברלי ק</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪45.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪1.18 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪42.30</s> ₪37.90 · 32 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016437645" data-name="האגיס פרידום דריי פנטס מידה 5" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חיתולי פמפרס פרימיום מידה 6 22 יח <button type="button" class="photo-btn" data-photo="8700216891011" data-key="8700216891011" data-name="חיתולי פמפרס פרימיום מידה 6 22 יח" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪80</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪37.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪1.21 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪34.50</s> ₪26.67 · 22 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8700216891011" data-name="חיתולי פמפרס פרימיום מידה 6 22 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חיתולים 8-12 קילו שלב 4 האגיס אקסטרה קר 36 יחידות <button type="button" class="photo-btn" data-photo="7290000205915" data-key="7290000205915" data-name="חיתולים 8-12 קילו שלב 4 האגיס אקסטרה קר 36 יחידות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קימברלי קלארק צ&#39;כיה שיווק בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪90</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪55.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪1.25 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪46.90</s> ₪45.00 · 36 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000205915" data-name="חיתולים 8-12 קילו שלב 4 האגיס אקסטרה קר 36 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משטחי החתלה חד פעמיים <button type="button" class="photo-btn" data-photo="7290111096198" data-key="7290111096198" data-name="משטחי החתלה חד פעמיים" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>Q.L.H.P.CO.LTD</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪17.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪1.29 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪17.90</s> ₪12.90 · 10 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111096198" data-name="משטחי החתלה חד פעמיים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">האגיס ליטל אקסטרה קר <button type="button" class="photo-btn" data-photo="7290111348129" data-key="7290111348129" data-name="האגיס ליטל אקסטרה קר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪1.31 <small>ליח׳</small></div>
+          <div class="shelf">₪28.90 · 22 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111348129" data-name="האגיס ליטל אקסטרה קר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חיתולי פמפרס פרימיום מידה 7 20 יח` <button type="button" class="photo-btn" data-photo="8700216891035" data-key="8700216891035" data-name="חיתולי פמפרס פרימיום מידה 7 20 יח`" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪80</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪37.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪1.33 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪34.50</s> ₪26.67 · 20 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8700216891035" data-name="חיתולי פמפרס פרימיום מידה 7 20 יח`" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חיתוליםשלב 4+ האגיס אקסטרה קר <button type="button" class="photo-btn" data-photo="7290111344503" data-key="7290111344503" data-name="חיתוליםשלב 4+ האגיס אקסטרה קר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪90</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪55.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪1.41 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪46.90</s> ₪45.00 · 32 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111344503" data-name="חיתוליםשלב 4+ האגיס אקסטרה קר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">האגיס פרידום דריי פנטס מידה 6 <button type="button" class="photo-btn" data-photo="7290016437652" data-key="7290016437652" data-name="האגיס פרידום דריי פנטס מידה 6" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יצרן: קימברלי קלארק צ&#39;כיה. יבואן ומשווק: קימברלי ק</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪45.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪1.46 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪42.30</s> ₪37.90 · 26 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016437652" data-name="האגיס פרידום דריי פנטס מידה 6" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חיתולים שלב 5 האגיס אקסטרה קר <button type="button" class="photo-btn" data-photo="7290000262413" data-key="7290000262413" data-name="חיתולים שלב 5 האגיס אקסטרה קר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קימברלי קלארק צ&#39;כיה שיווק בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪90</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪55.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪1.50 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪46.90</s> ₪45.00 · 30 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000262413" data-name="חיתולים שלב 5 האגיס אקסטרה קר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חיתולים שלב 6 האגיס אקסטרה קר <button type="button" class="photo-btn" data-photo="7290111347252" data-key="7290111347252" data-name="חיתולים שלב 6 האגיס אקסטרה קר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ישראל</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪90</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪55.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪1.67 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪46.90</s> ₪45.00 · 27 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111347252" data-name="חיתולים שלב 6 האגיס אקסטרה קר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">האגיס חיתול לילה מידה 6 <button type="button" class="photo-btn" data-photo="7290111348174" data-key="7290111348174" data-name="האגיס חיתול לילה מידה 6" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪1.69 <small>ליח׳</small></div>
+          <div class="shelf">₪43.90 · 26 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111348174" data-name="האגיס חיתול לילה מידה 6" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משטח החתלה האגיס 10 יחידות <button type="button" class="photo-btn" data-photo="7290000194288" data-key="7290000194288" data-name="משטח החתלה האגיס 10 יחידות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אונטקס</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪26.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪1.89 <small>ליח׳</small></div>
+          <div class="shelf">₪18.90 · 10 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000194288" data-name="משטח החתלה האגיס 10 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בגד ים חד פעמי S האג</div>
+        <div class="meta">
+          <span>האגיס</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪2.07 <small>ליח׳</small></div>
+          <div class="shelf">₪24.90 · 12 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058140886:36000183399" data-name="בגד ים חד פעמי S האג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">האגיס חיתולי שחיה L <button type="button" class="photo-btn" data-photo="5029053538426" data-key="5029053538426" data-name="האגיס חיתולי שחיה L" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קימברלי קלארק צ&#39;כיה שיווק בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪31.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪2.26 <small>ליח׳</small></div>
+          <div class="shelf">₪24.90 · 11 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5029053538426" data-name="האגיס חיתולי שחיה L" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">דיפנד גזרה גבוה  תחת <button type="button" class="photo-btn" data-photo="7290016437430" data-key="7290016437430" data-name="דיפנד גזרה גבוה  תחת" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪110</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪3.44 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪78.90</s> ₪55.00 · 16 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016437430" data-name="דיפנד גזרה גבוה  תחת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">תחתוני ספיגה לתופעת הרטבת לילה 4-7 האגיס <button type="button" class="photo-btn" data-photo="5029053527574" data-key="5029053527574" data-name="תחתוני ספיגה לתופעת הרטבת לילה 4-7 האגיס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קימברלי קלארק צ&#39;כיה שיווק בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪44.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪3.59 <small>ליח׳</small></div>
+          <div class="shelf">₪35.90 · 10 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5029053527574" data-name="תחתוני ספיגה לתופעת הרטבת לילה 4-7 האגיס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">תחתוני ספיגה לתופעת הרטבת לילה 4-7 האגיס <button type="button" class="photo-btn" data-photo="5029053527581" data-key="5029053527581" data-name="תחתוני ספיגה לתופעת הרטבת לילה 4-7 האגיס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קימברלי קלארק צ&#39;כיה שיווק בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪44.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪3.59 <small>ליח׳</small></div>
+          <div class="shelf">₪35.90 · 10 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5029053527581" data-name="תחתוני ספיגה לתופעת הרטבת לילה 4-7 האגיס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">תחתוני ספיגה בנים לתופעת הרטבת לילה 8-15 האגיס <button type="button" class="photo-btn" data-photo="5029053527598" data-key="5029053527598" data-name="תחתוני ספיגה בנים לתופעת הרטבת לילה 8-15 האגיס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קימברלי קלארק צ&#39;כיה שיווק בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪44.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪3.99 <small>ליח׳</small></div>
+          <div class="shelf">₪35.90 · 9 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5029053527598" data-name="תחתוני ספיגה בנים לתופעת הרטבת לילה 8-15 האגיס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">תחתוני ספיגה לתופעת הרטבת לילה 8-15 האגיס <button type="button" class="photo-btn" data-photo="5029053527604" data-key="5029053527604" data-name="תחתוני ספיגה לתופעת הרטבת לילה 8-15 האגיס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קימברלי קלארק צ&#39;כיה שיווק בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪44.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪3.99 <small>ליח׳</small></div>
+          <div class="shelf">₪35.90 · 9 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5029053527604" data-name="תחתוני ספיגה לתופעת הרטבת לילה 8-15 האגיס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקיות לחיתולי תינוקו <button type="button" class="photo-btn" data-photo="7296168089145" data-key="7296168089145" data-name="שקיות לחיתולי תינוקו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.90 <small>ליח׳</small></div>
+          <div class="shelf">₪14.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296168089145" data-name="שקיות לחיתולי תינוקו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משטח החתלה (10 יח&#39;) <button type="button" class="photo-btn" data-photo="7290121047777" data-key="7290121047777" data-name="משטח החתלה (10 יח&#39;)" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪15.90 <small>ליח׳</small></div>
+          <div class="shelf">₪15.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121047777" data-name="משטח החתלה (10 יח&#39;)" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משטח החתלה חד פעמי ל <button type="button" class="photo-btn" data-photo="7296168891779" data-key="7296168891779" data-name="משטח החתלה חד פעמי ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪20.20 <small>ליח׳</small></div>
+          <div class="shelf">₪20.20 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296168891779" data-name="משטח החתלה חד פעמי ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פמפרס בייבי דריי מידה 3 33 יחידות <button type="button" class="photo-btn" data-photo="8006530264457" data-key="8006530264457" data-name="פמפרס בייבי דריי מידה 3 33 יחידות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪52</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪36.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪26.00 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪34.90</s> ₪26.00 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8006530264457" data-name="פמפרס בייבי דריי מידה 3 33 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פמפרס בייבי דריי מידה 4 29 יחידות <button type="button" class="photo-btn" data-photo="8006530264464" data-key="8006530264464" data-name="פמפרס בייבי דריי מידה 4 29 יחידות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪52</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪36.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪26.00 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪34.90</s> ₪26.00 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8006530264464" data-name="פמפרס בייבי דריי מידה 4 29 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פמפרס בייבי דריי מידה 4+ 26 יחידות <button type="button" class="photo-btn" data-photo="8006530264495" data-key="8006530264495" data-name="פמפרס בייבי דריי מידה 4+ 26 יחידות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪52</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪36.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪26.00 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪34.90</s> ₪26.00 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8006530264495" data-name="פמפרס בייבי דריי מידה 4+ 26 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פמפרס בייבי דריי מידה 5 25 יחידות <button type="button" class="photo-btn" data-photo="8006530264525" data-key="8006530264525" data-name="פמפרס בייבי דריי מידה 5 25 יחידות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪52</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪36.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪26.00 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪34.90</s> ₪26.00 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8006530264525" data-name="פמפרס בייבי דריי מידה 5 25 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פמפרס בייבי דריי מידה 6 22 יחידות <button type="button" class="photo-btn" data-photo="8006530264570" data-key="8006530264570" data-name="פמפרס בייבי דריי מידה 6 22 יחידות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪52</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪36.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪26.00 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪34.90</s> ₪26.00 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8006530264570" data-name="פמפרס בייבי דריי מידה 6 22 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בייביסיטר מידה +5 30יח <button type="button" class="photo-btn" data-photo="7290121603652" data-key="7290121603652" data-name="בייביסיטר מידה +5 30יח" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪54</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪36.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪27.00 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪32.90</s> ₪27.00 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121603652" data-name="בייביסיטר מידה +5 30יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חיתולים 5-7 קילו שלב 2 האגיס אקסטרה קייר 42 יחידות <button type="button" class="photo-btn" data-photo="7290000191225" data-key="7290000191225" data-name="חיתולים 5-7 קילו שלב 2 האגיס אקסטרה קייר 42 יחידות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קימברלי קלארק שיווק ישראל בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪38.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪28.90 <small>ליח׳</small></div>
+          <div class="shelf">₪28.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000191225" data-name="חיתולים 5-7 קילו שלב 2 האגיס אקסטרה קייר 42 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חיתולים פרידום דריי 10-14 קילו שלב 4+ האגיס 36 יחידות <button type="button" class="photo-btn" data-photo="7290000197463" data-key="7290000197463" data-name="חיתולים פרידום דריי 10-14 קילו שלב 4+ האגיס 36 יחידות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קימברלי קלארק ישראל בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 4.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪43.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪29.90 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪41.50</s> ₪29.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000197463" data-name="חיתולים פרידום דריי 10-14 קילו שלב 4+ האגיס 36 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חיתולים פרידום דריי 12-18 קילו שלב 5 האגיס 32 יחידות <button type="button" class="photo-btn" data-photo="7290000197548" data-key="7290000197548" data-name="חיתולים פרידום דריי 12-18 קילו שלב 5 האגיס 32 יחידות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קימברלי קלארק ישראל בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 4.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪43.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪29.90 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪41.50</s> ₪29.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000197548" data-name="חיתולים פרידום דריי 12-18 קילו שלב 5 האגיס 32 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חיתולים פרידום דריי 18-24 קילו שלב 6 האגיס 27 יחידות <button type="button" class="photo-btn" data-photo="7290000197678" data-key="7290000197678" data-name="חיתולים פרידום דריי 18-24 קילו שלב 6 האגיס 27 יחידות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קימברלי קלארק ישראל בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 4.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪43.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪29.90 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪41.50</s> ₪29.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000197678" data-name="חיתולים פרידום דריי 18-24 קילו שלב 6 האגיס 27 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חיתולים פרידום דריי 14-20 קילו שלב +5 סקין קומפורט האגיס 28 יחידות <button type="button" class="photo-btn" data-photo="7290111346538" data-key="7290111346538" data-name="חיתולים פרידום דריי 14-20 קילו שלב +5 סקין קומפורט האגיס 28 יחידות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 4.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪43.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪29.90 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪41.50</s> ₪29.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111346538" data-name="חיתולים פרידום דריי 14-20 קילו שלב +5 סקין קומפורט האגיס 28 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חיתול לילה מידה 3 26 יח האגיס <button type="button" class="photo-btn" data-photo="7290111347856" data-key="7290111347856" data-name="חיתול לילה מידה 3 26 יח האגיס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 4.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪43.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪29.90 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪41.50</s> ₪29.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111347856" data-name="חיתול לילה מידה 3 26 יח האגיס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חיתולים ללילה 8-13 קילו שלב 4 האגיס 26 יחידות <button type="button" class="photo-btn" data-photo="7290111347863" data-key="7290111347863" data-name="חיתולים ללילה 8-13 קילו שלב 4 האגיס 26 יחידות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 4.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪43.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪29.90 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪41.50</s> ₪29.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111347863" data-name="חיתולים ללילה 8-13 קילו שלב 4 האגיס 26 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חיתולים ללילה 12-23 קילו שלב 5 האגיס 26 יחידות <button type="button" class="photo-btn" data-photo="7290111347870" data-key="7290111347870" data-name="חיתולים ללילה 12-23 קילו שלב 5 האגיס 26 יחידות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 4.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪43.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪29.90 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪41.50</s> ₪29.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111347870" data-name="חיתולים ללילה 12-23 קילו שלב 5 האגיס 26 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חיתוליםשלב 3 האגיס אקסטרה קר <button type="button" class="photo-btn" data-photo="7290000205762" data-key="7290000205762" data-name="חיתוליםשלב 3 האגיס אקסטרה קר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קימברלי קלארק צ&#39;כיה שיווק בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪90</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪55.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪45.00 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪46.90</s> ₪45.00 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000205762" data-name="חיתוליםשלב 3 האגיס אקסטרה קר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פול אפס בנים יום 20 יח <button type="button" class="photo-btn" data-photo="5029053574110" data-key="5029053574110" data-name="פול אפס בנים יום 20 יח" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪45.90 <small>ליח׳</small></div>
+          <div class="shelf">₪45.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5029053574110" data-name="פול אפס בנים יום 20 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פול אפס בנים לילה 18 יח <button type="button" class="photo-btn" data-photo="5029053574158" data-key="5029053574158" data-name="פול אפס בנים לילה 18 יח" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪45.90 <small>ליח׳</small></div>
+          <div class="shelf">₪45.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5029053574158" data-name="פול אפס בנים לילה 18 יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+      
+      <li class="divider">ללא מחיר לק״ג (גודל לא ידוע)</li>
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">האגיס חיתולי שחיה S/M</div>
+        <div class="meta">
+          <span>קימברלי קלארק צ&#39;כיה שיווק בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪31.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:36000183399" data-name="האגיס חיתולי שחיה S/M" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+</ol>
+</div>
+
+</main>
+<footer>עודכן 3.10 21:01 · ויקטורי 09:06 · רמי לוי 10:00 · אושר עד 08:00 · אושר עד 08:00</footer>
+
+
+<nav class="bottom-nav" aria-label="ניווט">
+  <a href="index.html" class="on"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg><span>בית</span></a>
+  <a href="search.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><span>חיפוש</span></a>
+  <a href="scan.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V5a1 1 0 0 1 1-1h2M17 4h2a1 1 0 0 1 1 1v2M20 17v2a1 1 0 0 1-1 1h-2M7 20H5a1 1 0 0 1-1-1v-2"/><path d="M8 8v8M11 8v8M14 8v8M16.5 8v8"/></svg><span>סריקה</span></a>
+  <a href="basket.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h11l2-8H6.2"/><circle cx="9.5" cy="19" r="1.4"/><circle cx="17" cy="19" r="1.4"/></svg><span id="cart-count"></span><span>עגלת קניות</span></a>
+  <a href="spending.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-2-1.4-2 1.4-2-1.4-2 1.4-2-1.4L6 21z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><span>הוצאות</span></a>
+</nav>
+
+<script src="static/basket.js?v=20261003210153"></script>
+<script src="static/photo.js?v=20261003210153"></script>
+
+<script src="static/render.js?v=20261003210153"></script>
+<script src="static/category.js?v=20261003210153" data-build="20261003210153"></script>
+
+<script>
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+</script>
+</body>
+</html>

@@ -1,0 +1,657 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f7a4d">
+<script>
+// the look this phone chose (settings.html "מראה"), before anything is drawn: html.light / html.dark
+// (none = follow the phone) and html[data-color] (none = green); the browser bar takes the colour too
+(function () {
+  let t = {};
+  try { t = JSON.parse(localStorage.getItem("theme")) || {}; } catch (e) { /* none yet */ }
+  const root = document.documentElement;
+  if (t.mode === "light" || t.mode === "dark") root.classList.add(t.mode);
+  if (t.color) root.dataset.color = t.color;
+  if (t.bar) document.querySelector('meta[name="theme-color"]').content = t.bar;
+})();
+</script>
+<title>תחליפי גבינה</title>
+<link rel="manifest" href="static/manifest.webmanifest">
+<link rel="icon" href="static/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="static/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="static/style.css?v=20261003210153">
+<style>.st-0 { --store: #e07000; }.st-1 { --store: #d32f2f; }.st-2 { --store: #1565c0; }.st-3 { --store: #1565c0; }</style>
+<script src="static/stores.js?v=20261003210153" data-stores="[{&#34;card_cap&#34;: 750, &#34;card_rate&#34;: 0.07, &#34;default&#34;: true, &#34;key&#34;: &#34;victory-038&#34;, &#34;name&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;ramilevy-007&#34;, &#34;name&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-026&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05ea\u05dc\u05e4\u05d9\u05d5\u05ea&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-003&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05d2\u05d1\u05e2\u05ea \u05e9\u05d0\u05d5\u05dc&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}]"></script>
+<script>
+// No long-press menu on links, pictures or text (the user: the home page's tiles opened Chrome's "open in new tab /
+// copy link" menu; CSS can't stop that on Android). Typing fields and the ⓘ sheet's barcode keep theirs.
+document.addEventListener("contextmenu", (e) => {
+  if (!e.target.closest("input, textarea, [contenteditable], .photo-barcode")) e.preventDefault();
+});
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <a class="back" href="t-2.html" aria-label="חזרה">→</a>
+    <h1>תחליפי גבינה</h1>
+    <a class="notes-link" href="notes.html" aria-label="רשימת קניות" title="רשימת קניות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="m8.5 10 1.2 1.2 2.3-2.4M8.5 15.5l1.2 1.2 2.3-2.4M14 10.5h2.5M14 16h2.5"/></svg><span>רשימת קניות</span></a>
+    <a class="settings-link" href="settings.html" aria-label="הגדרות" title="הגדרות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></a>
+  </div>
+  
+  <form class="search" action="search.html" method="get" role="search">
+    <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+    <input type="search" name="q" placeholder="חיפוש מוצר" enterkeyhint="search" aria-label="חיפוש מוצר">
+  </form>
+  
+</header>
+<main>
+
+<p class="sub"><span class="sub-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8v3l2 3v11a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V9l2-3z"/><path d="M8 6h8"/><path d="M6 9h12"/><path d="M10 13.5a2 2 0 0 0 4 0c0-1.2-2-3.5-2-3.5s-2 2.3-2 3.5z"/></svg></span>חלב וביצים · <span id="cat-count">21</span> מוצרים, מהזול ליקר</p>
+
+
+<div class="cat-filter">
+  <input type="search" id="cat-filter" placeholder="סינון לפי שם או יצרן · ‎-מילה מסתירה" enterkeyhint="done" autocomplete="off" aria-label="סינון המוצרים בקטגוריה">
+</div>
+<div id="cat-list" data-href="c-2-9.html">
+
+<ol class="products">
+  
+  
+    
+    
+    <li class="product st-1 best">
+      <div class="info">
+        <div class="name">ויולייף בסיס צמחי לבישול ולהקצפה 500מל <button type="button" class="photo-btn" data-photo="8719200294448" data-key="8719200294448" data-name="ויולייף בסיס צמחי לבישול ולהקצפה 500מל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪23.80 <small>לליטר</small></div>
+          <div class="shelf"><s>₪12.90</s> ₪11.90 · 500 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8719200294448" data-name="ויולייף בסיס צמחי לבישול ולהקצפה 500מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">תחליף גבינה בסגנון ד <button type="button" class="photo-btn" data-photo="7290004225278" data-key="7290004225278" data-name="תחליף גבינה בסגנון ד" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪60.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290004225278" data-name="תחליף גבינה בסגנון ד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ממרח על בסיס סויה בסגון שמנת טופוטי 340 גרם <button type="button" class="photo-btn" data-photo="9720188060108" data-key="9720188060108" data-name="ממרח על בסיס סויה בסגון שמנת טופוטי 340 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪24.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪60.29 <small>לק״ג</small></div>
+          <div class="shelf">₪20.50 · 340 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="9720188060108" data-name="ממרח על בסיס סויה בסגון שמנת טופוטי 340 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">צ&#39;דר פרוסות תחליף שו <button type="button" class="photo-btn" data-photo="7290011923105" data-key="7290011923105" data-name="צ&#39;דר פרוסות תחליף שו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪25</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪62.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪12.50 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011923105" data-name="צ&#39;דר פרוסות תחליף שו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פטה גוש תחליף שומן צ <button type="button" class="photo-btn" data-photo="7290011923112" data-key="7290011923112" data-name="פטה גוש תחליף שומן צ" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪25</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪62.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪12.50 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011923112" data-name="פטה גוש תחליף שומן צ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גוש טבעוני בטעם מוצרלה 300 גרם <button type="button" class="photo-btn" data-photo="7290109640020" data-key="7290109640020" data-name="גוש טבעוני בטעם מוצרלה 300 גרם" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪66.33 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290109640020" data-name="גוש טבעוני בטעם מוצרלה 300 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">תחליף מוצרלה לפיצה 400 ג <button type="button" class="photo-btn" data-photo="5202390016141" data-key="5202390016141" data-name="תחליף מוצרלה לפיצה 400 ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אריביה אס.אי. 57022</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪29.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪70.50 <small>לק״ג</small></div>
+          <div class="shelf">₪28.20 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5202390016141" data-name="תחליף מוצרלה לפיצה 400 ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">ממרח שקדים וקשיו בסגנון גבינה <button type="button" class="photo-btn" data-photo="7290018593233" data-key="7290018593233" data-name="ממרח שקדים וקשיו בסגנון גבינה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪82.92 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 240 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018593233" data-name="ממרח שקדים וקשיו בסגנון גבינה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">ממרח שקדים וקשיו בסגנון גבינה <button type="button" class="photo-btn" data-photo="7290018593240" data-key="7290018593240" data-name="ממרח שקדים וקשיו בסגנון גבינה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪82.92 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 240 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018593240" data-name="ממרח שקדים וקשיו בסגנון גבינה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">ממרח שקדים וקשיו בסגנון גבינה <button type="button" class="photo-btn" data-photo="7290018593257" data-key="7290018593257" data-name="ממרח שקדים וקשיו בסגנון גבינה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪82.92 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 240 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018593257" data-name="ממרח שקדים וקשיו בסגנון גבינה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בסגנון שמנת שום שמיר <button type="button" class="photo-btn" data-photo="7290019635932" data-key="7290019635932" data-name="בסגנון שמנת שום שמיר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נויה סחר</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪14.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪85.29 <small>לק״ג</small></div>
+          <div class="shelf">₪14.50 · 170 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019635932" data-name="בסגנון שמנת שום שמיר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פילגד בסגנון שמנת 24% <button type="button" class="photo-btn" data-photo="7290019635949" data-key="7290019635949" data-name="פילגד בסגנון שמנת 24%" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נויה סחר</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪14.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪85.29 <small>לק״ג</small></div>
+          <div class="shelf">₪14.50 · 170 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019635949" data-name="פילגד בסגנון שמנת 24%" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">גליל טבעוני בסגנון גבינת עיזים <button type="button" class="photo-btn" data-photo="7290114320238" data-key="7290114320238" data-name="גליל טבעוני בסגנון גבינת עיזים" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאמא קיו בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪105.62 <small>לק״ג</small></div>
+          <div class="shelf">₪16.90 · 160 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290114320238" data-name="גליל טבעוני בסגנון גבינת עיזים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קיו גליל בסגנון גבינה בטעם טבעי <button type="button" class="photo-btn" data-photo="7290114320245" data-key="7290114320245" data-name="קיו גליל בסגנון גבינה בטעם טבעי" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאמא קיו בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪105.62 <small>לק״ג</small></div>
+          <div class="shelf">₪16.90 · 160 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290114320245" data-name="קיו גליל בסגנון גבינה בטעם טבעי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קיו גליל בסגנון גבינה בתוספת חלפניו <button type="button" class="photo-btn" data-photo="7290114320252" data-key="7290114320252" data-name="קיו גליל בסגנון גבינה בתוספת חלפניו" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאמא קיו בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪105.62 <small>לק״ג</small></div>
+          <div class="shelf">₪16.90 · 160 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290114320252" data-name="קיו גליל בסגנון גבינה בתוספת חלפניו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קיו גליל בסגנון גבינה עם עגבניות מיובשות ועשבי תיב <button type="button" class="photo-btn" data-photo="7290114320276" data-key="7290114320276" data-name="קיו גליל בסגנון גבינה עם עגבניות מיובשות ועשבי תיב" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאמא קיו בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪105.62 <small>לק״ג</small></div>
+          <div class="shelf">₪16.90 · 160 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290114320276" data-name="קיו גליל בסגנון גבינה עם עגבניות מיובשות ועשבי תיב" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">צהובה  קלאסית <button type="button" class="photo-btn" data-photo="7290015599023" data-key="7290015599023" data-name="צהובה  קלאסית" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אריויה ס.א.</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪23.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪119.50 <small>לק״ג</small></div>
+          <div class="shelf">₪23.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015599023" data-name="צהובה  קלאסית" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">צהובה  מוצרלה <button type="button" class="photo-btn" data-photo="7290015599061" data-key="7290015599061" data-name="צהובה  מוצרלה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אריויה ס.א.</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪23.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪119.50 <small>לק״ג</small></div>
+          <div class="shelf">₪23.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015599061" data-name="צהובה  מוצרלה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">ויולייף פרוסות צהובה בסגנון מוצרלה 200 ג <button type="button" class="photo-btn" data-photo="5202390016011" data-key="5202390016011" data-name="ויולייף פרוסות צהובה בסגנון מוצרלה 200 ג" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪129.50 <small>לק״ג</small></div>
+          <div class="shelf">₪25.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5202390016011" data-name="ויולייף פרוסות צהובה בסגנון מוצרלה 200 ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">טבעונית בסגנון מוצרלה <button type="button" class="photo-btn" data-photo="7290018593035" data-key="7290018593035" data-name="טבעונית בסגנון מוצרלה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪139.50 <small>לק״ג</small></div>
+          <div class="shelf">₪27.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018593035" data-name="טבעונית בסגנון מוצרלה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">פתיתי אגוזים ושקדים בסגנון פרמזן <button type="button" class="photo-btn" data-photo="7290018593059" data-key="7290018593059" data-name="פתיתי אגוזים ושקדים בסגנון פרמזן" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פלנטי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪225.22 <small>לק״ג</small></div>
+          <div class="shelf">₪25.90 · 115 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018593059" data-name="פתיתי אגוזים ושקדים בסגנון פרמזן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+</ol>
+</div>
+
+</main>
+<footer>עודכן 3.10 21:01 · ויקטורי 09:06 · רמי לוי 10:00 · אושר עד 08:00 · אושר עד 08:00</footer>
+
+
+<nav class="bottom-nav" aria-label="ניווט">
+  <a href="index.html" class="on"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg><span>בית</span></a>
+  <a href="search.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><span>חיפוש</span></a>
+  <a href="scan.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V5a1 1 0 0 1 1-1h2M17 4h2a1 1 0 0 1 1 1v2M20 17v2a1 1 0 0 1-1 1h-2M7 20H5a1 1 0 0 1-1-1v-2"/><path d="M8 8v8M11 8v8M14 8v8M16.5 8v8"/></svg><span>סריקה</span></a>
+  <a href="basket.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h11l2-8H6.2"/><circle cx="9.5" cy="19" r="1.4"/><circle cx="17" cy="19" r="1.4"/></svg><span id="cart-count"></span><span>עגלת קניות</span></a>
+  <a href="spending.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-2-1.4-2 1.4-2-1.4-2 1.4-2-1.4L6 21z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><span>הוצאות</span></a>
+</nav>
+
+<script src="static/basket.js?v=20261003210153"></script>
+<script src="static/photo.js?v=20261003210153"></script>
+
+<script src="static/render.js?v=20261003210153"></script>
+<script src="static/category.js?v=20261003210153" data-build="20261003210153"></script>
+
+<script>
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+</script>
+</body>
+</html>

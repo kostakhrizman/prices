@@ -1,0 +1,1849 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f7a4d">
+<script>
+// the look this phone chose (settings.html "מראה"), before anything is drawn: html.light / html.dark
+// (none = follow the phone) and html[data-color] (none = green); the browser bar takes the colour too
+(function () {
+  let t = {};
+  try { t = JSON.parse(localStorage.getItem("theme")) || {}; } catch (e) { /* none yet */ }
+  const root = document.documentElement;
+  if (t.mode === "light" || t.mode === "dark") root.classList.add(t.mode);
+  if (t.color) root.dataset.color = t.color;
+  if (t.bar) document.querySelector('meta[name="theme-color"]').content = t.bar;
+})();
+</script>
+<title>אורז</title>
+<link rel="manifest" href="static/manifest.webmanifest">
+<link rel="icon" href="static/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="static/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="static/style.css?v=20261003210153">
+<style>.st-0 { --store: #e07000; }.st-1 { --store: #d32f2f; }.st-2 { --store: #1565c0; }.st-3 { --store: #1565c0; }</style>
+<script src="static/stores.js?v=20261003210153" data-stores="[{&#34;card_cap&#34;: 750, &#34;card_rate&#34;: 0.07, &#34;default&#34;: true, &#34;key&#34;: &#34;victory-038&#34;, &#34;name&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;ramilevy-007&#34;, &#34;name&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-026&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05ea\u05dc\u05e4\u05d9\u05d5\u05ea&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-003&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05d2\u05d1\u05e2\u05ea \u05e9\u05d0\u05d5\u05dc&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}]"></script>
+<script>
+// No long-press menu on links, pictures or text (the user: the home page's tiles opened Chrome's "open in new tab /
+// copy link" menu; CSS can't stop that on Android). Typing fields and the ⓘ sheet's barcode keep theirs.
+document.addEventListener("contextmenu", (e) => {
+  if (!e.target.closest("input, textarea, [contenteditable], .photo-barcode")) e.preventDefault();
+});
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <a class="back" href="t-4.html" aria-label="חזרה">→</a>
+    <h1>אורז</h1>
+    <a class="notes-link" href="notes.html" aria-label="רשימת קניות" title="רשימת קניות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="m8.5 10 1.2 1.2 2.3-2.4M8.5 15.5l1.2 1.2 2.3-2.4M14 10.5h2.5M14 16h2.5"/></svg><span>רשימת קניות</span></a>
+    <a class="settings-link" href="settings.html" aria-label="הגדרות" title="הגדרות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></a>
+  </div>
+  
+  <form class="search" action="search.html" method="get" role="search">
+    <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+    <input type="search" name="q" placeholder="חיפוש מוצר" enterkeyhint="search" aria-label="חיפוש מוצר">
+  </form>
+  
+</header>
+<main>
+
+<p class="sub"><span class="sub-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8v3H8z"/><path d="M7 6h10a1 1 0 0 1 1 1v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V7a1 1 0 0 1 1-1z"/><path d="M6 11h12v5H6z"/></svg></span>מזווה · <span id="cat-count">65</span> מוצרים, מהזול ליקר</p>
+
+
+<div class="cat-filter">
+  <input type="search" id="cat-filter" placeholder="סינון לפי שם או יצרן · ‎-מילה מסתירה" enterkeyhint="done" autocomplete="off" aria-label="סינון המוצרים בקטגוריה">
+</div>
+<div id="cat-list" data-href="c-4-0.html">
+
+<ol class="products">
+  
+  
+    
+    
+    <li class="product st-1 best">
+      <div class="info">
+        <div class="name">אורז פרסי 1קג זיפר רמילוי <button type="button" class="photo-btn" data-photo="7290017406367" data-key="7290017406367" data-name="אורז פרסי 1קג זיפר רמילוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪10</span> בקניית 2 · בקנייה מעל ₪75 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪5.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪8.90</s> ₪5.00 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017406367" data-name="אורז פרסי 1קג זיפר רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אורז תאילנדי 1 ק&#34;ג סוגת <button type="button" class="photo-btn" data-photo="7290000211169" data-key="7290000211169" data-name="אורז תאילנדי 1 ק&#34;ג סוגת" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוגת תעשיות בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪8.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪5.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪7.90</s> ₪5.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000211169" data-name="אורז תאילנדי 1 ק&#34;ג סוגת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אורז לבן ארוך אוצרות <button type="button" class="photo-btn" data-photo="7290019195306" data-key="7290019195306" data-name="אורז לבן ארוך אוצרות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          <span class="warn">גודל לא ודאי</span>
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪5.90 <small>לק״ג</small></div>
+          <div class="shelf">₪5.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019195306" data-name="אורז לבן ארוך אוצרות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אורז פרסי <button type="button" class="photo-btn" data-photo="7290117907733" data-key="7290117907733" data-name="אורז פרסי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪12</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪11.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪6.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪8.90</s> ₪6.00 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290117907733" data-name="אורז פרסי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אורז בסמטי 1ק&#34;ג רמי לוי <button type="button" class="photo-btn" data-photo="7290119672073" data-key="7290119672073" data-name="אורז בסמטי 1ק&#34;ג רמי לוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪14</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪7.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.80</s> ₪7.00 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119672073" data-name="אורז בסמטי 1ק&#34;ג רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אורז בסמטי לבן ארוך <button type="button" class="photo-btn" data-photo="7290119672349" data-key="7290119672349" data-name="אורז בסמטי לבן ארוך" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          <span class="warn">גודל לא ודאי</span>
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪14</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪7.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.80</s> ₪7.00 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119672349" data-name="אורז בסמטי לבן ארוך" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גולדן אורז בסמטי <button type="button" class="photo-btn" data-photo="7290006439451" data-key="7290006439451" data-name="גולדן אורז בסמטי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>צ&#39;מאן לאל סאטיה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪46.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪7.58 <small>לק״ג</small></div>
+          <div class="shelf">₪37.90 · 5 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290006439451" data-name="גולדן אורז בסמטי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אורז אוצרות הודו 5 קג שוקחה <button type="button" class="photo-btn" data-photo="183837123408" data-key="7290696200003:183837123408" data-name="אורז אוצרות הודו 5 קג שוקחה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪7.98 <small>לק״ג</small></div>
+          <div class="shelf">₪39.90 · 5 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:183837123408" data-name="אורז אוצרות הודו 5 קג שוקחה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שוקחה אורז יסמין מדליה <button type="button" class="photo-btn" data-photo="7290002954187" data-key="7290002954187" data-name="שוקחה אורז יסמין מדליה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קפיטל רייס אל טי די</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪46.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪7.98 <small>לק״ג</small></div>
+          <div class="shelf">₪39.90 · 5 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002954187" data-name="שוקחה אורז יסמין מדליה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקדיה-אורז יסמין 5קג <button type="button" class="photo-btn" data-photo="7290008597906" data-key="7290008597906" data-name="שקדיה-אורז יסמין 5קג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪44.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪7.98 <small>לק״ג</small></div>
+          <div class="shelf">₪39.90 · 5 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008597906" data-name="שקדיה-אורז יסמין 5קג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אורז מלא  ארוך <button type="button" class="photo-btn" data-photo="7290000211312" data-key="7290000211312" data-name="אורז מלא  ארוך" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוגת תעשיות בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪9.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪8.90 <small>לק״ג</small></div>
+          <div class="shelf">₪8.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000211312" data-name="אורז מלא  ארוך" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אורז פרסי 1 לי DAAWAT <button type="button" class="photo-btn" data-photo="7290108509700" data-key="7290108509700" data-name="אורז פרסי 1 לי DAAWAT" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אל.טי.פודס בעמ</span>
+          <span class="warn">גודל לא ודאי</span>
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪11.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪8.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪8.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108509700" data-name="אורז פרסי 1 לי DAAWAT" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אורז יסמין 1קג זיפר רמילוי <button type="button" class="photo-btn" data-photo="7290017406374" data-key="7290017406374" data-name="אורז יסמין 1קג זיפר רמילוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪8.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪8.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017406374" data-name="אורז יסמין 1קג זיפר רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אורז יסמין  DAAWAT 1 <button type="button" class="photo-btn" data-photo="7290117260081" data-key="7290117260081" data-name="אורז יסמין  DAAWAT 1" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אל.טי.פודס בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪11.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪11.70</s> ₪9.00 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290117260081" data-name="אורז יסמין  DAAWAT 1" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אורז בסמטי טילדה <button type="button" class="photo-btn" data-photo="5011157630281" data-key="5011157630281" data-name="אורז בסמטי טילדה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          <span class="warn">גודל לא ודאי</span>
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪19.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.80</s> ₪9.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5011157630281" data-name="אורז בסמטי טילדה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אורז חצי עגול <button type="button" class="photo-btn" data-photo="7290002954460" data-key="7290002954460" data-name="אורז חצי עגול" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רייס גרוירז למיטד</span>
+          <span class="warn">גודל לא ודאי</span>
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪11.70</s> ₪9.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002954460" data-name="אורז חצי עגול" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אורז בסמטי 1 ק&#34;ג שקדיה <button type="button" class="photo-btn" data-photo="7290113196414" data-key="7290113196414" data-name="אורז בסמטי 1 ק&#34;ג שקדיה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪9.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290113196414" data-name="אורז בסמטי 1 ק&#34;ג שקדיה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אורז יסמין מדליה לבן <button type="button" class="photo-btn" data-photo="7290002954200" data-key="7290002954200" data-name="אורז יסמין מדליה לבן" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          <span class="warn">גודל לא ודאי</span>
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.70</s> ₪9.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002954200" data-name="אורז יסמין מדליה לבן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אורז בסמתי &#39;גולד&#39; מו <button type="button" class="photo-btn" data-photo="7290006439444" data-key="7290006439444" data-name="אורז בסמתי &#39;גולד&#39; מו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          <span class="warn">גודל לא ודאי</span>
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪11.70</s> ₪9.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290006439444" data-name="אורז בסמתי &#39;גולד&#39; מו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אורז אלפנט בסמטי 1 ק <button type="button" class="photo-btn" data-photo="7290003011087" data-key="7290003011087" data-name="אורז אלפנט בסמטי 1 ק" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אלסקה</span>
+          <span class="warn">גודל לא ודאי</span>
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪9.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003011087" data-name="אורז אלפנט בסמטי 1 ק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אורז פרסי 1 קג <button type="button" class="photo-btn" data-photo="7290018571712" data-key="7290018571712" data-name="אורז פרסי 1 קג" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.50 <small>לק״ג</small></div>
+          <div class="shelf">₪10.50 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018571712" data-name="אורז פרסי 1 קג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אורז עגול קלרוז מזרח ומערב 1 קילו <button type="button" class="photo-btn" data-photo="7290015603638" data-key="7290015603638" data-name="אורז עגול קלרוז מזרח ומערב 1 קילו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>MINH PHONG GREEN</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪11.40</s> ₪10.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015603638" data-name="אורז עגול קלרוז מזרח ומערב 1 קילו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אורז יסמין 1 קג סוגת <button type="button" class="photo-btn" data-photo="7290100700396" data-key="7290100700396" data-name="אורז יסמין 1 קג סוגת" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוגת</span>
+          <span class="warn">גודל לא ודאי</span>
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪22</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪11.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪11.40</s> ₪11.00 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290100700396" data-name="אורז יסמין 1 קג סוגת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אורז בסמטי  הודי 1 קג <button type="button" class="photo-btn" data-photo="7290018571736" data-key="7290018571736" data-name="אורז בסמטי  הודי 1 קג" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מיה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪11.50 <small>לק״ג</small></div>
+          <div class="shelf">₪11.50 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018571736" data-name="אורז בסמטי  הודי 1 קג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אורז פרסי קלאסי סוגת 1 ק&#34;ג <button type="button" class="photo-btn" data-photo="7290000211442" data-key="7290000211442" data-name="אורז פרסי קלאסי סוגת 1 ק&#34;ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוגת</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪11.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪11.70 <small>לק״ג</small></div>
+          <div class="shelf">₪11.70 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000211442" data-name="אורז פרסי קלאסי סוגת 1 ק&#34;ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אורז עגול ריזוטו 1 ק&#34;ג סוגת <button type="button" class="photo-btn" data-photo="7290000211985" data-key="7290000211985" data-name="אורז עגול ריזוטו 1 ק&#34;ג סוגת" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוגת</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪11.90 <small>לק״ג</small></div>
+          <div class="shelf">₪11.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000211985" data-name="אורז עגול ריזוטו 1 ק&#34;ג סוגת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אורז יסמין <button type="button" class="photo-btn" data-photo="7290107974813" data-key="7290107974813" data-name="אורז יסמין" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>בלו אושן איי אם אקספורט קו.,אל טי די</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪11.90 <small>לק״ג</small></div>
+          <div class="shelf">₪11.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290107974813" data-name="אורז יסמין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מאסטר שף אורז לסושי 1 ק&#34;ג כשלפ <button type="button" class="photo-btn" data-photo="7290117383056" data-key="7290117383056" data-name="מאסטר שף אורז לסושי 1 ק&#34;ג כשלפ" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>בלו אושן איי אם אקספורט קו.,אל טי די</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪11.90 <small>לק״ג</small></div>
+          <div class="shelf">₪11.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290117383056" data-name="מאסטר שף אורז לסושי 1 ק&#34;ג כשלפ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אורז בסמטי וילי פוד 1 ק&#34;ג <button type="button" class="photo-btn" data-photo="8901537024014" data-key="8901537024014" data-name="אורז בסמטי וילי פוד 1 ק&#34;ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אל.טי.פודס בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪14.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪11.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪13.70</s> ₪11.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8901537024014" data-name="אורז בסמטי וילי פוד 1 ק&#34;ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אורז בסמטי חום מלא <button type="button" class="photo-btn" data-photo="8901537076679" data-key="8901537076679" data-name="אורז בסמטי חום מלא" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אל.טי.פודס לימיטד</span>
+          <span class="warn">גודל לא ודאי</span>
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪14.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪11.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪13.70</s> ₪11.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8901537076679" data-name="אורז בסמטי חום מלא" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אורז פרסי טילדה 1קג <button type="button" class="photo-btn" data-photo="5011157997704" data-key="5011157997704" data-name="אורז פרסי טילדה 1קג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪11.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪15.10</s> ₪11.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5011157997704" data-name="אורז פרסי טילדה 1קג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אורז פרסי סלקטד 1קג <button type="button" class="photo-btn" data-photo="7290015347174" data-key="7290015347174" data-name="אורז פרסי סלקטד 1קג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מיה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪11.90 <small>לק״ג</small></div>
+          <div class="shelf">₪11.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015347174" data-name="אורז פרסי סלקטד 1קג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אורז להכנת סושי 1 קג סוגת <button type="button" class="photo-btn" data-photo="7290100701157" data-key="7290100701157" data-name="אורז להכנת סושי 1 קג סוגת" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוגת</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪14.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪12.00 <small>לק״ג</small></div>
+          <div class="shelf">₪12.00 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290100701157" data-name="אורז להכנת סושי 1 קג סוגת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טילדה אורז יסמין 1 ק&#34;ג <button type="button" class="photo-btn" data-photo="5011157730271" data-key="5011157730271" data-name="טילדה אורז יסמין 1 ק&#34;ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪12.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪12.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5011157730271" data-name="טילדה אורז יסמין 1 ק&#34;ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אורז לבן יסמין 1 קג טעמי אסיה <button type="button" class="photo-btn" data-photo="7290018515778" data-key="7290018515778" data-name="אורז לבן יסמין 1 קג טעמי אסיה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪13.90 <small>לק״ג</small></div>
+          <div class="shelf">₪13.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018515778" data-name="אורז לבן יסמין 1 קג טעמי אסיה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אורז יסמין <button type="button" class="photo-btn" data-photo="7290001751138" data-key="7290001751138" data-name="אורז יסמין" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290001751138" data-name="אורז יסמין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אורז בסמטי קלאסי 1 ק&#34;ג סוגת <button type="button" class="photo-btn" data-photo="7290003643004" data-key="7290003643004" data-name="אורז בסמטי קלאסי 1 ק&#34;ג סוגת" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוגת</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪14.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.50 <small>לק״ג</small></div>
+          <div class="shelf">₪14.50 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003643004" data-name="אורז בסמטי קלאסי 1 ק&#34;ג סוגת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אורז ריזוטו 500 גר סוגת <button type="button" class="photo-btn" data-photo="7290100704752" data-key="7290100704752" data-name="אורז ריזוטו 500 גר סוגת" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוגת תעשיות בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪15</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪10.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪14.71 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.00</s> ₪7.50 · 510 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290100704752" data-name="אורז ריזוטו 500 גר סוגת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אורז בסמטי מלא סוגת 1 קילו <button type="button" class="photo-btn" data-photo="7290100700372" data-key="7290100700372" data-name="אורז בסמטי מלא סוגת 1 קילו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוגת</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.90 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290100700372" data-name="אורז בסמטי מלא סוגת 1 קילו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אורז לבן עגול לסושי <button type="button" class="photo-btn" data-photo="5601228115832" data-key="5601228115832" data-name="אורז לבן עגול לסושי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          <span class="warn">גודל לא ודאי</span>
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.90 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5601228115832" data-name="אורז לבן עגול לסושי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אורז אדום <button type="button" class="photo-btn" data-photo="7290100704691" data-key="7290100704691" data-name="אורז אדום" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוגת תעשיות בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪15</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪10.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪15.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.00</s> ₪7.50 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290100704691" data-name="אורז אדום" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אורז מיקס 500גר סוגת <button type="button" class="photo-btn" data-photo="7290100704707" data-key="7290100704707" data-name="אורז מיקס 500גר סוגת" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוגת</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪15</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪15.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.00</s> ₪7.50 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290100704707" data-name="אורז מיקס 500גר סוגת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אורז ריזוטו מובחר 1 קג <button type="button" class="photo-btn" data-photo="7290020238054" data-key="7290020238054" data-name="אורז ריזוטו מובחר 1 קג" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪15.90 <small>לק״ג</small></div>
+          <div class="shelf">₪15.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020238054" data-name="אורז ריזוטו מובחר 1 קג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אורז לסושי 1 קג טעמי אסיה <button type="button" class="photo-btn" data-photo="7290011996062" data-key="7290011996062" data-name="אורז לסושי 1 קג טעמי אסיה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>דאקסה מייסריאס אספנולאס</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪18.90 <small>לק״ג</small></div>
+          <div class="shelf">₪18.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011996062" data-name="אורז לסושי 1 קג טעמי אסיה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אורז עגולמלא500 <button type="button" class="photo-btn" data-photo="7290011473099" data-key="7290011473099" data-name="אורז עגולמלא500" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תבואות</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪23.00 <small>לק״ג</small></div>
+          <div class="shelf">₪11.50 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011473099" data-name="אורז עגולמלא500" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קינואה שקדיה 400 גר דין שיווק <button type="button" class="photo-btn" data-photo="7290015395045" data-key="7290015395045" data-name="קינואה שקדיה 400 גר דין שיווק" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שקדיה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪24.75 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015395045" data-name="קינואה שקדיה 400 גר דין שיווק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קינואה אורג500ג <button type="button" class="photo-btn" data-photo="7290011473006" data-key="7290011473006" data-name="קינואה אורג500ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תבואות</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪31.80 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪16.90</s> ₪15.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011473006" data-name="קינואה אורג500ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קינואה אדומה <button type="button" class="photo-btn" data-photo="7290013677563" data-key="7290013677563" data-name="קינואה אדומה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מיה תעשיות מזון מ.ת.מ. בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.80 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013677563" data-name="קינואה אדומה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ריזוטו פטריות מיובשו <button type="button" class="photo-btn" data-photo="7290010650590" data-key="7290010650590" data-name="ריזוטו פטריות מיובשו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>חוות פטריות תקוע</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪46.91 <small>לק״ג</small></div>
+          <div class="shelf">₪12.90 · 275 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010650590" data-name="ריזוטו פטריות מיובשו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מיקסים לאורז משקל <button type="button" class="photo-btn" data-photo="7290001680452" data-key="7290001680452" data-name="מיקסים לאורז משקל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪100.00 <small>לק״ג</small></div>
+          <div class="shelf">במשקל</div>
+          
+        
+      </div>
+      <button class="add" type="button" data-add="7290001680452" data-name="מיקסים לאורז משקל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טריז&#39;רז אורז בסמטי 5 <button type="button" class="photo-btn" data-photo="183837123408" data-key="183837123408" data-name="טריז&#39;רז אורז בסמטי 5" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪5.98 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪34.90</s> ₪29.90 · 5 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="183837123408" data-name="טריז&#39;רז אורז בסמטי 5" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אורז בסמתי &#39;ריהן&#39; 5ק <button type="button" class="photo-btn" data-photo="7290015888042" data-key="7290015888042" data-name="אורז בסמתי &#39;ריהן&#39; 5ק" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪7.98 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪54.70</s> ₪39.90 · 5 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015888042" data-name="אורז בסמתי &#39;ריהן&#39; 5ק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מאסטר שף אורז בסמטי 1 ק&#34;ג כשלפ <button type="button" class="photo-btn" data-photo="7290107974806" data-key="7290107974806" data-name="מאסטר שף אורז בסמטי 1 ק&#34;ג כשלפ" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פי.קיי. אוברסיז פרייבט לימיטד</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪16</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪8.00 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪12.90</s> ₪8.00 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290107974806" data-name="מאסטר שף אורז בסמטי 1 ק&#34;ג כשלפ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אורז יסמין קמעונאי <button type="button" class="photo-btn" data-photo="7290100704738" data-key="7290100704738" data-name="אורז יסמין קמעונאי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוגת תעשיות בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪49.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.58 <small>ליח׳</small></div>
+          <div class="shelf">₪47.90 · 5 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290100704738" data-name="אורז יסמין קמעונאי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אורז בסמטי טאג מאהל <button type="button" class="photo-btn" data-photo="7290016379655" data-key="7290016379655" data-name="אורז בסמטי טאג מאהל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90 <small>ליח׳</small></div>
+          <div class="shelf">₪9.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016379655" data-name="אורז בסמטי טאג מאהל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אורז חצי עגול <button type="button" class="photo-btn" data-photo="7290002954477" data-key="7290002954477" data-name="אורז חצי עגול" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רייס גרוירז למיטד</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪54.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.98 <small>ליח׳</small></div>
+          <div class="shelf">₪49.90 · 5 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002954477" data-name="אורז חצי עגול" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אורז בסמטי שקדיה 5 ק <button type="button" class="photo-btn" data-photo="7290012309366" data-key="7290012309366" data-name="אורז בסמטי שקדיה 5 ק" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שקדיה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.98 <small>ליח׳</small></div>
+          <div class="shelf">₪49.90 · 5 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290012309366" data-name="אורז בסמטי שקדיה 5 ק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אורז בסמטי 5 ק&#34;ג סוגת <button type="button" class="photo-btn" data-photo="7290100704721" data-key="7290100704721" data-name="אורז בסמטי 5 ק&#34;ג סוגת" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוגת</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪11.58 <small>ליח׳</small></div>
+          <div class="shelf">₪57.90 · 5 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290100704721" data-name="אורז בסמטי 5 ק&#34;ג סוגת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">וילי פוד אורז בסמטי 5 קג DAWAT <button type="button" class="photo-btn" data-photo="7290012483608" data-key="7290012483608" data-name="וילי פוד אורז בסמטי 5 קג DAWAT" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אל.טי.פודס בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪59.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪11.78 <small>ליח׳</small></div>
+          <div class="shelf">₪58.90 · 5 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290012483608" data-name="וילי פוד אורז בסמטי 5 קג DAWAT" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אורז להכנת סטיקי ריי <button type="button" class="photo-btn" data-photo="7290100705032" data-key="7290100705032" data-name="אורז להכנת סטיקי ריי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סוגת</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪11.90 <small>ליח׳</small></div>
+          <div class="shelf">₪11.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290100705032" data-name="אורז להכנת סטיקי ריי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אורז בסמטי טאג מאהל <button type="button" class="photo-btn" data-photo="7290016379709" data-key="7290016379709" data-name="אורז בסמטי טאג מאהל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪11.90 <small>ליח׳</small></div>
+          <div class="shelf">₪11.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016379709" data-name="אורז בסמטי טאג מאהל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+      
+      <li class="divider">ללא מחיר לק״ג (גודל לא ידוע)</li>
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אורז הודי בסמטי <button type="button" class="photo-btn" data-photo="7290019393313" data-key="7290019393313" data-name="אורז הודי בסמטי" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪11.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019393313" data-name="אורז הודי בסמטי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אורז פרסי <button type="button" class="photo-btn" data-photo="7290019393856" data-key="7290019393856" data-name="אורז פרסי" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪11.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019393856" data-name="אורז פרסי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אורז בסמטי <button type="button" class="photo-btn" data-photo="7290019393306" data-key="7290019393306" data-name="אורז בסמטי" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪12.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019393306" data-name="אורז בסמטי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">האופה - אורז יסמין <button type="button" class="photo-btn" data-photo="7290019926535" data-key="7290019926535" data-name="האופה - אורז יסמין" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪12.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019926535" data-name="האופה - אורז יסמין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+</ol>
+</div>
+
+</main>
+<footer>עודכן 3.10 21:01 · ויקטורי 09:06 · רמי לוי 10:00 · אושר עד 08:00 · אושר עד 08:00</footer>
+
+
+<nav class="bottom-nav" aria-label="ניווט">
+  <a href="index.html" class="on"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg><span>בית</span></a>
+  <a href="search.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><span>חיפוש</span></a>
+  <a href="scan.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V5a1 1 0 0 1 1-1h2M17 4h2a1 1 0 0 1 1 1v2M20 17v2a1 1 0 0 1-1 1h-2M7 20H5a1 1 0 0 1-1-1v-2"/><path d="M8 8v8M11 8v8M14 8v8M16.5 8v8"/></svg><span>סריקה</span></a>
+  <a href="basket.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h11l2-8H6.2"/><circle cx="9.5" cy="19" r="1.4"/><circle cx="17" cy="19" r="1.4"/></svg><span id="cart-count"></span><span>עגלת קניות</span></a>
+  <a href="spending.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-2-1.4-2 1.4-2-1.4-2 1.4-2-1.4L6 21z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><span>הוצאות</span></a>
+</nav>
+
+<script src="static/basket.js?v=20261003210153"></script>
+<script src="static/photo.js?v=20261003210153"></script>
+
+<script src="static/render.js?v=20261003210153"></script>
+<script src="static/category.js?v=20261003210153" data-build="20261003210153"></script>
+
+<script>
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+</script>
+</body>
+</html>

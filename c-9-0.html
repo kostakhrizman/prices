@@ -1,0 +1,3302 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f7a4d">
+<script>
+// the look this phone chose (settings.html "מראה"), before anything is drawn: html.light / html.dark
+// (none = follow the phone) and html[data-color] (none = green); the browser bar takes the colour too
+(function () {
+  let t = {};
+  try { t = JSON.parse(localStorage.getItem("theme")) || {}; } catch (e) { /* none yet */ }
+  const root = document.documentElement;
+  if (t.mode === "light" || t.mode === "dark") root.classList.add(t.mode);
+  if (t.color) root.dataset.color = t.color;
+  if (t.bar) document.querySelector('meta[name="theme-color"]').content = t.bar;
+})();
+</script>
+<title>מזון תינוקות ותמ&#34;ל</title>
+<link rel="manifest" href="static/manifest.webmanifest">
+<link rel="icon" href="static/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="static/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="static/style.css?v=20261003210153">
+<style>.st-0 { --store: #e07000; }.st-1 { --store: #d32f2f; }.st-2 { --store: #1565c0; }.st-3 { --store: #1565c0; }</style>
+<script src="static/stores.js?v=20261003210153" data-stores="[{&#34;card_cap&#34;: 750, &#34;card_rate&#34;: 0.07, &#34;default&#34;: true, &#34;key&#34;: &#34;victory-038&#34;, &#34;name&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;ramilevy-007&#34;, &#34;name&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-026&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05ea\u05dc\u05e4\u05d9\u05d5\u05ea&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-003&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05d2\u05d1\u05e2\u05ea \u05e9\u05d0\u05d5\u05dc&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}]"></script>
+<script>
+// No long-press menu on links, pictures or text (the user: the home page's tiles opened Chrome's "open in new tab /
+// copy link" menu; CSS can't stop that on Android). Typing fields and the ⓘ sheet's barcode keep theirs.
+document.addEventListener("contextmenu", (e) => {
+  if (!e.target.closest("input, textarea, [contenteditable], .photo-barcode")) e.preventDefault();
+});
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <a class="back" href="t-9.html" aria-label="חזרה">→</a>
+    <h1>מזון תינוקות ותמ&#34;ל</h1>
+    <a class="notes-link" href="notes.html" aria-label="רשימת קניות" title="רשימת קניות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="m8.5 10 1.2 1.2 2.3-2.4M8.5 15.5l1.2 1.2 2.3-2.4M14 10.5h2.5M14 16h2.5"/></svg><span>רשימת קניות</span></a>
+    <a class="settings-link" href="settings.html" aria-label="הגדרות" title="הגדרות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></a>
+  </div>
+  
+  <form class="search" action="search.html" method="get" role="search">
+    <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+    <input type="search" name="q" placeholder="חיפוש מוצר" enterkeyhint="search" aria-label="חיפוש מוצר">
+  </form>
+  
+</header>
+<main>
+
+<p class="sub"><span class="sub-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 2h3l1 3h-5z"/><path d="M8.5 5h7v2.5h-7z"/><path d="M9 7.5h6V19a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2z"/><path d="M9 11h2.5M9 14h2.5M9 17h2.5"/></svg></span>תינוקות · <span id="cat-count">119</span> מוצרים, מהזול ליקר</p>
+
+
+<div class="cat-filter">
+  <input type="search" id="cat-filter" placeholder="סינון לפי שם או יצרן · ‎-מילה מסתירה" enterkeyhint="done" autocomplete="off" aria-label="סינון המוצרים בקטגוריה">
+</div>
+<div id="cat-list" data-href="c-9-0.html">
+
+<ol class="products">
+  
+  
+    
+    
+    <li class="product st-1 best">
+      <div class="info">
+        <div class="name">סמוזי תפוח אפרסק מנגו אורגניים <button type="button" class="photo-btn" data-photo="8024985005234" data-key="8024985005234" data-name="סמוזי תפוח אפרסק מנגו אורגניים" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נטורה נובה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪5.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪20.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.90</s> ₪4.00 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8024985005234" data-name="סמוזי תפוח אפרסק מנגו אורגניים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מחית תפו&#34;ע 4*113גר <button type="button" class="photo-btn" data-photo="7290012019258" data-key="7290012019258" data-name="מחית תפו&#34;ע 4*113גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תומר</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪22</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪24.34 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪12.60</s> ₪11.00 · 452 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290012019258" data-name="מחית תפו&#34;ע 4*113גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מחית תפו&#34;ע+אפרסק לל&#34; <button type="button" class="photo-btn" data-photo="7290017715964" data-key="7290017715964" data-name="מחית תפו&#34;ע+אפרסק לל&#34;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪22</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪24.34 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪12.60</s> ₪11.00 · 452 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017715964" data-name="מחית תפו&#34;ע+אפרסק לל&#34;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פרינוק מחית תפוח עץ בננה 190 גר <button type="button" class="photo-btn" data-photo="7290010065332" data-key="7290010065332" data-name="פרינוק מחית תפוח עץ בננה 190 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פרוטה פודיווין איי.אס.</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪15</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪5.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪26.32 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.90</s> ₪5.00 · 190 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010065332" data-name="פרינוק מחית תפוח עץ בננה 190 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גוניור סלט פירות שיבולת שועל 190 גרם <button type="button" class="photo-btn" data-photo="7290018516379" data-key="7290018516379" data-name="גוניור סלט פירות שיבולת שועל 190 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פרוטה פודיווין איי.אס</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪15</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪5.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪26.32 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.90</s> ₪5.00 · 190 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018516379" data-name="גוניור סלט פירות שיבולת שועל 190 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גוניור תפו&#34;ע שיבולת שועל 190 גרם <button type="button" class="photo-btn" data-photo="7290018516355" data-key="7290018516355" data-name="גוניור תפו&#34;ע שיבולת שועל 190 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪15</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪26.32 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.90</s> ₪5.00 · 190 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018516355" data-name="גוניור תפו&#34;ע שיבולת שועל 190 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גוניור תפו&#34;ע בננה שיבולת שועל 190 גרם <button type="button" class="photo-btn" data-photo="7290018516362" data-key="7290018516362" data-name="גוניור תפו&#34;ע בננה שיבולת שועל 190 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪15</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪26.32 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.90</s> ₪5.00 · 190 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018516362" data-name="גוניור תפו&#34;ע בננה שיבולת שועל 190 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ג&#39;וניור פירות מעורבים 190ג&#39;-אדום <button type="button" class="photo-btn" data-photo="7290010065059" data-key="7290010065059" data-name="ג&#39;וניור פירות מעורבים 190ג&#39;-אדום" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פרוטה פודווין איי.אס</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪15</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪26.32 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.90</s> ₪5.00 · 190 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010065059" data-name="ג&#39;וניור פירות מעורבים 190ג&#39;-אדום" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מחית פרינוק גוניור תפוע 190גר <button type="button" class="photo-btn" data-photo="7290010065318" data-key="7290010065318" data-name="מחית פרינוק גוניור תפוע 190גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פרוטה פודווין איי.אס</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪15</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪26.32 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.90</s> ₪5.00 · 190 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010065318" data-name="מחית פרינוק גוניור תפוע 190גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פרינוק מחית סלט פירות 190 גרם <button type="button" class="photo-btn" data-photo="7290010065349" data-key="7290010065349" data-name="פרינוק מחית סלט פירות 190 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פרינוק</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪15</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪26.32 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.90</s> ₪5.00 · 190 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010065349" data-name="פרינוק מחית סלט פירות 190 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פרינוק מחית לפתן פירות 190 גרם <button type="button" class="photo-btn" data-photo="7290010065745" data-key="7290010065745" data-name="פרינוק מחית לפתן פירות 190 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פרינוק</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪15</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪26.32 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.90</s> ₪5.00 · 190 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010065745" data-name="פרינוק מחית לפתן פירות 190 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מטרנה מחית תפוח בננה 190גר <button type="button" class="photo-btn" data-photo="8445291028920" data-key="8445291028920" data-name="מטרנה מחית תפוח בננה 190גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נסטלה פולסקה אס.איי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪6.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪28.95 <small>לק״ג</small></div>
+          <div class="shelf">₪5.50 · 190 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8445291028920" data-name="מטרנה מחית תפוח בננה 190גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מטרנה מחית מרק ירקות מעורבים 190גר <button type="button" class="photo-btn" data-photo="8445291028647" data-key="8445291028647" data-name="מטרנה מחית מרק ירקות מעורבים 190גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נסטלה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪28.95 <small>לק״ג</small></div>
+          <div class="shelf">₪5.50 · 190 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8445291028647" data-name="מטרנה מחית מרק ירקות מעורבים 190גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מטרנה מחית תפוחי עץ 190גר <button type="button" class="photo-btn" data-photo="8445291028838" data-key="8445291028838" data-name="מטרנה מחית תפוחי עץ 190גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נסטלה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪28.95 <small>לק״ג</small></div>
+          <div class="shelf">₪5.50 · 190 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8445291028838" data-name="מטרנה מחית תפוחי עץ 190גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מטרנה מחית תפוח גזר <button type="button" class="photo-btn" data-photo="8445291028883" data-key="8445291028883" data-name="מטרנה מחית תפוח גזר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נסטלה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪28.95 <small>לק״ג</small></div>
+          <div class="shelf">₪5.50 · 190 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8445291028883" data-name="מטרנה מחית תפוח גזר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פרינוק פאוץ&#39; תפוח בננה 120 גר <button type="button" class="photo-btn" data-photo="7290015155830" data-key="7290015155830" data-name="פרינוק פאוץ&#39; תפוח בננה 120 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪5.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪33.33 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.90</s> ₪4.00 · 120 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015155830" data-name="פרינוק פאוץ&#39; תפוח בננה 120 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פרינוק פאוץ&#39; פירות טרופיים 120 גר <button type="button" class="photo-btn" data-photo="7290015156776" data-key="7290015156776" data-name="פרינוק פאוץ&#39; פירות טרופיים 120 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪5.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪33.33 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.90</s> ₪4.00 · 120 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015156776" data-name="פרינוק פאוץ&#39; פירות טרופיים 120 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מחית פרינוק פאוצ תפוח בננה 120 גרם <button type="button" class="photo-btn" data-photo="7290018516331" data-key="7290018516331" data-name="מחית פרינוק פאוצ תפוח בננה 120 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פרוטה פודיווין איי.אס.</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪5.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪33.33 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.90</s> ₪4.00 · 120 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018516331" data-name="מחית פרינוק פאוצ תפוח בננה 120 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פרינוק פאוץ&#39; תפוח ש.שועל 120 גר <button type="button" class="photo-btn" data-photo="7290018516324" data-key="7290018516324" data-name="פרינוק פאוץ&#39; תפוח ש.שועל 120 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪33.33 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.90</s> ₪4.00 · 120 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018516324" data-name="פרינוק פאוץ&#39; תפוח ש.שועל 120 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מחית פרינוק פאוצ סלט פירות 120 גרם <button type="button" class="photo-btn" data-photo="7290018516348" data-key="7290018516348" data-name="מחית פרינוק פאוצ סלט פירות 120 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪33.33 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.90</s> ₪4.00 · 120 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018516348" data-name="מחית פרינוק פאוצ סלט פירות 120 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פרינוק פאוץ&#39; תפוח ואוכמניות 120 גר <button type="button" class="photo-btn" data-photo="7290015156769" data-key="7290015156769" data-name="פרינוק פאוץ&#39; תפוח ואוכמניות 120 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪33.33 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.90</s> ₪4.00 · 120 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015156769" data-name="פרינוק פאוץ&#39; תפוח ואוכמניות 120 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פרינוק פאוץ&#39; תפוח 120 גר <button type="button" class="photo-btn" data-photo="7290015155823" data-key="7290015155823" data-name="פרינוק פאוץ&#39; תפוח 120 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪33.33 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.90</s> ₪4.00 · 120 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015155823" data-name="פרינוק פאוץ&#39; תפוח 120 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פרינוק פאוץ&#39; סלט פירות 120 גר <button type="button" class="photo-btn" data-photo="7290015155847" data-key="7290015155847" data-name="פרינוק פאוץ&#39; סלט פירות 120 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪33.33 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.90</s> ₪4.00 · 120 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015155847" data-name="פרינוק פאוץ&#39; סלט פירות 120 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פרינוק פאוץ&#39; לפתן פירות 120 גר <button type="button" class="photo-btn" data-photo="7290015156790" data-key="7290015156790" data-name="פרינוק פאוץ&#39; לפתן פירות 120 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪33.33 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.90</s> ₪4.00 · 120 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015156790" data-name="פרינוק פאוץ&#39; לפתן פירות 120 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פרינוק פאוץ&#39; פירות מעורבים 120 גר <button type="button" class="photo-btn" data-photo="7290015156813" data-key="7290015156813" data-name="פרינוק פאוץ&#39; פירות מעורבים 120 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪33.33 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.90</s> ₪4.00 · 120 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015156813" data-name="פרינוק פאוץ&#39; פירות מעורבים 120 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מחית פרינוק תפוח עץ ובננה 130 גרם <button type="button" class="photo-btn" data-photo="7290010065295" data-key="7290010065295" data-name="מחית פרינוק תפוח עץ ובננה 130 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פרוטה פודיווין איי.אס.</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪14</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪5.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪35.92 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪4.90</s> ₪4.67 · 130 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010065295" data-name="מחית פרינוק תפוח עץ ובננה 130 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מחית פרינוק סלט פירות 130 גרם <button type="button" class="photo-btn" data-photo="7290010065301" data-key="7290010065301" data-name="מחית פרינוק סלט פירות 130 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פרוטה פודיווין איי.אס.</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪14</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪5.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪35.92 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪4.90</s> ₪4.67 · 130 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010065301" data-name="מחית פרינוק סלט פירות 130 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מחית פרינוק תפוח עץ 130 גרם <button type="button" class="photo-btn" data-photo="7290010065271" data-key="7290010065271" data-name="מחית פרינוק תפוח עץ 130 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פרינוק</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪14</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪35.92 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪4.90</s> ₪4.67 · 130 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010065271" data-name="מחית פרינוק תפוח עץ 130 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פרינוק מחית לפתן פירות 130 גרם <button type="button" class="photo-btn" data-photo="7290010065721" data-key="7290010065721" data-name="פרינוק מחית לפתן פירות 130 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פרינוק</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪14</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪35.92 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪4.90</s> ₪4.67 · 130 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010065721" data-name="פרינוק מחית לפתן פירות 130 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מחית מיקס פירות 90 גר{רמי לוי בד&#34;ץ} <button type="button" class="photo-btn" data-photo="7290001004111" data-key="7290001004111" data-name="מחית מיקס פירות 90 גר{רמי לוי בד&#34;ץ}" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">5 ב־₪18</span> בקניית 5 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪40.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪3.70</s> ₪3.60 · 90 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001004111" data-name="מחית מיקס פירות 90 גר{רמי לוי בד&#34;ץ}" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מחית סלט פירות 90 גר{רמי לוי בד&#34;ץ} <button type="button" class="photo-btn" data-photo="7290001004210" data-key="7290001004210" data-name="מחית סלט פירות 90 גר{רמי לוי בד&#34;ץ}" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">5 ב־₪18</span> בקניית 5 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪40.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪3.70</s> ₪3.60 · 90 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001004210" data-name="מחית סלט פירות 90 גר{רמי לוי בד&#34;ץ}" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מחית תפוח עץ 90 גר{רמי לוי בד&#34;ץ} <button type="button" class="photo-btn" data-photo="7290001004265" data-key="7290001004265" data-name="מחית תפוח עץ 90 גר{רמי לוי בד&#34;ץ}" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">5 ב־₪18</span> בקניית 5 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪40.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪3.70</s> ₪3.60 · 90 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001004265" data-name="מחית תפוח עץ 90 גר{רמי לוי בד&#34;ץ}" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מחית תפוח עץ ובננה 9 <button type="button" class="photo-btn" data-photo="7290001004319" data-key="7290001004319" data-name="מחית תפוח עץ ובננה 9" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">5 ב־₪18</span> בקניית 5 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪40.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪3.70</s> ₪3.60 · 90 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001004319" data-name="מחית תפוח עץ ובננה 9" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סמוצ&#39;י שזיף <button type="button" class="photo-btn" data-photo="8024985002950" data-key="8024985002950" data-name="סמוצ&#39;י שזיף" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נטורה נובה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪5.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪40.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.90</s> ₪4.00 · 100 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8024985002950" data-name="סמוצ&#39;י שזיף" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סמוצ&#39;י תפוח בננה תרד <button type="button" class="photo-btn" data-photo="8024985002967" data-key="8024985002967" data-name="סמוצ&#39;י תפוח בננה תרד" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נטורה נובה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪5.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪40.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.90</s> ₪4.00 · 100 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8024985002967" data-name="סמוצ&#39;י תפוח בננה תרד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">נטורה נובה - סמוזי תפוח בננה אורגניים <button type="button" class="photo-btn" data-photo="8024985003988" data-key="8024985003988" data-name="נטורה נובה - סמוזי תפוח בננה אורגניים" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נטורה נובה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪5.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪40.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.90</s> ₪4.00 · 100 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8024985003988" data-name="נטורה נובה - סמוזי תפוח בננה אורגניים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מחית פירות סמוצי תפוח אורגנית ללתס 100גר <button type="button" class="photo-btn" data-photo="8024985008037" data-key="8024985008037" data-name="מחית פירות סמוצי תפוח אורגנית ללתס 100גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נטורה נובה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪5.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪40.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪5.90</s> ₪4.00 · 100 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8024985008037" data-name="מחית פירות סמוצי תפוח אורגנית ללתס 100גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">נטורה נובה - סמוזי פירות אדומים אורגניים <button type="button" class="photo-btn" data-photo="8024985008051" data-key="8024985008051" data-name="נטורה נובה - סמוזי פירות אדומים אורגניים" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נטורה נובה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪5.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪40.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪5.90</s> ₪4.00 · 100 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8024985008051" data-name="נטורה נובה - סמוזי פירות אדומים אורגניים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סמוצ&#39;י קיווי תפוח <button type="button" class="photo-btn" data-photo="8024985011990" data-key="8024985011990" data-name="סמוצ&#39;י קיווי תפוח" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נטורה נובה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪5.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪40.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.90</s> ₪4.00 · 100 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8024985011990" data-name="סמוצ&#39;י קיווי תפוח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מחית בננה ותפוח אורגני <button type="button" class="photo-btn" data-photo="7290016995701" data-key="7290016995701" data-name="מחית בננה ותפוח אורגני" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪9</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪5.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪45.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.40</s> ₪4.50 · 100 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016995701" data-name="מחית בננה ותפוח אורגני" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מטרנה סקוויז מחית תפוח בננה <button type="button" class="photo-btn" data-photo="8445291050358" data-key="8445291050358" data-name="מטרנה סקוויז מחית תפוח בננה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נסטלה ספרד ס.א, מפעל סברס</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪9</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪7.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪50.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.80</s> ₪4.50 · 90 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8445291050358" data-name="מטרנה סקוויז מחית תפוח בננה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מטרנה סקוויז מחית תפוח <button type="button" class="photo-btn" data-photo="8445291081345" data-key="8445291081345" data-name="מטרנה סקוויז מחית תפוח" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נסטלה ספרד ס.א, מפעל סברס</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪9</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪7.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪50.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.80</s> ₪4.50 · 90 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8445291081345" data-name="מטרנה סקוויז מחית תפוח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מטרנה מחית אגס פוצ 90 גר <button type="button" class="photo-btn" data-photo="8445291081390" data-key="8445291081390" data-name="מטרנה מחית אגס פוצ 90 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נסטלה ספרד ס.א, מפעל סברס</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪9</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪7.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪50.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.80</s> ₪4.50 · 90 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8445291081390" data-name="מטרנה מחית אגס פוצ 90 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מטרנה מחית תפוח גזר פאוצ 90 גר <button type="button" class="photo-btn" data-photo="8445291081543" data-key="8445291081543" data-name="מטרנה מחית תפוח גזר פאוצ 90 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נסטלה ספרד ס.א, מפעל סברס</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪9</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪7.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪50.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.80</s> ₪4.50 · 90 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8445291081543" data-name="מטרנה מחית תפוח גזר פאוצ 90 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מטרנה מחית תפוח מנגו גזר פאוץ 90 גר <button type="button" class="photo-btn" data-photo="8445291081574" data-key="8445291081574" data-name="מטרנה מחית תפוח מנגו גזר פאוץ 90 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נסטלה ספרד ס.א, מפעל סברס</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪9</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪7.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪50.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.80</s> ₪4.50 · 90 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8445291081574" data-name="מטרנה מחית תפוח מנגו גזר פאוץ 90 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מחית תפוח בננה תות פאוצ 90 גר מטרנה אסם <button type="button" class="photo-btn" data-photo="8445291107458" data-key="8445291107458" data-name="מחית תפוח בננה תות פאוצ 90 גר מטרנה אסם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נסטלה ספרד ס.א</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪9</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪7.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪50.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.80</s> ₪4.50 · 90 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8445291107458" data-name="מחית תפוח בננה תות פאוצ 90 גר מטרנה אסם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מטרנה מחית סלט פירות פאוצ 90 גר <button type="button" class="photo-btn" data-photo="8445291050396" data-key="8445291050396" data-name="מטרנה מחית סלט פירות פאוצ 90 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪9</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪50.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.80</s> ₪4.50 · 90 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8445291050396" data-name="מטרנה מחית סלט פירות פאוצ 90 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מחיות פרי + צילנות ל <button type="button" class="photo-btn" data-photo="7290122782042" data-key="7290122782042" data-name="מחיות פרי + צילנות ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נסטלה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪51.67 <small>לק״ג</small></div>
+          <div class="shelf">₪27.90 · 540 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290122782042" data-name="מחיות פרי + צילנות ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גמדים סקוויז תפוח בננה <button type="button" class="photo-btn" data-photo="7290110558741" data-key="7290110558741" data-name="גמדים סקוויז תפוח בננה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס בריאות בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪6.00</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪54.00 <small>לק״ג</small></div>
+          <div class="shelf">₪5.40 · 100 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110558741" data-name="גמדים סקוויז תפוח בננה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גמדים סלט פירות <button type="button" class="photo-btn" data-photo="7290112355102" data-key="7290112355102" data-name="גמדים סלט פירות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס בריאות בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪6.00</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪54.00 <small>לק״ג</small></div>
+          <div class="shelf">₪5.40 · 100 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112355102" data-name="גמדים סלט פירות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מטרנה אורגני תפוח מנגו פאוץ 110 גר <button type="button" class="photo-btn" data-photo="8445290289476" data-key="8445290289476" data-name="מטרנה אורגני תפוח מנגו פאוץ 110 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נסטלה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪61.82 <small>לק״ג</small></div>
+          <div class="shelf">₪6.80 · 110 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8445290289476" data-name="מטרנה אורגני תפוח מנגו פאוץ 110 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מטרנה אורגני תפוח ירקות פאוץ 110 גר <button type="button" class="photo-btn" data-photo="8445290289544" data-key="8445290289544" data-name="מטרנה אורגני תפוח ירקות פאוץ 110 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נסטלה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪61.82 <small>לק״ג</small></div>
+          <div class="shelf">₪6.80 · 110 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8445290289544" data-name="מטרנה אורגני תפוח ירקות פאוץ 110 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מחית אורגנית תפוח וחמאת שקדים 100גר <button type="button" class="photo-btn" data-photo="7290018677322" data-key="7290018677322" data-name="מחית אורגנית תפוח וחמאת שקדים 100גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪66.00 <small>לק״ג</small></div>
+          <div class="shelf">₪6.60 · 100 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018677322" data-name="מחית אורגנית תפוח וחמאת שקדים 100גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מחית אורגנית תפוח בננה וחמאת שקדים 100גר <button type="button" class="photo-btn" data-photo="7290018677339" data-key="7290018677339" data-name="מחית אורגנית תפוח בננה וחמאת שקדים 100גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪66.00 <small>לק״ג</small></div>
+          <div class="shelf">₪6.60 · 100 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018677339" data-name="מחית אורגנית תפוח בננה וחמאת שקדים 100גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מחית אורגנית תפוח אגס וחמאת שקדים 100גר <button type="button" class="photo-btn" data-photo="7290018677346" data-key="7290018677346" data-name="מחית אורגנית תפוח אגס וחמאת שקדים 100גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪66.00 <small>לק״ג</small></div>
+          <div class="shelf">₪6.60 · 100 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018677346" data-name="מחית אורגנית תפוח אגס וחמאת שקדים 100גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מחית אורגנית אפרסק מנגו וחמאת שקדים 100גר <button type="button" class="photo-btn" data-photo="7290018677353" data-key="7290018677353" data-name="מחית אורגנית אפרסק מנגו וחמאת שקדים 100גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪66.00 <small>לק״ג</small></div>
+          <div class="shelf">₪6.60 · 100 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018677353" data-name="מחית אורגנית אפרסק מנגו וחמאת שקדים 100גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">תרכובת מזון לתינוק מהדרין שלב 3 חלבי מטרנה 700 גרם <button type="button" class="photo-btn" data-photo="7290008975551" data-key="7290008975551" data-name="תרכובת מזון לתינוק מהדרין שלב 3 חלבי מטרנה 700 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מטרנה תעשיות ש.מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪95</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪54.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪67.86 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪54.90</s> ₪47.50 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008975551" data-name="תרכובת מזון לתינוק מהדרין שלב 3 חלבי מטרנה 700 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">תרכובת מזון לתינוק מטרנה חלבי שלב 1 700 גרם <button type="button" class="photo-btn" data-photo="7290011447267" data-key="7290011447267" data-name="תרכובת מזון לתינוק מטרנה חלבי שלב 1 700 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מטרנה תעשיות ש.מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪95</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪54.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪67.86 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪54.90</s> ₪47.50 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011447267" data-name="תרכובת מזון לתינוק מטרנה חלבי שלב 1 700 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">תרכובת מזון לתינוק מטרנה חלבי שלב 2 700 גרם <button type="button" class="photo-btn" data-photo="7290011447281" data-key="7290011447281" data-name="תרכובת מזון לתינוק מטרנה חלבי שלב 2 700 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מטרנה תעשיות ש.מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪95</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪54.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪67.86 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪54.90</s> ₪47.50 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011447281" data-name="תרכובת מזון לתינוק מטרנה חלבי שלב 2 700 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">תרכובת מזון לתינוק חלבי שלב 3 מטרנה 700 גרם <button type="button" class="photo-btn" data-photo="7290011447304" data-key="7290011447304" data-name="תרכובת מזון לתינוק חלבי שלב 3 מטרנה 700 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מטרנה תעשיות ש.מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪95</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪54.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪67.86 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪54.90</s> ₪47.50 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011447304" data-name="תרכובת מזון לתינוק חלבי שלב 3 מטרנה 700 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מטרנה מהדרין שלב 1 <button type="button" class="photo-btn" data-photo="7290011447359" data-key="7290011447359" data-name="מטרנה מהדרין שלב 1" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מטרנה תעשיות ש.מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪95</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪54.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪67.86 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪54.90</s> ₪47.50 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011447359" data-name="מטרנה מהדרין שלב 1" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">תרכובת מזון לתינוק מהדרין שלב 2 חלבי מטרנה 700 גרם <button type="button" class="photo-btn" data-photo="7290011447373" data-key="7290011447373" data-name="תרכובת מזון לתינוק מהדרין שלב 2 חלבי מטרנה 700 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מטרנה תעשיות ש.מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪95</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪54.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪67.86 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪54.90</s> ₪47.50 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011447373" data-name="תרכובת מזון לתינוק מהדרין שלב 2 חלבי מטרנה 700 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">תרכובת מזון לתינוקות שלב 1 נוטרילון 800 גרם <button type="button" class="photo-btn" data-photo="8712400802499" data-key="8712400802499" data-name="תרכובת מזון לתינוקות שלב 1 נוטרילון 800 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נוטרישיה קאלק</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪110</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪69.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪68.75 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪59.90</s> ₪55.00 · 800 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8712400802499" data-name="תרכובת מזון לתינוקות שלב 1 נוטרילון 800 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">נוטרילון שלב 2 - תמ&#34;ל <button type="button" class="photo-btn" data-photo="8712400802512" data-key="8712400802512" data-name="נוטרילון שלב 2 - תמ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נוטרישיה קאלק</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪110</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪69.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪68.75 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪59.90</s> ₪55.00 · 800 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8712400802512" data-name="נוטרילון שלב 2 - תמ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">נוטרילון שלב 3 - תמ&#34;ל <button type="button" class="photo-btn" data-photo="8712400802536" data-key="8712400802536" data-name="נוטרילון שלב 3 - תמ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נוטרישיה קאלק</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪110</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪69.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪68.75 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪59.90</s> ₪55.00 · 800 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8712400802536" data-name="נוטרילון שלב 3 - תמ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מטרנה דייסת קורנפלור שקית 200 גרם <button type="button" class="photo-btn" data-photo="7290006992161" data-key="7290006992161" data-name="מטרנה דייסת קורנפלור שקית 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מטרנה תעשיות ש.מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪69.50 <small>לק״ג</small></div>
+          <div class="shelf">₪13.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290006992161" data-name="מטרנה דייסת קורנפלור שקית 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">דייסת אורז 200 גר מטרנה אסם <button type="button" class="photo-btn" data-photo="7290006992185" data-key="7290006992185" data-name="דייסת אורז 200 גר מטרנה אסם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מטרנה תעשיות ש.מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪69.50 <small>לק״ג</small></div>
+          <div class="shelf">₪13.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290006992185" data-name="דייסת אורז 200 גר מטרנה אסם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מטרנה דייסת 8 דגנים מעורבים 200 גרם <button type="button" class="photo-btn" data-photo="7290006992208" data-key="7290006992208" data-name="מטרנה דייסת 8 דגנים מעורבים 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מטרנה תעשיות ש.מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪69.50 <small>לק״ג</small></div>
+          <div class="shelf">₪13.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290006992208" data-name="מטרנה דייסת 8 דגנים מעורבים 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מטרנה דייסת וניל 200 גרם <button type="button" class="photo-btn" data-photo="7290006992390" data-key="7290006992390" data-name="מטרנה דייסת וניל 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מטרנה תעשיות ש.מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪69.50 <small>לק״ג</small></div>
+          <div class="shelf">₪13.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290006992390" data-name="מטרנה דייסת וניל 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מטרנה דייסת סולת 200 גרם <button type="button" class="photo-btn" data-photo="7290006992192" data-key="7290006992192" data-name="מטרנה דייסת סולת 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מטרנה תעשיות ש.מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪74.50 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290006992192" data-name="מטרנה דייסת סולת 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מטרנה דייסת סלט פירות 200 גרם <button type="button" class="photo-btn" data-photo="7290011447014" data-key="7290011447014" data-name="מטרנה דייסת סלט פירות 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מטרנה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪74.50 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011447014" data-name="מטרנה דייסת סלט פירות 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">תחליף חלב מהדרין שלב 1 סימילאק אדוונס 90 <button type="button" class="photo-btn" data-photo="5099864006377" data-key="5099864006377" data-name="תחליף חלב מהדרין שלב 1 סימילאק אדוונס 90" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אבוט אירלנד</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪74.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪77.44 <small>לק״ג</small></div>
+          <div class="shelf">₪69.70 · 900 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5099864006377" data-name="תחליף חלב מהדרין שלב 1 סימילאק אדוונס 90" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">תחליף חלב למהדרין שלב 2 סימילאק 900 גרם <button type="button" class="photo-btn" data-photo="5099864006384" data-key="5099864006384" data-name="תחליף חלב למהדרין שלב 2 סימילאק 900 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אבוט אירלנד</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪74.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪77.44 <small>לק״ג</small></div>
+          <div class="shelf">₪69.70 · 900 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5099864006384" data-name="תחליף חלב למהדרין שלב 2 סימילאק 900 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">תחליף חלב למהדרין שלב 3 סימילאק 900 גרם <button type="button" class="photo-btn" data-photo="5099864006391" data-key="5099864006391" data-name="תחליף חלב למהדרין שלב 3 סימילאק 900 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אבוט אירלנד</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪74.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪77.44 <small>לק״ג</small></div>
+          <div class="shelf">₪69.70 · 900 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5099864006391" data-name="תחליף חלב למהדרין שלב 3 סימילאק 900 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מטרנה צמחית מגיל לידה ואילך 700 גרם <button type="button" class="photo-btn" data-photo="7290014258716" data-key="7290014258716" data-name="מטרנה צמחית מגיל לידה ואילך 700 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מטרנה תעשיות ש.מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪64.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪78.43 <small>לק״ג</small></div>
+          <div class="shelf">₪54.90 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014258716" data-name="מטרנה צמחית מגיל לידה ואילך 700 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סימילאק גולד שלב 1 700 ג <button type="button" class="photo-btn" data-photo="5391523057929" data-key="5391523057929" data-name="סימילאק גולד שלב 1 700 ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪115</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪69.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪82.14 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪69.80</s> ₪57.50 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5391523057929" data-name="סימילאק גולד שלב 1 700 ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סימילאק גולד שלב 2 700 ג <button type="button" class="photo-btn" data-photo="5391523057936" data-key="5391523057936" data-name="סימילאק גולד שלב 2 700 ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ABBOT</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪115</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪69.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪82.14 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪69.80</s> ₪57.50 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5391523057936" data-name="סימילאק גולד שלב 2 700 ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סימילאק גולד שלב 3 700 ג <button type="button" class="photo-btn" data-photo="5391523057943" data-key="5391523057943" data-name="סימילאק גולד שלב 3 700 ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אבוט אירלנד</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪115</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪69.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪82.14 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪69.80</s> ₪57.50 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5391523057943" data-name="סימילאק גולד שלב 3 700 ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סימילאק פדיאשור וניל 850 גר <button type="button" class="photo-btn" data-photo="8710428017000" data-key="8710428017000" data-name="סימילאק פדיאשור וניל 850 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מעבדות אבוט בי.וי</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪79.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪82.24 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪79.90</s> ₪69.90 · 850 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8710428017000" data-name="סימילאק פדיאשור וניל 850 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סימילאק פדיאשור שוקו 850 גר <button type="button" class="photo-btn" data-photo="8710428017024" data-key="8710428017024" data-name="סימילאק פדיאשור שוקו 850 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מעבדות אבוט בי.וי</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪79.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪82.24 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪79.90</s> ₪69.90 · 850 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8710428017024" data-name="סימילאק פדיאשור שוקו 850 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אקסטרא קייר 700 גר שלב 1 מטרנה אסם <button type="button" class="photo-btn" data-photo="7290013083661" data-key="7290013083661" data-name="אקסטרא קייר 700 גר שלב 1 מטרנה אסם" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מטרנה תעשיות ש.מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪85.57 <small>לק״ג</small></div>
+          <div class="shelf">₪59.90 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013083661" data-name="אקסטרא קייר 700 גר שלב 1 מטרנה אסם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">תרכובת מזון לתינוק על בסיס חלבי שלב 2 מטרנה אקסטרה קר 700 גרם <button type="button" class="photo-btn" data-photo="7290013083678" data-key="7290013083678" data-name="תרכובת מזון לתינוק על בסיס חלבי שלב 2 מטרנה אקסטרה קר 700 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מטרנה תעשיות ש.מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪59.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪85.57 <small>לק״ג</small></div>
+          <div class="shelf">₪59.90 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013083678" data-name="תרכובת מזון לתינוק על בסיס חלבי שלב 2 מטרנה אקסטרה קר 700 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">תרכובת מזון לתינוק שלב 3 מטרנה אקסטרה קייר 700 גרם <button type="button" class="photo-btn" data-photo="7290013083685" data-key="7290013083685" data-name="תרכובת מזון לתינוק שלב 3 מטרנה אקסטרה קייר 700 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מטרנה תעשיות ש.מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪59.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪85.57 <small>לק״ג</small></div>
+          <div class="shelf">₪59.90 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013083685" data-name="תרכובת מזון לתינוק שלב 3 מטרנה אקסטרה קייר 700 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">אקסטרא קייר 700 גר שלב 1 מהדרין מטרנה אס <button type="button" class="photo-btn" data-photo="7290015733205" data-key="7290015733205" data-name="אקסטרא קייר 700 גר שלב 1 מהדרין מטרנה אס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מטרנה תעשיות</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪59.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪85.57 <small>לק״ג</small></div>
+          <div class="shelf">₪59.90 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015733205" data-name="אקסטרא קייר 700 גר שלב 1 מהדרין מטרנה אס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">תרכובת מזון לתינוק שלב 2 מהדרין מטרנה אקסטרה קר 700 גרם <button type="button" class="photo-btn" data-photo="7290015733229" data-key="7290015733229" data-name="תרכובת מזון לתינוק שלב 2 מהדרין מטרנה אקסטרה קר 700 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מטרנה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪59.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪85.57 <small>לק״ג</small></div>
+          <div class="shelf">₪59.90 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015733229" data-name="תרכובת מזון לתינוק שלב 2 מהדרין מטרנה אקסטרה קר 700 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">תרכובת מזון לפעוטות שלב 3 מהדרין מטרנה אקסטרה קר 700 גרם <button type="button" class="photo-btn" data-photo="7290015733243" data-key="7290015733243" data-name="תרכובת מזון לפעוטות שלב 3 מהדרין מטרנה אקסטרה קר 700 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪59.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪85.57 <small>לק״ג</small></div>
+          <div class="shelf">₪59.90 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015733243" data-name="תרכובת מזון לפעוטות שלב 3 מהדרין מטרנה אקסטרה קר 700 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מטרנה צמחית מגיל שנה ואילך 700 גרם <button type="button" class="photo-btn" data-photo="7290014258730" data-key="7290014258730" data-name="מטרנה צמחית מגיל שנה ואילך 700 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מטרנה תעשיות ש.מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪64.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪87.00 <small>לק״ג</small></div>
+          <div class="shelf">₪60.90 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014258730" data-name="מטרנה צמחית מגיל שנה ואילך 700 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מטרנה צמחית מגיל 0 עד שנה 700 גרם <button type="button" class="photo-btn" data-photo="7290014258723" data-key="7290014258723" data-name="מטרנה צמחית מגיל 0 עד שנה 700 גרם" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מטרנה תעשיות ש.מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪92.71 <small>לק״ג</small></div>
+          <div class="shelf">₪64.90 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014258723" data-name="מטרנה צמחית מגיל 0 עד שנה 700 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מטרנה סנסיטיב לפגים 700 גר <button type="button" class="photo-btn" data-photo="7290115206319" data-key="7290115206319" data-name="מטרנה סנסיטיב לפגים 700 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מטרנה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪92.71 <small>לק״ג</small></div>
+          <div class="shelf">₪64.90 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115206319" data-name="מטרנה סנסיטיב לפגים 700 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סימילאק גולד פלוס 1 700 ג <button type="button" class="photo-btn" data-photo="5099864015577" data-key="5099864015577" data-name="סימילאק גולד פלוס 1 700 ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אבוט אירלנד קוטהיל</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪130</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪80.70</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪92.86 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪79.80</s> ₪65.00 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5099864015577" data-name="סימילאק גולד פלוס 1 700 ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סימילאק גולד פלוס 2 700 ג <button type="button" class="photo-btn" data-photo="5099864015614" data-key="5099864015614" data-name="סימילאק גולד פלוס 2 700 ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אבוט אירלנד קוטהיל</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪130</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪80.70</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪92.86 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪79.80</s> ₪65.00 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5099864015614" data-name="סימילאק גולד פלוס 2 700 ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סימילאק גולד פלוס 3 700 ג <button type="button" class="photo-btn" data-photo="5099864015638" data-key="5099864015638" data-name="סימילאק גולד פלוס 3 700 ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אבוט אירלנד קוטהיל</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪130</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪80.70</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪92.86 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪79.80</s> ₪65.00 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5099864015638" data-name="סימילאק גולד פלוס 3 700 ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מטרנה גולד בד&#34;צ שלב 1 700 גר <button type="button" class="photo-btn" data-photo="7290018132340" data-key="7290018132340" data-name="מטרנה גולד בד&#34;צ שלב 1 700 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מטרנה תעשיות ש.מ.</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪75.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪97.00 <small>לק״ג</small></div>
+          <div class="shelf">₪67.90 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018132340" data-name="מטרנה גולד בד&#34;צ שלב 1 700 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מטרנה גולד בד&#34;צ שלב 3 700 גר <button type="button" class="photo-btn" data-photo="7290018132425" data-key="7290018132425" data-name="מטרנה גולד בד&#34;צ שלב 3 700 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מטרנה תעשיות ש.מ.</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪75.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪97.00 <small>לק״ג</small></div>
+          <div class="shelf">₪67.90 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018132425" data-name="מטרנה גולד בד&#34;צ שלב 3 700 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מטרנה גולד בד&#34;צ שלב 2 700 גר <button type="button" class="photo-btn" data-photo="7290018132388" data-key="7290018132388" data-name="מטרנה גולד בד&#34;צ שלב 2 700 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מטרנה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪97.00 <small>לק״ג</small></div>
+          <div class="shelf">₪67.90 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018132388" data-name="מטרנה גולד בד&#34;צ שלב 2 700 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מטרנה קומפורט 700 גרם HM-O <button type="button" class="photo-btn" data-photo="7290015733977" data-key="7290015733977" data-name="מטרנה קומפורט 700 גרם HM-O" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מטרנה תעשיות ש.מ.</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪69.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪99.86 <small>לק״ג</small></div>
+          <div class="shelf">₪69.90 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015733977" data-name="מטרנה קומפורט 700 גרם HM-O" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סימילאק צמחי שלב 1 850 גר` <button type="button" class="photo-btn" data-photo="8710428023728" data-key="8710428023728" data-name="סימילאק צמחי שלב 1 850 גר`" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪84.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪99.88 <small>לק״ג</small></div>
+          <div class="shelf">₪84.90 · 850 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8710428023728" data-name="סימילאק צמחי שלב 1 850 גר`" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סימילאק צמחי שלב 2 850 גר` <button type="button" class="photo-btn" data-photo="8710428023742" data-key="8710428023742" data-name="סימילאק צמחי שלב 2 850 גר`" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪84.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪99.88 <small>לק״ג</small></div>
+          <div class="shelf">₪84.90 · 850 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8710428023742" data-name="סימילאק צמחי שלב 2 850 גר`" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מטרנה גולד פרו שלב 3 700 גרם <button type="button" class="photo-btn" data-photo="7290018132623" data-key="7290018132623" data-name="מטרנה גולד פרו שלב 3 700 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מטרנה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪140</span> בקניית 2 · עד 4.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪100.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪74.90</s> ₪70.00 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018132623" data-name="מטרנה גולד פרו שלב 3 700 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מטרנה גולד פרו שלב 2 700 גרם <button type="button" class="photo-btn" data-photo="7290018132647" data-key="7290018132647" data-name="מטרנה גולד פרו שלב 2 700 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מטרנה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪140</span> בקניית 2 · עד 4.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪100.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪74.90</s> ₪70.00 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018132647" data-name="מטרנה גולד פרו שלב 2 700 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מטרנה גולד פרו שלב 1 700 גרם <button type="button" class="photo-btn" data-photo="7290018132661" data-key="7290018132661" data-name="מטרנה גולד פרו שלב 1 700 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מטרנה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪140</span> בקניית 2 · עד 4.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪100.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪74.90</s> ₪70.00 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018132661" data-name="מטרנה גולד פרו שלב 1 700 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">נוטרילון קומפורט 900 גרם <button type="button" class="photo-btn" data-photo="7290110730109" data-key="7290110730109" data-name="נוטרילון קומפורט 900 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪101.00 <small>לק״ג</small></div>
+          <div class="shelf">₪90.90 · 900 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110730109" data-name="נוטרילון קומפורט 900 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מטרנה 700 גרם A.R <button type="button" class="photo-btn" data-photo="7290015733939" data-key="7290015733939" data-name="מטרנה 700 גרם A.R" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מטרנה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪104.14 <small>לק״ג</small></div>
+          <div class="shelf">₪72.90 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015733939" data-name="מטרנה 700 גרם A.R" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מטרנה ארוחת שיבולת שועל 260 גרם <button type="button" class="photo-btn" data-photo="7290018132609" data-key="7290018132609" data-name="מטרנה ארוחת שיבולת שועל 260 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מטרנה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪104.62 <small>לק״ג</small></div>
+          <div class="shelf">₪27.20 · 260 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018132609" data-name="מטרנה ארוחת שיבולת שועל 260 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">נוטרילון 900 גרם <button type="button" class="photo-btn" data-photo="8718117607662" data-key="8718117607662" data-name="נוטרילון 900 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪106.56 <small>לק״ג</small></div>
+          <div class="shelf">₪95.90 · 900 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8718117607662" data-name="נוטרילון 900 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מטרנה אקסטרה קר 400 ג <button type="button" class="photo-btn" data-photo="7290015733915" data-key="7290015733915" data-name="מטרנה אקסטרה קר 400 ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מטרנה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪115.75 <small>לק״ג</small></div>
+          <div class="shelf">₪46.30 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015733915" data-name="מטרנה אקסטרה קר 400 ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">נוטרילון 400 גרם <button type="button" class="photo-btn" data-photo="8712400718073" data-key="8712400718073" data-name="נוטרילון 400 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪118.50 <small>לק״ג</small></div>
+          <div class="shelf">₪47.40 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8712400718073" data-name="נוטרילון 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סימילאק A.R 800 גר <button type="button" class="photo-btn" data-photo="8427030008721" data-key="8427030008721" data-name="סימילאק A.R 800 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אבוט מעבדות רפואיות</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪118.62 <small>לק״ג</small></div>
+          <div class="shelf">₪94.90 · 800 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8427030008721" data-name="סימילאק A.R 800 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סימילאק מפחית פליטות 375גר <button type="button" class="photo-btn" data-photo="8427030005010" data-key="8427030005010" data-name="סימילאק מפחית פליטות 375גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סימילאק</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪119.73 <small>לק״ג</small></div>
+          <div class="shelf">₪44.90 · 375 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8427030005010" data-name="סימילאק מפחית פליטות 375גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סימילאק קומפורט שלב 1 820גר <button type="button" class="photo-btn" data-photo="8427030007281" data-key="8427030007281" data-name="סימילאק קומפורט שלב 1 820גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אבוט לבורטיס ס.א</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪109.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪125.49 <small>לק״ג</small></div>
+          <div class="shelf">₪102.90 · 820 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8427030007281" data-name="סימילאק קומפורט שלב 1 820גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סימילאק קומפורט שלב 2 820גר <button type="button" class="photo-btn" data-photo="8427030007298" data-key="8427030007298" data-name="סימילאק קומפורט שלב 2 820גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אבוט לבורטוריס ס.א.</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪109.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪125.49 <small>לק״ג</small></div>
+          <div class="shelf">₪102.90 · 820 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8427030007298" data-name="סימילאק קומפורט שלב 2 820גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טרה ירקות שורש בתיבו <button type="button" class="photo-btn" data-photo="728229123811" data-key="728229123811" data-name="טרה ירקות שורש בתיבו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טארה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪35</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪159.09 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪22.50</s> ₪17.50 · 110 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="728229123811" data-name="טרה ירקות שורש בתיבו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בייבי ביס חטיף אורז בטעם טבעי <button type="button" class="photo-btn" data-photo="7290011618025" data-key="7290011618025" data-name="בייבי ביס חטיף אורז בטעם טבעי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>גואנז&#39;ו יונג וואנט פודס בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪18.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪180.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪13.60</s> ₪9.00 · 50 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011618025" data-name="בייבי ביס חטיף אורז בטעם טבעי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בייבי ביס חטיף אורז בטעם גזר <button type="button" class="photo-btn" data-photo="7290011618131" data-key="7290011618131" data-name="בייבי ביס חטיף אורז בטעם גזר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>גואנז&#39;ו יונג וואנט פודס בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪18.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪180.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪13.60</s> ₪9.00 · 50 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011618131" data-name="בייבי ביס חטיף אורז בטעם גזר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בייבי ביס חטיף אורז בטעם בננה <button type="button" class="photo-btn" data-photo="7290011618216" data-key="7290011618216" data-name="בייבי ביס חטיף אורז בטעם בננה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>גואנז&#39;ו יונג וואנט פודס</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪18.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪180.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪13.60</s> ₪9.00 · 50 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011618216" data-name="בייבי ביס חטיף אורז בטעם בננה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בייבי ביס חטיף אורז בטעם ירקות <button type="button" class="photo-btn" data-photo="7290011618124" data-key="7290011618124" data-name="בייבי ביס חטיף אורז בטעם ירקות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>בייבי ביס</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪180.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪13.60</s> ₪9.00 · 50 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011618124" data-name="בייבי ביס חטיף אורז בטעם ירקות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מחית אגס ותפוח אורגני <button type="button" class="photo-btn" data-photo="7290016995718" data-key="7290016995718" data-name="מחית אגס ותפוח אורגני" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪9</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪5.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪4.50 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪5.40</s> ₪4.50 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016995718" data-name="מחית אגס ותפוח אורגני" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מחית מנגו, תפוח ואפרסק אורגני <button type="button" class="photo-btn" data-photo="7290016995725" data-key="7290016995725" data-name="מחית מנגו, תפוח ואפרסק אורגני" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪9</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪5.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪4.50 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪5.40</s> ₪4.50 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016995725" data-name="מחית מנגו, תפוח ואפרסק אורגני" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מחית תפוח <button type="button" class="photo-btn" data-photo="7290018338964" data-key="7290018338964" data-name="מחית תפוח" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪9</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪5.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪4.50 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪5.40</s> ₪4.50 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018338964" data-name="מחית תפוח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+</ol>
+</div>
+
+</main>
+<footer>עודכן 3.10 21:01 · ויקטורי 09:06 · רמי לוי 10:00 · אושר עד 08:00 · אושר עד 08:00</footer>
+
+
+<nav class="bottom-nav" aria-label="ניווט">
+  <a href="index.html" class="on"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg><span>בית</span></a>
+  <a href="search.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><span>חיפוש</span></a>
+  <a href="scan.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V5a1 1 0 0 1 1-1h2M17 4h2a1 1 0 0 1 1 1v2M20 17v2a1 1 0 0 1-1 1h-2M7 20H5a1 1 0 0 1-1-1v-2"/><path d="M8 8v8M11 8v8M14 8v8M16.5 8v8"/></svg><span>סריקה</span></a>
+  <a href="basket.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h11l2-8H6.2"/><circle cx="9.5" cy="19" r="1.4"/><circle cx="17" cy="19" r="1.4"/></svg><span id="cart-count"></span><span>עגלת קניות</span></a>
+  <a href="spending.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-2-1.4-2 1.4-2-1.4-2 1.4-2-1.4L6 21z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><span>הוצאות</span></a>
+</nav>
+
+<script src="static/basket.js?v=20261003210153"></script>
+<script src="static/photo.js?v=20261003210153"></script>
+
+<script src="static/render.js?v=20261003210153"></script>
+<script src="static/category.js?v=20261003210153" data-build="20261003210153"></script>
+
+<script>
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+</script>
+</body>
+</html>

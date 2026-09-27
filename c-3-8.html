@@ -1,0 +1,2036 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f7a4d">
+<script>
+// the look this phone chose (settings.html "מראה"), before anything is drawn: html.light / html.dark
+// (none = follow the phone) and html[data-color] (none = green); the browser bar takes the colour too
+(function () {
+  let t = {};
+  try { t = JSON.parse(localStorage.getItem("theme")) || {}; } catch (e) { /* none yet */ }
+  const root = document.documentElement;
+  if (t.mode === "light" || t.mode === "dark") root.classList.add(t.mode);
+  if (t.color) root.dataset.color = t.color;
+  if (t.bar) document.querySelector('meta[name="theme-color"]').content = t.bar;
+})();
+</script>
+<title>בצקים</title>
+<link rel="manifest" href="static/manifest.webmanifest">
+<link rel="icon" href="static/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="static/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="static/style.css?v=20261003210153">
+<style>.st-0 { --store: #e07000; }.st-1 { --store: #d32f2f; }.st-2 { --store: #1565c0; }.st-3 { --store: #1565c0; }</style>
+<script src="static/stores.js?v=20261003210153" data-stores="[{&#34;card_cap&#34;: 750, &#34;card_rate&#34;: 0.07, &#34;default&#34;: true, &#34;key&#34;: &#34;victory-038&#34;, &#34;name&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;ramilevy-007&#34;, &#34;name&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-026&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05ea\u05dc\u05e4\u05d9\u05d5\u05ea&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-003&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05d2\u05d1\u05e2\u05ea \u05e9\u05d0\u05d5\u05dc&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}]"></script>
+<script>
+// No long-press menu on links, pictures or text (the user: the home page's tiles opened Chrome's "open in new tab /
+// copy link" menu; CSS can't stop that on Android). Typing fields and the ⓘ sheet's barcode keep theirs.
+document.addEventListener("contextmenu", (e) => {
+  if (!e.target.closest("input, textarea, [contenteditable], .photo-barcode")) e.preventDefault();
+});
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <a class="back" href="t-3.html" aria-label="חזרה">→</a>
+    <h1>בצקים</h1>
+    <a class="notes-link" href="notes.html" aria-label="רשימת קניות" title="רשימת קניות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="m8.5 10 1.2 1.2 2.3-2.4M8.5 15.5l1.2 1.2 2.3-2.4M14 10.5h2.5M14 16h2.5"/></svg><span>רשימת קניות</span></a>
+    <a class="settings-link" href="settings.html" aria-label="הגדרות" title="הגדרות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></a>
+  </div>
+  
+  <form class="search" action="search.html" method="get" role="search">
+    <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+    <input type="search" name="q" placeholder="חיפוש מוצר" enterkeyhint="search" aria-label="חיפוש מוצר">
+  </form>
+  
+</header>
+<main>
+
+<p class="sub"><span class="sub-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 10.5A3 3 0 0 1 5 4.8C6.3 3.6 9 3 12 3s5.7.6 7 1.8a3 3 0 0 1-.5 5.7V20a1 1 0 0 1-1 1h-11a1 1 0 0 1-1-1z"/><path d="M9.5 8.5 11 7M12.5 10 14 8.5M9.5 12 11 10.5"/></svg></span>לחם ומאפים · <span id="cat-count">72</span> מוצרים, מהזול ליקר</p>
+
+
+<div class="cat-filter">
+  <input type="search" id="cat-filter" placeholder="סינון לפי שם או יצרן · ‎-מילה מסתירה" enterkeyhint="done" autocomplete="off" aria-label="סינון המוצרים בקטגוריה">
+</div>
+<div id="cat-list" data-href="c-3-8.html">
+
+<ol class="products">
+  
+  
+    
+    
+    <li class="product st-1 best">
+      <div class="info">
+        <div class="name">בצק עלים רמי לוי 1קג <button type="button" class="photo-btn" data-photo="7290002735809" data-key="7290002735809" data-name="בצק עלים רמי לוי 1קג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ינון</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪14.10</s> ₪9.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002735809" data-name="בצק עלים רמי לוי 1קג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מלווח רמי לוי 700 גרם <button type="button" class="photo-btn" data-photo="7290002735823" data-key="7290002735823" data-name="מלווח רמי לוי 700 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ינון</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪14.14 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪12.10</s> ₪9.90 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002735823" data-name="מלווח רמי לוי 700 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בצק עלים 1 קג ינון קפואזן <button type="button" class="photo-btn" data-photo="7290002735007" data-key="7290002735007" data-name="בצק עלים 1 קג ינון קפואזן" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ינון חברה ליצור ושיווק מזו בע\&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.90 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002735007" data-name="בצק עלים 1 קג ינון קפואזן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בצק עלים מרודד זוגלובק 1 ק&#34;ג <button type="button" class="photo-btn" data-photo="7290000533353" data-key="7290000533353" data-name="בצק עלים מרודד זוגלובק 1 ק&#34;ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זוגלובק</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.90 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000533353" data-name="בצק עלים מרודד זוגלובק 1 ק&#34;ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בצק עלים מרודד שלושת האופים 1 ק&#34;ג <button type="button" class="photo-btn" data-photo="7290002327059" data-key="7290002327059" data-name="בצק עלים מרודד שלושת האופים 1 ק&#34;ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אופרה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪18.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪15.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪16.80</s> ₪15.00 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002327059" data-name="בצק עלים מרודד שלושת האופים 1 ק&#34;ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שלושת האופים מלוואח 700 גרם <button type="button" class="photo-btn" data-photo="7290002757139" data-key="7290002757139" data-name="שלושת האופים מלוואח 700 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אופרה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪22</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪16.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪15.71 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪12.90</s> ₪11.00 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002757139" data-name="שלושת האופים מלוואח 700 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בסיסים  לפיצה <button type="button" class="photo-btn" data-photo="7290108502381" data-key="7290108502381" data-name="בסיסים  לפיצה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מוטלוקל גידה סאנאי טיקרט בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪14.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪16.46 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪12.90</s> ₪7.90 · 480 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108502381" data-name="בסיסים  לפיצה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מאפה עלים למילוי 500 גר רמי לוי <button type="button" class="photo-btn" data-photo="7290002603917" data-key="7290002603917" data-name="מאפה עלים למילוי 500 גר רמי לוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪17.80 <small>לק״ג</small></div>
+          <div class="shelf">₪8.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002603917" data-name="מאפה עלים למילוי 500 גר רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בצק עלים 1קג <button type="button" class="photo-btn" data-photo="7290002512035" data-key="7290002512035" data-name="בצק עלים 1קג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קניה חכמה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪17.90 <small>לק״ג</small></div>
+          <div class="shelf">₪17.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002512035" data-name="בצק עלים 1קג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מאפה בצק עלים למילוי <button type="button" class="photo-btn" data-photo="7290002735878" data-key="7290002735878" data-name="מאפה בצק עלים למילוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ינון</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪18.50 <small>לק״ג</small></div>
+          <div class="shelf">₪11.10 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002735878" data-name="מאפה בצק עלים למילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מלוואח 800 גר ינון קפואזן <button type="button" class="photo-btn" data-photo="7290002735014" data-key="7290002735014" data-name="מלוואח 800 גר ינון קפואזן" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ינון חברה ליצור ושיווק מזו בע\&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪18.62 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 800 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002735014" data-name="מלוואח 800 גר ינון קפואזן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">ג&#39;חנון ארוז ינון <button type="button" class="photo-btn" data-photo="7290002735021" data-key="7290002735021" data-name="ג&#39;חנון ארוז ינון" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ינון חברה ליצור ושיווק מזו בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.87 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 750 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002735021" data-name="ג&#39;חנון ארוז ינון" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חמסי בצק עלים 1 ק&#34;ג <button type="button" class="photo-btn" data-photo="7290002410072" data-key="7290002410072" data-name="חמסי בצק עלים 1 ק&#34;ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.90 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002410072" data-name="חמסי בצק עלים 1 ק&#34;ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ריבועי בצק עלים מרוד <button type="button" class="photo-btn" data-photo="7290002277422" data-key="7290002277422" data-name="ריבועי בצק עלים מרוד" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שלושת האופים</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪21.43 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪16.80</s> ₪15.00 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002277422" data-name="ריבועי בצק עלים מרוד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בצק עלים צרפתי מרודד מעדנות 1 ק&#34;ג <button type="button" class="photo-btn" data-photo="7290000238029" data-key="7290000238029" data-name="בצק עלים צרפתי מרודד מעדנות 1 ק&#34;ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מעדנות בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪22.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪21.90 <small>לק״ג</small></div>
+          <div class="shelf">₪21.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000238029" data-name="בצק עלים צרפתי מרודד מעדנות 1 ק&#34;ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בצק עלים מרודד קפוא למאפים מתוקים ומלוחים <button type="button" class="photo-btn" data-photo="4810168047351" data-key="4810168047351" data-name="בצק עלים מרודד קפוא למאפים מתוקים ומלוחים" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪22.00 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 450 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4810168047351" data-name="בצק עלים מרודד קפוא למאפים מתוקים ומלוחים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בצק שמרים מרודד קפוא <button type="button" class="photo-btn" data-photo="4810168051396" data-key="4810168051396" data-name="בצק שמרים מרודד קפוא" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪22.00 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 450 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4810168051396" data-name="בצק שמרים מרודד קפוא" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מלווח 900 גרם <button type="button" class="photo-btn" data-photo="7290002512004" data-key="7290002512004" data-name="מלווח 900 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>צנעני</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪19.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪22.11 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 900 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002512004" data-name="מלווח 900 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בצק פריך למאפים מתוקים מעדנות 2*450 גרם <button type="button" class="photo-btn" data-photo="7290013117410" data-key="7290013117410" data-name="בצק פריך למאפים מתוקים מעדנות 2*450 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מעדנות בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪29.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.11 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪23.90</s> ₪19.90 · 900 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013117410" data-name="בצק פריך למאפים מתוקים מעדנות 2*450 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בצק פריך מרודד למאפים מלוחים מעדנות 2*450 גרם <button type="button" class="photo-btn" data-photo="7290013117427" data-key="7290013117427" data-name="בצק פריך מרודד למאפים מלוחים מעדנות 2*450 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מעדנות בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪28.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.11 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪23.90</s> ₪19.90 · 900 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013117427" data-name="בצק פריך מרודד למאפים מלוחים מעדנות 2*450 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בצק שמרים מרודד למאפים מתוקים מעדנות 900 גרם <button type="button" class="photo-btn" data-photo="7290013117526" data-key="7290013117526" data-name="בצק שמרים מרודד למאפים מתוקים מעדנות 900 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מעדנות בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪25.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.11 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪23.90</s> ₪19.90 · 900 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013117526" data-name="בצק שמרים מרודד למאפים מתוקים מעדנות 900 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בצק פריך מתוק 900ג רמילוי <button type="button" class="photo-btn" data-photo="7290002735946" data-key="7290002735946" data-name="בצק פריך מתוק 900ג רמילוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪22.44 <small>לק״ג</small></div>
+          <div class="shelf">₪20.20 · 900 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002735946" data-name="בצק פריך מתוק 900ג רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בצק פריך מלוח 900ג רמילוי <button type="button" class="photo-btn" data-photo="7290002735953" data-key="7290002735953" data-name="בצק פריך מלוח 900ג רמילוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪22.44 <small>לק״ג</small></div>
+          <div class="shelf">₪20.20 · 900 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002735953" data-name="בצק פריך מלוח 900ג רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מלאווח מעדנות 700 גרם <button type="button" class="photo-btn" data-photo="7290000238036" data-key="7290000238036" data-name="מלאווח מעדנות 700 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מעדנות בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪32</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪22.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.86 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪16.00 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000238036" data-name="מלאווח מעדנות 700 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קונכיות בצק 625 גרם <button type="button" class="photo-btn" data-photo="7290002327066" data-key="7290002327066" data-name="קונכיות בצק 625 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אופרה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪22.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪24.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪16.80</s> ₪15.00 · 625 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002327066" data-name="קונכיות בצק 625 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עלי בצק לסיגרים ואגרול 450 גר שלושת האופ <button type="button" class="photo-btn" data-photo="7290004228804" data-key="7290004228804" data-name="עלי בצק לסיגרים ואגרול 450 גר שלושת האופ" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שלושת האופים בע&#34;\מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪14.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪24.20 <small>לק״ג</small></div>
+          <div class="shelf">₪12.10 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004228804" data-name="עלי בצק לסיגרים ואגרול 450 גר שלושת האופ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בצק פילו 500גר מזווא <button type="button" class="photo-btn" data-photo="7290018904411" data-key="7290018904411" data-name="בצק פילו 500גר מזווא" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪25</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪25.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪12.50 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018904411" data-name="בצק פילו 500גר מזווא" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מלווח מופחת שומן 700 גר <button type="button" class="photo-btn" data-photo="7290002512257" data-key="7290002512257" data-name="מלווח מופחת שומן 700 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>צנעני</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪25.57 <small>לק״ג</small></div>
+          <div class="shelf">₪17.90 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002512257" data-name="מלווח מופחת שומן 700 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שערות קדאיף <button type="button" class="photo-btn" data-photo="7290018904978" data-key="7290018904978" data-name="שערות קדאיף" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪25</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪16.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪27.78 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪16.90</s> ₪12.50 · 450 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018904978" data-name="שערות קדאיף" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שערות קדאיף 450 גרם <button type="button" class="photo-btn" data-photo="7290018904404" data-key="7290018904404" data-name="שערות קדאיף 450 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪25</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪27.78 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪15.90</s> ₪12.50 · 450 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018904404" data-name="שערות קדאיף 450 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בצק פילאס 500גר זוגלובק <button type="button" class="photo-btn" data-photo="7290006739124" data-key="7290006739124" data-name="בצק פילאס 500גר זוגלובק" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאפיית אריאל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪14.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪29.80 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290006739124" data-name="בצק פילאס 500גר זוגלובק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בצק פילו 500גר זוגלובק <button type="button" class="photo-btn" data-photo="7290006739131" data-key="7290006739131" data-name="בצק פילו 500גר זוגלובק" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זוגלובק</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪29.80 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290006739131" data-name="בצק פילו 500גר זוגלובק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בצק פילאס ינון 600 גר קפואזן <button type="button" class="photo-btn" data-photo="7290002735595" data-key="7290002735595" data-name="בצק פילאס ינון 600 גר קפואזן" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ינון חברה ליצור ושיווק מזו בע\&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪29.83 <small>לק״ג</small></div>
+          <div class="shelf">₪17.90 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002735595" data-name="בצק פילאס ינון 600 גר קפואזן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ריבועי בצק עלים מעדנ <button type="button" class="photo-btn" data-photo="7290000240541" data-key="7290000240541" data-name="ריבועי בצק עלים מעדנ" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מעדנות</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪29.87 <small>לק״ג</small></div>
+          <div class="shelf">₪23.90 · 800 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000240541" data-name="ריבועי בצק עלים מעדנ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בצק פילו שלושת האופים 500 גרם <button type="button" class="photo-btn" data-photo="7290008343466" data-key="7290008343466" data-name="בצק פילו שלושת האופים 500 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נטו מלינדה בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪22.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪30.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪16.80</s> ₪15.00 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008343466" data-name="בצק פילו שלושת האופים 500 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בצק פילאס שלושת האופים 500 גרם <button type="button" class="photo-btn" data-photo="7290003069682" data-key="7290003069682" data-name="בצק פילאס שלושת האופים 500 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שלושת האופים</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪30.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪16.80</s> ₪15.00 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003069682" data-name="בצק פילאס שלושת האופים 500 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גחנון בצק 700 גר מעדנות <button type="button" class="photo-btn" data-photo="7290006271174" data-key="7290006271174" data-name="גחנון בצק 700 גר מעדנות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מעדנות בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪24.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪30.14 <small>לק״ג</small></div>
+          <div class="shelf">₪21.10 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290006271174" data-name="גחנון בצק 700 גר מעדנות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">ריבועי בצק עלים מעדנות <button type="button" class="photo-btn" data-photo="7290020239181" data-key="7290020239181" data-name="ריבועי בצק עלים מעדנות" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מעדנות בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪31.12 <small>לק״ג</small></div>
+          <div class="shelf">₪24.90 · 800 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020239181" data-name="ריבועי בצק עלים מעדנות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בצק פילו מצונן מרודד <button type="button" class="photo-btn" data-photo="7290008350150" data-key="7290008350150" data-name="בצק פילו מצונן מרודד" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪22</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪31.43 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪11.00 · 350 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008350150" data-name="בצק פילו מצונן מרודד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בצק פילאס תורכי מעדנות 600 גרם <button type="button" class="photo-btn" data-photo="7290005559990" data-key="7290005559990" data-name="בצק פילאס תורכי מעדנות 600 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מעדנות בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪25.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪31.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪23.90</s> ₪18.90 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290005559990" data-name="בצק פילאס תורכי מעדנות 600 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעטפת בצק פילו במילו <button type="button" class="photo-btn" data-photo="7290117264423" data-key="7290117264423" data-name="מעטפת בצק פילו במילו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪33.33 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪17.10</s> ₪10.00 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290117264423" data-name="מעטפת בצק פילו במילו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מעטפת בצק פילו במילו <button type="button" class="photo-btn" data-photo="7290117264430" data-key="7290117264430" data-name="מעטפת בצק פילו במילו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪33.33 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪17.10</s> ₪10.00 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290117264430" data-name="מעטפת בצק פילו במילו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עלי סיגר מרוקאים לפס <button type="button" class="photo-btn" data-photo="7290004256753" data-key="7290004256753" data-name="עלי סיגר מרוקאים לפס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪36.00 <small>לק״ג</small></div>
+          <div class="shelf">₪18.00 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004256753" data-name="עלי סיגר מרוקאים לפס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בצק עוגיות פרווה <button type="button" class="photo-btn" data-photo="7290003353941" data-key="7290003353941" data-name="בצק עוגיות פרווה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>דווידס קוקיס</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪29.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪36.62 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪29.90</s> ₪24.90 · 680 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003353941" data-name="בצק עוגיות פרווה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בצק עוגיות שוקוציפס דאבל 680 ג <button type="button" class="photo-btn" data-photo="7290003353958" data-key="7290003353958" data-name="בצק עוגיות שוקוציפס דאבל 680 ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>דווידס קוקיס</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪29.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪36.62 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪29.90</s> ₪24.90 · 680 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003353958" data-name="בצק עוגיות שוקוציפס דאבל 680 ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בצק פילו 2*250 גרם מעדנות <button type="button" class="photo-btn" data-photo="7290018091883" data-key="7290018091883" data-name="בצק פילו 2*250 גרם מעדנות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אראבאטזיס</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪24.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪37.80 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪23.90</s> ₪18.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018091883" data-name="בצק פילו 2*250 גרם מעדנות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בצק פיצה דק, מצונן ומוכן לאפייה - שמרית <button type="button" class="photo-btn" data-photo="7290000453408" data-key="7290000453408" data-name="בצק פיצה דק, מצונן ומוכן לאפייה - שמרית" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪17.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪38.07 <small>לק״ג</small></div>
+          <div class="shelf">₪15.80 · 415 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000453408" data-name="בצק פיצה דק, מצונן ומוכן לאפייה - שמרית" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מארז זוג בצק עלים שמרית <button type="button" class="photo-btn" data-photo="7290000453835" data-key="7290000453835" data-name="מארז זוג בצק עלים שמרית" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סיריליה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪24.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪38.17 <small>לק״ג</small></div>
+          <div class="shelf">₪22.90 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000453835" data-name="מארז זוג בצק עלים שמרית" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בצק לאמפנדס 700 גר חייקה קפואזן <button type="button" class="photo-btn" data-photo="7290008310086" data-key="7290008310086" data-name="בצק לאמפנדס 700 גר חייקה קפואזן" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>המאפה של חייקה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪35.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪38.43 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪33.30</s> ₪26.90 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008310086" data-name="בצק לאמפנדס 700 גר חייקה קפואזן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בצק שמרים מצונן <button type="button" class="photo-btn" data-photo="7290000453446" data-key="7290000453446" data-name="בצק שמרים מצונן" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪22.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.80 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000453446" data-name="בצק שמרים מצונן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בצק פסטה מצונן מרודד <button type="button" class="photo-btn" data-photo="7290000453453" data-key="7290000453453" data-name="בצק פסטה מצונן מרודד" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.80 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000453453" data-name="בצק פסטה מצונן מרודד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">עלי בלינצ&#39;ס מוקפאים <button type="button" class="photo-btn" data-photo="4810168062231" data-key="4810168062231" data-name="עלי בלינצ&#39;ס מוקפאים" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪40.31 <small>לק״ג</small></div>
+          <div class="shelf">₪12.90 · 320 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4810168062231" data-name="עלי בלינצ&#39;ס מוקפאים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קדאיף שערות בצק 450 <button type="button" class="photo-btn" data-photo="7290108501827" data-key="7290108501827" data-name="קדאיף שערות בצק 450" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪44.22 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪21.90</s> ₪19.90 · 450 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108501827" data-name="קדאיף שערות בצק 450" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בצק עלים חמאה מעדנות 600 גרם <button type="button" class="photo-btn" data-photo="7290018091548" data-key="7290018091548" data-name="בצק עלים חמאה מעדנות 600 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תנובה בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪34.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪46.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪29.90</s> ₪27.90 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018091548" data-name="בצק עלים חמאה מעדנות 600 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עלים לקרמשניט 300גר רמילוי <button type="button" class="photo-btn" data-photo="7290010004737" data-key="7290010004737" data-name="עלים לקרמשניט 300גר רמילוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪47.00 <small>לק״ג</small></div>
+          <div class="shelf">₪14.10 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010004737" data-name="עלים לקרמשניט 300גר רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">עלים ל-קרמשניט <button type="button" class="photo-btn" data-photo="835811005728" data-key="7290696200003:835811005728" data-name="עלים ל-קרמשניט" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רונית מאפים בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪47.25 <small>לק״ג</small></div>
+          <div class="shelf">₪18.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:835811005728" data-name="עלים ל-קרמשניט" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בצק עלים מצונן ומוכן לאפייה - שמרית <button type="button" class="photo-btn" data-photo="7290000453415" data-key="7290000453415" data-name="בצק עלים מצונן ומוכן לאפייה - שמרית" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪17.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪49.33 <small>לק״ג</small></div>
+          <div class="shelf">₪14.80 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000453415" data-name="בצק עלים מצונן ומוכן לאפייה - שמרית" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בצק פילו 14דפים למאפים מתוקים ומלוחים <button type="button" class="photo-btn" data-photo="7290000453422" data-key="7290000453422" data-name="בצק פילו 14דפים למאפים מתוקים ומלוחים" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪17.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪49.33 <small>לק״ג</small></div>
+          <div class="shelf">₪14.80 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000453422" data-name="בצק פילו 14דפים למאפים מתוקים ומלוחים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עלים לקרמשניט 300 גר <button type="button" class="photo-btn" data-photo="7290013145277" data-key="7290013145277" data-name="עלים לקרמשניט 300 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪49.67 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013145277" data-name="עלים לקרמשניט 300 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עלי סיגר מרוקאים למילוי 340 גרם <button type="button" class="photo-btn" data-photo="7290003359646" data-key="7290003359646" data-name="עלי סיגר מרוקאים למילוי 340 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סופטבריק</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪20.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪52.35 <small>לק״ג</small></div>
+          <div class="shelf">₪17.80 · 340 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003359646" data-name="עלי סיגר מרוקאים למילוי 340 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שכבות אפויות מבצק עלים <button type="button" class="photo-btn" data-photo="7290011223038" data-key="7290011223038" data-name="שכבות אפויות מבצק עלים" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>בונומי ס.פ.א</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪19.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪53.00 <small>לק״ג</small></div>
+          <div class="shelf">₪15.90 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290011223038" data-name="שכבות אפויות מבצק עלים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שמרית בצק פריך מתוק <button type="button" class="photo-btn" data-photo="7290000453439" data-key="7290000453439" data-name="שמרית בצק פריך מתוק" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪53.21 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 280 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000453439" data-name="שמרית בצק פריך מתוק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פינזה בצק אפוי למחצה <button type="button" class="photo-btn" data-photo="8058056170484" data-key="8058056170484" data-name="פינזה בצק אפוי למחצה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.60 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8058056170484" data-name="פינזה בצק אפוי למחצה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פנקייק אמריקאי מוכן <button type="button" class="photo-btn" data-photo="7290000453255" data-key="7290000453255" data-name="פנקייק אמריקאי מוכן" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪76.33 <small>לליטר</small></div>
+          <div class="shelf">₪22.90 · 300 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000453255" data-name="פנקייק אמריקאי מוכן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בסיס לפיצה אירו ללא <button type="button" class="photo-btn" data-photo="7290117268322" data-key="7290117268322" data-name="בסיס לפיצה אירו ללא" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪119.33 <small>לק״ג</small></div>
+          <div class="shelf">₪17.90 · 150 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290117268322" data-name="בסיס לפיצה אירו ללא" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בסיס לפיצה ללא גלוטן <button type="button" class="photo-btn" data-photo="8008698002025" data-key="8008698002025" data-name="בסיס לפיצה ללא גלוטן" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪119.60 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪39.90</s> ₪29.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8008698002025" data-name="בסיס לפיצה ללא גלוטן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קונוסים מבצק עלים 12 <button type="button" class="photo-btn" data-photo="7290013146489" data-key="7290013146489" data-name="קונוסים מבצק עלים 12" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪124.17 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 120 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013146489" data-name="קונוסים מבצק עלים 12" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טארטלטים- תחתיות בצק <button type="button" class="photo-btn" data-photo="7290013146298" data-key="7290013146298" data-name="טארטלטים- תחתיות בצק" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪157.50 <small>לק״ג</small></div>
+          <div class="shelf">₪18.90 · 120 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013146298" data-name="טארטלטים- תחתיות בצק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בצק לעוגת קראנץ&#39; <button type="button" class="photo-btn" data-photo="7290000453903" data-key="7290000453903" data-name="בצק לעוגת קראנץ&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪23.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪22.90 <small>ליח׳</small></div>
+          <div class="shelf">₪22.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000453903" data-name="בצק לעוגת קראנץ&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+      
+      <li class="divider">ללא מחיר לק״ג (גודל לא ידוע)</li>
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בצק לכיסונים מצונן שימרית <button type="button" class="photo-btn" data-photo="7290000453538" data-key="7290000453538" data-name="בצק לכיסונים מצונן שימרית" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪17.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪15.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000453538" data-name="בצק לכיסונים מצונן שימרית" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מלוואח <button type="button" class="photo-btn" data-photo="7290002651123" data-key="7290002651123" data-name="מלוואח" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאפיית אריאל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪19.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002651123" data-name="מלוואח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בסיס פיצה גדול לל&#34;ג מולינו <button type="button" class="photo-btn" data-photo="7290019974222" data-key="7290019974222" data-name="בסיס פיצה גדול לל&#34;ג מולינו" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מולינו בייקרי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪31.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019974222" data-name="בסיס פיצה גדול לל&#34;ג מולינו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+</ol>
+</div>
+
+</main>
+<footer>עודכן 3.10 21:01 · ויקטורי 09:06 · רמי לוי 10:00 · אושר עד 08:00 · אושר עד 08:00</footer>
+
+
+<nav class="bottom-nav" aria-label="ניווט">
+  <a href="index.html" class="on"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg><span>בית</span></a>
+  <a href="search.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><span>חיפוש</span></a>
+  <a href="scan.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V5a1 1 0 0 1 1-1h2M17 4h2a1 1 0 0 1 1 1v2M20 17v2a1 1 0 0 1-1 1h-2M7 20H5a1 1 0 0 1-1-1v-2"/><path d="M8 8v8M11 8v8M14 8v8M16.5 8v8"/></svg><span>סריקה</span></a>
+  <a href="basket.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h11l2-8H6.2"/><circle cx="9.5" cy="19" r="1.4"/><circle cx="17" cy="19" r="1.4"/></svg><span id="cart-count"></span><span>עגלת קניות</span></a>
+  <a href="spending.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-2-1.4-2 1.4-2-1.4-2 1.4-2-1.4L6 21z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><span>הוצאות</span></a>
+</nav>
+
+<script src="static/basket.js?v=20261003210153"></script>
+<script src="static/photo.js?v=20261003210153"></script>
+
+<script src="static/render.js?v=20261003210153"></script>
+<script src="static/category.js?v=20261003210153" data-build="20261003210153"></script>
+
+<script>
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+</script>
+</body>
+</html>

@@ -1,0 +1,2709 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f7a4d">
+<script>
+// the look this phone chose (settings.html "מראה"), before anything is drawn: html.light / html.dark
+// (none = follow the phone) and html[data-color] (none = green); the browser bar takes the colour too
+(function () {
+  let t = {};
+  try { t = JSON.parse(localStorage.getItem("theme")) || {}; } catch (e) { /* none yet */ }
+  const root = document.documentElement;
+  if (t.mode === "light" || t.mode === "dark") root.classList.add(t.mode);
+  if (t.color) root.dataset.color = t.color;
+  if (t.bar) document.querySelector('meta[name="theme-color"]').content = t.bar;
+})();
+</script>
+<title>דגני בוקר</title>
+<link rel="manifest" href="static/manifest.webmanifest">
+<link rel="icon" href="static/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="static/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="static/style.css?v=20261003210153">
+<style>.st-0 { --store: #e07000; }.st-1 { --store: #d32f2f; }.st-2 { --store: #1565c0; }.st-3 { --store: #1565c0; }</style>
+<script src="static/stores.js?v=20261003210153" data-stores="[{&#34;card_cap&#34;: 750, &#34;card_rate&#34;: 0.07, &#34;default&#34;: true, &#34;key&#34;: &#34;victory-038&#34;, &#34;name&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;ramilevy-007&#34;, &#34;name&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-026&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05ea\u05dc\u05e4\u05d9\u05d5\u05ea&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-003&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05d2\u05d1\u05e2\u05ea \u05e9\u05d0\u05d5\u05dc&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}]"></script>
+<script>
+// No long-press menu on links, pictures or text (the user: the home page's tiles opened Chrome's "open in new tab /
+// copy link" menu; CSS can't stop that on Android). Typing fields and the ⓘ sheet's barcode keep theirs.
+document.addEventListener("contextmenu", (e) => {
+  if (!e.target.closest("input, textarea, [contenteditable], .photo-barcode")) e.preventDefault();
+});
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <a class="back" href="t-4.html" aria-label="חזרה">→</a>
+    <h1>דגני בוקר</h1>
+    <a class="notes-link" href="notes.html" aria-label="רשימת קניות" title="רשימת קניות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="m8.5 10 1.2 1.2 2.3-2.4M8.5 15.5l1.2 1.2 2.3-2.4M14 10.5h2.5M14 16h2.5"/></svg><span>רשימת קניות</span></a>
+    <a class="settings-link" href="settings.html" aria-label="הגדרות" title="הגדרות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></a>
+  </div>
+  
+  <form class="search" action="search.html" method="get" role="search">
+    <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+    <input type="search" name="q" placeholder="חיפוש מוצר" enterkeyhint="search" aria-label="חיפוש מוצר">
+  </form>
+  
+</header>
+<main>
+
+<p class="sub"><span class="sub-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8v3H8z"/><path d="M7 6h10a1 1 0 0 1 1 1v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V7a1 1 0 0 1 1-1z"/><path d="M6 11h12v5H6z"/></svg></span>מזווה · <span id="cat-count">97</span> מוצרים, מהזול ליקר</p>
+
+
+<div class="cat-filter">
+  <input type="search" id="cat-filter" placeholder="סינון לפי שם או יצרן · ‎-מילה מסתירה" enterkeyhint="done" autocomplete="off" aria-label="סינון המוצרים בקטגוריה">
+</div>
+<div id="cat-list" data-href="c-4-26.html">
+
+<ol class="products">
+  
+  
+    
+    
+    <li class="product st-0 best">
+      <div class="info">
+        <div class="name">קורנפלקס 750 גר פתיתי תירס קלויים ויקט <button type="button" class="photo-btn" data-photo="796520202757" data-key="7290696200003:796520202757" data-name="קורנפלקס 750 גר פתיתי תירס קלויים ויקט" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪17.20 <small>לק״ג</small></div>
+          <div class="shelf">₪12.90 · 750 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:796520202757" data-name="קורנפלקס 750 גר פתיתי תירס קלויים ויקט" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שקדיה קורנפלקס 700 ג <button type="button" class="photo-btn" data-photo="7290015652612" data-key="7290015652612" data-name="שקדיה קורנפלקס 700 ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪18.43 <small>לק״ג</small></div>
+          <div class="shelf">₪12.90 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015652612" data-name="שקדיה קורנפלקס 700 ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קורנפלקס 750 גרם רמי לוי <button type="button" class="photo-btn" data-photo="7290016733532" data-key="7290016733532" data-name="קורנפלקס 750 גרם רמי לוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.87 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 750 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016733532" data-name="קורנפלקס 750 גרם רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קורנפלקס אלופים תלמה 850 ג בד&#34;ץ <button type="button" class="photo-btn" data-photo="7290112494351" data-key="7290112494351" data-name="קורנפלקס אלופים תלמה 850 ג בד&#34;ץ" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יוניליוור שפע ישראל בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪21.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪21.06 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪17.90 · 850 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112494351" data-name="קורנפלקס אלופים תלמה 850 ג בד&#34;ץ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פיטנס קורנפלקס 500 גר אסם <button type="button" class="photo-btn" data-photo="5900020041142" data-key="5900020041142" data-name="פיטנס קורנפלקס 500 גר אסם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סי.פי פולין</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪23.80 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪13.90</s> ₪11.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5900020041142" data-name="פיטנס קורנפלקס 500 גר אסם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">דגני בוקר בצורת כדורים טעם קקאו 500 גר wb <button type="button" class="photo-btn" data-photo="7290119673407" data-key="7290119673407" data-name="דגני בוקר בצורת כדורים טעם קקאו 500 גר wb" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪23.80 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪11.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119673407" data-name="דגני בוקר בצורת כדורים טעם קקאו 500 גר wb" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">דגני בוקר טבעות בתוספת דבש 500 גר wb <button type="button" class="photo-btn" data-photo="7290119673414" data-key="7290119673414" data-name="דגני בוקר טבעות בתוספת דבש 500 גר wb" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪23.80 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪11.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119673414" data-name="דגני בוקר טבעות בתוספת דבש 500 גר wb" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">דגני בוקר בצורת אורז בטעם קקאו 500 גר wb <button type="button" class="photo-btn" data-photo="7290119673421" data-key="7290119673421" data-name="דגני בוקר בצורת אורז בטעם קקאו 500 גר wb" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪23.80 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪11.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119673421" data-name="דגני בוקר בצורת אורז בטעם קקאו 500 גר wb" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">דגני בוקר צורת צדף ט <button type="button" class="photo-btn" data-photo="7290119673438" data-key="7290119673438" data-name="דגני בוקר צורת צדף ט" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪23.80 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪11.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119673438" data-name="דגני בוקר צורת צדף ט" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קראנץ&#39; דגני בוקר בטעם שוקולד חלב 500 גרם נסטלה אסם <button type="button" class="photo-btn" data-photo="3387390525960" data-key="3387390525960" data-name="קראנץ&#39; דגני בוקר בטעם שוקולד חלב 500 גרם נסטלה אסם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סי. פי. צרפת</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪24.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪30.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪15.00 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="3387390525960" data-name="קראנץ&#39; דגני בוקר בטעם שוקולד חלב 500 גרם נסטלה אסם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">דגנים תפוחים בטעם שוקולד נסקוויק נסטלה 500 גרם <button type="button" class="photo-btn" data-photo="5900020012814" data-key="5900020012814" data-name="דגנים תפוחים בטעם שוקולד נסקוויק נסטלה 500 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סי. פי. פולין</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪24.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪30.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪15.00 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5900020012814" data-name="דגנים תפוחים בטעם שוקולד נסקוויק נסטלה 500 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">צ&#39;יריוס שיבולת שועל <button type="button" class="photo-btn" data-photo="5900020046833" data-key="5900020046833" data-name="צ&#39;יריוס שיבולת שועל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סי. פי. פולין</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪24.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪30.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪21.90</s> ₪15.00 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5900020046833" data-name="צ&#39;יריוס שיבולת שועל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סיני מיניס פרוטאין 375גר <button type="button" class="photo-btn" data-photo="5900020049865" data-key="5900020049865" data-name="סיני מיניס פרוטאין 375גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סי.פי. פולין</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪24.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪30.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪15.00 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5900020049865" data-name="סיני מיניס פרוטאין 375גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סיני מיניס דגנים 500 גרם <button type="button" class="photo-btn" data-photo="7290000072968" data-key="7290000072968" data-name="סיני מיניס דגנים 500 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סי.פי. צרפת</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪24.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪30.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪15.00 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000072968" data-name="סיני מיניס דגנים 500 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מולטי צ&#39;יריוס 500גר נסטלה <button type="button" class="photo-btn" data-photo="8445291301948" data-key="8445291301948" data-name="מולטי צ&#39;יריוס 500גר נסטלה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>CPU</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪24.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪30.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪15.00 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8445291301948" data-name="מולטי צ&#39;יריוס 500גר נסטלה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">צ&#39;יריוס טעם דבש שקדים 500גר נסטלה <button type="button" class="photo-btn" data-photo="8445291638839" data-key="8445291638839" data-name="צ&#39;יריוס טעם דבש שקדים 500גר נסטלה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סי. פי. צרפת</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪24.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪30.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪15.00 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8445291638839" data-name="צ&#39;יריוס טעם דבש שקדים 500גר נסטלה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">דגני בוקר קראנץ&#39; פרוטאין 375 גרם <button type="button" class="photo-btn" data-photo="8445292530569" data-key="8445292530569" data-name="דגני בוקר קראנץ&#39; פרוטאין 375 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סי.פי. צרפת</span>
+          <span class="warn">גודל לא ודאי</span>
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪24.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪30.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪15.00 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8445292530569" data-name="דגני בוקר קראנץ&#39; פרוטאין 375 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ליון דגני בוקר בטעם שוקולד וקרמל 480 גרם <button type="button" class="photo-btn" data-photo="5900020036407" data-key="5900020036407" data-name="ליון דגני בוקר בטעם שוקולד וקרמל 480 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סי.פי פולין</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪24.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪31.25 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪15.00 · 480 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5900020036407" data-name="ליון דגני בוקר בטעם שוקולד וקרמל 480 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">דגני בוקר טריקס בטעם פירות <button type="button" class="photo-btn" data-photo="7613030979647" data-key="7613030979647" data-name="דגני בוקר טריקס בטעם פירות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נסטלה צ&#39;ילה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪24.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪31.25 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪15.00 · 480 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7613030979647" data-name="דגני בוקר טריקס בטעם פירות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שלווה דבש וסוכר חום <button type="button" class="photo-btn" data-photo="7290000139258" data-key="7290000139258" data-name="שלווה דבש וסוכר חום" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אשבול</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪16</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪32.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪8.70</s> ₪8.00 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000139258" data-name="שלווה דבש וסוכר חום" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שוגי 500 גרם מופחת סוכר בד&#34;ץ <button type="button" class="photo-btn" data-photo="7290107647854" data-key="7290107647854" data-name="שוגי 500 גרם מופחת סוכר בד&#34;ץ" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יוניליוור שפע ישראל בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪32</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪24.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪32.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪16.00 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290107647854" data-name="שוגי 500 גרם מופחת סוכר בד&#34;ץ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עוגי דגנים עם פצפוצים בטעם שוקולד תלמה 500 גרם <button type="button" class="photo-btn" data-photo="7290116536255" data-key="7290116536255" data-name="עוגי דגנים עם פצפוצים בטעם שוקולד תלמה 500 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יוניליוור שפע ישראל בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪32</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪24.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪32.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪16.00 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116536255" data-name="עוגי דגנים עם פצפוצים בטעם שוקולד תלמה 500 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קראנץ&#39; רולס 450 גרם נסטלה <button type="button" class="photo-btn" data-photo="7290109358765" data-key="7290109358765" data-name="קראנץ&#39; רולס 450 גרם נסטלה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אסם נסטלה ישראל בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪21.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪33.33 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪15.00 · 450 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290109358765" data-name="קראנץ&#39; רולס 450 גרם נסטלה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קראנץ צדפים טעם שוקולד 450 גר נסטלה <button type="button" class="photo-btn" data-photo="5900020034991" data-key="5900020034991" data-name="קראנץ צדפים טעם שוקולד 450 גר נסטלה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪33.33 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪15.00 · 450 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5900020034991" data-name="קראנץ צדפים טעם שוקולד 450 גר נסטלה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קלוגס קורנפלקס 500 גר <button type="button" class="photo-btn" data-photo="5059319029924" data-key="5059319029924" data-name="קלוגס קורנפלקס 500 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪33.80 <small>לק״ג</small></div>
+          <div class="shelf">₪16.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5059319029924" data-name="קלוגס קורנפלקס 500 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">כדורי דגנים טעם שוקולד ללא גלוטן 350 גר <button type="button" class="photo-btn" data-photo="7290117266182" data-key="7290117266182" data-name="כדורי דגנים טעם שוקולד ללא גלוטן 350 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪34.00 <small>לק״ג</small></div>
+          <div class="shelf">₪11.90 · 350 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290117266182" data-name="כדורי דגנים טעם שוקולד ללא גלוטן 350 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פתיתי תיריס קלויים תות שדה לל&#34;ג 350גר <button type="button" class="photo-btn" data-photo="7290117266199" data-key="7290117266199" data-name="פתיתי תיריס קלויים תות שדה לל&#34;ג 350גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪34.00 <small>לק״ג</small></div>
+          <div class="shelf">₪11.90 · 350 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290117266199" data-name="פתיתי תיריס קלויים תות שדה לל&#34;ג 350גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שלווה חיטה תפוחה מתו <button type="button" class="photo-btn" data-photo="7290000139104" data-key="7290000139104" data-name="שלווה חיטה תפוחה מתו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אשבול</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪16</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪34.78 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪8.70</s> ₪8.00 · 230 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000139104" data-name="שלווה חיטה תפוחה מתו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קורנפלקס נגיעות דבש תלמה 448 גרם <button type="button" class="photo-btn" data-photo="7290112495228" data-key="7290112495228" data-name="קורנפלקס נגיעות דבש תלמה 448 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יוניליוור שפע ישראל בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪21.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪35.49 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪15.90 · 448 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112495228" data-name="קורנפלקס נגיעות דבש תלמה 448 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קורנפלקס דבש תלמה 448 גרם <button type="button" class="photo-btn" data-photo="7290116538686" data-key="7290116538686" data-name="קורנפלקס דבש תלמה 448 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קריספי פוד, ג&#39;אסווג&#39; 3, 
+נקסקוב 4900, דנמרק</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪21.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪35.49 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪15.90 · 448 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116538686" data-name="קורנפלקס דבש תלמה 448 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קראנץ בטעם שוקולד מופחת סוכר 410 גרם נסטלה <button type="button" class="photo-btn" data-photo="7613038451954" data-key="7613038451954" data-name="קראנץ בטעם שוקולד מופחת סוכר 410 גרם נסטלה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪36.59 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪15.00 · 410 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7613038451954" data-name="קראנץ בטעם שוקולד מופחת סוכר 410 גרם נסטלה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">טבעות דגנים <button type="button" class="photo-btn" data-photo="7290117266205" data-key="7290117266205" data-name="טבעות דגנים" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪36.86 <small>לק״ג</small></div>
+          <div class="shelf">₪12.90 · 350 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290117266205" data-name="טבעות דגנים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קורנפלקס ללא גלוטן <button type="button" class="photo-btn" data-photo="7290116533599" data-key="7290116533599" data-name="קורנפלקס ללא גלוטן" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מולינו ניקולי S.P.A, ויה לוקטלי 6 24060 קוסטה די מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.80 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116533599" data-name="קורנפלקס ללא גלוטן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פיטנס דגני בוקר מחיטה מלאה עם פירות נסטלה 375 גרם <button type="button" class="photo-btn" data-photo="3387390320244" data-key="3387390320244" data-name="פיטנס דגני בוקר מחיטה מלאה עם פירות נסטלה 375 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סי. פי. צרפת</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪21.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪40.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪20.90</s> ₪15.00 · 375 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="3387390320244" data-name="פיטנס דגני בוקר מחיטה מלאה עם פירות נסטלה 375 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טריפל 375 גר דגני בוקר קראנץ <button type="button" class="photo-btn" data-photo="5900020047915" data-key="5900020047915" data-name="טריפל 375 גר דגני בוקר קראנץ" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סי.פי. פולין</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪24.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪40.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.80</s> ₪15.00 · 375 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5900020047915" data-name="טריפל 375 גר דגני בוקר קראנץ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">דגני בוקר פיטנס שוקולד 375 גרם נסטלה אסם <button type="button" class="photo-btn" data-photo="7613032045753" data-key="7613032045753" data-name="דגני בוקר פיטנס שוקולד 375 גרם נסטלה אסם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סי. פי. צרפת</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪21.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪40.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪20.90</s> ₪15.00 · 375 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7613032045753" data-name="דגני בוקר פיטנס שוקולד 375 גרם נסטלה אסם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">דגני בוקר פיטנס עם שוקולד מריר נסטלה 375 גרם <button type="button" class="photo-btn" data-photo="7613033548192" data-key="7613033548192" data-name="דגני בוקר פיטנס עם שוקולד מריר נסטלה 375 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סי פי צרפת</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪21.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪40.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪20.90</s> ₪15.00 · 375 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7613033548192" data-name="דגני בוקר פיטנס עם שוקולד מריר נסטלה 375 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">כריות נוגט תלמה 686 גרם <button type="button" class="photo-btn" data-photo="7290116537351" data-key="7290116537351" data-name="כריות נוגט תלמה 686 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יוניליוור שפע ישראל בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪29.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪40.67 <small>לק״ג</small></div>
+          <div class="shelf">₪27.90 · 686 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116537351" data-name="כריות נוגט תלמה 686 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">האני באנצס פקאן מייפל 411 גר <button type="button" class="photo-btn" data-photo="884912359421" data-key="884912359421" data-name="האני באנצס פקאן מייפל 411 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פוסט</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪34</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪41.36 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪23.00</s> ₪17.00 · 411 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="884912359421" data-name="האני באנצס פקאן מייפל 411 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">האני באנצס קינמון 411 ג <button type="button" class="photo-btn" data-photo="884912359414" data-key="884912359414" data-name="האני באנצס קינמון 411 ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פוסט</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪34</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪41.36 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪23.00</s> ₪17.00 · 411 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="884912359414" data-name="האני באנצס קינמון 411 ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סינימיניס צ&#39;ורוס 360 גר <button type="button" class="photo-btn" data-photo="7613287476678" data-key="7613287476678" data-name="סינימיניס צ&#39;ורוס 360 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סי. פי. צרפת</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪24.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪41.67 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪15.00 · 360 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7613287476678" data-name="סינימיניס צ&#39;ורוס 360 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">וויטביקס מולטי קראנץ 450 גרם <button type="button" class="photo-btn" data-photo="5010029229417" data-key="5010029229417" data-name="וויטביקס מולטי קראנץ 450 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪42.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪25.90</s> ₪18.90 · 450 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5010029229417" data-name="וויטביקס מולטי קראנץ 450 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">וויטביקס קראנץ שוקולד סטיץ 450 גר <button type="button" class="photo-btn" data-photo="5010029229394" data-key="5010029229394" data-name="וויטביקס קראנץ שוקולד סטיץ 450 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪42.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪25.90</s> ₪18.90 · 450 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5010029229394" data-name="וויטביקס קראנץ שוקולד סטיץ 450 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">דגני בוקר פיטנס שקדים ודבש 355 גרם נסטלה אסם <button type="button" class="photo-btn" data-photo="7613037686906" data-key="7613037686906" data-name="דגני בוקר פיטנס שקדים ודבש 355 גרם נסטלה אסם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סי. פי. צרפת</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪21.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪42.25 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪20.90</s> ₪15.00 · 355 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7613037686906" data-name="דגני בוקר פיטנס שקדים ודבש 355 גרם נסטלה אסם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קוקומן חום לבן 20%פחות סוכר 375 ג <button type="button" class="photo-btn" data-photo="7290107647731" data-key="7290107647731" data-name="קוקומן חום לבן 20%פחות סוכר 375 ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יוניליוור שפע ישראל בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪32</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪24.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪42.67 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪21.90</s> ₪16.00 · 375 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290107647731" data-name="קוקומן חום לבן 20%פחות סוכר 375 ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קוקומן כדורים בדצ 375 גר <button type="button" class="photo-btn" data-photo="7290112495037" data-key="7290112495037" data-name="קוקומן כדורים בדצ 375 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יוניליוור שפע ישראל בע&#34;מ. רח&#39; התעשייה 12, ערד</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪32</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪24.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪42.67 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪21.90</s> ₪16.00 · 375 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112495037" data-name="קוקומן כדורים בדצ 375 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אוזמו קורנפלקס שוקול <button type="button" class="photo-btn" data-photo="8691707190488" data-key="8691707190488" data-name="אוזמו קורנפלקס שוקול" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪42.77 <small>לק״ג</small></div>
+          <div class="shelf">₪13.90 · 325 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8691707190488" data-name="אוזמו קורנפלקס שוקול" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ברנפלקס אקסטרא פייבר תלמה 410 גרם <button type="button" class="photo-btn" data-photo="7290116535845" data-key="7290116535845" data-name="ברנפלקס אקסטרא פייבר תלמה 410 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יוניליוור שפע ישראל בע&#34;מ. רח&#39; התעשייה 12, ערד</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪25.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪43.66 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪24.90</s> ₪17.90 · 410 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116535845" data-name="ברנפלקס אקסטרא פייבר תלמה 410 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ברנפלקס ריבועי בטעם קינמון 400 גר <button type="button" class="photo-btn" data-photo="7290112495280" data-key="7290112495280" data-name="ברנפלקס ריבועי בטעם קינמון 400 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יוניליוור שפע ישראל בע&#34;מ. רח&#39; התעשייה 12, ערד</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪25.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪44.75 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪24.90</s> ₪17.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112495280" data-name="ברנפלקס ריבועי בטעם קינמון 400 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">דליפקאן תוספת אגוזי פקאן ושקדים 400 גר` <button type="button" class="photo-btn" data-photo="7290112495433" data-key="7290112495433" data-name="דליפקאן תוספת אגוזי פקאן ושקדים 400 גר`" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יוניליוור שפע ישראל בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪25.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪44.75 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪22.90</s> ₪17.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112495433" data-name="דליפקאן תוספת אגוזי פקאן ושקדים 400 גר`" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">דגני בוקר - פתיתי תירס <button type="button" class="photo-btn" data-photo="7290019393788" data-key="7290019393788" data-name="דגני בוקר - פתיתי תירס" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪45.07 <small>לק״ג</small></div>
+          <div class="shelf">₪16.90 · 375 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019393788" data-name="דגני בוקר - פתיתי תירס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">דגני בוקר - בתוספת דבש <button type="button" class="photo-btn" data-photo="7290019393795" data-key="7290019393795" data-name="דגני בוקר - בתוספת דבש" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪45.07 <small>לק״ג</small></div>
+          <div class="shelf">₪16.90 · 375 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019393795" data-name="דגני בוקר - בתוספת דבש" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">דגני בוקר - טבעות <button type="button" class="photo-btn" data-photo="7290019393801" data-key="7290019393801" data-name="דגני בוקר - טבעות" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪45.07 <small>לק״ג</small></div>
+          <div class="shelf">₪16.90 · 375 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019393801" data-name="דגני בוקר - טבעות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">דגני בוקר קינמונים <button type="button" class="photo-btn" data-photo="7290019926160" data-key="7290019926160" data-name="דגני בוקר קינמונים" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪45.07 <small>לק״ג</small></div>
+          <div class="shelf">₪16.90 · 375 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019926160" data-name="דגני בוקר קינמונים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">דגני בוקר קיטקט 330 גר נסטלה אסם <button type="button" class="photo-btn" data-photo="8445290964595" data-key="8445290964595" data-name="דגני בוקר קיטקט 330 גר נסטלה אסם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>איטנקורט</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪24.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪45.45 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪23.90</s> ₪15.00 · 330 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8445290964595" data-name="דגני בוקר קיטקט 330 גר נסטלה אסם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">וואפל קריספ בטעם מייפל 370 גרם POST <button type="button" class="photo-btn" data-photo="884912342737" data-key="884912342737" data-name="וואפל קריספ בטעם מייפל 370 גרם POST" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪45.71 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪21.90</s> ₪14.90 · 326 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="884912342737" data-name="וואפל קריספ בטעם מייפל 370 גרם POST" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פוסט האני באנצס תות 368 גר <button type="button" class="photo-btn" data-photo="884912359483" data-key="884912359483" data-name="פוסט האני באנצס תות 368 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪34</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪46.20 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪23.00</s> ₪17.00 · 368 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="884912359483" data-name="פוסט האני באנצס תות 368 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">דגני בוקר מיניונים כריות 320 גר <button type="button" class="photo-btn" data-photo="4005528140739" data-key="4005528140739" data-name="דגני בוקר מיניונים כריות 320 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪46.56 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪14.90 · 320 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4005528140739" data-name="דגני בוקר מיניונים כריות 320 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">פייבר1- דגני בוקר עתירי סובין</div>
+        <div class="meta">
+          <span>ג&#39;נרל מילס</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪46.67 <small>לק״ג</small></div>
+          <div class="shelf">₪25.90 · 555 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:16000185517" data-name="פייבר1- דגני בוקר עתירי סובין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פייבר וואן 555 גרם</div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪46.67 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪27.90</s> ₪25.90 · 555 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058140886:16000185517" data-name="פייבר וואן 555 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ברנפלקס קרנצ&#39;ים תלמה בד&#34;ץ 375 גרם <button type="button" class="photo-btn" data-photo="7290000168173" data-key="7290000168173" data-name="ברנפלקס קרנצ&#39;ים תלמה בד&#34;ץ 375 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יוניליוור שפע ישראל בע&#34;מ. רח&#39; התעשייה 12, ערד</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪25.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪47.73 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪24.90</s> ₪17.90 · 375 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000168173" data-name="ברנפלקס קרנצ&#39;ים תלמה בד&#34;ץ 375 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ברנפלקס אקסטרא פרוטיאין תלמה 375 גרם <button type="button" class="photo-btn" data-photo="7290112491701" data-key="7290112491701" data-name="ברנפלקס אקסטרא פרוטיאין תלמה 375 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יוניליוור שפע ישראל בע&#34;מ. רח&#39; התעשייה 12, ערד</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪25.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪47.73 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪24.90</s> ₪17.90 · 375 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112491701" data-name="ברנפלקס אקסטרא פרוטיאין תלמה 375 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ברנפלקס קרנצ&#39;ים קפה 375 גר&#39; <button type="button" class="photo-btn" data-photo="7290112494412" data-key="7290112494412" data-name="ברנפלקס קרנצ&#39;ים קפה 375 גר&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יוניליוור שפע ישראל בע&#34;מ. רח&#39; התעשייה 12, ערד</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪25.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪47.73 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪24.90</s> ₪17.90 · 375 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112494412" data-name="ברנפלקס קרנצ&#39;ים קפה 375 גר&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ברנפלקס לללא סוכר452 גר גרם {חתם סופר} <button type="button" class="photo-btn" data-photo="7290116538679" data-key="7290116538679" data-name="ברנפלקס לללא סוכר452 גר גרם {חתם סופר}" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יוניליוור שפע ישראל בע&#34;מ. רח&#39; התעשייה 12, ערד</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪25.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪47.73 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪24.90</s> ₪17.90 · 375 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116538679" data-name="ברנפלקס לללא סוכר452 גר גרם {חתם סופר}" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ברנפלקס 452 גרם {חתם סופר} <button type="button" class="photo-btn" data-photo="7290116538662" data-key="7290116538662" data-name="ברנפלקס 452 גרם {חתם סופר}" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יוניליוור</span>
+          <span class="warn">גודל לא ודאי</span>
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪47.73 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪24.90</s> ₪17.90 · 375 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116538662" data-name="ברנפלקס 452 גרם {חתם סופר}" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">דגני בוקר פריכים עם אורז וקקאו מאנדיי 311 גרם <button type="button" class="photo-btn" data-photo="4005528134578" data-key="4005528134578" data-name="דגני בוקר פריכים עם אורז וקקאו מאנדיי 311 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪47.91 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪22.90</s> ₪14.90 · 311 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4005528134578" data-name="דגני בוקר פריכים עם אורז וקקאו מאנדיי 311 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פבלס קינמון דגני בוקר 311 גרם POST <button type="button" class="photo-btn" data-photo="884912475770" data-key="884912475770" data-name="פבלס קינמון דגני בוקר 311 גרם POST" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪47.91 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪14.90 · 311 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="884912475770" data-name="פבלס קינמון דגני בוקר 311 גרם POST" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">דגני בוקר הלו קיטי 311 גרם <button type="button" class="photo-btn" data-photo="4005528115218" data-key="4005528115218" data-name="דגני בוקר הלו קיטי 311 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪47.91 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪22.90</s> ₪14.90 · 311 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4005528115218" data-name="דגני בוקר הלו קיטי 311 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">דגני בוקר בוב ספוג 311 גרם <button type="button" class="photo-btn" data-photo="4005528126092" data-key="4005528126092" data-name="דגני בוקר בוב ספוג 311 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪47.91 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪22.90</s> ₪14.90 · 311 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4005528126092" data-name="דגני בוקר בוב ספוג 311 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קוקו פבלס דגני בוקר 311 גרם POST <button type="button" class="photo-btn" data-photo="884912129512" data-key="884912129512" data-name="קוקו פבלס דגני בוקר 311 גרם POST" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪47.91 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪21.90</s> ₪14.90 · 311 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="884912129512" data-name="קוקו פבלס דגני בוקר 311 גרם POST" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פוסט דגני פרוטי פבלס 311גר <button type="button" class="photo-btn" data-photo="884912129710" data-key="884912129710" data-name="פוסט דגני פרוטי פבלס 311גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פוסט</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪47.91 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪21.90</s> ₪14.90 · 311 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="884912129710" data-name="פוסט דגני פרוטי פבלס 311גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שלווה מופחת סוכר 200 <button type="button" class="photo-btn" data-photo="7290000139173" data-key="7290000139173" data-name="שלווה מופחת סוכר 200" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪48.50 <small>לק״ג</small></div>
+          <div class="shelf">₪9.70 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000139173" data-name="שלווה מופחת סוכר 200" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">דגני בוקר רייזן ברן 471 גרם <button type="button" class="photo-btn" data-photo="884912378118" data-key="884912378118" data-name="דגני בוקר רייזן ברן 471 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪49.04 <small>לק״ג</small></div>
+          <div class="shelf">₪23.10 · 471 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="884912378118" data-name="דגני בוקר רייזן ברן 471 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">האני באנצ&#39; דגני בוקר עם שקדים פוסט 340 גרם <button type="button" class="photo-btn" data-photo="884912359162" data-key="884912359162" data-name="האני באנצ&#39; דגני בוקר עם שקדים פוסט 340 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪34</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪50.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪23.00</s> ₪17.00 · 340 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="884912359162" data-name="האני באנצ&#39; דגני בוקר עם שקדים פוסט 340 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">האני באנצ&#39; דגני בוקר עם דבש פוסט 340 גרם <button type="button" class="photo-btn" data-photo="884912359155" data-key="884912359155" data-name="האני באנצ&#39; דגני בוקר עם דבש פוסט 340 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪34</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪50.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪23.00</s> ₪17.00 · 340 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="884912359155" data-name="האני באנצ&#39; דגני בוקר עם דבש פוסט 340 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ברן פלקס פוסט 453 גרם <button type="button" class="photo-btn" data-photo="884912113139" data-key="884912113139" data-name="ברן פלקס פוסט 453 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פוסט</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪50.99 <small>לק״ג</small></div>
+          <div class="shelf">₪23.10 · 453 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="884912113139" data-name="ברן פלקס פוסט 453 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">כריות בטעם שוקולד פאדג 348 ג תלמה <button type="button" class="photo-btn" data-photo="7290116537955" data-key="7290116537955" data-name="כריות בטעם שוקולד פאדג 348 ג תלמה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪36</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪22.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪51.72 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪18.00 · 348 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116537955" data-name="כריות בטעם שוקולד פאדג 348 ג תלמה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">כריות בטעם וניל פטיסייר 348 ג תלמה <button type="button" class="photo-btn" data-photo="7290116537962" data-key="7290116537962" data-name="כריות בטעם וניל פטיסייר 348 ג תלמה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪36</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪22.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪51.72 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪18.00 · 348 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116537962" data-name="כריות בטעם וניל פטיסייר 348 ג תלמה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">דגני עוגיות סנדוויץ&#39; <button type="button" class="photo-btn" data-photo="7290019393818" data-key="7290019393818" data-name="דגני עוגיות סנדוויץ&#39;" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪52.81 <small>לק״ג</small></div>
+          <div class="shelf">₪16.90 · 320 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019393818" data-name="דגני עוגיות סנדוויץ&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">דגני בוקר נוגט ללא גלוטן 375ג <button type="button" class="photo-btn" data-photo="7290018724408" data-key="7290018724408" data-name="דגני בוקר נוגט ללא גלוטן 375ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪21.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪53.07 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 375 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018724408" data-name="דגני בוקר נוגט ללא גלוטן 375ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">דגני בוקר בראוניז ללא גלוטן 375ג <button type="button" class="photo-btn" data-photo="7290018724415" data-key="7290018724415" data-name="דגני בוקר בראוניז ללא גלוטן 375ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪21.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪53.07 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 375 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018724415" data-name="דגני בוקר בראוניז ללא גלוטן 375ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אוזמו קורנפלקס ממולא <button type="button" class="photo-btn" data-photo="8691707190556" data-key="8691707190556" data-name="אוזמו קורנפלקס ממולא" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪55.60 <small>לק״ג</small></div>
+          <div class="shelf">₪13.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8691707190556" data-name="אוזמו קורנפלקס ממולא" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פוסט שרדד וויט 464 גרם <button type="button" class="photo-btn" data-photo="884912180629" data-key="884912180629" data-name="פוסט שרדד וויט 464 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פוסט</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪55.82 <small>לק״ג</small></div>
+          <div class="shelf">₪25.90 · 464 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="884912180629" data-name="פוסט שרדד וויט 464 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">וויטביקס מקורי 430 גרם <button type="button" class="photo-btn" data-photo="5010029000061" data-key="5010029000061" data-name="וויטביקס מקורי 430 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪56.05 <small>לק״ג</small></div>
+          <div class="shelf">₪24.10 · 430 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5010029000061" data-name="וויטביקס מקורי 430 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שלווה חיטה מלאה תפוח <button type="button" class="photo-btn" data-photo="7290000139180" data-key="7290000139180" data-name="שלווה חיטה מלאה תפוח" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אשבול</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪16</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪57.14 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪8.70</s> ₪8.00 · 140 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000139180" data-name="שלווה חיטה מלאה תפוח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">פיטנס קלאסי <button type="button" class="photo-btn" data-photo="8445291426320" data-key="8445291426320" data-name="פיטנס קלאסי" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סי. פי. צרפת</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪58.40 <small>לק״ג</small></div>
+          <div class="shelf">₪21.90 · 375 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8445291426320" data-name="פיטנס קלאסי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">וויטביקס קריספי מיני 500 גר <button type="button" class="photo-btn" data-photo="5010029229035" data-key="5010029229035" data-name="וויטביקס קריספי מיני 500 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪58.40 <small>לק״ג</small></div>
+          <div class="shelf">₪29.20 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5010029229035" data-name="וויטביקס קריספי מיני 500 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גרייט גריינס דגני בוקר עם פירות יבשים פוסט 453 גרם <button type="button" class="photo-btn" data-photo="884912126115" data-key="884912126115" data-name="גרייט גריינס דגני בוקר עם פירות יבשים פוסט 453 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פוסט</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.38 <small>לק״ג</small></div>
+          <div class="shelf">₪26.90 · 453 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="884912126115" data-name="גרייט גריינס דגני בוקר עם פירות יבשים פוסט 453 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">כדורי דגנים אורגני ט <button type="button" class="photo-btn" data-photo="7290017894904" data-key="7290017894904" data-name="כדורי דגנים אורגני ט" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נטורפוד</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪61.07 <small>לק״ג</small></div>
+          <div class="shelf">₪22.90 · 375 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017894904" data-name="כדורי דגנים אורגני ט" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">צדפי דגנים אורגני טע <button type="button" class="photo-btn" data-photo="7290017894928" data-key="7290017894928" data-name="צדפי דגנים אורגני טע" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נטורפוד</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪61.07 <small>לק״ג</small></div>
+          <div class="shelf">₪22.90 · 375 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017894928" data-name="צדפי דגנים אורגני טע" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">post דגנים ממותקים ט</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪65.43 <small>לק״ג</small></div>
+          <div class="shelf">₪22.90 · 350 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058140886:42400108153" data-name="post דגנים ממותקים ט" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">האני באנצ&#39; פרוטאין ש <button type="button" class="photo-btn" data-photo="884912485533" data-key="884912485533" data-name="האני באנצ&#39; פרוטאין ש" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪66.90 <small>לק״ג</small></div>
+          <div class="shelf">₪28.90 · 432 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="884912485533" data-name="האני באנצ&#39; פרוטאין ש" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">דגני בוקר שוקולד 375 <button type="button" class="photo-btn" data-photo="7290013389015" data-key="7290013389015" data-name="דגני בוקר שוקולד 375" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>דגש</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪69.07 <small>לק״ג</small></div>
+          <div class="shelf">₪25.90 · 375 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013389015" data-name="דגני בוקר שוקולד 375" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סלקט אוכמניות פוסט 382 גר <button type="button" class="photo-btn" data-photo="884912102102" data-key="884912102102" data-name="סלקט אוכמניות פוסט 382 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪70.68 <small>לק״ג</small></div>
+          <div class="shelf">₪27.00 · 382 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="884912102102" data-name="סלקט אוכמניות פוסט 382 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מיקס קרקר שוקולד חלב <button type="button" class="photo-btn" data-photo="7290019939054" data-key="7290019939054" data-name="מיקס קרקר שוקולד חלב" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>כרמית</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪12</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪72.73 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.30</s> ₪4.00 · 55 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019939054" data-name="מיקס קרקר שוקולד חלב" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קורנפלקס אלופים 5*30 גרם <button type="button" class="photo-btn" data-photo="7290116530482" data-key="7290116530482" data-name="קורנפלקס אלופים 5*30 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יוניליוור שפע ישראל בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪11.90 (מבצע)</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪79.33 <small>לק״ג</small></div>
+          <div class="shelf">₪11.90 · 150 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116530482" data-name="קורנפלקס אלופים 5*30 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">דגני בוקר נוגט סוויטאנגו <button type="button" class="photo-btn" data-photo="7290018249093" data-key="7290018249093" data-name="דגני בוקר נוגט סוויטאנגו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נטורל קייקס</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪39.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪120.91 <small>לק״ג</small></div>
+          <div class="shelf">₪39.90 · 330 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018249093" data-name="דגני בוקר נוגט סוויטאנגו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+</ol>
+</div>
+
+</main>
+<footer>עודכן 3.10 21:01 · ויקטורי 09:06 · רמי לוי 10:00 · אושר עד 08:00 · אושר עד 08:00</footer>
+
+
+<nav class="bottom-nav" aria-label="ניווט">
+  <a href="index.html" class="on"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg><span>בית</span></a>
+  <a href="search.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><span>חיפוש</span></a>
+  <a href="scan.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V5a1 1 0 0 1 1-1h2M17 4h2a1 1 0 0 1 1 1v2M20 17v2a1 1 0 0 1-1 1h-2M7 20H5a1 1 0 0 1-1-1v-2"/><path d="M8 8v8M11 8v8M14 8v8M16.5 8v8"/></svg><span>סריקה</span></a>
+  <a href="basket.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h11l2-8H6.2"/><circle cx="9.5" cy="19" r="1.4"/><circle cx="17" cy="19" r="1.4"/></svg><span id="cart-count"></span><span>עגלת קניות</span></a>
+  <a href="spending.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-2-1.4-2 1.4-2-1.4-2 1.4-2-1.4L6 21z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><span>הוצאות</span></a>
+</nav>
+
+<script src="static/basket.js?v=20261003210153"></script>
+<script src="static/photo.js?v=20261003210153"></script>
+
+<script src="static/render.js?v=20261003210153"></script>
+<script src="static/category.js?v=20261003210153" data-build="20261003210153"></script>
+
+<script>
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+</script>
+</body>
+</html>

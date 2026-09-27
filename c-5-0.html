@@ -1,0 +1,3869 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f7a4d">
+<script>
+// the look this phone chose (settings.html "מראה"), before anything is drawn: html.light / html.dark
+// (none = follow the phone) and html[data-color] (none = green); the browser bar takes the colour too
+(function () {
+  let t = {};
+  try { t = JSON.parse(localStorage.getItem("theme")) || {}; } catch (e) { /* none yet */ }
+  const root = document.documentElement;
+  if (t.mode === "light" || t.mode === "dark") root.classList.add(t.mode);
+  if (t.color) root.dataset.color = t.color;
+  if (t.bar) document.querySelector('meta[name="theme-color"]').content = t.bar;
+})();
+</script>
+<title>חומוס ומטבלים</title>
+<link rel="manifest" href="static/manifest.webmanifest">
+<link rel="icon" href="static/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="static/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="static/style.css?v=20261003210153">
+<style>.st-0 { --store: #e07000; }.st-1 { --store: #d32f2f; }.st-2 { --store: #1565c0; }.st-3 { --store: #1565c0; }</style>
+<script src="static/stores.js?v=20261003210153" data-stores="[{&#34;card_cap&#34;: 750, &#34;card_rate&#34;: 0.07, &#34;default&#34;: true, &#34;key&#34;: &#34;victory-038&#34;, &#34;name&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;ramilevy-007&#34;, &#34;name&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-026&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05ea\u05dc\u05e4\u05d9\u05d5\u05ea&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-003&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05d2\u05d1\u05e2\u05ea \u05e9\u05d0\u05d5\u05dc&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}]"></script>
+<script>
+// No long-press menu on links, pictures or text (the user: the home page's tiles opened Chrome's "open in new tab /
+// copy link" menu; CSS can't stop that on Android). Typing fields and the ⓘ sheet's barcode keep theirs.
+document.addEventListener("contextmenu", (e) => {
+  if (!e.target.closest("input, textarea, [contenteditable], .photo-barcode")) e.preventDefault();
+});
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <a class="back" href="t-5.html" aria-label="חזרה">→</a>
+    <h1>חומוס ומטבלים</h1>
+    <a class="notes-link" href="notes.html" aria-label="רשימת קניות" title="רשימת קניות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="m8.5 10 1.2 1.2 2.3-2.4M8.5 15.5l1.2 1.2 2.3-2.4M14 10.5h2.5M14 16h2.5"/></svg><span>רשימת קניות</span></a>
+    <a class="settings-link" href="settings.html" aria-label="הגדרות" title="הגדרות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></a>
+  </div>
+  
+  <form class="search" action="search.html" method="get" role="search">
+    <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+    <input type="search" name="q" placeholder="חיפוש מוצר" enterkeyhint="search" aria-label="חיפוש מוצר">
+  </form>
+  
+</header>
+<main>
+
+<p class="sub"><span class="sub-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18a9 9 0 0 1-18 0z"/><path d="M9 21h6"/><path d="M12 12c0-3.3 2.2-5.5 5.5-5.5 0 3.3-2.2 5.5-5.5 5.5z"/><path d="M8.5 12c-.2-2 .8-3.6 2.6-4.2"/></svg></span>סלטים ומוכן · <span id="cat-count">140</span> מוצרים, מהזול ליקר</p>
+
+
+<div class="cat-filter">
+  <input type="search" id="cat-filter" placeholder="סינון לפי שם או יצרן · ‎-מילה מסתירה" enterkeyhint="done" autocomplete="off" aria-label="סינון המוצרים בקטגוריה">
+</div>
+<div id="cat-list" data-href="c-5-0.html">
+
+<ol class="products">
+  
+  
+    
+    
+    <li class="product st-1 best">
+      <div class="info">
+        <div class="name">חומוס מסעדה צבר <button type="button" class="photo-btn" data-photo="7290106576537" data-key="7290106576537" data-name="חומוס מסעדה צבר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי צבר</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪11.29 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.80</s> ₪7.90 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290106576537" data-name="חומוס מסעדה צבר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חומוס לפיתה 700ג רמי <button type="button" class="photo-btn" data-photo="7290115410969" data-key="7290115410969" data-name="חומוס לפיתה 700ג רמי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪11.29 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.00</s> ₪7.90 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115410969" data-name="חומוס לפיתה 700ג רמי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חומוס אורגינל של העו <button type="button" class="photo-btn" data-photo="7290121138154" data-key="7290121138154" data-name="חומוס אורגינל של העו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪11.29 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪7.90 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121138154" data-name="חומוס אורגינל של העו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חומוס גלילי <button type="button" class="photo-btn" data-photo="7290110557478" data-key="7290110557478" data-name="חומוס גלילי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪13.17 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪7.90 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110557478" data-name="חומוס גלילי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">חומוס 500 גר` הנמל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪13.80 <small>לק״ג</small></div>
+          <div class="shelf">₪6.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:83511007210" data-name="חומוס 500 גר` הנמל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חומוס צבר 1 ק&#34;ג <button type="button" class="photo-btn" data-photo="7290003727667" data-key="7290003727667" data-name="חומוס צבר 1 ק&#34;ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי צבר</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪18.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪13.90 <small>לק״ג</small></div>
+          <div class="shelf">₪13.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003727667" data-name="חומוס צבר 1 ק&#34;ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">חומוס אחלה 1 קג <button type="button" class="photo-btn" data-photo="7290002987963" data-key="7290002987963" data-name="חומוס אחלה 1 קג" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ</span>
+          <span class="warn">גודל לא ודאי</span>
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.90 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002987963" data-name="חומוס אחלה 1 קג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חומוס אחלה 750 גרם <button type="button" class="photo-btn" data-photo="7290008645935" data-key="7290008645935" data-name="חומוס אחלה 750 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪15.87 <small>לק״ג</small></div>
+          <div class="shelf">₪11.90 · 750 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008645935" data-name="חומוס אחלה 750 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סלט חומוס <button type="button" class="photo-btn" data-photo="7290004944032" data-key="7290004944032" data-name="סלט חומוס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי שמיר 2006 בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪20</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪11.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪16.67 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪6.67 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004944032" data-name="סלט חומוס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סלט טחינה <button type="button" class="photo-btn" data-photo="7290004944049" data-key="7290004944049" data-name="סלט טחינה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי שמיר 2006 בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪20</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪11.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪16.67 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪6.67 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004944049" data-name="סלט טחינה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חומוס עם רוטב מסבחה 400 גר אסלי סלטי שמי <button type="button" class="photo-btn" data-photo="7290017094861" data-key="7290017094861" data-name="חומוס עם רוטב מסבחה 400 גר אסלי סלטי שמי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪20</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪11.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪16.67 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪6.67 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017094861" data-name="חומוס עם רוטב מסבחה 400 גר אסלי סלטי שמי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חומוס אחלה 400 גרם <button type="button" class="photo-btn" data-photo="7290105964564" data-key="7290105964564" data-name="חומוס אחלה 400 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪9.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.25 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪8.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290105964564" data-name="חומוס אחלה 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מלך החומוס סמיר הגדול 400 גרם צבר <button type="button" class="photo-btn" data-photo="7290000467153" data-key="7290000467153" data-name="מלך החומוס סמיר הגדול 400 גרם צבר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי צבר</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪13.90</s> ₪9.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000467153" data-name="מלך החומוס סמיר הגדול 400 גרם צבר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מלך החומוס אבו מרוואן 400 גרם <button type="button" class="photo-btn" data-photo="7290000467320" data-key="7290000467320" data-name="מלך החומוס אבו מרוואן 400 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי צבר</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪14.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪13.90</s> ₪9.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000467320" data-name="מלך החומוס אבו מרוואן 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חומוס לבנוני צבר 400 גרם <button type="button" class="photo-btn" data-photo="7290106573598" data-key="7290106573598" data-name="חומוס לבנוני צבר 400 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי צבר</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪9.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290106573598" data-name="חומוס לבנוני צבר 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חומוס עם טחינה צבר 400 גרם <button type="button" class="photo-btn" data-photo="7290106573628" data-key="7290106573628" data-name="חומוס עם טחינה צבר 400 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי צבר</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪9.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290106573628" data-name="חומוס עם טחינה צבר 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חומוס צנובר צבר 400 גרם <button type="button" class="photo-btn" data-photo="7290106573642" data-key="7290106573642" data-name="חומוס צנובר צבר 400 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי צבר</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪9.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290106573642" data-name="חומוס צנובר צבר 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חומוס אבו גוש צבר 400 גרם <button type="button" class="photo-btn" data-photo="7290106573819" data-key="7290106573819" data-name="חומוס אבו גוש צבר 400 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי צבר</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪12.90</s> ₪9.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290106573819" data-name="חומוס אבו גוש צבר 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טחינה צבר <button type="button" class="photo-btn" data-photo="7290106577282" data-key="7290106577282" data-name="טחינה צבר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי צבר</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪9.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290106577282" data-name="טחינה צבר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">צבר חומוס טחינה 400 גר <button type="button" class="photo-btn" data-photo="7290109351025" data-key="7290109351025" data-name="צבר חומוס טחינה 400 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי צבר</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪13.90</s> ₪9.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290109351025" data-name="צבר חומוס טחינה 400 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">צבר חומוס גרגירים בטבילה <button type="button" class="photo-btn" data-photo="7290112968685" data-key="7290112968685" data-name="צבר חומוס גרגירים בטבילה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי צבר</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪13.90</s> ₪9.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112968685" data-name="צבר חומוס גרגירים בטבילה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חומוס עם מלאאא חציל פיקנטי <button type="button" class="photo-btn" data-photo="7290119374885" data-key="7290119374885" data-name="חומוס עם מלאאא חציל פיקנטי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.80</s> ₪9.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119374885" data-name="חומוס עם מלאאא חציל פיקנטי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חומוס עם מטבוחה חריפה אש 400 גר <button type="button" class="photo-btn" data-photo="7290119374892" data-key="7290119374892" data-name="חומוס עם מטבוחה חריפה אש 400 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.80</s> ₪9.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119374892" data-name="חומוס עם מטבוחה חריפה אש 400 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חומוס ירושלמי 400ג ר <button type="button" class="photo-btn" data-photo="7290115410921" data-key="7290115410921" data-name="חומוס ירושלמי 400ג ר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪22.50 <small>לק״ג</small></div>
+          <div class="shelf">₪9.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115410921" data-name="חומוס ירושלמי 400ג ר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חומוס זעתר 400ג רמיל <button type="button" class="photo-btn" data-photo="7290115410945" data-key="7290115410945" data-name="חומוס זעתר 400ג רמיל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪22.50 <small>לק״ג</small></div>
+          <div class="shelf">₪9.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115410945" data-name="חומוס זעתר 400ג רמיל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חומוס עם חריף 400ג ר <button type="button" class="photo-btn" data-photo="7290115411157" data-key="7290115411157" data-name="חומוס עם חריף 400ג ר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪22.50 <small>לק״ג</small></div>
+          <div class="shelf">₪9.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115411157" data-name="חומוס עם חריף 400ג ר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חומוס עם מלא טחינה ל <button type="button" class="photo-btn" data-photo="7290119387359" data-key="7290119387359" data-name="חומוס עם מלא טחינה ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.80</s> ₪9.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119387359" data-name="חומוס עם מלא טחינה ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חומוס מסבחה 400ג רמי <button type="button" class="photo-btn" data-photo="7290115410891" data-key="7290115410891" data-name="חומוס מסבחה 400ג רמי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪22.50 <small>לק״ג</small></div>
+          <div class="shelf">₪9.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115410891" data-name="חומוס מסבחה 400ג רמי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">צבר חומוס עם זעתר 375 ג <button type="button" class="photo-btn" data-photo="7290115202434" data-key="7290115202434" data-name="צבר חומוס עם זעתר 375 ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי צבר</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪24.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪11.50</s> ₪9.00 · 375 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115202434" data-name="צבר חומוס עם זעתר 375 ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">צבר חומוס עם חריף חדש 12*375גרם <button type="button" class="photo-btn" data-photo="7290115202687" data-key="7290115202687" data-name="צבר חומוס עם חריף חדש 12*375גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי צבר</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪24.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪11.50</s> ₪9.00 · 375 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115202687" data-name="צבר חומוס עם חריף חדש 12*375גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חומוס צבר 400 גרם <button type="button" class="photo-btn" data-photo="7290106576513" data-key="7290106576513" data-name="חומוס צבר 400 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי צבר</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪10.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪24.75 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290106576513" data-name="חומוס צבר 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חומוס ג&#39;רוז ירושלמי <button type="button" class="photo-btn" data-photo="7290121137652" data-key="7290121137652" data-name="חומוס ג&#39;רוז ירושלמי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪24.75 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121137652" data-name="חומוס ג&#39;רוז ירושלמי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חומוס אסלי מסבחה פיק <button type="button" class="photo-btn" data-photo="7290121137706" data-key="7290121137706" data-name="חומוס אסלי מסבחה פיק" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪24.75 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121137706" data-name="חומוס אסלי מסבחה פיק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חומוס פלפל נגיעה של <button type="button" class="photo-btn" data-photo="7290121137751" data-key="7290121137751" data-name="חומוס פלפל נגיעה של" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪24.75 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121137751" data-name="חומוס פלפל נגיעה של" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חומוס עשיר ב50% טחינה <button type="button" class="photo-btn" data-photo="7290110557027" data-key="7290110557027" data-name="חומוס עשיר ב50% טחינה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪25.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪12.90</s> ₪10.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110557027" data-name="חומוס עשיר ב50% טחינה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">החומוס של אבי עם תטבילה 30% טחינה 400 גרם <button type="button" class="photo-btn" data-photo="7290110564339" data-key="7290110564339" data-name="החומוס של אבי עם תטבילה 30% טחינה 400 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪25.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪12.90</s> ₪10.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110564339" data-name="החומוס של אבי עם תטבילה 30% טחינה 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">החומוס סדרה מובחרת 40% טחינה <button type="button" class="photo-btn" data-photo="7290110564360" data-key="7290110564360" data-name="החומוס סדרה מובחרת 40% טחינה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪25.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪12.90</s> ₪10.00 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110564360" data-name="החומוס סדרה מובחרת 40% טחינה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סלט חומוס עם טחינה אחלה 400 גרם <button type="button" class="photo-btn" data-photo="7290104061417" data-key="7290104061417" data-name="סלט חומוס עם טחינה אחלה 400 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪27.00 <small>לק״ג</small></div>
+          <div class="shelf">₪10.80 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290104061417" data-name="סלט חומוס עם טחינה אחלה 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סלט חומוס עם זעתר אחלה 400 גרם <button type="button" class="photo-btn" data-photo="7290104061424" data-key="7290104061424" data-name="סלט חומוס עם זעתר אחלה 400 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪27.00 <small>לק״ג</small></div>
+          <div class="shelf">₪10.80 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290104061424" data-name="סלט חומוס עם זעתר אחלה 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סלט חומוס עם צנובר אחלה 400 גרם <button type="button" class="photo-btn" data-photo="7290104061431" data-key="7290104061431" data-name="סלט חומוס עם צנובר אחלה 400 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪27.00 <small>לק״ג</small></div>
+          <div class="shelf">₪10.80 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290104061431" data-name="סלט חומוס עם צנובר אחלה 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סלט חומוס עם חריף אחלה 400 גרם <button type="button" class="photo-btn" data-photo="7290104061448" data-key="7290104061448" data-name="סלט חומוס עם חריף אחלה 400 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪27.00 <small>לק״ג</small></div>
+          <div class="shelf">₪10.80 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290104061448" data-name="סלט חומוס עם חריף אחלה 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חומוס אחלה 250 גרם</div>
+        <div class="meta">
+          <span>אחלה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪27.60 <small>לק״ג</small></div>
+          <div class="shelf">₪6.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058140886:72940983" data-name="חומוס אחלה 250 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חומוס גלילי 400 גרם <button type="button" class="photo-btn" data-photo="7290110579319" data-key="7290110579319" data-name="חומוס גלילי 400 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪29.50 <small>לק״ג</small></div>
+          <div class="shelf">₪11.80 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110579319" data-name="חומוס גלילי 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אחלה חומוס יפו 400 גרם <button type="button" class="photo-btn" data-photo="7290119387502" data-key="7290119387502" data-name="אחלה חומוס יפו 400 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪29.50 <small>לק״ג</small></div>
+          <div class="shelf">₪11.80 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119387502" data-name="אחלה חומוס יפו 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">חומוס אחלה 250 גרם</div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#39;&#39;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪29.60 <small>לק״ג</small></div>
+          <div class="shelf">₪7.40 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:72940983" data-name="חומוס אחלה 250 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">חומוס עם רוטב חריף <button type="button" class="photo-btn" data-photo="7290004150846" data-key="7290004150846" data-name="חומוס עם רוטב חריף" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪29.83 <small>לק״ג</small></div>
+          <div class="shelf">₪17.90 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004150846" data-name="חומוס עם רוטב חריף" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">חומוס ביתי <button type="button" class="photo-btn" data-photo="7290004150853" data-key="7290004150853" data-name="חומוס ביתי" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי שמיר 2006 בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪29.83 <small>לק״ג</small></div>
+          <div class="shelf">₪17.90 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004150853" data-name="חומוס ביתי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עמבה 300 ג <button type="button" class="photo-btn" data-photo="7290016440584" data-key="7290016440584" data-name="עמבה 300 ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪30.00 <small>לק״ג</small></div>
+          <div class="shelf">₪9.00 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016440584" data-name="עמבה 300 ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חומוס החומוסייה של אחלה <button type="button" class="photo-btn" data-photo="7290119390700" data-key="7290119390700" data-name="חומוס החומוסייה של אחלה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪32.25 <small>לק״ג</small></div>
+          <div class="shelf">₪12.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119390700" data-name="חומוס החומוסייה של אחלה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חומוס אבו גוש חריף <button type="button" class="photo-btn" data-photo="7290015282581" data-key="7290015282581" data-name="חומוס אבו גוש חריף" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי שמיר 2006 בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪20</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪33.35 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪6.67 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015282581" data-name="חומוס אבו גוש חריף" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חומוס מסבחה <button type="button" class="photo-btn" data-photo="7290015282635" data-key="7290015282635" data-name="חומוס מסבחה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי שמיר 2006 בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪20</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪33.35 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪6.67 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015282635" data-name="חומוס מסבחה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חומוס עם פטריות 200ג <button type="button" class="photo-btn" data-photo="7290002967941" data-key="7290002967941" data-name="חומוס עם פטריות 200ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪20</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪33.35 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪6.67 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002967941" data-name="חומוס עם פטריות 200ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חומוס מסעדות 200גר <button type="button" class="photo-btn" data-photo="7290015282598" data-key="7290015282598" data-name="חומוס מסעדות 200גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪20</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪33.35 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪6.67 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015282598" data-name="חומוס מסעדות 200גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חומוס אבו גוש 200גר <button type="button" class="photo-btn" data-photo="7290015282642" data-key="7290015282642" data-name="חומוס אבו גוש 200גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">3 ב־₪20</span> בקניית 3 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪33.35 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪6.67 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015282642" data-name="חומוס אבו גוש 200גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חומוס אבו מרוואן 26% טחינה גולמית צבר <button type="button" class="photo-btn" data-photo="7290122780314" data-key="7290122780314" data-name="חומוס אבו מרוואן 26% טחינה גולמית צבר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סלטי צבר</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪8.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪35.11 <small>לק״ג</small></div>
+          <div class="shelf">₪7.90 · 225 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290122780314" data-name="חומוס אבו מרוואן 26% טחינה גולמית צבר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חומוס אסלי מסבחה פיק <button type="button" class="photo-btn" data-photo="7290121137003" data-key="7290121137003" data-name="חומוס אסלי מסבחה פיק" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪35.60 <small>לק״ג</small></div>
+          <div class="shelf">₪8.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121137003" data-name="חומוס אסלי מסבחה פיק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חומוס פלפל נגיעה של <button type="button" class="photo-btn" data-photo="7290121137058" data-key="7290121137058" data-name="חומוס פלפל נגיעה של" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪35.60 <small>לק״ג</small></div>
+          <div class="shelf">₪8.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121137058" data-name="חומוס פלפל נגיעה של" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חומוס ירושלמי 250גר <button type="button" class="photo-btn" data-photo="7290115411454" data-key="7290115411454" data-name="חומוס ירושלמי 250גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪35.60 <small>לק״ג</small></div>
+          <div class="shelf">₪8.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115411454" data-name="חומוס ירושלמי 250גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חומוס 40% טחינה עם חריף 250גר <button type="button" class="photo-btn" data-photo="7290119373710" data-key="7290119373710" data-name="חומוס 40% טחינה עם חריף 250גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪11.30</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪36.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪9.00 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119373710" data-name="חומוס 40% טחינה עם חריף 250גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חומוס מסבחה ירוק 250 <button type="button" class="photo-btn" data-photo="7290115411461" data-key="7290115411461" data-name="חומוס מסבחה ירוק 250" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪36.00 <small>לק״ג</small></div>
+          <div class="shelf">₪9.00 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115411461" data-name="חומוס מסבחה ירוק 250" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חומוס מסבחה חריף 250 <button type="button" class="photo-btn" data-photo="7290115411478" data-key="7290115411478" data-name="חומוס מסבחה חריף 250" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪36.00 <small>לק״ג</small></div>
+          <div class="shelf">₪9.00 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115411478" data-name="חומוס מסבחה חריף 250" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חומוס 125 גרם <button type="button" class="photo-btn" data-photo="7290005174551" data-key="7290005174551" data-name="חומוס 125 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪5.00</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪36.80 <small>לק״ג</small></div>
+          <div class="shelf">₪4.60 · 125 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290005174551" data-name="חומוס 125 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">חומוס עם רוטב חריף 400  גר`שמיר <button type="button" class="photo-btn" data-photo="7290014435360" data-key="7290014435360" data-name="חומוס עם רוטב חריף 400  גר`שמיר" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.75 <small>לק״ג</small></div>
+          <div class="shelf">₪15.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014435360" data-name="חומוס עם רוטב חריף 400  גר`שמיר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">חומוס עם רוטב מסבחה 400  גר`שמיר <button type="button" class="photo-btn" data-photo="7290014435377" data-key="7290014435377" data-name="חומוס עם רוטב מסבחה 400  גר`שמיר" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.75 <small>לק״ג</small></div>
+          <div class="shelf">₪15.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014435377" data-name="חומוס עם רוטב מסבחה 400  גר`שמיר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">חומוס עם טחינה מיוחדת 400  גר`שמיר <button type="button" class="photo-btn" data-photo="7290014435384" data-key="7290014435384" data-name="חומוס עם טחינה מיוחדת 400  גר`שמיר" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.75 <small>לק״ג</small></div>
+          <div class="shelf">₪15.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014435384" data-name="חומוס עם טחינה מיוחדת 400  גר`שמיר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">חומוס אורגינל עם גרגירים 400  גר`שמיר <button type="button" class="photo-btn" data-photo="7290014435391" data-key="7290014435391" data-name="חומוס אורגינל עם גרגירים 400  גר`שמיר" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.75 <small>לק״ג</small></div>
+          <div class="shelf">₪15.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014435391" data-name="חומוס אורגינל עם גרגירים 400  גר`שמיר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עללחם אריסה ביתית מתוקה 250 גר <button type="button" class="photo-btn" data-photo="7290017121086" data-key="7290017121086" data-name="עללחם אריסה ביתית מתוקה 250 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מדשא תעשיות מזון בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪14.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪40.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪12.90</s> ₪10.00 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017121086" data-name="עללחם אריסה ביתית מתוקה 250 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עללחם אריסה חריפה 250 גר <button type="button" class="photo-btn" data-photo="7290017121093" data-key="7290017121093" data-name="עללחם אריסה חריפה 250 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מדשא תעשיות מזון בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪14.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪40.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪12.90</s> ₪10.00 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017121093" data-name="עללחם אריסה חריפה 250 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עללחם אריסה ירוקה 250 גר <button type="button" class="photo-btn" data-photo="7290017121758" data-key="7290017121758" data-name="עללחם אריסה ירוקה 250 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪14.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪40.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪12.90</s> ₪10.00 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017121758" data-name="עללחם אריסה ירוקה 250 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עללחם פלפל צ&#39;ומה 250 גר <button type="button" class="photo-btn" data-photo="7290017121048" data-key="7290017121048" data-name="עללחם פלפל צ&#39;ומה 250 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪40.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪12.90</s> ₪10.00 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017121048" data-name="עללחם פלפל צ&#39;ומה 250 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">חומוס עם בצל מטוגן 380 גרם <button type="button" class="photo-btn" data-photo="7290119373765" data-key="7290119373765" data-name="חומוס עם בצל מטוגן 380 גרם" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪41.84 <small>לק״ג</small></div>
+          <div class="shelf">₪15.90 · 380 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119373765" data-name="חומוס עם בצל מטוגן 380 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סלסה בחריפות גבוהה צ</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪43.05 <small>לליטר</small></div>
+          <div class="shelf">₪18.90 · 439 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058140886:37600442183" data-name="סלסה בחריפות גבוהה צ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מטבל סלסה חריף Chi-C</div>
+        <div class="meta">
+          <span>הורמל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪43.05 <small>לליטר</small></div>
+          <div class="shelf">₪18.90 · 439 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058140886:37600297943" data-name="מטבל סלסה חריף Chi-C" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מטבל סלסה עגבניות בח</div>
+        <div class="meta">
+          <span>הורמל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪43.05 <small>לליטר</small></div>
+          <div class="shelf">₪18.90 · 439 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058140886:37600297967" data-name="מטבל סלסה עגבניות בח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">המעדנייה חומוס מסבחה <button type="button" class="photo-btn" data-photo="7290115410563" data-key="7290115410563" data-name="המעדנייה חומוס מסבחה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪43.60 <small>לק״ג</small></div>
+          <div class="shelf">₪10.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115410563" data-name="המעדנייה חומוס מסבחה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חומוס אבו גוש גרגירי <button type="button" class="photo-btn" data-photo="7290115415445" data-key="7290115415445" data-name="חומוס אבו גוש גרגירי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪43.60 <small>לק״ג</small></div>
+          <div class="shelf">₪10.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115415445" data-name="חומוס אבו גוש גרגירי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ממרח אבוקדו 98% אחלה 200 גרם <button type="button" class="photo-btn" data-photo="7290119379934" data-key="7290119379934" data-name="ממרח אבוקדו 98% אחלה 200 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנטה אירפואטו</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪17.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪49.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪15.90</s> ₪9.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119379934" data-name="ממרח אבוקדו 98% אחלה 200 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">זחוק זהבי ירוק 220 גרם <button type="button" class="photo-btn" data-photo="7290000462004" data-key="7290000462004" data-name="זחוק זהבי ירוק 220 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זהבי הכרם בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪49.55 <small>לק״ג</small></div>
+          <div class="shelf">₪10.90 · 220 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000462004" data-name="זחוק זהבי ירוק 220 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ציזיקי פיראוס 9% שומן 250 גרם <button type="button" class="photo-btn" data-photo="7290110325701" data-key="7290110325701" data-name="ציזיקי פיראוס 9% שומן 250 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מחלבת הרדוף</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪17.40</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪51.60 <small>לק״ג</small></div>
+          <div class="shelf">₪12.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290110325701" data-name="ציזיקי פיראוס 9% שומן 250 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סחוג תימני אדום 250 <button type="button" class="photo-btn" data-photo="7290010154692" data-key="7290010154692" data-name="סחוג תימני אדום 250" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪51.60 <small>לק״ג</small></div>
+          <div class="shelf">₪12.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010154692" data-name="סחוג תימני אדום 250" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ארוחה בקטנה ציזיקי <button type="button" class="photo-btn" data-photo="7290116930626" data-key="7290116930626" data-name="ארוחה בקטנה ציזיקי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪10.00</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪52.67 <small>לק״ג</small></div>
+          <div class="shelf">₪7.90 · 150 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290116930626" data-name="ארוחה בקטנה ציזיקי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פלפל צומה 250 גרם רמי לוי <button type="button" class="photo-btn" data-photo="7290002345213" data-key="7290002345213" data-name="פלפל צומה 250 גרם רמי לוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪55.60 <small>לק״ג</small></div>
+          <div class="shelf">₪13.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002345213" data-name="פלפל צומה 250 גרם רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סחוג אדום 250 גר רמי לוי <button type="button" class="photo-btn" data-photo="7290002345176" data-key="7290002345176" data-name="סחוג אדום 250 גר רמי לוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪55.60 <small>לק״ג</small></div>
+          <div class="shelf">₪13.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002345176" data-name="סחוג אדום 250 גר רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אריסה מתוקה 250 גר רמי לוי <button type="button" class="photo-btn" data-photo="7290002345183" data-key="7290002345183" data-name="אריסה מתוקה 250 גר רמי לוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪55.60 <small>לק״ג</small></div>
+          <div class="shelf">₪13.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002345183" data-name="אריסה מתוקה 250 גר רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אריסה חריפה 250 גר רמי לוי <button type="button" class="photo-btn" data-photo="7290002345190" data-key="7290002345190" data-name="אריסה חריפה 250 גר רמי לוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪55.60 <small>לק״ג</small></div>
+          <div class="shelf">₪13.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002345190" data-name="אריסה חריפה 250 גר רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עמבה 250 גר רמי לוי <button type="button" class="photo-btn" data-photo="7290002345220" data-key="7290002345220" data-name="עמבה 250 גר רמי לוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪55.60 <small>לק״ג</small></div>
+          <div class="shelf">₪13.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002345220" data-name="עמבה 250 גר רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סחוג ירוק 250גר רמי לוי <button type="button" class="photo-btn" data-photo="7290002345169" data-key="7290002345169" data-name="סחוג ירוק 250גר רמי לוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪55.60 <small>לק״ג</small></div>
+          <div class="shelf">₪13.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002345169" data-name="סחוג ירוק 250גר רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ממרח זעתר 190 גר <button type="button" class="photo-btn" data-photo="7290112870865" data-key="7290112870865" data-name="ממרח זעתר 190 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪57.37 <small>לק״ג</small></div>
+          <div class="shelf">₪10.90 · 190 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112870865" data-name="ממרח זעתר 190 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ממרח שום 190 ג רמילוי <button type="button" class="photo-btn" data-photo="7290112870575" data-key="7290112870575" data-name="ממרח שום 190 ג רמילוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪58.42 <small>לק״ג</small></div>
+          <div class="shelf">₪11.10 · 190 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112870575" data-name="ממרח שום 190 ג רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ממרח אריסה 190 ג רמילוי <button type="button" class="photo-btn" data-photo="7290112870551" data-key="7290112870551" data-name="ממרח אריסה 190 ג רמילוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪58.42 <small>לק״ג</small></div>
+          <div class="shelf">₪11.10 · 190 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112870551" data-name="ממרח אריסה 190 ג רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סחוג מסורתי 190 ג רמילוי <button type="button" class="photo-btn" data-photo="7290112870568" data-key="7290112870568" data-name="סחוג מסורתי 190 ג רמילוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪58.42 <small>לק״ג</small></div>
+          <div class="shelf">₪11.10 · 190 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112870568" data-name="סחוג מסורתי 190 ג רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ממרח עגבניות מיובשות 190ג רמילוי <button type="button" class="photo-btn" data-photo="7290112870124" data-key="7290112870124" data-name="ממרח עגבניות מיובשות 190ג רמילוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪58.42 <small>לק״ג</small></div>
+          <div class="shelf">₪11.10 · 190 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112870124" data-name="ממרח עגבניות מיובשות 190ג רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ממרח ארטישוק 190ג רמילוי <button type="button" class="photo-btn" data-photo="7290112870131" data-key="7290112870131" data-name="ממרח ארטישוק 190ג רמילוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪58.42 <small>לק״ג</small></div>
+          <div class="shelf">₪11.10 · 190 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112870131" data-name="ממרח ארטישוק 190ג רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ממרח טפנד זית מרינד 190ג רמילוי <button type="button" class="photo-btn" data-photo="7290112870148" data-key="7290112870148" data-name="ממרח טפנד זית מרינד 190ג רמילוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪58.42 <small>לק״ג</small></div>
+          <div class="shelf">₪11.10 · 190 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112870148" data-name="ממרח טפנד זית מרינד 190ג רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ממרח טפנד זית ירוק 190ג רמילוי <button type="button" class="photo-btn" data-photo="7290112870155" data-key="7290112870155" data-name="ממרח טפנד זית ירוק 190ג רמילוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪58.42 <small>לק״ג</small></div>
+          <div class="shelf">₪11.10 · 190 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112870155" data-name="ממרח טפנד זית ירוק 190ג רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ממרח צ&#39;מיצ&#39;ורי 190ג רמילוי <button type="button" class="photo-btn" data-photo="7290112870162" data-key="7290112870162" data-name="ממרח צ&#39;מיצ&#39;ורי 190ג רמילוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪58.42 <small>לק״ג</small></div>
+          <div class="shelf">₪11.10 · 190 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112870162" data-name="ממרח צ&#39;מיצ&#39;ורי 190ג רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ממרח פלפל אדום 190ג רמילוי <button type="button" class="photo-btn" data-photo="7290112870179" data-key="7290112870179" data-name="ממרח פלפל אדום 190ג רמילוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪58.42 <small>לק״ג</small></div>
+          <div class="shelf">₪11.10 · 190 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112870179" data-name="ממרח פלפל אדום 190ג רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ממרח פסטו בזיליקום 1 <button type="button" class="photo-btn" data-photo="7290112870186" data-key="7290112870186" data-name="ממרח פסטו בזיליקום 1" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪58.42 <small>לק״ג</small></div>
+          <div class="shelf">₪11.10 · 190 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112870186" data-name="ממרח פסטו בזיליקום 1" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ממרח אבוקדו גוואקמלי אחלה 220 גרם <button type="button" class="photo-btn" data-photo="7290115677959" data-key="7290115677959" data-name="ממרח אבוקדו גוואקמלי אחלה 220 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סנטה אירפואטו</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪17.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪58.64 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪15.90</s> ₪12.90 · 220 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115677959" data-name="ממרח אבוקדו גוואקמלי אחלה 220 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ממרח שום 250גר רמי לוי <button type="button" class="photo-btn" data-photo="7290002345244" data-key="7290002345244" data-name="ממרח שום 250גר רמי לוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.15 <small>לק״ג</small></div>
+          <div class="shelf">₪13.90 · 235 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002345244" data-name="ממרח שום 250גר רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">זחוק זהבי עדין <button type="button" class="photo-btn" data-photo="7290000462103" data-key="7290000462103" data-name="זחוק זהבי עדין" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זהבי הכרם בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪10.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.33 <small>לק״ג</small></div>
+          <div class="shelf">₪8.90 · 150 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000462103" data-name="זחוק זהבי עדין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סחוג אדום תימני מקורי חריף מאוד זהבי 150 גרם <button type="button" class="photo-btn" data-photo="7290000462141" data-key="7290000462141" data-name="סחוג אדום תימני מקורי חריף מאוד זהבי 150 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זהבי הכרם בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪10.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.33 <small>לק״ג</small></div>
+          <div class="shelf">₪8.90 · 150 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000462141" data-name="סחוג אדום תימני מקורי חריף מאוד זהבי 150 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סחוג ירוק תימני חריף זהבי 150 גרם <button type="button" class="photo-btn" data-photo="7290000462172" data-key="7290000462172" data-name="סחוג ירוק תימני חריף זהבי 150 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זהבי הכרם בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪10.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.33 <small>לק״ג</small></div>
+          <div class="shelf">₪8.90 · 150 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000462172" data-name="סחוג ירוק תימני חריף זהבי 150 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">זחוק חריף אש <button type="button" class="photo-btn" data-photo="7290000462981" data-key="7290000462981" data-name="זחוק חריף אש" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זהבי הכרם בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪10.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.33 <small>לק״ג</small></div>
+          <div class="shelf">₪8.90 · 150 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000462981" data-name="זחוק חריף אש" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סלט חומוס גרגירים פיקנטיים מונטה קרלו 25 <button type="button" class="photo-btn" data-photo="7290001548288" data-key="7290001548288" data-name="סלט חומוס גרגירים פיקנטיים מונטה קרלו 25" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.60 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001548288" data-name="סלט חומוס גרגירים פיקנטיים מונטה קרלו 25" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פלפל צ&#39;ומה תבליני ביטון 250 גרם <button type="button" class="photo-btn" data-photo="7290010154265" data-key="7290010154265" data-name="פלפל צ&#39;ומה תבליני ביטון 250 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נטו</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.60 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010154265" data-name="פלפל צ&#39;ומה תבליני ביטון 250 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">250 אריסה מתוקה ביטון <button type="button" class="photo-btn" data-photo="7290010154029" data-key="7290010154029" data-name="250 אריסה מתוקה ביטון" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נטו</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪62.80 <small>לק״ג</small></div>
+          <div class="shelf">₪15.70 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010154029" data-name="250 אריסה מתוקה ביטון" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ממרח שיפקה כבוש ביטון <button type="button" class="photo-btn" data-photo="7290010154050" data-key="7290010154050" data-name="ממרח שיפקה כבוש ביטון" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תבליני ביטון יוחאי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪62.80 <small>לק״ג</small></div>
+          <div class="shelf">₪15.70 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010154050" data-name="ממרח שיפקה כבוש ביטון" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ממרח לימון כבוש 250 ג <button type="button" class="photo-btn" data-photo="7290010154555" data-key="7290010154555" data-name="ממרח לימון כבוש 250 ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>תבליני ביטון יוחאי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪62.80 <small>לק״ג</small></div>
+          <div class="shelf">₪15.70 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010154555" data-name="ממרח לימון כבוש 250 ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אריסה מרוקאית תבליני ביטון 250 גרם <button type="button" class="photo-btn" data-photo="7290010154678" data-key="7290010154678" data-name="אריסה מרוקאית תבליני ביטון 250 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>---</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪62.80 <small>לק״ג</small></div>
+          <div class="shelf">₪15.70 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010154678" data-name="אריסה מרוקאית תבליני ביטון 250 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סלט שום כתוש תבליני ביטון יוחאי <button type="button" class="photo-btn" data-photo="7290010154685" data-key="7290010154685" data-name="סלט שום כתוש תבליני ביטון יוחאי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>---</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪62.80 <small>לק״ג</small></div>
+          <div class="shelf">₪15.70 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010154685" data-name="סלט שום כתוש תבליני ביטון יוחאי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עללחם סחוג אדום 220גר <button type="button" class="photo-btn" data-photo="7290015858878" data-key="7290015858878" data-name="עללחם סחוג אדום 220גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪63.18 <small>לק״ג</small></div>
+          <div class="shelf">₪13.90 · 220 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015858878" data-name="עללחם סחוג אדום 220גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חומוס ישראלי 600 גרם <button type="button" class="photo-btn" data-photo="7290119390465" data-key="7290119390465" data-name="חומוס ישראלי 600 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>שטראוס גרופ בע&#34;מ</span>
+          <span class="warn">גודל לא ודאי</span>
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪63.20 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪11.90</s> ₪7.90 · 125 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119390465" data-name="חומוס ישראלי 600 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עללחם סחוג חריף אש 140 גר <button type="button" class="photo-btn" data-photo="7290017121277" data-key="7290017121277" data-name="עללחם סחוג חריף אש 140 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪10.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪63.57 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪8.90 · 140 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017121277" data-name="עללחם סחוג חריף אש 140 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עללחם סחוג אדום 140 גרם <button type="button" class="photo-btn" data-photo="7290017121895" data-key="7290017121895" data-name="עללחם סחוג אדום 140 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מדשא תעשיות מזון בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪10.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪63.57 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪8.90 · 140 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017121895" data-name="עללחם סחוג אדום 140 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עללחם סחוג ירוק 140 גרם <button type="button" class="photo-btn" data-photo="7290017121000" data-key="7290017121000" data-name="עללחם סחוג ירוק 140 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪63.57 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪8.90 · 140 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017121000" data-name="עללחם סחוג ירוק 140 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ממרח זיתים שחורים אוליביה 190 גרם <button type="button" class="photo-btn" data-photo="7290003438709" data-key="7290003438709" data-name="ממרח זיתים שחורים אוליביה 190 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אוליביה גורמה בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪25</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪65.79 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪14.50</s> ₪12.50 · 190 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003438709" data-name="ממרח זיתים שחורים אוליביה 190 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ממרח פלפל צ&#39;ומה חריף <button type="button" class="photo-btn" data-photo="7290008849470" data-key="7290008849470" data-name="ממרח פלפל צ&#39;ומה חריף" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אוליביה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪25</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪67.57 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪14.50</s> ₪12.50 · 185 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008849470" data-name="ממרח פלפל צ&#39;ומה חריף" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ממרח ארטישוק אוליביה 180 גרם <button type="button" class="photo-btn" data-photo="7290010766949" data-key="7290010766949" data-name="ממרח ארטישוק אוליביה 180 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אוליביה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪25</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪69.44 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪14.50</s> ₪12.50 · 180 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010766949" data-name="ממרח ארטישוק אוליביה 180 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מאסטר שף ממרח זיתי קלמטה 180 גרם <button type="button" class="photo-btn" data-photo="7290121162630" data-key="7290121162630" data-name="מאסטר שף ממרח זיתי קלמטה 180 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>MANA GI SINGLE MEMBER P.C</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪16.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪71.67 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪15.90</s> ₪12.90 · 180 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121162630" data-name="מאסטר שף ממרח זיתי קלמטה 180 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מאסטר שף ממרח זיתים ירוקים 180 גרם <button type="button" class="photo-btn" data-photo="7290121162647" data-key="7290121162647" data-name="מאסטר שף ממרח זיתים ירוקים 180 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>MANA GI SINGLE MEMBER P.C</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪16.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪71.67 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪15.90</s> ₪12.90 · 180 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121162647" data-name="מאסטר שף ממרח זיתים ירוקים 180 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עללחם ממרח עגבניות מיובשות 180 גר <button type="button" class="photo-btn" data-photo="7290015858113" data-key="7290015858113" data-name="עללחם ממרח עגבניות מיובשות 180 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מדשא תעשיות מזון בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪26</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪17.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪72.22 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪15.90</s> ₪13.00 · 180 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015858113" data-name="עללחם ממרח עגבניות מיובשות 180 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עללחם ממרח ארטישוק 180 גר <button type="button" class="photo-btn" data-photo="7290015858144" data-key="7290015858144" data-name="עללחם ממרח ארטישוק 180 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מדשא תעשיות מזון בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪26</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪17.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪72.22 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪15.90</s> ₪13.00 · 180 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015858144" data-name="עללחם ממרח ארטישוק 180 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עללחם ממרח פלפלים קלויים 180 גר <button type="button" class="photo-btn" data-photo="7290015858175" data-key="7290015858175" data-name="עללחם ממרח פלפלים קלויים 180 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מדשא תעשיות מזון בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪26</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪17.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪72.22 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪15.90</s> ₪13.00 · 180 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015858175" data-name="עללחם ממרח פלפלים קלויים 180 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עללחם טפנד זיתי קלמטה 180גר <button type="button" class="photo-btn" data-photo="7290015858229" data-key="7290015858229" data-name="עללחם טפנד זיתי קלמטה 180גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מדשא תעשיות מזון בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪26</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪17.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪72.22 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪15.90</s> ₪13.00 · 180 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015858229" data-name="עללחם טפנד זיתי קלמטה 180גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עללחם ממרח לימון כבוש 180 גר <button type="button" class="photo-btn" data-photo="7290015858212" data-key="7290015858212" data-name="עללחם ממרח לימון כבוש 180 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪26</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪72.22 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪15.90</s> ₪13.00 · 180 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015858212" data-name="עללחם ממרח לימון כבוש 180 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עללחם ממרח טפנד זיתי <button type="button" class="photo-btn" data-photo="7290017121383" data-key="7290017121383" data-name="עללחם ממרח טפנד זיתי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪26</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪72.22 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪15.90</s> ₪13.00 · 180 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017121383" data-name="עללחם ממרח טפנד זיתי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מטבל חריף חלפיניו <button type="button" class="photo-btn" data-photo="7290000462219" data-key="7290000462219" data-name="מטבל חריף חלפיניו" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זהבי הכרם בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪72.27 <small>לק״ג</small></div>
+          <div class="shelf">₪15.90 · 220 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000462219" data-name="מטבל חריף חלפיניו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ממרח סקורדיליה ים תיכוני 180 גרם <button type="button" class="photo-btn" data-photo="7290019233251" data-key="7290019233251" data-name="ממרח סקורדיליה ים תיכוני 180 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪26.90</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪16.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪74.72 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪16.90</s> ₪13.45 · 180 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019233251" data-name="ממרח סקורדיליה ים תיכוני 180 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ממרח עגבניות מיובשות עם פרמזן וקשיו <button type="button" class="photo-btn" data-photo="7290019233268" data-key="7290019233268" data-name="ממרח עגבניות מיובשות עם פרמזן וקשיו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪26.90</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪16.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪74.72 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪16.90</s> ₪13.45 · 180 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019233268" data-name="ממרח עגבניות מיובשות עם פרמזן וקשיו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ממרח ארטישוק עם שקדים ופרמזן <button type="button" class="photo-btn" data-photo="7290019233329" data-key="7290019233329" data-name="ממרח ארטישוק עם שקדים ופרמזן" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪26.90</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪16.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪74.72 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪16.90</s> ₪13.45 · 180 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019233329" data-name="ממרח ארטישוק עם שקדים ופרמזן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ממרח פלפלים עם שמן זית <button type="button" class="photo-btn" data-photo="7290019233336" data-key="7290019233336" data-name="ממרח פלפלים עם שמן זית" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪26.90</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪16.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪74.72 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪16.90</s> ₪13.45 · 180 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019233336" data-name="ממרח פלפלים עם שמן זית" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טפנד זיתים עם שמן זית <button type="button" class="photo-btn" data-photo="7290019233343" data-key="7290019233343" data-name="טפנד זיתים עם שמן זית" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪26.90</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪16.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪74.72 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪16.90</s> ₪13.45 · 180 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019233343" data-name="טפנד זיתים עם שמן זית" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סחוג אדום תבליני ביטון 130 גרם <button type="button" class="photo-btn" data-photo="7290010154418" data-key="7290010154418" data-name="סחוג אדום תבליני ביטון 130 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪9.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪76.15 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 130 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010154418" data-name="סחוג אדום תבליני ביטון 130 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">סחוג ירוק תבליני ביטון 130 גרם <button type="button" class="photo-btn" data-photo="7290010154425" data-key="7290010154425" data-name="סחוג ירוק תבליני ביטון 130 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪9.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪76.15 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 130 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010154425" data-name="סחוג ירוק תבליני ביטון 130 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">ממרח שום שמיר על רכיבי קוקוס <button type="button" class="photo-btn" data-photo="7290109640396" data-key="7290109640396" data-name="ממרח שום שמיר על רכיבי קוקוס" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>גן שמואל תעשיות בריאות בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪79.50 <small>לק״ג</small></div>
+          <div class="shelf">₪15.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290109640396" data-name="ממרח שום שמיר על רכיבי קוקוס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ממרח שום בקב&#39; לחיץ 250 גר <button type="button" class="photo-btn" data-photo="7290119421138" data-key="7290119421138" data-name="ממרח שום בקב&#39; לחיץ 250 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>א.ל ייצור ושיווק תבל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪79.60 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119421138" data-name="ממרח שום בקב&#39; לחיץ 250 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">ממרח פלפלים 200 גר מאסטר שף <button type="button" class="photo-btn" data-photo="7290121162616" data-key="7290121162616" data-name="ממרח פלפלים 200 גר מאסטר שף" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>MANA GI SINGLE MEMBER P.C</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪84.50 <small>לק״ג</small></div>
+          <div class="shelf">₪16.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290121162616" data-name="ממרח פלפלים 200 גר מאסטר שף" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קרמי אורגינל טבעוני 150 גר <button type="button" class="photo-btn" data-photo="5202390021121" data-key="5202390021121" data-name="קרמי אורגינל טבעוני 150 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪127.33 <small>לק״ג</small></div>
+          <div class="shelf">₪19.10 · 150 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5202390021121" data-name="קרמי אורגינל טבעוני 150 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סלוף <button type="button" class="photo-btn" data-photo="7290019759959" data-key="7290019759959" data-name="סלוף" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪35</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪17.50 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪17.50 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019759959" data-name="סלוף" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+</ol>
+</div>
+
+</main>
+<footer>עודכן 3.10 21:01 · ויקטורי 09:06 · רמי לוי 10:00 · אושר עד 08:00 · אושר עד 08:00</footer>
+
+
+<nav class="bottom-nav" aria-label="ניווט">
+  <a href="index.html" class="on"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg><span>בית</span></a>
+  <a href="search.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><span>חיפוש</span></a>
+  <a href="scan.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V5a1 1 0 0 1 1-1h2M17 4h2a1 1 0 0 1 1 1v2M20 17v2a1 1 0 0 1-1 1h-2M7 20H5a1 1 0 0 1-1-1v-2"/><path d="M8 8v8M11 8v8M14 8v8M16.5 8v8"/></svg><span>סריקה</span></a>
+  <a href="basket.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h11l2-8H6.2"/><circle cx="9.5" cy="19" r="1.4"/><circle cx="17" cy="19" r="1.4"/></svg><span id="cart-count"></span><span>עגלת קניות</span></a>
+  <a href="spending.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-2-1.4-2 1.4-2-1.4-2 1.4-2-1.4L6 21z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><span>הוצאות</span></a>
+</nav>
+
+<script src="static/basket.js?v=20261003210153"></script>
+<script src="static/photo.js?v=20261003210153"></script>
+
+<script src="static/render.js?v=20261003210153"></script>
+<script src="static/category.js?v=20261003210153" data-build="20261003210153"></script>
+
+<script>
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+</script>
+</body>
+</html>

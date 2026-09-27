@@ -1,0 +1,2681 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f7a4d">
+<script>
+// the look this phone chose (settings.html "מראה"), before anything is drawn: html.light / html.dark
+// (none = follow the phone) and html[data-color] (none = green); the browser bar takes the colour too
+(function () {
+  let t = {};
+  try { t = JSON.parse(localStorage.getItem("theme")) || {}; } catch (e) { /* none yet */ }
+  const root = document.documentElement;
+  if (t.mode === "light" || t.mode === "dark") root.classList.add(t.mode);
+  if (t.color) root.dataset.color = t.color;
+  if (t.bar) document.querySelector('meta[name="theme-color"]').content = t.bar;
+})();
+</script>
+<title>משקאות חריפים</title>
+<link rel="manifest" href="static/manifest.webmanifest">
+<link rel="icon" href="static/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="static/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="static/style.css?v=20261003210153">
+<style>.st-0 { --store: #e07000; }.st-1 { --store: #d32f2f; }.st-2 { --store: #1565c0; }.st-3 { --store: #1565c0; }</style>
+<script src="static/stores.js?v=20261003210153" data-stores="[{&#34;card_cap&#34;: 750, &#34;card_rate&#34;: 0.07, &#34;default&#34;: true, &#34;key&#34;: &#34;victory-038&#34;, &#34;name&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;ramilevy-007&#34;, &#34;name&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-026&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05ea\u05dc\u05e4\u05d9\u05d5\u05ea&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-003&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05d2\u05d1\u05e2\u05ea \u05e9\u05d0\u05d5\u05dc&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}]"></script>
+<script>
+// No long-press menu on links, pictures or text (the user: the home page's tiles opened Chrome's "open in new tab /
+// copy link" menu; CSS can't stop that on Android). Typing fields and the ⓘ sheet's barcode keep theirs.
+document.addEventListener("contextmenu", (e) => {
+  if (!e.target.closest("input, textarea, [contenteditable], .photo-barcode")) e.preventDefault();
+});
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <a class="back" href="t-8.html" aria-label="חזרה">→</a>
+    <h1>משקאות חריפים</h1>
+    <a class="notes-link" href="notes.html" aria-label="רשימת קניות" title="רשימת קניות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="m8.5 10 1.2 1.2 2.3-2.4M8.5 15.5l1.2 1.2 2.3-2.4M14 10.5h2.5M14 16h2.5"/></svg><span>רשימת קניות</span></a>
+    <a class="settings-link" href="settings.html" aria-label="הגדרות" title="הגדרות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></a>
+  </div>
+  
+  <form class="search" action="search.html" method="get" role="search">
+    <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+    <input type="search" name="q" placeholder="חיפוש מוצר" enterkeyhint="search" aria-label="חיפוש מוצר">
+  </form>
+  
+</header>
+<main>
+
+<p class="sub"><span class="sub-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2h4v3l1.5 2.6V20a2 2 0 0 1-2 2h-3a2 2 0 0 1-2-2V7.6L10 5z"/><path d="M8.5 11h7v5h-7z"/></svg></span>משקאות · <span id="cat-count">96</span> מוצרים, מהזול ליקר</p>
+
+
+<div class="cat-filter">
+  <input type="search" id="cat-filter" placeholder="סינון לפי שם או יצרן · ‎-מילה מסתירה" enterkeyhint="done" autocomplete="off" aria-label="סינון המוצרים בקטגוריה">
+</div>
+<div id="cat-list" data-href="c-8-11.html">
+
+<ol class="products">
+  
+  
+    
+    
+    <li class="product st-1 best">
+      <div class="info">
+        <div class="name">קוקטייל מוחיטו 330 מל <button type="button" class="photo-btn" data-photo="4740098098355" data-key="4740098098355" data-name="קוקטייל מוחיטו 330 מל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">4 ב־₪29.90</span> בקניית 4 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪12.05 <small>לליטר</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪7.47 · 620 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4740098098355" data-name="קוקטייל מוחיטו 330 מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קוקטייל מרגריטה אבטיח 330 מל <button type="button" class="photo-btn" data-photo="4740098098379" data-key="4740098098379" data-name="קוקטייל מרגריטה אבטיח 330 מל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">4 ב־₪29.90</span> בקניית 4 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪12.05 <small>לליטר</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪7.47 · 620 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4740098098379" data-name="קוקטייל מרגריטה אבטיח 330 מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קוקטייל סאן און דה ביץ&#39; 330 מל <button type="button" class="photo-btn" data-photo="4740098098393" data-key="4740098098393" data-name="קוקטייל סאן און דה ביץ&#39; 330 מל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">4 ב־₪29.90</span> בקניית 4 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪12.05 <small>לליטר</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪7.47 · 620 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4740098098393" data-name="קוקטייל סאן און דה ביץ&#39; 330 מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סיידר קראפט תפוחים 5 <button type="button" class="photo-btn" data-photo="4770301238315" data-key="4770301238315" data-name="סיידר קראפט תפוחים 5" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪19</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪19.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪11.10</s> ₪9.50 · 500 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4770301238315" data-name="סיידר קראפט תפוחים 5" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קוקטייל קוסמופוליטן 330 מל <button type="button" class="photo-btn" data-photo="4740098001669" data-key="4740098001669" data-name="קוקטייל קוסמופוליטן 330 מל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">4 ב־₪29.90</span> בקניית 4 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.64 <small>לליטר</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪7.47 · 330 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4740098001669" data-name="קוקטייל קוסמופוליטן 330 מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קוקטייל פינה קולדה 330 מל <button type="button" class="photo-btn" data-photo="4740098001683" data-key="4740098001683" data-name="קוקטייל פינה קולדה 330 מל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">4 ב־₪29.90</span> בקניית 4 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.64 <small>לליטר</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪7.47 · 330 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4740098001683" data-name="קוקטייל פינה קולדה 330 מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קוקטייל לימון שפריץ 330 מל <button type="button" class="photo-btn" data-photo="4740098004202" data-key="4740098004202" data-name="קוקטייל לימון שפריץ 330 מל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">4 ב־₪29.90</span> בקניית 4 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.64 <small>לליטר</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪7.47 · 330 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4740098004202" data-name="קוקטייל לימון שפריץ 330 מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קוקטייל בלו לאגון 330 מל <button type="button" class="photo-btn" data-photo="4740098098331" data-key="4740098098331" data-name="קוקטייל בלו לאגון 330 מל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">4 ב־₪29.90</span> בקניית 4 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.64 <small>לליטר</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪7.47 · 330 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4740098098331" data-name="קוקטייל בלו לאגון 330 מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ספרינג אלכוהול חמוציות 330 מל פחית <button type="button" class="photo-btn" data-photo="7290119771080" data-key="7290119771080" data-name="ספרינג אלכוהול חמוציות 330 מל פחית" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יפאורה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪16.90</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪25.61 <small>לליטר</small></div>
+          <div class="shelf"><s>₪12.50</s> ₪8.45 · 330 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119771080" data-name="ספרינג אלכוהול חמוציות 330 מל פחית" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ורדי אפרסק 750 מל <button type="button" class="photo-btn" data-photo="8002450204009" data-key="8002450204009" data-name="ורדי אפרסק 750 מל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>בוסקה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪30.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪26.53 <small>לליטר</small></div>
+          <div class="shelf"><s>₪24.90</s> ₪19.90 · 750 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8002450204009" data-name="ורדי אפרסק 750 מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משקה כהלי מוגז בטעם תות שדה - ספומנטה ורדי <button type="button" class="photo-btn" data-photo="8002450205006" data-key="8002450205006" data-name="משקה כהלי מוגז בטעם תות שדה - ספומנטה ורדי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>בוסקה קאנלי, אסטי, איטליה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪30.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪26.53 <small>לליטר</small></div>
+          <div class="shelf"><s>₪24.90</s> ₪19.90 · 750 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8002450205006" data-name="משקה כהלי מוגז בטעם תות שדה - ספומנטה ורדי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">משקה כהלי מוגז בטעם רימון <button type="button" class="photo-btn" data-photo="8002450609200" data-key="8002450609200" data-name="משקה כהלי מוגז בטעם רימון" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>בוקסה קאנלי</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪30.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪26.53 <small>לליטר</small></div>
+          <div class="shelf"><s>₪24.90</s> ₪19.90 · 750 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8002450609200" data-name="משקה כהלי מוגז בטעם רימון" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ורדי מבעבע מהדורה מי <button type="button" class="photo-btn" data-photo="8002450205259" data-key="8002450205259" data-name="ורדי מבעבע מהדורה מי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>בוסקה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪26.53 <small>לליטר</small></div>
+          <div class="shelf"><s>₪24.90</s> ₪19.90 · 750 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8002450205259" data-name="ורדי מבעבע מהדורה מי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ורדי מבעבע מהדורה מי <button type="button" class="photo-btn" data-photo="8002450206256" data-key="8002450206256" data-name="ורדי מבעבע מהדורה מי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>בוסקה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪26.53 <small>לליטר</small></div>
+          <div class="shelf"><s>₪24.90</s> ₪19.90 · 750 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8002450206256" data-name="ורדי מבעבע מהדורה מי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ורדי רסברי כשר <button type="button" class="photo-btn" data-photo="8002450201008" data-key="8002450201008" data-name="ורדי רסברי כשר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>בוסקה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪26.53 <small>לליטר</small></div>
+          <div class="shelf"><s>₪24.90</s> ₪19.90 · 750 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8002450201008" data-name="ורדי רסברי כשר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ורדי אסאי כשר <button type="button" class="photo-btn" data-photo="8002450202005" data-key="8002450202005" data-name="ורדי אסאי כשר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>בוסקה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪26.53 <small>לליטר</small></div>
+          <div class="shelf"><s>₪24.90</s> ₪19.90 · 750 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8002450202005" data-name="ורדי אסאי כשר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ורדי רימונים כשר <button type="button" class="photo-btn" data-photo="8002450206003" data-key="8002450206003" data-name="ורדי רימונים כשר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>בוסקה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪26.53 <small>לליטר</small></div>
+          <div class="shelf"><s>₪24.90</s> ₪19.90 · 750 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8002450206003" data-name="ורדי רימונים כשר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ורדי גרין אפל כשר <button type="button" class="photo-btn" data-photo="8002450208007" data-key="8002450208007" data-name="ורדי גרין אפל כשר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>בוסקה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪26.53 <small>לליטר</small></div>
+          <div class="shelf"><s>₪24.90</s> ₪19.90 · 750 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8002450208007" data-name="ורדי גרין אפל כשר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ורדי אבטיח כשר <button type="button" class="photo-btn" data-photo="8002450203002" data-key="8002450203002" data-name="ורדי אבטיח כשר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>בוסקה</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪26.53 <small>לליטר</small></div>
+          <div class="shelf"><s>₪24.90</s> ₪19.90 · 750 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8002450203002" data-name="ורדי אבטיח כשר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בריזר אננס, בקבוק 275 מ&#34;ל <button type="button" class="photo-btn" data-photo="5010677552387" data-key="5010677552387" data-name="בריזר אננס, בקבוק 275 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>בקרדי בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪16.50</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪14.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪30.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪13.90</s> ₪8.25 · 275 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5010677552387" data-name="בריזר אננס, בקבוק 275 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בריזר אפרסק, בקבוק 275 מ&#34;ל <button type="button" class="photo-btn" data-photo="7610113023716" data-key="7610113023716" data-name="בריזר אפרסק, בקבוק 275 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>בקרדי בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪16.50</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪14.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪30.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪13.90</s> ₪8.25 · 275 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7610113023716" data-name="בריזר אפרסק, בקבוק 275 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בריזר מנגו פסיפלורה 275 מ&#34;ל <button type="button" class="photo-btn" data-photo="7610113027684" data-key="7610113027684" data-name="בריזר מנגו פסיפלורה 275 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>בקרדי בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪16.50</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪14.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪30.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪13.90</s> ₪8.25 · 275 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7610113027684" data-name="בריזר מנגו פסיפלורה 275 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בקרדי בריזר פטל 275 בקבוק <button type="button" class="photo-btn" data-photo="7610113030578" data-key="7610113030578" data-name="בקרדי בריזר פטל 275 בקבוק" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>בקרדי בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪16.50</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪14.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪30.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪13.90</s> ₪8.25 · 275 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7610113030578" data-name="בקרדי בריזר פטל 275 בקבוק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בקרדי בריזר תפוז 275 מ&#34;ל בקבוק <button type="button" class="photo-btn" data-photo="7610113033159" data-key="7610113033159" data-name="בקרדי בריזר תפוז 275 מ&#34;ל בקבוק" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קונינגס אן.וי</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪16.50</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪14.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪30.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪13.90</s> ₪8.25 · 275 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7610113033159" data-name="בקרדי בריזר תפוז 275 מ&#34;ל בקבוק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">באז קוקטייל פינקולדה 750מל <button type="button" class="photo-btn" data-photo="7290019398219" data-key="7290019398219" data-name="באז קוקטייל פינקולדה 750מל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪50</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪33.33 <small>לליטר</small></div>
+          <div class="shelf"><s>₪31.90</s> ₪25.00 · 750 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019398219" data-name="באז קוקטייל פינקולדה 750מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אייס סמירנוף פחית 25 <button type="button" class="photo-btn" data-photo="5410316959810" data-key="5410316959810" data-name="אייס סמירנוף פחית 25" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪36.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪13.90</s> ₪9.00 · 250 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5410316959810" data-name="אייס סמירנוף פחית 25" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">כרמל בזז קוסמופוליטן <button type="button" class="photo-btn" data-photo="7290019398226" data-key="7290019398226" data-name="כרמל בזז קוסמופוליטן" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יקבי כרמל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪42.53 <small>לליטר</small></div>
+          <div class="shelf">₪31.90 · 750 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019398226" data-name="כרמל בזז קוסמופוליטן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בריזר לימון, בקבוק 275 מ&#34;ל <button type="button" class="photo-btn" data-photo="5010677551281" data-key="5010677551281" data-name="בריזר לימון, בקבוק 275 מ&#34;ל" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>בקרדי בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪54.18 <small>לליטר</small></div>
+          <div class="shelf">₪14.90 · 275 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5010677551281" data-name="בריזר לימון, בקבוק 275 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בריזר אבטיח, בקבוק 275 מ&#34;ל <button type="button" class="photo-btn" data-photo="5010677554398" data-key="5010677554398" data-name="בריזר אבטיח, בקבוק 275 מ&#34;ל" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>בקרדי בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪54.18 <small>לליטר</small></div>
+          <div class="shelf">₪14.90 · 275 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5010677554398" data-name="בריזר אבטיח, בקבוק 275 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ערק אשקלון 700 מל טמפו <button type="button" class="photo-btn" data-photo="7290000023083" data-key="7290000023083" data-name="ערק אשקלון 700 מל טמפו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יקבי ברקן בע&#34;\מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪61.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪57.00 <small>לליטר</small></div>
+          <div class="shelf"><s>₪49.90</s> ₪39.90 · 700 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000023083" data-name="ערק אשקלון 700 מל טמפו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">ערק בטעמים <button type="button" class="photo-btn" data-photo="7290118484141" data-key="7290118484141" data-name="ערק בטעמים" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סאן אויל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪57.00 <small>לליטר</small></div>
+          <div class="shelf">₪39.90 · 700 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118484141" data-name="ערק בטעמים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עארק טעם לימון <button type="button" class="photo-btn" data-photo="7290018194256" data-key="7290018194256" data-name="עארק טעם לימון" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪57.57 <small>לליטר</small></div>
+          <div class="shelf">₪40.30 · 700 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018194256" data-name="עארק טעם לימון" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מרטיני ביאנקו 750 מל <button type="button" class="photo-btn" data-photo="7630040409360" data-key="7630040409360" data-name="מרטיני ביאנקו 750 מל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪66.53 <small>לליטר</small></div>
+          <div class="shelf"><s>₪54.90</s> ₪49.90 · 750 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7630040409360" data-name="מרטיני ביאנקו 750 מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">וודקה פינלנדיה 1 ליטר <button type="button" class="photo-btn" data-photo="6440003100026" data-key="6440003100026" data-name="וודקה פינלנדיה 1 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪69.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪89.90</s> ₪69.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="6440003100026" data-name="וודקה פינלנדיה 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">ערק ג&#39;בלנא 700 מל&#39; <button type="button" class="photo-btn" data-photo="7290118482512" data-key="7290118482512" data-name="ערק ג&#39;בלנא 700 מל&#39;" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סאן אויל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪78.43 <small>לליטר</small></div>
+          <div class="shelf">₪54.90 · 700 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290118482512" data-name="ערק ג&#39;בלנא 700 מל&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ערק שליט 700 מ&#34;ל <button type="button" class="photo-btn" data-photo="7290015356688" data-key="7290015356688" data-name="ערק שליט 700 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪78.43 <small>לליטר</small></div>
+          <div class="shelf">₪54.90 · 700 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015356688" data-name="ערק שליט 700 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ערק שליט בטעם פסיפלו <button type="button" class="photo-btn" data-photo="7290010818013" data-key="7290010818013" data-name="ערק שליט בטעם פסיפלו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪78.43 <small>לליטר</small></div>
+          <div class="shelf">₪54.90 · 700 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010818013" data-name="ערק שליט בטעם פסיפלו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ערק שליט בטעם לימוני <button type="button" class="photo-btn" data-photo="7290017520933" data-key="7290017520933" data-name="ערק שליט בטעם לימוני" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪78.43 <small>לליטר</small></div>
+          <div class="shelf">₪54.90 · 700 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017520933" data-name="ערק שליט בטעם לימוני" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בקרדי מוחיטו 700 מ&#34;ל <button type="button" class="photo-btn" data-photo="7610113033210" data-key="7610113033210" data-name="בקרדי מוחיטו 700 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪85.29 <small>לליטר</small></div>
+          <div class="shelf"><s>₪79.90</s> ₪59.70 · 700 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7610113033210" data-name="בקרדי מוחיטו 700 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ליקר פידג תאנים 700מל <button type="button" class="photo-btn" data-photo="4005563194025" data-key="4005563194025" data-name="ליקר פידג תאנים 700מל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪71.30</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪85.57 <small>לליטר</small></div>
+          <div class="shelf">₪59.90 · 700 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4005563194025" data-name="ליקר פידג תאנים 700מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עלית הארק 700 מל כשלפ יקב הגליל <button type="button" class="photo-btn" data-photo="7290000484747" data-key="7290000484747" data-name="עלית הארק 700 מל כשלפ יקב הגליל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יקב הגליל יוסף גולד ובני</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪69.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪85.57 <small>לליטר</small></div>
+          <div class="shelf">₪59.90 · 700 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000484747" data-name="עלית הארק 700 מל כשלפ יקב הגליל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חורטיצה פלטינום 700 <button type="button" class="photo-btn" data-photo="4820229031311" data-key="4820229031311" data-name="חורטיצה פלטינום 700" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪85.57 <small>לליטר</small></div>
+          <div class="shelf">₪59.90 · 700 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4820229031311" data-name="חורטיצה פלטינום 700" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">וודקה חורטיצה קלאסיק <button type="button" class="photo-btn" data-photo="4820229031281" data-key="4820229031281" data-name="וודקה חורטיצה קלאסיק" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪85.57 <small>לליטר</small></div>
+          <div class="shelf">₪59.90 · 700 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4820229031281" data-name="וודקה חורטיצה קלאסיק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סטולי פרימיום ליטר <button type="button" class="photo-btn" data-photo="4600659011059" data-key="4600659011059" data-name="סטולי פרימיום ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>סטוליצ&#39;ניה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪89.80 <small>לליטר</small></div>
+          <div class="shelf">₪89.80 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4600659011059" data-name="סטולי פרימיום ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">וויסקי רד לייבל ג&#39;וני ווקר 1 ליטר <button type="button" class="photo-btn" data-photo="5000267013602" data-key="5000267013602" data-name="וויסקי רד לייבל ג&#39;וני ווקר 1 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪89.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪99.90</s> ₪89.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5000267013602" data-name="וויסקי רד לייבל ג&#39;וני ווקר 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בקרדי מוחיטו 700 מ&#34;ל <button type="button" class="photo-btn" data-photo="7610113000175" data-key="7610113000175" data-name="בקרדי מוחיטו 700 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪92.71 <small>לליטר</small></div>
+          <div class="shelf"><s>₪79.90</s> ₪64.90 · 700 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7610113000175" data-name="בקרדי מוחיטו 700 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גרנטס וויסקי 700 ס&#34;ל <button type="button" class="photo-btn" data-photo="5010327000046" data-key="5010327000046" data-name="גרנטס וויסקי 700 ס&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ויליאם גרנט</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪92.71 <small>לליטר</small></div>
+          <div class="shelf"><s>₪84.90</s> ₪64.90 · 700 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5010327000046" data-name="גרנטס וויסקי 700 ס&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אבסולוט וודקה 700 מ&#34;ל <button type="button" class="photo-btn" data-photo="7312040017683" data-key="7312040017683" data-name="אבסולוט וודקה 700 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אבסולוט</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪92.71 <small>לליטר</small></div>
+          <div class="shelf"><s>₪69.90</s> ₪64.90 · 700 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7312040017683" data-name="אבסולוט וודקה 700 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">וודקה חורטיצה גרין ל <button type="button" class="photo-btn" data-photo="4820163124124" data-key="4820163124124" data-name="וודקה חורטיצה גרין ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪93.71 <small>לליטר</small></div>
+          <div class="shelf">₪65.60 · 700 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4820163124124" data-name="וודקה חורטיצה גרין ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">וודקה חורטיצה גרין ל <button type="button" class="photo-btn" data-photo="4820229030161" data-key="4820229030161" data-name="וודקה חורטיצה גרין ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪93.90 <small>לליטר</small></div>
+          <div class="shelf">₪93.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4820229030161" data-name="וודקה חורטיצה גרין ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">סטולי ללא גלוטן 700 מ&#34;ל (כשר לפסח) <button type="button" class="photo-btn" data-photo="4750021005725" data-key="4750021005725" data-name="סטולי ללא גלוטן 700 מ&#34;ל (כשר לפסח)" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪99.86 <small>לליטר</small></div>
+          <div class="shelf">₪69.90 · 700 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4750021005725" data-name="סטולי ללא גלוטן 700 מ&#34;ל (כשר לפסח)" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ליקר בנדיקטין 750 מ&#34; <button type="button" class="photo-btn" data-photo="7290003208692" data-key="7290003208692" data-name="ליקר בנדיקטין 750 מ&#34;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> בקנייה מעל ₪75 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪99.87 <small>לליטר</small></div>
+          <div class="shelf"><s>₪148.90</s> ₪74.90 · 750 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003208692" data-name="ליקר בנדיקטין 750 מ&#34;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">וויסקי בלאק לייבל 1 ליטר <button type="button" class="photo-btn" data-photo="5000267023601" data-key="5000267023601" data-name="וויסקי בלאק לייבל 1 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> בקנייה מעל ₪75 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪99.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪139.90</s> ₪99.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5000267023601" data-name="וויסקי בלאק לייבל 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">דיוארס וויט לייבל וו <button type="button" class="photo-btn" data-photo="5000277001255" data-key="5000277001255" data-name="דיוארס וויט לייבל וו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪99.90 <small>לליטר</small></div>
+          <div class="shelf">₪99.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5000277001255" data-name="דיוארס וויט לייבל וו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בומביי גין 1 ליטר <button type="button" class="photo-btn" data-photo="5010677716000" data-key="5010677716000" data-name="בומביי גין 1 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> בקנייה מעל ₪75 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪99.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪119.90</s> ₪99.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5010677716000" data-name="בומביי גין 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">וודקה רוסקי 700 מל יורוסטנדרט <button type="button" class="photo-btn" data-photo="4603400000043" data-key="4603400000043" data-name="וודקה רוסקי 700 מל יורוסטנדרט" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>רוסקי סטנדרט וודקה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪107.00 <small>לליטר</small></div>
+          <div class="shelf">₪74.90 · 700 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4603400000043" data-name="וודקה רוסקי 700 מל יורוסטנדרט" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ליקר לביא אוכמניות 5 <button type="button" class="photo-btn" data-photo="7290010880065" data-key="7290010880065" data-name="ליקר לביא אוכמניות 5" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טפרברג</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪107.00 <small>לליטר</small></div>
+          <div class="shelf">₪74.90 · 700 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010880065" data-name="ליקר לביא אוכמניות 5" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ג&#39;ק דניאלס טנסי ליקר <button type="button" class="photo-btn" data-photo="5099873006498" data-key="5099873006498" data-name="ג&#39;ק דניאלס טנסי ליקר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪109.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪129.90</s> ₪109.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5099873006498" data-name="ג&#39;ק דניאלס טנסי ליקר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">וויסקי ג&#39;ק דניאלס 1 <button type="button" class="photo-btn" data-photo="5099873045367" data-key="5099873045367" data-name="וויסקי ג&#39;ק דניאלס 1" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪109.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪129.90</s> ₪109.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5099873045367" data-name="וויסקי ג&#39;ק דניאלס 1" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ג&#39;ק דניאלס טנסי אפל <button type="button" class="photo-btn" data-photo="5099873017647" data-key="5099873017647" data-name="ג&#39;ק דניאלס טנסי אפל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪109.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪129.90</s> ₪109.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5099873017647" data-name="ג&#39;ק דניאלס טנסי אפל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ג&#39;ק דניאלס טנסי האני <button type="button" class="photo-btn" data-photo="5099873046968" data-key="5099873046968" data-name="ג&#39;ק דניאלס טנסי האני" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪109.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪129.90</s> ₪109.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5099873046968" data-name="ג&#39;ק דניאלס טנסי האני" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">אוזו פילאבס 700 מ&#34;ל <button type="button" class="photo-btn" data-photo="5202325001044" data-key="5202325001044" data-name="אוזו פילאבס 700 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪114.14 <small>לליטר</small></div>
+          <div class="shelf">₪79.90 · 700 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5202325001044" data-name="אוזו פילאבס 700 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">וויסקי קאטי סארק <button type="button" class="photo-btn" data-photo="5010504100095" data-key="5010504100095" data-name="וויסקי קאטי סארק" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>גלן טרנר קמפני</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪117.00 <small>לליטר</small></div>
+          <div class="shelf">₪81.90 · 700 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5010504100095" data-name="וויסקי קאטי סארק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ליקר 700 מל ייגרמייסטר <button type="button" class="photo-btn" data-photo="4067700014849" data-key="4067700014849" data-name="ליקר 700 מל ייגרמייסטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יגרמייסטר</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪101.00</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪121.29 <small>לליטר</small></div>
+          <div class="shelf">₪84.90 · 700 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4067700014849" data-name="ליקר 700 מל ייגרמייסטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ג&#39;ים בים דבש כשר <button type="button" class="photo-btn" data-photo="5060045590190" data-key="5060045590190" data-name="ג&#39;ים בים דבש כשר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪124.14 <small>לליטר</small></div>
+          <div class="shelf">₪86.90 · 700 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5060045590190" data-name="ג&#39;ים בים דבש כשר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ג&#39;ים בים לבן כשר</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪124.14 <small>לליטר</small></div>
+          <div class="shelf">₪86.90 · 700 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058140886:80686000440" data-name="ג&#39;ים בים לבן כשר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">וודקה T טרמפ 200 מל כשלפ <button type="button" class="photo-btn" data-photo="7290018194935" data-key="7290018194935" data-name="וודקה T טרמפ 200 מל כשלפ" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪124.50 <small>לליטר</small></div>
+          <div class="shelf">₪24.90 · 200 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018194935" data-name="וודקה T טרמפ 200 מל כשלפ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">וויסקי אירי בושמילס 700 מל <button type="button" class="photo-btn" data-photo="5055966800220" data-key="5055966800220" data-name="וויסקי אירי בושמילס 700 מל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אולד בושמילס דיסטילרי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪96.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪128.43 <small>לליטר</small></div>
+          <div class="shelf">₪89.90 · 700 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5055966800220" data-name="וויסקי אירי בושמילס 700 מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בושמילס 70 ס&#34;ל <button type="button" class="photo-btn" data-photo="5055966801005" data-key="5055966801005" data-name="בושמילס 70 ס&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪128.43 <small>לליטר</small></div>
+          <div class="shelf">₪89.90 · 700 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5055966801005" data-name="בושמילס 70 ס&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גרייגוס וודקה 1 ליטר <button type="button" class="photo-btn" data-photo="7290003208579" data-key="7290003208579" data-name="גרייגוס וודקה 1 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> בקנייה מעל ₪75 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪129.90 <small>לליטר</small></div>
+          <div class="shelf"><s>₪164.90</s> ₪129.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003208579" data-name="גרייגוס וודקה 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בקרדי לבן 1 ליטר <button type="button" class="photo-btn" data-photo="7290005020353" data-key="7290005020353" data-name="בקרדי לבן 1 ליטר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪129.90 <small>לליטר</small></div>
+          <div class="shelf">₪129.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290005020353" data-name="בקרדי לבן 1 ליטר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">טראמפ וודקה 700מל כשלפ <button type="button" class="photo-btn" data-photo="7290018194928" data-key="7290018194928" data-name="טראמפ וודקה 700מל כשלפ" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪131.00 <small>לליטר</small></div>
+          <div class="shelf">₪91.70 · 700 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018194928" data-name="טראמפ וודקה 700מל כשלפ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">וודקה 700 מל סטוליצ`ניה <button type="button" class="photo-btn" data-photo="4600659010854" data-key="4600659010854" data-name="וודקה 700 מל סטוליצ`ניה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>איי. אס. לטבייאס בלזם</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪131.29 <small>לליטר</small></div>
+          <div class="shelf">₪91.90 · 700 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="4600659010854" data-name="וודקה 700 מל סטוליצ`ניה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פיירבול -ליקר על בסי</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪133.20 <small>לליטר</small></div>
+          <div class="shelf">₪99.90 · 750 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058140886:88004144746" data-name="פיירבול -ליקר על בסי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">טקילה קוארבו אספסיאל גולד 700 מל <button type="button" class="photo-btn" data-photo="7501035011571" data-key="7501035011571" data-name="טקילה קוארבו אספסיאל גולד 700 מל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קאסה קוארבו אס.איי.</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪107.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪134.14 <small>לליטר</small></div>
+          <div class="shelf">₪93.90 · 700 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7501035011571" data-name="טקילה קוארבו אספסיאל גולד 700 מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בלוודר וודקה 700 מל <button type="button" class="photo-btn" data-photo="5901867816641" data-key="5901867816641" data-name="בלוודר וודקה 700 מל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪142.71 <small>לליטר</small></div>
+          <div class="shelf"><s>₪114.90</s> ₪99.90 · 700 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5901867816641" data-name="בלוודר וודקה 700 מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ליקר לביא שוקלד מריר <button type="button" class="photo-btn" data-photo="7290010880003" data-key="7290010880003" data-name="ליקר לביא שוקלד מריר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪149.80 <small>לליטר</small></div>
+          <div class="shelf">₪74.90 · 500 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010880003" data-name="ליקר לביא שוקלד מריר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לביא ליקר דובדבנים 5 <button type="button" class="photo-btn" data-photo="7290010880058" data-key="7290010880058" data-name="לביא ליקר דובדבנים 5" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טפרברג</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪149.80 <small>לליטר</small></div>
+          <div class="shelf">₪74.90 · 500 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010880058" data-name="לביא ליקר דובדבנים 5" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ליקר לביא שוקולד פיס <button type="button" class="photo-btn" data-photo="7290010880225" data-key="7290010880225" data-name="ליקר לביא שוקולד פיס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪149.80 <small>לליטר</small></div>
+          <div class="shelf">₪74.90 · 500 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010880225" data-name="ליקר לביא שוקולד פיס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לביא ליקר אספרסו 500 <button type="button" class="photo-btn" data-photo="7290010882632" data-key="7290010882632" data-name="לביא ליקר אספרסו 500" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>טפרברג</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪149.80 <small>לליטר</small></div>
+          <div class="shelf">₪74.90 · 500 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290010882632" data-name="לביא ליקר אספרסו 500" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">וודקה 700 מל מון בלאן <button type="button" class="photo-btn" data-photo="8436562150013" data-key="8436562150013" data-name="וודקה 700 מל מון בלאן" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪157.00 <small>לליטר</small></div>
+          <div class="shelf">₪109.90 · 700 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8436562150013" data-name="וודקה 700 מל מון בלאן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">וויסקי לבן 700 מל ג`ים בים</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪157.29 <small>לליטר</small></div>
+          <div class="shelf">₪110.10 · 700 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:80686000440" data-name="וויסקי לבן 700 מל ג`ים בים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">וודקה גריי טעם לימון <button type="button" class="photo-btn" data-photo="5010677870207" data-key="5010677870207" data-name="וודקה גריי טעם לימון" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪172.71 <small>לליטר</small></div>
+          <div class="shelf">₪120.90 · 700 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5010677870207" data-name="וודקה גריי טעם לימון" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ויסקי בורבון רבל 750</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪173.20 <small>לליטר</small></div>
+          <div class="shelf">₪129.90 · 750 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058140886:88352117942" data-name="ויסקי בורבון רבל 750" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בלוגה נובל <button type="button" class="photo-btn" data-photo="3890000781095" data-key="3890000781095" data-name="בלוגה נובל" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נובלווד אדריאטיק</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪179.90 <small>לליטר</small></div>
+          <div class="shelf">₪179.90 · 1 ל׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="3890000781095" data-name="בלוגה נובל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גלנמורנג&#39;י אוריג&#39;ינל <button type="button" class="photo-btn" data-photo="5010494990300" data-key="5010494990300" data-name="גלנמורנג&#39;י אוריג&#39;ינל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪185.57 <small>לליטר</small></div>
+          <div class="shelf"><s>₪154.90</s> ₪129.90 · 700 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5010494990300" data-name="גלנמורנג&#39;י אוריג&#39;ינל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">גלנמורנג&#39;י אוריג&#39;ינל <button type="button" class="photo-btn" data-photo="5010494990393" data-key="5010494990393" data-name="גלנמורנג&#39;י אוריג&#39;ינל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪185.57 <small>לליטר</small></div>
+          <div class="shelf"><s>₪154.90</s> ₪129.90 · 700 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5010494990393" data-name="גלנמורנג&#39;י אוריג&#39;ינל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">וויסקי אירי טילינג ס <button type="button" class="photo-btn" data-photo="5391523270021" data-key="5391523270021" data-name="וויסקי אירי טילינג ס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪212.86 <small>לליטר</small></div>
+          <div class="shelf">₪149.00 · 700 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5391523270021" data-name="וויסקי אירי טילינג ס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ווסקי גלנפידיך 12 700 מ&#34;ל <button type="button" class="photo-btn" data-photo="5010327399614" data-key="5010327399614" data-name="ווסקי גלנפידיך 12 700 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪214.14 <small>לליטר</small></div>
+          <div class="shelf"><s>₪167.90</s> ₪149.90 · 700 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5010327399614" data-name="ווסקי גלנפידיך 12 700 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פטרון סילבר טקילה 700 מ&#34;ל <button type="button" class="photo-btn" data-photo="721733000739" data-key="721733000739" data-name="פטרון סילבר טקילה 700 מ&#34;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪228.43 <small>לליטר</small></div>
+          <div class="shelf"><s>₪199.90</s> ₪159.90 · 700 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="721733000739" data-name="פטרון סילבר טקילה 700 מ&#34;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">וויסקי אברפלדי 12 שנ <button type="button" class="photo-btn" data-photo="5000277000982" data-key="5000277000982" data-name="וויסקי אברפלדי 12 שנ" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪242.71 <small>לליטר</small></div>
+          <div class="shelf">₪169.90 · 700 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5000277000982" data-name="וויסקי אברפלדי 12 שנ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">וויסקי ג&#39;וני ווקר בל <button type="button" class="photo-btn" data-photo="5000267115245" data-key="5000267115245" data-name="וויסקי ג&#39;וני ווקר בל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> בקנייה מעל ₪75 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪527.14 <small>לליטר</small></div>
+          <div class="shelf"><s>₪419.90</s> ₪369.00 · 700 מ״ל</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5000267115245" data-name="וויסקי ג&#39;וני ווקר בל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לימוצ&#39;לו וילה מסה כש <button type="button" class="photo-btn" data-photo="8033413430708" data-key="8033413430708" data-name="לימוצ&#39;לו וילה מסה כש" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪99.90 <small>ליח׳</small></div>
+          <div class="shelf">₪99.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8033413430708" data-name="לימוצ&#39;לו וילה מסה כש" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">וויסקי גלן גרנט 10שנ</div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪119.90 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪129.90</s> ₪119.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058140886:80432402979" data-name="וויסקי גלן גרנט 10שנ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">וויסקי גלן גרנט 12שנ <button type="button" class="photo-btn" data-photo="8000040630269" data-key="8000040630269" data-name="וויסקי גלן גרנט 12שנ" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪139.90 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪149.90</s> ₪139.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8000040630269" data-name="וויסקי גלן גרנט 12שנ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ווסקי גולד לייבל 1 ל <button type="button" class="photo-btn" data-photo="5000267197753" data-key="5000267197753" data-name="ווסקי גולד לייבל 1 ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> בקנייה מעל ₪75 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪169.90 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪188.90</s> ₪169.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="5000267197753" data-name="ווסקי גולד לייבל 1 ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+</ol>
+</div>
+
+</main>
+<footer>עודכן 3.10 21:01 · ויקטורי 09:06 · רמי לוי 10:00 · אושר עד 08:00 · אושר עד 08:00</footer>
+
+
+<nav class="bottom-nav" aria-label="ניווט">
+  <a href="index.html" class="on"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg><span>בית</span></a>
+  <a href="search.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><span>חיפוש</span></a>
+  <a href="scan.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V5a1 1 0 0 1 1-1h2M17 4h2a1 1 0 0 1 1 1v2M20 17v2a1 1 0 0 1-1 1h-2M7 20H5a1 1 0 0 1-1-1v-2"/><path d="M8 8v8M11 8v8M14 8v8M16.5 8v8"/></svg><span>סריקה</span></a>
+  <a href="basket.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h11l2-8H6.2"/><circle cx="9.5" cy="19" r="1.4"/><circle cx="17" cy="19" r="1.4"/></svg><span id="cart-count"></span><span>עגלת קניות</span></a>
+  <a href="spending.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-2-1.4-2 1.4-2-1.4-2 1.4-2-1.4L6 21z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><span>הוצאות</span></a>
+</nav>
+
+<script src="static/basket.js?v=20261003210153"></script>
+<script src="static/photo.js?v=20261003210153"></script>
+
+<script src="static/render.js?v=20261003210153"></script>
+<script src="static/category.js?v=20261003210153" data-build="20261003210153"></script>
+
+<script>
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+</script>
+</body>
+</html>

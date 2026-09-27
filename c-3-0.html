@@ -1,0 +1,4034 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f7a4d">
+<script>
+// the look this phone chose (settings.html "מראה"), before anything is drawn: html.light / html.dark
+// (none = follow the phone) and html[data-color] (none = green); the browser bar takes the colour too
+(function () {
+  let t = {};
+  try { t = JSON.parse(localStorage.getItem("theme")) || {}; } catch (e) { /* none yet */ }
+  const root = document.documentElement;
+  if (t.mode === "light" || t.mode === "dark") root.classList.add(t.mode);
+  if (t.color) root.dataset.color = t.color;
+  if (t.bar) document.querySelector('meta[name="theme-color"]').content = t.bar;
+})();
+</script>
+<title>לחם</title>
+<link rel="manifest" href="static/manifest.webmanifest">
+<link rel="icon" href="static/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="static/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="static/style.css?v=20261003210153">
+<style>.st-0 { --store: #e07000; }.st-1 { --store: #d32f2f; }.st-2 { --store: #1565c0; }.st-3 { --store: #1565c0; }</style>
+<script src="static/stores.js?v=20261003210153" data-stores="[{&#34;card_cap&#34;: 750, &#34;card_rate&#34;: 0.07, &#34;default&#34;: true, &#34;key&#34;: &#34;victory-038&#34;, &#34;name&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;ramilevy-007&#34;, &#34;name&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-026&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05ea\u05dc\u05e4\u05d9\u05d5\u05ea&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-003&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05d2\u05d1\u05e2\u05ea \u05e9\u05d0\u05d5\u05dc&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}]"></script>
+<script>
+// No long-press menu on links, pictures or text (the user: the home page's tiles opened Chrome's "open in new tab /
+// copy link" menu; CSS can't stop that on Android). Typing fields and the ⓘ sheet's barcode keep theirs.
+document.addEventListener("contextmenu", (e) => {
+  if (!e.target.closest("input, textarea, [contenteditable], .photo-barcode")) e.preventDefault();
+});
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <a class="back" href="t-3.html" aria-label="חזרה">→</a>
+    <h1>לחם</h1>
+    <a class="notes-link" href="notes.html" aria-label="רשימת קניות" title="רשימת קניות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="m8.5 10 1.2 1.2 2.3-2.4M8.5 15.5l1.2 1.2 2.3-2.4M14 10.5h2.5M14 16h2.5"/></svg><span>רשימת קניות</span></a>
+    <a class="settings-link" href="settings.html" aria-label="הגדרות" title="הגדרות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></a>
+  </div>
+  
+  <form class="search" action="search.html" method="get" role="search">
+    <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+    <input type="search" name="q" placeholder="חיפוש מוצר" enterkeyhint="search" aria-label="חיפוש מוצר">
+  </form>
+  
+</header>
+<main>
+
+<p class="sub"><span class="sub-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 10.5A3 3 0 0 1 5 4.8C6.3 3.6 9 3 12 3s5.7.6 7 1.8a3 3 0 0 1-.5 5.7V20a1 1 0 0 1-1 1h-11a1 1 0 0 1-1-1z"/><path d="M9.5 8.5 11 7M12.5 10 14 8.5M9.5 12 11 10.5"/></svg></span>לחם ומאפים · <span id="cat-count">146</span> מוצרים, מהזול ליקר</p>
+
+
+<div class="cat-filter">
+  <input type="search" id="cat-filter" placeholder="סינון לפי שם או יצרן · ‎-מילה מסתירה" enterkeyhint="done" autocomplete="off" aria-label="סינון המוצרים בקטגוריה">
+</div>
+<div id="cat-list" data-href="c-3-0.html">
+
+<ol class="products">
+  
+  
+    
+    
+    <li class="product st-1 best">
+      <div class="info">
+        <div class="name">לחם אחיד פרוס 900 גר פיקוח אנג`ל <button type="button" class="photo-btn" data-photo="7290018500361" data-key="7290018500361" data-name="לחם אחיד פרוס 900 גר פיקוח אנג`ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאפיית שלמה א. אנג&#39;</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪9.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.22 <small>לק״ג</small></div>
+          <div class="shelf">₪8.30 · 900 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018500361" data-name="לחם אחיד פרוס 900 גר פיקוח אנג`ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם אחיד פרוס 900 ג רמי לוי <button type="button" class="photo-btn" data-photo="7290018500408" data-key="7290018500408" data-name="לחם אחיד פרוס 900 ג רמי לוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.22 <small>לק״ג</small></div>
+          <div class="shelf">₪8.30 · 900 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018500408" data-name="לחם אחיד פרוס 900 ג רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם אחיד אנג&#39;ל 750 ג <button type="button" class="photo-btn" data-photo="7290000379623" data-key="7290000379623" data-name="לחם אחיד אנג&#39;ל 750 ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אנג&#39;ל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.81 <small>לק״ג</small></div>
+          <div class="shelf">₪7.36 · 750 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000379623" data-name="לחם אחיד אנג&#39;ל 750 ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם ללא גלוטן 500 גר <button type="button" class="photo-btn" data-photo="7290016866094" data-key="7290016866094" data-name="לחם ללא גלוטן 500 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אשבל -מזון פונקציונל</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪9.90</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.90 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪16.90</s> ₪4.95 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016866094" data-name="לחם ללא גלוטן 500 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לחם אחיד פרוס <button type="button" class="photo-btn" data-photo="7290000574035" data-key="7290000574035" data-name="לחם אחיד פרוס" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>דגנית עין בר תעשיות מזון ואפיה בעינת</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.53 <small>לק״ג</small></div>
+          <div class="shelf">₪7.90 · 750 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000574035" data-name="לחם אחיד פרוס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ברמן - לחם אחיד פרוס <button type="button" class="photo-btn" data-photo="7290000497112" data-key="7290000497112" data-name="ברמן - לחם אחיד פרוס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>י. את א. ברמן בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪8.38</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪10.93 <small>לק״ג</small></div>
+          <div class="shelf">₪8.20 · 750 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000497112" data-name="ברמן - לחם אחיד פרוס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם שיפון גרעינים פרוס אחדות 750 גרם <button type="button" class="photo-btn" data-photo="7290002065616" data-key="7290002065616" data-name="לחם שיפון גרעינים פרוס אחדות 750 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאפיית שלמה א. אנג&#39;ל בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪14.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪13.33 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪13.90</s> ₪10.00 · 750 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002065616" data-name="לחם שיפון גרעינים פרוס אחדות 750 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם שיפון כפרי <button type="button" class="photo-btn" data-photo="7290002065623" data-key="7290002065623" data-name="לחם שיפון כפרי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאפיית שלמה א. אנג&#39;ל בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪14.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪13.33 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪13.90</s> ₪10.00 · 750 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002065623" data-name="לחם שיפון כפרי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם שיפון עגול פרוס אנג&#39;ל 750 גרם <button type="button" class="photo-btn" data-photo="7290008713900" data-key="7290008713900" data-name="לחם שיפון עגול פרוס אנג&#39;ל 750 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאפיית אנג&#39;ל אורנים מאפיה אזורית בע&#34;מ, מקבוצת מאפי</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪14.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪13.33 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪13.90</s> ₪10.00 · 750 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008713900" data-name="לחם שיפון עגול פרוס אנג&#39;ל 750 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם שיפון כהה פרוס אחדות 750 גר אנג`ל <button type="button" class="photo-btn" data-photo="7290008713917" data-key="7290008713917" data-name="לחם שיפון כהה פרוס אחדות 750 גר אנג`ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאפיית שלמה א. אנג&#39;\ל בע</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪20</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪14.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪13.33 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪13.90</s> ₪10.00 · 750 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008713917" data-name="לחם שיפון כהה פרוס אחדות 750 גר אנג`ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">באגט 360 גר <button type="button" class="photo-btn" data-photo="7290016866124" data-key="7290016866124" data-name="באגט 360 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אשבל -מזון פונקציונל</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪9.90</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪13.75 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪12.90</s> ₪4.95 · 360 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016866124" data-name="באגט 360 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם מרובע רמי לוי <button type="button" class="photo-btn" data-photo="7290018296424" data-key="7290018296424" data-name="לחם מרובע רמי לוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          <span class="warn">גודל לא ודאי</span>
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪15.10 <small>לק״ג</small></div>
+          <div class="shelf">₪15.10 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018296424" data-name="לחם מרובע רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם רך לפרנץ טוסט 750 גר <button type="button" class="photo-btn" data-photo="7290018500231" data-key="7290018500231" data-name="לחם רך לפרנץ טוסט 750 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאפיית שלמה א. אנג&#39;ל בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪19.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪15.87 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪11.90 · 750 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018500231" data-name="לחם רך לפרנץ טוסט 750 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם ליבו אקסלוסיבי 1 <button type="button" class="photo-btn" data-photo="7290003719259" data-key="7290003719259" data-name="לחם ליבו אקסלוסיבי 1" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ברמן</span>
+          <span class="warn">גודל לא ודאי</span>
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪16.80 <small>לק״ג</small></div>
+          <div class="shelf">₪16.80 · 1 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003719259" data-name="לחם ליבו אקסלוסיבי 1" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לחם מלא בטוב ודש <button type="button" class="photo-btn" data-photo="7290002037194" data-key="7290002037194" data-name="לחם מלא בטוב ודש" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>י. את א. ברמן בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪17.20 <small>לק״ג</small></div>
+          <div class="shelf">₪12.90 · 750 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002037194" data-name="לחם מלא בטוב ודש" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם פשוט מלא פרוס <button type="button" class="photo-btn" data-photo="7290014940901" data-key="7290014940901" data-name="לחם פשוט מלא פרוס" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאפיית שלמה א. אנג&#39;ל בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪17.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪17.20 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪15.90</s> ₪12.90 · 750 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014940901" data-name="לחם פשוט מלא פרוס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">באגט מאפייה <button type="button" class="photo-btn" data-photo="7290113196100" data-key="7290113196100" data-name="באגט מאפייה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪17.35 <small>לק״ג</small></div>
+          <div class="shelf">₪5.90 · 340 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290113196100" data-name="באגט מאפייה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם ברמן לעניין 750 גרם <button type="button" class="photo-btn" data-photo="7290000497532" data-key="7290000497532" data-name="לחם ברמן לעניין 750 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>י.את.א.ברמן בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.60 <small>לק״ג</small></div>
+          <div class="shelf">₪14.70 · 750 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000497532" data-name="לחם ברמן לעניין 750 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ברמן לעניין קל - עם חיטה טרום נבוטה <button type="button" class="photo-btn" data-photo="7290000497426" data-key="7290000497426" data-name="ברמן לעניין קל - עם חיטה טרום נבוטה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>י.את.א.ברמן בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪19.80 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪14.50</s> ₪9.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000497426" data-name="ברמן לעניין קל - עם חיטה טרום נבוטה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם עינן 750גר אנג`ל <button type="button" class="photo-btn" data-photo="7290000379142" data-key="7290000379142" data-name="לחם עינן 750גר אנג`ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאפיית שלמה א. אנג&#39;\ל בע</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪16.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.87 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 750 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000379142" data-name="לחם עינן 750גר אנג`ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">E-FREE לחם פרוס מקמח מלא <button type="button" class="photo-btn" data-photo="7290000498003" data-key="7290000498003" data-name="E-FREE לחם פרוס מקמח מלא" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאפית ברמן מקבוצת י. את א. ברמן בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.87 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 750 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000498003" data-name="E-FREE לחם פרוס מקמח מלא" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם E FREE כוסמין <button type="button" class="photo-btn" data-photo="7290000498034" data-key="7290000498034" data-name="לחם E FREE כוסמין" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאפית ברמן</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.87 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 750 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000498034" data-name="לחם E FREE כוסמין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם מחמצת שיפון 700 <button type="button" class="photo-btn" data-photo="7290004023041" data-key="7290004023041" data-name="לחם מחמצת שיפון 700" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.87 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 750 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004023041" data-name="לחם מחמצת שיפון 700" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בגט לבן <button type="button" class="photo-btn" data-photo="7290008899505" data-key="7290008899505" data-name="בגט לבן" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פילסברי</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪10</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪20.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.80</s> ₪5.00 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008899505" data-name="בגט לבן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם חיטה מלאה רמי לו <button type="button" class="photo-btn" data-photo="7290018296622" data-key="7290018296622" data-name="לחם חיטה מלאה רמי לו" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪20.13 <small>לק״ג</small></div>
+          <div class="shelf">₪15.10 · 750 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018296622" data-name="לחם חיטה מלאה רמי לו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם קל פרוס 100% קמח מלא שיפון 750 גר <button type="button" class="photo-btn" data-photo="7290013027399" data-key="7290013027399" data-name="לחם קל פרוס 100% קמח מלא שיפון 750 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאפיית שלמה א. אנג&#39;ל בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪16.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪20.67 <small>לק״ג</small></div>
+          <div class="shelf">₪15.50 · 750 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013027399" data-name="לחם קל פרוס 100% קמח מלא שיפון 750 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם עננים מקמח מלא 7 <button type="button" class="photo-btn" data-photo="7290004033712" data-key="7290004033712" data-name="לחם עננים מקמח מלא 7" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪20.67 <small>לק״ג</small></div>
+          <div class="shelf">₪15.50 · 750 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004033712" data-name="לחם עננים מקמח מלא 7" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">ברמן אקטיב 750 גרם <button type="button" class="photo-btn" data-photo="7290000497044" data-key="7290000497044" data-name="ברמן אקטיב 750 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>י.את.א.ברמן בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪21.20 <small>לק״ג</small></div>
+          <div class="shelf">₪15.90 · 750 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000497044" data-name="ברמן אקטיב 750 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לחם חיטה מלאה 750 גר דגנית עין בר <button type="button" class="photo-btn" data-photo="7290000574141" data-key="7290000574141" data-name="לחם חיטה מלאה 750 גר דגנית עין בר" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>דגנית עין בר תעשיות מזון ואפיה בעינת</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪21.20 <small>לק״ג</small></div>
+          <div class="shelf">₪15.90 · 750 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000574141" data-name="לחם חיטה מלאה 750 גר דגנית עין בר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לחם שיפון אמיתי קל 750 גר דגנית עין בר <button type="button" class="photo-btn" data-photo="7290000574370" data-key="7290000574370" data-name="לחם שיפון אמיתי קל 750 גר דגנית עין בר" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>דגנית עין בר תעשיות מזון</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪21.20 <small>לק״ג</small></div>
+          <div class="shelf">₪15.90 · 750 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000574370" data-name="לחם שיפון אמיתי קל 750 גר דגנית עין בר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לחם חיטה מלא + כוסמין <button type="button" class="photo-btn" data-photo="7290000574455" data-key="7290000574455" data-name="לחם חיטה מלא + כוסמין" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>דגנית עין בר תעשיות מזון ואפייה בעינת</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪21.20 <small>לק״ג</small></div>
+          <div class="shelf">₪15.90 · 750 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000574455" data-name="לחם חיטה מלא + כוסמין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לחם חיטה מלא שילדים אוהבים במרקם אחיד וחלק <button type="button" class="photo-btn" data-photo="7290003268252" data-key="7290003268252" data-name="לחם חיטה מלא שילדים אוהבים במרקם אחיד וחלק" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>דגנית עין בר תעשיות מזון ואפיה בעינת</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪21.20 <small>לק״ג</small></div>
+          <div class="shelf">₪15.90 · 750 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003268252" data-name="לחם חיטה מלא שילדים אוהבים במרקם אחיד וחלק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לחם ירוק מקמח מלא 750 גר דגנית עין בר <button type="button" class="photo-btn" data-photo="7290003268429" data-key="7290003268429" data-name="לחם ירוק מקמח מלא 750 גר דגנית עין בר" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>דגנית עין בר תעשיות מזון ואפייה בעינת</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪21.20 <small>לק״ג</small></div>
+          <div class="shelf">₪15.90 · 750 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290003268429" data-name="לחם ירוק מקמח מלא 750 גר דגנית עין בר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לחם לבן ללא גלוטן 500 גר` <button type="button" class="photo-btn" data-photo="7296073345060" data-key="7296073345060" data-name="לחם לבן ללא גלוטן 500 גר`" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪21.80 <small>לק״ג</small></div>
+          <div class="shelf">₪10.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7296073345060" data-name="לחם לבן ללא גלוטן 500 גר`" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לחם קל חיטה מלאה 750 גר דגנית עין בר <button type="button" class="photo-btn" data-photo="7290000574172" data-key="7290000574172" data-name="לחם קל חיטה מלאה 750 גר דגנית עין בר" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>דגנית עין בר תעשיות מזון ואפיה בעינת</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪22.53 <small>לק״ג</small></div>
+          <div class="shelf">₪16.90 · 750 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000574172" data-name="לחם קל חיטה מלאה 750 גר דגנית עין בר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לחם הארץ 5 דגנים 750 גרם <button type="button" class="photo-btn" data-photo="7290004685126" data-key="7290004685126" data-name="לחם הארץ 5 דגנים 750 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>לחם הארץ מקבוצת י. את א. ברמן בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪16.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪22.53 <small>לק״ג</small></div>
+          <div class="shelf">₪16.90 · 750 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004685126" data-name="לחם הארץ 5 דגנים 750 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לחם שיפון 100% הארץ 750 גר <button type="button" class="photo-btn" data-photo="7290004685157" data-key="7290004685157" data-name="לחם שיפון 100% הארץ 750 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>י.את.א.ברמן בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪16.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪22.53 <small>לק״ג</small></div>
+          <div class="shelf">₪16.90 · 750 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004685157" data-name="לחם שיפון 100% הארץ 750 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לחם 10 דגנים לחם הארץ 750 גרם <button type="button" class="photo-btn" data-photo="7290004685195" data-key="7290004685195" data-name="לחם 10 דגנים לחם הארץ 750 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>לחם הארץ מקבוצת י. את א. ברמן בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪16.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪22.53 <small>לק״ג</small></div>
+          <div class="shelf">₪16.90 · 750 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004685195" data-name="לחם 10 דגנים לחם הארץ 750 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לחם מחמצת פומפרניקל <button type="button" class="photo-btn" data-photo="7290004685225" data-key="7290004685225" data-name="לחם מחמצת פומפרניקל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>י.את.א.ברמן בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪16.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪22.53 <small>לק״ג</small></div>
+          <div class="shelf">₪16.90 · 750 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004685225" data-name="לחם מחמצת פומפרניקל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם שיפון וחיטה מלאה אנג&#39;ל <button type="button" class="photo-btn" data-photo="7290017304885" data-key="7290017304885" data-name="לחם שיפון וחיטה מלאה אנג&#39;ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאפיית שלמה א. אנג;#039&amp;</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪17.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪22.53 <small>לק״ג</small></div>
+          <div class="shelf">₪16.90 · 750 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017304885" data-name="לחם שיפון וחיטה מלאה אנג&#39;ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם כוסמין וחיטה מלאה מאפיית אנג&#39;ל 750 גרם <button type="button" class="photo-btn" data-photo="7290017947891" data-key="7290017947891" data-name="לחם כוסמין וחיטה מלאה מאפיית אנג&#39;ל 750 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאפיית שלמה א. אנג&#39;ל בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪17.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪22.53 <small>לק״ג</small></div>
+          <div class="shelf">₪16.90 · 750 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017947891" data-name="לחם כוסמין וחיטה מלאה מאפיית אנג&#39;ל 750 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לחם כוסמין וחיטה מלאה <button type="button" class="photo-btn" data-photo="7290016867008" data-key="7290016867008" data-name="לחם כוסמין וחיטה מלאה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>המאפה של דר מרק בריאות באפייה בעמ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪17.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪23.87 <small>לק״ג</small></div>
+          <div class="shelf">₪17.90 · 750 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016867008" data-name="לחם כוסמין וחיטה מלאה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לחם מלא פרוס בתוספת גרעינים ודגנים <button type="button" class="photo-btn" data-photo="7290016967074" data-key="7290016967074" data-name="לחם מלא פרוס בתוספת גרעינים ודגנים" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאפיית שלמה א. אנג&#39;ל בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪17.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪23.87 <small>לק״ג</small></div>
+          <div class="shelf">₪17.90 · 750 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016967074" data-name="לחם מלא פרוס בתוספת גרעינים ודגנים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם בריאות ושובע 9 ד <button type="button" class="photo-btn" data-photo="7290018296608" data-key="7290018296608" data-name="לחם בריאות ושובע 9 ד" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪24.83 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018296608" data-name="לחם בריאות ושובע 9 ד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לחם כוסמין מלא אקטיב 100% 750 גר דגנית ע <button type="button" class="photo-btn" data-photo="7290000574622" data-key="7290000574622" data-name="לחם כוסמין מלא אקטיב 100% 750 גר דגנית ע" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>דגנית עין בר תעשיות מזון ואפיה בעינת</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪25.20 <small>לק״ג</small></div>
+          <div class="shelf">₪18.90 · 750 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000574622" data-name="לחם כוסמין מלא אקטיב 100% 750 גר דגנית ע" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם כוסמין קל 600 גר <button type="button" class="photo-btn" data-photo="7290001598399" data-key="7290001598399" data-name="לחם כוסמין קל 600 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪26.83 <small>לק״ג</small></div>
+          <div class="shelf">₪16.10 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001598399" data-name="לחם כוסמין קל 600 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם אחיד פלוס כוסמין <button type="button" class="photo-btn" data-photo="7290018296653" data-key="7290018296653" data-name="לחם אחיד פלוס כוסמין" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪26.86 <small>לק״ג</small></div>
+          <div class="shelf">₪18.80 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018296653" data-name="לחם אחיד פלוס כוסמין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בגט אותנטיק כפרי 240 גר` <button type="button" class="photo-btn" data-photo="7290115204100" data-key="7290115204100" data-name="בגט אותנטיק כפרי 240 גר`" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪27.08 <small>לק״ג</small></div>
+          <div class="shelf">₪6.50 · 240 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115204100" data-name="בגט אותנטיק כפרי 240 גר`" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בגט אותנטיק לבן 240 גר` <button type="button" class="photo-btn" data-photo="7290115204292" data-key="7290115204292" data-name="בגט אותנטיק לבן 240 גר`" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪27.08 <small>לק״ג</small></div>
+          <div class="shelf">₪6.50 · 240 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115204292" data-name="בגט אותנטיק לבן 240 גר`" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם טוסט אמריקה 500 <button type="button" class="photo-btn" data-photo="7290018296042" data-key="7290018296042" data-name="לחם טוסט אמריקה 500" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪27.80 <small>לק״ג</small></div>
+          <div class="shelf">₪13.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018296042" data-name="לחם טוסט אמריקה 500" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם כוסמין 100% 600 <button type="button" class="photo-btn" data-photo="7290013520463" data-key="7290013520463" data-name="לחם כוסמין 100% 600" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪28.17 <small>לק״ג</small></div>
+          <div class="shelf">₪16.90 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013520463" data-name="לחם כוסמין 100% 600" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם דגני קלות <button type="button" class="photo-btn" data-photo="7290000497570" data-key="7290000497570" data-name="לחם דגני קלות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>י. את א. ברמן בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪29.00 <small>לק״ג</small></div>
+          <div class="shelf">₪14.50 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000497570" data-name="לחם דגני קלות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם עינן קל פרוס 500 גר אנג`ל <button type="button" class="photo-btn" data-photo="7290000379203" data-key="7290000379203" data-name="לחם עינן קל פרוס 500 גר אנג`ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאפיית שלמה א. אנג&#39;ל בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪16.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪29.80 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000379203" data-name="לחם עינן קל פרוס 500 גר אנג`ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם פרו 500 גר אנג`ל <button type="button" class="photo-btn" data-photo="7290020216953" data-key="7290020216953" data-name="לחם פרו 500 גר אנג`ל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 31.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪22.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪30.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪21.90</s> ₪15.00 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020216953" data-name="לחם פרו 500 גר אנג`ל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם שיפון 100% <button type="button" class="photo-btn" data-photo="7290018296066" data-key="7290018296066" data-name="לחם שיפון 100%" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪30.00 <small>לק״ג</small></div>
+          <div class="shelf">₪16.50 · 550 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018296066" data-name="לחם שיפון 100%" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם מחמצת זיתי קלמטה <button type="button" class="photo-btn" data-photo="7290002608509" data-key="7290002608509" data-name="לחם מחמצת זיתי קלמטה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪32</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪30.19 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪16.00 · 530 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002608509" data-name="לחם מחמצת זיתי קלמטה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לחם מחמצת בסגנון אמריקאי מוראטו <button type="button" class="photo-btn" data-photo="8006837000918" data-key="8006837000918" data-name="לחם מחמצת בסגנון אמריקאי מוראטו" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>---</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪31.09 <small>לק״ג</small></div>
+          <div class="shelf">₪17.10 · 550 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8006837000918" data-name="לחם מחמצת בסגנון אמריקאי מוראטו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם עננים סגנון בריוש 500גר <button type="button" class="photo-btn" data-photo="7290004033736" data-key="7290004033736" data-name="לחם עננים סגנון בריוש 500גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאפית ברמן מקבוצת י. את א. ברמן בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪15.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪31.60 <small>לק״ג</small></div>
+          <div class="shelf">₪15.80 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004033736" data-name="לחם עננים סגנון בריוש 500גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם בסגנון אמריקה <button type="button" class="photo-btn" data-photo="7290017947105" data-key="7290017947105" data-name="לחם בסגנון אמריקה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מאפיית שלמה א. אנג&#39;ל בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪16.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪31.80 <small>לק״ג</small></div>
+          <div class="shelf">₪15.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017947105" data-name="לחם בסגנון אמריקה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לחם מחמצת רוסטיקו המוציא <button type="button" class="photo-btn" data-photo="7290018646014" data-key="7290018646014" data-name="לחם מחמצת רוסטיקו המוציא" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪33.17 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018646014" data-name="לחם מחמצת רוסטיקו המוציא" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לחם מחמצת דגנים המוציא <button type="button" class="photo-btn" data-photo="7290018646021" data-key="7290018646021" data-name="לחם מחמצת דגנים המוציא" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪33.17 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018646021" data-name="לחם מחמצת דגנים המוציא" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לחם מחמצת מלא וזיתי קלמטה המוציא <button type="button" class="photo-btn" data-photo="7290018646052" data-key="7290018646052" data-name="לחם מחמצת מלא וזיתי קלמטה המוציא" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪33.17 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018646052" data-name="לחם מחמצת מלא וזיתי קלמטה המוציא" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לחם הארץ שיפון פלוס 500גר <button type="button" class="photo-btn" data-photo="7290004685010" data-key="7290004685010" data-name="לחם הארץ שיפון פלוס 500גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>י.את.א.ברמן בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪16.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪33.80 <small>לק״ג</small></div>
+          <div class="shelf">₪16.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004685010" data-name="לחם הארץ שיפון פלוס 500גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לחם מחמצת וחיטה מלאה קל <button type="button" class="photo-btn" data-photo="7290004685027" data-key="7290004685027" data-name="לחם מחמצת וחיטה מלאה קל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>לחם הארץ מקבוצת י. את א. ברמן בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪16.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪33.80 <small>לק״ג</small></div>
+          <div class="shelf">₪16.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004685027" data-name="לחם מחמצת וחיטה מלאה קל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לחם שיפון אגוזים <button type="button" class="photo-btn" data-photo="7290004685201" data-key="7290004685201" data-name="לחם שיפון אגוזים" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>י.את.א.ברמן בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪16.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪33.80 <small>לק״ג</small></div>
+          <div class="shelf">₪16.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004685201" data-name="לחם שיפון אגוזים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לחם הארץ כוסמין 100% 500 גרם <button type="button" class="photo-btn" data-photo="7290004685430" data-key="7290004685430" data-name="לחם הארץ כוסמין 100% 500 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>לחם הארץ מקבוצת י. את א. ברמן בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪16.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪33.80 <small>לק״ג</small></div>
+          <div class="shelf">₪16.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004685430" data-name="לחם הארץ כוסמין 100% 500 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לחם בריוש 410 גר בוטיק האופה <button type="button" class="photo-btn" data-photo="743407539680" data-key="7290696200003:743407539680" data-name="לחם בריוש 410 גר בוטיק האופה" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪33.90 <small>לק״ג</small></div>
+          <div class="shelf">₪13.90 · 410 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:743407539680" data-name="לחם בריוש 410 גר בוטיק האופה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בגט אותנטיק קמח מלא ואגוז 240  גר`בונז` <button type="button" class="photo-btn" data-photo="7290115204315" data-key="7290115204315" data-name="בגט אותנטיק קמח מלא ואגוז 240  גר`בונז`" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪35.42 <small>לק״ג</small></div>
+          <div class="shelf">₪8.50 · 240 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115204315" data-name="בגט אותנטיק קמח מלא ואגוז 240  גר`בונז`" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בגט אותנטיק עגבניות ואגוז 240  גר`בונז` <button type="button" class="photo-btn" data-photo="7290115204339" data-key="7290115204339" data-name="בגט אותנטיק עגבניות ואגוז 240  גר`בונז`" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪35.42 <small>לק״ג</small></div>
+          <div class="shelf">₪8.50 · 240 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115204339" data-name="בגט אותנטיק עגבניות ואגוז 240  גר`בונז`" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לחם מחמצת עם בצלים 550  גר`בונז`ור <button type="button" class="photo-btn" data-photo="7290115201277" data-key="7290115201277" data-name="לחם מחמצת עם בצלים 550  גר`בונז`ור" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪36.18 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 550 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290115201277" data-name="לחם מחמצת עם בצלים 550  גר`בונז`ור" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לחם מחמצת כוסמין <button type="button" class="photo-btn" data-photo="7290016867404" data-key="7290016867404" data-name="לחם מחמצת כוסמין" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>המאפה של דר מרק בריאות באפייה בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪19.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪37.55 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 530 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016867404" data-name="לחם מחמצת כוסמין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מחמצת כפרי <button type="button" class="photo-btn" data-photo="7290018540824" data-key="7290018540824" data-name="מחמצת כפרי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪20.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪37.80 <small>לק״ג</small></div>
+          <div class="shelf">₪18.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018540824" data-name="מחמצת כפרי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ארטיזנל מחמצת חיטה מלאה וגרעינים <button type="button" class="photo-btn" data-photo="7290018540831" data-key="7290018540831" data-name="ארטיזנל מחמצת חיטה מלאה וגרעינים" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪20.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪37.80 <small>לק״ג</small></div>
+          <div class="shelf">₪18.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018540831" data-name="ארטיזנל מחמצת חיטה מלאה וגרעינים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם ארטיזנל חיטה מלאה וסילאן 500גר <button type="button" class="photo-btn" data-photo="7290020216410" data-key="7290020216410" data-name="לחם ארטיזנל חיטה מלאה וסילאן 500גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪19.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪37.80 <small>לק״ג</small></div>
+          <div class="shelf">₪18.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020216410" data-name="לחם ארטיזנל חיטה מלאה וסילאן 500גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לחם מחמצת אגוזים אפוי קפוא 480 גר` בו <button type="button" class="photo-btn" data-photo="7290016267082" data-key="7290016267082" data-name="לחם מחמצת אגוזים אפוי קפוא 480 גר` בו" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.38 <small>לק״ג</small></div>
+          <div class="shelf">₪18.90 · 480 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016267082" data-name="לחם מחמצת אגוזים אפוי קפוא 480 גר` בו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם פרוס ח.מלאה ללא <button type="button" class="photo-btn" data-photo="8006227001389" data-key="8006227001389" data-name="לחם פרוס ח.מלאה ללא" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.40 <small>לק״ג</small></div>
+          <div class="shelf">₪19.70 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8006227001389" data-name="לחם פרוס ח.מלאה ללא" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לחם קל כוסמין מלא 450 גר <button type="button" class="photo-btn" data-photo="7290016867114" data-key="7290016867114" data-name="לחם קל כוסמין מלא 450 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>כללי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪17.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.78 <small>לק״ג</small></div>
+          <div class="shelf">₪17.90 · 450 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016867114" data-name="לחם קל כוסמין מלא 450 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם ארטיזנל כוסמין לבן מחמצת 500גרם <button type="button" class="photo-btn" data-photo="7290018500316" data-key="7290018500316" data-name="לחם ארטיזנל כוסמין לבן מחמצת 500גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪21.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.80 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018500316" data-name="לחם ארטיזנל כוסמין לבן מחמצת 500גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מחמצת כוסמין <button type="button" class="photo-btn" data-photo="7290018540817" data-key="7290018540817" data-name="מחמצת כוסמין" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪21.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪39.80 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018540817" data-name="מחמצת כוסמין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לחם מחמצת זתי קלמנטה/אגוזים בונז`ור <button type="button" class="photo-btn" data-photo="7290016267075" data-key="7290016267075" data-name="לחם מחמצת זתי קלמנטה/אגוזים בונז`ור" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪41.46 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 480 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016267075" data-name="לחם מחמצת זתי קלמנטה/אגוזים בונז`ור" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם לבן 500 גר גרין לייט פוד <button type="button" class="photo-btn" data-photo="7290013121028" data-key="7290013121028" data-name="לחם לבן 500 גר גרין לייט פוד" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪22.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪41.80 <small>לק״ג</small></div>
+          <div class="shelf">₪20.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013121028" data-name="לחם לבן 500 גר גרין לייט פוד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לחם מחמצת מכוסמין מלא ד&#34;ר מרק 450 גרם <button type="button" class="photo-btn" data-photo="7290016867053" data-key="7290016867053" data-name="לחם מחמצת מכוסמין מלא ד&#34;ר מרק 450 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>כללי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪18.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪42.00 <small>לק״ג</small></div>
+          <div class="shelf">₪18.90 · 450 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016867053" data-name="לחם מחמצת מכוסמין מלא ד&#34;ר מרק 450 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם משפחתי עם דגנים <button type="button" class="photo-btn" data-photo="7290001598085" data-key="7290001598085" data-name="לחם משפחתי עם דגנים" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪47.00 <small>לק״ג</small></div>
+          <div class="shelf">₪18.80 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001598085" data-name="לחם משפחתי עם דגנים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם לבן פרוס ללא קשה <button type="button" class="photo-btn" data-photo="8006227001372" data-key="8006227001372" data-name="לחם לבן פרוס ללא קשה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪49.25 <small>לק״ג</small></div>
+          <div class="shelf">₪19.70 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8006227001372" data-name="לחם לבן פרוס ללא קשה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לחם כוסמין לבן בסגנון אמרקאי דר מרק <button type="button" class="photo-btn" data-photo="7290016867381" data-key="7290016867381" data-name="לחם כוסמין לבן בסגנון אמרקאי דר מרק" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪49.75 <small>לק״ג</small></div>
+          <div class="shelf">₪19.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016867381" data-name="לחם כוסמין לבן בסגנון אמרקאי דר מרק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לחם פשתן ביכורים 450 גר איטליאנו <button type="button" class="photo-btn" data-photo="7290016245318" data-key="7290016245318" data-name="לחם פשתן ביכורים 450 גר איטליאנו" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>ביכורים</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪55.33 <small>לק״ג</small></div>
+          <div class="shelf">₪24.90 · 450 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016245318" data-name="לחם פשתן ביכורים 450 גר איטליאנו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שליש באגט ללא גלוטן גרין לייט פוד <button type="button" class="photo-btn" data-photo="7290013121103" data-key="7290013121103" data-name="שליש באגט ללא גלוטן גרין לייט פוד" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪22.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪57.25 <small>לק״ג</small></div>
+          <div class="shelf">₪22.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013121103" data-name="שליש באגט ללא גלוטן גרין לייט פוד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם PRO דל פחממות 400 גר` <button type="button" class="photo-btn" data-photo="7290018296868" data-key="7290018296868" data-name="לחם PRO דל פחממות 400 גר`" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪23.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪58.75 <small>לק״ג</small></div>
+          <div class="shelf">₪23.50 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018296868" data-name="לחם PRO דל פחממות 400 גר`" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם לס פרוס 370 גר <button type="button" class="photo-btn" data-photo="7290014321168" data-key="7290014321168" data-name="לחם לס פרוס 370 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪59.29 <small>לק״ג</small></div>
+          <div class="shelf">₪24.90 · 420 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290014321168" data-name="לחם לס פרוס 370 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פאן בלנקו- לחם ללא גלוטן <button type="button" class="photo-btn" data-photo="8008698024065" data-key="8008698024065" data-name="פאן בלנקו- לחם ללא גלוטן" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪75.60 <small>לק״ג</small></div>
+          <div class="shelf">₪18.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8008698024065" data-name="פאן בלנקו- לחם ללא גלוטן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פאן מולטי גראנו- לחם <button type="button" class="photo-btn" data-photo="8008698024140" data-key="8008698024140" data-name="פאן מולטי גראנו- לחם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪75.60 <small>לק״ג</small></div>
+          <div class="shelf">₪18.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8008698024140" data-name="פאן מולטי גראנו- לחם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פאן רוסטיקו - לחם לל <button type="button" class="photo-btn" data-photo="8008698024188" data-key="8008698024188" data-name="פאן רוסטיקו - לחם לל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪75.60 <small>לק״ג</small></div>
+          <div class="shelf">₪18.90 · 250 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8008698024188" data-name="פאן רוסטיקו - לחם לל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מאסטר בייקר קלאסי לח <button type="button" class="photo-btn" data-photo="8008698005576" data-key="8008698005576" data-name="מאסטר בייקר קלאסי לח" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪76.33 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪26.90</s> ₪22.90 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8008698005576" data-name="מאסטר בייקר קלאסי לח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מאסטר בייקר דגנים לח <button type="button" class="photo-btn" data-photo="8008698011065" data-key="8008698011065" data-name="מאסטר בייקר דגנים לח" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪76.33 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪26.90</s> ₪22.90 · 300 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8008698011065" data-name="מאסטר בייקר דגנים לח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם הבית ללא גלוטן 2 <button type="button" class="photo-btn" data-photo="8008698002599" data-key="8008698002599" data-name="לחם הבית ללא גלוטן 2" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪82.92 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪24.90</s> ₪19.90 · 240 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8008698002599" data-name="לחם הבית ללא גלוטן 2" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ג&#39;בטה ללא גלוטן שר 2 <button type="button" class="photo-btn" data-photo="8008698010259" data-key="8008698010259" data-name="ג&#39;בטה ללא גלוטן שר 2" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪94.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪24.80</s> ₪18.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8008698010259" data-name="ג&#39;בטה ללא גלוטן שר 2" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">רבע באגט <button type="button" class="photo-btn" data-photo="7290002608370" data-key="7290002608370" data-name="רבע באגט" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪1.90 <small>ליח׳</small></div>
+          <div class="shelf">₪1.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002608370" data-name="רבע באגט" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שליש בגט <button type="button" class="photo-btn" data-photo="7290002608424" data-key="7290002608424" data-name="שליש בגט" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪2.70 <small>ליח׳</small></div>
+          <div class="shelf">₪2.70 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002608424" data-name="שליש בגט" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שליש בגט <button type="button" class="photo-btn" data-photo="7290006805379" data-key="7290006805379" data-name="שליש בגט" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פילסברי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪2.70 <small>ליח׳</small></div>
+          <div class="shelf">₪2.70 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290006805379" data-name="שליש בגט" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שליש כפרי <button type="button" class="photo-btn" data-photo="7290006805386" data-key="7290006805386" data-name="שליש כפרי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פילסברי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪2.70 <small>ליח׳</small></div>
+          <div class="shelf">₪2.70 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290006805386" data-name="שליש כפרי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חצי באגט מאפית <button type="button" class="photo-btn" data-photo="7290006805362" data-key="7290006805362" data-name="חצי באגט מאפית" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פילסברי</span>
+          
+        </div>
+        <div class="deal"><span class="badge">4 ב־₪12.50</span> בקניית 4 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪3.12 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪3.50</s> ₪3.12 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290006805362" data-name="חצי באגט מאפית" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חצי בגט כפרי <button type="button" class="photo-btn" data-photo="7290002750925" data-key="7290002750925" data-name="חצי בגט כפרי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪3.50 <small>ליח׳</small></div>
+          <div class="shelf">₪3.50 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002750925" data-name="חצי בגט כפרי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חצי בגט <button type="button" class="photo-btn" data-photo="7290002608417" data-key="7290002608417" data-name="חצי בגט" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪3.50 <small>ליח׳</small></div>
+          <div class="shelf">₪3.50 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002608417" data-name="חצי בגט" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">רוסטיק בגט כפרי <button type="button" class="photo-btn" data-photo="7290008899512" data-key="7290008899512" data-name="רוסטיק בגט כפרי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪10</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪6.00</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪5.00 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪5.80</s> ₪5.00 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008899512" data-name="רוסטיק בגט כפרי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בגט רוסטיק <button type="button" class="photo-btn" data-photo="7290002750963" data-key="7290002750963" data-name="בגט רוסטיק" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פילסברי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.50 <small>ליח׳</small></div>
+          <div class="shelf">₪9.50 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002750963" data-name="בגט רוסטיק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">בגט רוסטיק עם קמח מל <button type="button" class="photo-btn" data-photo="7290001461457" data-key="7290001461457" data-name="בגט רוסטיק עם קמח מל" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פילסברי</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.50 <small>ליח׳</small></div>
+          <div class="shelf">₪9.50 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001461457" data-name="בגט רוסטיק עם קמח מל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מארז חצי בגט לבן 4 י <button type="button" class="photo-btn" data-photo="7290008504058" data-key="7290008504058" data-name="מארז חצי בגט לבן 4 י" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪13.00 <small>ליח׳</small></div>
+          <div class="shelf">₪13.00 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008504058" data-name="מארז חצי בגט לבן 4 י" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">חצי בגט כפרי 4יח <button type="button" class="photo-btn" data-photo="7290008504065" data-key="7290008504065" data-name="חצי בגט כפרי 4יח" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪13.00 <small>ליח׳</small></div>
+          <div class="shelf">₪13.00 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008504065" data-name="חצי בגט כפרי 4יח" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם הבית- מאפה בסגנון מרוקאי <button type="button" class="photo-btn" data-photo="7290020216519" data-key="7290020216519" data-name="לחם הבית- מאפה בסגנון מרוקאי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪16.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪15.90 <small>ליח׳</small></div>
+          <div class="shelf">₪15.90 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020216519" data-name="לחם הבית- מאפה בסגנון מרוקאי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם מחמצת חיטה מלאה <button type="button" class="photo-btn" data-photo="7290002608516" data-key="7290002608516" data-name="לחם מחמצת חיטה מלאה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪32</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪16.00 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪16.00 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002608516" data-name="לחם מחמצת חיטה מלאה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם מחמצת כוסמין <button type="button" class="photo-btn" data-photo="7290002608523" data-key="7290002608523" data-name="לחם מחמצת כוסמין" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪32</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪16.00 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪16.00 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002608523" data-name="לחם מחמצת כוסמין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם מחמצת שיפון כהה <button type="button" class="photo-btn" data-photo="7290002608547" data-key="7290002608547" data-name="לחם מחמצת שיפון כהה" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪32</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪16.00 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪16.00 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002608547" data-name="לחם מחמצת שיפון כהה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם מחמצת טוסקני דגנ <button type="button" class="photo-btn" data-photo="7290002608769" data-key="7290002608769" data-name="לחם מחמצת טוסקני דגנ" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪32</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪16.00 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪16.00 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002608769" data-name="לחם מחמצת טוסקני דגנ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם מחמצת טוסקני כפר <button type="button" class="photo-btn" data-photo="7290002750383" data-key="7290002750383" data-name="לחם מחמצת טוסקני כפר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪32</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪16.00 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪16.00 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002750383" data-name="לחם מחמצת טוסקני כפר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם מחמצת לבן <button type="button" class="photo-btn" data-photo="7290001461105" data-key="7290001461105" data-name="לחם מחמצת לבן" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פילסברי</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪32</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪16.00 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪16.00 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001461105" data-name="לחם מחמצת לבן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם דגנים מחמצת <button type="button" class="photo-btn" data-photo="7290001461112" data-key="7290001461112" data-name="לחם דגנים מחמצת" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪32</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪16.00 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪16.00 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001461112" data-name="לחם דגנים מחמצת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם מחמצת <button type="button" class="photo-btn" data-photo="7290002608202" data-key="7290002608202" data-name="לחם מחמצת" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪32</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪16.00 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪16.00 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002608202" data-name="לחם מחמצת" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם מחמצת אגוזים וצי <button type="button" class="photo-btn" data-photo="7290004026776" data-key="7290004026776" data-name="לחם מחמצת אגוזים וצי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪32</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪16.00 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪16.00 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004026776" data-name="לחם מחמצת אגוזים וצי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם מחמצת שיפון אגוז <button type="button" class="photo-btn" data-photo="7290005719189" data-key="7290005719189" data-name="לחם מחמצת שיפון אגוז" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪32</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪16.00 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪16.00 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290005719189" data-name="לחם מחמצת שיפון אגוז" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ג&#39;בטה 4 יחידות <button type="button" class="photo-btn" data-photo="7290008504072" data-key="7290008504072" data-name="ג&#39;בטה 4 יחידות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪16.30 <small>ליח׳</small></div>
+          <div class="shelf">₪16.30 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008504072" data-name="ג&#39;בטה 4 יחידות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">לחם 7 דגנים קל 1.1קג <button type="button" class="photo-btn" data-photo="7290001598276" data-key="7290001598276" data-name="לחם 7 דגנים קל 1.1קג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪17.09 <small>ליח׳</small></div>
+          <div class="shelf">₪18.80 · 1.1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001598276" data-name="לחם 7 דגנים קל 1.1קג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מארז רבע בגט לבן 10 <button type="button" class="photo-btn" data-photo="7290008504041" data-key="7290008504041" data-name="מארז רבע בגט לבן 10" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪17.10 <small>ליח׳</small></div>
+          <div class="shelf">₪17.10 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290008504041" data-name="מארז רבע בגט לבן 10" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פרנה בטעמים <button type="button" class="photo-btn" data-photo="7290019759966" data-key="7290019759966" data-name="פרנה בטעמים" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪35</span> בקניית 2 · עד 31.12</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪17.50 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪17.50 · 1 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019759966" data-name="פרנה בטעמים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+      
+      <li class="divider">ללא מחיר לק״ג (גודל לא ידוע)</li>
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">רוסטיק שליש בגט לבן</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪3.00</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:6805379" data-name="רוסטיק שליש בגט לבן" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">רוסטיק שליש בגט כפרי</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪3.00</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:6805386" data-name="רוסטיק שליש בגט כפרי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">חצי בגט רוסטיק</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪4.00</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:6805362" data-name="חצי בגט רוסטיק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">חצי בגט כפרי רוסטיק</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪5.50</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2750925" data-name="חצי בגט כפרי רוסטיק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בגט לבן רוסטיק</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪6.00</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:8899505" data-name="בגט לבן רוסטיק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">באגט בונז`ור</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪6.50</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:6210661" data-name="באגט בונז`ור" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בגט-לחם ג`בטה/פרובנס מאפית <button type="button" class="photo-btn" data-photo="7290109350998" data-key="7290109350998" data-name="בגט-לחם ג`בטה/פרובנס מאפית" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪6.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290109350998" data-name="בגט-לחם ג`בטה/פרובנס מאפית" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">באגט וולט</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪7.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:50135" data-name="באגט וולט" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">רוסטיק לחם איטלקי רגיל</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪8.30</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:8899093" data-name="רוסטיק לחם איטלקי רגיל" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">בגט רוסטיק</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2750963" data-name="בגט רוסטיק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לחם הארץ לחם חמניות 500גר <button type="button" class="photo-btn" data-photo="7290004685089" data-key="7290004685089" data-name="לחם הארץ לחם חמניות 500גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מיוצר מלחם הארץ מקבוצת י.את.א.ברמן בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          <span class="other st-1">רמי לוי ₪16.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪16.90</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290004685089" data-name="לחם הארץ לחם חמניות 500גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לחם עם סמולינה מחיטת דורום בסגנון אמריקא <button type="button" class="photo-btn" data-photo="8006837003100" data-key="8006837003100" data-name="לחם עם סמולינה מחיטת דורום בסגנון אמריקא" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>מוראטו</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪17.10</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="8006837003100" data-name="לחם עם סמולינה מחיטת דורום בסגנון אמריקא" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">רוסטיק לחם מחמצת לבן .</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.50</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:1461105" data-name="רוסטיק לחם מחמצת לבן ." aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">רוסטיק לחם מחמצת דגנים</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.50</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:1461112" data-name="רוסטיק לחם מחמצת דגנים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">רוסטיק לחם כוסמין מלא בחוש</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.50</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2608202" data-name="רוסטיק לחם כוסמין מלא בחוש" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">רוסטיק לחם מחמצת זיתי קלמנטה</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.50</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2608509" data-name="רוסטיק לחם מחמצת זיתי קלמנטה" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">רוסטיק לחם מחמצת מקמח מלא</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.50</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2608516" data-name="רוסטיק לחם מחמצת מקמח מלא" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">רוסטיק לחם מחמצת כוסמין</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.50</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2608523" data-name="רוסטיק לחם מחמצת כוסמין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">רוסטיק מחמצת שיפון כהה וחמוציות</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.50</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2608547" data-name="רוסטיק מחמצת שיפון כהה וחמוציות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">רוסטיק מחמצת טוסקאני דגנים</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.50</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2608769" data-name="רוסטיק מחמצת טוסקאני דגנים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">לחם רוסטיק עגבניות מיובשות</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.50</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2750338" data-name="לחם רוסטיק עגבניות מיובשות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">רוסטיק מחמצת טוסקאני כפרי עגול</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.50</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2750383" data-name="רוסטיק מחמצת טוסקאני כפרי עגול" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">רוסטיק מחמצת שיפון אגוזים</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.50</div>
+          <div class="shelf"></div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:5719189" data-name="רוסטיק מחמצת שיפון אגוזים" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+</ol>
+</div>
+
+</main>
+<footer>עודכן 3.10 21:01 · ויקטורי 09:06 · רמי לוי 10:00 · אושר עד 08:00 · אושר עד 08:00</footer>
+
+
+<nav class="bottom-nav" aria-label="ניווט">
+  <a href="index.html" class="on"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg><span>בית</span></a>
+  <a href="search.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><span>חיפוש</span></a>
+  <a href="scan.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V5a1 1 0 0 1 1-1h2M17 4h2a1 1 0 0 1 1 1v2M20 17v2a1 1 0 0 1-1 1h-2M7 20H5a1 1 0 0 1-1-1v-2"/><path d="M8 8v8M11 8v8M14 8v8M16.5 8v8"/></svg><span>סריקה</span></a>
+  <a href="basket.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h11l2-8H6.2"/><circle cx="9.5" cy="19" r="1.4"/><circle cx="17" cy="19" r="1.4"/></svg><span id="cart-count"></span><span>עגלת קניות</span></a>
+  <a href="spending.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-2-1.4-2 1.4-2-1.4-2 1.4-2-1.4L6 21z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><span>הוצאות</span></a>
+</nav>
+
+<script src="static/basket.js?v=20261003210153"></script>
+<script src="static/photo.js?v=20261003210153"></script>
+
+<script src="static/render.js?v=20261003210153"></script>
+<script src="static/category.js?v=20261003210153" data-build="20261003210153"></script>
+
+<script>
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+</script>
+</body>
+</html>

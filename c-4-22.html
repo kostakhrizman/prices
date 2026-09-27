@@ -1,0 +1,2600 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f7a4d">
+<script>
+// the look this phone chose (settings.html "מראה"), before anything is drawn: html.light / html.dark
+// (none = follow the phone) and html[data-color] (none = green); the browser bar takes the colour too
+(function () {
+  let t = {};
+  try { t = JSON.parse(localStorage.getItem("theme")) || {}; } catch (e) { /* none yet */ }
+  const root = document.documentElement;
+  if (t.mode === "light" || t.mode === "dark") root.classList.add(t.mode);
+  if (t.color) root.dataset.color = t.color;
+  if (t.bar) document.querySelector('meta[name="theme-color"]').content = t.bar;
+})();
+</script>
+<title>רסק ומחית עגבניות</title>
+<link rel="manifest" href="static/manifest.webmanifest">
+<link rel="icon" href="static/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="static/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="static/style.css?v=20261003210153">
+<style>.st-0 { --store: #e07000; }.st-1 { --store: #d32f2f; }.st-2 { --store: #1565c0; }.st-3 { --store: #1565c0; }</style>
+<script src="static/stores.js?v=20261003210153" data-stores="[{&#34;card_cap&#34;: 750, &#34;card_rate&#34;: 0.07, &#34;default&#34;: true, &#34;key&#34;: &#34;victory-038&#34;, &#34;name&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;ramilevy-007&#34;, &#34;name&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-026&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05ea\u05dc\u05e4\u05d9\u05d5\u05ea&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-003&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05d2\u05d1\u05e2\u05ea \u05e9\u05d0\u05d5\u05dc&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}]"></script>
+<script>
+// No long-press menu on links, pictures or text (the user: the home page's tiles opened Chrome's "open in new tab /
+// copy link" menu; CSS can't stop that on Android). Typing fields and the ⓘ sheet's barcode keep theirs.
+document.addEventListener("contextmenu", (e) => {
+  if (!e.target.closest("input, textarea, [contenteditable], .photo-barcode")) e.preventDefault();
+});
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <a class="back" href="t-4.html" aria-label="חזרה">→</a>
+    <h1>רסק ומחית עגבניות</h1>
+    <a class="notes-link" href="notes.html" aria-label="רשימת קניות" title="רשימת קניות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="m8.5 10 1.2 1.2 2.3-2.4M8.5 15.5l1.2 1.2 2.3-2.4M14 10.5h2.5M14 16h2.5"/></svg><span>רשימת קניות</span></a>
+    <a class="settings-link" href="settings.html" aria-label="הגדרות" title="הגדרות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></a>
+  </div>
+  
+  <form class="search" action="search.html" method="get" role="search">
+    <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+    <input type="search" name="q" placeholder="חיפוש מוצר" enterkeyhint="search" aria-label="חיפוש מוצר">
+  </form>
+  
+</header>
+<main>
+
+<p class="sub"><span class="sub-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8v3H8z"/><path d="M7 6h10a1 1 0 0 1 1 1v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V7a1 1 0 0 1 1-1z"/><path d="M6 11h12v5H6z"/></svg></span>מזווה · <span id="cat-count">93</span> מוצרים, מהזול ליקר</p>
+
+
+<div class="cat-filter">
+  <input type="search" id="cat-filter" placeholder="סינון לפי שם או יצרן · ‎-מילה מסתירה" enterkeyhint="done" autocomplete="off" aria-label="סינון המוצרים בקטגוריה">
+</div>
+<div id="cat-list" data-href="c-4-22.html">
+
+<ol class="products">
+  
+  
+    
+    
+    <li class="product st-0 best">
+      <div class="info">
+        <div class="name">עגבניות חתוכות דק בודד 400 גר` ויקטו</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.75 <small>לק״ג</small></div>
+          <div class="shelf">₪3.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:11438" data-name="עגבניות חתוכות דק בודד 400 גר` ויקטו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פריניר עגב מרוסקות A2.5 <button type="button" class="photo-btn" data-photo="7290002019763" data-key="7290002019763" data-name="פריניר עגב מרוסקות A2.5" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פריניר ( הדס 1987) בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪9.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪9.88 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪7.90 · 800 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002019763" data-name="פריניר עגב מרוסקות A2.5" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קוביות עגבניות במיץ 800 גר <button type="button" class="photo-btn" data-photo="7290020498007" data-key="7290020498007" data-name="קוביות עגבניות במיץ 800 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.88 <small>לק״ג</small></div>
+          <div class="shelf">₪7.90 · 800 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020498007" data-name="קוביות עגבניות במיץ 800 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">רוטב עגבניות שלמות במיץ 800גר רמילוי <button type="button" class="photo-btn" data-photo="7290020498014" data-key="7290020498014" data-name="רוטב עגבניות שלמות במיץ 800גר רמילוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.88 <small>לק״ג</small></div>
+          <div class="shelf">₪7.90 · 800 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020498014" data-name="רוטב עגבניות שלמות במיץ 800גר רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עגבניות מרוסקות בתרכיז עגבניות 800 גר <button type="button" class="photo-btn" data-photo="7290020498021" data-key="7290020498021" data-name="עגבניות מרוסקות בתרכיז עגבניות 800 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.88 <small>לק״ג</small></div>
+          <div class="shelf">₪7.90 · 800 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020498021" data-name="עגבניות מרוסקות בתרכיז עגבניות 800 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">עגבניות חתוכות דק מארז שלישייה ויקטורי <button type="button" class="photo-btn" data-photo="783495617679" data-key="7290696200003:783495617679" data-name="עגבניות חתוכות דק מארז שלישייה ויקטורי" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪9.92 <small>לק״ג</small></div>
+          <div class="shelf">₪11.90 · 1.2 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:783495617679" data-name="עגבניות חתוכות דק מארז שלישייה ויקטורי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פריניר עגב&#39; חתוך דק מארז 3*400ג&#39; <button type="button" class="photo-btn" data-photo="7290016087499" data-key="7290016087499" data-name="פריניר עגב&#39; חתוך דק מארז 3*400ג&#39;" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פריניר</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪25</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪10.42 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪15.70</s> ₪12.50 · 1.2 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016087499" data-name="פריניר עגב&#39; חתוך דק מארז 3*400ג&#39;" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עגבניות מרוסקות 3*400גר יכין <button type="button" class="photo-btn" data-photo="7290018989746" data-key="7290018989746" data-name="עגבניות מרוסקות 3*400גר יכין" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זנלכל</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪11.58 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪13.90 · 1.2 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018989746" data-name="עגבניות מרוסקות 3*400גר יכין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">שלשות עגבניות חתוכות <button type="button" class="photo-btn" data-photo="7290019926887" data-key="7290019926887" data-name="שלשות עגבניות חתוכות" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪12.42 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 1.2 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019926887" data-name="שלשות עגבניות חתוכות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עגבניות חתוכות פולפה דק 3 יח 400 גרם יד מרדכי <button type="button" class="photo-btn" data-photo="7290119382132" data-key="7290119382132" data-name="עגבניות חתוכות פולפה דק 3 יח 400 גרם יד מרדכי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אפ.פי.די.סרל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪17.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪12.42 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 1.2 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119382132" data-name="עגבניות חתוכות פולפה דק 3 יח 400 גרם יד מרדכי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פולפה מוטי עגבניות שלישייה 1.2 ק&#34;ג MUTTY <button type="button" class="photo-btn" data-photo="8005110170300" data-key="8005110170300" data-name="פולפה מוטי עגבניות שלישייה 1.2 ק&#34;ג MUTTY" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>Mutti</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪30</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪24.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪12.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪19.80</s> ₪15.00 · 1.2 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8005110170300" data-name="פולפה מוטי עגבניות שלישייה 1.2 ק&#34;ג MUTTY" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פריניר רוטב עגבניות 22BX ג 260 פלסטיק <button type="button" class="photo-btn" data-photo="7290002019787" data-key="7290002019787" data-name="פריניר רוטב עגבניות 22BX ג 260 פלסטיק" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פריניר ) הדס (1987 בעמ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">4 ב־₪14</span> בקניית 4 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪4.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪13.46 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪4.40</s> ₪3.50 · 260 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002019787" data-name="פריניר רוטב עגבניות 22BX ג 260 פלסטיק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עגבניות מרוסקות דק בבקבוק 700 גרם <button type="button" class="photo-btn" data-photo="8032793342458" data-key="8032793342458" data-name="עגבניות מרוסקות דק בבקבוק 700 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אורגרן הלס אנד ניצר</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18.90</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪13.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪12.90</s> ₪9.45 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8032793342458" data-name="עגבניות מרוסקות דק בבקבוק 700 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עגבניות חתוכות דק בק&#39; 700 גר <button type="button" class="photo-btn" data-photo="8032793344292" data-key="8032793344292" data-name="עגבניות חתוכות דק בק&#39; 700 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18.90</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪13.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪12.90</s> ₪9.45 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8032793344292" data-name="עגבניות חתוכות דק בק&#39; 700 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עגבניות מרוסקות מרוכזות עם בזילקום פריניר 240 גרם <button type="button" class="photo-btn" data-photo="7290016087208" data-key="7290016087208" data-name="עגבניות מרוסקות מרוכזות עם בזילקום פריניר 240 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פריניר</span>
+          
+        </div>
+        <div class="deal"><span class="badge">4 ב־₪13</span> בקניית 4 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪13.54 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.50</s> ₪3.25 · 240 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016087208" data-name="עגבניות מרוסקות מרוכזות עם בזילקום פריניר 240 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פאסאטה מחית עגבניות יכין 690 גר <button type="button" class="photo-btn" data-photo="7290018359112" data-key="7290018359112" data-name="פאסאטה מחית עגבניות יכין 690 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18.90</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪13.70 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪9.45 · 690 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018359112" data-name="פאסאטה מחית עגבניות יכין 690 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עגבניות פולפה חתוכות דק יכין 690 גר <button type="button" class="photo-btn" data-photo="7290018359129" data-key="7290018359129" data-name="עגבניות פולפה חתוכות דק יכין 690 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18.90</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪13.70 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.90</s> ₪9.45 · 690 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018359129" data-name="עגבניות פולפה חתוכות דק יכין 690 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שלישייה קוביות עגבני <button type="button" class="photo-btn" data-photo="7290019031765" data-key="7290019031765" data-name="שלישייה קוביות עגבני" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪13.75 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪12.90</s> ₪9.90 · 720 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019031765" data-name="שלישייה קוביות עגבני" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שלישייה עגבניות מרוסקות איטליה 3*240 גרם רמי לוי <button type="button" class="photo-btn" data-photo="7290019246374" data-key="7290019246374" data-name="שלישייה עגבניות מרוסקות איטליה 3*240 גרם רמי לוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪13.75 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪12.90</s> ₪9.90 · 720 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019246374" data-name="שלישייה עגבניות מרוסקות איטליה 3*240 גרם רמי לוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">רוטב עגבניות מרוכז 28 580 גר פריניר <button type="button" class="photo-btn" data-photo="7290002019114" data-key="7290002019114" data-name="רוטב עגבניות מרוכז 28 580 גר פריניר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פרי ניר</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪16</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪11.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪13.79 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪8.00 · 580 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002019114" data-name="רוטב עגבניות מרוכז 28 580 גר פריניר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">רוטב עגבניות מרוכז לשקשוקה פיקנטי פריניר 230 גרם <button type="button" class="photo-btn" data-photo="7290016087239" data-key="7290016087239" data-name="רוטב עגבניות מרוכז לשקשוקה פיקנטי פריניר 230 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פריניר</span>
+          
+        </div>
+        <div class="deal"><span class="badge">4 ב־₪13</span> בקניית 4 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪14.13 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.50</s> ₪3.25 · 230 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016087239" data-name="רוטב עגבניות מרוכז לשקשוקה פיקנטי פריניר 230 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פריניר מרוסקות 230 ג <button type="button" class="photo-btn" data-photo="7290016087192" data-key="7290016087192" data-name="פריניר מרוסקות 230 ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פריניר</span>
+          
+        </div>
+        <div class="deal"><span class="badge">4 ב־₪13</span> בקניית 4 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪14.13 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.50</s> ₪3.25 · 230 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016087192" data-name="פריניר מרוסקות 230 ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עגבניות מרוסקות מרוכזות בתוספת שום פריניר 230 גרם <button type="button" class="photo-btn" data-photo="7290016087215" data-key="7290016087215" data-name="עגבניות מרוסקות מרוכזות בתוספת שום פריניר 230 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פריניר</span>
+          
+        </div>
+        <div class="deal"><span class="badge">4 ב־₪13</span> בקניית 4 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪14.13 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.50</s> ₪3.25 · 230 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016087215" data-name="עגבניות מרוסקות מרוכזות בתוספת שום פריניר 230 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מתבל עגבניות 690 גר` ויקטורי <button type="button" class="photo-btn" data-photo="783495721031" data-key="7290696200003:783495721031" data-name="מתבל עגבניות 690 גר` ויקטורי" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.35 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 690 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:783495721031" data-name="מתבל עגבניות 690 גר` ויקטורי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מאסטר שף מחית עגבניות 690 גרם כשלפ חדש <button type="button" class="photo-btn" data-photo="7290117387726" data-key="7290117387726" data-name="מאסטר שף מחית עגבניות 690 גרם כשלפ חדש" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>Mazza Alimentari S.r.l</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪14.35 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪12.90</s> ₪9.90 · 690 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290117387726" data-name="מאסטר שף מחית עגבניות 690 גרם כשלפ חדש" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">רוטב עגבניות מרוכז ר <button type="button" class="photo-btn" data-photo="7290020498175" data-key="7290020498175" data-name="רוטב עגבניות מרוכז ר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.58 <small>לק״ג</small></div>
+          <div class="shelf">₪3.50 · 240 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020498175" data-name="רוטב עגבניות מרוכז ר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עגבניות מקולפות חתוכ <button type="button" class="photo-btn" data-photo="7290000210452" data-key="7290000210452" data-name="עגבניות מקולפות חתוכ" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.61 <small>לק״ג</small></div>
+          <div class="shelf">₪22.50 · 1.54 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000210452" data-name="עגבניות מקולפות חתוכ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עגבניות מרוסקות דק ר <button type="button" class="photo-btn" data-photo="7290016087475" data-key="7290016087475" data-name="עגבניות מרוסקות דק ר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪14.75 <small>לק״ג</small></div>
+          <div class="shelf">₪5.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016087475" data-name="עגבניות מרוסקות דק ר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פריכוז רוטב עגבניות מרוכז מאוד 580 גרם A2 יכין <button type="button" class="photo-btn" data-photo="7290000209722" data-key="7290000209722" data-name="פריכוז רוטב עגבניות מרוכז מאוד 580 גרם A2 יכין" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זנלכל בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪12.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪15.34 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪10.70</s> ₪8.90 · 580 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000209722" data-name="פריכוז רוטב עגבניות מרוכז מאוד 580 גרם A2 יכין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מחית עגבניות מרוסקות <button type="button" class="photo-btn" data-photo="7290112357045" data-key="7290112357045" data-name="מחית עגבניות מרוסקות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪12</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪15.38 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪6.90</s> ₪6.00 · 390 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290112357045" data-name="מחית עגבניות מרוסקות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">רסק תפוע 700 גר תומר <button type="button" class="photo-btn" data-photo="7290002881216" data-key="7290002881216" data-name="רסק תפוע 700 גר תומר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>KONSERVENFABRI BALTUSSEN</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪13.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪15.40 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪12.80</s> ₪10.90 · 708 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002881216" data-name="רסק תפוע 700 גר תומר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">רוטב עגבניות 240גר רמילוי <button type="button" class="photo-btn" data-photo="7290001464083" data-key="7290001464083" data-name="רוטב עגבניות 240גר רמילוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪15.42 <small>לק״ג</small></div>
+          <div class="shelf">₪3.70 · 240 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001464083" data-name="רוטב עגבניות 240גר רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">רוטב עגבניות 22BX 240 גרם יכין <button type="button" class="photo-btn" data-photo="7290000208336" data-key="7290000208336" data-name="רוטב עגבניות 22BX 240 גרם יכין" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זנלכל בע&#34;\מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">4 ב־₪14.90</span> בקניית 4 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪5.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪15.54 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪3.90</s> ₪3.73 · 240 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000208336" data-name="רוטב עגבניות 22BX 240 גרם יכין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פרי מבורך רוטב עגבניות 22% 240 גרם <button type="button" class="photo-btn" data-photo="7290002111337" data-key="7290002111337" data-name="פרי מבורך רוטב עגבניות 22% 240 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פרי מבורך</span>
+          
+        </div>
+        <div class="deal"><span class="badge">4 ב־₪14.90</span> בקניית 4 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪15.54 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪3.90</s> ₪3.73 · 240 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002111337" data-name="פרי מבורך רוטב עגבניות 22% 240 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">צ&#39;יריו פסאטה במרקם ע <button type="button" class="photo-btn" data-photo="8000320010095" data-key="8000320010095" data-name="צ&#39;יריו פסאטה במרקם ע" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪15.86 <small>לק״ג</small></div>
+          <div class="shelf">₪11.10 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8000320010095" data-name="צ&#39;יריו פסאטה במרקם ע" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מתבל עגבניות 550 גר ויקטורי <button type="button" class="photo-btn" data-photo="796520163300" data-key="7290696200003:796520163300" data-name="מתבל עגבניות 550 גר ויקטורי" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪16.18 <small>לק״ג</small></div>
+          <div class="shelf">₪8.90 · 550 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:796520163300" data-name="מתבל עגבניות 550 גר ויקטורי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מחית עגבניות מארז זוג 2*700 גר MUTTI <button type="button" class="photo-btn" data-photo="8005110630231" data-key="8005110630231" data-name="מחית עגבניות מארז זוג 2*700 גר MUTTI" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪16.36 <small>לק״ג</small></div>
+          <div class="shelf">₪22.90 · 1.4 ק״ג</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8005110630231" data-name="מחית עגבניות מארז זוג 2*700 גר MUTTI" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עגבניות מרוסקות 600 גרם בד&#34;ץ יכין <button type="button" class="photo-btn" data-photo="7290000208022" data-key="7290000208022" data-name="עגבניות מרוסקות 600 גרם בד&#34;ץ יכין" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זנלכל בע&#34;\מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪10.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪16.50 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000208022" data-name="עגבניות מרוסקות 600 גרם בד&#34;ץ יכין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עגבניות מרוסקות שום 600 גרם A2.5 בד&#34;ץ יכין <button type="button" class="photo-btn" data-photo="7290000208343" data-key="7290000208343" data-name="עגבניות מרוסקות שום 600 גרם A2.5 בד&#34;ץ יכין" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יכין</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪16.50 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000208343" data-name="עגבניות מרוסקות שום 600 גרם A2.5 בד&#34;ץ יכין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">רוטב עגבניות 240 גר פריכוז יכין <button type="button" class="photo-btn" data-photo="7290000207063" data-key="7290000207063" data-name="רוטב עגבניות 240 גר פריכוז יכין" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זנלכל בע&#34;\מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪8</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪6.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪16.67 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.50</s> ₪4.00 · 240 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000207063" data-name="רוטב עגבניות 240 גר פריכוז יכין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">רוטב עגבניות 22BX 100 ג&#39; יכין <button type="button" class="photo-btn" data-photo="7290000207162" data-key="7290000207162" data-name="רוטב עגבניות 22BX 100 ג&#39; יכין" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זנלכל בע\&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">6 ב־₪10</span> בקניית 6 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪3.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪16.70 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪2.20</s> ₪1.67 · 100 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000207162" data-name="רוטב עגבניות 22BX 100 ג&#39; יכין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פרי מבורך רוטב עגבניות 22% 100 גרם <button type="button" class="photo-btn" data-photo="7290002111085" data-key="7290002111085" data-name="פרי מבורך רוטב עגבניות 22% 100 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פרי מבורך</span>
+          
+        </div>
+        <div class="deal"><span class="badge">6 ב־₪10</span> בקניית 6 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪16.70 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪2.20</s> ₪1.67 · 100 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002111085" data-name="פרי מבורך רוטב עגבניות 22% 100 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מחית עגבניות בלה איטליה 700גר <button type="button" class="photo-btn" data-photo="7290015150088" data-key="7290015150088" data-name="מחית עגבניות בלה איטליה 700גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אמיליאנה קונסרב ס.פ.א, ויה ויאלדי 7</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪14.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪17.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪13.90</s> ₪11.90 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015150088" data-name="מחית עגבניות בלה איטליה 700גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עגבניות חתוכות דק מו</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪17.25 <small>לק״ג</small></div>
+          <div class="shelf">₪6.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290058140886:80042556" data-name="עגבניות חתוכות דק מו" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מאסטר שף עגבניות קוב <button type="button" class="photo-btn" data-photo="7290107973809" data-key="7290107973809" data-name="מאסטר שף עגבניות קוב" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪17.25 <small>לק״ג</small></div>
+          <div class="shelf">₪6.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290107973809" data-name="מאסטר שף עגבניות קוב" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פריניר רוטב עגבניות 100 גר 22BX <button type="button" class="photo-btn" data-photo="7290002019794" data-key="7290002019794" data-name="פריניר רוטב עגבניות 100 גר 22BX" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פרי ניר</span>
+          
+        </div>
+        <div class="deal"><span class="badge">8 ב־₪14</span> בקניית 8 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪2.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪17.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪2.40</s> ₪1.75 · 100 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002019794" data-name="פריניר רוטב עגבניות 100 גר 22BX" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מחית עגבניות רוסטיקה בלה איטליה 680 ג <button type="button" class="photo-btn" data-photo="7290017513485" data-key="7290017513485" data-name="מחית עגבניות רוסטיקה בלה איטליה 680 ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>היצרן: ס.פ. פודנצנו 10- 29027 ס. פולו די פודנצנו,</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪14.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪17.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪13.90</s> ₪11.90 · 680 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290017513485" data-name="מחית עגבניות רוסטיקה בלה איטליה 680 ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">פאסאטה מחית עגבניות <button type="button" class="photo-btn" data-photo="7290019926986" data-key="7290019926986" data-name="פאסאטה מחית עגבניות" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪17.50 <small>לק״ג</small></div>
+          <div class="shelf">₪11.90 · 680 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019926986" data-name="פאסאטה מחית עגבניות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עגבניות מרוסקות בזיליקום 600 A2.5 בד&#34;ץ יכין <button type="button" class="photo-btn" data-photo="7290000208367" data-key="7290000208367" data-name="עגבניות מרוסקות בזיליקום 600 A2.5 בד&#34;ץ יכין" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זנלכל בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪10.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪18.00 <small>לק״ג</small></div>
+          <div class="shelf">₪10.80 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000208367" data-name="עגבניות מרוסקות בזיליקום 600 A2.5 בד&#34;ץ יכין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עגבניות מרוסקות בצל 600 גרם A2.5 בד&#34;ץ יכין <button type="button" class="photo-btn" data-photo="7290000208350" data-key="7290000208350" data-name="עגבניות מרוסקות בצל 600 גרם A2.5 בד&#34;ץ יכין" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יכין</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪18.00 <small>לק״ג</small></div>
+          <div class="shelf">₪10.80 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000208350" data-name="עגבניות מרוסקות בצל 600 גרם A2.5 בד&#34;ץ יכין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פרי מבורך רוטב עגבניות תרכיז 28% A2 <button type="button" class="photo-btn" data-photo="7290002111665" data-key="7290002111665" data-name="פרי מבורך רוטב עגבניות תרכיז 28% A2" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>פרי מבורך</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪18.62 <small>לק״ג</small></div>
+          <div class="shelf">₪10.80 · 580 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002111665" data-name="פרי מבורך רוטב עגבניות תרכיז 28% A2" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קוביות עגבניות 240 ג <button type="button" class="photo-btn" data-photo="7290019031819" data-key="7290019031819" data-name="קוביות עגבניות 240 ג" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪18.75 <small>לק״ג</small></div>
+          <div class="shelf">₪4.50 · 240 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290019031819" data-name="קוביות עגבניות 240 ג" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פרי מבורך עגבניות מרוסקות 240 <button type="button" class="photo-btn" data-photo="7290013010001" data-key="7290013010001" data-name="פרי מבורך עגבניות מרוסקות 240" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זנלכל</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪9</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪18.75 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪5.90</s> ₪4.50 · 240 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290013010001" data-name="פרי מבורך עגבניות מרוסקות 240" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">רוטב עגבניות מרוכז מ <button type="button" class="photo-btn" data-photo="7290020498168" data-key="7290020498168" data-name="רוטב עגבניות מרוכז מ" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪19.00 <small>לק״ג</small></div>
+          <div class="shelf">₪1.90 · 100 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020498168" data-name="רוטב עגבניות מרוכז מ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">רוטב עגבניות 100גר רמילוי <button type="button" class="photo-btn" data-photo="7290001464137" data-key="7290001464137" data-name="רוטב עגבניות 100גר רמילוי" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪20.00 <small>לק״ג</small></div>
+          <div class="shelf">₪2.00 · 100 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290001464137" data-name="רוטב עגבניות 100גר רמילוי" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מחית עגבניות <button type="button" class="photo-btn" data-photo="7290117266007" data-key="7290117266007" data-name="מחית עגבניות" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪20.14 <small>לק״ג</small></div>
+          <div class="shelf">₪13.90 · 690 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290117266007" data-name="מחית עגבניות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עגבניות קוביות485 ג&#39; A2.5 בד&#34;ץ יכין <button type="button" class="photo-btn" data-photo="7290000207438" data-key="7290000207438" data-name="עגבניות קוביות485 ג&#39; A2.5 בד&#34;ץ יכין" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זנלכל בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪10.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪20.41 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 485 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000207438" data-name="עגבניות קוביות485 ג&#39; A2.5 בד&#34;ץ יכין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">קוביות עגבניות במיץ עגבניות ללא תוספת סוכר וילי פוד 3 * 400 גרם <button type="button" class="photo-btn" data-photo="7290108509168" data-key="7290108509168" data-name="קוביות עגבניות במיץ עגבניות ללא תוספת סוכר וילי פוד 3 * 400 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪20.69 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 720 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108509168" data-name="קוביות עגבניות במיץ עגבניות ללא תוספת סוכר וילי פוד 3 * 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עגבניות חתוכות לקוביות בלה איטליה 240*3 <button type="button" class="photo-btn" data-photo="7290016372342" data-key="7290016372342" data-name="עגבניות חתוכות לקוביות בלה איטליה 240*3" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪20.69 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪21.10</s> ₪14.90 · 720 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016372342" data-name="עגבניות חתוכות לקוביות בלה איטליה 240*3" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עגבניות שלמות מקולפות 520 גרם A2.5 בד&#34;ץ יכין <button type="button" class="photo-btn" data-photo="7290000210469" data-key="7290000210469" data-name="עגבניות שלמות מקולפות 520 גרם A2.5 בד&#34;ץ יכין" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יכין</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪20.77 <small>לק״ג</small></div>
+          <div class="shelf">₪10.80 · 520 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000210469" data-name="עגבניות שלמות מקולפות 520 גרם A2.5 בד&#34;ץ יכין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">פריניר עגב שלמות במיץA2.5 <button type="button" class="photo-btn" data-photo="7290002019183" data-key="7290002019183" data-name="פריניר עגב שלמות במיץA2.5" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>נטו מלינדה</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪21.29 <small>לק״ג</small></div>
+          <div class="shelf">₪9.90 · 465 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290002019183" data-name="פריניר עגב שלמות במיץA2.5" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מחית עגבניות במרקם חלק <button type="button" class="photo-btn" data-photo="8003496004073" data-key="8003496004073" data-name="מחית עגבניות במרקם חלק" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪21.29 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8003496004073" data-name="מחית עגבניות במרקם חלק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מחית עגבניות במרקם גס <button type="button" class="photo-btn" data-photo="8003496094029" data-key="8003496094029" data-name="מחית עגבניות במרקם גס" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪21.29 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8003496094029" data-name="מחית עגבניות במרקם גס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מחית עגבניות במרקם חלק <button type="button" class="photo-btn" data-photo="8003496803898" data-key="8003496803898" data-name="מחית עגבניות במרקם חלק" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪21.29 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8003496803898" data-name="מחית עגבניות במרקם חלק" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מחית עגבניות במרקם גס <button type="button" class="photo-btn" data-photo="8003496803911" data-key="8003496803911" data-name="מחית עגבניות במרקם גס" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪21.29 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8003496803911" data-name="מחית עגבניות במרקם גס" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שלישיית פריכוז יכין 3*200 גר <button type="button" class="photo-btn" data-photo="7290018359358" data-key="7290018359358" data-name="שלישיית פריכוז יכין 3*200 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זנלכל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪21.50 <small>לק״ג</small></div>
+          <div class="shelf">₪12.90 · 600 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018359358" data-name="שלישיית פריכוז יכין 3*200 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">עגבניות חתוכות דק 400 גר` בודד</div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪22.25 <small>לק״ג</small></div>
+          <div class="shelf">₪8.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:2556" data-name="עגבניות חתוכות דק 400 גר` בודד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">רסק עגבניות טבעי 100 גרם יכין <button type="button" class="photo-btn" data-photo="7290018989333" data-key="7290018989333" data-name="רסק עגבניות טבעי 100 גרם יכין" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זנלכל בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">4 ב־₪9</span> בקניית 4 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪3.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.50 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪2.90</s> ₪2.25 · 100 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018989333" data-name="רסק עגבניות טבעי 100 גרם יכין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">רסק עגבניות (צהוב) MUTTI</div>
+        <div class="meta">
+          <span>Mutti</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪22.71 <small>לק״ג</small></div>
+          <div class="shelf">₪15.90 · 700 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290696200003:80042563" data-name="רסק עגבניות (צהוב) MUTTI" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עגבניות חתוכות דק בלה איטליה 216*3 <button type="button" class="photo-btn" data-photo="7290015150118" data-key="7290015150118" data-name="עגבניות חתוכות דק בלה איטליה 216*3" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אמיליאנה קונסרב ס.פ.א</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪21.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪22.99 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪21.10</s> ₪14.90 · 648 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290015150118" data-name="עגבניות חתוכות דק בלה איטליה 216*3" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">רוטב עגבניות מרוכז מאוד <button type="button" class="photo-btn" data-photo="7290117267615" data-key="7290117267615" data-name="רוטב עגבניות מרוכז מאוד" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪23.33 <small>לק״ג</small></div>
+          <div class="shelf">₪4.90 · 210 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290117267615" data-name="רוטב עגבניות מרוכז מאוד" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">קוביות עגבניות מקולפות במיץ <button type="button" class="photo-btn" data-photo="8005110171215" data-key="8005110171215" data-name="קוביות עגבניות מקולפות במיץ" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>Mutti</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪24.49 <small>לק״ג</small></div>
+          <div class="shelf">₪16.90 · 690 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8005110171215" data-name="קוביות עגבניות מקולפות במיץ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עגבניות קצוצות בתוספת שום <button type="button" class="photo-btn" data-photo="7290000208930" data-key="7290000208930" data-name="עגבניות קצוצות בתוספת שום" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זנלכל בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪9</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪6.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪25.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪6.50</s> ₪4.50 · 180 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000208930" data-name="עגבניות קצוצות בתוספת שום" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עגבניות מרוסקות 180 גרם יכין <button type="button" class="photo-btn" data-photo="7290000208947" data-key="7290000208947" data-name="עגבניות מרוסקות 180 גרם יכין" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זנלכל בע\&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪9</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪6.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪25.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪6.50</s> ₪4.50 · 180 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000208947" data-name="עגבניות מרוסקות 180 גרם יכין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עגבניות מרוסקות עם בזיליקום 180 גרם יכין <button type="button" class="photo-btn" data-photo="7290000209708" data-key="7290000209708" data-name="עגבניות מרוסקות עם בזיליקום 180 גרם יכין" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זנלכל בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪9</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪6.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪25.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪6.50</s> ₪4.50 · 180 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000209708" data-name="עגבניות מרוסקות עם בזיליקום 180 גרם יכין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עגבניות מרוסקות בצל 180 גרם יכין <button type="button" class="photo-btn" data-photo="7290000209906" data-key="7290000209906" data-name="עגבניות מרוסקות בצל 180 גרם יכין" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>יכין</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪9</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪25.00 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪6.50</s> ₪4.50 · 180 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000209906" data-name="עגבניות מרוסקות בצל 180 גרם יכין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מחית עגבניות שרי עם בזיליקום <button type="button" class="photo-btn" data-photo="7290122721959" data-key="7290122721959" data-name="מחית עגבניות שרי עם בזיליקום" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪27.80 <small>לק״ג</small></div>
+          <div class="shelf">₪13.90 · 500 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290122721959" data-name="מחית עגבניות שרי עם בזיליקום" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">רוטב עגבניות מרוכז <button type="button" class="photo-btn" data-photo="7290020452405" data-key="7290020452405" data-name="רוטב עגבניות מרוכז" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪29.00 <small>לק״ג</small></div>
+          <div class="shelf">₪2.90 · 100 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290020452405" data-name="רוטב עגבניות מרוכז" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עגבניות מקולפות חתוכות לקוביות <button type="button" class="photo-btn" data-photo="7290000209913" data-key="7290000209913" data-name="עגבניות מקולפות חתוכות לקוביות" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זנלכל בע&#34;מ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪9</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪6.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪30.41 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪6.50</s> ₪4.50 · 148 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000209913" data-name="עגבניות מקולפות חתוכות לקוביות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">רסק עגבניות בלה איטליה 280גר <button type="button" class="photo-btn" data-photo="7290016372373" data-key="7290016372373" data-name="רסק עגבניות בלה איטליה 280גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>אמיליאנה קונסרב, ס.פ.א, סטרדה פרווינסיאל</span>
+          
+        </div>
+        <div class="deal"><span class="badge">2 ב־₪18</span> בקניית 2 · עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪10.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪32.14 <small>לק״ג</small></div>
+          <div class="shelf"><s>₪9.90</s> ₪9.00 · 280 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290016372373" data-name="רסק עגבניות בלה איטליה 280גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">רוטב עגבניות פריכוז 100 גרם יכין <button type="button" class="photo-btn" data-photo="7290000208978" data-key="7290000208978" data-name="רוטב עגבניות פריכוז 100 גרם יכין" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זנלכל בע&#34;מ</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪4.50</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪35.00 <small>לק״ג</small></div>
+          <div class="shelf">₪3.50 · 100 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290000208978" data-name="רוטב עגבניות פריכוז 100 גרם יכין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">עגבניות מרוסקות פולפה וילי פוד 3 * 400 גרם <button type="button" class="photo-btn" data-photo="7290108509144" data-key="7290108509144" data-name="עגבניות מרוסקות פולפה וילי פוד 3 * 400 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪37.25 <small>לק״ג</small></div>
+          <div class="shelf">₪14.90 · 400 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290108509144" data-name="עגבניות מרוסקות פולפה וילי פוד 3 * 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">רסק עג אור 70*3 <button type="button" class="photo-btn" data-photo="7290018265338" data-key="7290018265338" data-name="רסק עג אור 70*3" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪42.86 <small>לק״ג</small></div>
+          <div class="shelf">₪9.00 · 210 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018265338" data-name="רסק עג אור 70*3" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">תרכיז עגבניות בשפופרת בלה איטליה 28% <button type="button" class="photo-btn" data-photo="7290018440070" data-key="7290018440070" data-name="תרכיז עגבניות בשפופרת בלה איטליה 28%" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪44.50 <small>לק״ג</small></div>
+          <div class="shelf">₪8.90 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018440070" data-name="תרכיז עגבניות בשפופרת בלה איטליה 28%" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">מחית עגבניות שרי עם בזיליקום <button type="button" class="photo-btn" data-photo="7290122722055" data-key="7290122722055" data-name="מחית עגבניות שרי עם בזיליקום" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪45.43 <small>לק״ג</small></div>
+          <div class="shelf">₪15.90 · 350 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290122722055" data-name="מחית עגבניות שרי עם בזיליקום" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">רסק עגב.אור 140 <button type="button" class="photo-btn" data-photo="7290018265345" data-key="7290018265345" data-name="רסק עגב.אור 140" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪49.29 <small>לק״ג</small></div>
+          <div class="shelf">₪6.90 · 140 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018265345" data-name="רסק עגב.אור 140" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">רסק עגבניות ליקופן 2* 200 גרם יכין <button type="button" class="photo-btn" data-photo="7290018359860" data-key="7290018359860" data-name="רסק עגבניות ליקופן 2* 200 גרם יכין" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זנלכל</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪54.00 <small>לק״ג</small></div>
+          <div class="shelf">₪10.80 · 200 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018359860" data-name="רסק עגבניות ליקופן 2* 200 גרם יכין" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-0">
+      <div class="info">
+        <div class="name">MUTTI תרכיז עגבניות <button type="button" class="photo-btn" data-photo="8005110002243" data-key="8005110002243" data-name="MUTTI תרכיז עגבניות" data-first="v" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>Mutti</span>
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">ויקטורי</span>
+          
+          <span class="only">רק בויקטורי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪69.73 <small>לק״ג</small></div>
+          <div class="shelf">₪12.90 · 185 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="8005110002243" data-name="MUTTI תרכיז עגבניות" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">ממרח עגבניות 140 גר <button type="button" class="photo-btn" data-photo="7290119420438" data-key="7290119420438" data-name="ממרח עגבניות 140 גר" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit">₪92.14 <small>לק״ג</small></div>
+          <div class="shelf">₪12.90 · 140 גר׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290119420438" data-name="ממרח עגבניות 140 גר" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">שימורי עגבניות פולפה טבעית יכין 3 * 400 גרם <button type="button" class="photo-btn" data-photo="7290018989005" data-key="7290018989005" data-name="שימורי עגבניות פולפה טבעית יכין 3 * 400 גרם" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זנלכל</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪11.58 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪13.90 · 1.2 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018989005" data-name="שימורי עגבניות פולפה טבעית יכין 3 * 400 גרם" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מחית עגבניות טבעית י <button type="button" class="photo-btn" data-photo="7290018989487" data-key="7290018989487" data-name="מחית עגבניות טבעית י" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>זנלכל</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪11.58 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪14.90</s> ₪13.90 · 1.2 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290018989487" data-name="מחית עגבניות טבעית י" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מאסטר שף עגבניות חתוך דק 400גרם*3 כשלפ <button type="button" class="photo-btn" data-photo="7290107973861" data-key="7290107973861" data-name="מאסטר שף עגבניות חתוך דק 400גרם*3 כשלפ" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          <span>קונסרזיו קאסאלאסקו דל פומפדורו סוק.אגר.קופ</span>
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          <span class="other st-0">ויקטורי ₪19.90</span>
+          
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪12.42 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪18.90</s> ₪14.90 · 1.2 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290107973861" data-name="מאסטר שף עגבניות חתוך דק 400גרם*3 כשלפ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+    
+    
+    <li class="product st-1">
+      <div class="info">
+        <div class="name">מאסטר שף עגבניות קוביות 400גרם*3 כשלפ <button type="button" class="photo-btn" data-photo="7290111933554" data-key="7290111933554" data-name="מאסטר שף עגבניות קוביות 400גרם*3 כשלפ" data-food="1" aria-label="פרטי המוצר">ⓘ</button></div>
+        <div class="meta">
+          
+          
+        </div>
+        <div class="deal"><span class="badge">מבצע</span> עד 3.10</div>
+        
+        <div class="stores">
+          <span class="store-tag">רמי לוי</span>
+          
+          <span class="only">רק ברמי לוי</span>
+        </div>
+      </div>
+      <div class="prices">
+        
+        
+          <div class="unit on-deal">₪12.42 <small>ליח׳</small></div>
+          <div class="shelf"><s>₪19.90</s> ₪14.90 · 1.2 יח׳</div>
+        
+      </div>
+      <button class="add" type="button" data-add="7290111933554" data-name="מאסטר שף עגבניות קוביות 400גרם*3 כשלפ" aria-label="הוספה לרשימה">+</button>
+    </li>
+  
+</ol>
+</div>
+
+</main>
+<footer>עודכן 3.10 21:01 · ויקטורי 09:06 · רמי לוי 10:00 · אושר עד 08:00 · אושר עד 08:00</footer>
+
+
+<nav class="bottom-nav" aria-label="ניווט">
+  <a href="index.html" class="on"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg><span>בית</span></a>
+  <a href="search.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><span>חיפוש</span></a>
+  <a href="scan.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V5a1 1 0 0 1 1-1h2M17 4h2a1 1 0 0 1 1 1v2M20 17v2a1 1 0 0 1-1 1h-2M7 20H5a1 1 0 0 1-1-1v-2"/><path d="M8 8v8M11 8v8M14 8v8M16.5 8v8"/></svg><span>סריקה</span></a>
+  <a href="basket.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h11l2-8H6.2"/><circle cx="9.5" cy="19" r="1.4"/><circle cx="17" cy="19" r="1.4"/></svg><span id="cart-count"></span><span>עגלת קניות</span></a>
+  <a href="spending.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-2-1.4-2 1.4-2-1.4-2 1.4-2-1.4L6 21z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><span>הוצאות</span></a>
+</nav>
+
+<script src="static/basket.js?v=20261003210153"></script>
+<script src="static/photo.js?v=20261003210153"></script>
+
+<script src="static/render.js?v=20261003210153"></script>
+<script src="static/category.js?v=20261003210153" data-build="20261003210153"></script>
+
+<script>
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+</script>
+</body>
+</html>
