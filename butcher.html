@@ -1,0 +1,1856 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f7a4d">
+<script>
+// the look this phone chose (settings.html "מראה"), before anything is drawn: html.light / html.dark
+// (none = follow the phone) and html[data-color] (none = green); the browser bar takes the colour too
+(function () {
+  let t = {};
+  try { t = JSON.parse(localStorage.getItem("theme")) || {}; } catch (e) { /* none yet */ }
+  const root = document.documentElement;
+  if (t.mode === "light" || t.mode === "dark") root.classList.add(t.mode);
+  if (t.color) root.dataset.color = t.color;
+  if (t.style) root.dataset.style = t.style;
+  if (t.size) root.dataset.size = t.size;
+  if (t.bar) document.querySelector('meta[name="theme-color"]').content = t.bar;
+})();
+</script>
+<title>הקצבייה</title>
+<link rel="manifest" href="static/manifest.webmanifest">
+<link rel="icon" href="static/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="static/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="static/style.css?v=20261030211605">
+<style>.st-0 { --store: #e07000; }.st-1 { --store: #d32f2f; }.st-2 { --store: #1565c0; }.st-3 { --store: #1565c0; }.st-4 { --store: #c99a00; }</style>
+<script>window.DATA_V = {"data/c-index.json": "09b19d6312", "data/changes.json": "017efaea37", "data/deals.json": "2a7bb1cb90", "data/p-netto-052.json": "faa4a6b3dd", "data/p-osherad-003.json": "5fd1455e9c", "data/p-osherad-026.json": "06a0e30055", "data/p-ramilevy-007.json": "30feb55407", "data/p-victory-038.json": "961bf2722f", "data/products.json": "eb98dfa8bd"}; window.BUILD = "20261030211605";</script>
+<script src="static/stores.js?v=20261030211605" data-stores="[{&#34;card_cap&#34;: 750, &#34;card_rate&#34;: 0.07, &#34;default&#34;: true, &#34;key&#34;: &#34;victory-038&#34;, &#34;name&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05d5\u05d9\u05e7\u05d8\u05d5\u05e8\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;ramilevy-007&#34;, &#34;name&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9 \u05de\u05d1\u05e9\u05e8\u05ea \u05e6\u05d9\u05d5\u05df&#34;, &#34;short&#34;: &#34;\u05e8\u05de\u05d9 \u05dc\u05d5\u05d9&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-026&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05ea\u05dc\u05e4\u05d9\u05d5\u05ea&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: false, &#34;key&#34;: &#34;osherad-003&#34;, &#34;name&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3 \u05d2\u05d1\u05e2\u05ea \u05e9\u05d0\u05d5\u05dc&#34;, &#34;short&#34;: &#34;\u05d0\u05d5\u05e9\u05e8 \u05e2\u05d3&#34;}, {&#34;card_cap&#34;: 0.0, &#34;card_rate&#34;: 0.0, &#34;default&#34;: true, &#34;key&#34;: &#34;netto-052&#34;, &#34;name&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df \u05e7\u05e8\u05d9\u05d9\u05ea \u05d9\u05e2\u05e8\u05d9\u05dd&#34;, &#34;short&#34;: &#34;\u05e0\u05d8\u05d5 \u05d7\u05d9\u05e1\u05db\u05d5\u05df&#34;}]"></script>
+<script src="static/avoid.js?v=20261030211605" data-kinds="[&#34;\u05e2\u05d5\u05e3 \u05de\u05e2\u05d5\u05d1\u05d3&#34;, &#34;\u05d1\u05e9\u05e8 \u05de\u05e2\u05d5\u05d1\u05d3&#34;]"></script>
+<script>
+// No long-press menu on links, pictures or text (the user: the home page's tiles opened Chrome's "open in new tab /
+// copy link" menu; CSS can't stop that on Android). Typing fields and the ⓘ sheet's barcode keep theirs.
+document.addEventListener("contextmenu", (e) => {
+  if (!e.target.closest("input, textarea, [contenteditable], .photo-barcode")) e.preventDefault();
+});
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <a class="back" href="index.html" aria-label="חזרה">→</a>
+    <h1>הקצבייה</h1>
+    <a class="notes-link" href="notes.html" aria-label="רשימת קניות" title="רשימת קניות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="m8.5 10 1.2 1.2 2.3-2.4M8.5 15.5l1.2 1.2 2.3-2.4M14 10.5h2.5M14 16h2.5"/></svg><span>רשימת קניות</span></a>
+    <a class="settings-link" href="settings.html" aria-label="הגדרות" title="הגדרות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></a>
+  </div>
+  
+</header>
+<main>
+
+
+<img class="butcher-logo" src="https://basar-bakfar.co.il/media/bsk/logo/basar-bakfar-black.svg" alt="בשר בכפר" onerror="this.remove()">
+<p class="sub butcher-sub">בשר בכפר · 203 מוצרים · המחירים מהאתר של הקצבייה, נקראו ב־23.10. לא משתתף בהשוואה בין החנויות.
+  <a href="https://basar-bakfar.co.il" target="_blank" rel="noopener">לאתר</a></p>
+<input class="deal-search" id="butcher-filter" type="search" placeholder="חיפוש בקצבייה, למשל אנטריקוט" autocomplete="off" enterkeyhint="search">
+<p class="empty" id="butcher-none" hidden>אין מוצר כזה בקצבייה.</p>
+
+<details class="butcher-group" open>
+  <summary><b>אנגוס שחור</b><small>14</small></summary>
+  <ul class="butcher-list">
+    
+    <li data-text="אנטריקוט אנגוס מובחר אנגוס שחור">
+      <div class="info"><div class="name">אנטריקוט אנגוס מובחר</div>
+        <div class="meta">אנטריקוט מעגלי אנגוס מסורסים, נתח משובח מאד, משוייש ברמה ורך להפליא עובר יישון רטוב 15 יום+</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪280</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="טיבון אנגוס מיושן אנגוס שחור">
+      <div class="info"><div class="name">טיבון אנגוס מיושן</div>
+        <div class="meta">עבר ישון 10 יום+ לציין עובי סטייק (אצבע,שתיים,שלוש..) בתמונה רואים פורטר האוס (פילה גדול) לרוב הסטייק יגיע כטיבון (פילה קטן יותר)</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪175</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="פריים אנגוס מקוצב אנגוס שחור">
+      <div class="info"><div class="name">פריים אנגוס מקוצב</div>
+        <div class="meta">מגיע מקוצב ללא מכסה עבר ישון יבש 25 יום+ משקל יח כ 1 קג</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪195</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="אנטריקוט אנגוס מיושן אנגוס שחור">
+      <div class="info"><div class="name">אנטריקוט אנגוס מיושן</div>
+        <div class="meta">עבר יישון רטוב 20 יום+</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪195</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="פיקניה אנגוס מיושנת אנגוס שחור">
+      <div class="info"><div class="name">פיקניה אנגוס מיושנת</div>
+        <div class="meta">גוש שלם שוקל כ1.5-2 קג אם בוחרים 1 מקבלים גוש שלם ,2 שני גושים.. אלא אם מבקשים בהערות אחרת</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪130</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="דנוור מיושן אנגוס שחור">
+      <div class="info"><div class="name">דנוור מיושן</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪135</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="סינטה אנגוס מיושנת אנגוס שחור">
+      <div class="info"><div class="name">סינטה אנגוס מיושנת</div>
+        <div class="meta">מגיע עם שכבת שומן לא עבה יחסית (לא כמו בתמונה)</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪165</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="שפיץ שייטל מיושן אנגוס שחור">
+      <div class="info"><div class="name">שפיץ שייטל מיושן</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪105</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="שורט ריבס- שלוש עצמות אנגוס שחור">
+      <div class="info"><div class="name">שורט ריבס- שלוש עצמות</div>
+        <div class="meta">אם מבקשים 1 תקבלו גוש שלם, 2 שני גושים וכו.. משקל גוש שלם 1.5-2 קג מגיע ללא מכסה וללא מטמברה (כמו בתמונה)</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪120</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="חזה/בריסקט אנגוס אנגוס שחור">
+      <div class="info"><div class="name">חזה/בריסקט אנגוס</div>
+        <div class="meta">משקל נתח שלם 3.5-5 ק&#34;ג כאשר מבקשים 1 מקבלים גוש שלם אלא אם צוין אחרת</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪80</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="ניו יורק אנגוס אנגוס שחור">
+      <div class="info"><div class="name">ניו יורק אנגוס</div>
+        <div class="meta">סינטה על עצם</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪155</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="פילה אנגוס אנגוס שחור">
+      <div class="info"><div class="name">פילה אנגוס</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪220</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="שייטל אנגוס אנגוס שחור">
+      <div class="info"><div class="name">שייטל אנגוס</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪120</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="טחון אנגוס אנגוס שחור">
+      <div class="info"><div class="name">טחון אנגוס</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪95</b><small>לק״ג</small></div>
+    </li>
+    
+  </ul>
+</details>
+
+<details class="butcher-group" open>
+  <summary><b>דגים טריים</b><small>12</small></summary>
+  <ul class="butcher-list">
+    
+    <li data-text="אמנון/מושט דגים טריים">
+      <div class="info"><div class="name">אמנון/מושט</div>
+        <div class="meta">בוחרים ביחידות אך המחיר הינו לקילו ויעודכן בהתאם אחרי השקילה. משקל דג 0.5-0.7 קג בערך הדג נשקל ברוטו לפני הטיפול (קשקוש, פילוט..) נא…</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪48</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="בורי דגים טריים">
+      <div class="info"><div class="name">בורי</div>
+        <div class="meta">בוחרים ביחידות אך המחיר הינו לקילו ויעודכן בהתאם אחרי השקילה. משקל דג 1-1.5 קג בערך הדג נשקל ברוטו לפני הטיפול (קשקוש, פילוט..) נא לציין…</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪58</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="ברמונדי דגים טריים">
+      <div class="info"><div class="name">ברמונדי</div>
+        <div class="meta">משקל דג כ 0.8 ק״ג (ניתן לציין העדפה) הדג נשקל ברוטו לפני הטיפול (קשקוש, פילוט..) נא לציין צורת טיפול (עד שנעדכן את המערכת לבחירה): שלם…</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪65</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="לוקוס דגים טריים">
+      <div class="info"><div class="name">לוקוס</div>
+        <div class="meta">בוחרים ביחידות אך המחיר הינו לקילו ויעודכן בהתאם אחרי השקילה. משקל דג מוערך 2.5-4.5 ק״ג הדג נשקל ברוטו לפני הטיפול (קשקוש, פילוט..) נא…</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪160</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="מוסר ים דגים טריים">
+      <div class="info"><div class="name">מוסר ים</div>
+        <div class="meta">בוחרים ביחידות אך המחיר הינו לקילו ויעודכן בהתאם אחרי השקילה. משקל דג 2-4 קג בערך הדג נשקל ברוטו לפני הטיפול (קשקוש, פילוט..) נא לציין…</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪105</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="פורל דגים טריים">
+      <div class="info"><div class="name">פורל</div>
+        <div class="meta">פורל ורוד נשקל נקי ללא בטן</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪85</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="פילה טונה אדומה דגים טריים">
+      <div class="info"><div class="name">פילה טונה אדומה</div>
+        <div class="meta">לציין עובי סטייק</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪230</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="פילה נסיכה דגים טריים">
+      <div class="info"><div class="name">פילה נסיכה</div>
+        <div class="meta">פילה נסיכת הנילוס טרי</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪88</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="דניס דגים טריים">
+      <div class="info"><div class="name">דניס</div>
+        <div class="meta">בוחרים ביחידות אך המחיר הינו לקילו ויעודכן בהתאם אחרי השקילה. הדג נשקל ברוטו לפני הטיפול (קשקוש, פילוט..) נא לציין צורת טיפול (עד שנעדכן…</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪88</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="לברק דגים טריים">
+      <div class="info"><div class="name">לברק</div>
+        <div class="meta">בוחרים ביחידות אך המחיר הינו לקילו ויעודכן בהתאם אחרי השקילה. הדג נשקל ברוטו לפני הטיפול (קשקוש, פילוט..) נא לציין צורת טיפול (עד שנעדכן…</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪88</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="פילה סלמון טרי דגים טריים">
+      <div class="info"><div class="name">פילה סלמון טרי</div>
+        <div class="meta">פילה סלמון נורווגי טרי, נקי ללא קוצים</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪125</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="קציצות דג דגים טריים">
+      <div class="info"><div class="name">קציצות דג</div>
+        <div class="meta">ניתן להזמין קציצות מתובלות (שום, ירק ומלח פלפל) זה מגיע במאסה ולא בקציצה</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪95</b><small>לק״ג</small></div>
+    </li>
+    
+  </ul>
+</details>
+
+<details class="butcher-group" open>
+  <summary><b>מיוחדים</b><small>7</small></summary>
+  <ul class="butcher-list">
+    
+    <li data-text="פילה בקר מיושן מיוחדים">
+      <div class="info"><div class="name">פילה בקר מיושן</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪175</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="שקדי לב מיוחדים">
+      <div class="info"><div class="name">שקדי לב</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪165</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="קרפצ&#39;יו מיוחדים">
+      <div class="info"><div class="name">קרפצ&#39;יו</div>
+        <div class="meta">60 ג + ליחידה</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪20</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="וואסיו/פלאנק מיושן מיוחדים">
+      <div class="info"><div class="name">וואסיו/פלאנק מיושן</div>
+        <div class="meta">הנתחים כאן עוברים יישון מעל 10 ימים עד 20 יום. ללא סילבר סקין או כל פחת אחר</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪105</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="נתח קצבים עבה/דק מיוחדים">
+      <div class="info"><div class="name">נתח קצבים עבה/דק</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪125</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="שניצל עגל מיוחדים">
+      <div class="info"><div class="name">שניצל עגל</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪105</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="ספיידר סטייק מיוחדים">
+      <div class="info"><div class="name">ספיידר סטייק</div>
+        <div class="meta">מגיע בזוגות. כל זוג שוקל בערך 400-500 גרם. כאשר בוחרים קילו לרוב תקבלו שני זוגות (ארבעה נתחים של 200 גרם כל אחד)</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪140</b><small>לק״ג</small></div>
+    </li>
+    
+  </ul>
+</details>
+
+<details class="butcher-group" open>
+  <summary><b>טלה</b><small>9</small></summary>
+  <ul class="butcher-list">
+    
+    <li data-text="צלעות טלה">
+      <div class="info"><div class="name">צלעות</div>
+        <div class="meta">לציין עובי בבקשה, במידה ולא מציינים אז ברירת מחדל זה עובי אצבע +-</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪150</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="טיבון טלה טלה">
+      <div class="info"><div class="name">טיבון טלה</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪150</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="כתף טלה">
+      <div class="info"><div class="name">כתף</div>
+        <div class="meta">נמכר שלם. משקל כתף ממוצע כ 1.5-3 קג כאשר מבקשים נא לקחת בחשבון את המשקל.</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪130</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="צוואר טלה">
+      <div class="info"><div class="name">צוואר</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪125</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="שוק טלה">
+      <div class="info"><div class="name">שוק</div>
+        <div class="meta">משקל שוק ממוצע כ 3 קג</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪130</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="ספיריבס טלה טלה">
+      <div class="info"><div class="name">ספיריבס טלה</div>
+        <div class="meta">מגיע עם הגשר כמו בתמונה במידה ומעוניינים ללא גשר יש לציין זאת והנתח יקוצב אחרי השקילה ! כאשר בוחרים 1 מקבלים נתח שלם ששוקל בין 1-2 קג,…</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪85</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="שומן ליה טלה">
+      <div class="info"><div class="name">שומן ליה</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪110</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="סטייק טלה טלה">
+      <div class="info"><div class="name">סטייק טלה</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪130</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="טחון טלה טלה">
+      <div class="info"><div class="name">טחון טלה</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪110</b><small>לק״ג</small></div>
+    </li>
+    
+  </ul>
+</details>
+
+<details class="butcher-group" open>
+  <summary><b>בקר</b><small>17</small></summary>
+  <ul class="butcher-list">
+    
+    <li data-text="טחון בקר">
+      <div class="info"><div class="name">טחון</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪70</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="צלי מס&#39; 5 בקר">
+      <div class="info"><div class="name">צלי מס&#39; 5</div>
+        <div class="meta">1= נתח שלם (2קג-+)</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪100</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="קשתית/אסאדו בקר">
+      <div class="info"><div class="name">קשתית/אסאדו</div>
+        <div class="meta">האסאדו מקוצב עם המכסה אך ללא המטמברה.</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪75</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="פילה מדומה מס6 בקר">
+      <div class="info"><div class="name">פילה מדומה מס6</div>
+        <div class="meta">1= נתח שלם (1.5קג-+)</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪85</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="כתף מרכזית מס4 בקר">
+      <div class="info"><div class="name">כתף מרכזית מס4</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪85</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="צלעות/אונטריב בקר">
+      <div class="info"><div class="name">צלעות/אונטריב</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪85</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="אווזית בקר">
+      <div class="info"><div class="name">אווזית</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪85</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="גולש בקר">
+      <div class="info"><div class="name">גולש</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪78</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="אוסובוקו בקר">
+      <div class="info"><div class="name">אוסובוקו</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪75</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="וייסבראטן בקר">
+      <div class="info"><div class="name">וייסבראטן</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪85</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="צוואר בקר">
+      <div class="info"><div class="name">צוואר</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪80</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="צ׳אך בקר">
+      <div class="info"><div class="name">צ׳אך</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪85</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="רצועות לג&#39;רקי בקר">
+      <div class="info"><div class="name">רצועות לג&#39;רקי</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪95</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="שומן בקר טחון בקר">
+      <div class="info"><div class="name">שומן בקר טחון</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪55</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="שייטל בקר">
+      <div class="info"><div class="name">שייטל</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪100</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="שריר בקר">
+      <div class="info"><div class="name">שריר</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪78</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="כף בקר">
+      <div class="info"><div class="name">כף</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪85</b><small>לק״ג</small></div>
+    </li>
+    
+  </ul>
+</details>
+
+<details class="butcher-group" open>
+  <summary><b>עופות</b><small>13</small></summary>
+  <ul class="butcher-list">
+    
+    <li data-text="פרגיות נקיות עופות">
+      <div class="info"><div class="name">פרגיות נקיות</div>
+        <div class="meta">מוצרי העוף שלנו מגיעים נקיים ללא נוצות, שאריות נוצות, שומן או כל מזיק אחר!</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪55</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="חזה חצוי נקי עופות">
+      <div class="info"><div class="name">חזה חצוי נקי</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪43</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="חזה פרוס לשניצל עופות">
+      <div class="info"><div class="name">חזה פרוס לשניצל</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪45</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="עוף שלם עופות">
+      <div class="info"><div class="name">עוף שלם</div>
+        <div class="meta">מוצרי העוף שלנו מגיעים נקיים ללא נוצות, שאריות נוצות, שומן או כל מזיק אחר!</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪25</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="כנפיים נקיות ללא נוצות עופות">
+      <div class="info"><div class="name">כנפיים נקיות ללא נוצות</div>
+        <div class="meta">מוצרי העוף שלנו מגיעים נקיים ללא נוצות, שאריות נוצות, שומן או כל מזיק אחר!</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪25</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="לבבות עופות">
+      <div class="info"><div class="name">לבבות</div>
+        <div class="meta">לב שלם, לא נקי משומן לא משופד</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪35</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="כרעיים נקיות עופות">
+      <div class="info"><div class="name">כרעיים נקיות</div>
+        <div class="meta">מוצרי העוף שלנו מגיעים נקיים ללא נוצות, שאריות נוצות, שומן או כל מזיק אחר!</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪35</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="שוקיים עופות">
+      <div class="info"><div class="name">שוקיים</div>
+        <div class="meta">מוצרי העוף שלנו מגיעים נקיים ללא נוצות, שאריות נוצות, שומן או כל מזיק אחר!</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪25</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="כבד עופות">
+      <div class="info"><div class="name">כבד</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪28</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="חזה הודו שלם עופות">
+      <div class="info"><div class="name">חזה הודו שלם</div>
+        <div class="meta">מגיע חצי ונקי</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪45</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="טחול עוף עופות">
+      <div class="info"><div class="name">טחול עוף</div>
+        <div class="meta">חצי קילו בואקום מגיע ארוז וקפוא</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪45</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="עוף טחון עופות">
+      <div class="info"><div class="name">עוף טחון</div>
+        <div class="meta">חזה עוף טחון</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪43</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="עוף שלם ללא עצמות עופות">
+      <div class="info"><div class="name">עוף שלם ללא עצמות</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪50</b><small>לק״ג</small></div>
+    </li>
+    
+  </ul>
+</details>
+
+<details class="butcher-group" open>
+  <summary><b>אחר</b><small>45</small></summary>
+  <ul class="butcher-list">
+    
+    <li data-text="בטטה אחר">
+      <div class="info"><div class="name">בטטה</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪14</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="בננה אחר">
+      <div class="info"><div class="name">בננה</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪11</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="בצל אחר">
+      <div class="info"><div class="name">בצל</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪10</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="בצל טחון אחר">
+      <div class="info"><div class="name">בצל טחון</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪10</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="בצל סגול אחר">
+      <div class="info"><div class="name">בצל סגול</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪10</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="גזר אחר">
+      <div class="info"><div class="name">גזר</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪10</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="גמבה אחר">
+      <div class="info"><div class="name">גמבה</div>
+        <div class="meta">לציין צבע</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪16</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="גריל עוף אחר">
+      <div class="info"><div class="name">גריל עוף</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪10</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="הל טחון אחר">
+      <div class="info"><div class="name">הל טחון</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪14</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="הל שלם אחר">
+      <div class="info"><div class="name">הל שלם</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪14</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="זנג&#39;ביל טחון אחר">
+      <div class="info"><div class="name">זנג&#39;ביל טחון</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪10</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="חסה רגילה אחר">
+      <div class="info"><div class="name">חסה רגילה</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪9</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="חציל אחר">
+      <div class="info"><div class="name">חציל</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪12</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="כוסברה טחון אחר">
+      <div class="info"><div class="name">כוסברה טחון</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪10</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="כורכום אחר">
+      <div class="info"><div class="name">כורכום</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪10</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="כמון טחון אחר">
+      <div class="info"><div class="name">כמון טחון</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪10</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="כרוב אדום אחר">
+      <div class="info"><div class="name">כרוב אדום</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪10</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="כרוב לבן אחר">
+      <div class="info"><div class="name">כרוב לבן</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪10</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="כרובית אחר">
+      <div class="info"><div class="name">כרובית</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪12</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="לימון אחר">
+      <div class="info"><div class="name">לימון</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪12</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="מלפפון אחר">
+      <div class="info"><div class="name">מלפפון</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪10</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="מנגו אחר">
+      <div class="info"><div class="name">מנגו</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪18</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="סומק אחר">
+      <div class="info"><div class="name">סומק</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪10</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="עגבניה אחר">
+      <div class="info"><div class="name">עגבניה</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪19</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="פלפל אנגלי טחון אחר">
+      <div class="info"><div class="name">פלפל אנגלי טחון</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪14</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="פלפל ירוק חריף אחר">
+      <div class="info"><div class="name">פלפל ירוק חריף</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪15</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="פלפל שחור גרוס אחר">
+      <div class="info"><div class="name">פלפל שחור גרוס</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪10</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="פלפל שחור טחון אחר">
+      <div class="info"><div class="name">פלפל שחור טחון</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪10</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="פפריקה חריפה אחר">
+      <div class="info"><div class="name">פפריקה חריפה</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪10</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="פפריקה מתוקה אחר">
+      <div class="info"><div class="name">פפריקה מתוקה</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪10</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="ציפורן טחון אחר">
+      <div class="info"><div class="name">ציפורן טחון</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪14</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="ציפורן שלם אחר">
+      <div class="info"><div class="name">ציפורן שלם</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪14</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="צרור כוסברה אחר">
+      <div class="info"><div class="name">צרור כוסברה</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪5</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="צרור נענע אחר">
+      <div class="info"><div class="name">צרור נענע</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪5</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="צרור פטרוזיליה אחר">
+      <div class="info"><div class="name">צרור פטרוזיליה</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪5</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="קינמון טחון אחר">
+      <div class="info"><div class="name">קינמון טחון</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪10</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="קישואים אחר">
+      <div class="info"><div class="name">קישואים</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪14</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="שבעת המינים אחר">
+      <div class="info"><div class="name">שבעת המינים</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪10</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="שום חבילה אחר">
+      <div class="info"><div class="name">שום חבילה</div>
+        <div class="meta">4 ראשי שום</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪12</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="תבלין אורז אחר">
+      <div class="info"><div class="name">תבלין אורז</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪10</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="תבלין דג אחר">
+      <div class="info"><div class="name">תבלין דג</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪10</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="תבלין סטייק (הבית) אחר">
+      <div class="info"><div class="name">תבלין סטייק (הבית)</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪10</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="תפו&#34;א אדום אחר">
+      <div class="info"><div class="name">תפו&#34;א אדום</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪10</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="תפו&#34;א לבן אחר">
+      <div class="info"><div class="name">תפו&#34;א לבן</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪10</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="תפוח עץ ירוק אחר">
+      <div class="info"><div class="name">תפוח עץ ירוק</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪16</b><small>לק״ג</small></div>
+    </li>
+    
+  </ul>
+</details>
+
+<details class="butcher-group" open>
+  <summary><b>המטבח שלנו</b><small>12</small></summary>
+  <ul class="butcher-list">
+    
+    <li data-text="שריר עגל ממולא המטבח שלנו">
+      <div class="info"><div class="name">שריר עגל ממולא</div>
+        <div class="meta">שריר קדמי בננה, פותחים כיס באמצע וממלאים באורז, בשר אחון ושקדים קלויים משקל יחידה אחרי מילוי בערך 1 קילו (בשר ומילוי) מגיע עטוף מוכן…</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪85</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="עוף שלם ממולא המטבח שלנו">
+      <div class="info"><div class="name">עוף שלם ממולא</div>
+        <div class="meta">עוף שלם ממולא באורז, שקדים קלויים ובשר טחון. בתוך שקית קוקי מוכן לצלייה. ניתן לבחור מילוי עלי גפן ממולאים בתוספת 15 שח משקל יח כ2 קילו.</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪65</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="שוק טלה ממולא אורז המטבח שלנו">
+      <div class="info"><div class="name">שוק טלה ממולא אורז</div>
+        <div class="meta">לשים לב שבוחרים ביחידה והמחיר ישתנה בהתאם! שוק טלה מפורק מעצם, ממולא אורז, שקדים קלויים ובשר טחון. מגיע עטוף ומוכן להכנסה לתנור. יתכן…</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪135</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="שוק טלה ממולא עלי גפן המטבח שלנו">
+      <div class="info"><div class="name">שוק טלה ממולא עלי גפן</div>
+        <div class="meta">לשים לב שבוחרים ביחידה והמחיר ישתנה בהתאם! שוק טלה מפורק מעצם, ממולא עלי גפן שממואים באורז. מגיע עטוף ומוכן להכנסה לתנור. יתכן (לרוב לא)…</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪150</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="פרגית ממולא המטבח שלנו">
+      <div class="info"><div class="name">פרגית ממולא</div>
+        <div class="meta">פרגיות עוף עם עור ממולאות באורז, שקדים/צנוברים קלויים. יתכן ויגיע קפוא בחבילות של 5 יח, משקל יח כ300 גרם. חבילה כ1.5+ קג. יש להכניס…</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪75</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="שניצל מוכן המטבח שלנו">
+      <div class="info"><div class="name">שניצל מוכן</div>
+        <div class="meta">יש צורך בטיגון/אפייה! קילו= 10 שניצילונים בערך מגש שוקל בערך קילו פילה עוף מושרה בבלילה משגעת, מצופה בפירורי לחם מתובלים רכיבי הבלילה:…</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪50</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="עוף שלם צלוי על גחלים המטבח שלנו">
+      <div class="info"><div class="name">עוף שלם צלוי על גחלים</div>
+        <div class="meta">עוף שלם (שני חצאים) צלויים על גחלים אחרי הצליה ישר נכנס לאמבטיית קרח ולשוק פריז להקפאה מהירה. העוף מגיע קפוא בואקום, לחימום: ניתן להכניס…</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪70</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="בייקון פיצה המטבח שלנו">
+      <div class="info"><div class="name">בייקון פיצה</div>
+        <div class="meta">פיצה משפחתית,עבה, ומשגעת בעבודת יד! בצק עבה ופריך, עם גבינת מוצרלה מעושנת בתוספת קוביות בייקון טלה מעושנות! מגיעה קפואה להכניס לתנור 180…</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪75</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="כנאפה ביתית מוכנה המטבח שלנו">
+      <div class="info"><div class="name">כנאפה ביתית מוכנה</div>
+        <div class="meta">כנאפה ביתית אשר הוכנה ונאפתה על ידי איש מקצוע מהכפר. כ350 גרם המגש, שערות קדאיף עם גבינת עיזים ובקר, פיסטוק מעל. הכנאפה מגיעה מוכנה…</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪35</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="כתף טלה ממולא המטבח שלנו">
+      <div class="info"><div class="name">כתף טלה ממולא</div>
+        <div class="meta">כתף טלה ללא עצם ממולא באורז, בשר ושקדים קלויים. משקל יח כ1-5-2.5 קג מגיע מוכן לתנור.</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪140</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="ספיריבס טלה ממולא המטבח שלנו">
+      <div class="info"><div class="name">ספיריבס טלה ממולא</div>
+        <div class="meta">לשים לב שבוחרים ביחידה והמחיר ישתנה בהתאם! ספיריבס טלה ממולא באורז, בשר ושקדים קלויים. מגיע עטוף ומוכן לתנור משקל יח כ 2 קג</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪90</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="צוואר טלה ממולא המטבח שלנו">
+      <div class="info"><div class="name">צוואר טלה ממולא</div>
+        <div class="meta">לשים לב שבוחרים ביחידה והמחיר ישתנה בהתאם! צוואר טלה עם עצם עם כיס מהצד ממולא באורז, בשר טחון ושקדים קלויים. מגיע עטוף ומוכן לתנור. משקל…</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪110</b><small>ליחידה</small></div>
+    </li>
+    
+  </ul>
+</details>
+
+<details class="butcher-group" open>
+  <summary><b>המעדנייה</b><small>19</small></summary>
+  <ul class="butcher-list">
+    
+    <li data-text="דג מקרל מעושן המעדנייה">
+      <div class="info"><div class="name">דג מקרל מעושן</div>
+        <div class="meta">דג מקרל מעושן שלם ללא ראש משקל דג כ330 גרם מגיע טרי בואקום</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪35</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="צ׳מצ׳ורי הבית המעדנייה">
+      <div class="info"><div class="name">צ׳מצ׳ורי הבית</div>
+        <div class="meta">צנצנת רוטב צ׳מצ׳ורי טרי רכיבים: (פלפלים, שום, כוסברה, פטרוזיליה, תפוח עץ ירוק, תפוז, מלח,אגוזי מלך, שמן זית, שמן קנולה, מלח, פלפל)</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪20</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="שומן בקר מזוקק מעושן המעדנייה">
+      <div class="info"><div class="name">שומן בקר מזוקק מעושן</div>
+        <div class="meta">שומן בקר נקי מזוקק במעשנה בטמפרטורה בינונית. צנצנת כ220 מל רכיבים: 100% שומן בקר</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪25</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="אבן יוגורט עיזים המעדנייה">
+      <div class="info"><div class="name">אבן יוגורט עיזים</div>
+        <div class="meta">אבן יוגורט בלדי מחלב עיזים 100% משקל יחידה כ250ג</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪35</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="גאודה בקר הולנדית המעדנייה">
+      <div class="info"><div class="name">גאודה בקר הולנדית</div>
+        <div class="meta">הגאודה (בהולנדית חאודה) קרויה על שם העיר חאודה שבמרכז הולנד אחת מהגבינות הנמכרות והנפוצות בעולם! מתאימה למאפים, פסטות, כריכים ועוד סוג…</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪23</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="גאודה מיושנת OLD AMESTERDAM המעדנייה">
+      <div class="info"><div class="name">גאודה מיושנת OLD AMESTERDAM</div>
+        <div class="meta">אחת הגבינות הפופולריות בקרב הישראלים-מגיעה אלינו מאמסטרדם צבעה כתום עז וטעמה חלומי! סוג חלב: בקר יח 200 ג (תתכן סטיה קלה עת החיתוך…</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪35</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="גאודה עיזים הולנדית המעדנייה">
+      <div class="info"><div class="name">גאודה עיזים הולנדית</div>
+        <div class="meta">גבינה הולנדית צעירה מחלב עיזים אהובה על כולם כי טעמה עדין ולא דומיננטי סוג חלב: עיזים יח 200 ג (תתכן סטיה קלה עת החיתוך והמחיר ישונה בהתאם)</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪31</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="גאודה שום ועשבי תיבול המעדנייה">
+      <div class="info"><div class="name">גאודה שום ועשבי תיבול</div>
+        <div class="meta">גאודה בקר עם תוספת עשבי תיבול עגבניות וזיתים- פשוט יאמי ! סוג חלב: בקר יח 200 ג (תתכן סטיה קלה עת החיתוך והמחיר ישונה בהתאם)</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪25</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="טחול ממולא המעדנייה">
+      <div class="info"><div class="name">טחול ממולא</div>
+        <div class="meta">טחול בקר ממולא בכל טווווב. מגיע חתוך לסטייקים (כמו בתמונה), קפוא בשקית ואקום, כ 4 יח בשקית במשקל ממוצע של קילו רכיבים במילוי: טחול עוף…</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪175</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="כדורי לבנה בלדי בשמן המעדנייה">
+      <div class="info"><div class="name">כדורי לבנה בלדי בשמן</div>
+        <div class="meta">צנצנת כדורי לבנה מגוגלים במקום טבולים בשמן</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪35</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="מלח הימליה גס מעושן המעדנייה">
+      <div class="info"><div class="name">מלח הימליה גס מעושן</div>
+        <div class="meta">200 ג של מלח הימליה ורוד גס, עושן במשך 8 שעות בעישון קר, בעל ארומה מעושנת אשר מלווה אותו לתבשיל</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪15</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="מנצ&#39;גו כמהין המעדנייה">
+      <div class="info"><div class="name">מנצ&#39;גו כמהין</div>
+        <div class="meta">בין הגבינות הנפוצות והידועות ביותר המגיעות מספרד בתוספת פטריות כמהין המעניקות לה טעם עשיר , פיקנטי וייחודי! סוג חלב: כבשים יח 200 ג…</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪38</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="מנצ&#39;גו צ&#39;ילי אלדיאבלו המעדנייה">
+      <div class="info"><div class="name">מנצ&#39;גו צ&#39;ילי אלדיאבלו</div>
+        <div class="meta">אל דיאבלו היא גבינת כבשים מיוחדת במינה המגיעה אלינו מספרד! בתוך הגבינה ישנה מחית מיוחדת הנקראת מחית מוג&#39;ו- מחית פלפל , פפריקה ושום…</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪44</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="מנצ&#39;גו שום שחור המעדנייה">
+      <div class="info"><div class="name">מנצ&#39;גו שום שחור</div>
+        <div class="meta">את השום השחור הכרנו לאחרונה במגוון מאכלים במטבח, אבל בתוך גבינה…. ואוו! שילוב של טעמים דומיננטים של גבינת המנצ&#39;גו והשום השחור יוצרים…</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪42</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="סחוג מעושן המעדנייה">
+      <div class="info"><div class="name">סחוג מעושן</div>
+        <div class="meta">חריף, טעים, ומעושן! סחוג אשר מכינים בחנות מגלם טרי, הפלפלים עברו עישון קר של כמה שעות לפני שנטחנו עם שאר המרכיבים.</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪25</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="פרמז&#39;נו רג&#39;נו איטלקית המעדנייה">
+      <div class="info"><div class="name">פרמז&#39;נו רג&#39;נו איטלקית</div>
+        <div class="meta">אחת מהגבינות הפופולריות בעולם! רק פרמז&#39;ן אמיתי יקרא פרמז&#39;אנו רג&#39;יאנו המיוצר בחבל אמיליה רומנה שבאיטליה מומלץ לגרד מעל פסטה,סלט ומאפים…</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪38</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="צ&#39;דר אנגלי כתום המעדנייה">
+      <div class="info"><div class="name">צ&#39;דר אנגלי כתום</div>
+        <div class="meta">יח 200 ג (תתכן סטיה קלה עת החיתוך והמחיר ישונה בהתאם)</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪22</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="שום קונפי המעדנייה">
+      <div class="info"><div class="name">שום קונפי</div>
+        <div class="meta">צנצנת 220 מ״ל שום בשמן זית מתובל בעשבי תיבול טריים נמרח על סטייק, טוסט או סתם נשנוש מגניב!</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪25</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="שמאלץ (שומן אווז מזוקק) המעדנייה">
+      <div class="info"><div class="name">שמאלץ (שומן אווז מזוקק)</div>
+        <div class="meta">שומן אווז מזוקק במעשנה, יח = 220מל</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪30</b><small>ליחידה</small></div>
+    </li>
+    
+  </ul>
+</details>
+
+<details class="butcher-group" open>
+  <summary><b>המקפיא</b><small>5</small></summary>
+  <ul class="butcher-list">
+    
+    <li data-text="1 ק&#34;ג מיקס פירות ים המקפיא">
+      <div class="info"><div class="name">1 ק&#34;ג מיקס פירות ים</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪90</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="בורקס לוינסקי עבודת יד המקפיא">
+      <div class="info"><div class="name">בורקס לוינסקי עבודת יד</div>
+        <div class="meta">בורקס עבודת יד 8 יח במארז כ750 ג ניתן לבחור מילוי (גבינה/תרד/גבינה ותרד/תפ&#34;א)</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪45</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="גח&#39;נון לוינסקי המקפיא">
+      <div class="info"><div class="name">גח&#39;נון לוינסקי</div>
+        <div class="meta">5 יח באריזה</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪45</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="שרימפס 26/30 שחור המקפיא">
+      <div class="info"><div class="name">שרימפס 26/30 שחור</div>
+        <div class="meta">מקולפים</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪100</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="שרימפס ג&#39;מבו 13/15 אדום המקפיא">
+      <div class="info"><div class="name">שרימפס ג&#39;מבו 13/15 אדום</div>
+        <div class="meta">מקולפים</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪125</b><small>לק״ג</small></div>
+    </li>
+    
+  </ul>
+</details>
+
+<details class="butcher-group" open>
+  <summary><b>וואגיו</b><small>7</small></summary>
+  <ul class="butcher-list">
+    
+    <li data-text="אנטריקוט וואגיו וואגיו">
+      <div class="info"><div class="name">אנטריקוט וואגיו</div>
+        
+        
+      </div>
+      <div class="butcher-price"><s>₪420</s> <b>₪380</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="סינטה וואגיו וואגיו">
+      <div class="info"><div class="name">סינטה וואגיו</div>
+        <div class="meta">סטייק מקוצב ללא עצם, מגיע חתוך לסטייקים בעובי אצבע וחצי וקפוא! אנחנו חותכים, מווקמים ומקפיאים לפעמים זה מגיע טרי משקל סטייק מוערך כ500 גר</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪420</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="מינוטים וואגיו וואגיו">
+      <div class="info"><div class="name">מינוטים וואגיו</div>
+        <div class="meta">מגיע ללא שומן צד מיותר סטיקונים פרוסים מנתחי ואגיו שונים</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪190</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="המבורגר ואגיו וואגיו">
+      <div class="info"><div class="name">המבורגר ואגיו</div>
+        <div class="meta">מיוצר מקיצובי נתחי ואגיו מובחרים. יח= 4 קציצות במשקל כולל של כ900ג כ220 ג ליחידה</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪120</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="פילה וואגיו וואגיו">
+      <div class="info"><div class="name">פילה וואגיו</div>
+        <div class="meta">הפילה יגיע אליכם חתוך לסטייקים בעובי כ 1.5 אצבעות, בחבילות של כחצי קילו בערך לחבילה, וקפוא. כ3-4 סטייקים בחבילה. אתם בוחרים ביחידות אך…</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪420</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="שומן אא וואגיו">
+      <div class="info"><div class="name">שומן אא</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪100</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="טחון וואגיו וואגיו">
+      <div class="info"><div class="name">טחון וואגיו</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪120</b><small>לק״ג</small></div>
+    </li>
+    
+  </ul>
+</details>
+
+<details class="butcher-group" open>
+  <summary><b>חלקי פנים וכאלה..</b><small>6</small></summary>
+  <ul class="butcher-list">
+    
+    <li data-text="בשר ראש נקי חלקי פנים וכאלה..">
+      <div class="info"><div class="name">בשר ראש נקי</div>
+        <div class="meta">ארוז קילו בערך, לרוב יגיע קפוא נקי ללא שומן וסחוס מיותר</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪55</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="זנב עגל חלקי פנים וכאלה..">
+      <div class="info"><div class="name">זנב עגל</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪60</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="כבד בקר פרוס חלקי פנים וכאלה..">
+      <div class="info"><div class="name">כבד בקר פרוס</div>
+        <div class="meta">כבד בקר אשר אנחנו מקפיאים, פורסים לסטייקים בעובי אצבע בערך, בוואקום 5 סטייקים משקל מארז בערך קילו-+</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪45</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="לשון עגל חלקי פנים וכאלה..">
+      <div class="info"><div class="name">לשון עגל</div>
+        <div class="meta">בוחרים ביחידות משקל יח 1 - 1.5 קילו בערך מגיע נקי, יתכן וזה יגיע קפוא</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪65</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="עצמות ברך/ציר חלקי פנים וכאלה..">
+      <div class="info"><div class="name">עצמות ברך/ציר</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪20</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="עצמות מח חלקי פנים וכאלה..">
+      <div class="info"><div class="name">עצמות מח</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪40</b><small>לק״ג</small></div>
+    </li>
+    
+  </ul>
+</details>
+
+<details class="butcher-group" open>
+  <summary><b>מוצרים משלימים</b><small>9</small></summary>
+  <ul class="butcher-list">
+    
+    <li data-text="מד חום דוקרן + פרוב מוצרים משלימים">
+      <div class="info"><div class="name">מד חום דוקרן + פרוב</div>
+        <div class="meta">מד חום דוקרן עם פרוב וכבל עמיד חום</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪90</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="גחלים למנגל 3.5 קילו מוצרים משלימים">
+      <div class="info"><div class="name">גחלים למנגל 3.5 קילו</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪35</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="חוט קשירה למזון (100 גרם) מוצרים משלימים">
+      <div class="info"><div class="name">חוט קשירה למזון (100 גרם)</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪35</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="כפפה עמידה בחום מוצרים משלימים">
+      <div class="info"><div class="name">כפפה עמידה בחום</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪70</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="לחמנית המבורגר מוצרים משלימים">
+      <div class="info"><div class="name">לחמנית המבורגר</div>
+        <div class="meta">4 יח בחבילה לחמנית המבורגר רגילה עם שומשום</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪15</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="נוזל עישון מוצרים משלימים">
+      <div class="info"><div class="name">נוזל עישון</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪25</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="נייר קצבים 50 מ * 60סמ מוצרים משלימים">
+      <div class="info"><div class="name">נייר קצבים 50 מ * 60סמ</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪130</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="פלט GMG למעשנה מוצרים משלימים">
+      <div class="info"><div class="name">פלט GMG למעשנה</div>
+        <div class="meta">שק 12 קילו</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪110</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="פחמי קבראצ׳ו שורש כבדים למעשנה/גריל 10 קילו מוצרים משלימים">
+      <div class="info"><div class="name">פחמי קבראצ׳ו שורש כבדים למעשנה/גריל 10 קילו</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪95</b><small>לק״ג</small></div>
+    </li>
+    
+  </ul>
+</details>
+
+<details class="butcher-group" open>
+  <summary><b>מיושנים 40+</b><small>4</small></summary>
+  <ul class="butcher-list">
+    
+    <li data-text="אנטריקוט 40+ מיושנים 40+">
+      <div class="info"><div class="name">אנטריקוט 40+</div>
+        <div class="meta">מדובר על אותו הבשר מקטיגורית ״מיוחדים״ אך עם זמן יישון כפול+.(לפחות 40 ימים) טעמים יותר דומננטים ורכות ניכרת. **המלאי מוגבל לכל שבוע,…</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪185</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="סינטה 40+ מיושנים 40+">
+      <div class="info"><div class="name">סינטה 40+</div>
+        <div class="meta">מדובר על אותו הבשר מקטיגורית ״אנגוס״ אך עם זמן יישון כפול+.(לפחות 40 ימים) טעמים יותר דומננטים ורכות ניכרת. *תתכן סטיה למעלה גבוהה יחסית…</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪195</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="פיקניה 40+ מיושנים 40+">
+      <div class="info"><div class="name">פיקניה 40+</div>
+        <div class="meta">מדובר על אותו הבשר מקטיגורית ״אנגוס״ אך עם זמן יישון כפול+.(לפחות 40 ימים) טעמים יותר דומננטים ורכות ניכרת. *תתכן סטיה למעלה גבוהה יחסית…</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪155</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="שייטל 40+ מיושנים 40+">
+      <div class="info"><div class="name">שייטל 40+</div>
+        <div class="meta">מדובר על אותו הבשר מקטיגורית ״בקר״ אך עם זמן יישון כפול+.(לפחות 40 ימים) טעמים יותר דומננטים ורכות ניכרת. **המלאי מוגבל לכל שבוע, לכן אם…</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪120</b><small>לק״ג</small></div>
+    </li>
+    
+  </ul>
+</details>
+
+<details class="butcher-group" open>
+  <summary><b>מרכולית בכפר</b><small>5</small></summary>
+  <ul class="butcher-list">
+    
+    <li data-text="1 ליטר מיץ תפוזים סחוט במקום מרכולית בכפר">
+      <div class="info"><div class="name">1 ליטר מיץ תפוזים סחוט במקום</div>
+        <div class="meta">מיץ תפוזים סחוט במקום, יום ביומו מגיע קר קר!</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪20</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="30 פחיות שתייה מוגזת 150 מ&#34;ל מרכולית בכפר">
+      <div class="info"><div class="name">30 פחיות שתייה מוגזת 150 מ&#34;ל</div>
+        <div class="meta">30 פחיות מיני שתייה מוגזת 150 מ&#34;ל ניתן לבחור מבין הטעמים הבאים: קולה/קולה זירו/ספרייט/פנטה</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪45</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="נייר אפיה מרכולית בכפר">
+      <div class="info"><div class="name">נייר אפיה</div>
+        <div class="meta">50 יח נייר אפייה</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪15</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="שמן קנולה עץ הזית מרכולית בכפר">
+      <div class="info"><div class="name">שמן קנולה עץ הזית</div>
+        <div class="meta">1 ליטר</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪17</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="תחליף סוכר סוויטאנגו מרכולית בכפר">
+      <div class="info"><div class="name">תחליף סוכר סוויטאנגו</div>
+        <div class="meta">280ג</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪28</b><small>ליחידה</small></div>
+    </li>
+    
+  </ul>
+</details>
+
+<details class="butcher-group" open>
+  <summary><b>פינוקים</b><small>13</small></summary>
+  <ul class="butcher-list">
+    
+    <li data-text="קבב הבית פינוקים">
+      <div class="info"><div class="name">קבב הבית</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪75</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="המבורגר אנטריקוט פינוקים">
+      <div class="info"><div class="name">המבורגר אנטריקוט</div>
+        <div class="meta">כ 200 גר ליחידה</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪100</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="טחון לעראייס פינוקים">
+      <div class="info"><div class="name">טחון לעראייס</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪85</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="קבב טלה פינוקים">
+      <div class="info"><div class="name">קבב טלה</div>
+        <div class="meta">קבב מבשר טלה 100% בתוספת צנוברים קלויים, קצת שום וחריפות מעודנת ביותר. מתובל קלות בתערובת תבלינים ביתית.</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪120</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="צ&#39;יזבורגר פינוקים">
+      <div class="info"><div class="name">צ&#39;יזבורגר</div>
+        <div class="meta">מארז של 4 יח המבורגרים אותו המבורגר אנטריקוט הטעים והידוע במילוי גבינת מוצרלה מעושנת! הגבינה אינה מעורבבת בבשר אלא בין השכבות, ככה…</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪100</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="בייקון בורגר פינוקים">
+      <div class="info"><div class="name">בייקון בורגר</div>
+        <div class="meta">4 יח המבורגר אנטריקוט 200 גרם כל קציצה בתוספת קוביות קצוצות של בייקון טלה מעושן הקוביות מעורבבות בתוך הקציצה!</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪110</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="נקנקית טלה ופרמז׳ן פינוקים">
+      <div class="info"><div class="name">נקנקית טלה ופרמז׳ן</div>
+        <div class="meta">נקנקיה מבשר טלה טרי, בתוספת קוביות פרמז׳ן, צנוברים קלויים, שום, צ׳יפוטלה מעושן, זינגוויל טרי ועשבי תיבול רעננים</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪120</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="המבורגר טלה פינוקים">
+      <div class="info"><div class="name">המבורגר טלה</div>
+        <div class="meta">קציצה מהממת מבשר טלה, איזון מושלם בין שומן לבשר טלה. יח = 4 המבורגרים במשקל 200גרם ליח מזמינים 1 מקבלים חבילה של 4 המבוגרים.</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪120</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="חזה הודו מתובל ברשת פינוקים">
+      <div class="info"><div class="name">חזה הודו מתובל ברשת</div>
+        <div class="meta">חזה הודו נקבה, במרינדת שום ודבש או ברביקיו (לבחור סוג מרינדה מועדפת) מוכן לצלייה לפסטרמה משקל יחידה כ1-1.5</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪60</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="פרגית עוף לתנור פינוקים">
+      <div class="info"><div class="name">פרגית עוף לתנור</div>
+        <div class="meta">פרגית עוף עם עצם אחת ועור (רק הירך) בתיבול חרדל, עשבי תיבול ושמן שום קונפי משקל חבילה כ1.5 קג מכיל 6-7 יח. רק להכניס לתנור</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪70</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="מרגז הבית פינוקים">
+      <div class="info"><div class="name">מרגז הבית</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪85</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="צ&#39;וריסוס פינוקים">
+      <div class="info"><div class="name">צ&#39;וריסוס</div>
+        
+        
+      </div>
+      <div class="butcher-price"><b>₪85</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="נקנקיות פרגית אמולסיה פינוקים">
+      <div class="info"><div class="name">נקנקיות פרגית אמולסיה</div>
+        <div class="meta">נקנקיות פרגית מבושלות, שמנמנות ועסיסיות לשכוח מכל נקנקיית סופר שהכרתם עד היום!</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪58</b><small>לק״ג</small></div>
+    </li>
+    
+  </ul>
+</details>
+
+<details class="butcher-group" open>
+  <summary><b>שרקוטרי וכאלה..</b><small>2</small></summary>
+  <ul class="butcher-list">
+    
+    <li data-text="בייקון טלה ביתי שרקוטרי וכאלה..">
+      <div class="info"><div class="name">בייקון טלה ביתי</div>
+        <div class="meta">חבילה מכילה 200 גרם, פרוס דק. מגיע כבוש ומעושן, עדיף לצרוב קלות לפני אכילה</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪65</b><small>ליחידה</small></div>
+    </li>
+    
+    <li data-text="גרבלקס שרקוטרי וכאלה..">
+      <div class="info"><div class="name">גרבלקס</div>
+        <div class="meta">סלמון טרי כבוש במלח, סוכר ותבלינים טריים. מגיע פרוס דק דק ללא עור, בחבילות של כ250 ג, מוכן לאכילה.</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪55</b><small>ליחידה</small></div>
+    </li>
+    
+  </ul>
+</details>
+
+<details class="butcher-group" open>
+  <summary><b>אווז וברווז (קפוא)</b><small>4</small></summary>
+  <ul class="butcher-list">
+    
+    <li data-text="חזה אווז אווז וברווז (קפוא)">
+      <div class="info"><div class="name">חזה אווז</div>
+        <div class="meta">עקב ההובלה בקירור ולא בהקפאה נוצר מצב לעיתים שהחזה אווז לא יגיע קפוא 100%, נא לקחת בחשבון החזה יוצא קפוא מהחנות.</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪165</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="כבד אווז אווז וברווז (קפוא)">
+      <div class="info"><div class="name">כבד אווז</div>
+        <div class="meta">מגיע בגוש שלם 700-900 גרם בוחרים ביחידה/ גושים אך המחיר הינו לקילו ויעודכן בהתאם אחרי הכנת ההזמנה</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪420</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="שוק אווז אווז וברווז (קפוא)">
+      <div class="info"><div class="name">שוק אווז</div>
+        <div class="meta">השוקיים מגיעים בזוגות, משקל זוג ממוצע 700-900</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪99</b><small>לק״ג</small></div>
+    </li>
+    
+    <li data-text="שומן אווז אווז וברווז (קפוא)">
+      <div class="info"><div class="name">שומן אווז</div>
+        <div class="meta">מגיע קפוא באריזות של קילו בערך</div>
+        
+      </div>
+      <div class="butcher-price"><b>₪85</b><small>לק״ג</small></div>
+    </li>
+    
+  </ul>
+</details>
+
+
+
+</main>
+<footer>עודכן 30.10 21:16 · ויקטורי 20:10 · רמי לוי 21:00 · אושר עד 14:05 · אושר עד 14:05 · נטו חיסכון 20:47 · גרסת האפליקציה 28.10 17:00</footer>
+
+
+<nav class="bottom-nav" aria-label="ניווט">
+  <a href="index.html" class="on"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg><span>בית</span></a>
+  <a href="search.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><span>חיפוש</span></a>
+  <a href="scan.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V5a1 1 0 0 1 1-1h2M17 4h2a1 1 0 0 1 1 1v2M20 17v2a1 1 0 0 1-1 1h-2M7 20H5a1 1 0 0 1-1-1v-2"/><path d="M8 8v8M11 8v8M14 8v8M16.5 8v8"/></svg><span>סריקה</span></a>
+  <a href="basket.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h11l2-8H6.2"/><circle cx="9.5" cy="19" r="1.4"/><circle cx="17" cy="19" r="1.4"/></svg><span id="cart-count"></span><span>עגלת קניות</span></a>
+  <a href="spending.html" class=""><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-2-1.4-2 1.4-2-1.4-2 1.4-2-1.4L6 21z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><span>הוצאות</span></a>
+</nav>
+
+<script src="static/basket.js?v=20261030211605"></script>
+<script src="static/catpick.js?v=20261030211605"></script>
+<script src="static/photo.js?v=20261030211605"></script>
+
+<script>
+// the name filter: every word in the product's name or its department; hides rows and empty departments in place
+(function () {
+  const box = document.getElementById("butcher-filter");
+  if (!box) return;
+  const norm = (s) => s.replace(/["'`׳״]/g, "").replace(/יי/g, "י").replace(/וו/g, "ו").toLowerCase();
+  box.addEventListener("input", () => {
+    const words = norm(box.value).split(/\s+/).filter(Boolean);
+    let shown = 0;
+    for (const g of document.querySelectorAll(".butcher-group")) {
+      let n = 0;
+      for (const li of g.querySelectorAll("li")) {
+        const text = norm(li.dataset.text), ok = words.every((w) => text.includes(w));
+        li.hidden = !ok;
+        n += ok;
+      }
+      g.hidden = !n;
+      if (words.length) g.open = true;
+      shown += n;
+    }
+    document.getElementById("butcher-none").hidden = shown > 0;
+  });
+})();
+</script>
+
+<script>
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+</script>
+</body>
+</html>
