@@ -760,3 +760,9 @@ img, svg { -webkit-user-drag: none; }  /* no dragging a picture or icon on a lon
 
 /* settings "נוספו היום" and review.html?list=new: the AI wasn't sure of this one */
 .review-unsure { display: inline-block; padding: 0 6px; border-radius: 8px; background: var(--warn, #b26a00); color: #fff; font-size: 11px; font-weight: 600; }
+/* category page chips: stores and frequent words (category.js) */
+.cat-chips .dept-chips { margin: 0 0 8px; }
+.cat-chips .link { font-size: 13px; }
+.cat-chips > .link { display: block; margin: 0 0 10px; }
+.cat-chips .stores button { border-color: var(--store, var(--line)); color: var(--store, var(--text)); font-weight: 500; }
+.cat-chips .stores button.on { background: var(--store, var(--accent)); color: #fff; }
